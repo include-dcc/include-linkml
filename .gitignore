@@ -83,6 +83,7 @@ target/
 # IPython
 profile_default/
 ipython_config.py
+*.ipynb
 
 # pyenv
 .python-version
@@ -130,3 +131,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#local dev environment
+local_data
+.DS_Store

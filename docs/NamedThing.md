@@ -1,13 +1,23 @@
 
-# Class: named thing
+# Class: NamedThing
 
 
 root class
 
-URI: [include_core:NamedThing](https://w3id.org/mixs/include_core/NamedThing)
+URI: [include:NamedThing](https://w3id.org/include/NamedThing)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing&#124;id:string])](https://yuml.me/diagram/nofunky;dir:TB/class/[NamedThing&#124;id:string])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Participant],[NamedThing&#124;id:string]^-[Study],[NamedThing]^-[Participant],[NamedThing]^-[DataFile],[NamedThing]^-[Biospecimen],[DataFile],[Biospecimen])](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Participant],[NamedThing&#124;id:string]^-[Study],[NamedThing]^-[Participant],[NamedThing]^-[DataFile],[NamedThing]^-[Biospecimen],[DataFile],[Biospecimen])
+
+## Children
+
+ * [Biospecimen](Biospecimen.md)
+ * [DataFile](DataFile.md)
+ * [Participant](Participant.md)
+ * [Study](Study.md)
+
+## Referenced by Class
+
 
 ## Attributes
 

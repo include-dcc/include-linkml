@@ -2,19 +2,21 @@ id: https://w3id.org/include_core
 name: include_core
 description: >-
   This is an example of an imported module
-imports:
-- linkml:types
 prefixes:
   linkml: https://w3id.org/linkml/
-  include_core: https://w3id.org/mixs/include_core/
-default_prefix: include_core
+  include: https://w3id.org/include/
+default_prefix: include
+
+imports:
+- linkml:types
+
 
 slots:
   id:
     identifier: true
     required: true
 classes:
-  named thing:
+  NamedThing:
     description: >-
       root class
     slots:

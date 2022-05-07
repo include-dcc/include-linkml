@@ -1,0 +1,367 @@
+id: https://w3id.org/include_portal_v1_schema
+name: include_portal_v1_schema
+description: >-
+  INCLUDE Schema v1 prototype for Portal Data Model
+
+license: https://creativecommons.org/publicdomain/zero/1.0/
+version: 0.0.1
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  include: https://w3id.org/include/
+default_prefix: include
+
+imports:
+ - linkml:types
+ - include_core
+classes:
+  Biospecimen:
+    is_a: NamedThing
+    attributes:
+      age_at_biospecimen_collection__days:
+        description: Age (in days) of participant at time of biospecimen collection
+        multivalued: false
+        required: false
+        range: integer       ## an int between 0 and 43800 (days in 120 years)
+        minimum_value: 0
+        maximum_value: 43800
+      biospecimen_storage:
+        description: Method by which Sample is stored
+        multivalued: false
+        required: false
+      collection_id:
+        description: Identifier for a collection event, during which one or more primary
+          samples are collected, assigned by DCC. Referenced in time with respect
+          to clinical course or to other collection events.
+        multivalued: false
+        required: false
+      collection_sample_type:
+        description: Type of biological material comprising the collected sample
+        multivalued: false
+        required: false
+      container_id:
+        description: Unique identifier for specific container of sample, assigned
+          by DCC or contributor??. For example, distinct aliquots of a sample will
+          have the same Sample ID but different Container IDs.
+        multivalued: false
+        required: false
+      laboratory_procedure:
+        description: Procedure by which Sample was derived from Parent Sample
+        multivalued: false
+        required: false
+      parent_sample_id:
+        description: Identifier from Parent Sample from which Sample was derived (if
+          applicable)
+        multivalued: false
+        required: false
+      parent_sample_type:
+        description: Type of Parent Sample
+        multivalued: false
+        required: false
+      sample_availability:
+        description: Whether or not the container (or sample??) is available for sharing
+          through the Virtual Biorepository
+        multivalued: false
+        required: false
+        range: enum_sample_availability
+      sample_id:
+        description: Identifier for sample, assigned (by DCC or contributor??) at
+          time of collection, processing, treatment, or derivation. A sample is a
+          unique biological material; two samples with two different IDs are biologically
+          distinct.
+        multivalued: false
+        required: false
+      sample_type:
+        description: Type of biological material comprising the sample
+        multivalued: false
+        required: false
+      volume:
+        description: Amount of sample in container
+        multivalued: false
+        required: false
+      volume_unit:
+        description: Unit of sample volume
+        multivalued: false
+        required: false
+    slots:
+    - has_study
+    - has_participant
+    - has_datafile
+  DataFile:
+    is_a: NamedThing
+    attributes:
+      access_url:
+        description: Storage location for this file ??
+        multivalued: false
+        required: false
+      collection_id:
+        description: List of Collection?? IDs for biospecimens associated with this
+          file
+        multivalued: false
+        required: false
+      data_access:
+        description: Type of access control on this file
+        multivalued: false
+        required: false
+        range: enum_data_access
+      data_category:
+        description: General category of data in file, e.g. Clinical; Genomic; Proteomic;
+          Metabolomic
+        multivalued: false
+        required: false
+      data_type:
+        description: Specific type of data contained in file, e.g. Simple nucleotide
+          variations; aligned reads; gVCF
+        multivalued: false
+        required: false
+      experimental_strategy:
+        description: Specific experimental method used to obtain data in file, e.g.
+          Whole-genome sequencing; LCMS metabolomics
+        multivalued: false
+        required: false
+      file_id:
+        description: File identifier, assigned by DCC??
+        multivalued: false
+        required: false
+      file_name:
+        description: Name of file, assigned by data contributor??
+        multivalued: false
+        required: false
+      format:
+        description: Format of file
+        multivalued: false
+        required: false
+      participant_id:
+        description: List of Participant IDs for participants associated with this
+          file
+        multivalued: false
+        required: false
+      size:
+        description: Size of file
+        multivalued: false
+        required: false
+    slots:
+    - has_study
+    - has_participant
+    - has_biospecimen
+  Participant:
+    is_a: NamedThing
+    attributes:
+      age_at_diagnosis__days:
+        description: Age in days at which phenotype was assigned (or onset??)
+        multivalued: false
+        required: false
+        range: integer       ## an int between 0 and 43800 (days in 120 years)
+        minimum_value: 0
+        maximum_value: 43800
+      age_at_phenotype_assignment__days:
+        description: Age in days at which phenotype was recorded (or onset??)
+        multivalued: false
+        required: false
+        range: integer       ## an int between 0 and 43800 (days in 120 years)
+        minimum_value: 0
+        maximum_value: 43800
+      age_at_the_last_vital_status__days:
+        description: Age in days when participant's vital status was last recorded
+          (or actual death date??)
+        multivalued: false
+        required: false
+        range: integer       ## an int between 0 and 43800 (days in 120 years)
+        minimum_value: 0
+        maximum_value: 43800
+      diagnosis__icd:
+        description: ICD-10 code (annotated by data contributor or DCC)
+        multivalued: false
+        required: false
+      diagnosis__mondo:
+        description: Mondo disease ontology code (annotated by data contributor or
+          DCC)
+        multivalued: false
+        required: false
+      diagnosis__ncit:
+        description: NCI Thesaurus code (annotated by data contributor or DCC)
+        multivalued: false
+        required: false
+      diagnosis__source_text:
+        description: Diagnosis as described by data contributor
+        multivalued: false
+        required: false
+      diagnosis_type:
+        description: How diagnosis was assigned ??
+        multivalued: false
+        required: false
+      down_syndrome_status:
+        description: Down Syndrome status of participant (T21 = Trisomy 21; D21 =
+          Disomy 21, euploid)
+        multivalued: false
+        required: true
+        range: enum_down_syndrome_status
+      ethnicity:
+        description: Ethnicity of participant
+        multivalued: false
+        required: true
+        range: enum_ethnicity
+      external_id:
+        description: Unique identifier for the participant, assigned by data contributor
+        multivalued: false
+        required: true
+      family_id:
+        description: Unique identifer for family to which Participant belongs
+        multivalued: false
+        required: false
+      family_relationship:
+        description: Relationship of Participant to other family members
+        multivalued: false
+        required: false
+      family_type:
+        description: 'Structure of family members participating in the study (proband-only
+          = no family members participating; duo = proband + parent; trio = proband
+          + 2 parents; trio+ = proband + 2 parents + other relatives) '
+        multivalued: false
+        required: false
+        range: enum_family_type
+      father_id:
+        description: Participant ID for Participant's father
+        multivalued: false
+        required: false
+      mother_id:
+        description: Participant ID for Participant's mother
+        multivalued: false
+        required: false
+      outcomes_vital_status:
+        description: Whether participant is alive or dead [need valid values]
+        multivalued: false
+        required: false
+      participant_id:
+        description: Unique identifier for the participant, assigned by DCC
+        multivalued: false
+        required: true
+      phenotype__hpo:
+        description: Human Phenotype Ontology code (annotated by data contributor
+          or DCC)
+        multivalued: false
+        required: false
+      phenotype__source_text:
+        description: Phenotype as described by data contributor
+        multivalued: false
+        required: false
+      phenotype_interpretation:
+        description: Whether phenotype was observed or not
+        multivalued: false
+        required: false
+        range: enum_phenotype_interpretation
+      race:
+        description: Race of participant
+        multivalued: false
+        required: true
+        range: enum_race
+      sex:
+        description: Sex of participant
+        multivalued: false
+        required: true
+        range: enum_sex
+    slots:
+    - has_study
+    - has_datafile
+  Study:
+    is_a: NamedThing
+    attributes:
+      dbgap:
+        description: dbGaP study accession code
+        multivalued: false
+        required: false
+      program:
+        description: Funding source for the study ??
+        multivalued: false
+        required: true
+        range: enum_program
+      study_code:
+        description: Unique identifer for the study, assigned by DCC
+        multivalued: false
+        required: true
+        range: enum_study_code
+      study_name:
+        description: Name of the study, chosen by data contributor
+        multivalued: false
+        required: true
+    slots: []
+slots:
+  has_biospecimen:
+    range: Biospecimen
+  has_datafile:
+    range: DataFile
+  has_participant:
+    range: Participant
+  has_study:
+    range: Study
+
+enums:
+  enum_data_access:
+    description: Type of access control on this file
+    permissable_values:
+      Controlled:
+      Open:
+      Registered:
+  enum_down_syndrome_status:
+    description: Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy
+      21, euploid)
+    permissable_values:
+      D21:
+      T21:
+  enum_ethnicity:
+    description: Ethnicity of participant
+    permissable_values:
+      Asked but unknown:
+      Hispanic or Latino:
+      Not Hispanic or Latino:
+  enum_family_type:
+    description: Structure of family members participating in the study (proband-only
+      = no family members participating; duo = proband + parent; trio = proband +
+      2 parents; trio+ = proband + 2 parents + other relatives)
+    permissable_values:
+      Duo:
+      Other:
+      Proband-only:
+      Trio:
+  enum_phenotype_interpretation:
+    description: Whether phenotype was observed or not
+    permissable_values:
+      Not Observed:
+      Observed:
+  enum_program:
+    description: Funding source for the study ??
+    permissable_values:
+      INCLUDE:
+      KF:
+  enum_race:
+    description: Race of participant
+    permissable_values:
+      American Indian or Alaska Native:
+      Asian:
+      Black or African American:
+      More than one race:
+      Native Hawaiian or Other Pacific Islander:
+      Other:
+      White:
+  enum_sample_availability:
+    description: Whether or not the container (or sample??) is available for sharing
+      through the Virtual Biorepository
+    permissable_values:
+      Available:
+      Unavailable:
+  enum_sex:
+    description: Sex of participant
+    permissable_values:
+      Female:
+      Male:
+      Other:
+      Unknown:
+  enum_study_code:
+    description: Unique identifer for the study, assigned by DCC
+    permissable_values:
+      DS-COG-ALL:
+      DS-PCGC:
+      DS360-CHD:
+      DSC:
+      HTP:
+
