@@ -297,44 +297,34 @@ slots:
 
 enums:
   enum_data_access:
-    description: Type of access control on this file
     permissable_values:
       Controlled:
       Open:
       Registered:
   enum_down_syndrome_status:
-    description: Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy
-      21, euploid)
     permissable_values:
       D21:
       T21:
   enum_ethnicity:
-    description: Ethnicity of participant
     permissable_values:
       Asked but unknown:
       Hispanic or Latino:
       Not Hispanic or Latino:
   enum_family_type:
-    description: Structure of family members participating in the study (proband-only
-      = no family members participating; duo = proband + parent; trio = proband +
-      2 parents; trio+ = proband + 2 parents + other relatives)
     permissable_values:
       Duo:
       Other:
       Proband-only:
       Trio:
   enum_phenotype_interpretation:
-    description: Whether phenotype was observed or not
     permissable_values:
       Not Observed:
       Observed:
   enum_program:
-    description: Funding source for the study ??
     permissable_values:
       INCLUDE:
       KF:
   enum_race:
-    description: Race of participant
     permissable_values:
       American Indian or Alaska Native:
       Asian:
@@ -344,20 +334,16 @@ enums:
       Other:
       White:
   enum_sample_availability:
-    description: Whether or not the container (or sample??) is available for sharing
-      through the Virtual Biorepository
     permissable_values:
       Available:
       Unavailable:
   enum_sex:
-    description: Sex of participant
     permissable_values:
       Female:
       Male:
       Other:
       Unknown:
   enum_study_code:
-    description: Unique identifer for the study, assigned by DCC
     permissable_values:
       DS-COG-ALL:
       DS-PCGC:
