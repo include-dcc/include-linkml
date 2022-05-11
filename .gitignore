@@ -133,5 +133,5 @@ dmypy.json
 .pyre/
 
 #local dev environment
-local_data
+/local_data
 .DS_Store
