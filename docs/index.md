@@ -82,7 +82,16 @@ INCLUDE Schema v1 prototype for Portal Data Model
 
 ### Enums
 
- * [PersonStatus](PersonStatus.md)
+ * [enum_data_access](enum_data_access.md)
+ * [enum_down_syndrome_status](enum_down_syndrome_status.md)
+ * [enum_ethnicity](enum_ethnicity.md)
+ * [enum_family_type](enum_family_type.md)
+ * [enum_phenotype_interpretation](enum_phenotype_interpretation.md)
+ * [enum_program](enum_program.md)
+ * [enum_race](enum_race.md)
+ * [enum_sample_availability](enum_sample_availability.md)
+ * [enum_sex](enum_sex.md)
+ * [enum_study_code](enum_study_code.md)
 
 ### Subsets
 

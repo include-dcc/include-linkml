@@ -9,7 +9,7 @@ URI: [include:study__study_code](https://w3id.org/include/study__study_code)
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [String](types/String.md)
+None &#8594;  <sub>1..1</sub> [enum_study_code](enum_study_code.md)
 
 ## Parents
 

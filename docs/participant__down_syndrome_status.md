@@ -9,7 +9,7 @@ URI: [include:participant__down_syndrome_status](https://w3id.org/include/partic
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [String](types/String.md)
+None &#8594;  <sub>1..1</sub> [enum_down_syndrome_status](enum_down_syndrome_status.md)
 
 ## Parents
 

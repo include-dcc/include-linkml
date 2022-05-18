@@ -9,7 +9,7 @@ URI: [include:study__program](https://w3id.org/include/study__program)
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [String](types/String.md)
+None &#8594;  <sub>1..1</sub> [enum_program](enum_program.md)
 
 ## Parents
 
