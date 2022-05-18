@@ -9,7 +9,7 @@ URI: [include:participant__phenotype_interpretation](https://w3id.org/include/pa
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
+None &#8594;  <sub>0..1</sub> [enum_phenotype_interpretation](enum_phenotype_interpretation.md)
 
 ## Parents
 

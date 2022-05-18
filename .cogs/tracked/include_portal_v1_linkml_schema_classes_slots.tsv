@@ -1,0 +1,69 @@
+record	slot	key	multiplicity	required	range	parents	desc
+>class	slot	identifier	cardinality	required	range	is_a	description
+Biospecimen	age_at_biospecimen_collection__days				integer		Age (in days) of participant at time of biospecimen collection
+Biospecimen	biospecimen_storage						Method by which Sample is stored
+Biospecimen	collection_id	TRUE					Identifier for a collection event, during which one or more primary samples are collected, assigned by DCC. Referenced in time with respect to clinical course or to other collection events.
+Biospecimen	collection_sample_type						Type of biological material comprising the collected sample
+Biospecimen	container_id	TRUE					Unique identifier for specific container of sample, assigned by DCC or contributor??. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.
+Biospecimen	has_datafile				DataFile		
+Biospecimen	has_participant				Participant		
+Biospecimen	has_study				Study		
+Biospecimen	laboratory_procedure						Procedure by which Sample was derived from Parent Sample
+Biospecimen	parent_sample_id	TRUE					Identifier from Parent Sample from which Sample was derived (if applicable)
+Biospecimen	parent_sample_type						Type of Parent Sample
+Biospecimen	sample_availability				enum_sample_availability		Whether or not the container (or sample??) is available for sharing through the Virtual Biorepository
+Biospecimen	sample_id	TRUE					Identifier for sample, assigned (by DCC or contributor??) at time of collection, processing, treatment, or derivation. A sample is a unique biological material; two samples with two different IDs are biologically distinct.
+Biospecimen	sample_type						Type of biological material comprising the sample
+Biospecimen	volume						Amount of sample in container
+Biospecimen	volume_unit						Unit of sample volume
+Biospecimen						NamedThing	
+DataFile	access_url						Storage location for this file ??
+DataFile	collection_id	TRUE					List of Collection?? IDs for biospecimens associated with this file
+DataFile	data_access				enum_data_access		Type of access control on this file
+DataFile	data_category						General category of data in file, e.g. Clinical; Genomic; Proteomic; Metabolomic
+DataFile	data_type						Specific type of data contained in file, e.g. Simple nucleotide variations; aligned reads; gVCF
+DataFile	experimental_strategy						Specific experimental method used to obtain data in file, e.g. Whole-genome sequencing; LCMS metabolomics
+DataFile	file_id	TRUE					File identifier, assigned by DCC??
+DataFile	file_name						Name of file, assigned by data contributor??
+DataFile	format						Format of file
+DataFile	has_biospecimen				Biospecimen		
+DataFile	has_participant				Participant		
+DataFile	has_study				Study		
+DataFile	participant_id	TRUE					List of Participant IDs for participants associated with this file
+DataFile	size						Size of file
+DataFile						NamedThing	
+Participant	age_at_diagnosis__days				integer		Age in days at which phenotype was assigned (or onset??)
+Participant	age_at_phenotype_assignment__days				integer		Age in days at which phenotype was recorded (or onset??)
+Participant	age_at_the_last_vital_status__days				integer		Age in days when participant's vital status was last recorded (or actual death date??)
+Participant	diagnosis__icd						ICD-10 code (annotated by data contributor or DCC)
+Participant	diagnosis__mondo						Mondo disease ontology code (annotated by data contributor or DCC)
+Participant	diagnosis__ncit						NCI Thesaurus code (annotated by data contributor or DCC)
+Participant	diagnosis__source_text						Diagnosis as described by data contributor
+Participant	diagnosis_type						How diagnosis was assigned ??
+Participant	down_syndrome_status			TRUE	enum_down_syndrome_status		Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)
+Participant	ethnicity			TRUE	enum_ethnicity		Ethnicity of participant
+Participant	external_id	TRUE		TRUE			Unique identifier for the participant, assigned by data contributor
+Participant	family_id	TRUE					Unique identifer for family to which Participant belongs
+Participant	family_relationship						Relationship of Participant to other family members
+Participant	family_type				enum_family_type		Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives)
+Participant	father_id	TRUE					Participant ID for Participant's father
+Participant	has_datafile				DataFile		
+Participant	has_study				Study		
+Participant	mother_id	TRUE					Participant ID for Participant's mother
+Participant	outcomes_vital_status						Whether participant is alive or dead [need valid values]
+Participant	participant_id	TRUE		TRUE			Unique identifier for the participant, assigned by DCC
+Participant	phenotype__hpo						Human Phenotype Ontology code (annotated by data contributor or DCC)
+Participant	phenotype__source_text						Phenotype as described by data contributor
+Participant	phenotype_interpretation				enum_phenotype_interpretation		Whether phenotype was observed or not
+Participant	race			TRUE	enum_race		Race of participant
+Participant	sex			TRUE	enum_sex		Sex of participant
+Participant						NamedThing	
+Study	dbgap						dbGaP study accession code
+Study	program			TRUE	enum_program		Funding source for the study ??
+Study	study_code			TRUE	enum_study_code		Unique identifer for the study, assigned by DCC
+Study	study_name			TRUE			Name of the study, chosen by data contributor
+Study						NamedThing	
+	has_biospecimen				Biospecimen		Semantic link to a Biospecimen
+	has_datafile				DataFile		Semantic link to a DataFile
+	has_participant				Participant		Semantic link to a Participant
+	has_study				Study		Semantic link to a Study

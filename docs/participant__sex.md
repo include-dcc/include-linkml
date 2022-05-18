@@ -9,7 +9,7 @@ URI: [include:participant__sex](https://w3id.org/include/participant__sex)
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [String](types/String.md)
+None &#8594;  <sub>1..1</sub> [enum_sex](enum_sex.md)
 
 ## Parents
 

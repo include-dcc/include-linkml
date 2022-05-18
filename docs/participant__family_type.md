@@ -9,7 +9,7 @@ URI: [include:participant__family_type](https://w3id.org/include/participant__fa
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
+None &#8594;  <sub>0..1</sub> [enum_family_type](enum_family_type.md)
 
 ## Parents
 

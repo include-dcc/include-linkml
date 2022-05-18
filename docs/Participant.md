@@ -7,7 +7,7 @@
 URI: [include:Participant](https://w3id.org/include/Participant)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[DataFile]<has_datafile%200..1-%20[Participant&#124;age_at_diagnosis__days:integer%20%3F;age_at_phenotype_assignment__days:integer%20%3F;age_at_the_last_vital_status__days:integer%20%3F;diagnosis__icd:string%20%3F;diagnosis__mondo:string%20%3F;diagnosis__ncit:string%20%3F;diagnosis__source_text:string%20%3F;diagnosis_type:string%20%3F;down_syndrome_status:string;ethnicity:string;external_id:string;family_id:string%20%3F;family_relationship:string%20%3F;family_type:string%20%3F;father_id:string%20%3F;mother_id:string%20%3F;outcomes_vital_status:string%20%3F;participant_id:string;phenotype__hpo:string%20%3F;phenotype__source_text:string%20%3F;phenotype_interpretation:string%20%3F;race:string;sex:string;id(i):string],[Study]<has_study%200..1-%20[Participant],[Biospecimen]-%20has_participant%200..1>[Participant],[DataFile]-%20has_participant%200..1>[Participant],[NamedThing]^-[Participant],[NamedThing],[DataFile],[Biospecimen])](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[DataFile]<has_datafile%200..1-%20[Participant&#124;age_at_diagnosis__days:integer%20%3F;age_at_phenotype_assignment__days:integer%20%3F;age_at_the_last_vital_status__days:integer%20%3F;diagnosis__icd:string%20%3F;diagnosis__mondo:string%20%3F;diagnosis__ncit:string%20%3F;diagnosis__source_text:string%20%3F;diagnosis_type:string%20%3F;down_syndrome_status:string;ethnicity:string;external_id:string;family_id:string%20%3F;family_relationship:string%20%3F;family_type:string%20%3F;father_id:string%20%3F;mother_id:string%20%3F;outcomes_vital_status:string%20%3F;participant_id:string;phenotype__hpo:string%20%3F;phenotype__source_text:string%20%3F;phenotype_interpretation:string%20%3F;race:string;sex:string;id(i):string],[Study]<has_study%200..1-%20[Participant],[Biospecimen]-%20has_participant%200..1>[Participant],[DataFile]-%20has_participant%200..1>[Participant],[NamedThing]^-[Participant],[NamedThing],[DataFile],[Biospecimen])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[DataFile]<has_datafile%200..1-%20[Participant&#124;age_at_diagnosis__days:integer%20%3F;age_at_phenotype_assignment__days:integer%20%3F;age_at_the_last_vital_status__days:integer%20%3F;diagnosis__icd:string%20%3F;diagnosis__mondo:string%20%3F;diagnosis__ncit:string%20%3F;diagnosis__source_text:string%20%3F;diagnosis_type:string%20%3F;down_syndrome_status:enum_down_syndrome_status;ethnicity:enum_ethnicity;external_id:string;family_id:string%20%3F;family_relationship:string%20%3F;family_type:enum_family_type%20%3F;father_id:string%20%3F;mother_id:string%20%3F;outcomes_vital_status:string%20%3F;participant_id:string;phenotype__hpo:string%20%3F;phenotype__source_text:string%20%3F;phenotype_interpretation:enum_phenotype_interpretation%20%3F;race:enum_race;sex:enum_sex;id(i):string],[Study]<has_study%200..1-%20[Participant],[Biospecimen]-%20has_participant%200..1>[Participant],[DataFile]-%20has_participant%200..1>[Participant],[NamedThing]^-[Participant],[NamedThing],[DataFile],[Biospecimen])](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[DataFile]<has_datafile%200..1-%20[Participant&#124;age_at_diagnosis__days:integer%20%3F;age_at_phenotype_assignment__days:integer%20%3F;age_at_the_last_vital_status__days:integer%20%3F;diagnosis__icd:string%20%3F;diagnosis__mondo:string%20%3F;diagnosis__ncit:string%20%3F;diagnosis__source_text:string%20%3F;diagnosis_type:string%20%3F;down_syndrome_status:enum_down_syndrome_status;ethnicity:enum_ethnicity;external_id:string;family_id:string%20%3F;family_relationship:string%20%3F;family_type:enum_family_type%20%3F;father_id:string%20%3F;mother_id:string%20%3F;outcomes_vital_status:string%20%3F;participant_id:string;phenotype__hpo:string%20%3F;phenotype__source_text:string%20%3F;phenotype_interpretation:enum_phenotype_interpretation%20%3F;race:enum_race;sex:enum_sex;id(i):string],[Study]<has_study%200..1-%20[Participant],[Biospecimen]-%20has_participant%200..1>[Participant],[DataFile]-%20has_participant%200..1>[Participant],[NamedThing]^-[Participant],[NamedThing],[DataFile],[Biospecimen])
 
 ## Parents
 
@@ -52,10 +52,10 @@ URI: [include:Participant](https://w3id.org/include/Participant)
      * Range: [String](types/String.md)
  * [➞down_syndrome_status](participant__down_syndrome_status.md)  <sub>1..1</sub>
      * Description: Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)
-     * Range: [String](types/String.md)
+     * Range: [enum_down_syndrome_status](enum_down_syndrome_status.md)
  * [➞ethnicity](participant__ethnicity.md)  <sub>1..1</sub>
      * Description: Ethnicity of participant
-     * Range: [String](types/String.md)
+     * Range: [enum_ethnicity](enum_ethnicity.md)
  * [➞external_id](participant__external_id.md)  <sub>1..1</sub>
      * Description: Unique identifier for the participant, assigned by data contributor
      * Range: [String](types/String.md)
@@ -67,7 +67,7 @@ URI: [include:Participant](https://w3id.org/include/Participant)
      * Range: [String](types/String.md)
  * [➞family_type](participant__family_type.md)  <sub>0..1</sub>
      * Description: Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives) 
-     * Range: [String](types/String.md)
+     * Range: [enum_family_type](enum_family_type.md)
  * [➞father_id](participant__father_id.md)  <sub>0..1</sub>
      * Description: Participant ID for Participant's father
      * Range: [String](types/String.md)
@@ -88,13 +88,13 @@ URI: [include:Participant](https://w3id.org/include/Participant)
      * Range: [String](types/String.md)
  * [➞phenotype_interpretation](participant__phenotype_interpretation.md)  <sub>0..1</sub>
      * Description: Whether phenotype was observed or not
-     * Range: [String](types/String.md)
+     * Range: [enum_phenotype_interpretation](enum_phenotype_interpretation.md)
  * [➞race](participant__race.md)  <sub>1..1</sub>
      * Description: Race of participant
-     * Range: [String](types/String.md)
+     * Range: [enum_race](enum_race.md)
  * [➞sex](participant__sex.md)  <sub>1..1</sub>
      * Description: Sex of participant
-     * Range: [String](types/String.md)
+     * Range: [enum_sex](enum_sex.md)
 
 ### Inherited from NamedThing:
 

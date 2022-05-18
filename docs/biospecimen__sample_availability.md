@@ -9,7 +9,7 @@ URI: [include:biospecimen__sample_availability](https://w3id.org/include/biospec
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
+None &#8594;  <sub>0..1</sub> [enum_sample_availability](enum_sample_availability.md)
 
 ## Parents
 

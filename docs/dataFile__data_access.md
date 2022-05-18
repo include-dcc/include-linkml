@@ -9,7 +9,7 @@ URI: [include:dataFile__data_access](https://w3id.org/include/dataFile__data_acc
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
+None &#8594;  <sub>0..1</sub> [enum_data_access](enum_data_access.md)
 
 ## Parents
 

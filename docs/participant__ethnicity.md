@@ -9,7 +9,7 @@ URI: [include:participant__ethnicity](https://w3id.org/include/participant__ethn
 
 ## Domain and Range
 
-None &#8594;  <sub>1..1</sub> [String](types/String.md)
+None &#8594;  <sub>1..1</sub> [enum_ethnicity](enum_ethnicity.md)
 
 ## Parents
 

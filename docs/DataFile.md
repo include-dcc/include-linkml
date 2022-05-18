@@ -7,7 +7,7 @@
 URI: [include:DataFile](https://w3id.org/include/DataFile)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Participant],[NamedThing],[Biospecimen]<has_biospecimen%200..1-%20[DataFile&#124;access_url:string%20%3F;collection_id:string%20%3F;data_access:string%20%3F;data_category:string%20%3F;data_type:string%20%3F;experimental_strategy:string%20%3F;file_id:string%20%3F;file_name:string%20%3F;format:string%20%3F;participant_id:string%20%3F;size:string%20%3F;id(i):string],[Participant]<has_participant%200..1-%20[DataFile],[Study]<has_study%200..1-%20[DataFile],[Biospecimen]-%20has_datafile%200..1>[DataFile],[Participant]-%20has_datafile%200..1>[DataFile],[NamedThing]^-[DataFile],[Biospecimen])](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Participant],[NamedThing],[Biospecimen]<has_biospecimen%200..1-%20[DataFile&#124;access_url:string%20%3F;collection_id:string%20%3F;data_access:string%20%3F;data_category:string%20%3F;data_type:string%20%3F;experimental_strategy:string%20%3F;file_id:string%20%3F;file_name:string%20%3F;format:string%20%3F;participant_id:string%20%3F;size:string%20%3F;id(i):string],[Participant]<has_participant%200..1-%20[DataFile],[Study]<has_study%200..1-%20[DataFile],[Biospecimen]-%20has_datafile%200..1>[DataFile],[Participant]-%20has_datafile%200..1>[DataFile],[NamedThing]^-[DataFile],[Biospecimen])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Participant],[NamedThing],[Biospecimen]<has_biospecimen%200..1-%20[DataFile&#124;access_url:string%20%3F;collection_id:string%20%3F;data_access:enum_data_access%20%3F;data_category:string%20%3F;data_type:string%20%3F;experimental_strategy:string%20%3F;file_id:string%20%3F;file_name:string%20%3F;format:string%20%3F;participant_id:string%20%3F;size:string%20%3F;id(i):string],[Participant]<has_participant%200..1-%20[DataFile],[Study]<has_study%200..1-%20[DataFile],[Biospecimen]-%20has_datafile%200..1>[DataFile],[Participant]-%20has_datafile%200..1>[DataFile],[NamedThing]^-[DataFile],[Biospecimen])](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Participant],[NamedThing],[Biospecimen]<has_biospecimen%200..1-%20[DataFile&#124;access_url:string%20%3F;collection_id:string%20%3F;data_access:enum_data_access%20%3F;data_category:string%20%3F;data_type:string%20%3F;experimental_strategy:string%20%3F;file_id:string%20%3F;file_name:string%20%3F;format:string%20%3F;participant_id:string%20%3F;size:string%20%3F;id(i):string],[Participant]<has_participant%200..1-%20[DataFile],[Study]<has_study%200..1-%20[DataFile],[Biospecimen]-%20has_datafile%200..1>[DataFile],[Participant]-%20has_datafile%200..1>[DataFile],[NamedThing]^-[DataFile],[Biospecimen])
 
 ## Parents
 
@@ -36,7 +36,7 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
      * Range: [String](types/String.md)
  * [➞data_access](dataFile__data_access.md)  <sub>0..1</sub>
      * Description: Type of access control on this file
-     * Range: [String](types/String.md)
+     * Range: [enum_data_access](enum_data_access.md)
  * [➞data_category](dataFile__data_category.md)  <sub>0..1</sub>
      * Description: General category of data in file, e.g. Clinical; Genomic; Proteomic; Metabolomic
      * Range: [String](types/String.md)
