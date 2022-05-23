@@ -1,0 +1,412 @@
+{
+   "$defs": {
+      "Biospecimen": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "age_at_biospecimen_collection__days": {
+               "description": "Age (in days) of participant at time of biospecimen collection",
+               "type": "integer"
+            },
+            "biospecimen_storage": {
+               "description": "Method by which Sample is stored",
+               "type": "string"
+            },
+            "collection_id": {
+               "description": "Identifier for a collection event, during which one or more primary samples are collected, assigned by DCC. Referenced in time with respect to clinical course or to other collection events.",
+               "type": "string"
+            },
+            "collection_sample_type": {
+               "description": "Type of biological material comprising the collected sample",
+               "type": "string"
+            },
+            "container_id": {
+               "description": "Unique identifier for specific container of sample, assigned by DCC or contributor??. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.",
+               "type": "string"
+            },
+            "has_datafile": {
+               "description": "Semantic link to a DataFile",
+               "type": "string"
+            },
+            "has_participant": {
+               "description": "Semantic link to a Participant",
+               "type": "string"
+            },
+            "has_study": {
+               "$ref": "#/$defs/Study",
+               "description": "Semantic link to a Study"
+            },
+            "laboratory_procedure": {
+               "description": "Procedure by which Sample was derived from Parent Sample",
+               "type": "string"
+            },
+            "parent_sample_id": {
+               "description": "Identifier from Parent Sample from which Sample was derived (if applicable)",
+               "type": "string"
+            },
+            "parent_sample_type": {
+               "description": "Type of Parent Sample",
+               "type": "string"
+            },
+            "sample_availability": {
+               "$ref": "#/$defs/EnumSampleAvailability",
+               "description": "Whether or not the container (or sample??) is available for sharing through the Virtual Biorepository"
+            },
+            "sample_id": {
+               "description": "Identifier for sample, assigned (by DCC or contributor??) at time of collection, processing, treatment, or derivation. A sample is a unique biological material; two samples with two different IDs are biologically distinct.",
+               "type": "string"
+            },
+            "sample_type": {
+               "description": "Type of biological material comprising the sample",
+               "type": "string"
+            },
+            "volume": {
+               "description": "Amount of sample in container",
+               "type": "string"
+            },
+            "volume_unit": {
+               "description": "Unit of sample volume",
+               "type": "string"
+            }
+         },
+         "required": [
+            "sample_id"
+         ],
+         "title": "Biospecimen",
+         "type": "object"
+      },
+      "DataFile": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "access_url": {
+               "description": "Storage location for this file ??",
+               "type": "string"
+            },
+            "collection_id": {
+               "description": "List of Collection?? IDs for biospecimens associated with this file",
+               "type": "string"
+            },
+            "data_access": {
+               "$ref": "#/$defs/EnumDataAccess",
+               "description": "Type of access control on this file"
+            },
+            "data_category": {
+               "description": "General category of data in file, e.g. Clinical; Genomic; Proteomic; Metabolomic",
+               "type": "string"
+            },
+            "data_type": {
+               "description": "Specific type of data contained in file, e.g. Simple nucleotide variations; aligned reads; gVCF",
+               "type": "string"
+            },
+            "experimental_strategy": {
+               "description": "Specific experimental method used to obtain data in file, e.g. Whole-genome sequencing; LCMS metabolomics",
+               "type": "string"
+            },
+            "file_id": {
+               "description": "File identifier, assigned by DCC??",
+               "type": "string"
+            },
+            "file_name": {
+               "description": "Name of file, assigned by data contributor??",
+               "type": "string"
+            },
+            "format": {
+               "description": "Format of file",
+               "type": "string"
+            },
+            "has_biospecimen": {
+               "description": "Semantic link to a Biospecimen",
+               "type": "string"
+            },
+            "has_participant": {
+               "description": "Semantic link to a Participant",
+               "type": "string"
+            },
+            "has_study": {
+               "$ref": "#/$defs/Study",
+               "description": "Semantic link to a Study"
+            },
+            "participant_id": {
+               "description": "List of Participant IDs for participants associated with this file",
+               "type": "string"
+            },
+            "size": {
+               "description": "Size of file",
+               "type": "string"
+            }
+         },
+         "required": [
+            "file_id"
+         ],
+         "title": "DataFile",
+         "type": "object"
+      },
+      "EnumDataAccess": {
+         "description": "",
+         "enum": [
+            "Controlled",
+            "Open",
+            "Registered"
+         ],
+         "title": "EnumDataAccess",
+         "type": "string"
+      },
+      "EnumDownSyndromeStatus": {
+         "description": "",
+         "enum": [
+            "D21",
+            "T21"
+         ],
+         "title": "EnumDownSyndromeStatus",
+         "type": "string"
+      },
+      "EnumEthnicity": {
+         "description": "",
+         "enum": [
+            "Asked but unknown",
+            "Hispanic or Latino",
+            "Not Hispanic or Latino"
+         ],
+         "title": "EnumEthnicity",
+         "type": "string"
+      },
+      "EnumFamilyType": {
+         "description": "",
+         "enum": [
+            "Duo",
+            "Other",
+            "Proband-only",
+            "Trio"
+         ],
+         "title": "EnumFamilyType",
+         "type": "string"
+      },
+      "EnumPhenotypeInterpretation": {
+         "description": "",
+         "enum": [
+            "Not Observed",
+            "Observed"
+         ],
+         "title": "EnumPhenotypeInterpretation",
+         "type": "string"
+      },
+      "EnumProgram": {
+         "description": "",
+         "enum": [
+            "INCLUDE",
+            "KF"
+         ],
+         "title": "EnumProgram",
+         "type": "string"
+      },
+      "EnumRace": {
+         "description": "",
+         "enum": [
+            "American Indian or Alaska Native",
+            "Asian",
+            "Black or African American",
+            "More than one race",
+            "Native Hawaiian or Other Pacific Islander",
+            "Other",
+            "White"
+         ],
+         "title": "EnumRace",
+         "type": "string"
+      },
+      "EnumSampleAvailability": {
+         "description": "",
+         "enum": [
+            "Available",
+            "Unavailable"
+         ],
+         "title": "EnumSampleAvailability",
+         "type": "string"
+      },
+      "EnumSex": {
+         "description": "",
+         "enum": [
+            "Female",
+            "Male",
+            "Other",
+            "Unknown"
+         ],
+         "title": "EnumSex",
+         "type": "string"
+      },
+      "EnumStudyCode": {
+         "description": "",
+         "enum": [
+            "DS-COG-ALL",
+            "DS-PCGC",
+            "DS360-CHD",
+            "DSC",
+            "HTP"
+         ],
+         "title": "EnumStudyCode",
+         "type": "string"
+      },
+      "NamedThing": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {},
+         "required": [],
+         "title": "NamedThing",
+         "type": "object"
+      },
+      "Participant": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "age_at_diagnosis__days": {
+               "description": "Age in days at which phenotype was assigned (or onset??)",
+               "type": "integer"
+            },
+            "age_at_phenotype_assignment__days": {
+               "description": "Age in days at which phenotype was recorded (or onset??)",
+               "type": "integer"
+            },
+            "age_at_the_last_vital_status__days": {
+               "description": "Age in days when participant's vital status was last recorded (or actual death date??)",
+               "type": "integer"
+            },
+            "diagnosis__icd": {
+               "description": "ICD-10 code (annotated by data contributor or DCC)",
+               "type": "string"
+            },
+            "diagnosis__mondo": {
+               "description": "Mondo disease ontology code (annotated by data contributor or DCC)",
+               "type": "string"
+            },
+            "diagnosis__ncit": {
+               "description": "NCI Thesaurus code (annotated by data contributor or DCC)",
+               "type": "string"
+            },
+            "diagnosis__source_text": {
+               "description": "Diagnosis as described by data contributor",
+               "type": "string"
+            },
+            "diagnosis_type": {
+               "description": "How diagnosis was assigned ??",
+               "type": "string"
+            },
+            "down_syndrome_status": {
+               "$ref": "#/$defs/EnumDownSyndromeStatus",
+               "description": "Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)"
+            },
+            "ethnicity": {
+               "$ref": "#/$defs/EnumEthnicity",
+               "description": "Ethnicity of participant"
+            },
+            "external_id": {
+               "description": "Unique identifier for the participant, assigned by data contributor",
+               "type": "string"
+            },
+            "family_id": {
+               "description": "Unique identifer for family to which Participant belongs",
+               "type": "string"
+            },
+            "family_relationship": {
+               "description": "Relationship of Participant to other family members",
+               "type": "string"
+            },
+            "family_type": {
+               "$ref": "#/$defs/EnumFamilyType",
+               "description": "Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives)"
+            },
+            "father_id": {
+               "description": "Participant ID for Participant's father",
+               "type": "string"
+            },
+            "has_datafile": {
+               "description": "Semantic link to a DataFile",
+               "type": "string"
+            },
+            "has_study": {
+               "$ref": "#/$defs/Study",
+               "description": "Semantic link to a Study"
+            },
+            "mother_id": {
+               "description": "Participant ID for Participant's mother",
+               "type": "string"
+            },
+            "outcomes_vital_status": {
+               "description": "Whether participant is alive or dead [need valid values]",
+               "type": "string"
+            },
+            "participant_id": {
+               "description": "Unique identifier for the participant, assigned by DCC",
+               "type": "string"
+            },
+            "phenotype__hpo": {
+               "description": "Human Phenotype Ontology code (annotated by data contributor or DCC)",
+               "type": "string"
+            },
+            "phenotype__source_text": {
+               "description": "Phenotype as described by data contributor",
+               "type": "string"
+            },
+            "phenotype_interpretation": {
+               "$ref": "#/$defs/EnumPhenotypeInterpretation",
+               "description": "Whether phenotype was observed or not"
+            },
+            "race": {
+               "$ref": "#/$defs/EnumRace",
+               "description": "Race of participant"
+            },
+            "sex": {
+               "$ref": "#/$defs/EnumSex",
+               "description": "Sex of participant"
+            }
+         },
+         "required": [
+            "down_syndrome_status",
+            "ethnicity",
+            "external_id",
+            "participant_id",
+            "race",
+            "sex"
+         ],
+         "title": "Participant",
+         "type": "object"
+      },
+      "Study": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "dbgap": {
+               "description": "dbGaP study accession code",
+               "type": "string"
+            },
+            "program": {
+               "$ref": "#/$defs/EnumProgram",
+               "description": "Funding source for the study ??"
+            },
+            "study_code": {
+               "$ref": "#/$defs/EnumStudyCode",
+               "description": "Unique identifer for the study, assigned by DCC"
+            },
+            "study_name": {
+               "description": "Name of the study, chosen by data contributor",
+               "type": "string"
+            }
+         },
+         "required": [
+            "program",
+            "study_code",
+            "study_name"
+         ],
+         "title": "Study",
+         "type": "object"
+      }
+   },
+   "$id": "https://w3id.org/include_portal_v1_schema",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "additionalProperties": true,
+   "metamodel_version": "1.7.0",
+   "properties": {},
+   "required": [],
+   "title": "IncludePortalV1",
+   "type": "object",
+   "version": null
+}

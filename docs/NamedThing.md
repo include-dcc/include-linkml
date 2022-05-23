@@ -1,28 +1,64 @@
-
 # Class: NamedThing
 
 
-root class
+
 
 URI: [include:NamedThing](https://w3id.org/include/NamedThing)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Participant],[NamedThing&#124;id:string]^-[Study],[NamedThing]^-[Participant],[NamedThing]^-[DataFile],[NamedThing]^-[Biospecimen],[DataFile],[Biospecimen])](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Participant],[NamedThing&#124;id:string]^-[Study],[NamedThing]^-[Participant],[NamedThing]^-[DataFile],[NamedThing]^-[Biospecimen],[DataFile],[Biospecimen])
-
-## Children
-
- * [Biospecimen](Biospecimen.md)
- * [DataFile](DataFile.md)
- * [Participant](Participant.md)
- * [Study](Study.md)
-
-## Referenced by Class
 
 
-## Attributes
+## Inheritance
+
+* **NamedThing**
+    * [Biospecimen](Biospecimen.md)
+    * [DataFile](DataFile.md)
+    * [Participant](Participant.md)
+    * [Study](Study.md)
 
 
-### Own
 
- * [id](id.md)  <sub>1..1</sub>
-     * Range: [String](types/String.md)
+
+## Slots
+
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+
+
+## Usages
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: NamedThing
+from_schema: https://w3id.org/include_portal_v1_schema
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: NamedThing
+from_schema: https://w3id.org/include_portal_v1_schema
+
+```
+</details>

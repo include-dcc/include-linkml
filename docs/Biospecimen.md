@@ -1,4 +1,3 @@
-
 # Class: Biospecimen
 
 
@@ -7,68 +6,335 @@
 URI: [include:Biospecimen](https://w3id.org/include/Biospecimen)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Participant],[NamedThing],[DataFile],[DataFile]<has_datafile%200..1-%20[Biospecimen&#124;age_at_biospecimen_collection__days:integer%20%3F;biospecimen_storage:string%20%3F;collection_id:string%20%3F;collection_sample_type:string%20%3F;container_id:string%20%3F;laboratory_procedure:string%20%3F;parent_sample_id:string%20%3F;parent_sample_type:string%20%3F;sample_availability:enum_sample_availability%20%3F;sample_id:string%20%3F;sample_type:string%20%3F;volume:string%20%3F;volume_unit:string%20%3F;id(i):string],[Participant]<has_participant%200..1-%20[Biospecimen],[Study]<has_study%200..1-%20[Biospecimen],[DataFile]-%20has_biospecimen%200..1>[Biospecimen],[NamedThing]^-[Biospecimen])](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Participant],[NamedThing],[DataFile],[DataFile]<has_datafile%200..1-%20[Biospecimen&#124;age_at_biospecimen_collection__days:integer%20%3F;biospecimen_storage:string%20%3F;collection_id:string%20%3F;collection_sample_type:string%20%3F;container_id:string%20%3F;laboratory_procedure:string%20%3F;parent_sample_id:string%20%3F;parent_sample_type:string%20%3F;sample_availability:enum_sample_availability%20%3F;sample_id:string%20%3F;sample_type:string%20%3F;volume:string%20%3F;volume_unit:string%20%3F;id(i):string],[Participant]<has_participant%200..1-%20[Biospecimen],[Study]<has_study%200..1-%20[Biospecimen],[DataFile]-%20has_biospecimen%200..1>[Biospecimen],[NamedThing]^-[Biospecimen])
-
-## Parents
-
- *  is_a: [NamedThing](NamedThing.md) - root class
-
-## Referenced by Class
-
- *  **None** *[has_biospecimen](has_biospecimen.md)*  <sub>0..1</sub>  **[Biospecimen](Biospecimen.md)**
-
-## Attributes
 
 
-### Own
+## Inheritance
 
- * [has_study](has_study.md)  <sub>0..1</sub>
-     * Range: [Study](Study.md)
- * [has_participant](has_participant.md)  <sub>0..1</sub>
-     * Range: [Participant](Participant.md)
- * [has_datafile](has_datafile.md)  <sub>0..1</sub>
-     * Range: [DataFile](DataFile.md)
- * [➞age_at_biospecimen_collection__days](biospecimen__age_at_biospecimen_collection__days.md)  <sub>0..1</sub>
-     * Description: Age (in days) of participant at time of biospecimen collection
-     * Range: [Integer](types/Integer.md)
- * [➞biospecimen_storage](biospecimen__biospecimen_storage.md)  <sub>0..1</sub>
-     * Description: Method by which Sample is stored
-     * Range: [String](types/String.md)
- * [➞collection_id](biospecimen__collection_id.md)  <sub>0..1</sub>
-     * Description: Identifier for a collection event, during which one or more primary samples are collected, assigned by DCC. Referenced in time with respect to clinical course or to other collection events.
-     * Range: [String](types/String.md)
- * [➞collection_sample_type](biospecimen__collection_sample_type.md)  <sub>0..1</sub>
-     * Description: Type of biological material comprising the collected sample
-     * Range: [String](types/String.md)
- * [➞container_id](biospecimen__container_id.md)  <sub>0..1</sub>
-     * Description: Unique identifier for specific container of sample, assigned by DCC or contributor??. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.
-     * Range: [String](types/String.md)
- * [➞laboratory_procedure](biospecimen__laboratory_procedure.md)  <sub>0..1</sub>
-     * Description: Procedure by which Sample was derived from Parent Sample
-     * Range: [String](types/String.md)
- * [➞parent_sample_id](biospecimen__parent_sample_id.md)  <sub>0..1</sub>
-     * Description: Identifier from Parent Sample from which Sample was derived (if applicable)
-     * Range: [String](types/String.md)
- * [➞parent_sample_type](biospecimen__parent_sample_type.md)  <sub>0..1</sub>
-     * Description: Type of Parent Sample
-     * Range: [String](types/String.md)
- * [➞sample_availability](biospecimen__sample_availability.md)  <sub>0..1</sub>
-     * Description: Whether or not the container (or sample??) is available for sharing through the Virtual Biorepository
-     * Range: [enum_sample_availability](enum_sample_availability.md)
- * [➞sample_id](biospecimen__sample_id.md)  <sub>0..1</sub>
-     * Description: Identifier for sample, assigned (by DCC or contributor??) at time of collection, processing, treatment, or derivation. A sample is a unique biological material; two samples with two different IDs are biologically distinct.
-     * Range: [String](types/String.md)
- * [➞sample_type](biospecimen__sample_type.md)  <sub>0..1</sub>
-     * Description: Type of biological material comprising the sample
-     * Range: [String](types/String.md)
- * [➞volume](biospecimen__volume.md)  <sub>0..1</sub>
-     * Description: Amount of sample in container
-     * Range: [String](types/String.md)
- * [➞volume_unit](biospecimen__volume_unit.md)  <sub>0..1</sub>
-     * Description: Unit of sample volume
-     * Range: [String](types/String.md)
+* [NamedThing](NamedThing.md)
+    * **Biospecimen**
 
-### Inherited from NamedThing:
 
- * [id](id.md)  <sub>1..1</sub>
-     * Range: [String](types/String.md)
+
+
+## Slots
+
+| Name | Range | Cardinality | Description  | Info |
+| ---  | --- | --- | --- | --- |
+| [age_at_biospecimen_collection__days](age_at_biospecimen_collection__days.md) | [integer](integer.md) | 0..1 | Age (in days) of participant at time of biospecimen collection  | . |
+| [biospecimen_storage](biospecimen_storage.md) | [string](string.md) | 0..1 | Method by which Sample is stored  | . |
+| [collection_id](collection_id.md) | [string](string.md) | 0..1 | Identifier for a collection event, during which one or more primary samples are collected, assigned by DCC. Referenced in time with respect to clinical course or to other collection events.  | . |
+| [collection_sample_type](collection_sample_type.md) | [string](string.md) | 0..1 | Type of biological material comprising the collected sample  | . |
+| [container_id](container_id.md) | [string](string.md) | 0..1 | Unique identifier for specific container of sample, assigned by DCC or contributor??. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.  | . |
+| [has_datafile](has_datafile.md) | [DataFile](DataFile.md) | 0..1 | Semantic link to a DataFile  | . |
+| [has_participant](has_participant.md) | [Participant](Participant.md) | 0..1 | Semantic link to a Participant  | . |
+| [has_study](has_study.md) | [Study](Study.md) | 0..1 | Semantic link to a Study  | . |
+| [laboratory_procedure](laboratory_procedure.md) | [string](string.md) | 0..1 | Procedure by which Sample was derived from Parent Sample  | . |
+| [parent_sample_id](parent_sample_id.md) | [string](string.md) | 0..1 | Identifier from Parent Sample from which Sample was derived (if applicable)  | . |
+| [parent_sample_type](parent_sample_type.md) | [string](string.md) | 0..1 | Type of Parent Sample  | . |
+| [sample_availability](sample_availability.md) | [EnumSampleAvailability](EnumSampleAvailability.md) | 0..1 | Whether or not the container (or sample??) is available for sharing through the Virtual Biorepository  | . |
+| [sample_id](sample_id.md) | [string](string.md) | 0..1 | Identifier for sample, assigned (by DCC or contributor??) at time of collection, processing, treatment, or derivation. A sample is a unique biological material; two samples with two different IDs are biologically distinct.  | . |
+| [sample_type](sample_type.md) | [string](string.md) | 0..1 | Type of biological material comprising the sample  | . |
+| [volume](volume.md) | [string](string.md) | 0..1 | Amount of sample in container  | . |
+| [volume_unit](volume_unit.md) | [string](string.md) | 0..1 | Unit of sample volume  | . |
+
+
+## Usages
+
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [DataFile](DataFile.md) | [has_biospecimen](has_biospecimen.md) | range | Biospecimen |
+
+
+
+## Identifier and Mapping Information
+
+
+
+
+
+
+
+
+
+## LinkML Specification
+
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+
+### Direct
+
+<details>
+```yaml
+name: Biospecimen
+from_schema: https://w3id.org/include_portal_v1_schema
+is_a: NamedThing
+slots:
+- age_at_biospecimen_collection__days
+- biospecimen_storage
+- collection_id
+- collection_sample_type
+- container_id
+- has_datafile
+- has_participant
+- has_study
+- laboratory_procedure
+- parent_sample_id
+- parent_sample_type
+- sample_availability
+- sample_id
+- sample_type
+- volume
+- volume_unit
+slot_usage:
+  age_at_biospecimen_collection__days:
+    name: age_at_biospecimen_collection__days
+    description: Age (in days) of participant at time of biospecimen collection
+    range: integer
+  biospecimen_storage:
+    name: biospecimen_storage
+    description: Method by which Sample is stored
+  collection_id:
+    name: collection_id
+    description: Identifier for a collection event, during which one or more primary
+      samples are collected, assigned by DCC. Referenced in time with respect to clinical
+      course or to other collection events.
+  collection_sample_type:
+    name: collection_sample_type
+    description: Type of biological material comprising the collected sample
+  container_id:
+    name: container_id
+    description: Unique identifier for specific container of sample, assigned by DCC
+      or contributor??. For example, distinct aliquots of a sample will have the same
+      Sample ID but different Container IDs.
+  has_datafile:
+    name: has_datafile
+    range: DataFile
+  has_participant:
+    name: has_participant
+    range: Participant
+  has_study:
+    name: has_study
+    range: Study
+  laboratory_procedure:
+    name: laboratory_procedure
+    description: Procedure by which Sample was derived from Parent Sample
+  parent_sample_id:
+    name: parent_sample_id
+    description: Identifier from Parent Sample from which Sample was derived (if applicable)
+  parent_sample_type:
+    name: parent_sample_type
+    description: Type of Parent Sample
+  sample_availability:
+    name: sample_availability
+    description: Whether or not the container (or sample??) is available for sharing
+      through the Virtual Biorepository
+    range: enum_sample_availability
+  sample_id:
+    name: sample_id
+    description: Identifier for sample, assigned (by DCC or contributor??) at time
+      of collection, processing, treatment, or derivation. A sample is a unique biological
+      material; two samples with two different IDs are biologically distinct.
+    identifier: true
+  sample_type:
+    name: sample_type
+    description: Type of biological material comprising the sample
+  volume:
+    name: volume
+    description: Amount of sample in container
+  volume_unit:
+    name: volume_unit
+    description: Unit of sample volume
+
+```
+</details>
+
+### Induced
+
+<details>
+```yaml
+name: Biospecimen
+from_schema: https://w3id.org/include_portal_v1_schema
+is_a: NamedThing
+slot_usage:
+  age_at_biospecimen_collection__days:
+    name: age_at_biospecimen_collection__days
+    description: Age (in days) of participant at time of biospecimen collection
+    range: integer
+  biospecimen_storage:
+    name: biospecimen_storage
+    description: Method by which Sample is stored
+  collection_id:
+    name: collection_id
+    description: Identifier for a collection event, during which one or more primary
+      samples are collected, assigned by DCC. Referenced in time with respect to clinical
+      course or to other collection events.
+  collection_sample_type:
+    name: collection_sample_type
+    description: Type of biological material comprising the collected sample
+  container_id:
+    name: container_id
+    description: Unique identifier for specific container of sample, assigned by DCC
+      or contributor??. For example, distinct aliquots of a sample will have the same
+      Sample ID but different Container IDs.
+  has_datafile:
+    name: has_datafile
+    range: DataFile
+  has_participant:
+    name: has_participant
+    range: Participant
+  has_study:
+    name: has_study
+    range: Study
+  laboratory_procedure:
+    name: laboratory_procedure
+    description: Procedure by which Sample was derived from Parent Sample
+  parent_sample_id:
+    name: parent_sample_id
+    description: Identifier from Parent Sample from which Sample was derived (if applicable)
+  parent_sample_type:
+    name: parent_sample_type
+    description: Type of Parent Sample
+  sample_availability:
+    name: sample_availability
+    description: Whether or not the container (or sample??) is available for sharing
+      through the Virtual Biorepository
+    range: enum_sample_availability
+  sample_id:
+    name: sample_id
+    description: Identifier for sample, assigned (by DCC or contributor??) at time
+      of collection, processing, treatment, or derivation. A sample is a unique biological
+      material; two samples with two different IDs are biologically distinct.
+    identifier: true
+  sample_type:
+    name: sample_type
+    description: Type of biological material comprising the sample
+  volume:
+    name: volume
+    description: Amount of sample in container
+  volume_unit:
+    name: volume_unit
+    description: Unit of sample volume
+attributes:
+  age_at_biospecimen_collection__days:
+    name: age_at_biospecimen_collection__days
+    description: Age (in days) of participant at time of biospecimen collection
+    from_schema: https://w3id.org/include_portal_v1_schema
+    alias: age_at_biospecimen_collection__days
+    owner: Biospecimen
+    range: integer
+  biospecimen_storage:
+    name: biospecimen_storage
+    description: Method by which Sample is stored
+    from_schema: https://w3id.org/include_portal_v1_schema
+    alias: biospecimen_storage
+    owner: Biospecimen
+    range: string
+  collection_id:
+    name: collection_id
+    description: Identifier for a collection event, during which one or more primary
+      samples are collected, assigned by DCC. Referenced in time with respect to clinical
+      course or to other collection events.
+    from_schema: https://w3id.org/include_portal_v1_schema
+    alias: collection_id
+    owner: Biospecimen
+    range: string
+  collection_sample_type:
+    name: collection_sample_type
+    description: Type of biological material comprising the collected sample
+    from_schema: https://w3id.org/include_portal_v1_schema
+    alias: collection_sample_type
+    owner: Biospecimen
+    range: string
+  container_id:
+    name: container_id
+    description: Unique identifier for specific container of sample, assigned by DCC
+      or contributor??. For example, distinct aliquots of a sample will have the same
+      Sample ID but different Container IDs.
+    from_schema: https://w3id.org/include_portal_v1_schema
+    alias: container_id
+    owner: Biospecimen
+    range: string
+  has_datafile:
+    name: has_datafile
+    description: Semantic link to a DataFile
+    from_schema: https://w3id.org/include_portal_v1_schema
+    alias: has_datafile
+    owner: Biospecimen
+    range: DataFile
+  has_participant:
+    name: has_participant
+    description: Semantic link to a Participant
+    from_schema: https://w3id.org/include_portal_v1_schema
+    alias: has_participant
+    owner: Biospecimen
+    range: Participant
+  has_study:
+    name: has_study
+    description: Semantic link to a Study
+    from_schema: https://w3id.org/include_portal_v1_schema
+    alias: has_study
+    owner: Biospecimen
+    range: Study
+  laboratory_procedure:
+    name: laboratory_procedure
+    description: Procedure by which Sample was derived from Parent Sample
+    from_schema: https://w3id.org/include_portal_v1_schema
+    alias: laboratory_procedure
+    owner: Biospecimen
+    range: string
+  parent_sample_id:
+    name: parent_sample_id
+    description: Identifier from Parent Sample from which Sample was derived (if applicable)
+    from_schema: https://w3id.org/include_portal_v1_schema
+    alias: parent_sample_id
+    owner: Biospecimen
+    range: string
+  parent_sample_type:
+    name: parent_sample_type
+    description: Type of Parent Sample
+    from_schema: https://w3id.org/include_portal_v1_schema
+    alias: parent_sample_type
+    owner: Biospecimen
+    range: string
+  sample_availability:
+    name: sample_availability
+    description: Whether or not the container (or sample??) is available for sharing
+      through the Virtual Biorepository
+    from_schema: https://w3id.org/include_portal_v1_schema
+    alias: sample_availability
+    owner: Biospecimen
+    range: enum_sample_availability
+  sample_id:
+    name: sample_id
+    description: Identifier for sample, assigned (by DCC or contributor??) at time
+      of collection, processing, treatment, or derivation. A sample is a unique biological
+      material; two samples with two different IDs are biologically distinct.
+    from_schema: https://w3id.org/include_portal_v1_schema
+    identifier: true
+    alias: sample_id
+    owner: Biospecimen
+    range: string
+  sample_type:
+    name: sample_type
+    description: Type of biological material comprising the sample
+    from_schema: https://w3id.org/include_portal_v1_schema
+    alias: sample_type
+    owner: Biospecimen
+    range: string
+  volume:
+    name: volume
+    description: Amount of sample in container
+    from_schema: https://w3id.org/include_portal_v1_schema
+    alias: volume
+    owner: Biospecimen
+    range: string
+  volume_unit:
+    name: volume_unit
+    description: Unit of sample volume
+    from_schema: https://w3id.org/include_portal_v1_schema
+    alias: volume_unit
+    owner: Biospecimen
+    range: string
+
+```
+</details>

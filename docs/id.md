@@ -1,26 +1,21 @@
-
 # Slot: id
 
+URI: [http://schema.org/identifier](http://schema.org/identifier)
 
 
 
-URI: [include:id](https://w3id.org/include/id)
+<!-- no inheritance hierarchy -->
 
 
-## Domain and Range
+## Properties
 
-None &#8594;  <sub>1..1</sub> [String](types/String.md)
-
-## Parents
+ * Range: None
 
 
-## Children
+
+## Identifier and Mapping Information
 
 
-## Used by
 
- * [Biospecimen](Biospecimen.md)
- * [DataFile](DataFile.md)
- * [NamedThing](NamedThing.md)
- * [Participant](Participant.md)
- * [Study](Study.md)
+
+
