@@ -1,0 +1,79 @@
+type Biospecimen
+  {
+    ageAtBiospecimenCollectionDays: Integer
+    biospecimenStorage: String
+    collectionId: String
+    collectionSampleType: String
+    containerId: String
+    hasDatafile: DataFile
+    hasParticipant: Participant
+    hasStudy: Study
+    laboratoryProcedure: String
+    parentSampleId: String
+    parentSampleType: String
+    sampleAvailability: EnumSampleAvailability
+    sampleId: String!
+    sampleType: String
+    volume: String
+    volumeUnit: String
+  }
+
+type DataFile
+  {
+    accessUrl: String
+    collectionId: String
+    dataAccess: EnumDataAccess
+    dataCategory: String
+    dataType: String
+    experimentalStrategy: String
+    fileId: String!
+    fileName: String
+    format: String
+    hasBiospecimen: Biospecimen
+    hasParticipant: Participant
+    hasStudy: Study
+    participantId: String
+    size: String
+  }
+
+type NamedThing
+  {
+  }
+
+type Participant
+  {
+    ageAtDiagnosisDays: Integer
+    ageAtPhenotypeAssignmentDays: Integer
+    ageAtTheLastVitalStatusDays: Integer
+    diagnosisIcd: String
+    diagnosisMondo: String
+    diagnosisNcit: String
+    diagnosisSourceText: String
+    diagnosisType: String
+    downSyndromeStatus: EnumDownSyndromeStatus!
+    ethnicity: EnumEthnicity!
+    externalId: String!
+    familyId: String
+    familyRelationship: String
+    familyType: EnumFamilyType
+    fatherId: String
+    hasDatafile: DataFile
+    hasStudy: Study
+    motherId: String
+    outcomesVitalStatus: String
+    participantId: String!
+    phenotypeHpo: String
+    phenotypeSourceText: String
+    phenotypeInterpretation: EnumPhenotypeInterpretation
+    race: EnumRace!
+    sex: EnumSex!
+  }
+
+type Study
+  {
+    dbgap: String
+    program: EnumProgram!
+    studyCode: EnumStudyCode!
+    studyName: String!
+  }
+

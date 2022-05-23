@@ -163,5 +163,8 @@
                 "uri": "https://w3id.org/include/"
             }
         }
+    },
+    "6": {
+        "wrapStrategy": "WRAP"
     }
 }

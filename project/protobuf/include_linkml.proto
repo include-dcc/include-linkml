@@ -1,0 +1,71 @@
+message Biospecimen
+ {
+  optional ageAtBiospecimenCollectionDays Integer = 1
+  optional biospecimenStorage String = 2
+  optional collectionId String = 3
+  optional collectionSampleType String = 4
+  optional containerId String = 5
+  optional hasDatafile DataFile = 6
+  optional hasParticipant Participant = 7
+  optional hasStudy Study = 8
+  optional laboratoryProcedure String = 9
+  optional parentSampleId String = 10
+  optional parentSampleType String = 11
+  optional sampleAvailability EnumSampleAvailability = 12
+  sampleId String = 13
+  optional sampleType String = 14
+  optional volume String = 15
+  optional volumeUnit String = 16
+ }
+message DataFile
+ {
+  optional accessUrl String = 1
+  optional collectionId String = 2
+  optional dataAccess EnumDataAccess = 3
+  optional dataCategory String = 4
+  optional dataType String = 5
+  optional experimentalStrategy String = 6
+  fileId String = 7
+  optional fileName String = 8
+  optional format String = 9
+  optional hasBiospecimen Biospecimen = 10
+  optional hasParticipant Participant = 11
+  optional hasStudy Study = 12
+  optional participantId String = 13
+  optional size String = 14
+ }
+message Participant
+ {
+  optional ageAtDiagnosisDays Integer = 1
+  optional ageAtPhenotypeAssignmentDays Integer = 2
+  optional ageAtTheLastVitalStatusDays Integer = 3
+  optional diagnosisIcd String = 4
+  optional diagnosisMondo String = 5
+  optional diagnosisNcit String = 6
+  optional diagnosisSourceText String = 7
+  optional diagnosisType String = 8
+  downSyndromeStatus EnumDownSyndromeStatus = 9
+  ethnicity EnumEthnicity = 10
+  externalId String = 11
+  optional familyId String = 12
+  optional familyRelationship String = 13
+  optional familyType EnumFamilyType = 14
+  optional fatherId String = 15
+  optional hasDatafile DataFile = 16
+  optional hasStudy Study = 17
+  optional motherId String = 18
+  optional outcomesVitalStatus String = 19
+  participantId String = 20
+  optional phenotypeHpo String = 21
+  optional phenotypeSourceText String = 22
+  optional phenotypeInterpretation EnumPhenotypeInterpretation = 23
+  race EnumRace = 24
+  sex EnumSex = 25
+ }
+message Study
+ {
+  optional dbgap String = 1
+  program EnumProgram = 2
+  studyCode EnumStudyCode = 3
+  studyName String = 4
+ }

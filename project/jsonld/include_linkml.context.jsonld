@@ -1,0 +1,23 @@
+{
+   "_comments": "Auto generated from include_linkml.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-05-23T07:56:40\n    Schema: IncludePortalV1\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/include_portal_v1_schema\n    description: Initial Include Portal Schema\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "@context": {
+      "include": "https://w3id.org/include/",
+      "linkml": "https://w3id.org/linkml/",
+      "@vocab": "https://w3id.org/include/",
+      "sample_id": "@id",
+      "file_id": "@id",
+      "has_biospecimen": {
+         "@type": "@id"
+      },
+      "has_datafile": {
+         "@type": "@id"
+      },
+      "has_participant": {
+         "@type": "@id"
+      },
+      "has_study": {
+         "@type": "@id"
+      },
+      "participant_id": "@id"
+   }
+}

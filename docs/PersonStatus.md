@@ -1,22 +1,21 @@
+# PersonStatus
 
-# Enum: PersonStatus
+None
 
-
-
-
-URI: [include:PersonStatus](https://w3id.org/include/PersonStatus)
-
-
-## Other properties
-
-|  |  |  |
-| --- | --- | --- |
+URI: PersonStatus
 
 ## Permissible Values
 
-| Text | Description | Meaning | Other Information |
-| :--- | :---: | :---: | ---: |
-| ALIVE |  |  |  |
-| DEAD |  |  |  |
-| UNKNOWN |  |  |  |
+| Value | Meaning | Description | Info |
+| --- | --- | --- | --- |
+| ALIVE | PATO:0001421 | the person is living | |
+| DEAD | PATO:0001422 | the person is deceased | |
+| UNKNOWN | None | the vital status is not known | |
+
+
+## Identifier and Mapping Information
+
+
+
+
 

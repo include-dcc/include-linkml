@@ -1,0 +1,2209 @@
+{
+  "name": "IncludePortalV1",
+  "description": "Initial Include Portal Schema",
+  "id": "https://w3id.org/include_portal_v1_schema",
+  "imports": [
+    "linkml:types"
+  ],
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "prefixes": [
+    {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    },
+    {
+      "prefix_prefix": "include",
+      "prefix_reference": "https://w3id.org/include/"
+    }
+  ],
+  "default_prefix": "include",
+  "default_range": "string",
+  "types": [
+    {
+      "name": "string",
+      "definition_uri": "https://w3id.org/linkml/String",
+      "description": "A character string",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "str",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "integer",
+      "definition_uri": "https://w3id.org/linkml/Integer",
+      "description": "An integer",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "int",
+      "uri": "http://www.w3.org/2001/XMLSchema#integer",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "boolean",
+      "definition_uri": "https://w3id.org/linkml/Boolean",
+      "description": "A binary (true or false) value",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "Bool",
+      "uri": "http://www.w3.org/2001/XMLSchema#boolean",
+      "repr": "bool",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "float",
+      "definition_uri": "https://w3id.org/linkml/Float",
+      "description": "A real number that conforms to the xsd:float specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#float",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "double",
+      "definition_uri": "https://w3id.org/linkml/Double",
+      "description": "A real number that conforms to the xsd:double specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "float",
+      "uri": "http://www.w3.org/2001/XMLSchema#double",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "decimal",
+      "definition_uri": "https://w3id.org/linkml/Decimal",
+      "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "Decimal",
+      "uri": "http://www.w3.org/2001/XMLSchema#decimal",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "time",
+      "definition_uri": "https://w3id.org/linkml/Time",
+      "description": "A time object represents a (local) time of day, independent of any particular day",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "date",
+      "definition_uri": "https://w3id.org/linkml/Date",
+      "description": "a date (year, month and day) in an idealized calendar",
+      "notes": [
+        "URI is dateTime because OWL reasoners don't work with straight date or time"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDDate",
+      "uri": "http://www.w3.org/2001/XMLSchema#date",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "datetime",
+      "definition_uri": "https://w3id.org/linkml/Datetime",
+      "description": "The combination of a date and time",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "XSDDateTime",
+      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uriorcurie",
+      "definition_uri": "https://w3id.org/linkml/Uriorcurie",
+      "description": "a URI or a CURIE",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "URIorCURIE",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "uri",
+      "definition_uri": "https://w3id.org/linkml/Uri",
+      "description": "a complete URI",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "URI",
+      "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "ncname",
+      "definition_uri": "https://w3id.org/linkml/Ncname",
+      "description": "Prefix part of CURIE",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NCName",
+      "uri": "http://www.w3.org/2001/XMLSchema#string",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "objectidentifier",
+      "definition_uri": "https://w3id.org/linkml/Objectidentifier",
+      "description": "A URI or CURIE that represents an object in the model.",
+      "comments": [
+        "Used for inheritence and type checking"
+      ],
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "ElementIdentifier",
+      "uri": "http://www.w3.org/ns/shex#iri",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    },
+    {
+      "name": "nodeidentifier",
+      "definition_uri": "https://w3id.org/linkml/Nodeidentifier",
+      "description": "A URI, CURIE or BNODE that represents a node in a model.",
+      "from_schema": "https://w3id.org/linkml/types",
+      "imported_from": "linkml:types",
+      "base": "NodeIdentifier",
+      "uri": "http://www.w3.org/ns/shex#nonLiteral",
+      "repr": "str",
+      "@type": "TypeDefinition"
+    }
+  ],
+  "enums": [
+    {
+      "name": "enum_data_access",
+      "definition_uri": "https://w3id.org/include/EnumDataAccess",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "permissible_values": [
+        {
+          "text": "Controlled"
+        },
+        {
+          "text": "Open"
+        },
+        {
+          "text": "Registered"
+        }
+      ]
+    },
+    {
+      "name": "enum_down_syndrome_status",
+      "definition_uri": "https://w3id.org/include/EnumDownSyndromeStatus",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "permissible_values": [
+        {
+          "text": "D21"
+        },
+        {
+          "text": "T21"
+        }
+      ]
+    },
+    {
+      "name": "enum_ethnicity",
+      "definition_uri": "https://w3id.org/include/EnumEthnicity",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "permissible_values": [
+        {
+          "text": "Asked but unknown"
+        },
+        {
+          "text": "Hispanic or Latino"
+        },
+        {
+          "text": "Not Hispanic or Latino"
+        }
+      ]
+    },
+    {
+      "name": "enum_family_type",
+      "definition_uri": "https://w3id.org/include/EnumFamilyType",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "permissible_values": [
+        {
+          "text": "Duo"
+        },
+        {
+          "text": "Other"
+        },
+        {
+          "text": "Proband-only"
+        },
+        {
+          "text": "Trio"
+        }
+      ]
+    },
+    {
+      "name": "enum_phenotype_interpretation",
+      "definition_uri": "https://w3id.org/include/EnumPhenotypeInterpretation",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "permissible_values": [
+        {
+          "text": "Not Observed"
+        },
+        {
+          "text": "Observed"
+        }
+      ]
+    },
+    {
+      "name": "enum_program",
+      "definition_uri": "https://w3id.org/include/EnumProgram",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "permissible_values": [
+        {
+          "text": "INCLUDE"
+        },
+        {
+          "text": "KF"
+        }
+      ]
+    },
+    {
+      "name": "enum_race",
+      "definition_uri": "https://w3id.org/include/EnumRace",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "permissible_values": [
+        {
+          "text": "American Indian or Alaska Native"
+        },
+        {
+          "text": "Asian"
+        },
+        {
+          "text": "Black or African American"
+        },
+        {
+          "text": "More than one race"
+        },
+        {
+          "text": "Native Hawaiian or Other Pacific Islander"
+        },
+        {
+          "text": "Other"
+        },
+        {
+          "text": "White"
+        }
+      ]
+    },
+    {
+      "name": "enum_sample_availability",
+      "definition_uri": "https://w3id.org/include/EnumSampleAvailability",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "permissible_values": [
+        {
+          "text": "Available"
+        },
+        {
+          "text": "Unavailable"
+        }
+      ]
+    },
+    {
+      "name": "enum_sex",
+      "definition_uri": "https://w3id.org/include/EnumSex",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "permissible_values": [
+        {
+          "text": "Female"
+        },
+        {
+          "text": "Male"
+        },
+        {
+          "text": "Other"
+        },
+        {
+          "text": "Unknown"
+        }
+      ]
+    },
+    {
+      "name": "enum_study_code",
+      "definition_uri": "https://w3id.org/include/EnumStudyCode",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "permissible_values": [
+        {
+          "text": "DS-COG-ALL"
+        },
+        {
+          "text": "DS-PCGC"
+        },
+        {
+          "text": "DS360-CHD"
+        },
+        {
+          "text": "DSC"
+        },
+        {
+          "text": "HTP"
+        }
+      ]
+    }
+  ],
+  "slots": [
+    {
+      "name": "age_at_biospecimen_collection__days",
+      "definition_uri": "https://w3id.org/include/age_at_biospecimen_collection__days",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/age_at_biospecimen_collection__days",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "biospecimen_storage",
+      "definition_uri": "https://w3id.org/include/biospecimen_storage",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/biospecimen_storage",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "collection_id",
+      "definition_uri": "https://w3id.org/include/collection_id",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/collection_id",
+      "owner": "DataFile",
+      "domain_of": [
+        "Biospecimen",
+        "DataFile"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "collection_sample_type",
+      "definition_uri": "https://w3id.org/include/collection_sample_type",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/collection_sample_type",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "container_id",
+      "definition_uri": "https://w3id.org/include/container_id",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/container_id",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_datafile",
+      "definition_uri": "https://w3id.org/include/has_datafile",
+      "description": "Semantic link to a DataFile",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/has_datafile",
+      "owner": "Participant",
+      "domain_of": [
+        "Biospecimen",
+        "Participant"
+      ],
+      "range": "DataFile",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_participant",
+      "definition_uri": "https://w3id.org/include/has_participant",
+      "description": "Semantic link to a Participant",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/has_participant",
+      "owner": "DataFile",
+      "domain_of": [
+        "Biospecimen",
+        "DataFile"
+      ],
+      "range": "Participant",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_study",
+      "definition_uri": "https://w3id.org/include/has_study",
+      "description": "Semantic link to a Study",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/has_study",
+      "inlined": true,
+      "owner": "Participant",
+      "domain_of": [
+        "Biospecimen",
+        "DataFile",
+        "Participant"
+      ],
+      "range": "Study",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "laboratory_procedure",
+      "definition_uri": "https://w3id.org/include/laboratory_procedure",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/laboratory_procedure",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "parent_sample_id",
+      "definition_uri": "https://w3id.org/include/parent_sample_id",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/parent_sample_id",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "parent_sample_type",
+      "definition_uri": "https://w3id.org/include/parent_sample_type",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/parent_sample_type",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sample_availability",
+      "definition_uri": "https://w3id.org/include/sample_availability",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/sample_availability",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sample_id",
+      "definition_uri": "https://w3id.org/include/sample_id",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/sample_id",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sample_type",
+      "definition_uri": "https://w3id.org/include/sample_type",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/sample_type",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "volume",
+      "definition_uri": "https://w3id.org/include/volume",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/volume",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "volume_unit",
+      "definition_uri": "https://w3id.org/include/volume_unit",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/volume_unit",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "access_url",
+      "definition_uri": "https://w3id.org/include/access_url",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/access_url",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "data_access",
+      "definition_uri": "https://w3id.org/include/data_access",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/data_access",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "data_category",
+      "definition_uri": "https://w3id.org/include/data_category",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/data_category",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "data_type",
+      "definition_uri": "https://w3id.org/include/data_type",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/data_type",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "experimental_strategy",
+      "definition_uri": "https://w3id.org/include/experimental_strategy",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/experimental_strategy",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "file_id",
+      "definition_uri": "https://w3id.org/include/file_id",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/file_id",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "file_name",
+      "definition_uri": "https://w3id.org/include/file_name",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/file_name",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "format",
+      "definition_uri": "https://w3id.org/include/format",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/format",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_biospecimen",
+      "definition_uri": "https://w3id.org/include/has_biospecimen",
+      "description": "Semantic link to a Biospecimen",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/has_biospecimen",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "range": "Biospecimen",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "participant_id",
+      "definition_uri": "https://w3id.org/include/participant_id",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/participant_id",
+      "owner": "Participant",
+      "domain_of": [
+        "DataFile",
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "size",
+      "definition_uri": "https://w3id.org/include/size",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/size",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "age_at_diagnosis__days",
+      "definition_uri": "https://w3id.org/include/age_at_diagnosis__days",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/age_at_diagnosis__days",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "age_at_phenotype_assignment__days",
+      "definition_uri": "https://w3id.org/include/age_at_phenotype_assignment__days",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/age_at_phenotype_assignment__days",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "age_at_the_last_vital_status__days",
+      "definition_uri": "https://w3id.org/include/age_at_the_last_vital_status__days",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/age_at_the_last_vital_status__days",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "diagnosis__icd",
+      "definition_uri": "https://w3id.org/include/diagnosis__icd",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/diagnosis__icd",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "diagnosis__mondo",
+      "definition_uri": "https://w3id.org/include/diagnosis__mondo",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/diagnosis__mondo",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "diagnosis__ncit",
+      "definition_uri": "https://w3id.org/include/diagnosis__ncit",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/diagnosis__ncit",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "diagnosis__source_text",
+      "definition_uri": "https://w3id.org/include/diagnosis__source_text",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/diagnosis__source_text",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "diagnosis_type",
+      "definition_uri": "https://w3id.org/include/diagnosis_type",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/diagnosis_type",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "down_syndrome_status",
+      "definition_uri": "https://w3id.org/include/down_syndrome_status",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/down_syndrome_status",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ethnicity",
+      "definition_uri": "https://w3id.org/include/ethnicity",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/ethnicity",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "external_id",
+      "definition_uri": "https://w3id.org/include/external_id",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/external_id",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "family_id",
+      "definition_uri": "https://w3id.org/include/family_id",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/family_id",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "family_relationship",
+      "definition_uri": "https://w3id.org/include/family_relationship",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/family_relationship",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "family_type",
+      "definition_uri": "https://w3id.org/include/family_type",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/family_type",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "father_id",
+      "definition_uri": "https://w3id.org/include/father_id",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/father_id",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "mother_id",
+      "definition_uri": "https://w3id.org/include/mother_id",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/mother_id",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "outcomes_vital_status",
+      "definition_uri": "https://w3id.org/include/outcomes_vital_status",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/outcomes_vital_status",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "phenotype__hpo",
+      "definition_uri": "https://w3id.org/include/phenotype__hpo",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/phenotype__hpo",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "phenotype__source_text",
+      "definition_uri": "https://w3id.org/include/phenotype__source_text",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/phenotype__source_text",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "phenotype_interpretation",
+      "definition_uri": "https://w3id.org/include/phenotype_interpretation",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/phenotype_interpretation",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "race",
+      "definition_uri": "https://w3id.org/include/race",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/race",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "sex",
+      "definition_uri": "https://w3id.org/include/sex",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/sex",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "dbgap",
+      "definition_uri": "https://w3id.org/include/dbgap",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/dbgap",
+      "owner": "Study",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "program",
+      "definition_uri": "https://w3id.org/include/program",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/program",
+      "owner": "Study",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "study_code",
+      "definition_uri": "https://w3id.org/include/study_code",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/study_code",
+      "owner": "Study",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "study_name",
+      "definition_uri": "https://w3id.org/include/study_name",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_uri": "https://w3id.org/include/study_name",
+      "owner": "Study",
+      "domain_of": [
+        "Study"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_age_at_biospecimen_collection__days",
+      "definition_uri": "https://w3id.org/include/age_at_biospecimen_collection__days",
+      "description": "Age (in days) of participant at time of biospecimen collection",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "age_at_biospecimen_collection__days",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/age_at_biospecimen_collection__days",
+      "alias": "age_at_biospecimen_collection__days",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "age_at_biospecimen_collection__days",
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_biospecimen_storage",
+      "definition_uri": "https://w3id.org/include/biospecimen_storage",
+      "description": "Method by which Sample is stored",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "biospecimen_storage",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/biospecimen_storage",
+      "alias": "biospecimen_storage",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "biospecimen_storage",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_collection_id",
+      "definition_uri": "https://w3id.org/include/collection_id",
+      "description": "Identifier for a collection event, during which one or more primary samples are collected, assigned by DCC. Referenced in time with respect to clinical course or to other collection events.",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "collection_id",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/collection_id",
+      "alias": "collection_id",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "collection_id",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_collection_sample_type",
+      "definition_uri": "https://w3id.org/include/collection_sample_type",
+      "description": "Type of biological material comprising the collected sample",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "collection_sample_type",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/collection_sample_type",
+      "alias": "collection_sample_type",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "collection_sample_type",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_container_id",
+      "definition_uri": "https://w3id.org/include/container_id",
+      "description": "Unique identifier for specific container of sample, assigned by DCC or contributor??. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "container_id",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/container_id",
+      "alias": "container_id",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "container_id",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_has_datafile",
+      "definition_uri": "https://w3id.org/include/has_datafile",
+      "description": "Semantic link to a DataFile",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "has_datafile",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/has_datafile",
+      "alias": "has_datafile",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_datafile",
+      "range": "DataFile",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_has_participant",
+      "definition_uri": "https://w3id.org/include/has_participant",
+      "description": "Semantic link to a Participant",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "has_participant",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/has_participant",
+      "alias": "has_participant",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_participant",
+      "range": "Participant",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_has_study",
+      "definition_uri": "https://w3id.org/include/has_study",
+      "description": "Semantic link to a Study",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "has_study",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/has_study",
+      "inlined": true,
+      "alias": "has_study",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_study",
+      "range": "Study",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_laboratory_procedure",
+      "definition_uri": "https://w3id.org/include/laboratory_procedure",
+      "description": "Procedure by which Sample was derived from Parent Sample",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "laboratory_procedure",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/laboratory_procedure",
+      "alias": "laboratory_procedure",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "laboratory_procedure",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_parent_sample_id",
+      "definition_uri": "https://w3id.org/include/parent_sample_id",
+      "description": "Identifier from Parent Sample from which Sample was derived (if applicable)",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "parent_sample_id",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/parent_sample_id",
+      "alias": "parent_sample_id",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "parent_sample_id",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_parent_sample_type",
+      "definition_uri": "https://w3id.org/include/parent_sample_type",
+      "description": "Type of Parent Sample",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "parent_sample_type",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/parent_sample_type",
+      "alias": "parent_sample_type",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "parent_sample_type",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_sample_availability",
+      "definition_uri": "https://w3id.org/include/sample_availability",
+      "description": "Whether or not the container (or sample??) is available for sharing through the Virtual Biorepository",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "sample_availability",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/sample_availability",
+      "alias": "sample_availability",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sample_availability",
+      "range": "enum_sample_availability",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_sample_id",
+      "definition_uri": "https://w3id.org/include/sample_id",
+      "description": "Identifier for sample, assigned (by DCC or contributor??) at time of collection, processing, treatment, or derivation. A sample is a unique biological material; two samples with two different IDs are biologically distinct.",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "sample_id",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/sample_id",
+      "identifier": true,
+      "alias": "sample_id",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sample_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_sample_type",
+      "definition_uri": "https://w3id.org/include/sample_type",
+      "description": "Type of biological material comprising the sample",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "sample_type",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/sample_type",
+      "alias": "sample_type",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sample_type",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_volume",
+      "definition_uri": "https://w3id.org/include/volume",
+      "description": "Amount of sample in container",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "volume",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/volume",
+      "alias": "volume",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "volume",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Biospecimen_volume_unit",
+      "definition_uri": "https://w3id.org/include/volume_unit",
+      "description": "Unit of sample volume",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "volume_unit",
+      "domain": "Biospecimen",
+      "slot_uri": "https://w3id.org/include/volume_unit",
+      "alias": "volume_unit",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "volume_unit",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataFile_access_url",
+      "definition_uri": "https://w3id.org/include/access_url",
+      "description": "Storage location for this file ??",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "access_url",
+      "domain": "DataFile",
+      "slot_uri": "https://w3id.org/include/access_url",
+      "alias": "access_url",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "access_url",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataFile_collection_id",
+      "definition_uri": "https://w3id.org/include/collection_id",
+      "description": "List of Collection?? IDs for biospecimens associated with this file",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "collection_id",
+      "domain": "DataFile",
+      "slot_uri": "https://w3id.org/include/collection_id",
+      "alias": "collection_id",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "collection_id",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataFile_data_access",
+      "definition_uri": "https://w3id.org/include/data_access",
+      "description": "Type of access control on this file",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "data_access",
+      "domain": "DataFile",
+      "slot_uri": "https://w3id.org/include/data_access",
+      "alias": "data_access",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "data_access",
+      "range": "enum_data_access",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataFile_data_category",
+      "definition_uri": "https://w3id.org/include/data_category",
+      "description": "General category of data in file, e.g. Clinical; Genomic; Proteomic; Metabolomic",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "data_category",
+      "domain": "DataFile",
+      "slot_uri": "https://w3id.org/include/data_category",
+      "alias": "data_category",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "data_category",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataFile_data_type",
+      "definition_uri": "https://w3id.org/include/data_type",
+      "description": "Specific type of data contained in file, e.g. Simple nucleotide variations; aligned reads; gVCF",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "data_type",
+      "domain": "DataFile",
+      "slot_uri": "https://w3id.org/include/data_type",
+      "alias": "data_type",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "data_type",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataFile_experimental_strategy",
+      "definition_uri": "https://w3id.org/include/experimental_strategy",
+      "description": "Specific experimental method used to obtain data in file, e.g. Whole-genome sequencing; LCMS metabolomics",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "experimental_strategy",
+      "domain": "DataFile",
+      "slot_uri": "https://w3id.org/include/experimental_strategy",
+      "alias": "experimental_strategy",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "experimental_strategy",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataFile_file_id",
+      "definition_uri": "https://w3id.org/include/file_id",
+      "description": "File identifier, assigned by DCC??",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "file_id",
+      "domain": "DataFile",
+      "slot_uri": "https://w3id.org/include/file_id",
+      "identifier": true,
+      "alias": "file_id",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "file_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataFile_file_name",
+      "definition_uri": "https://w3id.org/include/file_name",
+      "description": "Name of file, assigned by data contributor??",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "file_name",
+      "domain": "DataFile",
+      "slot_uri": "https://w3id.org/include/file_name",
+      "alias": "file_name",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "file_name",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataFile_format",
+      "definition_uri": "https://w3id.org/include/format",
+      "description": "Format of file",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "format",
+      "domain": "DataFile",
+      "slot_uri": "https://w3id.org/include/format",
+      "alias": "format",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "format",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataFile_has_biospecimen",
+      "definition_uri": "https://w3id.org/include/has_biospecimen",
+      "description": "Semantic link to a Biospecimen",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "has_biospecimen",
+      "domain": "DataFile",
+      "slot_uri": "https://w3id.org/include/has_biospecimen",
+      "alias": "has_biospecimen",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_biospecimen",
+      "range": "Biospecimen",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataFile_has_participant",
+      "definition_uri": "https://w3id.org/include/has_participant",
+      "description": "Semantic link to a Participant",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "has_participant",
+      "domain": "DataFile",
+      "slot_uri": "https://w3id.org/include/has_participant",
+      "alias": "has_participant",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_participant",
+      "range": "Participant",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataFile_has_study",
+      "definition_uri": "https://w3id.org/include/has_study",
+      "description": "Semantic link to a Study",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "has_study",
+      "domain": "DataFile",
+      "slot_uri": "https://w3id.org/include/has_study",
+      "inlined": true,
+      "alias": "has_study",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_study",
+      "range": "Study",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataFile_participant_id",
+      "definition_uri": "https://w3id.org/include/participant_id",
+      "description": "List of Participant IDs for participants associated with this file",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "participant_id",
+      "domain": "DataFile",
+      "slot_uri": "https://w3id.org/include/participant_id",
+      "alias": "participant_id",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "participant_id",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "DataFile_size",
+      "definition_uri": "https://w3id.org/include/size",
+      "description": "Size of file",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "size",
+      "domain": "DataFile",
+      "slot_uri": "https://w3id.org/include/size",
+      "alias": "size",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "size",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_age_at_diagnosis__days",
+      "definition_uri": "https://w3id.org/include/age_at_diagnosis__days",
+      "description": "Age in days at which phenotype was assigned (or onset??)",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "age_at_diagnosis__days",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/age_at_diagnosis__days",
+      "alias": "age_at_diagnosis__days",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "age_at_diagnosis__days",
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_age_at_phenotype_assignment__days",
+      "definition_uri": "https://w3id.org/include/age_at_phenotype_assignment__days",
+      "description": "Age in days at which phenotype was recorded (or onset??)",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "age_at_phenotype_assignment__days",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/age_at_phenotype_assignment__days",
+      "alias": "age_at_phenotype_assignment__days",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "age_at_phenotype_assignment__days",
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_age_at_the_last_vital_status__days",
+      "definition_uri": "https://w3id.org/include/age_at_the_last_vital_status__days",
+      "description": "Age in days when participant's vital status was last recorded (or actual death date??)",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "age_at_the_last_vital_status__days",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/age_at_the_last_vital_status__days",
+      "alias": "age_at_the_last_vital_status__days",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "age_at_the_last_vital_status__days",
+      "range": "integer",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_diagnosis__icd",
+      "definition_uri": "https://w3id.org/include/diagnosis__icd",
+      "description": "ICD-10 code (annotated by data contributor or DCC)",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "diagnosis__icd",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/diagnosis__icd",
+      "alias": "diagnosis__icd",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "diagnosis__icd",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_diagnosis__mondo",
+      "definition_uri": "https://w3id.org/include/diagnosis__mondo",
+      "description": "Mondo disease ontology code (annotated by data contributor or DCC)",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "diagnosis__mondo",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/diagnosis__mondo",
+      "alias": "diagnosis__mondo",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "diagnosis__mondo",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_diagnosis__ncit",
+      "definition_uri": "https://w3id.org/include/diagnosis__ncit",
+      "description": "NCI Thesaurus code (annotated by data contributor or DCC)",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "diagnosis__ncit",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/diagnosis__ncit",
+      "alias": "diagnosis__ncit",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "diagnosis__ncit",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_diagnosis__source_text",
+      "definition_uri": "https://w3id.org/include/diagnosis__source_text",
+      "description": "Diagnosis as described by data contributor",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "diagnosis__source_text",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/diagnosis__source_text",
+      "alias": "diagnosis__source_text",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "diagnosis__source_text",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_diagnosis_type",
+      "definition_uri": "https://w3id.org/include/diagnosis_type",
+      "description": "How diagnosis was assigned ??",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "diagnosis_type",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/diagnosis_type",
+      "alias": "diagnosis_type",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "diagnosis_type",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_down_syndrome_status",
+      "definition_uri": "https://w3id.org/include/down_syndrome_status",
+      "description": "Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "down_syndrome_status",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/down_syndrome_status",
+      "alias": "down_syndrome_status",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "down_syndrome_status",
+      "range": "enum_down_syndrome_status",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_ethnicity",
+      "definition_uri": "https://w3id.org/include/ethnicity",
+      "description": "Ethnicity of participant",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "ethnicity",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/ethnicity",
+      "alias": "ethnicity",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "ethnicity",
+      "range": "enum_ethnicity",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_external_id",
+      "definition_uri": "https://w3id.org/include/external_id",
+      "description": "Unique identifier for the participant, assigned by data contributor",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "external_id",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/external_id",
+      "alias": "external_id",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "external_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_family_id",
+      "definition_uri": "https://w3id.org/include/family_id",
+      "description": "Unique identifer for family to which Participant belongs",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "family_id",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/family_id",
+      "alias": "family_id",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "family_id",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_family_relationship",
+      "definition_uri": "https://w3id.org/include/family_relationship",
+      "description": "Relationship of Participant to other family members",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "family_relationship",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/family_relationship",
+      "alias": "family_relationship",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "family_relationship",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_family_type",
+      "definition_uri": "https://w3id.org/include/family_type",
+      "description": "Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives)",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "family_type",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/family_type",
+      "alias": "family_type",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "family_type",
+      "range": "enum_family_type",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_father_id",
+      "definition_uri": "https://w3id.org/include/father_id",
+      "description": "Participant ID for Participant's father",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "father_id",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/father_id",
+      "alias": "father_id",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "father_id",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_has_datafile",
+      "definition_uri": "https://w3id.org/include/has_datafile",
+      "description": "Semantic link to a DataFile",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "has_datafile",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/has_datafile",
+      "alias": "has_datafile",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_datafile",
+      "range": "DataFile",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_has_study",
+      "definition_uri": "https://w3id.org/include/has_study",
+      "description": "Semantic link to a Study",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "has_study",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/has_study",
+      "inlined": true,
+      "alias": "has_study",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "has_study",
+      "range": "Study",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_mother_id",
+      "definition_uri": "https://w3id.org/include/mother_id",
+      "description": "Participant ID for Participant's mother",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "mother_id",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/mother_id",
+      "alias": "mother_id",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "mother_id",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_outcomes_vital_status",
+      "definition_uri": "https://w3id.org/include/outcomes_vital_status",
+      "description": "Whether participant is alive or dead [need valid values]",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "outcomes_vital_status",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/outcomes_vital_status",
+      "alias": "outcomes_vital_status",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "outcomes_vital_status",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_participant_id",
+      "definition_uri": "https://w3id.org/include/participant_id",
+      "description": "Unique identifier for the participant, assigned by DCC",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "participant_id",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/participant_id",
+      "identifier": true,
+      "alias": "participant_id",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "participant_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_phenotype__hpo",
+      "definition_uri": "https://w3id.org/include/phenotype__hpo",
+      "description": "Human Phenotype Ontology code (annotated by data contributor or DCC)",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "phenotype__hpo",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/phenotype__hpo",
+      "alias": "phenotype__hpo",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "phenotype__hpo",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_phenotype__source_text",
+      "definition_uri": "https://w3id.org/include/phenotype__source_text",
+      "description": "Phenotype as described by data contributor",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "phenotype__source_text",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/phenotype__source_text",
+      "alias": "phenotype__source_text",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "phenotype__source_text",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_phenotype_interpretation",
+      "definition_uri": "https://w3id.org/include/phenotype_interpretation",
+      "description": "Whether phenotype was observed or not",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "phenotype_interpretation",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/phenotype_interpretation",
+      "alias": "phenotype_interpretation",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "phenotype_interpretation",
+      "range": "enum_phenotype_interpretation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_race",
+      "definition_uri": "https://w3id.org/include/race",
+      "description": "Race of participant",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "race",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/race",
+      "alias": "race",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "race",
+      "range": "enum_race",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_sex",
+      "definition_uri": "https://w3id.org/include/sex",
+      "description": "Sex of participant",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "sex",
+      "domain": "Participant",
+      "slot_uri": "https://w3id.org/include/sex",
+      "alias": "sex",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sex",
+      "range": "enum_sex",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Study_dbgap",
+      "definition_uri": "https://w3id.org/include/dbgap",
+      "description": "dbGaP study accession code",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "dbgap",
+      "domain": "Study",
+      "slot_uri": "https://w3id.org/include/dbgap",
+      "alias": "dbgap",
+      "owner": "Study",
+      "domain_of": [
+        "Study"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "dbgap",
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Study_program",
+      "definition_uri": "https://w3id.org/include/program",
+      "description": "Funding source for the study ??",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "program",
+      "domain": "Study",
+      "slot_uri": "https://w3id.org/include/program",
+      "alias": "program",
+      "owner": "Study",
+      "domain_of": [
+        "Study"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "program",
+      "range": "enum_program",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Study_study_code",
+      "definition_uri": "https://w3id.org/include/study_code",
+      "description": "Unique identifer for the study, assigned by DCC",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "study_code",
+      "domain": "Study",
+      "slot_uri": "https://w3id.org/include/study_code",
+      "alias": "study_code",
+      "owner": "Study",
+      "domain_of": [
+        "Study"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "study_code",
+      "range": "enum_study_code",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Study_study_name",
+      "definition_uri": "https://w3id.org/include/study_name",
+      "description": "Name of the study, chosen by data contributor",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "study_name",
+      "domain": "Study",
+      "slot_uri": "https://w3id.org/include/study_name",
+      "alias": "study_name",
+      "owner": "Study",
+      "domain_of": [
+        "Study"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "study_name",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    }
+  ],
+  "classes": [
+    {
+      "name": "Biospecimen",
+      "definition_uri": "https://w3id.org/include/Biospecimen",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "NamedThing",
+      "slots": [
+        "Biospecimen_age_at_biospecimen_collection__days",
+        "Biospecimen_biospecimen_storage",
+        "Biospecimen_collection_id",
+        "Biospecimen_collection_sample_type",
+        "Biospecimen_container_id",
+        "Biospecimen_has_datafile",
+        "Biospecimen_has_participant",
+        "Biospecimen_has_study",
+        "Biospecimen_laboratory_procedure",
+        "Biospecimen_parent_sample_id",
+        "Biospecimen_parent_sample_type",
+        "Biospecimen_sample_availability",
+        "Biospecimen_sample_id",
+        "Biospecimen_sample_type",
+        "Biospecimen_volume",
+        "Biospecimen_volume_unit"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/include/Biospecimen",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DataFile",
+      "definition_uri": "https://w3id.org/include/DataFile",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "NamedThing",
+      "slots": [
+        "DataFile_access_url",
+        "DataFile_collection_id",
+        "DataFile_data_access",
+        "DataFile_data_category",
+        "DataFile_data_type",
+        "DataFile_experimental_strategy",
+        "DataFile_file_id",
+        "DataFile_file_name",
+        "DataFile_format",
+        "DataFile_has_biospecimen",
+        "DataFile_has_participant",
+        "DataFile_has_study",
+        "DataFile_participant_id",
+        "DataFile_size"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/include/DataFile",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Participant",
+      "definition_uri": "https://w3id.org/include/Participant",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "NamedThing",
+      "slots": [
+        "Participant_age_at_diagnosis__days",
+        "Participant_age_at_phenotype_assignment__days",
+        "Participant_age_at_the_last_vital_status__days",
+        "Participant_diagnosis__icd",
+        "Participant_diagnosis__mondo",
+        "Participant_diagnosis__ncit",
+        "Participant_diagnosis__source_text",
+        "Participant_diagnosis_type",
+        "Participant_down_syndrome_status",
+        "Participant_ethnicity",
+        "Participant_external_id",
+        "Participant_family_id",
+        "Participant_family_relationship",
+        "Participant_family_type",
+        "Participant_father_id",
+        "Participant_has_datafile",
+        "Participant_has_study",
+        "Participant_mother_id",
+        "Participant_outcomes_vital_status",
+        "Participant_participant_id",
+        "Participant_phenotype__hpo",
+        "Participant_phenotype__source_text",
+        "Participant_phenotype_interpretation",
+        "Participant_race",
+        "Participant_sex"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/include/Participant",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Study",
+      "definition_uri": "https://w3id.org/include/Study",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "is_a": "NamedThing",
+      "slots": [
+        "Study_dbgap",
+        "Study_program",
+        "Study_study_code",
+        "Study_study_name"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/include/Study",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NamedThing",
+      "definition_uri": "https://w3id.org/include/NamedThing",
+      "from_schema": "https://w3id.org/include_portal_v1_schema",
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/include/NamedThing",
+      "@type": "ClassDefinition"
+    }
+  ],
+  "metamodel_version": "1.7.0",
+  "source_file": "include_linkml.yaml",
+  "source_file_date": "2022-05-20T13:29:53",
+  "source_file_size": 19108,
+  "generation_date": "2022-05-23T07:56:41",
+  "@type": "SchemaDefinition",
+  "@context": [
+    "project/jsonld/include_linkml.context.jsonld",
+    "https://w3id.org/linkml/types.context.jsonld",
+    {
+      "@base": "https://w3id.org/include/"
+    }
+  ]
+}
