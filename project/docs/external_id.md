@@ -2,7 +2,7 @@
 # Slot: external_id
 
 
-
+Unique identifier for the participant, assigned by data contributor
 
 URI: [include:external_id](https://w3id.org/include/external_id)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [Participant➞external_id](Participant_external_id.md)
 
 ## Used by
 
+ * [Participant](Participant.md)

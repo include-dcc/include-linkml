@@ -2,7 +2,7 @@
 # Slot: container_id
 
 
-
+Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.
 
 URI: [include:container_id](https://w3id.org/include/container_id)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [Biospecimen➞container_id](Biospecimen_container_id.md)
 
 ## Used by
 
+ * [Biospecimen](Biospecimen.md)

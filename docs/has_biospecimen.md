@@ -1,5 +1,5 @@
 # Slot: has_biospecimen
-_Semantic link to a Biospecimen_
+_Link to a Biospecimen_
 
 
 URI: [https://w3id.org/include/has_biospecimen](https://w3id.org/include/has_biospecimen)

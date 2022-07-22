@@ -1,4 +1,6 @@
 # Slot: diagnosis_type
+_How diagnosis was assigned_
+
 
 URI: [https://w3id.org/include/diagnosis_type](https://w3id.org/include/diagnosis_type)
 

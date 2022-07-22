@@ -2,7 +2,7 @@
 # Slot: has_study
 
 
-Semantic link to a Study
+Link to a Study
 
 URI: [include:Participant_has_study](https://w3id.org/include/Participant_has_study)
 

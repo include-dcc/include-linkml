@@ -2,7 +2,7 @@
 # Slot: has_participant
 
 
-Semantic link to a Participant
+Link to a Participant
 
 URI: [include:DataFile_has_participant](https://w3id.org/include/DataFile_has_participant)
 

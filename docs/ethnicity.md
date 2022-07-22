@@ -1,4 +1,6 @@
 # Slot: ethnicity
+_Ethnicity of participant_
+
 
 URI: [https://w3id.org/include/ethnicity](https://w3id.org/include/ethnicity)
 
@@ -9,7 +11,7 @@ URI: [https://w3id.org/include/ethnicity](https://w3id.org/include/ethnicity)
 
 ## Properties
 
- * Range: None
+ * Range: enum_ethnicity
 
 
 

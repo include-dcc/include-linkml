@@ -2,21 +2,21 @@
 # Slot: program
 
 
-
+Funding source for the study
 
 URI: [include:program](https://w3id.org/include/program)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
+None &#8594;  <sub>0..1</sub> [enum_program](enum_program.md)
 
 ## Parents
 
 
 ## Children
 
- *  [Study➞program](Study_program.md)
 
 ## Used by
 
+ * [Study](Study.md)

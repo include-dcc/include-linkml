@@ -22,6 +22,8 @@ linkml:Date xsd:date
 
 linkml:Datetime xsd:dateTime
 
+linkml:DateOrDatetime linkml:DateOrDatetime
+
 linkml:Uriorcurie IRI
 
 linkml:Uri IRI
@@ -35,7 +37,7 @@ linkml:Nodeidentifier NONLITERAL
 <Biospecimen> CLOSED {
     (  $<Biospecimen_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
-          <age_at_biospecimen_collection__days> @linkml:Integer ? ;
+          <age_at_biospecimen_collection> @linkml:String ? ;
           <biospecimen_storage> @linkml:String ? ;
           <collection_id> @linkml:String ? ;
           <collection_sample_type> @linkml:String ? ;
@@ -47,11 +49,12 @@ linkml:Nodeidentifier NONLITERAL
           <parent_sample_id> @linkml:String ? ;
           <parent_sample_type> @linkml:String ? ;
           <sample_availability> @<EnumSampleAvailability> ? ;
+          <sample_id> @linkml:String ? ;
           <sample_type> @linkml:String ? ;
           <volume> @linkml:String ? ;
           <volume_unit> @linkml:String ?
        ) ;
-       rdf:type [ <Biospecimen> ]
+       rdf:type [ <Biospecimen> ] ?
     )
 }
 
@@ -64,6 +67,7 @@ linkml:Nodeidentifier NONLITERAL
           <data_category> @linkml:String ? ;
           <data_type> @linkml:String ? ;
           <experimental_strategy> @linkml:String ? ;
+          <file_id> @linkml:String ? ;
           <file_name> @linkml:String ? ;
           <format> @linkml:String ? ;
           <has_biospecimen> @<Biospecimen> ? ;
@@ -72,7 +76,7 @@ linkml:Nodeidentifier NONLITERAL
           <participant_id> @linkml:String ? ;
           <size> @linkml:String ?
        ) ;
-       rdf:type [ <DataFile> ]
+       rdf:type [ <DataFile> ] ?
     )
 }
 
@@ -87,17 +91,17 @@ linkml:Nodeidentifier NONLITERAL
 <Participant> CLOSED {
     (  $<Participant_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
-          <age_at_diagnosis__days> @linkml:Integer ? ;
-          <age_at_phenotype_assignment__days> @linkml:Integer ? ;
-          <age_at_the_last_vital_status__days> @linkml:Integer ? ;
-          <diagnosis__icd> @linkml:String ? ;
-          <diagnosis__mondo> @linkml:String ? ;
-          <diagnosis__ncit> @linkml:String ? ;
-          <diagnosis__source_text> @linkml:String ? ;
+          <age_at_diagnosis> @linkml:String ? ;
+          <age_at_phenotype_assignment> @linkml:String ? ;
+          <age_at_the_last_vital_status> @linkml:String ? ;
+          <diagnosis_icd> @linkml:String ? ;
+          <diagnosis_mondo> @linkml:String ? ;
+          <diagnosis_ncit> @linkml:String ? ;
+          <diagnosis_source_text> @linkml:String ? ;
           <diagnosis_type> @linkml:String ? ;
-          <down_syndrome_status> @<EnumDownSyndromeStatus> ;
-          <ethnicity> @<EnumEthnicity> ;
-          <external_id> @linkml:String ;
+          <down_syndrome_status> @<EnumDownSyndromeStatus> ? ;
+          <ethnicity> @<EnumEthnicity> ? ;
+          <external_id> @linkml:String ? ;
           <family_id> @linkml:String ? ;
           <family_relationship> @linkml:String ? ;
           <family_type> @<EnumFamilyType> ? ;
@@ -106,13 +110,14 @@ linkml:Nodeidentifier NONLITERAL
           <has_study> @<Study> ? ;
           <mother_id> @linkml:String ? ;
           <outcomes_vital_status> @linkml:String ? ;
-          <phenotype__hpo> @linkml:String ? ;
-          <phenotype__source_text> @linkml:String ? ;
+          <participant_id> @linkml:String ? ;
+          <phenotype_hpo> @linkml:String ? ;
+          <phenotype_source_text> @linkml:String ? ;
           <phenotype_interpretation> @<EnumPhenotypeInterpretation> ? ;
-          <race> @<EnumRace> ;
-          <sex> @<EnumSex>
+          <race> @<EnumRace> ? ;
+          <sex> @<EnumSex> ?
        ) ;
-       rdf:type [ <Participant> ]
+       rdf:type [ <Participant> ] ?
     )
 }
 
@@ -120,9 +125,9 @@ linkml:Nodeidentifier NONLITERAL
     (  $<Study_tes> (  &<NamedThing_tes> ;
           rdf:type [ <NamedThing> ] ? ;
           <dbgap> @linkml:String ? ;
-          <program> @<EnumProgram> ;
-          <study_code> @<EnumStudyCode> ;
-          <study_name> @linkml:String
+          <program> @<EnumProgram> ? ;
+          <study_code> @<EnumStudyCode> ? ;
+          <study_name> @linkml:String ?
        ) ;
        rdf:type [ <Study> ] ?
     )

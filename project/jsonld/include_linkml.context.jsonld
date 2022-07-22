@@ -1,11 +1,43 @@
 {
-   "_comments": "Auto generated from include_linkml.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-05-23T07:56:40\n    Schema: IncludePortalV1\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/include_portal_v1_schema\n    description: Initial Include Portal Schema\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from include_linkml.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-07-21T12:55:34\n    Schema: IncludePortalV1\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/include_portal_v1_schema\n    description: Initial Include Portal Schema\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "include": "https://w3id.org/include/",
       "linkml": "https://w3id.org/linkml/",
+      "schema": "http://schema.org/",
+      "skos": "http://www.w3.org/2004/02/skos/core#",
       "@vocab": "https://w3id.org/include/",
-      "sample_id": "@id",
-      "file_id": "@id",
+      "data_access": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "down_syndrome_status": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "ethnicity": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "family_type": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
       "has_biospecimen": {
          "@type": "@id"
       },
@@ -18,6 +50,53 @@
       "has_study": {
          "@type": "@id"
       },
-      "participant_id": "@id"
+      "phenotype_interpretation": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "program": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "race": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "sample_availability": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "sex": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "study_code": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      }
    }
 }

@@ -2,7 +2,7 @@
 # Slot: father_id
 
 
-
+Participant ID for Participant's father
 
 URI: [include:father_id](https://w3id.org/include/father_id)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [Participant➞father_id](Participant_father_id.md)
 
 ## Used by
 
+ * [Participant](Participant.md)

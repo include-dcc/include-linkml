@@ -1,4 +1,6 @@
 # Slot: phenotype_interpretation
+_Whether phenotype was observed or not_
+
 
 URI: [https://w3id.org/include/phenotype_interpretation](https://w3id.org/include/phenotype_interpretation)
 
@@ -9,7 +11,7 @@ URI: [https://w3id.org/include/phenotype_interpretation](https://w3id.org/includ
 
 ## Properties
 
- * Range: None
+ * Range: enum_phenotype_interpretation
 
 
 

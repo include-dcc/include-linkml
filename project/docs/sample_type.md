@@ -2,7 +2,7 @@
 # Slot: sample_type
 
 
-
+Type of biological material comprising the sample (e.g. Plasma, Serum, White blood cells, DNA, RNA, etc.)
 
 URI: [include:sample_type](https://w3id.org/include/sample_type)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [Biospecimen➞sample_type](Biospecimen_sample_type.md)
 
 ## Used by
 
+ * [Biospecimen](Biospecimen.md)

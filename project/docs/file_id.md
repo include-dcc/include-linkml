@@ -2,7 +2,7 @@
 # Slot: file_id
 
 
-
+File identifier, assigned by DCC
 
 URI: [include:file_id](https://w3id.org/include/file_id)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [DataFile➞file_id](DataFile_file_id.md)
 
 ## Used by
 
+ * [DataFile](DataFile.md)

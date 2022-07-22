@@ -2,7 +2,7 @@
 # Slot: dbgap
 
 
-
+dbGaP study accession code
 
 URI: [include:dbgap](https://w3id.org/include/dbgap)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [Study➞dbgap](Study_dbgap.md)
 
 ## Used by
 
+ * [Study](Study.md)

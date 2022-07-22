@@ -1,4 +1,6 @@
 # Slot: study_code
+_Unique identifer for the study, assigned by DCC_
+
 
 URI: [https://w3id.org/include/study_code](https://w3id.org/include/study_code)
 
@@ -9,7 +11,7 @@ URI: [https://w3id.org/include/study_code](https://w3id.org/include/study_code)
 
 ## Properties
 
- * Range: None
+ * Range: enum_study_code
 
 
 

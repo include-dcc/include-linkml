@@ -1,5 +1,5 @@
 # Slot: has_datafile
-_Semantic link to a DataFile_
+_Link to a DataFile_
 
 
 URI: [https://w3id.org/include/has_datafile](https://w3id.org/include/has_datafile)

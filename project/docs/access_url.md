@@ -2,7 +2,7 @@
 # Slot: access_url
 
 
-
+Storage location for this file
 
 URI: [include:access_url](https://w3id.org/include/access_url)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [DataFile➞access_url](DataFile_access_url.md)
 
 ## Used by
 
+ * [DataFile](DataFile.md)

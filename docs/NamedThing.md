@@ -48,6 +48,8 @@ URI: [include:NamedThing](https://w3id.org/include/NamedThing)
 <details>
 ```yaml
 name: NamedThing
+definition_uri: include:NamedThing
+title: NamedThing
 from_schema: https://w3id.org/include_portal_v1_schema
 
 ```
@@ -58,6 +60,8 @@ from_schema: https://w3id.org/include_portal_v1_schema
 <details>
 ```yaml
 name: NamedThing
+definition_uri: include:NamedThing
+title: NamedThing
 from_schema: https://w3id.org/include_portal_v1_schema
 
 ```

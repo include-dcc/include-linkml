@@ -2,7 +2,7 @@
 # Slot: size
 
 
-
+Size of file
 
 URI: [include:size](https://w3id.org/include/size)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [DataFile➞size](DataFile_size.md)
 
 ## Used by
 
+ * [DataFile](DataFile.md)

@@ -2,7 +2,7 @@
 # Slot: family_relationship
 
 
-
+Relationship of Participant to other family members
 
 URI: [include:family_relationship](https://w3id.org/include/family_relationship)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [Participant➞family_relationship](Participant_family_relationship.md)
 
 ## Used by
 
+ * [Participant](Participant.md)

@@ -1,4 +1,6 @@
 # Slot: volume_unit
+_Unit of sample volume_
+
 
 URI: [https://w3id.org/include/volume_unit](https://w3id.org/include/volume_unit)
 

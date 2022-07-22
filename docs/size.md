@@ -1,4 +1,6 @@
 # Slot: size
+_Size of file_
+
 
 URI: [https://w3id.org/include/size](https://w3id.org/include/size)
 
