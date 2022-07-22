@@ -2,7 +2,7 @@
 # Slot: experimental_strategy
 
 
-
+Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale Discovery, etc.)
 
 URI: [include:experimental_strategy](https://w3id.org/include/experimental_strategy)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [DataFile➞experimental_strategy](DataFile_experimental_strategy.md)
 
 ## Used by
 
+ * [DataFile](DataFile.md)

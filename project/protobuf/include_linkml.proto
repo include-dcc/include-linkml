@@ -1,6 +1,7 @@
+// A Biospecimen Collected from A Participant
 message Biospecimen
  {
-  optional ageAtBiospecimenCollectionDays Integer = 1
+  optional ageAtBiospecimenCollection String = 1
   optional biospecimenStorage String = 2
   optional collectionId String = 3
   optional collectionSampleType String = 4
@@ -12,11 +13,12 @@ message Biospecimen
   optional parentSampleId String = 10
   optional parentSampleType String = 11
   optional sampleAvailability EnumSampleAvailability = 12
-  sampleId String = 13
+  optional sampleId String = 13
   optional sampleType String = 14
   optional volume String = 15
   optional volumeUnit String = 16
  }
+// A DataFile Associated with a Participant or Study or Biospecimen
 message DataFile
  {
   optional accessUrl String = 1
@@ -25,7 +27,7 @@ message DataFile
   optional dataCategory String = 4
   optional dataType String = 5
   optional experimentalStrategy String = 6
-  fileId String = 7
+  optional fileId String = 7
   optional fileName String = 8
   optional format String = 9
   optional hasBiospecimen Biospecimen = 10
@@ -34,19 +36,20 @@ message DataFile
   optional participantId String = 13
   optional size String = 14
  }
+// A Participant in a Study
 message Participant
  {
-  optional ageAtDiagnosisDays Integer = 1
-  optional ageAtPhenotypeAssignmentDays Integer = 2
-  optional ageAtTheLastVitalStatusDays Integer = 3
+  optional ageAtDiagnosis String = 1
+  optional ageAtPhenotypeAssignment String = 2
+  optional ageAtTheLastVitalStatus String = 3
   optional diagnosisIcd String = 4
   optional diagnosisMondo String = 5
   optional diagnosisNcit String = 6
   optional diagnosisSourceText String = 7
   optional diagnosisType String = 8
-  downSyndromeStatus EnumDownSyndromeStatus = 9
-  ethnicity EnumEthnicity = 10
-  externalId String = 11
+  optional downSyndromeStatus EnumDownSyndromeStatus = 9
+  optional ethnicity EnumEthnicity = 10
+  optional externalId String = 11
   optional familyId String = 12
   optional familyRelationship String = 13
   optional familyType EnumFamilyType = 14
@@ -55,17 +58,18 @@ message Participant
   optional hasStudy Study = 17
   optional motherId String = 18
   optional outcomesVitalStatus String = 19
-  participantId String = 20
+  optional participantId String = 20
   optional phenotypeHpo String = 21
   optional phenotypeSourceText String = 22
   optional phenotypeInterpretation EnumPhenotypeInterpretation = 23
-  race EnumRace = 24
-  sex EnumSex = 25
+  optional race EnumRace = 24
+  optional sex EnumSex = 25
  }
+// A Study
 message Study
  {
   optional dbgap String = 1
-  program EnumProgram = 2
-  studyCode EnumStudyCode = 3
-  studyName String = 4
+  optional program EnumProgram = 2
+  optional studyCode EnumStudyCode = 3
+  optional studyName String = 4
  }

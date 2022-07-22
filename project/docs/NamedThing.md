@@ -11,10 +11,10 @@ URI: [include:NamedThing](https://w3id.org/include/NamedThing)
 
 ## Children
 
- * [Biospecimen](Biospecimen.md)
- * [DataFile](DataFile.md)
- * [Participant](Participant.md)
- * [Study](Study.md)
+ * [Biospecimen](Biospecimen.md) - A Biospecimen Collected from A Participant
+ * [DataFile](DataFile.md) - A DataFile Associated with a Participant or Study or Biospecimen
+ * [Participant](Participant.md) - A Participant in a Study
+ * [Study](Study.md) - A Study
 
 ## Referenced by Class
 

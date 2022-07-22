@@ -2,7 +2,7 @@
 # Slot: has_datafile
 
 
-Semantic link to a DataFile
+Link to a DataFile
 
 URI: [include:Participant_has_datafile](https://w3id.org/include/Participant_has_datafile)
 

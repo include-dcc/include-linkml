@@ -2,7 +2,7 @@
 # Slot: biospecimen_storage
 
 
-
+Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)
 
 URI: [include:biospecimen_storage](https://w3id.org/include/biospecimen_storage)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [Biospecimen➞biospecimen_storage](Biospecimen_biospecimen_storage.md)
 
 ## Used by
 
+ * [Biospecimen](Biospecimen.md)

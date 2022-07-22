@@ -2,21 +2,21 @@
 # Slot: phenotype_interpretation
 
 
-
+Whether phenotype was observed or not
 
 URI: [include:phenotype_interpretation](https://w3id.org/include/phenotype_interpretation)
 
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
+None &#8594;  <sub>0..1</sub> [enum_phenotype_interpretation](enum_phenotype_interpretation.md)
 
 ## Parents
 
 
 ## Children
 
- *  [Participant➞phenotype_interpretation](Participant_phenotype_interpretation.md)
 
 ## Used by
 
+ * [Participant](Participant.md)

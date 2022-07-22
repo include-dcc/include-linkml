@@ -2,7 +2,7 @@
 # Slot: participant_id
 
 
-
+Unique identifier for the participant, assigned by DCC
 
 URI: [include:participant_id](https://w3id.org/include/participant_id)
 
@@ -16,8 +16,8 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [DataFile➞participant_id](DataFile_participant_id.md)
- *  [Participant➞participant_id](Participant_participant_id.md)
 
 ## Used by
 
+ * [DataFile](DataFile.md)
+ * [Participant](Participant.md)

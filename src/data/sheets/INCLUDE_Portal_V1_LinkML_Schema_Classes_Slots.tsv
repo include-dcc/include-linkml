@@ -63,8 +63,8 @@ Study	program			TRUE	enum_program		Funding source for the study ??
 Study	study_code			TRUE	enum_study_code		Unique identifer for the study, assigned by DCC
 Study	study_name			TRUE			Name of the study, chosen by data contributor
 Study						NamedThing	
-	has_biospecimen				Biospecimen		Semantic link to a Biospecimen
-	has_datafile				DataFile		Semantic link to a DataFile
-	has_participant				Participant		Semantic link to a Participant
-	has_study				Study		Semantic link to a Study
+	has_biospecimen				Biospecimen		Link to a Biospecimen
+	has_datafile				DataFile		Link to a DataFile
+	has_participant				Participant		Link to a Participant
+	has_study				Study		Link to a Study
 NamedThing							

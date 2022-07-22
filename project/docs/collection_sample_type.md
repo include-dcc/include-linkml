@@ -2,7 +2,7 @@
 # Slot: collection_sample_type
 
 
-
+Type of biological material comprising the collected sample (e.g. Whole blood, Bone marrow, Saliva, etc.)
 
 URI: [include:collection_sample_type](https://w3id.org/include/collection_sample_type)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [Biospecimen➞collection_sample_type](Biospecimen_collection_sample_type.md)
 
 ## Used by
 
+ * [Biospecimen](Biospecimen.md)

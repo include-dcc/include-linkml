@@ -2,7 +2,7 @@
 # Slot: file_name
 
 
-
+Synapse ID for file
 
 URI: [include:file_name](https://w3id.org/include/file_name)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [DataFile➞file_name](DataFile_file_name.md)
 
 ## Used by
 
+ * [DataFile](DataFile.md)

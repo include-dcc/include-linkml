@@ -2,7 +2,7 @@
 # Slot: parent_sample_type
 
 
-
+Type of biological material comprising the parent sample (e.g. Plasma, Serum, White blood cells, etc.)
 
 URI: [include:parent_sample_type](https://w3id.org/include/parent_sample_type)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [Biospecimen➞parent_sample_type](Biospecimen_parent_sample_type.md)
 
 ## Used by
 
+ * [Biospecimen](Biospecimen.md)

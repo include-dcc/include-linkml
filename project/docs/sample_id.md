@@ -2,7 +2,7 @@
 # Slot: sample_id
 
 
-
+Identifier for sample. A sample is a unique biological material; two samples with two different IDs are biologically distinct.
 
 URI: [include:sample_id](https://w3id.org/include/sample_id)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [Biospecimen➞sample_id](Biospecimen_sample_id.md)
 
 ## Used by
 
+ * [Biospecimen](Biospecimen.md)

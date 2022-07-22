@@ -2,7 +2,7 @@
 # Slot: has_biospecimen
 
 
-Semantic link to a Biospecimen
+Link to a Biospecimen
 
 URI: [include:DataFile_has_biospecimen](https://w3id.org/include/DataFile_has_biospecimen)
 

@@ -1,4 +1,6 @@
 # Slot: access_url
+_Storage location for this file_
+
 
 URI: [https://w3id.org/include/access_url](https://w3id.org/include/access_url)
 

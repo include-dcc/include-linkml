@@ -1,4 +1,6 @@
 # Slot: race
+_Race of participant_
+
 
 URI: [https://w3id.org/include/race](https://w3id.org/include/race)
 
@@ -9,7 +11,7 @@ URI: [https://w3id.org/include/race](https://w3id.org/include/race)
 
 ## Properties
 
- * Range: None
+ * Range: enum_race
 
 
 

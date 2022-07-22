@@ -2,7 +2,7 @@
 # Slot: has_participant
 
 
-Semantic link to a Participant
+Link to a Participant
 
 URI: [include:Biospecimen_has_participant](https://w3id.org/include/Biospecimen_has_participant)
 

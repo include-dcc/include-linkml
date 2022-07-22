@@ -2,7 +2,7 @@
 # Slot: volume
 
 
-
+Amount of sample in container
 
 URI: [include:volume](https://w3id.org/include/volume)
 
@@ -16,7 +16,7 @@ None &#8594;  <sub>0..1</sub> [String](types/String.md)
 
 ## Children
 
- *  [Biospecimen➞volume](Biospecimen_volume.md)
 
 ## Used by
 
+ * [Biospecimen](Biospecimen.md)
