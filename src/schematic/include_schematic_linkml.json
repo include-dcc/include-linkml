@@ -1,0 +1,961 @@
+{
+  "@context": {
+    "linkml": "https://w3id.org/linkml/",
+    "include": "https://w3id.org/include/",
+    "schema": "http://schema.org/",
+    "sms": "www.sms.org"
+  },
+  "@graph": [
+    {
+      "@type": "rdfs:Class",
+      "rdfs:label": "Biospecimen",
+      "sms:displayName": "Biospecimen",
+      "@id": "include:Biospecimen",
+      "rdfs:comment": "A Biospecimen Collected from A Participant",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:subClassOf": [
+        {
+          "@id": "include:Thing"
+        }
+      ],
+      "sms:required": "sms:false",
+      "sms:requiresComponent": [
+        {
+          "@id": "include:Study"
+        },
+        {
+          "@id": "include:Participant"
+        },
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "sms:requiresDependency": [
+        {
+          "@id": "include:age_at_biospecimen_collection"
+        },
+        {
+          "@id": "include:biospecimen_storage"
+        },
+        {
+          "@id": "include:collection_id"
+        },
+        {
+          "@id": "include:collection_sample_type"
+        },
+        {
+          "@id": "include:container_id"
+        },
+        {
+          "@id": "include:has_datafile"
+        },
+        {
+          "@id": "include:has_participant"
+        },
+        {
+          "@id": "include:has_study"
+        },
+        {
+          "@id": "include:laboratory_procedure"
+        },
+        {
+          "@id": "include:parent_sample_id"
+        },
+        {
+          "@id": "include:parent_sample_type"
+        },
+        {
+          "@id": "include:sample_availability"
+        },
+        {
+          "@id": "include:sample_id"
+        },
+        {
+          "@id": "include:sample_type"
+        },
+        {
+          "@id": "include:volume"
+        },
+        {
+          "@id": "include:volume_unit"
+        },
+        {
+          "@id": "include:has_study"
+        }
+      ],
+      "sms:validationRules": []
+    },
+    {
+      "@type": "rdfs:Class",
+      "rdfs:label": "DataFile",
+      "sms:displayName": "DataFile",
+      "@id": "include:DataFile",
+      "rdfs:comment": "A DataFile Associated with a Participant or Study or Biospecimen",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:subClassOf": [
+        {
+          "@id": "include:Thing"
+        }
+      ],
+      "sms:required": "sms:false",
+      "sms:requiresComponent": [
+        {
+          "@id": "include:Study"
+        },
+        {
+          "@id": "include:Participant"
+        },
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "sms:requiresDependency": [
+        {
+          "@id": "include:access_url"
+        },
+        {
+          "@id": "include:collection_id"
+        },
+        {
+          "@id": "include:data_access"
+        },
+        {
+          "@id": "include:data_category"
+        },
+        {
+          "@id": "include:data_type"
+        },
+        {
+          "@id": "include:experimental_strategy"
+        },
+        {
+          "@id": "include:file_id"
+        },
+        {
+          "@id": "include:file_name"
+        },
+        {
+          "@id": "include:format"
+        },
+        {
+          "@id": "include:has_biospecimen"
+        },
+        {
+          "@id": "include:has_participant"
+        },
+        {
+          "@id": "include:has_study"
+        },
+        {
+          "@id": "include:participant_id"
+        },
+        {
+          "@id": "include:size"
+        }
+      ],
+      "sms:validationRules": []
+    },
+    {
+      "@type": "rdfs:Class",
+      "rdfs:label": "Participant",
+      "sms:displayName": "Participant",
+      "@id": "include:Participant",
+      "rdfs:comment": "A Participant in a Study",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:subClassOf": [
+        {
+          "@id": "include:Thing"
+        }
+      ],
+      "sms:required": "sms:false",
+      "sms:requiresComponent": [
+        {
+          "@id": "include:Study"
+        },
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "sms:requiresDependency": [
+        {
+          "@id": "include:age_at_diagnosis"
+        },
+        {
+          "@id": "include:age_at_phenotype_assignment"
+        },
+        {
+          "@id": "include:age_at_the_last_vital_status"
+        },
+        {
+          "@id": "include:diagnosis_icd"
+        },
+        {
+          "@id": "include:diagnosis_mondo"
+        },
+        {
+          "@id": "include:diagnosis_ncit"
+        },
+        {
+          "@id": "include:diagnosis_source_text"
+        },
+        {
+          "@id": "include:diagnosis_type"
+        },
+        {
+          "@id": "include:down_syndrome_status"
+        },
+        {
+          "@id": "include:ethnicity"
+        },
+        {
+          "@id": "include:external_id"
+        },
+        {
+          "@id": "include:family_id"
+        },
+        {
+          "@id": "include:family_relationship"
+        },
+        {
+          "@id": "include:family_type"
+        },
+        {
+          "@id": "include:father_id"
+        },
+        {
+          "@id": "include:has_datafile"
+        },
+        {
+          "@id": "include:has_study"
+        },
+        {
+          "@id": "include:mother_id"
+        },
+        {
+          "@id": "include:outcomes_vital_status"
+        },
+        {
+          "@id": "include:participant_id"
+        },
+        {
+          "@id": "include:phenotype_hpo"
+        },
+        {
+          "@id": "include:phenotype_source_text"
+        },
+        {
+          "@id": "include:phenotype_interpretation"
+        },
+        {
+          "@id": "include:race"
+        },
+        {
+          "@id": "include:sex"
+        }
+      ],
+      "sms:validationRules": []
+    },
+    {
+      "@type": "rdfs:Class",
+      "rdfs:label": "Study",
+      "sms:displayName": "Study",
+      "@id": "include:Study",
+      "rdfs:comment": "A Study",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:subClassOf": [
+        {
+          "@id": "include:Thing"
+        }
+      ],
+      "sms:required": "sms:true",
+      "sms:requiresDependency": [
+        {
+          "@id": "include:dbgap"
+        },
+        {
+          "@id": "include:program"
+        },
+        {
+          "@id": "include:study_code"
+        },
+        {
+          "@id": "include:study_name"
+        }
+      ],
+      "sms:validationRules": []
+    },
+    {
+      "@type": "rdfs:Class",
+      "rdfs:label": "Thing",
+      "sms:displayName": "Thing",
+      "@id": "schema:Thing",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:validationRules": []
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Access Url",
+      "@id": "include:access_url",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "access_url",
+      "rdfs:comment": "Storage location for this file"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Age At Biospecimen Collection",
+      "@id": "include:age_at_biospecimen_collection",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "age_at_biospecimen_collection",
+      "rdfs:comment": "Age in days of participant at time of biospecimen collection"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Age At Diagnosis",
+      "@id": "include:age_at_diagnosis",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "age_at_diagnosis",
+      "rdfs:comment": "Age in days at which phenotype was assigned"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Age At Phenotype Assignment",
+      "@id": "include:age_at_phenotype_assignment",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "age_at_phenotype_assignment",
+      "rdfs:comment": "Age in days at which phenotype was recorded"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Age At The Last Vital Status",
+      "@id": "include:age_at_the_last_vital_status",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "age_at_the_last_vital_status"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Biospecimen Storage",
+      "@id": "include:biospecimen_storage",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "biospecimen_storage",
+      "rdfs:comment": "Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Collection Id",
+      "@id": "include:collection_id",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "collection_id",
+      "rdfs:comment": "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed)."
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Collection Sample Type",
+      "@id": "include:collection_sample_type",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "collection_sample_type",
+      "rdfs:comment": "Type of biological material comprising the collected sample (e.g. Whole blood, Bone marrow, Saliva, etc.)"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Container Id",
+      "@id": "include:container_id",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "container_id",
+      "rdfs:comment": "Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs."
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Data Access",
+      "@id": "include:data_access",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "data_access",
+      "rdfs:comment": "Type of access control on this file, determined by DCC",
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:Controlled"
+        },
+        {
+          "@id": "include:Open"
+        },
+        {
+          "@id": "include:Registered"
+        }
+      ]
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Data Category",
+      "@id": "include:data_category",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "data_category",
+      "rdfs:comment": "General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune maps, Transcriptomics, etc.)"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Data Type",
+      "@id": "include:data_type",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "data_type",
+      "rdfs:comment": "Specific type of data contained in file (e.g. Aligned reads, Unaligned reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification, Structural variations, Cytokine profiles, Operation reports, Pathology reports, Histology images, Clinical supplement, Protein expression quantification, etc.)"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Dbgap",
+      "@id": "include:dbgap",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "dbgap",
+      "rdfs:comment": "dbGaP study accession code"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Diagnosis Icd",
+      "@id": "include:diagnosis_icd",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "diagnosis_icd",
+      "rdfs:comment": "ICD-10 code (annotated by data contributor or DCC)"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Diagnosis Mondo",
+      "@id": "include:diagnosis_mondo",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "diagnosis_mondo",
+      "rdfs:comment": "Mondo disease ontology code (annotated by data contributor or DCC)"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Diagnosis Ncit",
+      "@id": "include:diagnosis_ncit",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "diagnosis_ncit",
+      "rdfs:comment": "NCI Thesaurus code (annotated by data contributor or DCC)"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Diagnosis Source Text",
+      "@id": "include:diagnosis_source_text",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "diagnosis_source_text",
+      "rdfs:comment": "Diagnosis as described by data contributor"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Diagnosis Type",
+      "@id": "include:diagnosis_type",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "diagnosis_type",
+      "rdfs:comment": "How diagnosis was assigned"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Down Syndrome Status",
+      "@id": "include:down_syndrome_status",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "down_syndrome_status",
+      "rdfs:comment": "Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)",
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:D21"
+        },
+        {
+          "@id": "include:T21"
+        }
+      ]
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Ethnicity",
+      "@id": "include:ethnicity",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "ethnicity",
+      "rdfs:comment": "Ethnicity of participant",
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:Asked but unknown"
+        },
+        {
+          "@id": "include:Hispanic or Latino"
+        },
+        {
+          "@id": "include:Not Hispanic or Latino"
+        }
+      ]
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Experimental Strategy",
+      "@id": "include:experimental_strategy",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "experimental_strategy",
+      "rdfs:comment": "Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale Discovery, etc.)"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "External Id",
+      "@id": "include:external_id",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "external_id",
+      "rdfs:comment": "Unique identifier for the participant, assigned by data contributor"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Family Id",
+      "@id": "include:family_id",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "family_id",
+      "rdfs:comment": "Unique identifer for family to which Participant belongs"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Family Relationship",
+      "@id": "include:family_relationship",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "family_relationship",
+      "rdfs:comment": "Relationship of Participant to other family members"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Family Type",
+      "@id": "include:family_type",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "family_type",
+      "rdfs:comment": "Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives) ",
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:Duo"
+        },
+        {
+          "@id": "include:Other"
+        },
+        {
+          "@id": "include:Proband-only"
+        },
+        {
+          "@id": "include:Trio"
+        }
+      ]
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Father Id",
+      "@id": "include:father_id",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "father_id",
+      "rdfs:comment": "Participant ID for Participant's father"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "File Id",
+      "@id": "include:file_id",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "file_id",
+      "rdfs:comment": "File identifier, assigned by DCC"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "File Name",
+      "@id": "include:file_name",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "file_name",
+      "rdfs:comment": "Synapse ID for file"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Format",
+      "@id": "include:format",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "format",
+      "rdfs:comment": "Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom, etc.)"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Has Biospecimen",
+      "@id": "include:has_biospecimen",
+      "rdfs:comment": "Link to a Biospecimen",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "has_biospecimen"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Has Datafile",
+      "@id": "include:has_datafile",
+      "rdfs:comment": "Link to a DataFile",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "has_datafile"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Has Participant",
+      "@id": "include:has_participant",
+      "rdfs:comment": "Link to a Participant",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "has_participant"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Has Study",
+      "@id": "include:has_study",
+      "rdfs:comment": "Link to a Study",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "has_study"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Laboratory Procedure",
+      "@id": "include:laboratory_procedure",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "laboratory_procedure",
+      "rdfs:comment": "Procedure by which Sample was derived from Parent Sample (e.g. RBC lysis, Centrifugation, Ficoll, etc.)"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Mother Id",
+      "@id": "include:mother_id",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "mother_id",
+      "rdfs:comment": "Participant ID for Participant's mother"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Outcomes Vital Status",
+      "@id": "include:outcomes_vital_status",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "outcomes_vital_status",
+      "rdfs:comment": "Whether participant is alive or dead"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Parent Sample Id",
+      "@id": "include:parent_sample_id",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "parent_sample_id",
+      "rdfs:comment": "Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable)"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Parent Sample Type",
+      "@id": "include:parent_sample_type",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "parent_sample_type",
+      "rdfs:comment": "Type of biological material comprising the parent sample (e.g. Plasma, Serum, White blood cells, etc.)"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Participant Id",
+      "@id": "include:participant_id",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "participant_id",
+      "rdfs:comment": "Unique identifier for the participant, assigned by DCC"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Phenotype Hpo",
+      "@id": "include:phenotype_hpo",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "phenotype_hpo",
+      "rdfs:comment": "Human Phenotype Ontology code (annotated by data contributor or DCC)"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Phenotype Interpretation",
+      "@id": "include:phenotype_interpretation",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "phenotype_interpretation",
+      "rdfs:comment": "Whether phenotype was observed or not",
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:Not Observed"
+        },
+        {
+          "@id": "include:Observed"
+        }
+      ]
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Phenotype Source Text",
+      "@id": "include:phenotype_source_text",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "phenotype_source_text",
+      "rdfs:comment": "Phenotype as described by data contributor"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Program",
+      "@id": "include:program",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "program",
+      "rdfs:comment": "Funding source for the study",
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:INCLUDE"
+        },
+        {
+          "@id": "include:KF"
+        }
+      ]
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Race",
+      "@id": "include:race",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "race",
+      "rdfs:comment": "Race of participant",
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:American Indian or Alaska Native"
+        },
+        {
+          "@id": "include:Asian"
+        },
+        {
+          "@id": "include:Black or African American"
+        },
+        {
+          "@id": "include:More than one race"
+        },
+        {
+          "@id": "include:Native Hawaiian or Other Pacific Islander"
+        },
+        {
+          "@id": "include:Other"
+        },
+        {
+          "@id": "include:White"
+        }
+      ]
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Sample Availability",
+      "@id": "include:sample_availability",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "sample_availability",
+      "rdfs:comment": "Whether or not the sample is potentially available for sharing through the Virtual Biorepository",
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:Available"
+        },
+        {
+          "@id": "include:Unavailable"
+        }
+      ]
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Sample Id",
+      "@id": "include:sample_id",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "sample_id",
+      "rdfs:comment": "Identifier for sample. A sample is a unique biological material; two samples with two different IDs are biologically distinct."
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Sample Type",
+      "@id": "include:sample_type",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "sample_type",
+      "rdfs:comment": "Type of biological material comprising the sample (e.g. Plasma, Serum, White blood cells, DNA, RNA, etc.)"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Sex",
+      "@id": "include:sex",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "sex",
+      "rdfs:comment": "Sex of participant",
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:Female"
+        },
+        {
+          "@id": "include:Male"
+        },
+        {
+          "@id": "include:Other"
+        },
+        {
+          "@id": "include:Unknown"
+        }
+      ]
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Size",
+      "@id": "include:size",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "size",
+      "rdfs:comment": "Size of file"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Study Code",
+      "@id": "include:study_code",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "study_code",
+      "rdfs:comment": "Unique identifer for the study, assigned by DCC",
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:DS-COG-ALL"
+        },
+        {
+          "@id": "include:DS-PCGC"
+        },
+        {
+          "@id": "include:DS360-CHD"
+        },
+        {
+          "@id": "include:DSC"
+        },
+        {
+          "@id": "include:HTP"
+        }
+      ]
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Study Name",
+      "@id": "include:study_name",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "study_name",
+      "rdfs:comment": "Name of the study, chosen by data contributor"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Validation Rules"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Volume",
+      "@id": "include:volume",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "volume",
+      "rdfs:comment": "Amount of sample in container"
+    },
+    {
+      "@type": "rdf:Property",
+      "sms:displayName": "Volume Unit",
+      "@id": "include:volume_unit",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "rdfs:label": "volume_unit",
+      "rdfs:comment": "Unit of sample volume"
+    }
+  ]
+}

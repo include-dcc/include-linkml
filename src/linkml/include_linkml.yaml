@@ -1,6 +1,6 @@
 name: IncludePortalV1
 description: Initial Include Portal Schema
-id: https://w3id.org/include_portal_v1_schema
+id: https://w3id.org/include
 imports:
 - linkml:types
 prefixes:
@@ -13,13 +13,24 @@ prefixes:
   schema:
     prefix_prefix: schema
     prefix_reference: http://schema.org/
+  sms:
+    prefix_prefix: sms
+    prefix_reference: http://sms.org/
+
 default_prefix: include
 default_range: string
 enums:
+  enum_validation_rules:
+    definition_uri: include:enum_validation_rules
+    name: enum_validation_rules
+    from_schema: https://w3id.org/include
+    permissible_values:
+      List:
+        text: list
   enum_data_access:
     definition_uri: include:enum_data_access
     name: enum_data_access
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     permissible_values:
       Controlled:
         text: Controlled
@@ -30,7 +41,7 @@ enums:
   enum_down_syndrome_status:
     definition_uri: include:enum_down_syndrome_status
     name: enum_down_syndrome_status
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     permissible_values:
       D21:
         text: D21
@@ -39,7 +50,7 @@ enums:
   enum_ethnicity:
     definition_uri: include:enum_ethnicity
     name: enum_ethnicity
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     permissible_values:
       Asked but unknown:
         text: Asked but unknown
@@ -50,7 +61,7 @@ enums:
   enum_family_type:
     definition_uri: include:enum_family_type
     name: enum_family_type
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     permissible_values:
       Duo:
         text: Duo
@@ -63,7 +74,7 @@ enums:
   enum_phenotype_interpretation:
     definition_uri: include:enum_phenotype_interpretation
     name: enum_phenotype_interpretation
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     permissible_values:
       Not Observed:
         text: Not Observed
@@ -72,7 +83,7 @@ enums:
   enum_program:
     definition_uri: include:enum_program
     name: enum_program
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     permissible_values:
       INCLUDE:
         text: INCLUDE
@@ -81,7 +92,7 @@ enums:
   enum_race:
     definition_uri: include:enum_race
     name: enum_race
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     permissible_values:
       American Indian or Alaska Native:
         text: American Indian or Alaska Native
@@ -100,7 +111,7 @@ enums:
   enum_sample_availability:
     definition_uri: include:enum_sample_availability
     name: enum_sample_availability
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     permissible_values:
       Available:
         text: Available
@@ -109,7 +120,7 @@ enums:
   enum_sex:
     definition_uri: include:enum_sex
     name: enum_sex
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     permissible_values:
       Female:
         text: Female
@@ -122,7 +133,7 @@ enums:
   enum_study_code:
     definition_uri: include:enum_study_code
     name: enum_study_code
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     permissible_values:
       DS-COG-ALL:
         text: DS-COG-ALL
@@ -137,69 +148,69 @@ enums:
 slots:
   access_url:
     definition_uri: include:access_url
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: access_url
     description: Storage location for this file
   age_at_biospecimen_collection:
     definition_uri: include:age_at_biospecimen_collection
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: age_at_biospecimen_collection
     description: Age in days of participant at time of biospecimen collection
   age_at_diagnosis:
     definition_uri: include:age_at_diagnosis
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: age_at_diagnosis
     description: Age in days at which phenotype was assigned
   age_at_phenotype_assignment:
     definition_uri: include:age_at_phenotype_assignment
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: age_at_phenotype_assignment
     description: Age in days at which phenotype was recorded
   age_at_the_last_vital_status:
     definition_uri: include:age_at_the_last_vital_status
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: age_at_the_last_vital_status
   biospecimen_storage:
     definition_uri: include:biospecimen_storage
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: biospecimen_storage
     description: Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen,
       etc.)
   collection_id:
     definition_uri: include:collection_id
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: collection_id
     description: Identifier for the eldest sample in a lineage of processed, pooled,
       or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if
       no processing was performed).
   collection_sample_type:
     definition_uri: include:collection_sample_type
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: collection_sample_type
     description: Type of biological material comprising the collected sample (e.g.
       Whole blood, Bone marrow, Saliva, etc.)
   container_id:
     definition_uri: include:container_id
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: container_id
     description: Identifier for specific container/aliquot of sample, if applicable.
       For example, distinct aliquots of a sample will have the same Sample ID but different
       Container IDs.
   data_access:
     definition_uri: include:data_access
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: data_access
     range: enum_data_access
     description: Type of access control on this file, determined by DCC
   data_category:
     definition_uri: include:data_category
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: data_category
     description: General category of data in file (e.g. Clinical, Genomics, Proteomics,
       Metabolomics, Immune maps, Transcriptomics, etc.)
   data_type:
     definition_uri: include:data_type
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: data_type
     description: Specific type of data contained in file (e.g. Aligned reads, Unaligned
       reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification,
@@ -207,72 +218,72 @@ slots:
       Histology images, Clinical supplement, Protein expression quantification, etc.)
   dbgap:
     definition_uri: include:dbgap
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: dbgap
     description: dbGaP study accession code
   diagnosis_icd:
     definition_uri: include:diagnosis_icd
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: diagnosis_icd
     description: ICD-10 code (annotated by data contributor or DCC)
   diagnosis_mondo:
     definition_uri: include:diagnosis_mondo
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: diagnosis_mondo
     description: Mondo disease ontology code (annotated by data contributor or DCC)
   diagnosis_ncit:
     definition_uri: include:diagnosis_ncit
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: diagnosis_ncit
     description: NCI Thesaurus code (annotated by data contributor or DCC)
   diagnosis_source_text:
     definition_uri: include:diagnosis_source_text
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: diagnosis_source_text
     description: Diagnosis as described by data contributor
   diagnosis_type:
     definition_uri: include:diagnosis_type
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: diagnosis_type
     description: How diagnosis was assigned
   down_syndrome_status:
     definition_uri: include:down_syndrome_status
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: down_syndrome_status
     range: enum_down_syndrome_status
     description: Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy
       21, euploid)
   ethnicity:
     definition_uri: include:ethnicity
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: ethnicity
     range: enum_ethnicity
     description: Ethnicity of participant
   experimental_strategy:
     definition_uri: include:experimental_strategy
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: experimental_strategy
     description: Experimental method used to obtain data in file (e.g. WGS, RNAseq,
       WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay,
       Meso Scale Discovery, etc.)
   external_id:
     definition_uri: include:external_id
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: external_id
     description: Unique identifier for the participant, assigned by data contributor
   family_id:
     definition_uri: include:family_id
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: family_id
     description: Unique identifer for family to which Participant belongs
   family_relationship:
     definition_uri: include:family_relationship
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: family_relationship
     description: Relationship of Participant to other family members
   family_type:
     definition_uri: include:family_type
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: family_type
     range: enum_family_type
     description: 'Structure of family members participating in the study (proband-only
@@ -280,159 +291,161 @@ slots:
       parents; trio+ = proband + 2 parents + other relatives) '
   father_id:
     definition_uri: include:father_id
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: father_id
     description: Participant ID for Participant's father
   file_id:
     definition_uri: include:file_id
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: file_id
     description: File identifier, assigned by DCC
   file_name:
     definition_uri: include:file_name
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: file_name
     description: Synapse ID for file
   format:
     definition_uri: include:format
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: format
     description: Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom,
       etc.)
   has_biospecimen:
     definition_uri: include:has_biospecimen
     description: Link to a Biospecimen
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: has_biospecimen
     range: Biospecimen
   has_datafile:
     definition_uri: include:has_datafile
     description: Link to a DataFile
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: has_datafile
     range: DataFile
   has_participant:
     definition_uri: include:has_participant
     description: Link to a Participant
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: has_participant
     range: Participant
   has_study:
     definition_uri: include:has_study
     description: Link to a Study
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: has_study
     range: Study
   laboratory_procedure:
     definition_uri: include:laboratory_procedure
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: laboratory_procedure
     description: Procedure by which Sample was derived from Parent Sample (e.g. RBC
       lysis, Centrifugation, Ficoll, etc.)
   mother_id:
     definition_uri: include:mother_id
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: mother_id
     description: Participant ID for Participant's mother
   outcomes_vital_status:
     definition_uri: include:outcomes_vital_status
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: outcomes_vital_status
     description: Whether participant is alive or dead
   parent_sample_id:
     definition_uri: include:parent_sample_id
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: parent_sample_id
     description: Identifier for the direct parent from which Sample was derived, processed,
       pooled, etc. (if applicable)
   parent_sample_type:
     definition_uri: include:parent_sample_type
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: parent_sample_type
     description: Type of biological material comprising the parent sample (e.g. Plasma,
       Serum, White blood cells, etc.)
   participant_id:
     definition_uri: include:participant_id
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: participant_id
     description: Unique identifier for the participant, assigned by DCC
   phenotype_hpo:
     definition_uri: include:phenotype_hpo
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: phenotype_hpo
     description: Human Phenotype Ontology code (annotated by data contributor or DCC)
   phenotype_interpretation:
     definition_uri: include:phenotype_interpretation
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: phenotype_interpretation
     range: enum_phenotype_interpretation
     description: Whether phenotype was observed or not
   phenotype_source_text:
     definition_uri: include:phenotype_source_text
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: phenotype_source_text
     description: Phenotype as described by data contributor
   program:
     definition_uri: include:program
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: program
     range: enum_program
     description: Funding source for the study
   race:
     definition_uri: include:race
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: race
     range: enum_race
     description: Race of participant
   sample_availability:
     definition_uri: include:sample_availability
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: sample_availability
     range: enum_sample_availability
     description: Whether or not the sample is potentially available for sharing through
       the Virtual Biorepository
   sample_id:
     definition_uri: include:sample_id
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: sample_id
     description: Identifier for sample. A sample is a unique biological material; two
       samples with two different IDs are biologically distinct.
   sample_type:
     definition_uri: include:sample_type
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: sample_type
     description: Type of biological material comprising the sample (e.g. Plasma, Serum,
       White blood cells, DNA, RNA, etc.)
   sex:
     definition_uri: include:sex
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: sex
     range: enum_sex
     description: Sex of participant
   size:
     definition_uri: include:size
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: size
     description: Size of file
   study_code:
     definition_uri: include:study_code
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: study_code
     range: enum_study_code
     description: Unique identifer for the study, assigned by DCC
   study_name:
     definition_uri: include:study_name
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: study_name
     description: Name of the study, chosen by data contributor
+  validation_rules:
+
   volume:
     definition_uri: include:volume
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: volume
     description: Amount of sample in container
   volume_unit:
     definition_uri: include:volume_unit
-    from_schema: https://w3id.org/include_portal_v1_schema
+    from_schema: https://w3id.org/include
     name: volume_unit
     description: Unit of sample volume
 classes:
@@ -441,8 +454,8 @@ classes:
     title: Biospecimen
     definition_uri: include:Biospecimen
     description: A Biospecimen Collected from A Participant
-    from_schema: https://w3id.org/include_portal_v1_schema
-    is_a: NamedThing
+    from_schema: https://w3id.org/include
+    is_a: Thing
     annotations:
       requires_component: Study,Participant,DataFile
       required: false
@@ -469,8 +482,8 @@ classes:
     title: DataFile
     definition_uri: include:DataFile
     description: A DataFile Associated with a Participant or Study or Biospecimen
-    from_schema: https://w3id.org/include_portal_v1_schema
-    is_a: NamedThing
+    from_schema: https://w3id.org/include
+    is_a: Thing
     annotations:
       requires_component: Study,Participant,Biospecimen
       required: false
@@ -494,8 +507,8 @@ classes:
     title: Participant
     definition_uri: include:Participant
     description: A Participant in a Study
-    from_schema: https://w3id.org/include_portal_v1_schema
-    is_a: NamedThing
+    from_schema: https://w3id.org/include
+    is_a: Thing
     annotations:
       requires_component: Study,DataFile
       required: false
@@ -530,8 +543,8 @@ classes:
     title: Study
     definition_uri: include:Study
     description: A Study
-    from_schema: https://w3id.org/include_portal_v1_schema
-    is_a: NamedThing
+    from_schema: https://w3id.org/include
+    is_a: Thing
     annotations:
       required: true
     slots:
@@ -539,8 +552,8 @@ classes:
     - program
     - study_code
     - study_name
-  NamedThing:
-    name: NamedThing
-    title: NamedThing
-    definition_uri: include:NamedThing
-    from_schema: https://w3id.org/include_portal_v1_schema
+  Thing:
+    name: Thing
+    title: Thing
+    definition_uri: schema:Thing
+    from_schema: https://w3id.org/include
