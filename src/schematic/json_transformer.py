@@ -4,7 +4,7 @@ from yaml import FullLoader
 from copy import deepcopy
 from pprint import pprint
 
-# import schemaview
+
 # EXAMPLE SCHEMATIC OBJECT
 # {'@id': 'bts:Study',
 #  '@type': 'rdfs:Class',
@@ -60,12 +60,13 @@ transform_map = {
     "description": "rdfs:comment",
     "name": "rdfs:label",
     "from_schema": "schema:isPartOf",
-    "title": "displayName"
+    "title": "sms:displayName"
 }
 
 
 # In[7]: Generate context from declared namespaces
 context = generate_context(lml_yaml['prefixes'])
+context['sms'] = 'www.sms.org'
 # Build the schematic json
 include_graph = {
     '@context': context,
@@ -85,38 +86,38 @@ for class_key, class_data in lml_yaml['classes'].items():
         inc_class['schema:isPartOf'] = make_object(class_data['from_schema'])
     if 'annotations' in class_data.keys():
         if 'required' in class_data['annotations'].keys():
-            inc_class['required'] = includify_curie(class_data['annotations']['required'])
+            required = class_data['annotations']['required']
+            inc_class['sms:required'] = 'sms:true' if required else 'sms:false'
         if 'requires_component' in class_data['annotations'].keys():
             comps = [make_object(includify_curie(x)) for x in
                      class_data['annotations']['requires_component'].split(",")]
-            inc_class[includify_curie('requiresComponent')] = comps
+            inc_class['sms:requiresComponent'] = comps
     if 'slots' in class_data.keys():
-        inc_class[includify_curie('requiresDependency')] = [make_object(includify_curie(x)) for x in
-                                                            class_data['slots']]
-    inc_class[includify_curie("validationRules")] = []
+        inc_class['sms:requiresDependency'] = [make_object(includify_curie(x)) for x in class_data['slots']]
+    inc_class["sms:validationRules"] = []
     include_graph['@graph'].append(inc_class)
 
-
+#
 for slot_key, slot_data in lml_yaml['slots'].items():
     inc_prop = {}
     inc_prop["@type"] = "rdf:Property"
-    inc_prop['include:displayName'] = display_name(slot_key)
-    for k, v in slot_data.items():
-        if k in transform_map.keys():
-            inc_prop[transform_map[k]] = v
-    if "from_schema" in class_data.keys():
-        inc_prop['schema:isPartOf'] = make_object(slot_data['from_schema'])
-    if "range" in slot_data.keys():
-        if "enum" in slot_data['range']:
-            pvs = process_enum_values(lml_yaml['enums'][slot_data['range']])
-            inc_prop['schema:rangeIncludes'] = pvs
-    if "multivalued" in slot_data.keys() and slot_data['multivalued']:
-        inc_prop[includify_curie('validationRules')] = ['list']
+    inc_prop['sms:displayName'] = display_name(slot_key)
+    if slot_data:
+        for k, v in slot_data.items():
+            if k in transform_map.keys():
+                inc_prop[transform_map[k]] = v
+        if "from_schema" in slot_data.keys():
+            inc_prop['schema:isPartOf'] = make_object(slot_data['from_schema'])
+        if "range" in slot_data.keys():
+            if "enum" in slot_data['range']:
+                pvs = process_enum_values(lml_yaml['enums'][slot_data['range']])
+                inc_prop['schema:rangeIncludes'] = pvs
+        if "multivalued" in slot_data.keys() and slot_data['multivalued']:
+            inc_prop['sms:validationRules'] = ['list']
     include_graph['@graph'].append(inc_prop)
-with open("include_schematic_linkml.jsonld", 'w') as islj:
+
+with open("include_schematic_linkml.json", 'w') as islj:
     json.dump(include_graph, islj)
+with open("include_schematic_linkml.jsonld", 'w') as isljd:
+    json.dump(include_graph, isljd)
 
-# In[9]:
-
-
-pprint(include_graph)
