@@ -20,13 +20,6 @@ prefixes:
 default_prefix: include
 default_range: string
 enums:
-  enum_validation_rules:
-    definition_uri: include:enum_validation_rules
-    name: enum_validation_rules
-    from_schema: https://w3id.org/include
-    permissible_values:
-      List:
-        text: list
   enum_data_access:
     definition_uri: include:enum_data_access
     name: enum_data_access
@@ -437,6 +430,11 @@ slots:
     name: study_name
     description: Name of the study, chosen by data contributor
   validation_rules:
+    definition_uri: include:validation_rules
+    from_schema: https://w3id.org/include
+    name: validation_rules
+    title: Validation Rules
+    description: Rules for Validation of Property Constraints and Values
 
   volume:
     definition_uri: include:volume

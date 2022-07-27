@@ -47,11 +47,27 @@ def display_name(name):
     return capitalized
 
 
+def enum_value_object(value):
+    return {
+        "@id" : includify_curie(value.replace(" ", "")),
+        "@type": "rdfs:Class",
+        "rdfs:comment": "TBD",
+        "rdfs:label": value.replace(" ", ""),
+        "sms:displayName": value,
+        "schema:isPartOf": "https://w3id.org/include"
+    }
+
+
 def process_enum_values(enum):
     range_includes = []
+    value_objects = []
     for k, v in enum['permissible_values'].items():
-        range_includes.append(make_object(includify_curie(v['text'])))
-    return range_includes
+        range_includes.append(make_object(includify_curie(v['text'].replace(" ", ""))))
+        value_objects.append(enum_value_object(v['text']))
+    return range_includes, value_objects
+
+
+
 
 
 # In[5]: The easy 1to1 replacements
@@ -80,8 +96,9 @@ for class_key, class_data in lml_yaml['classes'].items():
         if k in transform_map.keys():
             inc_class[transform_map[k]] = v
     if 'is_a' in class_data.keys():
-        parent = includify_curie(class_data['is_a'])
-        inc_class['rdfs:subClassOf'] = [make_object(parent)]
+        parent = class_data['is_a']
+        parent_curie = "schema:Thing" if parent == "Thing" else includify_curie(parent)
+        inc_class['rdfs:subClassOf'] = [make_object(parent_curie)]
     if "from_schema" in class_data.keys():
         inc_class['schema:isPartOf'] = make_object(class_data['from_schema'])
     if 'annotations' in class_data.keys():
@@ -110,8 +127,9 @@ for slot_key, slot_data in lml_yaml['slots'].items():
             inc_prop['schema:isPartOf'] = make_object(slot_data['from_schema'])
         if "range" in slot_data.keys():
             if "enum" in slot_data['range']:
-                pvs = process_enum_values(lml_yaml['enums'][slot_data['range']])
-                inc_prop['schema:rangeIncludes'] = pvs
+                range_includes, value_objects = process_enum_values(lml_yaml['enums'][slot_data['range']])
+                inc_prop['schema:rangeIncludes'] = range_includes
+                include_graph['@graph'] += value_objects
         if "multivalued" in slot_data.keys() and slot_data['multivalued']:
             inc_prop['sms:validationRules'] = ['list']
     include_graph['@graph'].append(inc_prop)
