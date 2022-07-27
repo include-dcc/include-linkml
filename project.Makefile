@@ -12,11 +12,11 @@ output_dir = src/data/output
 	#   when last arg is src/data/sheets/*.tsv
 	# but each of the templates complies OK on its own
 
-.PHONY: all clean individually
+.PHONY: individually_all linkml2sheets_clean individually
 
-all: clean individually
+individually_all: linkml2sheets_clean individually
 
-clean:
+linkml2sheets_clean:
 	rm -rf $(output_dir)/*
 
 src/data/output/%.tsv:
