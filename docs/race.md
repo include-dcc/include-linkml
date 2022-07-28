@@ -11,13 +11,22 @@ URI: [https://w3id.org/include/race](https://w3id.org/include/race)
 
 ## Properties
 
- * Range: enum_race
+ * Range: [EnumRace](EnumRace.md)
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

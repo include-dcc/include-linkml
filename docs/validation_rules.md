@@ -1,8 +1,8 @@
-# Slot: volume_unit
-_Unit of sample volume_
+# Slot: validation_rules
+_Rules for Validation of Property Constraints and Values_
 
 
-URI: [https://w3id.org/include/volume_unit](https://w3id.org/include/volume_unit)
+URI: [https://w3id.org/include/validation_rules](https://w3id.org/include/validation_rules)
 
 
 

@@ -1,5 +1,6 @@
 {
    "include": "https://w3id.org/include/",
    "linkml": "https://w3id.org/linkml/",
-   "schema": "http://schema.org/"
+   "schema": "http://schema.org/",
+   "sms": "http://sms.org/"
 }

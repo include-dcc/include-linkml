@@ -8,18 +8,27 @@ URI: EnumRace
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| American Indian or Alaska Native | None | None | |
-| Asian | None | None | |
-| Black or African American | None | None | |
-| More than one race | None | None | |
-| Native Hawaiian or Other Pacific Islander | None | None | |
-| Other | None | None | |
-| White | None | None | |
+| American Indian or Alaska Native | None |  | |
+| Asian | None |  | |
+| Black or African American | None |  | |
+| More than one race | None |  | |
+| Native Hawaiian or Other Pacific Islander | None |  | |
+| Other | None |  | |
+| White | None |  | |
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

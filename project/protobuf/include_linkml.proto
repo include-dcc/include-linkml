@@ -1,75 +1,75 @@
 // A Biospecimen Collected from A Participant
 message Biospecimen
  {
-  optional ageAtBiospecimenCollection String = 1
-  optional biospecimenStorage String = 2
-  optional collectionId String = 3
-  optional collectionSampleType String = 4
-  optional containerId String = 5
-  optional hasDatafile DataFile = 6
-  optional hasParticipant Participant = 7
-  optional hasStudy Study = 8
-  optional laboratoryProcedure String = 9
-  optional parentSampleId String = 10
-  optional parentSampleType String = 11
-  optional sampleAvailability EnumSampleAvailability = 12
-  optional sampleId String = 13
-  optional sampleType String = 14
-  optional volume String = 15
-  optional volumeUnit String = 16
+  string ageAtBiospecimenCollection = 0
+  string biospecimenStorage = 0
+  string collectionId = 0
+  string collectionSampleType = 0
+  string containerId = 0
+  dataFile hasDatafile = 0
+  participant hasParticipant = 0
+  study hasStudy = 0
+  string laboratoryProcedure = 0
+  string parentSampleId = 0
+  string parentSampleType = 0
+  enumSampleAvailability sampleAvailability = 0
+  string sampleId = 0
+  string sampleType = 0
+  string volume = 0
+  string volumeUnit = 0
  }
 // A DataFile Associated with a Participant or Study or Biospecimen
 message DataFile
  {
-  optional accessUrl String = 1
-  optional collectionId String = 2
-  optional dataAccess EnumDataAccess = 3
-  optional dataCategory String = 4
-  optional dataType String = 5
-  optional experimentalStrategy String = 6
-  optional fileId String = 7
-  optional fileName String = 8
-  optional format String = 9
-  optional hasBiospecimen Biospecimen = 10
-  optional hasParticipant Participant = 11
-  optional hasStudy Study = 12
-  optional participantId String = 13
-  optional size String = 14
+  string accessUrl = 0
+  string collectionId = 0
+  enumDataAccess dataAccess = 0
+  string dataCategory = 0
+  string dataType = 0
+  string experimentalStrategy = 0
+  string fileId = 0
+  string fileName = 0
+  string format = 0
+  biospecimen hasBiospecimen = 0
+  participant hasParticipant = 0
+  study hasStudy = 0
+  string participantId = 0
+  string size = 0
  }
 // A Participant in a Study
 message Participant
  {
-  optional ageAtDiagnosis String = 1
-  optional ageAtPhenotypeAssignment String = 2
-  optional ageAtTheLastVitalStatus String = 3
-  optional diagnosisIcd String = 4
-  optional diagnosisMondo String = 5
-  optional diagnosisNcit String = 6
-  optional diagnosisSourceText String = 7
-  optional diagnosisType String = 8
-  optional downSyndromeStatus EnumDownSyndromeStatus = 9
-  optional ethnicity EnumEthnicity = 10
-  optional externalId String = 11
-  optional familyId String = 12
-  optional familyRelationship String = 13
-  optional familyType EnumFamilyType = 14
-  optional fatherId String = 15
-  optional hasDatafile DataFile = 16
-  optional hasStudy Study = 17
-  optional motherId String = 18
-  optional outcomesVitalStatus String = 19
-  optional participantId String = 20
-  optional phenotypeHpo String = 21
-  optional phenotypeSourceText String = 22
-  optional phenotypeInterpretation EnumPhenotypeInterpretation = 23
-  optional race EnumRace = 24
-  optional sex EnumSex = 25
+  string ageAtDiagnosis = 0
+  string ageAtPhenotypeAssignment = 0
+  string ageAtTheLastVitalStatus = 0
+  string diagnosisIcd = 0
+  string diagnosisMondo = 0
+  string diagnosisNcit = 0
+  string diagnosisSourceText = 0
+  string diagnosisType = 0
+  enumDownSyndromeStatus downSyndromeStatus = 0
+  enumEthnicity ethnicity = 0
+  string externalId = 0
+  string familyId = 0
+  string familyRelationship = 0
+  enumFamilyType familyType = 0
+  string fatherId = 0
+  dataFile hasDatafile = 0
+  study hasStudy = 0
+  string motherId = 0
+  string outcomesVitalStatus = 0
+  string participantId = 0
+  string phenotypeHpo = 0
+  string phenotypeSourceText = 0
+  enumPhenotypeInterpretation phenotypeInterpretation = 0
+  enumRace race = 0
+  enumSex sex = 0
  }
 // A Study
 message Study
  {
-  optional dbgap String = 1
-  optional program EnumProgram = 2
-  optional studyCode EnumStudyCode = 3
-  optional studyName String = 4
+  string dbgap = 0
+  enumProgram program = 0
+  enumStudyCode studyCode = 0
+  string studyName = 0
  }

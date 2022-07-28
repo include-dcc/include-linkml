@@ -11,13 +11,22 @@ URI: [https://w3id.org/include/sample_availability](https://w3id.org/include/sam
 
 ## Properties
 
- * Range: enum_sample_availability
+ * Range: [EnumSampleAvailability](EnumSampleAvailability.md)
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

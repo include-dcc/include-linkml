@@ -8,16 +8,25 @@ URI: EnumStudyCode
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| DS-COG-ALL | None | None | |
-| DS-PCGC | None | None | |
-| DS360-CHD | None | None | |
-| DSC | None | None | |
-| HTP | None | None | |
+| DS-COG-ALL | None |  | |
+| DS-PCGC | None |  | |
+| DS360-CHD | None |  | |
+| DSC | None |  | |
+| HTP | None |  | |
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

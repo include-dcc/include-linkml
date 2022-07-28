@@ -1,8 +1,8 @@
 # Auto generated from include_linkml.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-07-21T12:55:41
+# Generation date: 2022-07-28T14:13:17
 # Schema: IncludePortalV1
 #
-# id: https://w3id.org/include_portal_v1_schema
+# id: https://w3id.org/include
 # description: Initial Include Portal Schema
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
@@ -34,6 +34,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 INCLUDE = CurieNamespace('include', 'https://w3id.org/include/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 SCHEMA = CurieNamespace('schema', 'http://schema.org/')
+SMS = CurieNamespace('sms', 'http://sms.org/')
 DEFAULT_ = INCLUDE
 
 
@@ -43,17 +44,20 @@ DEFAULT_ = INCLUDE
 
 
 
-class NamedThing(YAMLRoot):
+class Thing(YAMLRoot):
+    """
+    Highest Level Class
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = INCLUDE.NamedThing
-    class_class_curie: ClassVar[str] = "include:NamedThing"
-    class_name: ClassVar[str] = "NamedThing"
-    class_model_uri: ClassVar[URIRef] = INCLUDE.NamedThing
+    class_class_uri: ClassVar[URIRef] = INCLUDE.Thing
+    class_class_curie: ClassVar[str] = "include:Thing"
+    class_name: ClassVar[str] = "Thing"
+    class_model_uri: ClassVar[URIRef] = INCLUDE.Thing
 
 
 @dataclass
-class Biospecimen(NamedThing):
+class Biospecimen(Thing):
     """
     A Biospecimen Collected from A Participant
     """
@@ -64,6 +68,8 @@ class Biospecimen(NamedThing):
     class_name: ClassVar[str] = "Biospecimen"
     class_model_uri: ClassVar[URIRef] = INCLUDE.Biospecimen
 
+    sample_id: str = None
+    sample_type: str = None
     age_at_biospecimen_collection: Optional[str] = None
     biospecimen_storage: Optional[str] = None
     collection_id: Optional[str] = None
@@ -76,12 +82,20 @@ class Biospecimen(NamedThing):
     parent_sample_id: Optional[str] = None
     parent_sample_type: Optional[str] = None
     sample_availability: Optional[Union[str, "EnumSampleAvailability"]] = None
-    sample_id: Optional[str] = None
-    sample_type: Optional[str] = None
     volume: Optional[str] = None
     volume_unit: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.sample_id):
+            self.MissingRequiredField("sample_id")
+        if not isinstance(self.sample_id, str):
+            self.sample_id = str(self.sample_id)
+
+        if self._is_empty(self.sample_type):
+            self.MissingRequiredField("sample_type")
+        if not isinstance(self.sample_type, str):
+            self.sample_type = str(self.sample_type)
+
         if self.age_at_biospecimen_collection is not None and not isinstance(self.age_at_biospecimen_collection, str):
             self.age_at_biospecimen_collection = str(self.age_at_biospecimen_collection)
 
@@ -118,12 +132,6 @@ class Biospecimen(NamedThing):
         if self.sample_availability is not None and not isinstance(self.sample_availability, EnumSampleAvailability):
             self.sample_availability = EnumSampleAvailability(self.sample_availability)
 
-        if self.sample_id is not None and not isinstance(self.sample_id, str):
-            self.sample_id = str(self.sample_id)
-
-        if self.sample_type is not None and not isinstance(self.sample_type, str):
-            self.sample_type = str(self.sample_type)
-
         if self.volume is not None and not isinstance(self.volume, str):
             self.volume = str(self.volume)
 
@@ -137,7 +145,7 @@ class Biospecimen(NamedThing):
 
 
 @dataclass
-class DataFile(NamedThing):
+class DataFile(Thing):
     """
     A DataFile Associated with a Participant or Study or Biospecimen
     """
@@ -148,22 +156,37 @@ class DataFile(NamedThing):
     class_name: ClassVar[str] = "DataFile"
     class_model_uri: ClassVar[URIRef] = INCLUDE.DataFile
 
+    data_category: str = None
+    format: str = None
+    participant_id: str = None
     access_url: Optional[str] = None
     collection_id: Optional[str] = None
     data_access: Optional[Union[str, "EnumDataAccess"]] = None
-    data_category: Optional[str] = None
     data_type: Optional[str] = None
     experimental_strategy: Optional[str] = None
     file_id: Optional[str] = None
     file_name: Optional[str] = None
-    format: Optional[str] = None
     has_biospecimen: Optional[Union[dict, Biospecimen]] = None
     has_participant: Optional[Union[dict, "Participant"]] = None
     has_study: Optional[Union[dict, "Study"]] = None
-    participant_id: Optional[str] = None
     size: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.data_category):
+            self.MissingRequiredField("data_category")
+        if not isinstance(self.data_category, str):
+            self.data_category = str(self.data_category)
+
+        if self._is_empty(self.format):
+            self.MissingRequiredField("format")
+        if not isinstance(self.format, str):
+            self.format = str(self.format)
+
+        if self._is_empty(self.participant_id):
+            self.MissingRequiredField("participant_id")
+        if not isinstance(self.participant_id, str):
+            self.participant_id = str(self.participant_id)
+
         if self.access_url is not None and not isinstance(self.access_url, str):
             self.access_url = str(self.access_url)
 
@@ -172,9 +195,6 @@ class DataFile(NamedThing):
 
         if self.data_access is not None and not isinstance(self.data_access, EnumDataAccess):
             self.data_access = EnumDataAccess(self.data_access)
-
-        if self.data_category is not None and not isinstance(self.data_category, str):
-            self.data_category = str(self.data_category)
 
         if self.data_type is not None and not isinstance(self.data_type, str):
             self.data_type = str(self.data_type)
@@ -188,9 +208,6 @@ class DataFile(NamedThing):
         if self.file_name is not None and not isinstance(self.file_name, str):
             self.file_name = str(self.file_name)
 
-        if self.format is not None and not isinstance(self.format, str):
-            self.format = str(self.format)
-
         if self.has_biospecimen is not None and not isinstance(self.has_biospecimen, Biospecimen):
             self.has_biospecimen = Biospecimen(**as_dict(self.has_biospecimen))
 
@@ -200,9 +217,6 @@ class DataFile(NamedThing):
         if self.has_study is not None and not isinstance(self.has_study, Study):
             self.has_study = Study(**as_dict(self.has_study))
 
-        if self.participant_id is not None and not isinstance(self.participant_id, str):
-            self.participant_id = str(self.participant_id)
-
         if self.size is not None and not isinstance(self.size, str):
             self.size = str(self.size)
 
@@ -210,7 +224,7 @@ class DataFile(NamedThing):
 
 
 @dataclass
-class Participant(NamedThing):
+class Participant(Thing):
     """
     A Participant in a Study
     """
@@ -221,6 +235,13 @@ class Participant(NamedThing):
     class_name: ClassVar[str] = "Participant"
     class_model_uri: ClassVar[URIRef] = INCLUDE.Participant
 
+    down_syndrome_status: Union[str, "EnumDownSyndromeStatus"] = None
+    ethnicity: Union[str, "EnumEthnicity"] = None
+    external_id: str = None
+    family_type: Union[str, "EnumFamilyType"] = None
+    participant_id: str = None
+    race: Union[str, "EnumRace"] = None
+    sex: Union[str, "EnumSex"] = None
     age_at_diagnosis: Optional[str] = None
     age_at_phenotype_assignment: Optional[str] = None
     age_at_the_last_vital_status: Optional[str] = None
@@ -229,25 +250,53 @@ class Participant(NamedThing):
     diagnosis_ncit: Optional[str] = None
     diagnosis_source_text: Optional[str] = None
     diagnosis_type: Optional[str] = None
-    down_syndrome_status: Optional[Union[str, "EnumDownSyndromeStatus"]] = None
-    ethnicity: Optional[Union[str, "EnumEthnicity"]] = None
-    external_id: Optional[str] = None
     family_id: Optional[str] = None
     family_relationship: Optional[str] = None
-    family_type: Optional[Union[str, "EnumFamilyType"]] = None
     father_id: Optional[str] = None
     has_datafile: Optional[Union[dict, DataFile]] = None
     has_study: Optional[Union[dict, "Study"]] = None
     mother_id: Optional[str] = None
     outcomes_vital_status: Optional[str] = None
-    participant_id: Optional[str] = None
     phenotype_hpo: Optional[str] = None
     phenotype_source_text: Optional[str] = None
     phenotype_interpretation: Optional[Union[str, "EnumPhenotypeInterpretation"]] = None
-    race: Optional[Union[str, "EnumRace"]] = None
-    sex: Optional[Union[str, "EnumSex"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.down_syndrome_status):
+            self.MissingRequiredField("down_syndrome_status")
+        if not isinstance(self.down_syndrome_status, EnumDownSyndromeStatus):
+            self.down_syndrome_status = EnumDownSyndromeStatus(self.down_syndrome_status)
+
+        if self._is_empty(self.ethnicity):
+            self.MissingRequiredField("ethnicity")
+        if not isinstance(self.ethnicity, EnumEthnicity):
+            self.ethnicity = EnumEthnicity(self.ethnicity)
+
+        if self._is_empty(self.external_id):
+            self.MissingRequiredField("external_id")
+        if not isinstance(self.external_id, str):
+            self.external_id = str(self.external_id)
+
+        if self._is_empty(self.family_type):
+            self.MissingRequiredField("family_type")
+        if not isinstance(self.family_type, EnumFamilyType):
+            self.family_type = EnumFamilyType(self.family_type)
+
+        if self._is_empty(self.participant_id):
+            self.MissingRequiredField("participant_id")
+        if not isinstance(self.participant_id, str):
+            self.participant_id = str(self.participant_id)
+
+        if self._is_empty(self.race):
+            self.MissingRequiredField("race")
+        if not isinstance(self.race, EnumRace):
+            self.race = EnumRace(self.race)
+
+        if self._is_empty(self.sex):
+            self.MissingRequiredField("sex")
+        if not isinstance(self.sex, EnumSex):
+            self.sex = EnumSex(self.sex)
+
         if self.age_at_diagnosis is not None and not isinstance(self.age_at_diagnosis, str):
             self.age_at_diagnosis = str(self.age_at_diagnosis)
 
@@ -272,23 +321,11 @@ class Participant(NamedThing):
         if self.diagnosis_type is not None and not isinstance(self.diagnosis_type, str):
             self.diagnosis_type = str(self.diagnosis_type)
 
-        if self.down_syndrome_status is not None and not isinstance(self.down_syndrome_status, EnumDownSyndromeStatus):
-            self.down_syndrome_status = EnumDownSyndromeStatus(self.down_syndrome_status)
-
-        if self.ethnicity is not None and not isinstance(self.ethnicity, EnumEthnicity):
-            self.ethnicity = EnumEthnicity(self.ethnicity)
-
-        if self.external_id is not None and not isinstance(self.external_id, str):
-            self.external_id = str(self.external_id)
-
         if self.family_id is not None and not isinstance(self.family_id, str):
             self.family_id = str(self.family_id)
 
         if self.family_relationship is not None and not isinstance(self.family_relationship, str):
             self.family_relationship = str(self.family_relationship)
-
-        if self.family_type is not None and not isinstance(self.family_type, EnumFamilyType):
-            self.family_type = EnumFamilyType(self.family_type)
 
         if self.father_id is not None and not isinstance(self.father_id, str):
             self.father_id = str(self.father_id)
@@ -305,9 +342,6 @@ class Participant(NamedThing):
         if self.outcomes_vital_status is not None and not isinstance(self.outcomes_vital_status, str):
             self.outcomes_vital_status = str(self.outcomes_vital_status)
 
-        if self.participant_id is not None and not isinstance(self.participant_id, str):
-            self.participant_id = str(self.participant_id)
-
         if self.phenotype_hpo is not None and not isinstance(self.phenotype_hpo, str):
             self.phenotype_hpo = str(self.phenotype_hpo)
 
@@ -317,17 +351,11 @@ class Participant(NamedThing):
         if self.phenotype_interpretation is not None and not isinstance(self.phenotype_interpretation, EnumPhenotypeInterpretation):
             self.phenotype_interpretation = EnumPhenotypeInterpretation(self.phenotype_interpretation)
 
-        if self.race is not None and not isinstance(self.race, EnumRace):
-            self.race = EnumRace(self.race)
-
-        if self.sex is not None and not isinstance(self.sex, EnumSex):
-            self.sex = EnumSex(self.sex)
-
         super().__post_init__(**kwargs)
 
 
 @dataclass
-class Study(NamedThing):
+class Study(Thing):
     """
     A Study
     """
@@ -338,23 +366,29 @@ class Study(NamedThing):
     class_name: ClassVar[str] = "Study"
     class_model_uri: ClassVar[URIRef] = INCLUDE.Study
 
+    program: Union[str, "EnumProgram"] = None
+    study_code: Union[str, "EnumStudyCode"] = None
+    study_name: str = None
     dbgap: Optional[str] = None
-    program: Optional[Union[str, "EnumProgram"]] = None
-    study_code: Optional[Union[str, "EnumStudyCode"]] = None
-    study_name: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.dbgap is not None and not isinstance(self.dbgap, str):
-            self.dbgap = str(self.dbgap)
-
-        if self.program is not None and not isinstance(self.program, EnumProgram):
+        if self._is_empty(self.program):
+            self.MissingRequiredField("program")
+        if not isinstance(self.program, EnumProgram):
             self.program = EnumProgram(self.program)
 
-        if self.study_code is not None and not isinstance(self.study_code, EnumStudyCode):
+        if self._is_empty(self.study_code):
+            self.MissingRequiredField("study_code")
+        if not isinstance(self.study_code, EnumStudyCode):
             self.study_code = EnumStudyCode(self.study_code)
 
-        if self.study_name is not None and not isinstance(self.study_name, str):
+        if self._is_empty(self.study_name):
+            self.MissingRequiredField("study_name")
+        if not isinstance(self.study_name, str):
             self.study_name = str(self.study_name)
+
+        if self.dbgap is not None and not isinstance(self.dbgap, str):
+            self.dbgap = str(self.dbgap)
 
         super().__post_init__(**kwargs)
 
@@ -525,7 +559,7 @@ slots.data_access = Slot(uri=INCLUDE.data_access, name="data_access", curie=INCL
                    model_uri=INCLUDE.data_access, domain=None, range=Optional[Union[str, "EnumDataAccess"]])
 
 slots.data_category = Slot(uri=INCLUDE.data_category, name="data_category", curie=INCLUDE.curie('data_category'),
-                   model_uri=INCLUDE.data_category, domain=None, range=Optional[str])
+                   model_uri=INCLUDE.data_category, domain=None, range=str)
 
 slots.data_type = Slot(uri=INCLUDE.data_type, name="data_type", curie=INCLUDE.curie('data_type'),
                    model_uri=INCLUDE.data_type, domain=None, range=Optional[str])
@@ -549,16 +583,16 @@ slots.diagnosis_type = Slot(uri=INCLUDE.diagnosis_type, name="diagnosis_type", c
                    model_uri=INCLUDE.diagnosis_type, domain=None, range=Optional[str])
 
 slots.down_syndrome_status = Slot(uri=INCLUDE.down_syndrome_status, name="down_syndrome_status", curie=INCLUDE.curie('down_syndrome_status'),
-                   model_uri=INCLUDE.down_syndrome_status, domain=None, range=Optional[Union[str, "EnumDownSyndromeStatus"]])
+                   model_uri=INCLUDE.down_syndrome_status, domain=None, range=Union[str, "EnumDownSyndromeStatus"])
 
 slots.ethnicity = Slot(uri=INCLUDE.ethnicity, name="ethnicity", curie=INCLUDE.curie('ethnicity'),
-                   model_uri=INCLUDE.ethnicity, domain=None, range=Optional[Union[str, "EnumEthnicity"]])
+                   model_uri=INCLUDE.ethnicity, domain=None, range=Union[str, "EnumEthnicity"])
 
 slots.experimental_strategy = Slot(uri=INCLUDE.experimental_strategy, name="experimental_strategy", curie=INCLUDE.curie('experimental_strategy'),
                    model_uri=INCLUDE.experimental_strategy, domain=None, range=Optional[str])
 
 slots.external_id = Slot(uri=INCLUDE.external_id, name="external_id", curie=INCLUDE.curie('external_id'),
-                   model_uri=INCLUDE.external_id, domain=None, range=Optional[str])
+                   model_uri=INCLUDE.external_id, domain=None, range=str)
 
 slots.family_id = Slot(uri=INCLUDE.family_id, name="family_id", curie=INCLUDE.curie('family_id'),
                    model_uri=INCLUDE.family_id, domain=None, range=Optional[str])
@@ -567,7 +601,7 @@ slots.family_relationship = Slot(uri=INCLUDE.family_relationship, name="family_r
                    model_uri=INCLUDE.family_relationship, domain=None, range=Optional[str])
 
 slots.family_type = Slot(uri=INCLUDE.family_type, name="family_type", curie=INCLUDE.curie('family_type'),
-                   model_uri=INCLUDE.family_type, domain=None, range=Optional[Union[str, "EnumFamilyType"]])
+                   model_uri=INCLUDE.family_type, domain=None, range=Union[str, "EnumFamilyType"])
 
 slots.father_id = Slot(uri=INCLUDE.father_id, name="father_id", curie=INCLUDE.curie('father_id'),
                    model_uri=INCLUDE.father_id, domain=None, range=Optional[str])
@@ -579,7 +613,7 @@ slots.file_name = Slot(uri=INCLUDE.file_name, name="file_name", curie=INCLUDE.cu
                    model_uri=INCLUDE.file_name, domain=None, range=Optional[str])
 
 slots.format = Slot(uri=INCLUDE.format, name="format", curie=INCLUDE.curie('format'),
-                   model_uri=INCLUDE.format, domain=None, range=Optional[str])
+                   model_uri=INCLUDE.format, domain=None, range=str)
 
 slots.has_biospecimen = Slot(uri=INCLUDE.has_biospecimen, name="has_biospecimen", curie=INCLUDE.curie('has_biospecimen'),
                    model_uri=INCLUDE.has_biospecimen, domain=None, range=Optional[Union[dict, Biospecimen]])
@@ -609,7 +643,7 @@ slots.parent_sample_type = Slot(uri=INCLUDE.parent_sample_type, name="parent_sam
                    model_uri=INCLUDE.parent_sample_type, domain=None, range=Optional[str])
 
 slots.participant_id = Slot(uri=INCLUDE.participant_id, name="participant_id", curie=INCLUDE.curie('participant_id'),
-                   model_uri=INCLUDE.participant_id, domain=None, range=Optional[str])
+                   model_uri=INCLUDE.participant_id, domain=None, range=str)
 
 slots.phenotype_hpo = Slot(uri=INCLUDE.phenotype_hpo, name="phenotype_hpo", curie=INCLUDE.curie('phenotype_hpo'),
                    model_uri=INCLUDE.phenotype_hpo, domain=None, range=Optional[str])
@@ -621,31 +655,34 @@ slots.phenotype_source_text = Slot(uri=INCLUDE.phenotype_source_text, name="phen
                    model_uri=INCLUDE.phenotype_source_text, domain=None, range=Optional[str])
 
 slots.program = Slot(uri=INCLUDE.program, name="program", curie=INCLUDE.curie('program'),
-                   model_uri=INCLUDE.program, domain=None, range=Optional[Union[str, "EnumProgram"]])
+                   model_uri=INCLUDE.program, domain=None, range=Union[str, "EnumProgram"])
 
 slots.race = Slot(uri=INCLUDE.race, name="race", curie=INCLUDE.curie('race'),
-                   model_uri=INCLUDE.race, domain=None, range=Optional[Union[str, "EnumRace"]])
+                   model_uri=INCLUDE.race, domain=None, range=Union[str, "EnumRace"])
 
 slots.sample_availability = Slot(uri=INCLUDE.sample_availability, name="sample_availability", curie=INCLUDE.curie('sample_availability'),
                    model_uri=INCLUDE.sample_availability, domain=None, range=Optional[Union[str, "EnumSampleAvailability"]])
 
 slots.sample_id = Slot(uri=INCLUDE.sample_id, name="sample_id", curie=INCLUDE.curie('sample_id'),
-                   model_uri=INCLUDE.sample_id, domain=None, range=Optional[str])
+                   model_uri=INCLUDE.sample_id, domain=None, range=str)
 
 slots.sample_type = Slot(uri=INCLUDE.sample_type, name="sample_type", curie=INCLUDE.curie('sample_type'),
-                   model_uri=INCLUDE.sample_type, domain=None, range=Optional[str])
+                   model_uri=INCLUDE.sample_type, domain=None, range=str)
 
 slots.sex = Slot(uri=INCLUDE.sex, name="sex", curie=INCLUDE.curie('sex'),
-                   model_uri=INCLUDE.sex, domain=None, range=Optional[Union[str, "EnumSex"]])
+                   model_uri=INCLUDE.sex, domain=None, range=Union[str, "EnumSex"])
 
 slots.size = Slot(uri=INCLUDE.size, name="size", curie=INCLUDE.curie('size'),
                    model_uri=INCLUDE.size, domain=None, range=Optional[str])
 
 slots.study_code = Slot(uri=INCLUDE.study_code, name="study_code", curie=INCLUDE.curie('study_code'),
-                   model_uri=INCLUDE.study_code, domain=None, range=Optional[Union[str, "EnumStudyCode"]])
+                   model_uri=INCLUDE.study_code, domain=None, range=Union[str, "EnumStudyCode"])
 
 slots.study_name = Slot(uri=INCLUDE.study_name, name="study_name", curie=INCLUDE.curie('study_name'),
-                   model_uri=INCLUDE.study_name, domain=None, range=Optional[str])
+                   model_uri=INCLUDE.study_name, domain=None, range=str)
+
+slots.validation_rules = Slot(uri=INCLUDE.validation_rules, name="validation_rules", curie=INCLUDE.curie('validation_rules'),
+                   model_uri=INCLUDE.validation_rules, domain=None, range=Optional[str])
 
 slots.volume = Slot(uri=INCLUDE.volume, name="volume", curie=INCLUDE.curie('volume'),
                    model_uri=INCLUDE.volume, domain=None, range=Optional[str])

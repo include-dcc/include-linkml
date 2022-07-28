@@ -11,13 +11,22 @@ URI: [https://w3id.org/include/phenotype_interpretation](https://w3id.org/includ
 
 ## Properties
 
- * Range: enum_phenotype_interpretation
+ * Range: [EnumPhenotypeInterpretation](EnumPhenotypeInterpretation.md)
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

@@ -2,7 +2,7 @@
 # Slot: age_at_the_last_vital_status
 
 
-
+Age of last vital status
 
 URI: [include:age_at_the_last_vital_status](https://w3id.org/include/age_at_the_last_vital_status)
 

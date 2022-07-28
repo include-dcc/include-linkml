@@ -8,15 +8,24 @@ URI: EnumFamilyType
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| Duo | None | None | |
-| Other | None | None | |
-| Proband-only | None | None | |
-| Trio | None | None | |
+| Duo | None |  | |
+| Other | None |  | |
+| Proband-only | None |  | |
+| Trio | None |  | |
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

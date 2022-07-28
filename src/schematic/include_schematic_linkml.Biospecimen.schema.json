@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/example",
+  "title": "example",
+  "type": "object",
+  "properties": {
+    "Sample Type": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Biospecimen Storage": {},
+    "Container Id": {},
+    "Collection Sample Type": {},
+    "Volume Unit": {},
+    "Has Study": {},
+    "Laboratory Procedure": {},
+    "Parent Sample Id": {},
+    "Parent Sample Type": {},
+    "Sample Id": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Volume": {},
+    "Has Participant": {},
+    "Collection Id": {},
+    "Has Datafile": {},
+    "Sample Availability": {
+      "enum": [
+        "Unavailable",
+        "Available",
+        ""
+      ]
+    },
+    "Age At Biospecimen Collection": {}
+  },
+  "required": [
+    "Sample Type",
+    "Sample Id"
+  ]
+}

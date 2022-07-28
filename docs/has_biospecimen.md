@@ -11,13 +11,22 @@ URI: [https://w3id.org/include/has_biospecimen](https://w3id.org/include/has_bio
 
 ## Properties
 
- * Range: Biospecimen
+ * Range: [Biospecimen](Biospecimen.md)
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

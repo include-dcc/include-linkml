@@ -69,7 +69,10 @@
                "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "sample_id",
+            "sample_type"
+         ],
          "title": "Biospecimen",
          "type": "object"
       },
@@ -134,7 +137,11 @@
                "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "data_category",
+            "format",
+            "participant_id"
+         ],
          "title": "DataFile",
          "type": "object"
       },
@@ -242,14 +249,6 @@
          "title": "EnumStudyCode",
          "type": "string"
       },
-      "NamedThing": {
-         "additionalProperties": false,
-         "description": "",
-         "properties": {},
-         "required": [],
-         "title": "NamedThing",
-         "type": "object"
-      },
       "Participant": {
          "additionalProperties": false,
          "description": "A Participant in a Study",
@@ -263,6 +262,7 @@
                "type": "string"
             },
             "age_at_the_last_vital_status": {
+               "description": "Age of last vital status",
                "type": "string"
             },
             "diagnosis_icd": {
@@ -354,7 +354,15 @@
                "description": "Sex of participant"
             }
          },
-         "required": [],
+         "required": [
+            "down_syndrome_status",
+            "ethnicity",
+            "external_id",
+            "family_type",
+            "participant_id",
+            "race",
+            "sex"
+         ],
          "title": "Participant",
          "type": "object"
       },
@@ -379,12 +387,24 @@
                "type": "string"
             }
          },
-         "required": [],
+         "required": [
+            "program",
+            "study_code",
+            "study_name"
+         ],
          "title": "Study",
+         "type": "object"
+      },
+      "Thing": {
+         "additionalProperties": false,
+         "description": "Highest Level Class",
+         "properties": {},
+         "required": [],
+         "title": "Thing",
          "type": "object"
       }
    },
-   "$id": "https://w3id.org/include_portal_v1_schema",
+   "$id": "https://w3id.org/include",
    "$schema": "http://json-schema.org/draft-07/schema#",
    "additionalProperties": true,
    "metamodel_version": "1.7.0",
