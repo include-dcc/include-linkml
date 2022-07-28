@@ -11,13 +11,22 @@ URI: [https://w3id.org/include/family_type](https://w3id.org/include/family_type
 
 ## Properties
 
- * Range: enum_family_type
+ * Range: [EnumFamilyType](EnumFamilyType.md)
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

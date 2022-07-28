@@ -9,7 +9,7 @@ URI: [include:down_syndrome_status](https://w3id.org/include/down_syndrome_statu
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [enum_down_syndrome_status](enum_down_syndrome_status.md)
+None &#8594;  <sub>1..1</sub> [enum_down_syndrome_status](enum_down_syndrome_status.md)
 
 ## Parents
 

@@ -1,10 +1,11 @@
 {
-   "_comments": "Auto generated from include_linkml.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-07-21T12:55:34\n    Schema: IncludePortalV1\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/include_portal_v1_schema\n    description: Initial Include Portal Schema\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from include_linkml.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-07-28T14:13:10\n    Schema: IncludePortalV1\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/include\n    description: Initial Include Portal Schema\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "include": "https://w3id.org/include/",
       "linkml": "https://w3id.org/linkml/",
       "schema": "http://schema.org/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
+      "sms": "http://sms.org/",
       "@vocab": "https://w3id.org/include/",
       "data_access": {
          "@context": {

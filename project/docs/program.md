@@ -9,7 +9,7 @@ URI: [include:program](https://w3id.org/include/program)
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [enum_program](enum_program.md)
+None &#8594;  <sub>1..1</sub> [enum_program](enum_program.md)
 
 ## Parents
 

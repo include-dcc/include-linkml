@@ -8,14 +8,23 @@ URI: EnumDataAccess
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| Controlled | None | None | |
-| Open | None | None | |
-| Registered | None | None | |
+| Controlled | None |  | |
+| Open | None |  | |
+| Registered | None |  | |
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

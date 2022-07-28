@@ -11,13 +11,22 @@ URI: [https://w3id.org/include/study_code](https://w3id.org/include/study_code)
 
 ## Properties
 
- * Range: enum_study_code
+ * Range: [EnumStudyCode](EnumStudyCode.md)
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

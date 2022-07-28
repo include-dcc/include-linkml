@@ -11,13 +11,22 @@ URI: [https://w3id.org/include/down_syndrome_status](https://w3id.org/include/do
 
 ## Properties
 
- * Range: enum_down_syndrome_status
+ * Range: [EnumDownSyndromeStatus](EnumDownSyndromeStatus.md)
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

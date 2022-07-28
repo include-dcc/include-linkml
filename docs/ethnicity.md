@@ -11,13 +11,22 @@ URI: [https://w3id.org/include/ethnicity](https://w3id.org/include/ethnicity)
 
 ## Properties
 
- * Range: enum_ethnicity
+ * Range: [EnumEthnicity](EnumEthnicity.md)
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

@@ -12,8 +12,8 @@ type Biospecimen
     parentSampleId: String
     parentSampleType: String
     sampleAvailability: EnumSampleAvailability
-    sampleId: String
-    sampleType: String
+    sampleId: String!
+    sampleType: String!
     volume: String
     volumeUnit: String
   }
@@ -23,21 +23,17 @@ type DataFile
     accessUrl: String
     collectionId: String
     dataAccess: EnumDataAccess
-    dataCategory: String
+    dataCategory: String!
     dataType: String
     experimentalStrategy: String
     fileId: String
     fileName: String
-    format: String
+    format: String!
     hasBiospecimen: Biospecimen
     hasParticipant: Participant
     hasStudy: Study
-    participantId: String
+    participantId: String!
     size: String
-  }
-
-type NamedThing
-  {
   }
 
 type Participant
@@ -50,30 +46,34 @@ type Participant
     diagnosisNcit: String
     diagnosisSourceText: String
     diagnosisType: String
-    downSyndromeStatus: EnumDownSyndromeStatus
-    ethnicity: EnumEthnicity
-    externalId: String
+    downSyndromeStatus: EnumDownSyndromeStatus!
+    ethnicity: EnumEthnicity!
+    externalId: String!
     familyId: String
     familyRelationship: String
-    familyType: EnumFamilyType
+    familyType: EnumFamilyType!
     fatherId: String
     hasDatafile: DataFile
     hasStudy: Study
     motherId: String
     outcomesVitalStatus: String
-    participantId: String
+    participantId: String!
     phenotypeHpo: String
     phenotypeSourceText: String
     phenotypeInterpretation: EnumPhenotypeInterpretation
-    race: EnumRace
-    sex: EnumSex
+    race: EnumRace!
+    sex: EnumSex!
   }
 
 type Study
   {
     dbgap: String
-    program: EnumProgram
-    studyCode: EnumStudyCode
-    studyName: String
+    program: EnumProgram!
+    studyCode: EnumStudyCode!
+    studyName: String!
+  }
+
+type Thing
+  {
   }
 

@@ -5,17 +5,25 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://w3id.org/include_portal_v1_schema> a owl:Ontology ;
+<https://w3id.org/include> a owl:Ontology ;
     rdfs:label "IncludePortalV1" ;
-    IAO:0000700 include:NamedThing ;
+    IAO:0000700 include:Thing ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    linkml:generation_date "2022-07-21T12:55:36" ;
+    linkml:generation_date "2022-07-28T14:13:12" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "include_linkml.yaml" ;
-    linkml:source_file_date "2022-07-21T12:55:27" ;
-    linkml:source_file_size 18880 .
+    linkml:source_file_date "2022-07-28T14:12:53" ;
+    linkml:source_file_size 21073 .
+
+include:validation_rules a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "validation_rules" ;
+    dcterms:title "Validation Rules" ;
+    rdfs:range linkml:String ;
+    skos:definition "Rules for Validation of Property Constraints and Values" .
 
 linkml:SubsetDefinition a owl:Class ;
     rdfs:label "subset_definition" .
@@ -29,242 +37,290 @@ linkml:topValue a owl:DatatypeProperty ;
 include:access_url a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "access_url" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Storage location for this file" .
 
 include:age_at_biospecimen_collection a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "age_at_biospecimen_collection" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Age in days of participant at time of biospecimen collection" .
 
 include:age_at_diagnosis a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "age_at_diagnosis" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Age in days at which phenotype was assigned" .
 
 include:age_at_phenotype_assignment a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "age_at_phenotype_assignment" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Age in days at which phenotype was recorded" .
 
 include:age_at_the_last_vital_status a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "age_at_the_last_vital_status" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Age of last vital status" .
 
 include:biospecimen_storage a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "biospecimen_storage" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)" .
 
 include:collection_sample_type a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "collection_sample_type" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Type of biological material comprising the collected sample (e.g. Whole blood, Bone marrow, Saliva, etc.)" .
 
 include:container_id a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "container_id" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs." .
 
 include:data_access a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "data_access" ;
-    rdfs:range include:EnumDataAccess .
+    rdfs:range include:EnumDataAccess ;
+    skos:definition "Type of access control on this file, determined by DCC" .
 
 include:data_category a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "data_category" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune maps, Transcriptomics, etc.)" .
 
 include:data_type a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "data_type" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Specific type of data contained in file (e.g. Aligned reads, Unaligned reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification, Structural variations, Cytokine profiles, Operation reports, Pathology reports, Histology images, Clinical supplement, Protein expression quantification, etc.)" .
 
 include:dbgap a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "dbgap" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "dbGaP study accession code" .
 
 include:diagnosis_icd a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "diagnosis_icd" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "ICD-10 code (annotated by data contributor or DCC)" .
 
 include:diagnosis_mondo a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "diagnosis_mondo" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Mondo disease ontology code (annotated by data contributor or DCC)" .
 
 include:diagnosis_ncit a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "diagnosis_ncit" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "NCI Thesaurus code (annotated by data contributor or DCC)" .
 
 include:diagnosis_source_text a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "diagnosis_source_text" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Diagnosis as described by data contributor" .
 
 include:diagnosis_type a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "diagnosis_type" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "How diagnosis was assigned" .
 
 include:down_syndrome_status a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "down_syndrome_status" ;
-    rdfs:range include:EnumDownSyndromeStatus .
+    rdfs:range include:EnumDownSyndromeStatus ;
+    skos:definition "Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)" .
 
 include:ethnicity a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "ethnicity" ;
-    rdfs:range include:EnumEthnicity .
+    rdfs:range include:EnumEthnicity ;
+    skos:definition "Ethnicity of participant" .
 
 include:experimental_strategy a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "experimental_strategy" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale Discovery, etc.)" .
 
 include:external_id a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "external_id" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Unique identifier for the participant, assigned by data contributor" .
 
 include:family_id a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "family_id" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Unique identifer for family to which Participant belongs" .
 
 include:family_relationship a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "family_relationship" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Relationship of Participant to other family members" .
 
 include:family_type a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "family_type" ;
-    rdfs:range include:EnumFamilyType .
+    rdfs:range include:EnumFamilyType ;
+    skos:definition "Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives) " .
 
 include:father_id a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "father_id" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Participant ID for Participant's father" .
 
 include:file_id a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "file_id" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "File identifier, assigned by DCC" .
 
 include:file_name a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "file_name" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Synapse ID for file" .
 
 include:format a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "format" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom, etc.)" .
 
 include:has_biospecimen a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "has_biospecimen" ;
-    rdfs:range include:Biospecimen .
+    rdfs:range include:Biospecimen ;
+    skos:definition "Link to a Biospecimen" .
 
 include:laboratory_procedure a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "laboratory_procedure" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Procedure by which Sample was derived from Parent Sample (e.g. RBC lysis, Centrifugation, Ficoll, etc.)" .
 
 include:mother_id a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "mother_id" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Participant ID for Participant's mother" .
 
 include:outcomes_vital_status a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "outcomes_vital_status" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Whether participant is alive or dead" .
 
 include:parent_sample_id a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "parent_sample_id" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable)" .
 
 include:parent_sample_type a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "parent_sample_type" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Type of biological material comprising the parent sample (e.g. Plasma, Serum, White blood cells, etc.)" .
 
 include:phenotype_hpo a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "phenotype_hpo" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Human Phenotype Ontology code (annotated by data contributor or DCC)" .
 
 include:phenotype_interpretation a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "phenotype_interpretation" ;
-    rdfs:range include:EnumPhenotypeInterpretation .
+    rdfs:range include:EnumPhenotypeInterpretation ;
+    skos:definition "Whether phenotype was observed or not" .
 
 include:phenotype_source_text a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "phenotype_source_text" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Phenotype as described by data contributor" .
 
 include:program a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "program" ;
-    rdfs:range include:EnumProgram .
+    rdfs:range include:EnumProgram ;
+    skos:definition "Funding source for the study" .
 
 include:race a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "race" ;
-    rdfs:range include:EnumRace .
+    rdfs:range include:EnumRace ;
+    skos:definition "Race of participant" .
 
 include:sample_availability a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "sample_availability" ;
-    rdfs:range include:EnumSampleAvailability .
+    rdfs:range include:EnumSampleAvailability ;
+    skos:definition "Whether or not the sample is potentially available for sharing through the Virtual Biorepository" .
 
 include:sample_id a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "sample_id" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Identifier for sample. A sample is a unique biological material; two samples with two different IDs are biologically distinct." .
 
 include:sample_type a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "sample_type" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Type of biological material comprising the sample (e.g. Plasma, Serum, White blood cells, DNA, RNA, etc.)" .
 
 include:sex a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "sex" ;
-    rdfs:range include:EnumSex .
+    rdfs:range include:EnumSex ;
+    skos:definition "Sex of participant" .
 
 include:size a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "size" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Size of file" .
 
 include:study_code a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "study_code" ;
-    rdfs:range include:EnumStudyCode .
+    rdfs:range include:EnumStudyCode ;
+    skos:definition "Unique identifer for the study, assigned by DCC" .
 
 include:study_name a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "study_name" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Name of the study, chosen by data contributor" .
 
 include:volume a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "volume" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Amount of sample in container" .
 
 include:volume_unit a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "volume_unit" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Unit of sample volume" .
 
 include:Biospecimen a owl:Class,
         linkml:ClassDefinition ;
@@ -272,8 +328,20 @@ include:Biospecimen a owl:Class,
     dcterms:title "Biospecimen" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass include:DataFile ;
+            owl:onProperty include:has_datafile ],
+        [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty include:collection_id ],
+            owl:onProperty include:sample_id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:age_at_biospecimen_collection ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:biospecimen_storage ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -281,7 +349,19 @@ include:Biospecimen a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:laboratory_procedure ],
+            owl:onProperty include:parent_sample_id ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:volume_unit ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass include:EnumSampleAvailability ;
+            owl:onProperty include:sample_availability ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:container_id ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass include:Study ;
@@ -292,49 +372,28 @@ include:Biospecimen a owl:Class,
             owl:onProperty include:has_participant ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:EnumSampleAvailability ;
-            owl:onProperty include:sample_availability ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:biospecimen_storage ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:collection_sample_type ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:age_at_biospecimen_collection ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:parent_sample_id ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:container_id ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:sample_type ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:sample_id ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty include:parent_sample_type ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:volume_unit ],
+            owl:onProperty include:collection_sample_type ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:sample_type ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:DataFile ;
-            owl:onProperty include:has_datafile ],
-        include:NamedThing .
+            owl:onClass linkml:String ;
+            owl:onProperty include:laboratory_procedure ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:collection_id ],
+        include:Thing ;
+    skos:definition "A Biospecimen Collected from A Participant" ;
+    include:required "False" ;
+    include:requires_component "Study,Participant,DataFile" .
 
 <https://w3id.org/include/EnumDataAccess#Controlled> a owl:Class,
         include:EnumDataAccess ;
@@ -475,22 +534,26 @@ include:Biospecimen a owl:Class,
 include:collection_id a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "collection_id" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed)." .
 
 include:has_datafile a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "has_datafile" ;
-    rdfs:range include:DataFile .
+    rdfs:range include:DataFile ;
+    skos:definition "Link to a DataFile" .
 
 include:has_participant a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "has_participant" ;
-    rdfs:range include:Participant .
+    rdfs:range include:Participant ;
+    skos:definition "Link to a Participant" .
 
 include:participant_id a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "participant_id" ;
-    rdfs:range linkml:String .
+    rdfs:range linkml:String ;
+    skos:definition "Unique identifier for the participant, assigned by DCC" .
 
 include:DataFile a owl:Class,
         linkml:ClassDefinition ;
@@ -498,24 +561,20 @@ include:DataFile a owl:Class,
     dcterms:title "DataFile" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:Biospecimen ;
-            owl:onProperty include:has_biospecimen ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:experimental_strategy ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:file_name ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:participant_id ],
+            owl:onProperty include:file_id ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass include:Participant ;
             owl:onProperty include:has_participant ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass include:Biospecimen ;
+            owl:onProperty include:has_biospecimen ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:format ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass include:Study ;
@@ -523,7 +582,7 @@ include:DataFile a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:format ],
+            owl:onProperty include:access_url ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass include:EnumDataAccess ;
@@ -531,28 +590,35 @@ include:DataFile a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:data_category ],
+            owl:onProperty include:collection_id ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:data_category ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:file_name ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:experimental_strategy ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty include:data_type ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:access_url ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:file_id ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:collection_id ],
+            owl:onProperty include:participant_id ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty include:size ],
-        include:NamedThing .
+        include:Thing ;
+    skos:definition "A DataFile Associated with a Participant or Study or Biospecimen" ;
+    include:required "False" ;
+    include:requires_component "Study,Participant,Biospecimen" .
 
 include:Participant a owl:Class,
         linkml:ClassDefinition ;
@@ -561,15 +627,7 @@ include:Participant a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:diagnosis_icd ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:diagnosis_ncit ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:outcomes_vital_status ],
+            owl:onProperty include:age_at_diagnosis ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -577,63 +635,11 @@ include:Participant a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
+            owl:onProperty include:diagnosis_icd ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
             owl:onProperty include:family_id ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:age_at_diagnosis ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:family_relationship ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:father_id ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:phenotype_source_text ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:age_at_phenotype_assignment ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:EnumRace ;
-            owl:onProperty include:race ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:external_id ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:EnumDownSyndromeStatus ;
-            owl:onProperty include:down_syndrome_status ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:Study ;
-            owl:onProperty include:has_study ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:diagnosis_type ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:diagnosis_source_text ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:mother_id ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:EnumSex ;
-            owl:onProperty include:sex ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:participant_id ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass include:EnumPhenotypeInterpretation ;
@@ -641,29 +647,93 @@ include:Participant a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
+            owl:onProperty include:age_at_phenotype_assignment ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:external_id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:diagnosis_ncit ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:diagnosis_type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:phenotype_source_text ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
             owl:onProperty include:diagnosis_mondo ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass include:EnumEthnicity ;
-            owl:onProperty include:ethnicity ],
+            owl:onProperty include:ethnicity ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:DataFile ;
-            owl:onProperty include:has_datafile ],
+            owl:onClass linkml:String ;
+            owl:onProperty include:family_relationship ],
+        [ a owl:Restriction ;
+            owl:onClass include:EnumSex ;
+            owl:onProperty include:sex ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:EnumFamilyType ;
-            owl:onProperty include:family_type ],
+            owl:onClass linkml:String ;
+            owl:onProperty include:diagnosis_source_text ],
+        [ a owl:Restriction ;
+            owl:onClass include:EnumDownSyndromeStatus ;
+            owl:onProperty include:down_syndrome_status ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:father_id ],
+        [ a owl:Restriction ;
+            owl:onClass include:EnumRace ;
+            owl:onProperty include:race ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:mother_id ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:participant_id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:outcomes_vital_status ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass include:Study ;
+            owl:onProperty include:has_study ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty include:phenotype_hpo ],
-        include:NamedThing .
+        [ a owl:Restriction ;
+            owl:onClass include:EnumFamilyType ;
+            owl:onProperty include:family_type ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass include:DataFile ;
+            owl:onProperty include:has_datafile ],
+        include:Thing ;
+    skos:definition "A Participant in a Study" ;
+    include:required "False" ;
+    include:requires_component "Study,DataFile" .
 
 include:has_study a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "has_study" ;
-    rdfs:range include:Study .
+    rdfs:range include:Study ;
+    skos:definition "Link to a Study" .
 
 include:EnumDownSyndromeStatus a owl:Class,
         linkml:EnumDefinition ;
@@ -702,18 +772,20 @@ include:Study a owl:Class,
             owl:onClass linkml:String ;
             owl:onProperty include:dbgap ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:EnumStudyCode ;
-            owl:onProperty include:study_code ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:study_name ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass include:EnumProgram ;
-            owl:onProperty include:program ],
-        include:NamedThing .
+            owl:onProperty include:program ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass include:EnumStudyCode ;
+            owl:onProperty include:study_code ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:study_name ;
+            owl:qualifiedCardinality 1 ],
+        include:Thing ;
+    skos:definition "A Study" ;
+    include:required "True" .
 
 include:EnumDataAccess a owl:Class,
         linkml:EnumDefinition ;
@@ -731,10 +803,11 @@ include:EnumEthnicity a owl:Class,
         <https://w3id.org/include/EnumEthnicity#Hispanic+or+Latino>,
         <https://w3id.org/include/EnumEthnicity#Not+Hispanic+or+Latino> .
 
-include:NamedThing a owl:Class,
+include:Thing a owl:Class,
         linkml:ClassDefinition ;
-    rdfs:label "NamedThing" ;
-    dcterms:title "NamedThing" .
+    rdfs:label "Thing" ;
+    dcterms:title "Thing" ;
+    skos:definition "Highest Level Class" .
 
 linkml:ClassDefinition a owl:Class ;
     rdfs:label "class_definition" .

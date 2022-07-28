@@ -11,13 +11,22 @@ URI: [https://w3id.org/include/data_access](https://w3id.org/include/data_access
 
 ## Properties
 
- * Range: enum_data_access
+ * Range: [EnumDataAccess](EnumDataAccess.md)
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

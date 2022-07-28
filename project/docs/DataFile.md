@@ -7,11 +7,11 @@ A DataFile Associated with a Participant or Study or Biospecimen
 URI: [include:DataFile](https://w3id.org/include/DataFile)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Participant],[NamedThing],[Study]<has_study%200..1-++[DataFile&#124;access_url:string%20%3F;collection_id:string%20%3F;data_access:enum_data_access%20%3F;data_category:string%20%3F;data_type:string%20%3F;experimental_strategy:string%20%3F;file_id:string%20%3F;file_name:string%20%3F;format:string%20%3F;participant_id:string%20%3F;size:string%20%3F],[Participant]<has_participant%200..1-++[DataFile],[Biospecimen]<has_biospecimen%200..1-++[DataFile],[Biospecimen]++-%20has_datafile%200..1>[DataFile],[Participant]++-%20has_datafile%200..1>[DataFile],[NamedThing]^-[DataFile],[Biospecimen])](https://yuml.me/diagram/nofunky;dir:TB/class/[Study],[Participant],[NamedThing],[Study]<has_study%200..1-++[DataFile&#124;access_url:string%20%3F;collection_id:string%20%3F;data_access:enum_data_access%20%3F;data_category:string%20%3F;data_type:string%20%3F;experimental_strategy:string%20%3F;file_id:string%20%3F;file_name:string%20%3F;format:string%20%3F;participant_id:string%20%3F;size:string%20%3F],[Participant]<has_participant%200..1-++[DataFile],[Biospecimen]<has_biospecimen%200..1-++[DataFile],[Biospecimen]++-%20has_datafile%200..1>[DataFile],[Participant]++-%20has_datafile%200..1>[DataFile],[NamedThing]^-[DataFile],[Biospecimen])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Study],[Participant],[Study]<has_study%200..1-++[DataFile&#124;access_url:string%20%3F;collection_id:string%20%3F;data_access:enum_data_access%20%3F;data_category:string;data_type:string%20%3F;experimental_strategy:string%20%3F;file_id:string%20%3F;file_name:string%20%3F;format:string;participant_id:string;size:string%20%3F],[Participant]<has_participant%200..1-++[DataFile],[Biospecimen]<has_biospecimen%200..1-++[DataFile],[Biospecimen]++-%20has_datafile%200..1>[DataFile],[Participant]++-%20has_datafile%200..1>[DataFile],[Thing]^-[DataFile],[Biospecimen])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Study],[Participant],[Study]<has_study%200..1-++[DataFile&#124;access_url:string%20%3F;collection_id:string%20%3F;data_access:enum_data_access%20%3F;data_category:string;data_type:string%20%3F;experimental_strategy:string%20%3F;file_id:string%20%3F;file_name:string%20%3F;format:string;participant_id:string;size:string%20%3F],[Participant]<has_participant%200..1-++[DataFile],[Biospecimen]<has_biospecimen%200..1-++[DataFile],[Biospecimen]++-%20has_datafile%200..1>[DataFile],[Participant]++-%20has_datafile%200..1>[DataFile],[Thing]^-[DataFile],[Biospecimen])
 
 ## Parents
 
- *  is_a: [NamedThing](NamedThing.md)
+ *  is_a: [Thing](Thing.md) - Highest Level Class
 
 ## Referenced by Class
 
@@ -31,7 +31,7 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
  * [data_access](data_access.md)  <sub>0..1</sub>
      * Description: Type of access control on this file, determined by DCC
      * Range: [enum_data_access](enum_data_access.md)
- * [data_category](data_category.md)  <sub>0..1</sub>
+ * [data_category](data_category.md)  <sub>1..1</sub>
      * Description: General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune maps, Transcriptomics, etc.)
      * Range: [String](types/String.md)
  * [data_type](data_type.md)  <sub>0..1</sub>
@@ -46,7 +46,7 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
  * [file_name](file_name.md)  <sub>0..1</sub>
      * Description: Synapse ID for file
      * Range: [String](types/String.md)
- * [format](format.md)  <sub>0..1</sub>
+ * [format](format.md)  <sub>1..1</sub>
      * Description: Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom, etc.)
      * Range: [String](types/String.md)
  * [has_biospecimen](has_biospecimen.md)  <sub>0..1</sub>
@@ -58,7 +58,7 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
  * [has_study](has_study.md)  <sub>0..1</sub>
      * Description: Link to a Study
      * Range: [Study](Study.md)
- * [participant_id](participant_id.md)  <sub>0..1</sub>
+ * [participant_id](participant_id.md)  <sub>1..1</sub>
      * Description: Unique identifier for the participant, assigned by DCC
      * Range: [String](types/String.md)
  * [size](size.md)  <sub>0..1</sub>

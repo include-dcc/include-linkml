@@ -35,10 +35,10 @@ def make_object(curie):
 
 
 def generate_context(prefixes):
-    context = {}
+    prefix_context = {}
     for k,v in prefixes.items():
-        context[k] = v['prefix_reference']
-    return context
+        prefix_context[k] = v['prefix_reference']
+    return prefix_context
 
 
 def display_name(name):
@@ -54,7 +54,8 @@ def enum_value_object(value):
         "rdfs:comment": "TBD",
         "rdfs:label": value.replace(" ", ""),
         "sms:displayName": value,
-        "schema:isPartOf": "https://w3id.org/include"
+        "schema:isPartOf": "https://w3id.org/include",
+        "sms:required": "sms:false"
     }
 
 
@@ -67,8 +68,13 @@ def process_enum_values(enum):
     return range_includes, value_objects
 
 
-
-
+def gen_domain_list(domain_data):
+    data_return = []
+    for d in domain_data:
+        data_return.append({
+            "@id": includify_curie(d)
+        })
+    return data_return
 
 # In[5]: The easy 1to1 replacements
 transform_map = {
@@ -132,10 +138,14 @@ for slot_key, slot_data in lml_yaml['slots'].items():
                 include_graph['@graph'] += value_objects
         if "multivalued" in slot_data.keys() and slot_data['multivalued']:
             inc_prop['sms:validationRules'] = ['list']
+        if 'domain_of' in slot_data.keys():
+            inc_prop['schema:domainIncludes'] = gen_domain_list(slot_data['domain_of'])
+        if 'required' in slot_data.keys():
+            inc_prop['sms:required'] = f"sms:{str(slot_data['required']).lower()}"
     include_graph['@graph'].append(inc_prop)
 
 with open("include_schematic_linkml.json", 'w') as islj:
     json.dump(include_graph, islj)
 with open("include_schematic_linkml.jsonld", 'w') as isljd:
     json.dump(include_graph, isljd)
-
+#

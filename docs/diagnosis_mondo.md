@@ -11,13 +11,22 @@ URI: [https://w3id.org/include/diagnosis_mondo](https://w3id.org/include/diagnos
 
 ## Properties
 
- * Range: None
+ * Range: [xsd:string](xsd:string)
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 
