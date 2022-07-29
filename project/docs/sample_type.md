@@ -9,7 +9,7 @@ URI: [include:sample_type](https://w3id.org/include/sample_type)
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [String](types/String.md)
+None &#8594;  <sub>1..1</sub> [String](types/String.md)
 
 ## Parents
 

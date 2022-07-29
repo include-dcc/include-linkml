@@ -9,7 +9,7 @@ URI: [include:sex](https://w3id.org/include/sex)
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [enum_sex](enum_sex.md)
+None &#8594;  <sub>1..1</sub> [enum_sex](enum_sex.md)
 
 ## Parents
 

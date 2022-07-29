@@ -11,13 +11,22 @@ URI: [https://w3id.org/include/has_participant](https://w3id.org/include/has_par
 
 ## Properties
 
- * Range: Participant
+ * Range: [Participant](Participant.md)
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

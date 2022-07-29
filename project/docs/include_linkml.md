@@ -12,7 +12,7 @@ Initial Include Portal Schema
 
 ### Classes
 
- * [NamedThing](NamedThing.md)
+ * [Thing](Thing.md) - Highest Level Class
      * [Biospecimen](Biospecimen.md) - A Biospecimen Collected from A Participant
      * [DataFile](DataFile.md) - A DataFile Associated with a Participant or Study or Biospecimen
      * [Participant](Participant.md) - A Participant in a Study
@@ -27,7 +27,7 @@ Initial Include Portal Schema
  * [age_at_biospecimen_collection](age_at_biospecimen_collection.md) - Age in days of participant at time of biospecimen collection
  * [age_at_diagnosis](age_at_diagnosis.md) - Age in days at which phenotype was assigned
  * [age_at_phenotype_assignment](age_at_phenotype_assignment.md) - Age in days at which phenotype was recorded
- * [age_at_the_last_vital_status](age_at_the_last_vital_status.md)
+ * [age_at_the_last_vital_status](age_at_the_last_vital_status.md) - Age of last vital status
  * [biospecimen_storage](biospecimen_storage.md) - Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)
  * [collection_id](collection_id.md) - Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed).
  * [collection_sample_type](collection_sample_type.md) - Type of biological material comprising the collected sample (e.g. Whole blood, Bone marrow, Saliva, etc.)
@@ -74,6 +74,7 @@ Initial Include Portal Schema
  * [size](size.md) - Size of file
  * [study_code](study_code.md) - Unique identifer for the study, assigned by DCC
  * [study_name](study_name.md) - Name of the study, chosen by data contributor
+ * [validation_rules](validation_rules.md) - Rules for Validation of Property Constraints and Values
  * [volume](volume.md) - Amount of sample in container
  * [volume_unit](volume_unit.md) - Unit of sample volume
 

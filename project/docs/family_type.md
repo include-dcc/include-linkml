@@ -9,7 +9,7 @@ URI: [include:family_type](https://w3id.org/include/family_type)
 
 ## Domain and Range
 
-None &#8594;  <sub>0..1</sub> [enum_family_type](enum_family_type.md)
+None &#8594;  <sub>1..1</sub> [enum_family_type](enum_family_type.md)
 
 ## Parents
 

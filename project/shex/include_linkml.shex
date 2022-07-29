@@ -35,8 +35,8 @@ linkml:Objectidentifier IRI
 linkml:Nodeidentifier NONLITERAL
 
 <Biospecimen> CLOSED {
-    (  $<Biospecimen_tes> (  &<NamedThing_tes> ;
-          rdf:type [ <NamedThing> ] ? ;
+    (  $<Biospecimen_tes> (  &<Thing_tes> ;
+          rdf:type [ <Thing> ] ? ;
           <age_at_biospecimen_collection> @linkml:String ? ;
           <biospecimen_storage> @linkml:String ? ;
           <collection_id> @linkml:String ? ;
@@ -49,8 +49,8 @@ linkml:Nodeidentifier NONLITERAL
           <parent_sample_id> @linkml:String ? ;
           <parent_sample_type> @linkml:String ? ;
           <sample_availability> @<EnumSampleAvailability> ? ;
-          <sample_id> @linkml:String ? ;
-          <sample_type> @linkml:String ? ;
+          <sample_id> @linkml:String ;
+          <sample_type> @linkml:String ;
           <volume> @linkml:String ? ;
           <volume_unit> @linkml:String ?
        ) ;
@@ -59,38 +59,30 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <DataFile> CLOSED {
-    (  $<DataFile_tes> (  &<NamedThing_tes> ;
-          rdf:type [ <NamedThing> ] ? ;
+    (  $<DataFile_tes> (  &<Thing_tes> ;
+          rdf:type [ <Thing> ] ? ;
           <access_url> @linkml:String ? ;
           <collection_id> @linkml:String ? ;
           <data_access> @<EnumDataAccess> ? ;
-          <data_category> @linkml:String ? ;
+          <data_category> @linkml:String ;
           <data_type> @linkml:String ? ;
           <experimental_strategy> @linkml:String ? ;
           <file_id> @linkml:String ? ;
           <file_name> @linkml:String ? ;
-          <format> @linkml:String ? ;
+          <format> @linkml:String ;
           <has_biospecimen> @<Biospecimen> ? ;
           <has_participant> @<Participant> ? ;
           <has_study> @<Study> ? ;
-          <participant_id> @linkml:String ? ;
+          <participant_id> @linkml:String ;
           <size> @linkml:String ?
        ) ;
        rdf:type [ <DataFile> ] ?
     )
 }
 
-<NamedThing>  (
-    CLOSED {
-       (  $<NamedThing_tes> rdf:type . * ;
-          rdf:type [ <NamedThing> ] ?
-       )
-    } OR @<Biospecimen> OR @<DataFile> OR @<Participant> OR @<Study>
-)
-
 <Participant> CLOSED {
-    (  $<Participant_tes> (  &<NamedThing_tes> ;
-          rdf:type [ <NamedThing> ] ? ;
+    (  $<Participant_tes> (  &<Thing_tes> ;
+          rdf:type [ <Thing> ] ? ;
           <age_at_diagnosis> @linkml:String ? ;
           <age_at_phenotype_assignment> @linkml:String ? ;
           <age_at_the_last_vital_status> @linkml:String ? ;
@@ -99,38 +91,46 @@ linkml:Nodeidentifier NONLITERAL
           <diagnosis_ncit> @linkml:String ? ;
           <diagnosis_source_text> @linkml:String ? ;
           <diagnosis_type> @linkml:String ? ;
-          <down_syndrome_status> @<EnumDownSyndromeStatus> ? ;
-          <ethnicity> @<EnumEthnicity> ? ;
-          <external_id> @linkml:String ? ;
+          <down_syndrome_status> @<EnumDownSyndromeStatus> ;
+          <ethnicity> @<EnumEthnicity> ;
+          <external_id> @linkml:String ;
           <family_id> @linkml:String ? ;
           <family_relationship> @linkml:String ? ;
-          <family_type> @<EnumFamilyType> ? ;
+          <family_type> @<EnumFamilyType> ;
           <father_id> @linkml:String ? ;
           <has_datafile> @<DataFile> ? ;
           <has_study> @<Study> ? ;
           <mother_id> @linkml:String ? ;
           <outcomes_vital_status> @linkml:String ? ;
-          <participant_id> @linkml:String ? ;
+          <participant_id> @linkml:String ;
           <phenotype_hpo> @linkml:String ? ;
           <phenotype_source_text> @linkml:String ? ;
           <phenotype_interpretation> @<EnumPhenotypeInterpretation> ? ;
-          <race> @<EnumRace> ? ;
-          <sex> @<EnumSex> ?
+          <race> @<EnumRace> ;
+          <sex> @<EnumSex>
        ) ;
        rdf:type [ <Participant> ] ?
     )
 }
 
 <Study> CLOSED {
-    (  $<Study_tes> (  &<NamedThing_tes> ;
-          rdf:type [ <NamedThing> ] ? ;
+    (  $<Study_tes> (  &<Thing_tes> ;
+          rdf:type [ <Thing> ] ? ;
           <dbgap> @linkml:String ? ;
-          <program> @<EnumProgram> ? ;
-          <study_code> @<EnumStudyCode> ? ;
-          <study_name> @linkml:String ?
+          <program> @<EnumProgram> ;
+          <study_code> @<EnumStudyCode> ;
+          <study_name> @linkml:String
        ) ;
        rdf:type [ <Study> ] ?
     )
 }
+
+<Thing>  (
+    CLOSED {
+       (  $<Thing_tes> rdf:type . * ;
+          rdf:type [ <Thing> ] ?
+       )
+    } OR @<Biospecimen> OR @<DataFile> OR @<Participant> OR @<Study>
+)
 
 

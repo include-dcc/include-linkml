@@ -8,15 +8,24 @@ URI: EnumSex
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| Female | None | None | |
-| Male | None | None | |
-| Other | None | None | |
-| Unknown | None | None | |
+| Female | None |  | |
+| Male | None |  | |
+| Other | None |  | |
+| Unknown | None |  | |
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

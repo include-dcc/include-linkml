@@ -11,13 +11,22 @@ URI: [https://w3id.org/include/sex](https://w3id.org/include/sex)
 
 ## Properties
 
- * Range: enum_sex
+ * Range: [EnumSex](EnumSex.md)
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

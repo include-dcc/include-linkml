@@ -11,13 +11,22 @@ URI: [https://w3id.org/include/age_at_biospecimen_collection](https://w3id.org/i
 
 ## Properties
 
- * Range: None
+ * Range: [xsd:string](xsd:string)
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

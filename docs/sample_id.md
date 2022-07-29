@@ -11,13 +11,22 @@ URI: [https://w3id.org/include/sample_id](https://w3id.org/include/sample_id)
 
 ## Properties
 
- * Range: None
+ * Range: [xsd:string](xsd:string)
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

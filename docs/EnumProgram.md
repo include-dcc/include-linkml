@@ -8,13 +8,22 @@ URI: EnumProgram
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| INCLUDE | None | None | |
-| KF | None | None | |
+| INCLUDE | None |  | |
+| KF | None |  | |
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 

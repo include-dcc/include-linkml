@@ -11,13 +11,22 @@ URI: [https://w3id.org/include/phenotype_source_text](https://w3id.org/include/p
 
 ## Properties
 
- * Range: None
+ * Range: [xsd:string](xsd:string)
 
 
 
 ## Identifier and Mapping Information
 
 
+
+
+
+
+
+### Schema Source
+
+
+* from schema: https://w3id.org/include
 
 
 
