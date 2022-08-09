@@ -3,4 +3,3 @@ ID	Title	Path	Description	Frozen Rows	Frozen Columns	Ignore
 1221481146	INCLUDE_Portal_V1_LinkML_Schema_Enums	src/data/sheets/INCLUDE_Portal_V1_LinkML_Schema_Enums.tsv		0	0	False
 674286209	INCLUDE_Portal_V1_LinkML_Schema_Classes_Slots	src/data/sheets/INCLUDE_Portal_V1_LinkML_Schema_Classes_Slots.tsv		0	0	False
 1678449236	INCLUDE_Portal_V1_LinkML_Schema_Schema	src/data/sheets/INCLUDE_Portal_V1_LinkML_Schema_Schema.tsv		0	0	False
-943388173	INCLUDE_Portal_V1_LinkML_Schema_Types	src/data/sheets/INCLUDE_Portal_V1_LinkML_Schema_Types.tsv		0	0	False

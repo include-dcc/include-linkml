@@ -166,5 +166,12 @@
     },
     "6": {
         "wrapStrategy": "WRAP"
+    },
+    "7": {
+        "textFormat": {
+            "link": {
+                "uri": "https://w3id.org/include"
+            }
+        }
     }
 }

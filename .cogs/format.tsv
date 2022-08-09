@@ -1,7 +1,4 @@
 Sheet Title	Cell	Format ID
-INCLUDE_Portal_V1_LinkML_Schema_Schema	B3	3
-INCLUDE_Portal_V1_LinkML_Schema_Prefixes	B3	4
-INCLUDE_Portal_V1_LinkML_Schema_Prefixes	B4	5
 INCLUDE_Portal_V1_LinkML_Schema_Classes_Slots	H1	6
 INCLUDE_Portal_V1_LinkML_Schema_Classes_Slots	H2	6
 INCLUDE_Portal_V1_LinkML_Schema_Classes_Slots	H3	6
@@ -502,3 +499,13 @@ INCLUDE_Portal_V1_LinkML_Schema_Classes_Slots	H497	6
 INCLUDE_Portal_V1_LinkML_Schema_Classes_Slots	H498	6
 INCLUDE_Portal_V1_LinkML_Schema_Classes_Slots	H499	6
 INCLUDE_Portal_V1_LinkML_Schema_Classes_Slots	H500	6
+INCLUDE_Portal_V1_LinkML_Schema_Enums	E3	7
+INCLUDE_Portal_V1_LinkML_Schema_Enums	E7	7
+INCLUDE_Portal_V1_LinkML_Schema_Enums	E10	7
+INCLUDE_Portal_V1_LinkML_Schema_Enums	E14	7
+INCLUDE_Portal_V1_LinkML_Schema_Enums	E19	7
+INCLUDE_Portal_V1_LinkML_Schema_Enums	E22	7
+INCLUDE_Portal_V1_LinkML_Schema_Enums	E25	7
+INCLUDE_Portal_V1_LinkML_Schema_Enums	E33	7
+INCLUDE_Portal_V1_LinkML_Schema_Enums	E36	7
+INCLUDE_Portal_V1_LinkML_Schema_Enums	E41	7
