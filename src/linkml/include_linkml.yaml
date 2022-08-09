@@ -16,14 +16,13 @@ prefixes:
   sms:
     prefix_prefix: sms
     prefix_reference: http://sms.org/
-
 default_prefix: include
 default_range: string
 enums:
   enum_data_access:
+    name: enum_data_access
     definition_uri: include:enum_data_access
     from_schema: https://w3id.org/include
-    name: enum_data_access
     permissible_values:
       controlled:
         text: controlled
@@ -35,20 +34,21 @@ enums:
         text: registered
         title: Registered
   enum_down_syndrome_status:
+    name: enum_down_syndrome_status
     definition_uri: include:enum_down_syndrome_status
     from_schema: https://w3id.org/include
-    name: enum_down_syndrome_status
     permissible_values:
       D21:
         text: D21
+        meaning: MONDO:000011
         title: D21
       T21:
         text: T21
         title: T21
   enum_ethnicity:
+    name: enum_ethnicity
     definition_uri: include:enum_ethnicity
     from_schema: https://w3id.org/include
-    name: enum_ethnicity
     permissible_values:
       asked_but_unknown:
         text: asked_but_unknown
@@ -60,9 +60,9 @@ enums:
         text: not_hispanic_or_latino
         title: Not Hispanic or Latino
   enum_family_type:
+    name: enum_family_type
     definition_uri: include:enum_family_type
     from_schema: https://w3id.org/include
-    name: enum_family_type
     permissible_values:
       duo:
         text: duo
@@ -72,14 +72,14 @@ enums:
         title: Other
       proband_only:
         text: proband_only
-        title: Proband-Only
+        title: Proband-only
       trio:
         text: trio
         title: Trio
   enum_phenotype_interpretation:
+    name: enum_phenotype_interpretation
     definition_uri: include:enum_phenotype_interpretation
     from_schema: https://w3id.org/include
-    name: enum_phenotype_interpretation
     permissible_values:
       not_observed:
         text: not_observed
@@ -88,9 +88,9 @@ enums:
         text: observed
         title: Observed
   enum_program:
+    name: enum_program
     definition_uri: include:enum_program
     from_schema: https://w3id.org/include
-    name: enum_program
     permissible_values:
       include:
         text: include
@@ -99,12 +99,12 @@ enums:
         text: KF
         title: KF
   enum_race:
+    name: enum_race
     definition_uri: include:enum_race
     from_schema: https://w3id.org/include
-    name: enum_race
     permissible_values:
-      american_indian_or_alaskan_native:
-        text: american_indian_or_alaskan_native
+      american_indian_or_alaska_native:
+        text: american_indian_or_alaska_native
         title: American Indian or Alaska Native
       asian:
         text: asian
@@ -115,8 +115,8 @@ enums:
       more_than_one_race:
         text: more_than_one_race
         title: More than one race
-      native_hawaiian_or_pacific_islander:
-        text: native_hawaiian_or_pacific_islander
+      native_hawaiian_or_other_pacific_islander:
+        text: native_hawaiian_or_other_pacific_islander
         title: Native Hawaiian or Other Pacific Islander
       other:
         text: other
@@ -125,9 +125,9 @@ enums:
         text: white
         title: White
   enum_sample_availability:
+    name: enum_sample_availability
     definition_uri: include:enum_sample_availability
     from_schema: https://w3id.org/include
-    name: enum_sample_availability
     permissible_values:
       available:
         text: available
@@ -136,9 +136,9 @@ enums:
         text: unavailable
         title: Unavailable
   enum_sex:
+    name: enum_sex
     definition_uri: include:enum_sex
     from_schema: https://w3id.org/include
-    name: enum_sex
     permissible_values:
       female:
         text: female
@@ -153,9 +153,9 @@ enums:
         text: unknown
         title: Unknown
   enum_study_code:
+    name: enum_study_code
     definition_uri: include:enum_study_code
     from_schema: https://w3id.org/include
-    name: enum_study_code
     permissible_values:
       DS-COG-ALL:
         text: DS-COG-ALL
@@ -175,110 +175,25 @@ enums:
 classes:
   Biospecimen:
     name: Biospecimen
-    title: Biospecimen
-    definition_uri: include:Biospecimen
     description: A Biospecimen Collected from A Participant
     from_schema: https://w3id.org/include
     is_a: Thing
-    annotations:
-      requires_component: Study,Participant,DataFile
-      required: false
-    slots:
-    - age_at_biospecimen_collection
-    - biospecimen_storage
-    - collection_id
-    - collection_sample_type
-    - container_id
-    - has_datafile
-    - has_participant
-    - has_study
-    - laboratory_procedure
-    - parent_sample_id
-    - parent_sample_type
-    - sample_availability
-    - sample_id
-    - sample_type
-    - volume
-    - volume_unit
-    - has_study
   DataFile:
     name: DataFile
-    title: DataFile
-    definition_uri: include:DataFile
     description: A DataFile Associated with a Participant or Study or Biospecimen
     from_schema: https://w3id.org/include
     is_a: Thing
-    annotations:
-      requires_component: Study,Participant,Biospecimen
-      required: false
-    slots:
-    - access_url
-    - collection_id
-    - data_access
-    - data_category
-    - data_type
-    - experimental_strategy
-    - file_id
-    - file_name
-    - format
-    - has_biospecimen
-    - has_participant
-    - has_study
-    - participant_id
-    - size
   Participant:
     name: Participant
-    title: Participant
-    definition_uri: include:Participant
     description: A Participant in a Study
     from_schema: https://w3id.org/include
     is_a: Thing
-    annotations:
-      requires_component: Study,DataFile
-      required: false
-    slots:
-    - age_at_diagnosis
-    - age_at_phenotype_assignment
-    - age_at_the_last_vital_status
-    - diagnosis_icd
-    - diagnosis_mondo
-    - diagnosis_ncit
-    - diagnosis_source_text
-    - diagnosis_type
-    - down_syndrome_status
-    - ethnicity
-    - external_id
-    - family_id
-    - family_relationship
-    - family_type
-    - father_id
-    - has_datafile
-    - has_study
-    - mother_id
-    - outcomes_vital_status
-    - participant_id
-    - phenotype_hpo
-    - phenotype_source_text
-    - phenotype_interpretation
-    - race
-    - sex
   Study:
     name: Study
-    title: Study
-    definition_uri: include:Study
     description: A Study
     from_schema: https://w3id.org/include
     is_a: Thing
-    annotations:
-      required: true
-    slots:
-    - dbgap
-    - program
-    - study_code
-    - study_name
   Thing:
     name: Thing
-    title: Thing
     description: Highest Level Class
-    definition_uri: schema:Thing
     from_schema: https://w3id.org/include
