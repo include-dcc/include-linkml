@@ -26,7 +26,7 @@ src/data/output/%.tsv:
   		--overwrite $(subst $(output_dir),$(template_dir),$@)
 
 individually: src/data/output/INCLUDE_Portal_V1_LinkML_Schema_Classes_Slots.tsv \
-src/data/output/INCLUDE_Portal_V1_LinkML_Schema_Enums.tsv \
-src/data/output/INCLUDE_Portal_V1_LinkML_Schema_Prefixes.tsv \
-src/data/output/INCLUDE_Portal_V1_LinkML_Schema_Schema.tsv \
-src/data/output/INCLUDE_Portal_V1_LinkML_Schema_Types.tsv
+# src/data/output/INCLUDE_Portal_V1_LinkML_Schema_Enums.tsv \
+# src/data/output/INCLUDE_Portal_V1_LinkML_Schema_Prefixes.tsv \
+# src/data/output/INCLUDE_Portal_V1_LinkML_Schema_Schema.tsv \
+# src/data/output/INCLUDE_Portal_V1_LinkML_Schema_Types.tsv

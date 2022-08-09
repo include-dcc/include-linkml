@@ -16,13 +16,14 @@ prefixes:
   sms:
     prefix_prefix: sms
     prefix_reference: http://sms.org/
+
 default_prefix: include
 default_range: string
 enums:
   enum_data_access:
-    name: enum_data_access
     definition_uri: include:enum_data_access
     from_schema: https://w3id.org/include
+    name: enum_data_access
     permissible_values:
       controlled:
         text: controlled
@@ -34,21 +35,20 @@ enums:
         text: registered
         title: Registered
   enum_down_syndrome_status:
-    name: enum_down_syndrome_status
     definition_uri: include:enum_down_syndrome_status
     from_schema: https://w3id.org/include
+    name: enum_down_syndrome_status
     permissible_values:
       D21:
         text: D21
-        meaning: MONDO:000011
         title: D21
       T21:
         text: T21
         title: T21
   enum_ethnicity:
-    name: enum_ethnicity
     definition_uri: include:enum_ethnicity
     from_schema: https://w3id.org/include
+    name: enum_ethnicity
     permissible_values:
       asked_but_unknown:
         text: asked_but_unknown
@@ -60,9 +60,9 @@ enums:
         text: not_hispanic_or_latino
         title: Not Hispanic or Latino
   enum_family_type:
-    name: enum_family_type
     definition_uri: include:enum_family_type
     from_schema: https://w3id.org/include
+    name: enum_family_type
     permissible_values:
       duo:
         text: duo
@@ -72,14 +72,14 @@ enums:
         title: Other
       proband_only:
         text: proband_only
-        title: Proband-only
+        title: Proband-Only
       trio:
         text: trio
         title: Trio
   enum_phenotype_interpretation:
-    name: enum_phenotype_interpretation
     definition_uri: include:enum_phenotype_interpretation
     from_schema: https://w3id.org/include
+    name: enum_phenotype_interpretation
     permissible_values:
       not_observed:
         text: not_observed
@@ -88,9 +88,9 @@ enums:
         text: observed
         title: Observed
   enum_program:
-    name: enum_program
     definition_uri: include:enum_program
     from_schema: https://w3id.org/include
+    name: enum_program
     permissible_values:
       include:
         text: include
@@ -99,12 +99,12 @@ enums:
         text: KF
         title: KF
   enum_race:
-    name: enum_race
     definition_uri: include:enum_race
     from_schema: https://w3id.org/include
+    name: enum_race
     permissible_values:
-      american_indian_or_alaska_native:
-        text: american_indian_or_alaska_native
+      american_indian_or_alaskan_native:
+        text: american_indian_or_alaskan_native
         title: American Indian or Alaska Native
       asian:
         text: asian
@@ -115,8 +115,8 @@ enums:
       more_than_one_race:
         text: more_than_one_race
         title: More than one race
-      native_hawaiian_or_other_pacific_islander:
-        text: native_hawaiian_or_other_pacific_islander
+      native_hawaiian_or_pacific_islander:
+        text: native_hawaiian_or_pacific_islander
         title: Native Hawaiian or Other Pacific Islander
       other:
         text: other
@@ -125,9 +125,9 @@ enums:
         text: white
         title: White
   enum_sample_availability:
-    name: enum_sample_availability
     definition_uri: include:enum_sample_availability
     from_schema: https://w3id.org/include
+    name: enum_sample_availability
     permissible_values:
       available:
         text: available
@@ -136,9 +136,9 @@ enums:
         text: unavailable
         title: Unavailable
   enum_sex:
-    name: enum_sex
     definition_uri: include:enum_sex
     from_schema: https://w3id.org/include
+    name: enum_sex
     permissible_values:
       female:
         text: female
@@ -153,9 +153,9 @@ enums:
         text: unknown
         title: Unknown
   enum_study_code:
-    name: enum_study_code
     definition_uri: include:enum_study_code
     from_schema: https://w3id.org/include
+    name: enum_study_code
     permissible_values:
       DS-COG-ALL:
         text: DS-COG-ALL
@@ -175,25 +175,587 @@ enums:
 classes:
   Biospecimen:
     name: Biospecimen
+    title: Biospecimen
+    definition_uri: include:Biospecimen
     description: A Biospecimen Collected from A Participant
     from_schema: https://w3id.org/include
     is_a: Thing
+    annotations:
+      requires_component: Study,Participant,DataFile
+      required: false
+    slots:
+    - age_at_biospecimen_collection
+    - biospecimen_storage
+    - collection_id
+    - collection_sample_type
+    - container_id
+    - has_datafile
+    - has_participant
+    - has_study
+    - laboratory_procedure
+    - parent_sample_id
+    - parent_sample_type
+    - sample_availability
+    - sample_id
+    - sample_type
+    - volume
+    - volume_unit
+    - has_study
   DataFile:
     name: DataFile
+    title: DataFile
+    definition_uri: include:DataFile
     description: A DataFile Associated with a Participant or Study or Biospecimen
     from_schema: https://w3id.org/include
     is_a: Thing
+    annotations:
+      requires_component: Study,Participant,Biospecimen
+      required: false
+    slots:
+    - access_url
+    - collection_id
+    - data_access
+    - data_category
+    - data_type
+    - experimental_strategy
+    - file_id
+    - file_name
+    - format
+    - has_biospecimen
+    - has_participant
+    - has_study
+    - participant_id
+    - size
   Participant:
     name: Participant
+    title: Participant
+    definition_uri: include:Participant
     description: A Participant in a Study
     from_schema: https://w3id.org/include
     is_a: Thing
+    annotations:
+      requires_component: Study,DataFile
+      required: false
+    slots:
+    - age_at_diagnosis
+    - age_at_phenotype_assignment
+    - age_at_the_last_vital_status
+    - diagnosis_icd
+    - diagnosis_mondo
+    - diagnosis_ncit
+    - diagnosis_source_text
+    - diagnosis_type
+    - down_syndrome_status
+    - ethnicity
+    - external_id
+    - family_id
+    - family_relationship
+    - family_type
+    - father_id
+    - has_datafile
+    - has_study
+    - mother_id
+    - outcomes_vital_status
+    - participant_id
+    - phenotype_hpo
+    - phenotype_source_text
+    - phenotype_interpretation
+    - race
+    - sex
   Study:
     name: Study
+    title: Study
+    definition_uri: include:Study
     description: A Study
     from_schema: https://w3id.org/include
     is_a: Thing
+    annotations:
+      required: true
+    slots:
+    - dbgap
+    - program
+    - study_code
+    - study_name
   Thing:
     name: Thing
+    title: Thing
     description: Highest Level Class
+    definition_uri: schema:Thing
     from_schema: https://w3id.org/include
+slots:
+  access_url:
+    definition_uri: include:access_url
+    description: Storage location for this file
+    domain_of:
+      - DataFile
+    from_schema: https://w3id.org/include
+    name: access_url
+    required: false
+  age_at_biospecimen_collection:
+    definition_uri: include:age_at_biospecimen_collection
+    description: Age in days of participant at time of biospecimen collection
+    domain_of:
+      - Biospecimen
+    from_schema: https://w3id.org/include
+    name: age_at_biospecimen_collection
+    required: false
+  age_at_diagnosis:
+    definition_uri: include:age_at_diagnosis
+    description: Age in days at which phenotype was assigned
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: age_at_diagnosis
+    required: false
+  age_at_phenotype_assignment:
+    definition_uri: include:age_at_phenotype_assignment
+    description: Age in days at which phenotype was recorded
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: age_at_phenotype_assignment
+    required: false
+  age_at_the_last_vital_status:
+    definition_uri: include:age_at_the_last_vital_status
+    description: Age of last vital status
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: age_at_the_last_vital_status
+    required: false
+  biospecimen_storage:
+    definition_uri: include:biospecimen_storage
+    description: Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen,
+      etc.)
+    domain_of:
+      - Biospecimen
+    from_schema: https://w3id.org/include
+    name: biospecimen_storage
+    required: false
+  collection_id:
+    definition_uri: include:collection_id
+    description: Identifier for the eldest sample in a lineage of processed, pooled,
+      or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if
+      no processing was performed).
+    domain_of:
+      - Biospecimen
+      - DataFile
+    from_schema: https://w3id.org/include
+    name: collection_id
+    required: false
+  collection_sample_type:
+    definition_uri: include:collection_sample_type
+    description: Type of biological material comprising the collected sample (e.g. Whole
+      blood, Bone marrow, Saliva, etc.)
+    domain_of:
+      - Biospecimen
+    from_schema: https://w3id.org/include
+    name: collection_sample_type
+    required: false
+  container_id:
+    definition_uri: include:container_id
+    description: Identifier for specific container/aliquot of sample, if applicable.
+      For example, distinct aliquots of a sample will have the same Sample ID but different
+      Container IDs.
+    domain_of:
+      - Biospecimen
+    from_schema: https://w3id.org/include
+    name: container_id
+    required: false
+  data_access:
+    definition_uri: include:data_access
+    description: Type of access control on this file, determined by DCC
+    domain_of:
+      - DataFile
+    from_schema: https://w3id.org/include
+    name: data_access
+    range: enum_data_access
+    required: false
+  data_category:
+    definition_uri: include:data_category
+    description: General category of data in file (e.g. Clinical, Genomics, Proteomics,
+      Metabolomics, Immune maps, Transcriptomics, etc.)
+    domain_of:
+      - DataFile
+    from_schema: https://w3id.org/include
+    name: data_category
+    required: true
+  data_type:
+    definition_uri: include:data_type
+    description: Specific type of data contained in file (e.g. Aligned reads, Unaligned
+      reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification,
+      Structural variations, Cytokine profiles, Operation reports, Pathology reports,
+      Histology images, Clinical supplement, Protein expression quantification, etc.)
+    domain_of:
+      - DataFile
+    from_schema: https://w3id.org/include
+    name: data_type
+    required: false
+  dbgap:
+    definition_uri: include:dbgap
+    description: dbGaP study accession code
+    domain_of:
+      - Study
+    from_schema: https://w3id.org/include
+    name: dbgap
+    required: false
+  diagnosis_icd:
+    definition_uri: include:diagnosis_icd
+    description: ICD-10 code (annotated by data contributor or DCC)
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: diagnosis_icd
+    required: false
+  diagnosis_mondo:
+    definition_uri: include:diagnosis_mondo
+    description: Mondo disease ontology code (annotated by data contributor or DCC)
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: diagnosis_mondo
+    required: false
+  diagnosis_ncit:
+    definition_uri: include:diagnosis_ncit
+    description: NCI Thesaurus code (annotated by data contributor or DCC)
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: diagnosis_ncit
+    required: false
+  diagnosis_source_text:
+    definition_uri: include:diagnosis_source_text
+    description: Diagnosis as described by data contributor
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: diagnosis_source_text
+    required: false
+  diagnosis_type:
+    definition_uri: include:diagnosis_type
+    description: How diagnosis was assigned
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: diagnosis_type
+    required: false
+  down_syndrome_status:
+    definition_uri: include:down_syndrome_status
+    description: Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy
+      21, euploid)
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: down_syndrome_status
+    range: enum_down_syndrome_status
+    required: true
+  ethnicity:
+    definition_uri: include:ethnicity
+    description: Ethnicity of participant
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: ethnicity
+    range: enum_ethnicity
+    required: true
+  experimental_strategy:
+    definition_uri: include:experimental_strategy
+    description: Experimental method used to obtain data in file (e.g. WGS, RNAseq,
+      WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay,
+      Meso Scale Discovery, etc.)
+    domain_of:
+      - DataFile
+    from_schema: https://w3id.org/include
+    name: experimental_strategy
+    required: false
+  external_id:
+    definition_uri: include:external_id
+    description: Unique identifier for the participant, assigned by data contributor
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: external_id
+    required: true
+  family_id:
+    definition_uri: include:family_id
+    description: Unique identifer for family to which Participant belongs
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: family_id
+    required: false
+  family_relationship:
+    definition_uri: include:family_relationship
+    description: Relationship of Participant to other family members
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: family_relationship
+    required: false
+  family_type:
+    definition_uri: include:family_type
+    description: 'Structure of family members participating in the study (proband-only
+     = no family members participating; duo = proband + parent; trio = proband + 2
+     parents; trio+ = proband + 2 parents + other relatives) '
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: family_type
+    range: enum_family_type
+    required: true
+  father_id:
+    definition_uri: include:father_id
+    description: Participant ID for Participant's father
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: father_id
+    required: false
+  file_id:
+    definition_uri: include:file_id
+    description: File identifier, assigned by DCC
+    domain_of:
+      - DataFile
+    from_schema: https://w3id.org/include
+    name: file_id
+    required: false
+  file_name:
+    definition_uri: include:file_name
+    description: Synapse ID for file
+    domain_of:
+      - DataFile
+    from_schema: https://w3id.org/include
+    name: file_name
+    required: false
+  format:
+    definition_uri: include:format
+    description: Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom,
+      etc.)
+    domain_of:
+      - DataFile
+    from_schema: https://w3id.org/include
+    name: format
+    required: true
+  has_biospecimen:
+    definition_uri: include:has_biospecimen
+    description: Link to a Biospecimen
+    domain_of:
+      - DataFile
+    from_schema: https://w3id.org/include
+    name: has_biospecimen
+    range: Biospecimen
+    required: false
+  has_datafile:
+    definition_uri: include:has_datafile
+    description: Link to a DataFile
+    domain_of:
+      - Biospecimen
+      - Participant
+    from_schema: https://w3id.org/include
+    name: has_datafile
+    range: DataFile
+    required: false
+  has_participant:
+    definition_uri: include:has_participant
+    description: Link to a Participant
+    domain_of:
+      - Biospecimen
+      - DataFile
+    from_schema: https://w3id.org/include
+    name: has_participant
+    range: Participant
+    required: false
+  has_study:
+    definition_uri: include:has_study
+    description: Link to a Study
+    domain_of:
+      - Biospecimen
+      - Biospecimen
+      - DataFile
+      - Participant
+    from_schema: https://w3id.org/include
+    name: has_study
+    range: Study
+    required: false
+  laboratory_procedure:
+    definition_uri: include:laboratory_procedure
+    description: Procedure by which Sample was derived from Parent Sample (e.g. RBC
+      lysis, Centrifugation, Ficoll, etc.)
+    domain_of:
+      - Biospecimen
+    from_schema: https://w3id.org/include
+    name: laboratory_procedure
+    required: false
+  mother_id:
+    definition_uri: include:mother_id
+    description: Participant ID for Participant's mother
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: mother_id
+    required: false
+  outcomes_vital_status:
+    definition_uri: include:outcomes_vital_status
+    description: Whether participant is alive or dead
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: outcomes_vital_status
+    required: false
+  parent_sample_id:
+    definition_uri: include:parent_sample_id
+    description: Identifier for the direct parent from which Sample was derived, processed,
+      pooled, etc. (if applicable)
+    domain_of:
+      - Biospecimen
+    from_schema: https://w3id.org/include
+    name: parent_sample_id
+    required: false
+  parent_sample_type:
+    definition_uri: include:parent_sample_type
+    description: Type of biological material comprising the parent sample (e.g. Plasma,
+      Serum, White blood cells, etc.)
+    domain_of:
+      - Biospecimen
+    from_schema: https://w3id.org/include
+    name: parent_sample_type
+    required: false
+  participant_id:
+    definition_uri: include:participant_id
+    description: Unique identifier for the participant, assigned by DCC
+    domain_of:
+      - DataFile
+      - Participant
+    from_schema: https://w3id.org/include
+    name: participant_id
+    required: true
+  phenotype_hpo:
+    definition_uri: include:phenotype_hpo
+    description: Human Phenotype Ontology code (annotated by data contributor or DCC)
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: phenotype_hpo
+    required: false
+  phenotype_interpretation:
+    definition_uri: include:phenotype_interpretation
+    description: Whether phenotype was observed or not
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: phenotype_interpretation
+    range: enum_phenotype_interpretation
+    required: false
+  phenotype_source_text:
+    definition_uri: include:phenotype_source_text
+    description: Phenotype as described by data contributor
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: phenotype_source_text
+    required: false
+  program:
+    definition_uri: include:program
+    description: Funding source for the study
+    domain_of:
+      - Study
+    from_schema: https://w3id.org/include
+    name: program
+    range: enum_program
+    required: true
+  race:
+    definition_uri: include:race
+    description: Race of participant
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: race
+    range: enum_race
+    required: true
+  sample_availability:
+    definition_uri: include:sample_availability
+    description: Whether or not the sample is potentially available for sharing through
+      the Virtual Biorepository
+    domain_of:
+      - Biospecimen
+    from_schema: https://w3id.org/include
+    name: sample_availability
+    range: enum_sample_availability
+    required: false
+  sample_id:
+    definition_uri: include:sample_id
+    description: Identifier for sample. A sample is a unique biological material; two
+      samples with two different IDs are biologically distinct.
+    domain_of:
+      - Biospecimen
+    from_schema: https://w3id.org/include
+    name: sample_id
+    required: true
+  sample_type:
+    definition_uri: include:sample_type
+    description: Type of biological material comprising the sample (e.g. Plasma, Serum,
+      White blood cells, DNA, RNA, etc.)
+    domain_of:
+      - Biospecimen
+    from_schema: https://w3id.org/include
+    name: sample_type
+    required: true
+  sex:
+    definition_uri: include:sex
+    description: Sex of participant
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: sex
+    range: enum_sex
+    required: true
+  size:
+    definition_uri: include:size
+    description: Size of file
+    domain_of:
+      - DataFile
+    from_schema: https://w3id.org/include
+    name: size
+    required: false
+  study_code:
+    definition_uri: include:study_code
+    description: Unique identifer for the study, assigned by DCC
+    domain_of:
+      - Study
+    from_schema: https://w3id.org/include
+    name: study_code
+    range: enum_study_code
+    required: true
+  study_name:
+    definition_uri: include:study_name
+    description: Name of the study, chosen by data contributor
+    domain_of:
+      - Study
+    from_schema: https://w3id.org/include
+    name: study_name
+    required: true
+  validation_rules:
+    definition_uri: include:validation_rules
+    description: Rules for Validation of Property Constraints and Values
+    domain_of:
+      - Thing
+    from_schema: https://w3id.org/include
+    name: validation_rules
+    required: false
+    title: Validation Rules
+  volume:
+    definition_uri: include:volume
+    description: Amount of sample in container
+    domain_of:
+      - Biospecimen
+    from_schema: https://w3id.org/include
+    name: volume
+    required: false
+  volume_unit:
+    definition_uri: include:volume_unit
+    description: Unit of sample volume
+    domain_of:
+      - Biospecimen
+    from_schema: https://w3id.org/include
+    name: volume_unit
+    required: false

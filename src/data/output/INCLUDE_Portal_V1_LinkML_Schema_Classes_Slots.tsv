@@ -1,5 +1,5 @@
 record	slot	key	multiplicity	required	range	parents	desc
-> class	slot	identifier	cardinality	required	range	is_a	description
+>class	slot	identifier	cardinality	required	range	is_a	description
 Biospecimen						Thing	A Biospecimen Collected from A Participant
 DataFile						Thing	A DataFile Associated with a Participant or Study or Biospecimen
 Participant						Thing	A Participant in a Study
