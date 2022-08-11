@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/INCLUDE",
+  "title": "INCLUDE",
+  "type": "object",
+  "properties": {
+    "Age At Phenotype Assignment": {},
+    "Has Datafile": {},
+    "Diagnosis Icd": {},
+    "Ethnicity": {
+      "enum": [
+        "not_hispanic_or_latino",
+        "asked_but_unknown",
+        "hispanic_or_latino"
+      ]
+    },
+    "Has Study": {},
+    "Mother Id": {},
+    "Phenotype Interpretation": {
+      "enum": [
+        "not_observed",
+        "observed",
+        ""
+      ]
+    },
+    "Participant Id": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Family Id": {},
+    "Age At The Last Vital Status": {},
+    "Diagnosis Mondo": {},
+    "Father Id": {},
+    "Sex": {
+      "enum": [
+        "female",
+        "other",
+        "male",
+        "unknown"
+      ]
+    },
+    "Race": {
+      "enum": [
+        "asian",
+        "black_or_african_american",
+        "american_indian_or_alaskan_native",
+        "native_hawaiian_or_other_pacific_islander",
+        "white",
+        "more_than_one_race",
+        "other"
+      ]
+    },
+    "Age At Diagnosis": {},
+    "Diagnosis Source Text": {},
+    "Family Relationship": {},
+    "Family Type": {
+      "enum": [
+        "other",
+        "proband_only",
+        "duo",
+        "trio"
+      ]
+    },
+    "Phenotype Hpo": {},
+    "Diagnosis Ncit": {},
+    "Diagnosis Type": {},
+    "Down Syndrome Status": {
+      "enum": [
+        "d21",
+        "t21"
+      ]
+    },
+    "External Id": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Outcomes Vital Status": {},
+    "Phenotype Source Text": {}
+  },
+  "required": [
+    "Ethnicity",
+    "Participant Id",
+    "Sex",
+    "Race",
+    "Family Type",
+    "Down Syndrome Status",
+    "External Id"
+  ]
+}

@@ -113,7 +113,7 @@ for class_key, class_data in lml_yaml['classes'].items():
             inc_class['sms:required'] = 'sms:true' if required else 'sms:false'
         if 'requires_component' in class_data['annotations'].keys():
             comps = [make_object(includify_curie(x)) for x in
-                     class_data['annotations']['requires_component'].split(",")]
+                     class_data['annotations']['requires_component']['value'].split(",")]
             inc_class['sms:requiresComponent'] = comps
     if 'slots' in class_data.keys():
         inc_class['sms:requiresDependency'] = [make_object(includify_curie(x)) for x in class_data['slots']]
@@ -142,6 +142,8 @@ for slot_key, slot_data in lml_yaml['slots'].items():
             inc_prop['schema:domainIncludes'] = gen_domain_list(slot_data['domain_of'])
         if 'required' in slot_data.keys():
             inc_prop['sms:required'] = f"sms:{str(slot_data['required']).lower()}"
+        else:
+            inc_prop['sms:required'] = 'sms:false'
     include_graph['@graph'].append(inc_prop)
 
 with open("include_schematic_linkml.json", 'w') as islj:
