@@ -1,3 +1,47 @@
-ValueSet	Value
->enum	permissible_value
-
+enum	permissible_value	title	meaning	aliases	broad_mappings	close_mappings	comments	definition_uri	deprecated	deprecated_element_has_exact_replacement	deprecated_element_has_possible_replacement	description	exact_mappings	examples	from_schema	imported_from	in_language	in_subset	mappings	narrow_mappings	notes	rank	related_mappings	see_also	source	todos
+> enum	permissible_value	title	meaning	aliases	broad_mappings	close_mappings	comments	definition_uri	deprecated	deprecated_element_has_exact_replacement	deprecated_element_has_possible_replacement	description	exact_mappings	examples	from_schema	imported_from	in_language	in_subset	mappings	narrow_mappings	notes	rank	related_mappings	see_also	source	todos
+>				"internal_separator: ""|"""	"internal_separator: ""|"""	"internal_separator: ""|"""	"internal_separator: ""|"""						"internal_separator: ""|"""	"internal_separator: ""|"""				"internal_separator: ""|"""	"internal_separator: ""|"""	"internal_separator: ""|"""	"internal_separator: ""|"""		"internal_separator: ""|"""	"internal_separator: ""|"""		"internal_separator: ""|"""
+enum_data_access								include:enum_data_access							https://w3id.org/include											
+enum_data_access	controlled	Controlled																								
+enum_data_access	cpen	Open																								
+enum_data_access	registered	Registered																								
+enum_down_syndrome_status								include:enum_down_syndrome_status							https://w3id.org/include											
+enum_down_syndrome_status	d21	D21																								
+enum_down_syndrome_status	t21	T21																								
+enum_ethnicity								include:enum_ethnicity							https://w3id.org/include											
+enum_ethnicity	asked_but_unknown	Asked but unknown																								
+enum_ethnicity	hispanic_or_latino	Hispanic or Latino																								
+enum_ethnicity	not_hispanic_or_latino	Not Hispanic or Latino																								
+enum_family_type								include:enum_family_type							https://w3id.org/include											
+enum_family_type	duo	Duo																								
+enum_family_type	other	Other																								
+enum_family_type	proband_only	Proband-only																								
+enum_family_type	trio	Trio																								
+enum_phenotype_interpretation								include:enum_phenotype_interpretation							https://w3id.org/include											
+enum_phenotype_interpretation	not_observed	Not Observed																								
+enum_phenotype_interpretation	observed	Observed																								
+enum_program								include:enum_program							https://w3id.org/include											
+enum_program	include	INCLUDE																								
+enum_program	kf	KF																								
+enum_race								include:enum_race							https://w3id.org/include											
+enum_race	american_indian_or_alaskan_native	American Indian or Alaska Native																								
+enum_race	asian	Asian																								
+enum_race	black_or_african_american	Black or African American																								
+enum_race	more_than_one_race	More than one race																								
+enum_race	native_hawaiian_or_other_pacific_islander	Native Hawaiian or Other Pacific Islander																								
+enum_race	other	Other																								
+enum_race	white	White																								
+enum_sample_availability								include:enum_sample_availability							https://w3id.org/include											
+enum_sample_availability	available	Available																								
+enum_sample_availability	unavailable	Unavailable																								
+enum_sex								include:enum_sex							https://w3id.org/include											
+enum_sex	female	Female																								
+enum_sex	male	Male																								
+enum_sex	other	Other																								
+enum_sex	unknown	Unknown																								
+enum_study_code								include:enum_study_code							https://w3id.org/include											
+enum_study_code	ds_cog_all	DS-COG-ALL																								
+enum_study_code	ds_pcgc	DS-PCGC																								
+enum_study_code	ds360_chd	DS360-CHD																								
+enum_study_code	dsc	DSC																								
+enum_study_code	htp	HTP																								

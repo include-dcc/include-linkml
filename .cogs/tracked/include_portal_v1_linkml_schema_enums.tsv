@@ -1,36 +1,46 @@
-ValueSet	Value
-> enum	permissible_value
-enum_data_access	Controlled
-enum_data_access	Open
-enum_data_access	Registered
-enum_down_syndrome_status	D21
-enum_down_syndrome_status	T21
-enum_ethnicity	Asked but unknown
-enum_ethnicity	Hispanic or Latino
-enum_ethnicity	Not Hispanic or Latino
-enum_family_type	Duo
-enum_family_type	Other
-enum_family_type	Proband-only
-enum_family_type	Trio
-enum_phenotype_interpretation	Not Observed
-enum_phenotype_interpretation	Observed
-enum_program	INCLUDE
-enum_program	KF
-enum_race	American Indian or Alaska Native
-enum_race	Asian
-enum_race	Black or African American
-enum_race	More than one race
-enum_race	Native Hawaiian or Other Pacific Islander
-enum_race	Other
-enum_race	White
-enum_sample_availability	Available
-enum_sample_availability	Unavailable
-enum_sex	Female
-enum_sex	Male
-enum_sex	Other
-enum_sex	Unknown
-enum_study_code	DS-COG-ALL
-enum_study_code	DS-PCGC
-enum_study_code	DS360-CHD
-enum_study_code	DSC
-enum_study_code	HTP
+ValueSet	Value	URI	Name	FromSchema	Text	Title	Reference
+> enum	permissible_value	definition_uri	name	from_schema	text	title	meaning
+enum_data_access		include:enum_data_access	enum_data_access	https://w3id.org/include			
+enum_data_access	controlled				controlled	Controlled	
+enum_data_access	open				open	Open	
+enum_data_access	registered				registered	Registered	
+enum_down_syndrome_status		include:enum_down_syndrome_status	enum_down_syndrome_status	https://w3id.org/include			
+enum_down_syndrome_status	D21				D21	D21	MONDO:000011
+enum_down_syndrome_status	T21				T21	T21	
+enum_ethnicity		include:enum_ethnicity	enum_ethnicity	https://w3id.org/include			
+enum_ethnicity	asked_but_unknown				asked_but_unknown	Asked but unknown	
+enum_ethnicity	hispanic_or_latino				hispanic_or_latino	Hispanic or Latino	
+enum_ethnicity	not_hispanic_or_latino				not_hispanic_or_latino	Not Hispanic or Latino	
+enum_family_type		include:enum_family_type	enum_family_type	https://w3id.org/include			
+enum_family_type	duo				duo	Duo	
+enum_family_type	other				other	Other	
+enum_family_type	proband_only				proband_only	Proband-only	
+enum_family_type	trio				trio	Trio	
+enum_phenotype_interpretation		include:enum_phenotype_interpretation	enum_phenotype_interpretation	https://w3id.org/include			
+enum_phenotype_interpretation	not_observed				not_observed	Not Observed	
+enum_phenotype_interpretation	observed				observed	Observed	
+enum_program		include:enum_program	enum_program	https://w3id.org/include			
+enum_program	include				include	INCLUDE	
+enum_program	KF				KF	KF	
+enum_race		include:enum_race	enum_race	https://w3id.org/include			
+enum_race	american_indian_or_alaska_native				american_indian_or_alaska_native	American Indian or Alaska Native	
+enum_race	asian				asian	Asian	
+enum_race	black_or_african_american				black_or_african_american	Black or African American	
+enum_race	more_than_one_race				more_than_one_race	More than one race	
+enum_race	native_hawaiian_or_other_pacific_islander				native_hawaiian_or_other_pacific_islander	Native Hawaiian or Other Pacific Islander	
+enum_race	other				other	Other	
+enum_race	white				white	White	
+enum_sample_availability		include:enum_sample_availability	enum_sample_availability	https://w3id.org/include			
+enum_sample_availability	available				available	Available	
+enum_sample_availability	unavailable				unavailable	Unavailable	
+enum_sex		include:enum_sex	enum_sex	https://w3id.org/include			
+enum_sex	female				female	Female	
+enum_sex	male				male	Male	
+enum_sex	other				other	Other	
+enum_sex	unknown				unknown	Unknown	
+enum_study_code		include:enum_study_code	enum_study_code	https://w3id.org/include			
+enum_study_code	DS-COG-ALL				DS-COG-ALL	DS-COG-ALL	
+enum_study_code	DS-PCGC				DS-PCGC	DS-PCGC	
+enum_study_code	DS360-CHD				DS360-CHD	DS360-CHD	
+enum_study_code	DSC				DSC	DSC	
+enum_study_code	HTP				HTP	HTP	

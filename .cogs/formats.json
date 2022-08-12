@@ -166,5 +166,44 @@
     },
     "6": {
         "wrapStrategy": "WRAP"
+    },
+    "7": {
+        "textFormat": {
+            "link": {
+                "uri": "https://w3id.org/include"
+            }
+        }
+    },
+    "8": {
+        "hyperlinkDisplayType": "LINKED",
+        "textFormat": {
+            "link": {
+                "uri": "https://w3id.org/linkml/"
+            }
+        }
+    },
+    "9": {
+        "hyperlinkDisplayType": "LINKED",
+        "textFormat": {
+            "link": {
+                "uri": "https://w3id.org/include/"
+            }
+        }
+    },
+    "10": {
+        "hyperlinkDisplayType": "LINKED",
+        "textFormat": {
+            "link": {
+                "uri": "http://schema.org/"
+            }
+        }
+    },
+    "11": {
+        "hyperlinkDisplayType": "LINKED",
+        "textFormat": {
+            "link": {
+                "uri": "http://sms.org/"
+            }
+        }
     }
 }

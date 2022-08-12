@@ -1,0 +1,62 @@
+class: string	slot: string	title: 0..1 x string	definition_uri: 0..1 x uriorcurie	description: 0..1 (recommended) x string	domain_of: 0..* x class_definition	from_schema: 0..1 x uri	is_a: 0..1 x definition	notes: 0..* x string	range: 0..1 x element	required: 0..1 x boolean	requires_component: string
+> class	slot	title	definition_uri	description	domain_of	from_schema	is_a	notes	range	annotations	annotations
+>					"internal_separator: ""|"""			"internal_separator: ""|"""		inner_key: required	inner_key: requires_component
+	access_url		include:access_url	Storage location for this file	DataFile	https://w3id.org/include					
+	age_at_biospecimen_collection		include:age_at_biospecimen_collection	Age in days of participant at time of biospecimen collection	Biospecimen	https://w3id.org/include					
+	age_at_diagnosis		include:age_at_diagnosis	Age in days at which phenotype was assigned	Participant	https://w3id.org/include					
+	age_at_phenotype_assignment		include:age_at_phenotype_assignment	Age in days at which phenotype was recorded	Participant	https://w3id.org/include					
+	age_at_the_last_vital_status		include:age_at_the_last_vital_status	Age of last vital status	Participant	https://w3id.org/include					
+	biospecimen_storage		include:biospecimen_storage	Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)	Biospecimen	https://w3id.org/include					
+	collection_id		include:collection_id	Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed).	Biospecimen|DataFile	https://w3id.org/include					
+	collection_sample_type		include:collection_sample_type	Type of biological material comprising the collected sample (e.g. Whole blood, Bone marrow, Saliva, etc.)	Biospecimen	https://w3id.org/include					
+	container_id		include:container_id	Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.	Biospecimen	https://w3id.org/include					
+	data_access		include:data_access	Type of access control on this file, determined by DCC	DataFile	https://w3id.org/include			enum_data_access		
+	data_category		include:data_category	General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune maps, Transcriptomics, etc.)	DataFile	https://w3id.org/include					
+	data_type		include:data_type	Specific type of data contained in file (e.g. Aligned reads, Unaligned reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification, Structural variations, Cytokine profiles, Operation reports, Pathology reports, Histology images, Clinical supplement, Protein expression quantification, etc.)	DataFile	https://w3id.org/include					
+	dbgap		include:dbgap	dbGaP study accession code	Study	https://w3id.org/include					
+	diagnosis_icd		include:diagnosis_icd	ICD-10 code (annotated by data contributor or DCC)	Participant	https://w3id.org/include					
+	diagnosis_mondo		include:diagnosis_mondo	Mondo disease ontology code (annotated by data contributor or DCC)	Participant	https://w3id.org/include					
+	diagnosis_ncit		include:diagnosis_ncit	NCI Thesaurus code (annotated by data contributor or DCC)	Participant	https://w3id.org/include					
+	diagnosis_source_text		include:diagnosis_source_text	Diagnosis as described by data contributor	Participant	https://w3id.org/include					
+	diagnosis_type		include:diagnosis_type	How diagnosis was assigned	Participant	https://w3id.org/include					
+	down_syndrome_status		include:down_syndrome_status	Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)	Participant	https://w3id.org/include			enum_down_syndrome_status		
+	ethnicity		include:ethnicity	Ethnicity of participant	Participant	https://w3id.org/include			enum_ethnicity		
+	experimental_strategy		include:experimental_strategy	Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale Discovery, etc.)	DataFile	https://w3id.org/include					
+	external_id		include:external_id	Unique identifier for the participant, assigned by data contributor	Participant	https://w3id.org/include					
+	family_id		include:family_id	Unique identifer for family to which Participant belongs	Participant	https://w3id.org/include					
+	family_relationship		include:family_relationship	Relationship of Participant to other family members	Participant	https://w3id.org/include					
+	family_type		include:family_type	Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives) 	Participant	https://w3id.org/include			enum_family_type		
+	father_id		include:father_id	Participant ID for Participant's father	Participant	https://w3id.org/include					
+	file_id		include:file_id	File identifier, assigned by DCC	DataFile	https://w3id.org/include					
+	file_name		include:file_name	Synapse ID for file	DataFile	https://w3id.org/include					
+	format		include:format	Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom, etc.)	DataFile	https://w3id.org/include					
+	has_biospecimen		include:has_biospecimen	Link to a Biospecimen	DataFile	https://w3id.org/include			Biospecimen		
+	has_datafile		include:has_datafile	Link to a DataFile	Biospecimen|Participant	https://w3id.org/include			DataFile		
+	has_participant		include:has_participant	Link to a Participant	Biospecimen|DataFile	https://w3id.org/include			Participant		
+	has_study		include:has_study	Link to a Study	Biospecimen|Biospecimen|DataFile|Participant	https://w3id.org/include			Study		
+	laboratory_procedure		include:laboratory_procedure	Procedure by which Sample was derived from Parent Sample (e.g. RBC lysis, Centrifugation, Ficoll, etc.)	Biospecimen	https://w3id.org/include					
+	mother_id		include:mother_id	Participant ID for Participant's mother	Participant	https://w3id.org/include					
+	outcomes_vital_status		include:outcomes_vital_status	Whether participant is alive or dead	Participant	https://w3id.org/include					
+	parent_sample_id		include:parent_sample_id	Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable)	Biospecimen	https://w3id.org/include					
+	parent_sample_type		include:parent_sample_type	Type of biological material comprising the parent sample (e.g. Plasma, Serum, White blood cells, etc.)	Biospecimen	https://w3id.org/include					
+	participant_id		include:participant_id	Unique identifier for the participant, assigned by DCC	DataFile|Participant	https://w3id.org/include					
+	phenotype_hpo		include:phenotype_hpo	Human Phenotype Ontology code (annotated by data contributor or DCC)	Participant	https://w3id.org/include					
+	phenotype_interpretation		include:phenotype_interpretation	Whether phenotype was observed or not	Participant	https://w3id.org/include			enum_phenotype_interpretation		
+	phenotype_source_text		include:phenotype_source_text	Phenotype as described by data contributor	Participant	https://w3id.org/include					
+	program		include:program	Funding source for the study	Study	https://w3id.org/include			enum_program		
+	race		include:race	Race of participant	Participant	https://w3id.org/include			enum_race		
+	sample_availability		include:sample_availability	Whether or not the sample is potentially available for sharing through the Virtual Biorepository	Biospecimen	https://w3id.org/include			enum_sample_availability		
+	sample_id		include:sample_id	Identifier for sample. A sample is a unique biological material; two samples with two different IDs are biologically distinct.	Biospecimen	https://w3id.org/include					
+	sample_type		include:sample_type	Type of biological material comprising the sample (e.g. Plasma, Serum, White blood cells, DNA, RNA, etc.)	Biospecimen	https://w3id.org/include					
+	sex		include:sex	Sex of participant	Participant	https://w3id.org/include			enum_sex		
+	size		include:size	Size of file	DataFile	https://w3id.org/include					
+	study_code		include:study_code	Unique identifer for the study, assigned by DCC	Study	https://w3id.org/include			enum_study_code		
+	study_name		include:study_name	Name of the study, chosen by data contributor	Study	https://w3id.org/include					
+	validation_rules	Validation Rules	include:validation_rules	Rules for Validation of Property Constraints and Values	Thing	https://w3id.org/include					
+	volume		include:volume	Amount of sample in container	Biospecimen	https://w3id.org/include					
+	volume_unit		include:volume_unit	Unit of sample volume	Biospecimen	https://w3id.org/include					
+Biospecimen		Biospecimen	include:Biospecimen	A Biospecimen Collected from A Participant		https://w3id.org/include	Thing			|False	Study,Participant,DataFile|
+DataFile		DataFile	include:DataFile	A DataFile Associated with a Participant or Study or Biospecimen		https://w3id.org/include	Thing			|False	Study,Participant,Biospecimen|
+Participant		Participant	include:Participant	A Participant in a Study		https://w3id.org/include	Thing			|False	Study,DataFile|
+Study		Study	include:Study	A Study		https://w3id.org/include	Thing			True	
+Thing		Thing	schema:Thing	Highest Level Class		https://w3id.org/include					
