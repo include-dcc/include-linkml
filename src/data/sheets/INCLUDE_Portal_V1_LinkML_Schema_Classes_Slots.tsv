@@ -24,15 +24,18 @@ class: string	slots	slot: string	required: 0..1 x boolean	slot_required: 0..1 x 
 		experimental_strategy		False			include:experimental_strategy	Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale Discovery, etc.)	DataFile	https://w3id.org/include			
 		external_id		True			include:external_id	Unique identifier for the participant, assigned by data contributor	Participant	https://w3id.org/include			
 		family_id		False			include:family_id	Unique identifer for family to which Participant belongs	Participant	https://w3id.org/include			
-		family_relationship		False			include:family_relationship	Relationship of Participant to other family members	Participant	https://w3id.org/include			
+		family_relationship		False			include:family_relationship	Relationship of Participant to other family members	Participant	https://w3id.org/include		Participant	
 		family_type		True			include:family_type	Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives) 	Participant	https://w3id.org/include		enum_family_type	
 		father_id		False			include:father_id	Participant ID for Participant's father	Participant	https://w3id.org/include			
 		file_id		False			include:file_id	File identifier, assigned by DCC	DataFile	https://w3id.org/include			
 		file_name		True			include:file_name	Synapse ID for file	DataFile	https://w3id.org/include			
 		format		True			include:format	Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom, etc.)	DataFile	https://w3id.org/include			
 		has_biospecimen		False			include:has_biospecimen	Link to a Biospecimen	DataFile	https://w3id.org/include		Biospecimen	
+		has_output		False			include:has_output	The DataFile Output of an Assay	Assay	https://w3id.org/include		DataFile	
 		has_datafile		False			include:has_datafile	Link to a DataFile	Biospecimen|Participant	https://w3id.org/include		DataFile	
 		has_participant		False			include:has_participant	Link to a Participant	Biospecimen|DataFile	https://w3id.org/include		Participant	
+		has_subject		True			include:has_subject	Link from Data File to a Participant	DataFile	https://w3id.org/include		Participant	
+		has_parent_sample		False			include:has_parent_sample	Link from a sample to its parent Sample	Biospecimen	https://w3id.org/include		Biospecimen	
 		has_study		False			include:has_study	Link to a Study	Biospecimen|DataFile|Participant	https://w3id.org/include		Study	
 		laboratory_procedure		False			include:laboratory_procedure	Procedure by which Sample was derived from Parent Sample (e.g. RBC lysis, Centrifugation, Ficoll, etc.)	Biospecimen	https://w3id.org/include			
 		mother_id		False			include:mother_id	Participant ID for Participant's mother	Participant	https://w3id.org/include			
@@ -56,8 +59,12 @@ class: string	slots	slot: string	required: 0..1 x boolean	slot_required: 0..1 x 
 		validation_rules		False	Validation Rules		include:validation_rules	Rules for Validation of Property Constraints and Values	Thing	https://w3id.org/include			
 		volume		False			include:volume	Amount of sample in container	Biospecimen	https://w3id.org/include			
 		volume_unit		False			include:volume_unit	Unit of sample volume	Biospecimen	https://w3id.org/include			
-Biospecimen	age_at_biospecimen_collection|biospecimen_storage|collection_id|collection_sample_type|container_id|has_datafile|has_participant|has_study|laboratory_procedure|parent_sample_id|parent_sample_type|sample_availability|sample_id|sample_type|volume|volume_unit|has_study		False		Biospecimen	Thing	include:Biospecimen	A Biospecimen Collected from A Participant		https://w3id.org/include			Study,Participant,DataFile
+		has_aliquot		False			include:has_aliquot	An aliquot of a sample	Biospecimen	https://w3id.org/include		Aliquot	
+Biospecimen	age_at_biospecimen_collection|biospecimen_storage|collection_id|collection_sample_type|container_id|has_datafile|has_participant|has_study|laboratory_procedure|parent_sample_id|parent_sample_type|sample_availability|sample_id|sample_type|volume|volume_unit|has_study|has_aliquot		False		Biospecimen	Thing	include:Biospecimen	A Biospecimen Collected from A Participant		https://w3id.org/include			Study,Participant,DataFile
 DataFile	access_url|collection_id|data_access|data_category|data_type|experimental_strategy|file_id|file_name|format|has_biospecimen|has_participant|has_study|participant_id|size|original_file_name		False		DataFile	Thing	include:DataFile	A DataFile Associated with a Participant or Study or Biospecimen		https://w3id.org/include			Study,Participant,Biospecimen
 Participant	age_at_diagnosis|age_at_phenotype_assignment|age_at_the_last_vital_status|diagnosis_icd|diagnosis_mondo|diagnosis_ncit|diagnosis_source_text|diagnosis_type|down_syndrome_status|ethnicity|external_id|family_id|family_relationship|family_type|father_id|has_datafile|has_study|mother_id|outcomes_vital_status|participant_id|phenotype_hpo|phenotype_source_text|phenotype_interpretation|race|sex		False		Participant	Thing	include:Participant	A Participant in a Study		https://w3id.org/include			Study,DataFile
 Study	dbgap|program|study_code|study_name		True		Study	Thing	include:Study	A Study		https://w3id.org/include			
 Thing					Thing		schema:Thing	Highest Level Class		https://w3id.org/include			
+FamilyGroup	has_participant		False		FamilyGroup	Thing	include:FamilyGroup	A group of Participants in the same Study		https://w3id.org/include			Study,Participant
+Aliquot			False		Aliquot	Thing	include:Aliquot	An aliquot of a sample		https://w3id.org/include			Biospecimen
+Assay	uses_biospecimen|has_output		False		Assay	Thing	include:Assay	An assay		https://w3id.org/include			Biospecimen,DataFile
