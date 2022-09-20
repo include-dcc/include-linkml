@@ -8,13 +8,13 @@ URI: EnumRace
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| American Indian or Alaska Native | None |  | |
-| Asian | None |  | |
-| Black or African American | None |  | |
-| More than one race | None |  | |
-| Native Hawaiian or Other Pacific Islander | None |  | |
-| Other | None |  | |
-| White | None |  | |
+| american_indian_or_alaskan_native | None |  | |
+| asian | None |  | |
+| black_or_african_american | None |  | |
+| more_than_one_race | None |  | |
+| native_hawaiian_or_other_pacific_islander | None |  | |
+| other | None |  | |
+| white | None |  | |
 
 
 ## Identifier and Mapping Information

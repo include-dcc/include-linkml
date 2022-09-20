@@ -21,3 +21,4 @@ None &#8594;  <sub>0..1</sub> [Participant](Participant.md)
 
  * [Biospecimen](Biospecimen.md)
  * [DataFile](DataFile.md)
+ * [FamilyGroup](FamilyGroup.md)

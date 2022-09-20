@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from include_linkml.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-07-28T14:13:10\n    Schema: IncludePortalV1\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/include\n    description: Initial Include Portal Schema\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from include_linkml.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-08-12T07:29:16\n    Schema: IncludePortalV1\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/include\n    description: Initial Include Portal Schema\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "include": "https://w3id.org/include/",
       "linkml": "https://w3id.org/linkml/",
@@ -31,6 +31,9 @@
             "meaning": "@id"
          }
       },
+      "family_relationship": {
+         "@type": "@id"
+      },
       "family_type": {
          "@context": {
             "@vocab": "@null",
@@ -39,16 +42,28 @@
             "meaning": "@id"
          }
       },
+      "has_aliquot": {
+         "@type": "@id"
+      },
       "has_biospecimen": {
          "@type": "@id"
       },
       "has_datafile": {
          "@type": "@id"
       },
+      "has_output": {
+         "@type": "@id"
+      },
+      "has_parent_sample": {
+         "@type": "@id"
+      },
       "has_participant": {
          "@type": "@id"
       },
       "has_study": {
+         "@type": "@id"
+      },
+      "has_subject": {
          "@type": "@id"
       },
       "phenotype_interpretation": {
@@ -98,6 +113,9 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          }
+      },
+      "uses_biospecimen": {
+         "@type": "@id"
       }
    }
 }

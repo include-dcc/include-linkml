@@ -8,9 +8,9 @@ URI: EnumDataAccess
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| Controlled | None |  | |
-| Open | None |  | |
-| Registered | None |  | |
+| controlled | None |  | |
+| cpen | None |  | |
+| registered | None |  | |
 
 
 ## Identifier and Mapping Information

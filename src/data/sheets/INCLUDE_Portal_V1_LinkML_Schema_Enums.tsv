@@ -7,7 +7,7 @@ enum_data_access	cpen	Open
 enum_data_access	registered	Registered																								
 enum_down_syndrome_status								include:enum_down_syndrome_status							https://w3id.org/include											
 enum_down_syndrome_status	d21	D21																								
-enum_down_syndrome_status	t21	T21																								
+enum_down_syndrome_status	t21	T21	MONDO:0700126																							
 enum_ethnicity								include:enum_ethnicity							https://w3id.org/include											
 enum_ethnicity	asked_but_unknown	Asked but unknown																								
 enum_ethnicity	hispanic_or_latino	Hispanic or Latino																								

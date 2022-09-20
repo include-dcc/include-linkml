@@ -8,11 +8,11 @@ URI: EnumStudyCode
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| DS-COG-ALL | None |  | |
-| DS-PCGC | None |  | |
-| DS360-CHD | None |  | |
-| DSC | None |  | |
-| HTP | None |  | |
+| ds_cog_all | None |  | |
+| ds_pcgc | None |  | |
+| ds360_chd | None |  | |
+| dsc | None |  | |
+| htp | None |  | |
 
 
 ## Identifier and Mapping Information

@@ -7,7 +7,7 @@ A Participant in a Study
 URI: [include:Participant](https://w3id.org/include/Participant)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Study],[Study]<has_study%200..1-++[Participant&#124;age_at_diagnosis:string%20%3F;age_at_phenotype_assignment:string%20%3F;age_at_the_last_vital_status:string%20%3F;diagnosis_icd:string%20%3F;diagnosis_mondo:string%20%3F;diagnosis_ncit:string%20%3F;diagnosis_source_text:string%20%3F;diagnosis_type:string%20%3F;down_syndrome_status:enum_down_syndrome_status;ethnicity:enum_ethnicity;external_id:string;family_id:string%20%3F;family_relationship:string%20%3F;family_type:enum_family_type;father_id:string%20%3F;mother_id:string%20%3F;outcomes_vital_status:string%20%3F;participant_id:string;phenotype_hpo:string%20%3F;phenotype_source_text:string%20%3F;phenotype_interpretation:enum_phenotype_interpretation%20%3F;race:enum_race;sex:enum_sex],[DataFile]<has_datafile%200..1-++[Participant],[Biospecimen]++-%20has_participant%200..1>[Participant],[DataFile]++-%20has_participant%200..1>[Participant],[Thing]^-[Participant],[DataFile],[Biospecimen])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Study],[Study]<has_study%200..1-++[Participant&#124;age_at_diagnosis:string%20%3F;age_at_phenotype_assignment:string%20%3F;age_at_the_last_vital_status:string%20%3F;diagnosis_icd:string%20%3F;diagnosis_mondo:string%20%3F;diagnosis_ncit:string%20%3F;diagnosis_source_text:string%20%3F;diagnosis_type:string%20%3F;down_syndrome_status:enum_down_syndrome_status;ethnicity:enum_ethnicity;external_id:string;family_id:string%20%3F;family_relationship:string%20%3F;family_type:enum_family_type;father_id:string%20%3F;mother_id:string%20%3F;outcomes_vital_status:string%20%3F;participant_id:string;phenotype_hpo:string%20%3F;phenotype_source_text:string%20%3F;phenotype_interpretation:enum_phenotype_interpretation%20%3F;race:enum_race;sex:enum_sex],[DataFile]<has_datafile%200..1-++[Participant],[Biospecimen]++-%20has_participant%200..1>[Participant],[DataFile]++-%20has_participant%200..1>[Participant],[Thing]^-[Participant],[DataFile],[Biospecimen])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Study],[Study]<has_study%200..1-++[Participant&#124;age_at_diagnosis:string%20%3F;age_at_phenotype_assignment:string%20%3F;age_at_the_last_vital_status:string%20%3F;diagnosis_icd:string%20%3F;diagnosis_mondo:string%20%3F;diagnosis_ncit:string%20%3F;diagnosis_source_text:string%20%3F;diagnosis_type:string%20%3F;down_syndrome_status:enum_down_syndrome_status;ethnicity:enum_ethnicity;external_id:string;family_id:string%20%3F;family_type:enum_family_type;father_id:string%20%3F;mother_id:string%20%3F;outcomes_vital_status:string%20%3F;participant_id:string;phenotype_hpo:string%20%3F;phenotype_source_text:string%20%3F;phenotype_interpretation:enum_phenotype_interpretation%20%3F;race:enum_race;sex:enum_sex],[DataFile]<has_datafile%200..1-++[Participant],[Participant]<family_relationship%200..1-++[Participant],[Biospecimen]++-%20has_participant%200..1>[Participant],[DataFile]++-%20has_participant%200..1>[Participant],[FamilyGroup]++-%20has_participant%200..1>[Participant],[DataFile]++-%20has_subject(i)%201..1>[Participant],[Thing]^-[Participant],[FamilyGroup],[DataFile],[Biospecimen])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Study],[Study]<has_study%200..1-++[Participant&#124;age_at_diagnosis:string%20%3F;age_at_phenotype_assignment:string%20%3F;age_at_the_last_vital_status:string%20%3F;diagnosis_icd:string%20%3F;diagnosis_mondo:string%20%3F;diagnosis_ncit:string%20%3F;diagnosis_source_text:string%20%3F;diagnosis_type:string%20%3F;down_syndrome_status:enum_down_syndrome_status;ethnicity:enum_ethnicity;external_id:string;family_id:string%20%3F;family_type:enum_family_type;father_id:string%20%3F;mother_id:string%20%3F;outcomes_vital_status:string%20%3F;participant_id:string;phenotype_hpo:string%20%3F;phenotype_source_text:string%20%3F;phenotype_interpretation:enum_phenotype_interpretation%20%3F;race:enum_race;sex:enum_sex],[DataFile]<has_datafile%200..1-++[Participant],[Participant]<family_relationship%200..1-++[Participant],[Biospecimen]++-%20has_participant%200..1>[Participant],[DataFile]++-%20has_participant%200..1>[Participant],[FamilyGroup]++-%20has_participant%200..1>[Participant],[DataFile]++-%20has_subject(i)%201..1>[Participant],[Thing]^-[Participant],[FamilyGroup],[DataFile],[Biospecimen])
 
 ## Parents
 
@@ -15,7 +15,9 @@ URI: [include:Participant](https://w3id.org/include/Participant)
 
 ## Referenced by Class
 
+ *  **None** *[family_relationship](family_relationship.md)*  <sub>0..1</sub>  **[Participant](Participant.md)**
  *  **None** *[has_participant](has_participant.md)*  <sub>0..1</sub>  **[Participant](Participant.md)**
+ *  **None** *[has_subject](has_subject.md)*  <sub>1..1</sub>  **[Participant](Participant.md)**
 
 ## Attributes
 
@@ -60,9 +62,9 @@ URI: [include:Participant](https://w3id.org/include/Participant)
      * Range: [String](types/String.md)
  * [family_relationship](family_relationship.md)  <sub>0..1</sub>
      * Description: Relationship of Participant to other family members
-     * Range: [String](types/String.md)
+     * Range: [Participant](Participant.md)
  * [family_type](family_type.md)  <sub>1..1</sub>
-     * Description: Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives) 
+     * Description: Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives)
      * Range: [enum_family_type](enum_family_type.md)
  * [father_id](father_id.md)  <sub>0..1</sub>
      * Description: Participant ID for Participant's father

@@ -59,6 +59,7 @@ class: string	slots	slot: string	required: 0..1 x boolean	slot_required: 0..1 x 
 		validation_rules		False	Validation Rules		include:validation_rules	Rules for Validation of Property Constraints and Values	Thing	https://w3id.org/include			
 		volume		False			include:volume	Amount of sample in container	Biospecimen	https://w3id.org/include			
 		volume_unit		False			include:volume_unit	Unit of sample volume	Biospecimen	https://w3id.org/include			
+		uses_biospecimen		False			include:uses_biospecimen	The Biospecimen an Assay is performed on	Assay	https://w3id.org/include		Biospecimen	
 		has_aliquot		False			include:has_aliquot	An aliquot of a sample	Biospecimen	https://w3id.org/include		Aliquot	
 Biospecimen	age_at_biospecimen_collection|biospecimen_storage|collection_id|collection_sample_type|container_id|has_datafile|has_participant|has_study|laboratory_procedure|parent_sample_id|parent_sample_type|sample_availability|sample_id|sample_type|volume|volume_unit|has_study|has_aliquot		False		Biospecimen	Thing	include:Biospecimen	A Biospecimen Collected from A Participant		https://w3id.org/include			Study,Participant,DataFile
 DataFile	access_url|collection_id|data_access|data_category|data_type|experimental_strategy|file_id|file_name|format|has_biospecimen|has_participant|has_study|participant_id|size|original_file_name		False		DataFile	Thing	include:DataFile	A DataFile Associated with a Participant or Study or Biospecimen		https://w3id.org/include			Study,Participant,Biospecimen

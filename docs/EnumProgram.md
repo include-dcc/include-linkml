@@ -8,8 +8,8 @@ URI: EnumProgram
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| INCLUDE | None |  | |
-| KF | None |  | |
+| include | None |  | |
+| kf | None |  | |
 
 
 ## Identifier and Mapping Information

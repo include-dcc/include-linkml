@@ -1,5 +1,5 @@
 # Auto generated from include_linkml.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-07-28T14:13:17
+# Generation date: 2022-08-12T07:29:23
 # Schema: IncludePortalV1
 #
 # id: https://w3id.org/include
@@ -84,6 +84,7 @@ class Biospecimen(Thing):
     sample_availability: Optional[Union[str, "EnumSampleAvailability"]] = None
     volume: Optional[str] = None
     volume_unit: Optional[str] = None
+    has_aliquot: Optional[Union[dict, "Aliquot"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.sample_id):
@@ -141,6 +142,9 @@ class Biospecimen(Thing):
         if self.has_study is not None and not isinstance(self.has_study, Study):
             self.has_study = Study(**as_dict(self.has_study))
 
+        if self.has_aliquot is not None and not isinstance(self.has_aliquot, Aliquot):
+            self.has_aliquot = Aliquot()
+
         super().__post_init__(**kwargs)
 
 
@@ -157,15 +161,16 @@ class DataFile(Thing):
     class_model_uri: ClassVar[URIRef] = INCLUDE.DataFile
 
     data_category: str = None
+    file_name: str = None
     format: str = None
     participant_id: str = None
+    original_file_name: str = None
     access_url: Optional[str] = None
     collection_id: Optional[str] = None
     data_access: Optional[Union[str, "EnumDataAccess"]] = None
     data_type: Optional[str] = None
     experimental_strategy: Optional[str] = None
     file_id: Optional[str] = None
-    file_name: Optional[str] = None
     has_biospecimen: Optional[Union[dict, Biospecimen]] = None
     has_participant: Optional[Union[dict, "Participant"]] = None
     has_study: Optional[Union[dict, "Study"]] = None
@@ -177,6 +182,11 @@ class DataFile(Thing):
         if not isinstance(self.data_category, str):
             self.data_category = str(self.data_category)
 
+        if self._is_empty(self.file_name):
+            self.MissingRequiredField("file_name")
+        if not isinstance(self.file_name, str):
+            self.file_name = str(self.file_name)
+
         if self._is_empty(self.format):
             self.MissingRequiredField("format")
         if not isinstance(self.format, str):
@@ -186,6 +196,11 @@ class DataFile(Thing):
             self.MissingRequiredField("participant_id")
         if not isinstance(self.participant_id, str):
             self.participant_id = str(self.participant_id)
+
+        if self._is_empty(self.original_file_name):
+            self.MissingRequiredField("original_file_name")
+        if not isinstance(self.original_file_name, str):
+            self.original_file_name = str(self.original_file_name)
 
         if self.access_url is not None and not isinstance(self.access_url, str):
             self.access_url = str(self.access_url)
@@ -204,9 +219,6 @@ class DataFile(Thing):
 
         if self.file_id is not None and not isinstance(self.file_id, str):
             self.file_id = str(self.file_id)
-
-        if self.file_name is not None and not isinstance(self.file_name, str):
-            self.file_name = str(self.file_name)
 
         if self.has_biospecimen is not None and not isinstance(self.has_biospecimen, Biospecimen):
             self.has_biospecimen = Biospecimen(**as_dict(self.has_biospecimen))
@@ -251,7 +263,7 @@ class Participant(Thing):
     diagnosis_source_text: Optional[str] = None
     diagnosis_type: Optional[str] = None
     family_id: Optional[str] = None
-    family_relationship: Optional[str] = None
+    family_relationship: Optional[Union[dict, "Participant"]] = None
     father_id: Optional[str] = None
     has_datafile: Optional[Union[dict, DataFile]] = None
     has_study: Optional[Union[dict, "Study"]] = None
@@ -324,8 +336,8 @@ class Participant(Thing):
         if self.family_id is not None and not isinstance(self.family_id, str):
             self.family_id = str(self.family_id)
 
-        if self.family_relationship is not None and not isinstance(self.family_relationship, str):
-            self.family_relationship = str(self.family_relationship)
+        if self.family_relationship is not None and not isinstance(self.family_relationship, Participant):
+            self.family_relationship = Participant(**as_dict(self.family_relationship))
 
         if self.father_id is not None and not isinstance(self.father_id, str):
             self.father_id = str(self.father_id)
@@ -393,12 +405,70 @@ class Study(Thing):
         super().__post_init__(**kwargs)
 
 
+@dataclass
+class FamilyGroup(Thing):
+    """
+    A group of Participants in the same Study
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = INCLUDE.FamilyGroup
+    class_class_curie: ClassVar[str] = "include:FamilyGroup"
+    class_name: ClassVar[str] = "FamilyGroup"
+    class_model_uri: ClassVar[URIRef] = INCLUDE.FamilyGroup
+
+    has_participant: Optional[Union[dict, Participant]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.has_participant is not None and not isinstance(self.has_participant, Participant):
+            self.has_participant = Participant(**as_dict(self.has_participant))
+
+        super().__post_init__(**kwargs)
+
+
+class Aliquot(Thing):
+    """
+    An aliquot of a sample
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = INCLUDE.Aliquot
+    class_class_curie: ClassVar[str] = "include:Aliquot"
+    class_name: ClassVar[str] = "Aliquot"
+    class_model_uri: ClassVar[URIRef] = INCLUDE.Aliquot
+
+
+@dataclass
+class Assay(Thing):
+    """
+    An assay
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = INCLUDE.Assay
+    class_class_curie: ClassVar[str] = "include:Assay"
+    class_name: ClassVar[str] = "Assay"
+    class_model_uri: ClassVar[URIRef] = INCLUDE.Assay
+
+    uses_biospecimen: Optional[Union[dict, Biospecimen]] = None
+    has_output: Optional[Union[dict, DataFile]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.uses_biospecimen is not None and not isinstance(self.uses_biospecimen, Biospecimen):
+            self.uses_biospecimen = Biospecimen(**as_dict(self.uses_biospecimen))
+
+        if self.has_output is not None and not isinstance(self.has_output, DataFile):
+            self.has_output = DataFile(**as_dict(self.has_output))
+
+        super().__post_init__(**kwargs)
+
+
 # Enumerations
 class EnumDataAccess(EnumDefinitionImpl):
 
-    Controlled = PermissibleValue(text="Controlled")
-    Open = PermissibleValue(text="Open")
-    Registered = PermissibleValue(text="Registered")
+    controlled = PermissibleValue(text="controlled")
+    cpen = PermissibleValue(text="cpen")
+    registered = PermissibleValue(text="registered")
 
     _defn = EnumDefinition(
         name="EnumDataAccess",
@@ -406,8 +476,8 @@ class EnumDataAccess(EnumDefinitionImpl):
 
 class EnumDownSyndromeStatus(EnumDefinitionImpl):
 
-    D21 = PermissibleValue(text="D21")
-    T21 = PermissibleValue(text="T21")
+    d21 = PermissibleValue(text="d21")
+    t21 = PermissibleValue(text="t21")
 
     _defn = EnumDefinition(
         name="EnumDownSyndromeStatus",
@@ -415,51 +485,38 @@ class EnumDownSyndromeStatus(EnumDefinitionImpl):
 
 class EnumEthnicity(EnumDefinitionImpl):
 
+    asked_but_unknown = PermissibleValue(text="asked_but_unknown")
+    hispanic_or_latino = PermissibleValue(text="hispanic_or_latino")
+    not_hispanic_or_latino = PermissibleValue(text="not_hispanic_or_latino")
+
     _defn = EnumDefinition(
         name="EnumEthnicity",
     )
 
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Asked but unknown",
-                PermissibleValue(text="Asked but unknown") )
-        setattr(cls, "Hispanic or Latino",
-                PermissibleValue(text="Hispanic or Latino") )
-        setattr(cls, "Not Hispanic or Latino",
-                PermissibleValue(text="Not Hispanic or Latino") )
-
 class EnumFamilyType(EnumDefinitionImpl):
 
-    Duo = PermissibleValue(text="Duo")
-    Other = PermissibleValue(text="Other")
-    Trio = PermissibleValue(text="Trio")
+    duo = PermissibleValue(text="duo")
+    other = PermissibleValue(text="other")
+    proband_only = PermissibleValue(text="proband_only")
+    trio = PermissibleValue(text="trio")
 
     _defn = EnumDefinition(
         name="EnumFamilyType",
     )
 
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Proband-only",
-                PermissibleValue(text="Proband-only") )
-
 class EnumPhenotypeInterpretation(EnumDefinitionImpl):
 
-    Observed = PermissibleValue(text="Observed")
+    not_observed = PermissibleValue(text="not_observed")
+    observed = PermissibleValue(text="observed")
 
     _defn = EnumDefinition(
         name="EnumPhenotypeInterpretation",
     )
 
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Not Observed",
-                PermissibleValue(text="Not Observed") )
-
 class EnumProgram(EnumDefinitionImpl):
 
-    INCLUDE = PermissibleValue(text="INCLUDE")
-    KF = PermissibleValue(text="KF")
+    include = PermissibleValue(text="include")
+    kf = PermissibleValue(text="kf")
 
     _defn = EnumDefinition(
         name="EnumProgram",
@@ -467,29 +524,22 @@ class EnumProgram(EnumDefinitionImpl):
 
 class EnumRace(EnumDefinitionImpl):
 
-    Asian = PermissibleValue(text="Asian")
-    Other = PermissibleValue(text="Other")
-    White = PermissibleValue(text="White")
+    american_indian_or_alaskan_native = PermissibleValue(text="american_indian_or_alaskan_native")
+    asian = PermissibleValue(text="asian")
+    black_or_african_american = PermissibleValue(text="black_or_african_american")
+    more_than_one_race = PermissibleValue(text="more_than_one_race")
+    native_hawaiian_or_other_pacific_islander = PermissibleValue(text="native_hawaiian_or_other_pacific_islander")
+    other = PermissibleValue(text="other")
+    white = PermissibleValue(text="white")
 
     _defn = EnumDefinition(
         name="EnumRace",
     )
 
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "American Indian or Alaska Native",
-                PermissibleValue(text="American Indian or Alaska Native") )
-        setattr(cls, "Black or African American",
-                PermissibleValue(text="Black or African American") )
-        setattr(cls, "More than one race",
-                PermissibleValue(text="More than one race") )
-        setattr(cls, "Native Hawaiian or Other Pacific Islander",
-                PermissibleValue(text="Native Hawaiian or Other Pacific Islander") )
-
 class EnumSampleAvailability(EnumDefinitionImpl):
 
-    Available = PermissibleValue(text="Available")
-    Unavailable = PermissibleValue(text="Unavailable")
+    available = PermissibleValue(text="available")
+    unavailable = PermissibleValue(text="unavailable")
 
     _defn = EnumDefinition(
         name="EnumSampleAvailability",
@@ -497,10 +547,10 @@ class EnumSampleAvailability(EnumDefinitionImpl):
 
 class EnumSex(EnumDefinitionImpl):
 
-    Female = PermissibleValue(text="Female")
-    Male = PermissibleValue(text="Male")
-    Other = PermissibleValue(text="Other")
-    Unknown = PermissibleValue(text="Unknown")
+    female = PermissibleValue(text="female")
+    male = PermissibleValue(text="male")
+    other = PermissibleValue(text="other")
+    unknown = PermissibleValue(text="unknown")
 
     _defn = EnumDefinition(
         name="EnumSex",
@@ -508,21 +558,15 @@ class EnumSex(EnumDefinitionImpl):
 
 class EnumStudyCode(EnumDefinitionImpl):
 
-    DSC = PermissibleValue(text="DSC")
-    HTP = PermissibleValue(text="HTP")
+    ds_cog_all = PermissibleValue(text="ds_cog_all")
+    ds_pcgc = PermissibleValue(text="ds_pcgc")
+    ds360_chd = PermissibleValue(text="ds360_chd")
+    dsc = PermissibleValue(text="dsc")
+    htp = PermissibleValue(text="htp")
 
     _defn = EnumDefinition(
         name="EnumStudyCode",
     )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "DS-COG-ALL",
-                PermissibleValue(text="DS-COG-ALL") )
-        setattr(cls, "DS-PCGC",
-                PermissibleValue(text="DS-PCGC") )
-        setattr(cls, "DS360-CHD",
-                PermissibleValue(text="DS360-CHD") )
 
 # Slots
 class slots:
@@ -598,7 +642,7 @@ slots.family_id = Slot(uri=INCLUDE.family_id, name="family_id", curie=INCLUDE.cu
                    model_uri=INCLUDE.family_id, domain=None, range=Optional[str])
 
 slots.family_relationship = Slot(uri=INCLUDE.family_relationship, name="family_relationship", curie=INCLUDE.curie('family_relationship'),
-                   model_uri=INCLUDE.family_relationship, domain=None, range=Optional[str])
+                   model_uri=INCLUDE.family_relationship, domain=None, range=Optional[Union[dict, Participant]])
 
 slots.family_type = Slot(uri=INCLUDE.family_type, name="family_type", curie=INCLUDE.curie('family_type'),
                    model_uri=INCLUDE.family_type, domain=None, range=Union[str, "EnumFamilyType"])
@@ -610,7 +654,7 @@ slots.file_id = Slot(uri=INCLUDE.file_id, name="file_id", curie=INCLUDE.curie('f
                    model_uri=INCLUDE.file_id, domain=None, range=Optional[str])
 
 slots.file_name = Slot(uri=INCLUDE.file_name, name="file_name", curie=INCLUDE.curie('file_name'),
-                   model_uri=INCLUDE.file_name, domain=None, range=Optional[str])
+                   model_uri=INCLUDE.file_name, domain=None, range=str)
 
 slots.format = Slot(uri=INCLUDE.format, name="format", curie=INCLUDE.curie('format'),
                    model_uri=INCLUDE.format, domain=None, range=str)
@@ -618,11 +662,20 @@ slots.format = Slot(uri=INCLUDE.format, name="format", curie=INCLUDE.curie('form
 slots.has_biospecimen = Slot(uri=INCLUDE.has_biospecimen, name="has_biospecimen", curie=INCLUDE.curie('has_biospecimen'),
                    model_uri=INCLUDE.has_biospecimen, domain=None, range=Optional[Union[dict, Biospecimen]])
 
+slots.has_output = Slot(uri=INCLUDE.has_output, name="has_output", curie=INCLUDE.curie('has_output'),
+                   model_uri=INCLUDE.has_output, domain=None, range=Optional[Union[dict, DataFile]])
+
 slots.has_datafile = Slot(uri=INCLUDE.has_datafile, name="has_datafile", curie=INCLUDE.curie('has_datafile'),
                    model_uri=INCLUDE.has_datafile, domain=None, range=Optional[Union[dict, DataFile]])
 
 slots.has_participant = Slot(uri=INCLUDE.has_participant, name="has_participant", curie=INCLUDE.curie('has_participant'),
                    model_uri=INCLUDE.has_participant, domain=None, range=Optional[Union[dict, Participant]])
+
+slots.has_subject = Slot(uri=INCLUDE.has_subject, name="has_subject", curie=INCLUDE.curie('has_subject'),
+                   model_uri=INCLUDE.has_subject, domain=None, range=Union[dict, Participant])
+
+slots.has_parent_sample = Slot(uri=INCLUDE.has_parent_sample, name="has_parent_sample", curie=INCLUDE.curie('has_parent_sample'),
+                   model_uri=INCLUDE.has_parent_sample, domain=None, range=Optional[Union[dict, Biospecimen]])
 
 slots.has_study = Slot(uri=INCLUDE.has_study, name="has_study", curie=INCLUDE.curie('has_study'),
                    model_uri=INCLUDE.has_study, domain=None, range=Optional[Union[dict, Study]])
@@ -632,6 +685,9 @@ slots.laboratory_procedure = Slot(uri=INCLUDE.laboratory_procedure, name="labora
 
 slots.mother_id = Slot(uri=INCLUDE.mother_id, name="mother_id", curie=INCLUDE.curie('mother_id'),
                    model_uri=INCLUDE.mother_id, domain=None, range=Optional[str])
+
+slots.original_file_name = Slot(uri=INCLUDE.original_file_name, name="original_file_name", curie=INCLUDE.curie('original_file_name'),
+                   model_uri=INCLUDE.original_file_name, domain=None, range=str)
 
 slots.outcomes_vital_status = Slot(uri=INCLUDE.outcomes_vital_status, name="outcomes_vital_status", curie=INCLUDE.curie('outcomes_vital_status'),
                    model_uri=INCLUDE.outcomes_vital_status, domain=None, range=Optional[str])
@@ -689,3 +745,9 @@ slots.volume = Slot(uri=INCLUDE.volume, name="volume", curie=INCLUDE.curie('volu
 
 slots.volume_unit = Slot(uri=INCLUDE.volume_unit, name="volume_unit", curie=INCLUDE.curie('volume_unit'),
                    model_uri=INCLUDE.volume_unit, domain=None, range=Optional[str])
+
+slots.uses_biospecimen = Slot(uri=INCLUDE.uses_biospecimen, name="uses_biospecimen", curie=INCLUDE.curie('uses_biospecimen'),
+                   model_uri=INCLUDE.uses_biospecimen, domain=None, range=Optional[Union[dict, Biospecimen]])
+
+slots.has_aliquot = Slot(uri=INCLUDE.has_aliquot, name="has_aliquot", curie=INCLUDE.curie('has_aliquot'),
+                   model_uri=INCLUDE.has_aliquot, domain=None, range=Optional[Union[dict, Aliquot]])

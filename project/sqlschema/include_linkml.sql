@@ -1,5 +1,11 @@
 
 
+CREATE TABLE "Assay" (
+	uses_biospecimen TEXT, 
+	has_output TEXT, 
+	PRIMARY KEY (uses_biospecimen, has_output)
+);
+
 CREATE TABLE "Biospecimen" (
 	age_at_biospecimen_collection TEXT, 
 	biospecimen_storage TEXT, 
@@ -17,7 +23,8 @@ CREATE TABLE "Biospecimen" (
 	sample_type TEXT NOT NULL, 
 	volume TEXT, 
 	volume_unit TEXT, 
-	PRIMARY KEY (age_at_biospecimen_collection, biospecimen_storage, collection_id, collection_sample_type, container_id, has_datafile, has_participant, has_study, laboratory_procedure, parent_sample_id, parent_sample_type, sample_availability, sample_id, sample_type, volume, volume_unit)
+	has_aliquot TEXT, 
+	PRIMARY KEY (age_at_biospecimen_collection, biospecimen_storage, collection_id, collection_sample_type, container_id, has_datafile, has_participant, has_study, laboratory_procedure, parent_sample_id, parent_sample_type, sample_availability, sample_id, sample_type, volume, volume_unit, has_aliquot)
 );
 
 CREATE TABLE "DataFile" (
@@ -28,14 +35,20 @@ CREATE TABLE "DataFile" (
 	data_type TEXT, 
 	experimental_strategy TEXT, 
 	file_id TEXT, 
-	file_name TEXT, 
+	file_name TEXT NOT NULL, 
 	format TEXT NOT NULL, 
 	has_biospecimen TEXT, 
 	has_participant TEXT, 
 	has_study TEXT, 
 	participant_id TEXT NOT NULL, 
 	size TEXT, 
-	PRIMARY KEY (access_url, collection_id, data_access, data_category, data_type, experimental_strategy, file_id, file_name, format, has_biospecimen, has_participant, has_study, participant_id, size)
+	original_file_name TEXT NOT NULL, 
+	PRIMARY KEY (access_url, collection_id, data_access, data_category, data_type, experimental_strategy, file_id, file_name, format, has_biospecimen, has_participant, has_study, participant_id, size, original_file_name)
+);
+
+CREATE TABLE "FamilyGroup" (
+	has_participant TEXT, 
+	PRIMARY KEY (has_participant)
 );
 
 CREATE TABLE "Participant" (

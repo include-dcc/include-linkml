@@ -8,8 +8,8 @@ URI: EnumPhenotypeInterpretation
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| Not Observed | None |  | |
-| Observed | None |  | |
+| not_observed | None |  | |
+| observed | None |  | |
 
 
 ## Identifier and Mapping Information

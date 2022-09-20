@@ -204,13 +204,16 @@
       "from_schema": "https://w3id.org/include",
       "permissible_values": [
         {
-          "text": "Controlled"
+          "text": "controlled",
+          "title": "Controlled"
         },
         {
-          "text": "Open"
+          "text": "cpen",
+          "title": "Open"
         },
         {
-          "text": "Registered"
+          "text": "registered",
+          "title": "Registered"
         }
       ]
     },
@@ -220,10 +223,12 @@
       "from_schema": "https://w3id.org/include",
       "permissible_values": [
         {
-          "text": "D21"
+          "text": "d21",
+          "title": "D21"
         },
         {
-          "text": "T21"
+          "text": "t21",
+          "title": "T21"
         }
       ]
     },
@@ -233,13 +238,16 @@
       "from_schema": "https://w3id.org/include",
       "permissible_values": [
         {
-          "text": "Asked but unknown"
+          "text": "asked_but_unknown",
+          "title": "Asked but unknown"
         },
         {
-          "text": "Hispanic or Latino"
+          "text": "hispanic_or_latino",
+          "title": "Hispanic or Latino"
         },
         {
-          "text": "Not Hispanic or Latino"
+          "text": "not_hispanic_or_latino",
+          "title": "Not Hispanic or Latino"
         }
       ]
     },
@@ -249,16 +257,20 @@
       "from_schema": "https://w3id.org/include",
       "permissible_values": [
         {
-          "text": "Duo"
+          "text": "duo",
+          "title": "Duo"
         },
         {
-          "text": "Other"
+          "text": "other",
+          "title": "Other"
         },
         {
-          "text": "Proband-only"
+          "text": "proband_only",
+          "title": "Proband-only"
         },
         {
-          "text": "Trio"
+          "text": "trio",
+          "title": "Trio"
         }
       ]
     },
@@ -268,10 +280,12 @@
       "from_schema": "https://w3id.org/include",
       "permissible_values": [
         {
-          "text": "Not Observed"
+          "text": "not_observed",
+          "title": "Not Observed"
         },
         {
-          "text": "Observed"
+          "text": "observed",
+          "title": "Observed"
         }
       ]
     },
@@ -281,10 +295,12 @@
       "from_schema": "https://w3id.org/include",
       "permissible_values": [
         {
-          "text": "INCLUDE"
+          "text": "include",
+          "title": "INCLUDE"
         },
         {
-          "text": "KF"
+          "text": "kf",
+          "title": "KF"
         }
       ]
     },
@@ -294,25 +310,32 @@
       "from_schema": "https://w3id.org/include",
       "permissible_values": [
         {
-          "text": "American Indian or Alaska Native"
+          "text": "american_indian_or_alaskan_native",
+          "title": "American Indian or Alaska Native"
         },
         {
-          "text": "Asian"
+          "text": "asian",
+          "title": "Asian"
         },
         {
-          "text": "Black or African American"
+          "text": "black_or_african_american",
+          "title": "Black or African American"
         },
         {
-          "text": "More than one race"
+          "text": "more_than_one_race",
+          "title": "More than one race"
         },
         {
-          "text": "Native Hawaiian or Other Pacific Islander"
+          "text": "native_hawaiian_or_other_pacific_islander",
+          "title": "Native Hawaiian or Other Pacific Islander"
         },
         {
-          "text": "Other"
+          "text": "other",
+          "title": "Other"
         },
         {
-          "text": "White"
+          "text": "white",
+          "title": "White"
         }
       ]
     },
@@ -322,10 +345,12 @@
       "from_schema": "https://w3id.org/include",
       "permissible_values": [
         {
-          "text": "Available"
+          "text": "available",
+          "title": "Available"
         },
         {
-          "text": "Unavailable"
+          "text": "unavailable",
+          "title": "Unavailable"
         }
       ]
     },
@@ -335,16 +360,20 @@
       "from_schema": "https://w3id.org/include",
       "permissible_values": [
         {
-          "text": "Female"
+          "text": "female",
+          "title": "Female"
         },
         {
-          "text": "Male"
+          "text": "male",
+          "title": "Male"
         },
         {
-          "text": "Other"
+          "text": "other",
+          "title": "Other"
         },
         {
-          "text": "Unknown"
+          "text": "unknown",
+          "title": "Unknown"
         }
       ]
     },
@@ -354,19 +383,24 @@
       "from_schema": "https://w3id.org/include",
       "permissible_values": [
         {
-          "text": "DS-COG-ALL"
+          "text": "ds_cog_all",
+          "title": "DS-COG-ALL"
         },
         {
-          "text": "DS-PCGC"
+          "text": "ds_pcgc",
+          "title": "DS-PCGC"
         },
         {
-          "text": "DS360-CHD"
+          "text": "ds360_chd",
+          "title": "DS360-CHD"
         },
         {
-          "text": "DSC"
+          "text": "dsc",
+          "title": "DSC"
         },
         {
-          "text": "HTP"
+          "text": "htp",
+          "title": "HTP"
         }
       ]
     }
@@ -686,13 +720,14 @@
       "domain_of": [
         "Participant"
       ],
-      "range": "string",
+      "range": "Participant",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
       "name": "family_type",
       "definition_uri": "https://w3id.org/include/family_type",
-      "description": "Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives) ",
+      "description": "Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives)",
       "from_schema": "https://w3id.org/include",
       "slot_uri": "https://w3id.org/include/family_type",
       "owner": "Participant",
@@ -740,6 +775,7 @@
         "DataFile"
       ],
       "range": "string",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -771,6 +807,20 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "has_output",
+      "definition_uri": "https://w3id.org/include/has_output",
+      "description": "The DataFile Output of an Assay",
+      "from_schema": "https://w3id.org/include",
+      "slot_uri": "https://w3id.org/include/has_output",
+      "owner": "Assay",
+      "domain_of": [
+        "Assay"
+      ],
+      "range": "DataFile",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "has_datafile",
       "definition_uri": "https://w3id.org/include/has_datafile",
       "description": "Link to a DataFile",
@@ -791,12 +841,40 @@
       "description": "Link to a Participant",
       "from_schema": "https://w3id.org/include",
       "slot_uri": "https://w3id.org/include/has_participant",
-      "owner": "DataFile",
+      "owner": "FamilyGroup",
       "domain_of": [
         "Biospecimen",
+        "DataFile",
+        "FamilyGroup"
+      ],
+      "range": "Participant",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_subject",
+      "definition_uri": "https://w3id.org/include/has_subject",
+      "description": "Link from Data File to a Participant",
+      "from_schema": "https://w3id.org/include",
+      "slot_uri": "https://w3id.org/include/has_subject",
+      "domain_of": [
         "DataFile"
       ],
       "range": "Participant",
+      "required": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_parent_sample",
+      "definition_uri": "https://w3id.org/include/has_parent_sample",
+      "description": "Link from a sample to its parent Sample",
+      "from_schema": "https://w3id.org/include",
+      "slot_uri": "https://w3id.org/include/has_parent_sample",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "range": "Biospecimen",
       "inlined": true,
       "@type": "SlotDefinition"
     },
@@ -808,7 +886,6 @@
       "slot_uri": "https://w3id.org/include/has_study",
       "owner": "Participant",
       "domain_of": [
-        "Biospecimen",
         "Biospecimen",
         "DataFile",
         "Participant"
@@ -841,6 +918,20 @@
         "Participant"
       ],
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "original_file_name",
+      "definition_uri": "https://w3id.org/include/original_file_name",
+      "description": "Name of file, assigned by data contributor",
+      "from_schema": "https://w3id.org/include",
+      "slot_uri": "https://w3id.org/include/original_file_name",
+      "owner": "DataFile",
+      "domain_of": [
+        "DataFile"
+      ],
+      "range": "string",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1098,6 +1189,34 @@
       ],
       "range": "string",
       "@type": "SlotDefinition"
+    },
+    {
+      "name": "uses_biospecimen",
+      "definition_uri": "https://w3id.org/include/uses_biospecimen",
+      "description": "The Biospecimen an Assay is performed on",
+      "from_schema": "https://w3id.org/include",
+      "slot_uri": "https://w3id.org/include/uses_biospecimen",
+      "owner": "Assay",
+      "domain_of": [
+        "Assay"
+      ],
+      "range": "Biospecimen",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_aliquot",
+      "definition_uri": "https://w3id.org/include/has_aliquot",
+      "description": "An aliquot of a sample",
+      "from_schema": "https://w3id.org/include",
+      "slot_uri": "https://w3id.org/include/has_aliquot",
+      "owner": "Biospecimen",
+      "domain_of": [
+        "Biospecimen"
+      ],
+      "range": "Aliquot",
+      "inlined": true,
+      "@type": "SlotDefinition"
     }
   ],
   "classes": [
@@ -1106,13 +1225,13 @@
       "definition_uri": "https://w3id.org/include/Biospecimen",
       "annotations": [
         {
-          "tag": "requires_component",
-          "value": "Study,Participant,DataFile",
+          "tag": "required",
+          "value": "False",
           "@type": "Annotation"
         },
         {
-          "tag": "required",
-          "value": "False",
+          "tag": "requires_component",
+          "value": "Study,Participant,DataFile",
           "@type": "Annotation"
         }
       ],
@@ -1137,7 +1256,8 @@
         "sample_type",
         "volume",
         "volume_unit",
-        "has_study"
+        "has_study",
+        "has_aliquot"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/include/Biospecimen",
@@ -1148,13 +1268,13 @@
       "definition_uri": "https://w3id.org/include/DataFile",
       "annotations": [
         {
-          "tag": "requires_component",
-          "value": "Study,Participant,Biospecimen",
+          "tag": "required",
+          "value": "False",
           "@type": "Annotation"
         },
         {
-          "tag": "required",
-          "value": "False",
+          "tag": "requires_component",
+          "value": "Study,Participant,Biospecimen",
           "@type": "Annotation"
         }
       ],
@@ -1176,7 +1296,8 @@
         "has_participant",
         "has_study",
         "participant_id",
-        "size"
+        "size",
+        "original_file_name"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/include/DataFile",
@@ -1187,13 +1308,13 @@
       "definition_uri": "https://w3id.org/include/Participant",
       "annotations": [
         {
-          "tag": "requires_component",
-          "value": "Study,DataFile",
+          "tag": "required",
+          "value": "False",
           "@type": "Annotation"
         },
         {
-          "tag": "required",
-          "value": "False",
+          "tag": "requires_component",
+          "value": "Study,DataFile",
           "@type": "Annotation"
         }
       ],
@@ -1265,13 +1386,89 @@
       "slot_usage": {},
       "class_uri": "https://w3id.org/include/Thing",
       "@type": "ClassDefinition"
+    },
+    {
+      "name": "FamilyGroup",
+      "definition_uri": "https://w3id.org/include/FamilyGroup",
+      "annotations": [
+        {
+          "tag": "required",
+          "value": "False",
+          "@type": "Annotation"
+        },
+        {
+          "tag": "requires_component",
+          "value": "Study,Participant",
+          "@type": "Annotation"
+        }
+      ],
+      "description": "A group of Participants in the same Study",
+      "title": "FamilyGroup",
+      "from_schema": "https://w3id.org/include",
+      "is_a": "Thing",
+      "slots": [
+        "has_participant"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/include/FamilyGroup",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Aliquot",
+      "definition_uri": "https://w3id.org/include/Aliquot",
+      "annotations": [
+        {
+          "tag": "required",
+          "value": "False",
+          "@type": "Annotation"
+        },
+        {
+          "tag": "requires_component",
+          "value": "Biospecimen",
+          "@type": "Annotation"
+        }
+      ],
+      "description": "An aliquot of a sample",
+      "title": "Aliquot",
+      "from_schema": "https://w3id.org/include",
+      "is_a": "Thing",
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/include/Aliquot",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Assay",
+      "definition_uri": "https://w3id.org/include/Assay",
+      "annotations": [
+        {
+          "tag": "required",
+          "value": "False",
+          "@type": "Annotation"
+        },
+        {
+          "tag": "requires_component",
+          "value": "Biospecimen,DataFile",
+          "@type": "Annotation"
+        }
+      ],
+      "description": "An assay",
+      "title": "Assay",
+      "from_schema": "https://w3id.org/include",
+      "is_a": "Thing",
+      "slots": [
+        "uses_biospecimen",
+        "has_output"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/include/Assay",
+      "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "include_linkml.yaml",
-  "source_file_date": "2022-07-28T14:12:53",
-  "source_file_size": 21073,
-  "generation_date": "2022-07-28T14:13:10",
+  "source_file_date": "2022-08-12T07:29:08",
+  "source_file_size": 23958,
+  "generation_date": "2022-08-12T07:29:17",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/include_linkml.context.jsonld",

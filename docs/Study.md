@@ -143,7 +143,6 @@ attributes:
     - Study
     - Study
     range: string
-    required: false
   program:
     name: program
     definition_uri: include:program

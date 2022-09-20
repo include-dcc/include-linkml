@@ -16,6 +16,9 @@ URI: [include:Thing](https://w3id.org/include/Thing)
       Thing <|-- DataFile
       Thing <|-- Participant
       Thing <|-- Study
+      Thing <|-- FamilyGroup
+      Thing <|-- Aliquot
+      Thing <|-- Assay
       
       
 ```
@@ -30,6 +33,9 @@ URI: [include:Thing](https://w3id.org/include/Thing)
     * [DataFile](DataFile.md)
     * [Participant](Participant.md)
     * [Study](Study.md)
+    * [FamilyGroup](FamilyGroup.md)
+    * [Aliquot](Aliquot.md)
+    * [Assay](Assay.md)
 
 
 

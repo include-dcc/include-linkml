@@ -8,8 +8,8 @@ URI: EnumSampleAvailability
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| Available | None |  | |
-| Unavailable | None |  | |
+| available | None |  | |
+| unavailable | None |  | |
 
 
 ## Identifier and Mapping Information

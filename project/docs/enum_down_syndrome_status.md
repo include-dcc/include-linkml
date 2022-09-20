@@ -16,6 +16,6 @@ URI: [include:enum_down_syndrome_status](https://w3id.org/include/enum_down_synd
 
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
-| D21 |  |  |  |
-| T21 |  |  |  |
+| d21 |  |  | {'title': 'D21'} |
+| t21 |  |  | {'title': 'T21'} |
 

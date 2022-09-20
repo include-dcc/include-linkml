@@ -69,7 +69,7 @@ URI: [include:Participant](https://w3id.org/include/Participant)
 | [ethnicity](ethnicity.md) | 1..1 <br/> [EnumEthnicity](EnumEthnicity.md)  | Ethnicity of participant  |
 | [external_id](external_id.md) | 1..1 <br/> [xsd:string](xsd:string)  | Unique identifier for the participant, assigned by data contributor  |
 | [family_id](family_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | Unique identifer for family to which Participant belongs  |
-| [family_relationship](family_relationship.md) | 0..1 <br/> [xsd:string](xsd:string)  | Relationship of Participant to other family members  |
+| [family_relationship](family_relationship.md) | 0..1 <br/> [Participant](Participant.md)  | Relationship of Participant to other family members  |
 | [family_type](family_type.md) | 1..1 <br/> [EnumFamilyType](EnumFamilyType.md)  | Structure of family members participating in the study (proband-only = no fam...  |
 | [father_id](father_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | Participant ID for Participant's father  |
 | [has_datafile](has_datafile.md) | 0..1 <br/> [DataFile](DataFile.md)  | Link to a DataFile  |
@@ -91,6 +91,8 @@ URI: [include:Participant](https://w3id.org/include/Participant)
 | ---  | --- | --- | --- |
 | [Biospecimen](Biospecimen.md) | [has_participant](has_participant.md) | range | Participant |
 | [DataFile](DataFile.md) | [has_participant](has_participant.md) | range | Participant |
+| [Participant](Participant.md) | [family_relationship](family_relationship.md) | range | Participant |
+| [FamilyGroup](FamilyGroup.md) | [has_participant](has_participant.md) | range | Participant |
 
 
 
@@ -104,8 +106,8 @@ URI: [include:Participant](https://w3id.org/include/Participant)
 
 | property | value |
 | --- | --- |
-| requires_component | Study,DataFile |
 | required | False |
+| requires_component | Study,DataFile |
 
 
 
@@ -140,12 +142,12 @@ URI: [include:Participant](https://w3id.org/include/Participant)
 name: Participant
 definition_uri: include:Participant
 annotations:
-  requires_component:
-    tag: requires_component
-    value: Study,DataFile
   required:
     tag: required
     value: 'False'
+  requires_component:
+    tag: requires_component
+    value: Study,DataFile
 description: A Participant in a Study
 title: Participant
 from_schema: https://w3id.org/include
@@ -188,12 +190,12 @@ slots:
 name: Participant
 definition_uri: include:Participant
 annotations:
-  requires_component:
-    tag: requires_component
-    value: Study,DataFile
   required:
     tag: required
     value: 'False'
+  requires_component:
+    tag: requires_component
+    value: Study,DataFile
 description: A Participant in a Study
 title: Participant
 from_schema: https://w3id.org/include
@@ -212,7 +214,6 @@ attributes:
     - Participant
     - Participant
     range: string
-    required: false
   age_at_phenotype_assignment:
     name: age_at_phenotype_assignment
     definition_uri: include:age_at_phenotype_assignment
@@ -225,7 +226,6 @@ attributes:
     - Participant
     - Participant
     range: string
-    required: false
   age_at_the_last_vital_status:
     name: age_at_the_last_vital_status
     definition_uri: include:age_at_the_last_vital_status
@@ -238,7 +238,6 @@ attributes:
     - Participant
     - Participant
     range: string
-    required: false
   diagnosis_icd:
     name: diagnosis_icd
     definition_uri: include:diagnosis_icd
@@ -251,7 +250,6 @@ attributes:
     - Participant
     - Participant
     range: string
-    required: false
   diagnosis_mondo:
     name: diagnosis_mondo
     definition_uri: include:diagnosis_mondo
@@ -264,7 +262,6 @@ attributes:
     - Participant
     - Participant
     range: string
-    required: false
   diagnosis_ncit:
     name: diagnosis_ncit
     definition_uri: include:diagnosis_ncit
@@ -277,7 +274,6 @@ attributes:
     - Participant
     - Participant
     range: string
-    required: false
   diagnosis_source_text:
     name: diagnosis_source_text
     definition_uri: include:diagnosis_source_text
@@ -290,7 +286,6 @@ attributes:
     - Participant
     - Participant
     range: string
-    required: false
   diagnosis_type:
     name: diagnosis_type
     definition_uri: include:diagnosis_type
@@ -303,7 +298,6 @@ attributes:
     - Participant
     - Participant
     range: string
-    required: false
   down_syndrome_status:
     name: down_syndrome_status
     definition_uri: include:down_syndrome_status
@@ -356,7 +350,6 @@ attributes:
     - Participant
     - Participant
     range: string
-    required: false
   family_relationship:
     name: family_relationship
     definition_uri: include:family_relationship
@@ -368,14 +361,13 @@ attributes:
     domain_of:
     - Participant
     - Participant
-    range: string
-    required: false
+    range: Participant
   family_type:
     name: family_type
     definition_uri: include:family_type
-    description: 'Structure of family members participating in the study (proband-only
+    description: Structure of family members participating in the study (proband-only
       = no family members participating; duo = proband + parent; trio = proband +
-      2 parents; trio+ = proband + 2 parents + other relatives) '
+      2 parents; trio+ = proband + 2 parents + other relatives)
     from_schema: https://w3id.org/include
     rank: 1000
     alias: family_type
@@ -397,7 +389,6 @@ attributes:
     - Participant
     - Participant
     range: string
-    required: false
   has_datafile:
     name: has_datafile
     definition_uri: include:has_datafile
@@ -412,7 +403,6 @@ attributes:
     - Biospecimen
     - Participant
     range: DataFile
-    required: false
   has_study:
     name: has_study
     definition_uri: include:has_study
@@ -423,14 +413,12 @@ attributes:
     owner: Participant
     domain_of:
     - Biospecimen
-    - Biospecimen
     - DataFile
     - Participant
     - Biospecimen
     - DataFile
     - Participant
     range: Study
-    required: false
   mother_id:
     name: mother_id
     definition_uri: include:mother_id
@@ -443,7 +431,6 @@ attributes:
     - Participant
     - Participant
     range: string
-    required: false
   outcomes_vital_status:
     name: outcomes_vital_status
     definition_uri: include:outcomes_vital_status
@@ -456,7 +443,6 @@ attributes:
     - Participant
     - Participant
     range: string
-    required: false
   participant_id:
     name: participant_id
     definition_uri: include:participant_id
@@ -484,7 +470,6 @@ attributes:
     - Participant
     - Participant
     range: string
-    required: false
   phenotype_source_text:
     name: phenotype_source_text
     definition_uri: include:phenotype_source_text
@@ -497,7 +482,6 @@ attributes:
     - Participant
     - Participant
     range: string
-    required: false
   phenotype_interpretation:
     name: phenotype_interpretation
     definition_uri: include:phenotype_interpretation
@@ -510,7 +494,6 @@ attributes:
     - Participant
     - Participant
     range: enum_phenotype_interpretation
-    required: false
   race:
     name: race
     definition_uri: include:race

@@ -43,6 +43,7 @@ enums:
         title: D21
       t21:
         text: t21
+        meaning: MONDO:0700126
         title: T21
   enum_ethnicity:
     name: enum_ethnicity
@@ -361,6 +362,7 @@ slots:
     from_schema: https://w3id.org/include
     domain_of:
     - Participant
+    range: Participant
   family_type:
     name: family_type
     definition_uri: include:family_type
@@ -411,6 +413,14 @@ slots:
     domain_of:
     - DataFile
     range: Biospecimen
+  has_output:
+    name: has_output
+    definition_uri: include:has_output
+    description: The DataFile Output of an Assay
+    from_schema: https://w3id.org/include
+    domain_of:
+    - Assay
+    range: DataFile
   has_datafile:
     name: has_datafile
     definition_uri: include:has_datafile
@@ -429,6 +439,23 @@ slots:
     - Biospecimen
     - DataFile
     range: Participant
+  has_subject:
+    name: has_subject
+    definition_uri: include:has_subject
+    description: Link from Data File to a Participant
+    from_schema: https://w3id.org/include
+    domain_of:
+    - DataFile
+    range: Participant
+    required: true
+  has_parent_sample:
+    name: has_parent_sample
+    definition_uri: include:has_parent_sample
+    description: Link from a sample to its parent Sample
+    from_schema: https://w3id.org/include
+    domain_of:
+    - Biospecimen
+    range: Biospecimen
   has_study:
     name: has_study
     definition_uri: include:has_study
@@ -616,6 +643,22 @@ slots:
     from_schema: https://w3id.org/include
     domain_of:
     - Biospecimen
+  uses_biospecimen:
+    name: uses_biospecimen
+    definition_uri: include:uses_biospecimen
+    description: The Biospecimen an Assay is performed on
+    from_schema: https://w3id.org/include
+    domain_of:
+    - Assay
+    range: Biospecimen
+  has_aliquot:
+    name: has_aliquot
+    definition_uri: include:has_aliquot
+    description: An aliquot of a sample
+    from_schema: https://w3id.org/include
+    domain_of:
+    - Biospecimen
+    range: Aliquot
 classes:
   Biospecimen:
     name: Biospecimen
@@ -649,6 +692,7 @@ classes:
     - volume
     - volume_unit
     - has_study
+    - has_aliquot
   DataFile:
     name: DataFile
     definition_uri: include:DataFile
@@ -741,3 +785,50 @@ classes:
     description: Highest Level Class
     title: Thing
     from_schema: https://w3id.org/include
+  FamilyGroup:
+    name: FamilyGroup
+    definition_uri: include:FamilyGroup
+    annotations:
+      required:
+        tag: required
+        value: 'False'
+      requires_component:
+        tag: requires_component
+        value: Study,Participant
+    description: A group of Participants in the same Study
+    title: FamilyGroup
+    from_schema: https://w3id.org/include
+    is_a: Thing
+    slots:
+    - has_participant
+  Aliquot:
+    name: Aliquot
+    definition_uri: include:Aliquot
+    annotations:
+      required:
+        tag: required
+        value: 'False'
+      requires_component:
+        tag: requires_component
+        value: Biospecimen
+    description: An aliquot of a sample
+    title: Aliquot
+    from_schema: https://w3id.org/include
+    is_a: Thing
+  Assay:
+    name: Assay
+    definition_uri: include:Assay
+    annotations:
+      required:
+        tag: required
+        value: 'False'
+      requires_component:
+        tag: requires_component
+        value: Biospecimen,DataFile
+    description: An assay
+    title: Assay
+    from_schema: https://w3id.org/include
+    is_a: Thing
+    slots:
+    - uses_biospecimen
+    - has_output

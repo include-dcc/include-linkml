@@ -21,7 +21,7 @@ from pprint import pprint
 #  'sms:validationRules': []}
 
 # In[3]: Load the linkml yaml spec and the por
-with open("../../src/linkml/include_linkml.yaml", 'r') as lmly:
+with open("src/linkml/include_linkml.yaml", 'r') as lmly:
     lml_yaml = yaml.load(lmly, Loader=FullLoader)
 
 
@@ -53,7 +53,7 @@ def enum_value_object(value):
         "@type": "rdfs:Class",
         "rdfs:comment": "TBD",
         "rdfs:label": value.replace(" ", ""),
-        "sms:displayName": value,
+        "sms:displayName": display_name(value),
         "schema:isPartOf": "https://w3id.org/include",
         "sms:required": "sms:false"
     }
@@ -146,8 +146,8 @@ for slot_key, slot_data in lml_yaml['slots'].items():
             inc_prop['sms:required'] = 'sms:false'
     include_graph['@graph'].append(inc_prop)
 
-with open("include_schematic_linkml.json", 'w') as islj:
+with open("src/schematic/include_schematic_linkml.json", 'w') as islj:
     json.dump(include_graph, islj)
-with open("include_schematic_linkml.jsonld", 'w') as isljd:
+with open("src/schematic/include_schematic_linkml.jsonld", 'w') as isljd:
     json.dump(include_graph, isljd)
 #

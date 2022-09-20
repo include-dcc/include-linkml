@@ -16,7 +16,7 @@ URI: [include:enum_ethnicity](https://w3id.org/include/enum_ethnicity)
 
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
-| Asked but unknown |  |  |  |
-| Hispanic or Latino |  |  |  |
-| Not Hispanic or Latino |  |  |  |
+| asked_but_unknown |  |  | {'title': 'Asked but unknown'} |
+| hispanic_or_latino |  |  | {'title': 'Hispanic or Latino'} |
+| not_hispanic_or_latino |  |  | {'title': 'Not Hispanic or Latino'} |
 

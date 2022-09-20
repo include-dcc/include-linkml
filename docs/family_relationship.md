@@ -11,7 +11,7 @@ URI: [https://w3id.org/include/family_relationship](https://w3id.org/include/fam
 
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+ * Range: [Participant](Participant.md)
 
 
 

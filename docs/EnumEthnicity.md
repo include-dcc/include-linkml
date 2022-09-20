@@ -8,9 +8,9 @@ URI: EnumEthnicity
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| Asked but unknown | None |  | |
-| Hispanic or Latino | None |  | |
-| Not Hispanic or Latino | None |  | |
+| asked_but_unknown | None |  | |
+| hispanic_or_latino | None |  | |
+| not_hispanic_or_latino | None |  | |
 
 
 ## Identifier and Mapping Information

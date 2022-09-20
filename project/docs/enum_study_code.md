@@ -16,9 +16,9 @@ URI: [include:enum_study_code](https://w3id.org/include/enum_study_code)
 
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
-| DS-COG-ALL |  |  |  |
-| DS-PCGC |  |  |  |
-| DS360-CHD |  |  |  |
-| DSC |  |  |  |
-| HTP |  |  |  |
+| ds_cog_all |  |  | {'title': 'DS-COG-ALL'} |
+| ds_pcgc |  |  | {'title': 'DS-PCGC'} |
+| ds360_chd |  |  | {'title': 'DS360-CHD'} |
+| dsc |  |  | {'title': 'DSC'} |
+| htp |  |  | {'title': 'HTP'} |
 

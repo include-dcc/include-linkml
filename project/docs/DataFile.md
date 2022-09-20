@@ -7,7 +7,7 @@ A DataFile Associated with a Participant or Study or Biospecimen
 URI: [include:DataFile](https://w3id.org/include/DataFile)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Study],[Participant],[Study]<has_study%200..1-++[DataFile&#124;access_url:string%20%3F;collection_id:string%20%3F;data_access:enum_data_access%20%3F;data_category:string;data_type:string%20%3F;experimental_strategy:string%20%3F;file_id:string%20%3F;file_name:string%20%3F;format:string;participant_id:string;size:string%20%3F],[Participant]<has_participant%200..1-++[DataFile],[Biospecimen]<has_biospecimen%200..1-++[DataFile],[Biospecimen]++-%20has_datafile%200..1>[DataFile],[Participant]++-%20has_datafile%200..1>[DataFile],[Thing]^-[DataFile],[Biospecimen])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Study],[Participant],[Study]<has_study%200..1-++[DataFile&#124;access_url:string%20%3F;collection_id:string%20%3F;data_access:enum_data_access%20%3F;data_category:string;data_type:string%20%3F;experimental_strategy:string%20%3F;file_id:string%20%3F;file_name:string%20%3F;format:string;participant_id:string;size:string%20%3F],[Participant]<has_participant%200..1-++[DataFile],[Biospecimen]<has_biospecimen%200..1-++[DataFile],[Biospecimen]++-%20has_datafile%200..1>[DataFile],[Participant]++-%20has_datafile%200..1>[DataFile],[Thing]^-[DataFile],[Biospecimen])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Study],[Participant],[Study]<has_study%200..1-++[DataFile&#124;access_url:string%20%3F;collection_id:string%20%3F;data_access:enum_data_access%20%3F;data_category:string;data_type:string%20%3F;experimental_strategy:string%20%3F;file_id:string%20%3F;file_name:string;format:string;participant_id:string;size:string%20%3F;original_file_name:string],[Participant]<has_participant%200..1-++[DataFile],[Biospecimen]<has_biospecimen%200..1-++[DataFile],[Biospecimen]++-%20has_datafile%200..1>[DataFile],[Participant]++-%20has_datafile%200..1>[DataFile],[Assay]++-%20has_output%200..1>[DataFile],[Thing]^-[DataFile],[Biospecimen],[Assay])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Study],[Participant],[Study]<has_study%200..1-++[DataFile&#124;access_url:string%20%3F;collection_id:string%20%3F;data_access:enum_data_access%20%3F;data_category:string;data_type:string%20%3F;experimental_strategy:string%20%3F;file_id:string%20%3F;file_name:string;format:string;participant_id:string;size:string%20%3F;original_file_name:string],[Participant]<has_participant%200..1-++[DataFile],[Biospecimen]<has_biospecimen%200..1-++[DataFile],[Biospecimen]++-%20has_datafile%200..1>[DataFile],[Participant]++-%20has_datafile%200..1>[DataFile],[Assay]++-%20has_output%200..1>[DataFile],[Thing]^-[DataFile],[Biospecimen],[Assay])
 
 ## Parents
 
@@ -16,6 +16,7 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
 ## Referenced by Class
 
  *  **None** *[has_datafile](has_datafile.md)*  <sub>0..1</sub>  **[DataFile](DataFile.md)**
+ *  **None** *[has_output](has_output.md)*  <sub>0..1</sub>  **[DataFile](DataFile.md)**
 
 ## Attributes
 
@@ -43,7 +44,7 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
  * [file_id](file_id.md)  <sub>0..1</sub>
      * Description: File identifier, assigned by DCC
      * Range: [String](types/String.md)
- * [file_name](file_name.md)  <sub>0..1</sub>
+ * [file_name](file_name.md)  <sub>1..1</sub>
      * Description: Synapse ID for file
      * Range: [String](types/String.md)
  * [format](format.md)  <sub>1..1</sub>
@@ -63,4 +64,7 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
      * Range: [String](types/String.md)
  * [size](size.md)  <sub>0..1</sub>
      * Description: Size of file
+     * Range: [String](types/String.md)
+ * [original_file_name](original_file_name.md)  <sub>1..1</sub>
+     * Description: Name of file, assigned by data contributor
      * Range: [String](types/String.md)
