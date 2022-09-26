@@ -3,25 +3,24 @@ class: string	slots	slot: string	required: 0..1 x boolean	slot_required: 0..1 x 
 >	"internal_separator: ""|"""		inner_key: required						"internal_separator: ""|"""		"internal_separator: ""|"""		inner_key: requires_component
 		access_url		False			include:access_url	Storage location for this file	DataFile	https://w3id.org/include			
 		age_at_biospecimen_collection		False			include:age_at_biospecimen_collection	Age in days of participant at time of biospecimen collection	Biospecimen	https://w3id.org/include			
-		age_at_diagnosis		False			include:age_at_diagnosis	Age in days at which phenotype was assigned	Participant	https://w3id.org/include			
-		age_at_phenotype_assignment		False			include:age_at_phenotype_assignment	Age in days at which phenotype was recorded	Participant	https://w3id.org/include			
-		age_at_the_last_vital_status		False			include:age_at_the_last_vital_status	Age of last vital status	Participant	https://w3id.org/include			
+		age_at_condition_observation		FALSE			include:age_at_condition_observation	Age in days at which condition was observed, recorded, or diagnosed	Condition	https://w3id.org/include			
+		age_at_last_vital_status		False			include:age_at_last_vital_status	Age in days when participant's vital status was last recorded	Participant	https://w3id.org/include			
 		biospecimen_storage		False			include:biospecimen_storage	Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)	Biospecimen	https://w3id.org/include			
 		collection_id		False			include:collection_id	Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed).	Biospecimen|DataFile	https://w3id.org/include			
 		collection_sample_type		False			include:collection_sample_type	Type of biological material comprising the collected sample (e.g. Whole blood, Bone marrow, Saliva, etc.)	Biospecimen	https://w3id.org/include			
+		condition_description		TRUE			include:condition_description	Condition as worded by data contributor - this will be displayed in the portal	Condition	https://w3id.org/include			
 		container_id		False			include:container_id	Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.	Biospecimen	https://w3id.org/include			
 		data_access		False			include:data_access	Type of access control on this file, determined by DCC	DataFile	https://w3id.org/include		enum_data_access	
 		data_category		True			include:data_category	General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune maps, Transcriptomics, etc.)	DataFile	https://w3id.org/include			
 		data_type		False			include:data_type	Specific type of data contained in file (e.g. Aligned reads, Unaligned reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification, Structural variations, Cytokine profiles, Operation reports, Pathology reports, Histology images, Clinical supplement, Protein expression quantification, etc.)	DataFile	https://w3id.org/include			
 		dbgap		False			include:dbgap	dbGaP study accession code	Study	https://w3id.org/include			
-		diagnosis_icd		False			include:diagnosis_icd	ICD-10 code (annotated by data contributor or DCC)	Participant	https://w3id.org/include			
-		diagnosis_mondo		False			include:diagnosis_mondo	Mondo disease ontology code (annotated by data contributor or DCC)	Participant	https://w3id.org/include			
-		diagnosis_ncit		False			include:diagnosis_ncit	NCI Thesaurus code (annotated by data contributor or DCC)	Participant	https://w3id.org/include			
-		diagnosis_source_text		False			include:diagnosis_source_text	Diagnosis as described by data contributor	Participant	https://w3id.org/include			
-		diagnosis_type		False			include:diagnosis_type	How diagnosis was assigned	Participant	https://w3id.org/include			
+		mondo_label		FALSE			include:mondo_label	Label for condition in the Mondo Disease Ontology (MONDO)	Condition	https://w3id.org/include			
+		mondo_code		FALSE			include:mondo_code	Code for condition in the Mondo Disease Ontology (MONDO)	Condition	https://w3id.org/include			
 		down_syndrome_status		True			include:down_syndrome_status	Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)	Participant	https://w3id.org/include		enum_down_syndrome_status	
 		ethnicity		True			include:ethnicity	Ethnicity of participant	Participant	https://w3id.org/include		enum_ethnicity	
 		experimental_strategy		False			include:experimental_strategy	Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale Discovery, etc.)	DataFile	https://w3id.org/include			
+		condition_interpretation		FALSE			include:condition_interpretation	"Whether condition was observed or not. ""Not Observed"" indicates participant was specifically examined for that condition, or health record specifically queried for that condition, and found to be negative. Sept. 2022 release will only include positive assertions."	Condition	https://w3id.org/include		enum_condition_interpretation	
+		condition_data_source		FALSE			include:condition_data_source	Whether condition information was obtained from medical records (Clinical) or patient survey (Self-Reported)	Condition	https://w3id.org/include		enum_condition_data_source	
 		external_id		True			include:external_id	Unique identifier for the participant, assigned by data contributor	Participant	https://w3id.org/include			
 		family_id		False			include:family_id	Unique identifer for family to which Participant belongs	Participant	https://w3id.org/include			
 		family_relationship		False			include:family_relationship	Relationship of Participant to other family members	Participant	https://w3id.org/include		Participant	
@@ -33,7 +32,7 @@ class: string	slots	slot: string	required: 0..1 x boolean	slot_required: 0..1 x 
 		has_biospecimen		False			include:has_biospecimen	Link to a Biospecimen	DataFile	https://w3id.org/include		Biospecimen	
 		has_output		False			include:has_output	The DataFile Output of an Assay	Assay	https://w3id.org/include		DataFile	
 		has_datafile		False			include:has_datafile	Link to a DataFile	Biospecimen|Participant	https://w3id.org/include		DataFile	
-		has_participant		False			include:has_participant	Link to a Participant	Biospecimen|DataFile	https://w3id.org/include		Participant	
+		has_participant		False			include:has_participant	Link to a Participant	Biospecimen|DataFile|Condition	https://w3id.org/include		Participant	
 		has_subject		True			include:has_subject	Link from Data File to a Participant	DataFile	https://w3id.org/include		Participant	
 		has_parent_sample		False			include:has_parent_sample	Link from a sample to its parent Sample	Biospecimen	https://w3id.org/include		Biospecimen	
 		has_study		False			include:has_study	Link to a Study	Biospecimen|DataFile|Participant	https://w3id.org/include		Study	
@@ -44,9 +43,12 @@ class: string	slots	slot: string	required: 0..1 x boolean	slot_required: 0..1 x 
 		parent_sample_id		False			include:parent_sample_id	Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable)	Biospecimen	https://w3id.org/include			
 		parent_sample_type		False			include:parent_sample_type	Type of biological material comprising the parent sample (e.g. Plasma, Serum, White blood cells, etc.)	Biospecimen	https://w3id.org/include			
 		participant_id		True			include:participant_id	Unique identifier for the participant, assigned by DCC	DataFile|Participant	https://w3id.org/include			
-		phenotype_hpo		False			include:phenotype_hpo	Human Phenotype Ontology code (annotated by data contributor or DCC)	Participant	https://w3id.org/include			
-		phenotype_interpretation		False			include:phenotype_interpretation	Whether phenotype was observed or not	Participant	https://w3id.org/include		enum_phenotype_interpretation	
-		phenotype_source_text		False			include:phenotype_source_text	Phenotype as described by data contributor	Participant	https://w3id.org/include			
+		hpo_label		FALSE			include:hpo_label	Label for condition in the Human Phenotype Ontology (HPO)	Condition	https://w3id.org/include			
+		hpo_code		FALSE			include:hpo_code	Code for condition in the Human Phenotype Ontology (HPO)	Condition	https://w3id.org/include			
+		maxo_label		FALSE			include:maxo_label	Label for condition in the Medical Action Ontology (MAXO)	Condition	https://w3id.org/include			
+		maxo_code		FALSE			include:maxo_code	Code for condition in the Medical Action Ontology (MAXO)	Condition	https://w3id.org/include			
+		other_label		FALSE			include:other_label	Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)	Condition	https://w3id.org/include			
+		other_code		FALSE			include:other_code	Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)	Condition	https://w3id.org/include			
 		program		True			include:program	Funding source for the study	Study	https://w3id.org/include		enum_program	
 		race		True			include:race	Race of participant	Participant	https://w3id.org/include		enum_race	
 		sample_availability		False			include:sample_availability	Whether or not the sample is potentially available for sharing through the Virtual Biorepository	Biospecimen	https://w3id.org/include		enum_sample_availability	
@@ -69,3 +71,4 @@ Thing					Thing		schema:Thing	Highest Level Class		https://w3id.org/include
 FamilyGroup	has_participant		False		FamilyGroup	Thing	include:FamilyGroup	A group of Participants in the same Study		https://w3id.org/include			Study,Participant
 Aliquot			False		Aliquot	Thing	include:Aliquot	An aliquot of a sample		https://w3id.org/include			Biospecimen
 Assay	uses_biospecimen|has_output		False		Assay	Thing	include:Assay	An assay		https://w3id.org/include			Biospecimen,DataFile
+Condition	has_particpant												

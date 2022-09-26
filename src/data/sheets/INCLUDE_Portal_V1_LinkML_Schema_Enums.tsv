@@ -7,16 +7,19 @@ enum_data_access	cpen	Open
 enum_data_access	registered	Registered																								
 enum_down_syndrome_status								include:enum_down_syndrome_status							https://w3id.org/include											
 enum_down_syndrome_status	d21	D21																								
-enum_down_syndrome_status	t21	T21	MONDO:0700126																							
+enum_down_syndrome_status	t21	T21	MONDO:0008608																							
 enum_ethnicity								include:enum_ethnicity							https://w3id.org/include											
 enum_ethnicity	asked_but_unknown	Asked but unknown																								
 enum_ethnicity	hispanic_or_latino	Hispanic or Latino																								
 enum_ethnicity	not_hispanic_or_latino	Not Hispanic or Latino																								
+enum_ethnicity	prefer_not_to_answer	Prefer not to answer																								
+enum_ethnicity	unknown	Unknown																								
 enum_family_type								include:enum_family_type							https://w3id.org/include											
 enum_family_type	duo	Duo																								
 enum_family_type	other	Other																								
 enum_family_type	proband_only	Proband-only																								
 enum_family_type	trio	Trio																								
+enum_family_type	trio_plus	Trio+																								
 enum_phenotype_interpretation								include:enum_phenotype_interpretation							https://w3id.org/include											
 enum_phenotype_interpretation	not_observed	Not Observed																								
 enum_phenotype_interpretation	observed	Observed																								
@@ -31,6 +34,8 @@ enum_race	more_than_one_race	More than one race
 enum_race	native_hawaiian_or_other_pacific_islander	Native Hawaiian or Other Pacific Islander																								
 enum_race	other	Other																								
 enum_race	white	White																								
+enum_race	prefer_not_to_answer	Prefer not to answer																								
+enum_race		Unknown																								
 enum_sample_availability								include:enum_sample_availability							https://w3id.org/include											
 enum_sample_availability	available	Available																								
 enum_sample_availability	unavailable	Unavailable																								
@@ -45,3 +50,21 @@ enum_study_code	ds_pcgc	DS-PCGC
 enum_study_code	ds360_chd	DS360-CHD																								
 enum_study_code	dsc	DSC																								
 enum_study_code	htp	HTP																								
+enum_study_code	abcds	ABC-DS																								
+enum_study_code	ads	ADS																								
+enum_study_code	ds_brain	DS-Brain																								
+enum_study_code	ds_cog_aml	DS-COG-AML																								
+enum_study_code	bri_dsr	BRI-DSR																								
+enum_study_code	ds_isp	DS-ISP																								
+enum_study_code	ds_nexus	DS-Nexus																								
+enum_study_code	ds_pals	DS-PALS																								
+enum_study_code	ds_sleep	DS-Sleep																								
+enum_study_code	ecods	ECODS																								
+enum_study_code	exceeds	ExCEEDS																								
+enum_study_code	trc_ds	TRC-DS																								
+enum_study_code	x01_desmith	X01-DeSmith																								
+enum_study_code	x01_hakon	X01-Hakon																								
+enum_condition_interpretation	observed	Observed																								
+enum_condition_interpretation	not_observed	Not Observed																								
+enum_condition_data_source	clinical	Clinical																								
+enum_condition_data_source	self_reported	Self-reported																								
