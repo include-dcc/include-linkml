@@ -16,8 +16,8 @@ URI: [include:enum_sex](https://w3id.org/include/enum_sex)
 
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
-| Female |  |  |  |
-| Male |  |  |  |
-| Other |  |  |  |
-| Unknown |  |  |  |
+| female |  |  | {'title': 'Female'} |
+| male |  |  | {'title': 'Male'} |
+| other |  |  | {'title': 'Other'} |
+| unknown |  |  | {'title': 'Unknown'} |
 

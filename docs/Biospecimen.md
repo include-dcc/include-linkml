@@ -19,6 +19,7 @@ URI: [include:Biospecimen](https://w3id.org/include/Biospecimen)
       Biospecimen : collection_id
       Biospecimen : collection_sample_type
       Biospecimen : container_id
+      Biospecimen : has_aliquot
       Biospecimen : has_datafile
       Biospecimen : has_participant
       Biospecimen : has_study
@@ -64,6 +65,7 @@ URI: [include:Biospecimen](https://w3id.org/include/Biospecimen)
 | [sample_type](sample_type.md) | 1..1 <br/> [xsd:string](xsd:string)  | Type of biological material comprising the sample (e  |
 | [volume](volume.md) | 0..1 <br/> [xsd:string](xsd:string)  | Amount of sample in container  |
 | [volume_unit](volume_unit.md) | 0..1 <br/> [xsd:string](xsd:string)  | Unit of sample volume  |
+| [has_aliquot](has_aliquot.md) | 0..1 <br/> [Aliquot](Aliquot.md)  | An aliquot of a sample  |
 
 
 ## Usages
@@ -72,6 +74,7 @@ URI: [include:Biospecimen](https://w3id.org/include/Biospecimen)
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
 | [DataFile](DataFile.md) | [has_biospecimen](has_biospecimen.md) | range | Biospecimen |
+| [Assay](Assay.md) | [uses_biospecimen](uses_biospecimen.md) | range | Biospecimen |
 
 
 
@@ -85,8 +88,8 @@ URI: [include:Biospecimen](https://w3id.org/include/Biospecimen)
 
 | property | value |
 | --- | --- |
-| requires_component | Study,Participant,DataFile |
 | required | False |
+| requires_component | Study,Participant,DataFile |
 
 
 
@@ -121,12 +124,12 @@ URI: [include:Biospecimen](https://w3id.org/include/Biospecimen)
 name: Biospecimen
 definition_uri: include:Biospecimen
 annotations:
-  requires_component:
-    tag: requires_component
-    value: Study,Participant,DataFile
   required:
     tag: required
     value: 'False'
+  requires_component:
+    tag: requires_component
+    value: Study,Participant,DataFile
 description: A Biospecimen Collected from A Participant
 title: Biospecimen
 from_schema: https://w3id.org/include
@@ -150,6 +153,7 @@ slots:
 - volume
 - volume_unit
 - has_study
+- has_aliquot
 
 ```
 </details>
@@ -161,12 +165,12 @@ slots:
 name: Biospecimen
 definition_uri: include:Biospecimen
 annotations:
-  requires_component:
-    tag: requires_component
-    value: Study,Participant,DataFile
   required:
     tag: required
     value: 'False'
+  requires_component:
+    tag: requires_component
+    value: Study,Participant,DataFile
 description: A Biospecimen Collected from A Participant
 title: Biospecimen
 from_schema: https://w3id.org/include
@@ -185,7 +189,6 @@ attributes:
     - Biospecimen
     - Biospecimen
     range: string
-    required: false
   biospecimen_storage:
     name: biospecimen_storage
     definition_uri: include:biospecimen_storage
@@ -199,7 +202,6 @@ attributes:
     - Biospecimen
     - Biospecimen
     range: string
-    required: false
   collection_id:
     name: collection_id
     definition_uri: include:collection_id
@@ -216,7 +218,6 @@ attributes:
     - Biospecimen
     - DataFile
     range: string
-    required: false
   collection_sample_type:
     name: collection_sample_type
     definition_uri: include:collection_sample_type
@@ -230,7 +231,6 @@ attributes:
     - Biospecimen
     - Biospecimen
     range: string
-    required: false
   container_id:
     name: container_id
     definition_uri: include:container_id
@@ -245,7 +245,6 @@ attributes:
     - Biospecimen
     - Biospecimen
     range: string
-    required: false
   has_datafile:
     name: has_datafile
     definition_uri: include:has_datafile
@@ -260,7 +259,6 @@ attributes:
     - Biospecimen
     - Participant
     range: DataFile
-    required: false
   has_participant:
     name: has_participant
     definition_uri: include:has_participant
@@ -274,8 +272,8 @@ attributes:
     - DataFile
     - Biospecimen
     - DataFile
+    - FamilyGroup
     range: Participant
-    required: false
   has_study:
     name: has_study
     definition_uri: include:has_study
@@ -286,14 +284,12 @@ attributes:
     owner: Biospecimen
     domain_of:
     - Biospecimen
-    - Biospecimen
     - DataFile
     - Participant
     - Biospecimen
     - DataFile
     - Participant
     range: Study
-    required: false
   laboratory_procedure:
     name: laboratory_procedure
     definition_uri: include:laboratory_procedure
@@ -307,7 +303,6 @@ attributes:
     - Biospecimen
     - Biospecimen
     range: string
-    required: false
   parent_sample_id:
     name: parent_sample_id
     definition_uri: include:parent_sample_id
@@ -321,7 +316,6 @@ attributes:
     - Biospecimen
     - Biospecimen
     range: string
-    required: false
   parent_sample_type:
     name: parent_sample_type
     definition_uri: include:parent_sample_type
@@ -335,7 +329,6 @@ attributes:
     - Biospecimen
     - Biospecimen
     range: string
-    required: false
   sample_availability:
     name: sample_availability
     definition_uri: include:sample_availability
@@ -349,7 +342,6 @@ attributes:
     - Biospecimen
     - Biospecimen
     range: enum_sample_availability
-    required: false
   sample_id:
     name: sample_id
     definition_uri: include:sample_id
@@ -390,7 +382,6 @@ attributes:
     - Biospecimen
     - Biospecimen
     range: string
-    required: false
   volume_unit:
     name: volume_unit
     definition_uri: include:volume_unit
@@ -403,7 +394,18 @@ attributes:
     - Biospecimen
     - Biospecimen
     range: string
-    required: false
+  has_aliquot:
+    name: has_aliquot
+    definition_uri: include:has_aliquot
+    description: An aliquot of a sample
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: has_aliquot
+    owner: Biospecimen
+    domain_of:
+    - Biospecimen
+    - Biospecimen
+    range: Aliquot
 
 ```
 </details>

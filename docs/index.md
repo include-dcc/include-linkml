@@ -9,8 +9,11 @@ Name: IncludePortalV1
 
 | Class | Description |
 | --- | --- |
+| [Aliquot](Aliquot.md) | An aliquot of a sample |
+| [Assay](Assay.md) | An assay |
 | [Biospecimen](Biospecimen.md) | A Biospecimen Collected from A Participant |
 | [DataFile](DataFile.md) | A DataFile Associated with a Participant or Study or Biospecimen |
+| [FamilyGroup](FamilyGroup.md) | A group of Participants in the same Study |
 | [Participant](Participant.md) | A Participant in a Study |
 | [Study](Study.md) | A Study |
 | [Thing](Thing.md) | Highest Level Class |
@@ -49,12 +52,17 @@ Name: IncludePortalV1
 | [file_id](file_id.md) | File identifier, assigned by DCC |
 | [file_name](file_name.md) | Synapse ID for file |
 | [format](format.md) | Format of file (e |
+| [has_aliquot](has_aliquot.md) | An aliquot of a sample |
 | [has_biospecimen](has_biospecimen.md) | Link to a Biospecimen |
 | [has_datafile](has_datafile.md) | Link to a DataFile |
+| [has_output](has_output.md) | The DataFile Output of an Assay |
+| [has_parent_sample](has_parent_sample.md) | Link from a sample to its parent Sample |
 | [has_participant](has_participant.md) | Link to a Participant |
 | [has_study](has_study.md) | Link to a Study |
+| [has_subject](has_subject.md) | Link from Data File to a Participant |
 | [laboratory_procedure](laboratory_procedure.md) | Procedure by which Sample was derived from Parent Sample (e |
 | [mother_id](mother_id.md) | Participant ID for Participant's mother |
+| [original_file_name](original_file_name.md) | Name of file, assigned by data contributor |
 | [outcomes_vital_status](outcomes_vital_status.md) | Whether participant is alive or dead |
 | [parent_sample_id](parent_sample_id.md) | Identifier for the direct parent from which Sample was derived, processed, po... |
 | [parent_sample_type](parent_sample_type.md) | Type of biological material comprising the parent sample (e |
@@ -71,6 +79,7 @@ Name: IncludePortalV1
 | [size](size.md) | Size of file |
 | [study_code](study_code.md) | Unique identifer for the study, assigned by DCC |
 | [study_name](study_name.md) | Name of the study, chosen by data contributor |
+| [uses_biospecimen](uses_biospecimen.md) | The Biospecimen an Assay is performed on |
 | [validation_rules](validation_rules.md) | Rules for Validation of Property Constraints and Values |
 | [volume](volume.md) | Amount of sample in container |
 | [volume_unit](volume_unit.md) | Unit of sample volume |

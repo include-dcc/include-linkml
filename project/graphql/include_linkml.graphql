@@ -1,3 +1,13 @@
+type Aliquot
+  {
+  }
+
+type Assay
+  {
+    usesBiospecimen: Biospecimen
+    hasOutput: DataFile
+  }
+
 type Biospecimen
   {
     ageAtBiospecimenCollection: String
@@ -16,6 +26,7 @@ type Biospecimen
     sampleType: String!
     volume: String
     volumeUnit: String
+    hasAliquot: Aliquot
   }
 
 type DataFile
@@ -27,13 +38,19 @@ type DataFile
     dataType: String
     experimentalStrategy: String
     fileId: String
-    fileName: String
+    fileName: String!
     format: String!
     hasBiospecimen: Biospecimen
     hasParticipant: Participant
     hasStudy: Study
     participantId: String!
     size: String
+    originalFileName: String!
+  }
+
+type FamilyGroup
+  {
+    hasParticipant: Participant
   }
 
 type Participant
@@ -50,7 +67,7 @@ type Participant
     ethnicity: EnumEthnicity!
     externalId: String!
     familyId: String
-    familyRelationship: String
+    familyRelationship: Participant
     familyType: EnumFamilyType!
     fatherId: String
     hasDatafile: DataFile

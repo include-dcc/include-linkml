@@ -8,10 +8,10 @@ URI: EnumSex
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| Female | None |  | |
-| Male | None |  | |
-| Other | None |  | |
-| Unknown | None |  | |
+| female | None |  | |
+| male | None |  | |
+| other | None |  | |
+| unknown | None |  | |
 
 
 ## Identifier and Mapping Information

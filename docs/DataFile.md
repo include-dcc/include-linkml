@@ -26,6 +26,7 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
       DataFile : has_biospecimen
       DataFile : has_participant
       DataFile : has_study
+      DataFile : original_file_name
       DataFile : participant_id
       DataFile : size
       
@@ -53,13 +54,14 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
 | [data_type](data_type.md) | 0..1 <br/> [xsd:string](xsd:string)  | Specific type of data contained in file (e  |
 | [experimental_strategy](experimental_strategy.md) | 0..1 <br/> [xsd:string](xsd:string)  | Experimental method used to obtain data in file (e  |
 | [file_id](file_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | File identifier, assigned by DCC  |
-| [file_name](file_name.md) | 0..1 <br/> [xsd:string](xsd:string)  | Synapse ID for file  |
+| [file_name](file_name.md) | 1..1 <br/> [xsd:string](xsd:string)  | Synapse ID for file  |
 | [format](format.md) | 1..1 <br/> [xsd:string](xsd:string)  | Format of file (e  |
 | [has_biospecimen](has_biospecimen.md) | 0..1 <br/> [Biospecimen](Biospecimen.md)  | Link to a Biospecimen  |
 | [has_participant](has_participant.md) | 0..1 <br/> [Participant](Participant.md)  | Link to a Participant  |
 | [has_study](has_study.md) | 0..1 <br/> [Study](Study.md)  | Link to a Study  |
 | [participant_id](participant_id.md) | 1..1 <br/> [xsd:string](xsd:string)  | Unique identifier for the participant, assigned by DCC  |
 | [size](size.md) | 0..1 <br/> [xsd:string](xsd:string)  | Size of file  |
+| [original_file_name](original_file_name.md) | 1..1 <br/> [xsd:string](xsd:string)  | Name of file, assigned by data contributor  |
 
 
 ## Usages
@@ -69,6 +71,7 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
 | ---  | --- | --- | --- |
 | [Biospecimen](Biospecimen.md) | [has_datafile](has_datafile.md) | range | DataFile |
 | [Participant](Participant.md) | [has_datafile](has_datafile.md) | range | DataFile |
+| [Assay](Assay.md) | [has_output](has_output.md) | range | DataFile |
 
 
 
@@ -82,8 +85,8 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
 
 | property | value |
 | --- | --- |
-| requires_component | Study,Participant,Biospecimen |
 | required | False |
+| requires_component | Study,Participant,Biospecimen |
 
 
 
@@ -118,12 +121,12 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
 name: DataFile
 definition_uri: include:DataFile
 annotations:
-  requires_component:
-    tag: requires_component
-    value: Study,Participant,Biospecimen
   required:
     tag: required
     value: 'False'
+  requires_component:
+    tag: requires_component
+    value: Study,Participant,Biospecimen
 description: A DataFile Associated with a Participant or Study or Biospecimen
 title: DataFile
 from_schema: https://w3id.org/include
@@ -144,6 +147,7 @@ slots:
 - has_study
 - participant_id
 - size
+- original_file_name
 
 ```
 </details>
@@ -155,12 +159,12 @@ slots:
 name: DataFile
 definition_uri: include:DataFile
 annotations:
-  requires_component:
-    tag: requires_component
-    value: Study,Participant,Biospecimen
   required:
     tag: required
     value: 'False'
+  requires_component:
+    tag: requires_component
+    value: Study,Participant,Biospecimen
 description: A DataFile Associated with a Participant or Study or Biospecimen
 title: DataFile
 from_schema: https://w3id.org/include
@@ -179,7 +183,6 @@ attributes:
     - DataFile
     - DataFile
     range: string
-    required: false
   collection_id:
     name: collection_id
     definition_uri: include:collection_id
@@ -196,7 +199,6 @@ attributes:
     - Biospecimen
     - DataFile
     range: string
-    required: false
   data_access:
     name: data_access
     definition_uri: include:data_access
@@ -209,7 +211,6 @@ attributes:
     - DataFile
     - DataFile
     range: enum_data_access
-    required: false
   data_category:
     name: data_category
     definition_uri: include:data_category
@@ -239,7 +240,6 @@ attributes:
     - DataFile
     - DataFile
     range: string
-    required: false
   experimental_strategy:
     name: experimental_strategy
     definition_uri: include:experimental_strategy
@@ -254,7 +254,6 @@ attributes:
     - DataFile
     - DataFile
     range: string
-    required: false
   file_id:
     name: file_id
     definition_uri: include:file_id
@@ -267,7 +266,6 @@ attributes:
     - DataFile
     - DataFile
     range: string
-    required: false
   file_name:
     name: file_name
     definition_uri: include:file_name
@@ -280,7 +278,7 @@ attributes:
     - DataFile
     - DataFile
     range: string
-    required: false
+    required: true
   format:
     name: format
     definition_uri: include:format
@@ -307,7 +305,6 @@ attributes:
     - DataFile
     - DataFile
     range: Biospecimen
-    required: false
   has_participant:
     name: has_participant
     definition_uri: include:has_participant
@@ -321,8 +318,8 @@ attributes:
     - DataFile
     - Biospecimen
     - DataFile
+    - FamilyGroup
     range: Participant
-    required: false
   has_study:
     name: has_study
     definition_uri: include:has_study
@@ -333,14 +330,12 @@ attributes:
     owner: DataFile
     domain_of:
     - Biospecimen
-    - Biospecimen
     - DataFile
     - Participant
     - Biospecimen
     - DataFile
     - Participant
     range: Study
-    required: false
   participant_id:
     name: participant_id
     definition_uri: include:participant_id
@@ -368,7 +363,19 @@ attributes:
     - DataFile
     - DataFile
     range: string
-    required: false
+  original_file_name:
+    name: original_file_name
+    definition_uri: include:original_file_name
+    description: Name of file, assigned by data contributor
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: original_file_name
+    owner: DataFile
+    domain_of:
+    - DataFile
+    - DataFile
+    range: string
+    required: true
 
 ```
 </details>

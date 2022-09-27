@@ -8,10 +8,10 @@ URI: EnumFamilyType
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| Duo | None |  | |
-| Other | None |  | |
-| Proband-only | None |  | |
-| Trio | None |  | |
+| duo | None |  | |
+| other | None |  | |
+| proband_only | None |  | |
+| trio | None |  | |
 
 
 ## Identifier and Mapping Information

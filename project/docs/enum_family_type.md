@@ -16,8 +16,8 @@ URI: [include:enum_family_type](https://w3id.org/include/enum_family_type)
 
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
-| Duo |  |  |  |
-| Other |  |  |  |
-| Proband-only |  |  |  |
-| Trio |  |  |  |
+| duo |  |  | {'title': 'Duo'} |
+| other |  |  | {'title': 'Other'} |
+| proband_only |  |  | {'title': 'Proband-only'} |
+| trio |  |  | {'title': 'Trio'} |
 

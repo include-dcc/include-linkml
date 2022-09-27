@@ -16,7 +16,7 @@ URI: [include:enum_data_access](https://w3id.org/include/enum_data_access)
 
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
-| Controlled |  |  |  |
-| Open |  |  |  |
-| Registered |  |  |  |
+| controlled |  |  | {'title': 'Controlled'} |
+| cpen |  |  | {'title': 'Open'} |
+| registered |  |  | {'title': 'Registered'} |
 

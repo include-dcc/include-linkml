@@ -1,93 +1,93 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://example.com/INCLUDE",
-  "title": "INCLUDE",
+  "$id": "http://example.com/INCLUDE.Participant.manifest",
+  "title": "INCLUDE.Participant.manifest",
   "type": "object",
   "properties": {
-    "Age At Phenotype Assignment": {},
-    "Has Datafile": {},
-    "Diagnosis Icd": {},
-    "Ethnicity": {
-      "enum": [
-        "not_hispanic_or_latino",
-        "asked_but_unknown",
-        "hispanic_or_latino"
-      ]
-    },
-    "Has Study": {},
-    "Mother Id": {},
-    "Phenotype Interpretation": {
-      "enum": [
-        "not_observed",
-        "observed",
-        ""
-      ]
-    },
+    "Father Id": {},
     "Participant Id": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "Family Id": {},
-    "Age At The Last Vital Status": {},
-    "Diagnosis Mondo": {},
-    "Father Id": {},
-    "Sex": {
-      "enum": [
-        "female",
-        "other",
-        "male",
-        "unknown"
-      ]
-    },
-    "Race": {
-      "enum": [
-        "asian",
-        "black_or_african_american",
-        "american_indian_or_alaskan_native",
-        "native_hawaiian_or_other_pacific_islander",
-        "white",
-        "more_than_one_race",
-        "other"
-      ]
-    },
-    "Age At Diagnosis": {},
-    "Diagnosis Source Text": {},
-    "Family Relationship": {},
-    "Family Type": {
-      "enum": [
-        "other",
-        "proband_only",
-        "duo",
-        "trio"
-      ]
-    },
-    "Phenotype Hpo": {},
-    "Diagnosis Ncit": {},
     "Diagnosis Type": {},
-    "Down Syndrome Status": {
-      "enum": [
-        "d21",
-        "t21"
-      ]
-    },
     "External Id": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
+    "Phenotype Source Text": {},
+    "Ethnicity": {
+      "enum": [
+        "Hispanic Or Latino",
+        "Not Hispanic Or Latino",
+        "Asked But Unknown"
+      ]
+    },
+    "Family Id": {},
+    "Diagnosis Mondo": {},
+    "Race": {
+      "enum": [
+        "Other",
+        "Asian",
+        "American Indian Or Alaskan Native",
+        "White",
+        "Native Hawaiian Or Other Pacific Islander",
+        "Black Or African American",
+        "More Than One Race"
+      ]
+    },
+    "Has Study": {},
+    "Phenotype Interpretation": {
+      "enum": [
+        "Not Observed",
+        "Observed",
+        ""
+      ]
+    },
+    "Diagnosis Source Text": {},
+    "Down Syndrome Status": {
+      "enum": [
+        "D21",
+        "T21"
+      ]
+    },
+    "Diagnosis Ncit": {},
+    "Family Relationship": {},
+    "Age At Diagnosis": {},
+    "Age At Phenotype Assignment": {},
+    "Phenotype Hpo": {},
+    "Mother Id": {},
+    "Diagnosis Icd": {},
+    "Family Type": {
+      "enum": [
+        "Duo",
+        "Proband Only",
+        "Trio",
+        "Other"
+      ]
+    },
     "Outcomes Vital Status": {},
-    "Phenotype Source Text": {}
+    "Age At The Last Vital Status": {},
+    "Sex": {
+      "enum": [
+        "Male",
+        "Female",
+        "Other",
+        "Unknown"
+      ]
+    },
+    "Has Datafile": {}
   },
   "required": [
-    "Ethnicity",
     "Participant Id",
-    "Sex",
+    "External Id",
+    "Ethnicity",
     "Race",
-    "Family Type",
     "Down Syndrome Status",
-    "External Id"
+    "Family Type",
+    "Sex"
   ]
 }

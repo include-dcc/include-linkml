@@ -16,6 +16,6 @@ URI: [include:enum_program](https://w3id.org/include/enum_program)
 
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
-| INCLUDE |  |  |  |
-| KF |  |  |  |
+| include |  |  | {'title': 'INCLUDE'} |
+| kf |  |  | {'title': 'KF'} |
 

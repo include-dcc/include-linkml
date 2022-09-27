@@ -16,6 +16,6 @@ URI: [include:enum_phenotype_interpretation](https://w3id.org/include/enum_pheno
 
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
-| Not Observed |  |  |  |
-| Observed |  |  |  |
+| not_observed |  |  | {'title': 'Not Observed'} |
+| observed |  |  | {'title': 'Observed'} |
 

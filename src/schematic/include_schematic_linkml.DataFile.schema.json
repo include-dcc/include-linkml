@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/INCLUDE.DataFile.manifest",
+  "title": "INCLUDE.DataFile.manifest",
+  "type": "object",
+  "properties": {
+    "Collection Id": {},
+    "Experimental Strategy": {},
+    "Data Category": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Data Type": {},
+    "Has Study": {},
+    "Participant Id": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "File Name": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Original File Name": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Has Participant": {},
+    "Size": {},
+    "Format": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Has Biospecimen": {},
+    "Data Access": {
+      "enum": [
+        "Controlled",
+        "Cpen",
+        "Registered",
+        ""
+      ]
+    },
+    "Access Url": {},
+    "File Id": {}
+  },
+  "required": [
+    "Data Category",
+    "Participant Id",
+    "File Name",
+    "Original File Name",
+    "Format"
+  ]
+}

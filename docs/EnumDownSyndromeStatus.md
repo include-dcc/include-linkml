@@ -8,8 +8,8 @@ URI: EnumDownSyndromeStatus
 
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
-| D21 | None |  | |
-| T21 | None |  | |
+| d21 | None |  | |
+| t21 | None |  | |
 
 
 ## Identifier and Mapping Information

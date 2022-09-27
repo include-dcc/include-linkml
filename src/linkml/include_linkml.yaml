@@ -43,6 +43,7 @@ enums:
         title: D21
       t21:
         text: t21
+        meaning: MONDO:0008608
         title: T21
   enum_ethnicity:
     name: enum_ethnicity
@@ -58,6 +59,12 @@ enums:
       not_hispanic_or_latino:
         text: not_hispanic_or_latino
         title: Not Hispanic or Latino
+      prefer_not_to_answer:
+        text: prefer_not_to_answer
+        title: Prefer not to answer
+      unknown:
+        text: unknown
+        title: Unknown
   enum_family_type:
     name: enum_family_type
     definition_uri: include:enum_family_type
@@ -75,6 +82,9 @@ enums:
       trio:
         text: trio
         title: Trio
+      trio_plus:
+        text: trio_plus
+        title: Trio+
   enum_phenotype_interpretation:
     name: enum_phenotype_interpretation
     definition_uri: include:enum_phenotype_interpretation
@@ -100,6 +110,7 @@ enums:
   enum_race:
     name: enum_race
     definition_uri: include:enum_race
+    title: Unknown
     from_schema: https://w3id.org/include
     permissible_values:
       american_indian_or_alaskan_native:
@@ -123,6 +134,9 @@ enums:
       white:
         text: white
         title: White
+      prefer_not_to_answer:
+        text: prefer_not_to_answer
+        title: Prefer not to answer
   enum_sample_availability:
     name: enum_sample_availability
     definition_uri: include:enum_sample_availability
@@ -171,6 +185,68 @@ enums:
       htp:
         text: htp
         title: HTP
+      abcds:
+        text: abcds
+        title: ABC-DS
+      ads:
+        text: ads
+        title: ADS
+      ds_brain:
+        text: ds_brain
+        title: DS-Brain
+      ds_cog_aml:
+        text: ds_cog_aml
+        title: DS-COG-AML
+      bri_dsr:
+        text: bri_dsr
+        title: BRI-DSR
+      ds_isp:
+        text: ds_isp
+        title: DS-ISP
+      ds_nexus:
+        text: ds_nexus
+        title: DS-Nexus
+      ds_pals:
+        text: ds_pals
+        title: DS-PALS
+      ds_sleep:
+        text: ds_sleep
+        title: DS-Sleep
+      ecods:
+        text: ecods
+        title: ECODS
+      exceeds:
+        text: exceeds
+        title: ExCEEDS
+      trc_ds:
+        text: trc_ds
+        title: TRC-DS
+      x01_desmith:
+        text: x01_desmith
+        title: X01-DeSmith
+      x01_hakon:
+        text: x01_hakon
+        title: X01-Hakon
+  enum_condition_interpretation:
+    name: enum_condition_interpretation
+    from_schema: https://w3id.org/include
+    permissible_values:
+      observed:
+        text: observed
+        title: Observed
+      not_observed:
+        text: not_observed
+        title: Not Observed
+  enum_condition_data_source:
+    name: enum_condition_data_source
+    from_schema: https://w3id.org/include
+    permissible_values:
+      clinical:
+        text: clinical
+        title: Clinical
+      self_reported:
+        text: self_reported
+        title: Self-reported
 slots:
   access_url:
     name: access_url
@@ -186,24 +262,17 @@ slots:
     from_schema: https://w3id.org/include
     domain_of:
     - Biospecimen
-  age_at_diagnosis:
-    name: age_at_diagnosis
-    definition_uri: include:age_at_diagnosis
-    description: Age in days at which phenotype was assigned
+  age_at_condition_observation:
+    name: age_at_condition_observation
+    definition_uri: include:age_at_condition_observation
+    description: Age in days at which condition was observed, recorded, or diagnosed
     from_schema: https://w3id.org/include
     domain_of:
-    - Participant
-  age_at_phenotype_assignment:
-    name: age_at_phenotype_assignment
-    definition_uri: include:age_at_phenotype_assignment
-    description: Age in days at which phenotype was recorded
-    from_schema: https://w3id.org/include
-    domain_of:
-    - Participant
-  age_at_the_last_vital_status:
-    name: age_at_the_last_vital_status
-    definition_uri: include:age_at_the_last_vital_status
-    description: Age of last vital status
+    - Condition
+  age_at_last_vital_status:
+    name: age_at_last_vital_status
+    definition_uri: include:age_at_last_vital_status
+    description: Age in days when participant's vital status was last recorded
     from_schema: https://w3id.org/include
     domain_of:
     - Participant
@@ -233,6 +302,15 @@ slots:
     from_schema: https://w3id.org/include
     domain_of:
     - Biospecimen
+  condition_description:
+    name: condition_description
+    definition_uri: include:condition_description
+    description: Condition as worded by data contributor - this will be displayed
+      in the portal
+    from_schema: https://w3id.org/include
+    domain_of:
+    - Condition
+    required: true
   container_id:
     name: container_id
     definition_uri: include:container_id
@@ -276,41 +354,20 @@ slots:
     from_schema: https://w3id.org/include
     domain_of:
     - Study
-  diagnosis_icd:
-    name: diagnosis_icd
-    definition_uri: include:diagnosis_icd
-    description: ICD-10 code (annotated by data contributor or DCC)
+  mondo_label:
+    name: mondo_label
+    definition_uri: include:mondo_label
+    description: Label for condition in the Mondo Disease Ontology (MONDO)
     from_schema: https://w3id.org/include
     domain_of:
-    - Participant
-  diagnosis_mondo:
-    name: diagnosis_mondo
-    definition_uri: include:diagnosis_mondo
-    description: Mondo disease ontology code (annotated by data contributor or DCC)
+    - Condition
+  mondo_code:
+    name: mondo_code
+    definition_uri: include:mondo_code
+    description: Code for condition in the Mondo Disease Ontology (MONDO)
     from_schema: https://w3id.org/include
     domain_of:
-    - Participant
-  diagnosis_ncit:
-    name: diagnosis_ncit
-    definition_uri: include:diagnosis_ncit
-    description: NCI Thesaurus code (annotated by data contributor or DCC)
-    from_schema: https://w3id.org/include
-    domain_of:
-    - Participant
-  diagnosis_source_text:
-    name: diagnosis_source_text
-    definition_uri: include:diagnosis_source_text
-    description: Diagnosis as described by data contributor
-    from_schema: https://w3id.org/include
-    domain_of:
-    - Participant
-  diagnosis_type:
-    name: diagnosis_type
-    definition_uri: include:diagnosis_type
-    description: How diagnosis was assigned
-    from_schema: https://w3id.org/include
-    domain_of:
-    - Participant
+    - Condition
   down_syndrome_status:
     name: down_syndrome_status
     definition_uri: include:down_syndrome_status
@@ -339,6 +396,26 @@ slots:
     from_schema: https://w3id.org/include
     domain_of:
     - DataFile
+  condition_interpretation:
+    name: condition_interpretation
+    definition_uri: include:condition_interpretation
+    description: Whether condition was observed or not. "Not Observed" indicates participant
+      was specifically examined for that condition, or health record specifically
+      queried for that condition, and found to be negative. Sept. 2022 release will
+      only include positive assertions.
+    from_schema: https://w3id.org/include
+    domain_of:
+    - Condition
+    range: enum_condition_interpretation
+  condition_data_source:
+    name: condition_data_source
+    definition_uri: include:condition_data_source
+    description: Whether condition information was obtained from medical records (Clinical)
+      or patient survey (Self-Reported)
+    from_schema: https://w3id.org/include
+    domain_of:
+    - Condition
+    range: enum_condition_data_source
   external_id:
     name: external_id
     definition_uri: include:external_id
@@ -361,6 +438,7 @@ slots:
     from_schema: https://w3id.org/include
     domain_of:
     - Participant
+    range: Participant
   family_type:
     name: family_type
     definition_uri: include:family_type
@@ -411,6 +489,14 @@ slots:
     domain_of:
     - DataFile
     range: Biospecimen
+  has_output:
+    name: has_output
+    definition_uri: include:has_output
+    description: The DataFile Output of an Assay
+    from_schema: https://w3id.org/include
+    domain_of:
+    - Assay
+    range: DataFile
   has_datafile:
     name: has_datafile
     definition_uri: include:has_datafile
@@ -428,7 +514,25 @@ slots:
     domain_of:
     - Biospecimen
     - DataFile
+    - Condition
     range: Participant
+  has_subject:
+    name: has_subject
+    definition_uri: include:has_subject
+    description: Link from Data File to a Participant
+    from_schema: https://w3id.org/include
+    domain_of:
+    - DataFile
+    range: Participant
+    required: true
+  has_parent_sample:
+    name: has_parent_sample
+    definition_uri: include:has_parent_sample
+    description: Link from a sample to its parent Sample
+    from_schema: https://w3id.org/include
+    domain_of:
+    - Biospecimen
+    range: Biospecimen
   has_study:
     name: has_study
     definition_uri: include:has_study
@@ -494,28 +598,50 @@ slots:
     - DataFile
     - Participant
     required: true
-  phenotype_hpo:
-    name: phenotype_hpo
-    definition_uri: include:phenotype_hpo
-    description: Human Phenotype Ontology code (annotated by data contributor or DCC)
+  hpo_label:
+    name: hpo_label
+    definition_uri: include:hpo_label
+    description: Label for condition in the Human Phenotype Ontology (HPO)
     from_schema: https://w3id.org/include
     domain_of:
-    - Participant
-  phenotype_interpretation:
-    name: phenotype_interpretation
-    definition_uri: include:phenotype_interpretation
-    description: Whether phenotype was observed or not
+    - Condition
+  hpo_code:
+    name: hpo_code
+    definition_uri: include:hpo_code
+    description: Code for condition in the Human Phenotype Ontology (HPO)
     from_schema: https://w3id.org/include
     domain_of:
-    - Participant
-    range: enum_phenotype_interpretation
-  phenotype_source_text:
-    name: phenotype_source_text
-    definition_uri: include:phenotype_source_text
-    description: Phenotype as described by data contributor
+    - Condition
+  maxo_label:
+    name: maxo_label
+    definition_uri: include:maxo_label
+    description: Label for condition in the Medical Action Ontology (MAXO)
     from_schema: https://w3id.org/include
     domain_of:
-    - Participant
+    - Condition
+  maxo_code:
+    name: maxo_code
+    definition_uri: include:maxo_code
+    description: Code for condition in the Medical Action Ontology (MAXO)
+    from_schema: https://w3id.org/include
+    domain_of:
+    - Condition
+  other_label:
+    name: other_label
+    definition_uri: include:other_label
+    description: Label for condition in another ontology (if no match in HPO, MONDO,
+      or MAXO)
+    from_schema: https://w3id.org/include
+    domain_of:
+    - Condition
+  other_code:
+    name: other_code
+    definition_uri: include:other_code
+    description: Code for condition in another ontology (if no match in HPO, MONDO,
+      or MAXO)
+    from_schema: https://w3id.org/include
+    domain_of:
+    - Condition
   program:
     name: program
     definition_uri: include:program
@@ -616,6 +742,22 @@ slots:
     from_schema: https://w3id.org/include
     domain_of:
     - Biospecimen
+  uses_biospecimen:
+    name: uses_biospecimen
+    definition_uri: include:uses_biospecimen
+    description: The Biospecimen an Assay is performed on
+    from_schema: https://w3id.org/include
+    domain_of:
+    - Assay
+    range: Biospecimen
+  has_aliquot:
+    name: has_aliquot
+    definition_uri: include:has_aliquot
+    description: An aliquot of a sample
+    from_schema: https://w3id.org/include
+    domain_of:
+    - Biospecimen
+    range: Aliquot
 classes:
   Biospecimen:
     name: Biospecimen
@@ -649,6 +791,7 @@ classes:
     - volume
     - volume_unit
     - has_study
+    - has_aliquot
   DataFile:
     name: DataFile
     definition_uri: include:DataFile
@@ -741,3 +884,55 @@ classes:
     description: Highest Level Class
     title: Thing
     from_schema: https://w3id.org/include
+  FamilyGroup:
+    name: FamilyGroup
+    definition_uri: include:FamilyGroup
+    annotations:
+      required:
+        tag: required
+        value: 'False'
+      requires_component:
+        tag: requires_component
+        value: Study,Participant
+    description: A group of Participants in the same Study
+    title: FamilyGroup
+    from_schema: https://w3id.org/include
+    is_a: Thing
+    slots:
+    - has_participant
+  Aliquot:
+    name: Aliquot
+    definition_uri: include:Aliquot
+    annotations:
+      required:
+        tag: required
+        value: 'False'
+      requires_component:
+        tag: requires_component
+        value: Biospecimen
+    description: An aliquot of a sample
+    title: Aliquot
+    from_schema: https://w3id.org/include
+    is_a: Thing
+  Assay:
+    name: Assay
+    definition_uri: include:Assay
+    annotations:
+      required:
+        tag: required
+        value: 'False'
+      requires_component:
+        tag: requires_component
+        value: Biospecimen,DataFile
+    description: An assay
+    title: Assay
+    from_schema: https://w3id.org/include
+    is_a: Thing
+    slots:
+    - uses_biospecimen
+    - has_output
+  Condition:
+    name: Condition
+    from_schema: https://w3id.org/include
+    slots:
+    - has_particpant

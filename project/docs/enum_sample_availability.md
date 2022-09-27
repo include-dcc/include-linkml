@@ -16,6 +16,6 @@ URI: [include:enum_sample_availability](https://w3id.org/include/enum_sample_ava
 
 | Text | Description | Meaning | Other Information |
 | :--- | :---: | :---: | ---: |
-| Available |  |  |  |
-| Unavailable |  |  |  |
+| available |  |  | {'title': 'Available'} |
+| unavailable |  |  | {'title': 'Unavailable'} |
 

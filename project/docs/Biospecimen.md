@@ -7,7 +7,7 @@ A Biospecimen Collected from A Participant
 URI: [include:Biospecimen](https://w3id.org/include/Biospecimen)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Study],[Participant],[DataFile],[Study]<has_study%200..1-++[Biospecimen&#124;age_at_biospecimen_collection:string%20%3F;biospecimen_storage:string%20%3F;collection_id:string%20%3F;collection_sample_type:string%20%3F;container_id:string%20%3F;laboratory_procedure:string%20%3F;parent_sample_id:string%20%3F;parent_sample_type:string%20%3F;sample_availability:enum_sample_availability%20%3F;sample_id:string;sample_type:string;volume:string%20%3F;volume_unit:string%20%3F],[Participant]<has_participant%200..1-++[Biospecimen],[DataFile]<has_datafile%200..1-++[Biospecimen],[DataFile]++-%20has_biospecimen%200..1>[Biospecimen],[Thing]^-[Biospecimen])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Study],[Participant],[DataFile],[Study]<has_study%200..1-++[Biospecimen&#124;age_at_biospecimen_collection:string%20%3F;biospecimen_storage:string%20%3F;collection_id:string%20%3F;collection_sample_type:string%20%3F;container_id:string%20%3F;laboratory_procedure:string%20%3F;parent_sample_id:string%20%3F;parent_sample_type:string%20%3F;sample_availability:enum_sample_availability%20%3F;sample_id:string;sample_type:string;volume:string%20%3F;volume_unit:string%20%3F],[Participant]<has_participant%200..1-++[Biospecimen],[DataFile]<has_datafile%200..1-++[Biospecimen],[DataFile]++-%20has_biospecimen%200..1>[Biospecimen],[Thing]^-[Biospecimen])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Study],[Participant],[DataFile],[Aliquot]<has_aliquot%200..1-++[Biospecimen&#124;age_at_biospecimen_collection:string%20%3F;biospecimen_storage:string%20%3F;collection_id:string%20%3F;collection_sample_type:string%20%3F;container_id:string%20%3F;laboratory_procedure:string%20%3F;parent_sample_id:string%20%3F;parent_sample_type:string%20%3F;sample_availability:enum_sample_availability%20%3F;sample_id:string;sample_type:string;volume:string%20%3F;volume_unit:string%20%3F],[Study]<has_study%200..1-++[Biospecimen],[Participant]<has_participant%200..1-++[Biospecimen],[DataFile]<has_datafile%200..1-++[Biospecimen],[DataFile]++-%20has_biospecimen%200..1>[Biospecimen],[Assay]++-%20uses_biospecimen%200..1>[Biospecimen],[Thing]^-[Biospecimen],[Assay],[Aliquot])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Study],[Participant],[DataFile],[Aliquot]<has_aliquot%200..1-++[Biospecimen&#124;age_at_biospecimen_collection:string%20%3F;biospecimen_storage:string%20%3F;collection_id:string%20%3F;collection_sample_type:string%20%3F;container_id:string%20%3F;laboratory_procedure:string%20%3F;parent_sample_id:string%20%3F;parent_sample_type:string%20%3F;sample_availability:enum_sample_availability%20%3F;sample_id:string;sample_type:string;volume:string%20%3F;volume_unit:string%20%3F],[Study]<has_study%200..1-++[Biospecimen],[Participant]<has_participant%200..1-++[Biospecimen],[DataFile]<has_datafile%200..1-++[Biospecimen],[DataFile]++-%20has_biospecimen%200..1>[Biospecimen],[Assay]++-%20uses_biospecimen%200..1>[Biospecimen],[Thing]^-[Biospecimen],[Assay],[Aliquot])
 
 ## Parents
 
@@ -16,6 +16,8 @@ URI: [include:Biospecimen](https://w3id.org/include/Biospecimen)
 ## Referenced by Class
 
  *  **None** *[has_biospecimen](has_biospecimen.md)*  <sub>0..1</sub>  **[Biospecimen](Biospecimen.md)**
+ *  **None** *[has_parent_sample](has_parent_sample.md)*  <sub>0..1</sub>  **[Biospecimen](Biospecimen.md)**
+ *  **None** *[uses_biospecimen](uses_biospecimen.md)*  <sub>0..1</sub>  **[Biospecimen](Biospecimen.md)**
 
 ## Attributes
 
@@ -73,3 +75,6 @@ URI: [include:Biospecimen](https://w3id.org/include/Biospecimen)
  * [has_study](has_study.md)  <sub>0..1</sub>
      * Description: Link to a Study
      * Range: [Study](Study.md)
+ * [has_aliquot](has_aliquot.md)  <sub>0..1</sub>
+     * Description: An aliquot of a sample
+     * Range: [Aliquot](Aliquot.md)

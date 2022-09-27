@@ -7,7 +7,7 @@ A Study
 URI: [include:Study](https://w3id.org/include/Study)
 
 
-[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Biospecimen]++-%20has_study%200..1>[Study&#124;dbgap:string%20%3F;program:enum_program;study_code:enum_study_code;study_name:string],[Biospecimen]++-%20has_study%200..1>[Study],[DataFile]++-%20has_study%200..1>[Study],[Participant]++-%20has_study%200..1>[Study],[Thing]^-[Study],[Participant],[DataFile],[Biospecimen])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Biospecimen]++-%20has_study%200..1>[Study&#124;dbgap:string%20%3F;program:enum_program;study_code:enum_study_code;study_name:string],[Biospecimen]++-%20has_study%200..1>[Study],[DataFile]++-%20has_study%200..1>[Study],[Participant]++-%20has_study%200..1>[Study],[Thing]^-[Study],[Participant],[DataFile],[Biospecimen])
+[![img](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Biospecimen]++-%20has_study%200..1>[Study&#124;dbgap:string%20%3F;program:enum_program;study_code:enum_study_code;study_name:string],[DataFile]++-%20has_study%200..1>[Study],[Participant]++-%20has_study%200..1>[Study],[Thing]^-[Study],[Participant],[DataFile],[Biospecimen])](https://yuml.me/diagram/nofunky;dir:TB/class/[Thing],[Biospecimen]++-%20has_study%200..1>[Study&#124;dbgap:string%20%3F;program:enum_program;study_code:enum_study_code;study_name:string],[DataFile]++-%20has_study%200..1>[Study],[Participant]++-%20has_study%200..1>[Study],[Thing]^-[Study],[Participant],[DataFile],[Biospecimen])
 
 ## Parents
 
