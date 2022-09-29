@@ -27,8 +27,8 @@ enums:
       controlled:
         text: controlled
         title: Controlled
-      cpen:
-        text: cpen
+      open:
+        text: open
         title: Open
       registered:
         text: registered
