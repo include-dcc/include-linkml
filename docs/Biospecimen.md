@@ -152,7 +152,6 @@ slots:
 - sample_type
 - volume
 - volume_unit
-- has_study
 - has_aliquot
 
 ```
@@ -270,9 +269,11 @@ attributes:
     domain_of:
     - Biospecimen
     - DataFile
+    - Condition
     - Biospecimen
     - DataFile
     - FamilyGroup
+    - Condition
     range: Participant
   has_study:
     name: has_study

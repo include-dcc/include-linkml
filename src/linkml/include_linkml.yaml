@@ -16,6 +16,9 @@ prefixes:
   sms:
     prefix_prefix: sms
     prefix_reference: http://sms.org/
+  MONDO:
+    prefix_prefix: MONDO
+    prefix_reference: http://purl.obolibrary.org/obo/
 default_prefix: include
 default_range: string
 enums:
@@ -790,7 +793,6 @@ classes:
     - sample_type
     - volume
     - volume_unit
-    - has_study
     - has_aliquot
   DataFile:
     name: DataFile
@@ -837,14 +839,7 @@ classes:
     from_schema: https://w3id.org/include
     is_a: Thing
     slots:
-    - age_at_diagnosis
-    - age_at_phenotype_assignment
-    - age_at_the_last_vital_status
-    - diagnosis_icd
-    - diagnosis_mondo
-    - diagnosis_ncit
-    - diagnosis_source_text
-    - diagnosis_type
+    - age_at_last_vital_status
     - down_syndrome_status
     - ethnicity
     - external_id
@@ -857,9 +852,6 @@ classes:
     - mother_id
     - outcomes_vital_status
     - participant_id
-    - phenotype_hpo
-    - phenotype_source_text
-    - phenotype_interpretation
     - race
     - sex
   Study:
@@ -935,4 +927,15 @@ classes:
     name: Condition
     from_schema: https://w3id.org/include
     slots:
-    - has_particpant
+    - has_participant
+    - age_at_condition_observation
+    - mondo_label
+    - mondo_code
+    - condition_interpretation
+    - condition_data_source
+    - hpo_label
+    - hpo_code
+    - maxo_label
+    - maxo_code
+    - other_label
+    - other_code

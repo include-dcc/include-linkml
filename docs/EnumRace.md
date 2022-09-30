@@ -15,6 +15,7 @@ URI: EnumRace
 | native_hawaiian_or_other_pacific_islander | None |  | |
 | other | None |  | |
 | white | None |  | |
+| prefer_not_to_answer | None |  | |
 
 
 ## Identifier and Mapping Information

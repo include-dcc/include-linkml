@@ -29,6 +29,22 @@ type Biospecimen
     hasAliquot: Aliquot
   }
 
+type Condition
+  {
+    hasParticipant: Participant
+    ageAtConditionObservation: String
+    mondoLabel: String
+    mondoCode: String
+    conditionInterpretation: EnumConditionInterpretation
+    conditionDataSource: EnumConditionDataSource
+    hpoLabel: String
+    hpoCode: String
+    maxoLabel: String
+    maxoCode: String
+    otherLabel: String
+    otherCode: String
+  }
+
 type DataFile
   {
     accessUrl: String
@@ -55,14 +71,7 @@ type FamilyGroup
 
 type Participant
   {
-    ageAtDiagnosis: String
-    ageAtPhenotypeAssignment: String
-    ageAtTheLastVitalStatus: String
-    diagnosisIcd: String
-    diagnosisMondo: String
-    diagnosisNcit: String
-    diagnosisSourceText: String
-    diagnosisType: String
+    ageAtLastVitalStatus: String
     downSyndromeStatus: EnumDownSyndromeStatus!
     ethnicity: EnumEthnicity!
     externalId: String!
@@ -75,9 +84,6 @@ type Participant
     motherId: String
     outcomesVitalStatus: String
     participantId: String!
-    phenotypeHpo: String
-    phenotypeSourceText: String
-    phenotypeInterpretation: EnumPhenotypeInterpretation
     race: EnumRace!
     sex: EnumSex!
   }

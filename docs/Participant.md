@@ -14,14 +14,7 @@ URI: [include:Participant](https://w3id.org/include/Participant)
  classDiagram
       Thing <|-- Participant
       
-      Participant : age_at_diagnosis
-      Participant : age_at_phenotype_assignment
-      Participant : age_at_the_last_vital_status
-      Participant : diagnosis_icd
-      Participant : diagnosis_mondo
-      Participant : diagnosis_ncit
-      Participant : diagnosis_source_text
-      Participant : diagnosis_type
+      Participant : age_at_last_vital_status
       Participant : down_syndrome_status
       Participant : ethnicity
       Participant : external_id
@@ -34,9 +27,6 @@ URI: [include:Participant](https://w3id.org/include/Participant)
       Participant : mother_id
       Participant : outcomes_vital_status
       Participant : participant_id
-      Participant : phenotype_hpo
-      Participant : phenotype_interpretation
-      Participant : phenotype_source_text
       Participant : race
       Participant : sex
       
@@ -57,14 +47,7 @@ URI: [include:Participant](https://w3id.org/include/Participant)
 
 | Name | Cardinality and Range  | Description  |
 | ---  | ---  | --- |
-| [age_at_diagnosis](age_at_diagnosis.md) | 0..1 <br/> [xsd:string](xsd:string)  | Age in days at which phenotype was assigned  |
-| [age_at_phenotype_assignment](age_at_phenotype_assignment.md) | 0..1 <br/> [xsd:string](xsd:string)  | Age in days at which phenotype was recorded  |
-| [age_at_the_last_vital_status](age_at_the_last_vital_status.md) | 0..1 <br/> [xsd:string](xsd:string)  | Age of last vital status  |
-| [diagnosis_icd](diagnosis_icd.md) | 0..1 <br/> [xsd:string](xsd:string)  | ICD-10 code (annotated by data contributor or DCC)  |
-| [diagnosis_mondo](diagnosis_mondo.md) | 0..1 <br/> [xsd:string](xsd:string)  | Mondo disease ontology code (annotated by data contributor or DCC)  |
-| [diagnosis_ncit](diagnosis_ncit.md) | 0..1 <br/> [xsd:string](xsd:string)  | NCI Thesaurus code (annotated by data contributor or DCC)  |
-| [diagnosis_source_text](diagnosis_source_text.md) | 0..1 <br/> [xsd:string](xsd:string)  | Diagnosis as described by data contributor  |
-| [diagnosis_type](diagnosis_type.md) | 0..1 <br/> [xsd:string](xsd:string)  | How diagnosis was assigned  |
+| [age_at_last_vital_status](age_at_last_vital_status.md) | 0..1 <br/> [xsd:string](xsd:string)  | Age in days when participant's vital status was last recorded  |
 | [down_syndrome_status](down_syndrome_status.md) | 1..1 <br/> [EnumDownSyndromeStatus](EnumDownSyndromeStatus.md)  | Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euplo...  |
 | [ethnicity](ethnicity.md) | 1..1 <br/> [EnumEthnicity](EnumEthnicity.md)  | Ethnicity of participant  |
 | [external_id](external_id.md) | 1..1 <br/> [xsd:string](xsd:string)  | Unique identifier for the participant, assigned by data contributor  |
@@ -77,9 +60,6 @@ URI: [include:Participant](https://w3id.org/include/Participant)
 | [mother_id](mother_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | Participant ID for Participant's mother  |
 | [outcomes_vital_status](outcomes_vital_status.md) | 0..1 <br/> [xsd:string](xsd:string)  | Whether participant is alive or dead  |
 | [participant_id](participant_id.md) | 1..1 <br/> [xsd:string](xsd:string)  | Unique identifier for the participant, assigned by DCC  |
-| [phenotype_hpo](phenotype_hpo.md) | 0..1 <br/> [xsd:string](xsd:string)  | Human Phenotype Ontology code (annotated by data contributor or DCC)  |
-| [phenotype_source_text](phenotype_source_text.md) | 0..1 <br/> [xsd:string](xsd:string)  | Phenotype as described by data contributor  |
-| [phenotype_interpretation](phenotype_interpretation.md) | 0..1 <br/> [EnumPhenotypeInterpretation](EnumPhenotypeInterpretation.md)  | Whether phenotype was observed or not  |
 | [race](race.md) | 1..1 <br/> [EnumRace](EnumRace.md)  | Race of participant  |
 | [sex](sex.md) | 1..1 <br/> [EnumSex](EnumSex.md)  | Sex of participant  |
 
@@ -93,6 +73,7 @@ URI: [include:Participant](https://w3id.org/include/Participant)
 | [DataFile](DataFile.md) | [has_participant](has_participant.md) | range | Participant |
 | [Participant](Participant.md) | [family_relationship](family_relationship.md) | range | Participant |
 | [FamilyGroup](FamilyGroup.md) | [has_participant](has_participant.md) | range | Participant |
+| [Condition](Condition.md) | [has_participant](has_participant.md) | range | Participant |
 
 
 
@@ -154,14 +135,7 @@ from_schema: https://w3id.org/include
 rank: 1000
 is_a: Thing
 slots:
-- age_at_diagnosis
-- age_at_phenotype_assignment
-- age_at_the_last_vital_status
-- diagnosis_icd
-- diagnosis_mondo
-- diagnosis_ncit
-- diagnosis_source_text
-- diagnosis_type
+- age_at_last_vital_status
 - down_syndrome_status
 - ethnicity
 - external_id
@@ -174,9 +148,6 @@ slots:
 - mother_id
 - outcomes_vital_status
 - participant_id
-- phenotype_hpo
-- phenotype_source_text
-- phenotype_interpretation
 - race
 - sex
 
@@ -202,97 +173,13 @@ from_schema: https://w3id.org/include
 rank: 1000
 is_a: Thing
 attributes:
-  age_at_diagnosis:
-    name: age_at_diagnosis
-    definition_uri: include:age_at_diagnosis
-    description: Age in days at which phenotype was assigned
+  age_at_last_vital_status:
+    name: age_at_last_vital_status
+    definition_uri: include:age_at_last_vital_status
+    description: Age in days when participant's vital status was last recorded
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: age_at_diagnosis
-    owner: Participant
-    domain_of:
-    - Participant
-    - Participant
-    range: string
-  age_at_phenotype_assignment:
-    name: age_at_phenotype_assignment
-    definition_uri: include:age_at_phenotype_assignment
-    description: Age in days at which phenotype was recorded
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: age_at_phenotype_assignment
-    owner: Participant
-    domain_of:
-    - Participant
-    - Participant
-    range: string
-  age_at_the_last_vital_status:
-    name: age_at_the_last_vital_status
-    definition_uri: include:age_at_the_last_vital_status
-    description: Age of last vital status
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: age_at_the_last_vital_status
-    owner: Participant
-    domain_of:
-    - Participant
-    - Participant
-    range: string
-  diagnosis_icd:
-    name: diagnosis_icd
-    definition_uri: include:diagnosis_icd
-    description: ICD-10 code (annotated by data contributor or DCC)
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: diagnosis_icd
-    owner: Participant
-    domain_of:
-    - Participant
-    - Participant
-    range: string
-  diagnosis_mondo:
-    name: diagnosis_mondo
-    definition_uri: include:diagnosis_mondo
-    description: Mondo disease ontology code (annotated by data contributor or DCC)
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: diagnosis_mondo
-    owner: Participant
-    domain_of:
-    - Participant
-    - Participant
-    range: string
-  diagnosis_ncit:
-    name: diagnosis_ncit
-    definition_uri: include:diagnosis_ncit
-    description: NCI Thesaurus code (annotated by data contributor or DCC)
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: diagnosis_ncit
-    owner: Participant
-    domain_of:
-    - Participant
-    - Participant
-    range: string
-  diagnosis_source_text:
-    name: diagnosis_source_text
-    definition_uri: include:diagnosis_source_text
-    description: Diagnosis as described by data contributor
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: diagnosis_source_text
-    owner: Participant
-    domain_of:
-    - Participant
-    - Participant
-    range: string
-  diagnosis_type:
-    name: diagnosis_type
-    definition_uri: include:diagnosis_type
-    description: How diagnosis was assigned
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: diagnosis_type
+    alias: age_at_last_vital_status
     owner: Participant
     domain_of:
     - Participant
@@ -458,42 +345,6 @@ attributes:
     - Participant
     range: string
     required: true
-  phenotype_hpo:
-    name: phenotype_hpo
-    definition_uri: include:phenotype_hpo
-    description: Human Phenotype Ontology code (annotated by data contributor or DCC)
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: phenotype_hpo
-    owner: Participant
-    domain_of:
-    - Participant
-    - Participant
-    range: string
-  phenotype_source_text:
-    name: phenotype_source_text
-    definition_uri: include:phenotype_source_text
-    description: Phenotype as described by data contributor
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: phenotype_source_text
-    owner: Participant
-    domain_of:
-    - Participant
-    - Participant
-    range: string
-  phenotype_interpretation:
-    name: phenotype_interpretation
-    definition_uri: include:phenotype_interpretation
-    description: Whether phenotype was observed or not
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: phenotype_interpretation
-    owner: Participant
-    domain_of:
-    - Participant
-    - Participant
-    range: enum_phenotype_interpretation
   race:
     name: race
     definition_uri: include:race

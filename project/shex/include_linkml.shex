@@ -77,6 +77,24 @@ linkml:Nodeidentifier NONLITERAL
     )
 }
 
+<Condition> CLOSED {
+    (  $<Condition_tes> (  <has_participant> @<Participant> ? ;
+          <age_at_condition_observation> @linkml:String ? ;
+          <mondo_label> @linkml:String ? ;
+          <mondo_code> @linkml:String ? ;
+          <condition_interpretation> @<EnumConditionInterpretation> ? ;
+          <condition_data_source> @<EnumConditionDataSource> ? ;
+          <hpo_label> @linkml:String ? ;
+          <hpo_code> @linkml:String ? ;
+          <maxo_label> @linkml:String ? ;
+          <maxo_code> @linkml:String ? ;
+          <other_label> @linkml:String ? ;
+          <other_code> @linkml:String ?
+       ) ;
+       rdf:type [ <Condition> ] ?
+    )
+}
+
 <DataFile> CLOSED {
     (  $<DataFile_tes> (  &<Thing_tes> ;
           rdf:type [ <Thing> ] ? ;
@@ -112,14 +130,7 @@ linkml:Nodeidentifier NONLITERAL
 <Participant> CLOSED {
     (  $<Participant_tes> (  &<Thing_tes> ;
           rdf:type [ <Thing> ] ? ;
-          <age_at_diagnosis> @linkml:String ? ;
-          <age_at_phenotype_assignment> @linkml:String ? ;
-          <age_at_the_last_vital_status> @linkml:String ? ;
-          <diagnosis_icd> @linkml:String ? ;
-          <diagnosis_mondo> @linkml:String ? ;
-          <diagnosis_ncit> @linkml:String ? ;
-          <diagnosis_source_text> @linkml:String ? ;
-          <diagnosis_type> @linkml:String ? ;
+          <age_at_last_vital_status> @linkml:String ? ;
           <down_syndrome_status> @<EnumDownSyndromeStatus> ;
           <ethnicity> @<EnumEthnicity> ;
           <external_id> @linkml:String ;
@@ -132,9 +143,6 @@ linkml:Nodeidentifier NONLITERAL
           <mother_id> @linkml:String ? ;
           <outcomes_vital_status> @linkml:String ? ;
           <participant_id> @linkml:String ;
-          <phenotype_hpo> @linkml:String ? ;
-          <phenotype_source_text> @linkml:String ? ;
-          <phenotype_interpretation> @<EnumPhenotypeInterpretation> ? ;
           <race> @<EnumRace> ;
           <sex> @<EnumSex>
        ) ;

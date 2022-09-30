@@ -25,6 +25,21 @@ message Biospecimen
   string volumeUnit = 0
   aliquot hasAliquot = 0
  }
+message Condition
+ {
+  participant hasParticipant = 0
+  string ageAtConditionObservation = 0
+  string mondoLabel = 0
+  string mondoCode = 0
+  enumConditionInterpretation conditionInterpretation = 0
+  enumConditionDataSource conditionDataSource = 0
+  string hpoLabel = 0
+  string hpoCode = 0
+  string maxoLabel = 0
+  string maxoCode = 0
+  string otherLabel = 0
+  string otherCode = 0
+ }
 // A DataFile Associated with a Participant or Study or Biospecimen
 message DataFile
  {
@@ -52,14 +67,7 @@ message FamilyGroup
 // A Participant in a Study
 message Participant
  {
-  string ageAtDiagnosis = 0
-  string ageAtPhenotypeAssignment = 0
-  string ageAtTheLastVitalStatus = 0
-  string diagnosisIcd = 0
-  string diagnosisMondo = 0
-  string diagnosisNcit = 0
-  string diagnosisSourceText = 0
-  string diagnosisType = 0
+  string ageAtLastVitalStatus = 0
   enumDownSyndromeStatus downSyndromeStatus = 0
   enumEthnicity ethnicity = 0
   string externalId = 0
@@ -72,9 +80,6 @@ message Participant
   string motherId = 0
   string outcomesVitalStatus = 0
   string participantId = 0
-  string phenotypeHpo = 0
-  string phenotypeSourceText = 0
-  enumPhenotypeInterpretation phenotypeInterpretation = 0
   enumRace race = 0
   enumSex sex = 0
  }

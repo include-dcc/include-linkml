@@ -27,6 +27,22 @@ CREATE TABLE "Biospecimen" (
 	PRIMARY KEY (age_at_biospecimen_collection, biospecimen_storage, collection_id, collection_sample_type, container_id, has_datafile, has_participant, has_study, laboratory_procedure, parent_sample_id, parent_sample_type, sample_availability, sample_id, sample_type, volume, volume_unit, has_aliquot)
 );
 
+CREATE TABLE "Condition" (
+	has_participant TEXT, 
+	age_at_condition_observation TEXT, 
+	mondo_label TEXT, 
+	mondo_code TEXT, 
+	condition_interpretation VARCHAR(12), 
+	condition_data_source VARCHAR(13), 
+	hpo_label TEXT, 
+	hpo_code TEXT, 
+	maxo_label TEXT, 
+	maxo_code TEXT, 
+	other_label TEXT, 
+	other_code TEXT, 
+	PRIMARY KEY (has_participant, age_at_condition_observation, mondo_label, mondo_code, condition_interpretation, condition_data_source, hpo_label, hpo_code, maxo_label, maxo_code, other_label, other_code)
+);
+
 CREATE TABLE "DataFile" (
 	access_url TEXT, 
 	collection_id TEXT, 
@@ -52,14 +68,7 @@ CREATE TABLE "FamilyGroup" (
 );
 
 CREATE TABLE "Participant" (
-	age_at_diagnosis TEXT, 
-	age_at_phenotype_assignment TEXT, 
-	age_at_the_last_vital_status TEXT, 
-	diagnosis_icd TEXT, 
-	diagnosis_mondo TEXT, 
-	diagnosis_ncit TEXT, 
-	diagnosis_source_text TEXT, 
-	diagnosis_type TEXT, 
+	age_at_last_vital_status TEXT, 
 	down_syndrome_status VARCHAR(3) NOT NULL, 
 	ethnicity VARCHAR(22) NOT NULL, 
 	external_id TEXT NOT NULL, 
@@ -72,18 +81,15 @@ CREATE TABLE "Participant" (
 	mother_id TEXT, 
 	outcomes_vital_status TEXT, 
 	participant_id TEXT NOT NULL, 
-	phenotype_hpo TEXT, 
-	phenotype_source_text TEXT, 
-	phenotype_interpretation VARCHAR(12), 
 	race VARCHAR(41) NOT NULL, 
 	sex VARCHAR(7) NOT NULL, 
-	PRIMARY KEY (age_at_diagnosis, age_at_phenotype_assignment, age_at_the_last_vital_status, diagnosis_icd, diagnosis_mondo, diagnosis_ncit, diagnosis_source_text, diagnosis_type, down_syndrome_status, ethnicity, external_id, family_id, family_relationship, family_type, father_id, has_datafile, has_study, mother_id, outcomes_vital_status, participant_id, phenotype_hpo, phenotype_source_text, phenotype_interpretation, race, sex)
+	PRIMARY KEY (age_at_last_vital_status, down_syndrome_status, ethnicity, external_id, family_id, family_relationship, family_type, father_id, has_datafile, has_study, mother_id, outcomes_vital_status, participant_id, race, sex)
 );
 
 CREATE TABLE "Study" (
 	dbgap TEXT, 
 	program VARCHAR(7) NOT NULL, 
-	study_code VARCHAR(10) NOT NULL, 
+	study_code VARCHAR(11) NOT NULL, 
 	study_name TEXT NOT NULL, 
 	PRIMARY KEY (dbgap, program, study_code, study_name)
 );

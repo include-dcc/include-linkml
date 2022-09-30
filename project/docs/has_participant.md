@@ -20,5 +20,6 @@ None &#8594;  <sub>0..1</sub> [Participant](Participant.md)
 ## Used by
 
  * [Biospecimen](Biospecimen.md)
+ * [Condition](Condition.md)
  * [DataFile](DataFile.md)
  * [FamilyGroup](FamilyGroup.md)

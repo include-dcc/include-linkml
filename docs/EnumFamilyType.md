@@ -12,6 +12,7 @@ URI: EnumFamilyType
 | other | None |  | |
 | proband_only | None |  | |
 | trio | None |  | |
+| trio_plus | None |  | |
 
 
 ## Identifier and Mapping Information

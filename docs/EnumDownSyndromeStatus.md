@@ -9,7 +9,7 @@ URI: EnumDownSyndromeStatus
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
 | d21 | None |  | |
-| t21 | None |  | |
+| t21 | MONDO:0008608 |  | |
 
 
 ## Identifier and Mapping Information

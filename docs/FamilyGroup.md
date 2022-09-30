@@ -133,9 +133,11 @@ attributes:
     domain_of:
     - Biospecimen
     - DataFile
+    - Condition
     - Biospecimen
     - DataFile
     - FamilyGroup
+    - Condition
     range: Participant
 
 ```
