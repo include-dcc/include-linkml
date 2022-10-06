@@ -1,5 +1,5 @@
 
-# IncludePortalV1
+# IncludeV2DataModel
 
 
 **metamodel version:** 1.7.0
@@ -7,7 +7,7 @@
 **version:** None
 
 
-Initial Include Portal Schema
+Initial Include Schema
 
 
 ### Classes

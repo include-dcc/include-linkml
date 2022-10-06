@@ -1,9 +1,9 @@
-# IncludePortalV1
+# IncludeV2DataModel
 
-Initial Include Portal Schema
+Initial Include Schema
 
 URI: https://w3id.org/include
-Name: IncludePortalV1
+Name: IncludeV2DataModel
 
 ## Classes
 

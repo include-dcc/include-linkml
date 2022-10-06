@@ -1,6 +1,6 @@
 {
-  "name": "IncludePortalV1",
-  "description": "Initial Include Portal Schema",
+  "name": "IncludeV2DataModel",
+  "description": "Initial Include Schema",
   "id": "https://w3id.org/include",
   "imports": [
     "linkml:types"
@@ -1612,9 +1612,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "include_linkml.yaml",
-  "source_file_date": "2022-09-30T06:54:28",
-  "source_file_size": 26786,
-  "generation_date": "2022-09-30T06:56:28",
+  "source_file_date": "2022-10-06T08:01:25",
+  "source_file_size": 26782,
+  "generation_date": "2022-10-06T08:01:33",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/include_linkml.context.jsonld",

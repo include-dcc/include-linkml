@@ -1,5 +1,5 @@
-name: IncludePortalV1
-description: Initial Include Portal Schema
+name: IncludeV2DataModel
+description: Initial Include Schema
 id: https://w3id.org/include
 imports:
 - linkml:types

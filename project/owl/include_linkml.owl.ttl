@@ -10,15 +10,15 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://w3id.org/include> a owl:Ontology ;
-    rdfs:label "IncludePortalV1" ;
+    rdfs:label "IncludeV2DataModel" ;
     IAO:0000700 include:Condition,
         include:Thing ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    linkml:generation_date "2022-09-30T06:56:30" ;
+    linkml:generation_date "2022-10-06T08:01:35" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "include_linkml.yaml" ;
-    linkml:source_file_date "2022-09-30T06:54:28" ;
-    linkml:source_file_size 26786 .
+    linkml:source_file_date "2022-10-06T08:01:25" ;
+    linkml:source_file_size 26782 .
 
 include:Assay a owl:Class,
         linkml:ClassDefinition ;
@@ -90,7 +90,7 @@ include:Condition a owl:Class,
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:mondo_label ],
+            owl:onProperty include:maxo_code ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass include:Participant ;
@@ -98,11 +98,23 @@ include:Condition a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:maxo_code ],
+            owl:onProperty include:hpo_code ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:age_at_condition_observation ],
+            owl:onProperty include:other_label ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:mondo_label ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass include:EnumConditionDataSource ;
+            owl:onProperty include:condition_data_source ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass include:EnumConditionInterpretation ;
+            owl:onProperty include:condition_interpretation ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -110,31 +122,19 @@ include:Condition a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:other_code ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
             owl:onProperty include:maxo_label ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:hpo_code ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty include:hpo_label ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:EnumConditionDataSource ;
-            owl:onProperty include:condition_data_source ],
+            owl:onClass linkml:String ;
+            owl:onProperty include:age_at_condition_observation ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:other_label ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:EnumConditionInterpretation ;
-            owl:onProperty include:condition_interpretation ] .
+            owl:onProperty include:other_code ] .
 
 include:access_url a owl:ObjectProperty,
         linkml:SlotDefinition ;
@@ -814,10 +814,6 @@ include:Study a owl:Class,
     rdfs:label "Study" ;
     dcterms:title "Study" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onClass include:EnumProgram ;
-            owl:onProperty include:program ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty include:dbgap ],
@@ -828,6 +824,10 @@ include:Study a owl:Class,
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty include:study_name ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass include:EnumProgram ;
+            owl:onProperty include:program ;
             owl:qualifiedCardinality 1 ],
         include:Thing ;
     skos:definition "A Study" ;
@@ -845,40 +845,16 @@ include:Biospecimen a owl:Class,
     dcterms:title "Biospecimen" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:collection_sample_type ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:sample_type ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:Study ;
-            owl:onProperty include:has_study ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:parent_sample_id ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass include:DataFile ;
             owl:onProperty include:has_datafile ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:Participant ;
-            owl:onProperty include:has_participant ],
+            owl:onClass include:EnumSampleAvailability ;
+            owl:onProperty include:sample_availability ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:biospecimen_storage ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:laboratory_procedure ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:age_at_biospecimen_collection ],
+            owl:onProperty include:parent_sample_type ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -889,12 +865,12 @@ include:Biospecimen a owl:Class,
             owl:onProperty include:container_id ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:EnumSampleAvailability ;
-            owl:onProperty include:sample_availability ],
+            owl:onClass linkml:String ;
+            owl:onProperty include:age_at_biospecimen_collection ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:volume_unit ],
+            owl:onClass include:Participant ;
+            owl:onProperty include:has_participant ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty include:sample_id ;
@@ -902,7 +878,27 @@ include:Biospecimen a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:parent_sample_type ],
+            owl:onProperty include:biospecimen_storage ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:parent_sample_id ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:collection_sample_type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:laboratory_procedure ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:volume_unit ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:sample_type ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -911,6 +907,10 @@ include:Biospecimen a owl:Class,
             owl:maxQualifiedCardinality 1 ;
             owl:onClass include:Aliquot ;
             owl:onProperty include:has_aliquot ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass include:Study ;
+            owl:onProperty include:has_study ],
         include:Thing ;
     skos:definition "A Biospecimen Collected from A Participant" ;
     include:required "False" ;
@@ -921,17 +921,41 @@ include:DataFile a owl:Class,
     rdfs:label "DataFile" ;
     dcterms:title "DataFile" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:original_file_name ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:format ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:participant_id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:file_id ],
+            owl:onProperty include:collection_id ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:data_type ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:size ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:experimental_strategy ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass include:Biospecimen ;
             owl:onProperty include:has_biospecimen ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:EnumDataAccess ;
-            owl:onProperty include:data_access ],
+            owl:onClass include:Study ;
+            owl:onProperty include:has_study ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty include:file_name ;
@@ -942,44 +966,20 @@ include:DataFile a owl:Class,
             owl:onProperty include:has_participant ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:Study ;
-            owl:onProperty include:has_study ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:participant_id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty include:access_url ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:original_file_name ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:collection_id ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty include:data_category ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:data_type ],
+            owl:onClass include:EnumDataAccess ;
+            owl:onProperty include:data_access ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:size ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:format ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:experimental_strategy ],
+            owl:onProperty include:file_id ],
         include:Thing ;
     skos:definition "A DataFile Associated with a Participant or Study or Biospecimen" ;
     include:required "False" ;
@@ -1028,24 +1028,56 @@ include:Participant a owl:Class,
     dcterms:title "Participant" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:age_at_last_vital_status ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:family_id ],
-        [ a owl:Restriction ;
-            owl:onClass include:EnumFamilyType ;
-            owl:onProperty include:family_type ;
-            owl:qualifiedCardinality 1 ],
+            owl:onClass include:Study ;
+            owl:onProperty include:has_study ],
         [ a owl:Restriction ;
             owl:onClass include:EnumRace ;
             owl:onProperty include:race ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:father_id ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:mother_id ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:outcomes_vital_status ],
+        [ a owl:Restriction ;
+            owl:onClass include:EnumFamilyType ;
+            owl:onProperty include:family_type ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass include:EnumDownSyndromeStatus ;
+            owl:onProperty include:down_syndrome_status ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass include:Participant ;
             owl:onProperty include:family_relationship ],
+        [ a owl:Restriction ;
+            owl:onClass include:EnumSex ;
+            owl:onProperty include:sex ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:age_at_last_vital_status ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass include:DataFile ;
+            owl:onProperty include:has_datafile ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty include:external_id ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass include:EnumEthnicity ;
+            owl:onProperty include:ethnicity ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty include:participant_id ;
@@ -1053,39 +1085,7 @@ include:Participant a owl:Class,
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty include:outcomes_vital_status ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:DataFile ;
-            owl:onProperty include:has_datafile ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:mother_id ],
-        [ a owl:Restriction ;
-            owl:onClass include:EnumEthnicity ;
-            owl:onProperty include:ethnicity ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass include:Study ;
-            owl:onProperty include:has_study ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:external_id ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty include:father_id ],
-        [ a owl:Restriction ;
-            owl:onClass include:EnumSex ;
-            owl:onProperty include:sex ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass include:EnumDownSyndromeStatus ;
-            owl:onProperty include:down_syndrome_status ;
-            owl:qualifiedCardinality 1 ],
+            owl:onProperty include:family_id ],
         include:Thing ;
     skos:definition "A Participant in a Study" ;
     include:required "False" ;

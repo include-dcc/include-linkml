@@ -1,6 +1,6 @@
-# INCLUDE Portal V1 LinkML Data Model
+# INCLUDE v2 LinkML Data Model
 
-This repository includes the LinkML model and tooling for the v1 Portal Data Model
+This repository includes the LinkML model and tooling for the v2 Data Model
 
 
 
