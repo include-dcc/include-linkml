@@ -1,9 +1,9 @@
 # Auto generated from include_linkml.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-09-30T06:56:34
-# Schema: IncludePortalV1
+# Generation date: 2022-10-06T08:01:41
+# Schema: IncludeV2DataModel
 #
 # id: https://w3id.org/include
-# description: Initial Include Portal Schema
+# description: Initial Include Schema
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
 import dataclasses
