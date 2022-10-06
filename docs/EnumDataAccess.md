@@ -9,7 +9,7 @@ URI: EnumDataAccess
 | Value | Meaning | Description | Info |
 | --- | --- | --- | --- |
 | controlled | None |  | |
-| cpen | None |  | |
+| open | None |  | |
 | registered | None |  | |
 
 

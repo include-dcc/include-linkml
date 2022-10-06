@@ -23,4 +23,5 @@ URI: [include:enum_race](https://w3id.org/include/enum_race)
 | native_hawaiian_or_other_pacific_islander |  |  | {'title': 'Native Hawaiian or Other Pacific Islander'} |
 | other |  |  | {'title': 'Other'} |
 | white |  |  | {'title': 'White'} |
+| prefer_not_to_answer |  |  | {'title': 'Prefer not to answer'} |
 

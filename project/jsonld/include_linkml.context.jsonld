@@ -1,12 +1,29 @@
 {
-   "_comments": "Auto generated from include_linkml.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-08-12T07:29:16\n    Schema: IncludePortalV1\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/include\n    description: Initial Include Portal Schema\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from include_linkml.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-09-30T06:56:27\n    Schema: IncludePortalV1\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/include\n    description: Initial Include Portal Schema\n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
+      "MONDO": "http://purl.obolibrary.org/obo/",
       "include": "https://w3id.org/include/",
       "linkml": "https://w3id.org/linkml/",
       "schema": "http://schema.org/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
       "sms": "http://sms.org/",
       "@vocab": "https://w3id.org/include/",
+      "condition_data_source": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
+      "condition_interpretation": {
+         "@context": {
+            "@vocab": "@null",
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         }
+      },
       "data_access": {
          "@context": {
             "@vocab": "@null",
@@ -65,14 +82,6 @@
       },
       "has_subject": {
          "@type": "@id"
-      },
-      "phenotype_interpretation": {
-         "@context": {
-            "@vocab": "@null",
-            "text": "skos:notation",
-            "description": "skos:prefLabel",
-            "meaning": "@id"
-         }
       },
       "program": {
          "@context": {

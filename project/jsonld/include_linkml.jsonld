@@ -22,6 +22,10 @@
     {
       "prefix_prefix": "sms",
       "prefix_reference": "http://sms.org/"
+    },
+    {
+      "prefix_prefix": "MONDO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/"
     }
   ],
   "default_prefix": "include",
@@ -208,7 +212,7 @@
           "title": "Controlled"
         },
         {
-          "text": "cpen",
+          "text": "open",
           "title": "Open"
         },
         {
@@ -228,6 +232,7 @@
         },
         {
           "text": "t21",
+          "meaning": "MONDO:0008608",
           "title": "T21"
         }
       ]
@@ -248,6 +253,14 @@
         {
           "text": "not_hispanic_or_latino",
           "title": "Not Hispanic or Latino"
+        },
+        {
+          "text": "prefer_not_to_answer",
+          "title": "Prefer not to answer"
+        },
+        {
+          "text": "unknown",
+          "title": "Unknown"
         }
       ]
     },
@@ -271,6 +284,10 @@
         {
           "text": "trio",
           "title": "Trio"
+        },
+        {
+          "text": "trio_plus",
+          "title": "Trio+"
         }
       ]
     },
@@ -307,6 +324,7 @@
     {
       "name": "enum_race",
       "definition_uri": "https://w3id.org/include/EnumRace",
+      "title": "Unknown",
       "from_schema": "https://w3id.org/include",
       "permissible_values": [
         {
@@ -336,6 +354,10 @@
         {
           "text": "white",
           "title": "White"
+        },
+        {
+          "text": "prefer_not_to_answer",
+          "title": "Prefer not to answer"
         }
       ]
     },
@@ -401,6 +423,92 @@
         {
           "text": "htp",
           "title": "HTP"
+        },
+        {
+          "text": "abcds",
+          "title": "ABC-DS"
+        },
+        {
+          "text": "ads",
+          "title": "ADS"
+        },
+        {
+          "text": "ds_brain",
+          "title": "DS-Brain"
+        },
+        {
+          "text": "ds_cog_aml",
+          "title": "DS-COG-AML"
+        },
+        {
+          "text": "bri_dsr",
+          "title": "BRI-DSR"
+        },
+        {
+          "text": "ds_isp",
+          "title": "DS-ISP"
+        },
+        {
+          "text": "ds_nexus",
+          "title": "DS-Nexus"
+        },
+        {
+          "text": "ds_pals",
+          "title": "DS-PALS"
+        },
+        {
+          "text": "ds_sleep",
+          "title": "DS-Sleep"
+        },
+        {
+          "text": "ecods",
+          "title": "ECODS"
+        },
+        {
+          "text": "exceeds",
+          "title": "ExCEEDS"
+        },
+        {
+          "text": "trc_ds",
+          "title": "TRC-DS"
+        },
+        {
+          "text": "x01_desmith",
+          "title": "X01-DeSmith"
+        },
+        {
+          "text": "x01_hakon",
+          "title": "X01-Hakon"
+        }
+      ]
+    },
+    {
+      "name": "enum_condition_interpretation",
+      "definition_uri": "https://w3id.org/include/EnumConditionInterpretation",
+      "from_schema": "https://w3id.org/include",
+      "permissible_values": [
+        {
+          "text": "observed",
+          "title": "Observed"
+        },
+        {
+          "text": "not_observed",
+          "title": "Not Observed"
+        }
+      ]
+    },
+    {
+      "name": "enum_condition_data_source",
+      "definition_uri": "https://w3id.org/include/EnumConditionDataSource",
+      "from_schema": "https://w3id.org/include",
+      "permissible_values": [
+        {
+          "text": "clinical",
+          "title": "Clinical"
+        },
+        {
+          "text": "self_reported",
+          "title": "Self-reported"
         }
       ]
     }
@@ -433,37 +541,24 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "age_at_diagnosis",
-      "definition_uri": "https://w3id.org/include/age_at_diagnosis",
-      "description": "Age in days at which phenotype was assigned",
+      "name": "age_at_condition_observation",
+      "definition_uri": "https://w3id.org/include/age_at_condition_observation",
+      "description": "Age in days at which condition was observed, recorded, or diagnosed",
       "from_schema": "https://w3id.org/include",
-      "slot_uri": "https://w3id.org/include/age_at_diagnosis",
-      "owner": "Participant",
+      "slot_uri": "https://w3id.org/include/age_at_condition_observation",
+      "owner": "Condition",
       "domain_of": [
-        "Participant"
+        "Condition"
       ],
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "age_at_phenotype_assignment",
-      "definition_uri": "https://w3id.org/include/age_at_phenotype_assignment",
-      "description": "Age in days at which phenotype was recorded",
+      "name": "age_at_last_vital_status",
+      "definition_uri": "https://w3id.org/include/age_at_last_vital_status",
+      "description": "Age in days when participant's vital status was last recorded",
       "from_schema": "https://w3id.org/include",
-      "slot_uri": "https://w3id.org/include/age_at_phenotype_assignment",
-      "owner": "Participant",
-      "domain_of": [
-        "Participant"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "age_at_the_last_vital_status",
-      "definition_uri": "https://w3id.org/include/age_at_the_last_vital_status",
-      "description": "Age of last vital status",
-      "from_schema": "https://w3id.org/include",
-      "slot_uri": "https://w3id.org/include/age_at_the_last_vital_status",
+      "slot_uri": "https://w3id.org/include/age_at_last_vital_status",
       "owner": "Participant",
       "domain_of": [
         "Participant"
@@ -509,6 +604,19 @@
         "Biospecimen"
       ],
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "condition_description",
+      "definition_uri": "https://w3id.org/include/condition_description",
+      "description": "Condition as worded by data contributor - this will be displayed in the portal",
+      "from_schema": "https://w3id.org/include",
+      "slot_uri": "https://w3id.org/include/condition_description",
+      "domain_of": [
+        "Condition"
+      ],
+      "range": "string",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -578,66 +686,27 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "diagnosis_icd",
-      "definition_uri": "https://w3id.org/include/diagnosis_icd",
-      "description": "ICD-10 code (annotated by data contributor or DCC)",
+      "name": "mondo_label",
+      "definition_uri": "https://w3id.org/include/mondo_label",
+      "description": "Label for condition in the Mondo Disease Ontology (MONDO)",
       "from_schema": "https://w3id.org/include",
-      "slot_uri": "https://w3id.org/include/diagnosis_icd",
-      "owner": "Participant",
+      "slot_uri": "https://w3id.org/include/mondo_label",
+      "owner": "Condition",
       "domain_of": [
-        "Participant"
+        "Condition"
       ],
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "diagnosis_mondo",
-      "definition_uri": "https://w3id.org/include/diagnosis_mondo",
-      "description": "Mondo disease ontology code (annotated by data contributor or DCC)",
+      "name": "mondo_code",
+      "definition_uri": "https://w3id.org/include/mondo_code",
+      "description": "Code for condition in the Mondo Disease Ontology (MONDO)",
       "from_schema": "https://w3id.org/include",
-      "slot_uri": "https://w3id.org/include/diagnosis_mondo",
-      "owner": "Participant",
+      "slot_uri": "https://w3id.org/include/mondo_code",
+      "owner": "Condition",
       "domain_of": [
-        "Participant"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "diagnosis_ncit",
-      "definition_uri": "https://w3id.org/include/diagnosis_ncit",
-      "description": "NCI Thesaurus code (annotated by data contributor or DCC)",
-      "from_schema": "https://w3id.org/include",
-      "slot_uri": "https://w3id.org/include/diagnosis_ncit",
-      "owner": "Participant",
-      "domain_of": [
-        "Participant"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "diagnosis_source_text",
-      "definition_uri": "https://w3id.org/include/diagnosis_source_text",
-      "description": "Diagnosis as described by data contributor",
-      "from_schema": "https://w3id.org/include",
-      "slot_uri": "https://w3id.org/include/diagnosis_source_text",
-      "owner": "Participant",
-      "domain_of": [
-        "Participant"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "diagnosis_type",
-      "definition_uri": "https://w3id.org/include/diagnosis_type",
-      "description": "How diagnosis was assigned",
-      "from_schema": "https://w3id.org/include",
-      "slot_uri": "https://w3id.org/include/diagnosis_type",
-      "owner": "Participant",
-      "domain_of": [
-        "Participant"
+        "Condition"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -681,6 +750,32 @@
         "DataFile"
       ],
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "condition_interpretation",
+      "definition_uri": "https://w3id.org/include/condition_interpretation",
+      "description": "Whether condition was observed or not. \"Not Observed\" indicates participant was specifically examined for that condition, or health record specifically queried for that condition, and found to be negative. Sept. 2022 release will only include positive assertions.",
+      "from_schema": "https://w3id.org/include",
+      "slot_uri": "https://w3id.org/include/condition_interpretation",
+      "owner": "Condition",
+      "domain_of": [
+        "Condition"
+      ],
+      "range": "enum_condition_interpretation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "condition_data_source",
+      "definition_uri": "https://w3id.org/include/condition_data_source",
+      "description": "Whether condition information was obtained from medical records (Clinical) or patient survey (Self-Reported)",
+      "from_schema": "https://w3id.org/include",
+      "slot_uri": "https://w3id.org/include/condition_data_source",
+      "owner": "Condition",
+      "domain_of": [
+        "Condition"
+      ],
+      "range": "enum_condition_data_source",
       "@type": "SlotDefinition"
     },
     {
@@ -841,10 +936,11 @@
       "description": "Link to a Participant",
       "from_schema": "https://w3id.org/include",
       "slot_uri": "https://w3id.org/include/has_participant",
-      "owner": "FamilyGroup",
+      "owner": "Condition",
       "domain_of": [
         "Biospecimen",
         "DataFile",
+        "Condition",
         "FamilyGroup"
       ],
       "range": "Participant",
@@ -989,40 +1085,79 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "phenotype_hpo",
-      "definition_uri": "https://w3id.org/include/phenotype_hpo",
-      "description": "Human Phenotype Ontology code (annotated by data contributor or DCC)",
+      "name": "hpo_label",
+      "definition_uri": "https://w3id.org/include/hpo_label",
+      "description": "Label for condition in the Human Phenotype Ontology (HPO)",
       "from_schema": "https://w3id.org/include",
-      "slot_uri": "https://w3id.org/include/phenotype_hpo",
-      "owner": "Participant",
+      "slot_uri": "https://w3id.org/include/hpo_label",
+      "owner": "Condition",
       "domain_of": [
-        "Participant"
+        "Condition"
       ],
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "phenotype_interpretation",
-      "definition_uri": "https://w3id.org/include/phenotype_interpretation",
-      "description": "Whether phenotype was observed or not",
+      "name": "hpo_code",
+      "definition_uri": "https://w3id.org/include/hpo_code",
+      "description": "Code for condition in the Human Phenotype Ontology (HPO)",
       "from_schema": "https://w3id.org/include",
-      "slot_uri": "https://w3id.org/include/phenotype_interpretation",
-      "owner": "Participant",
+      "slot_uri": "https://w3id.org/include/hpo_code",
+      "owner": "Condition",
       "domain_of": [
-        "Participant"
+        "Condition"
       ],
-      "range": "enum_phenotype_interpretation",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "phenotype_source_text",
-      "definition_uri": "https://w3id.org/include/phenotype_source_text",
-      "description": "Phenotype as described by data contributor",
+      "name": "maxo_label",
+      "definition_uri": "https://w3id.org/include/maxo_label",
+      "description": "Label for condition in the Medical Action Ontology (MAXO)",
       "from_schema": "https://w3id.org/include",
-      "slot_uri": "https://w3id.org/include/phenotype_source_text",
-      "owner": "Participant",
+      "slot_uri": "https://w3id.org/include/maxo_label",
+      "owner": "Condition",
       "domain_of": [
-        "Participant"
+        "Condition"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "maxo_code",
+      "definition_uri": "https://w3id.org/include/maxo_code",
+      "description": "Code for condition in the Medical Action Ontology (MAXO)",
+      "from_schema": "https://w3id.org/include",
+      "slot_uri": "https://w3id.org/include/maxo_code",
+      "owner": "Condition",
+      "domain_of": [
+        "Condition"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "other_label",
+      "definition_uri": "https://w3id.org/include/other_label",
+      "description": "Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)",
+      "from_schema": "https://w3id.org/include",
+      "slot_uri": "https://w3id.org/include/other_label",
+      "owner": "Condition",
+      "domain_of": [
+        "Condition"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "other_code",
+      "definition_uri": "https://w3id.org/include/other_code",
+      "description": "Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)",
+      "from_schema": "https://w3id.org/include",
+      "slot_uri": "https://w3id.org/include/other_code",
+      "owner": "Condition",
+      "domain_of": [
+        "Condition"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -1256,7 +1391,6 @@
         "sample_type",
         "volume",
         "volume_unit",
-        "has_study",
         "has_aliquot"
       ],
       "slot_usage": {},
@@ -1323,14 +1457,7 @@
       "from_schema": "https://w3id.org/include",
       "is_a": "Thing",
       "slots": [
-        "age_at_diagnosis",
-        "age_at_phenotype_assignment",
-        "age_at_the_last_vital_status",
-        "diagnosis_icd",
-        "diagnosis_mondo",
-        "diagnosis_ncit",
-        "diagnosis_source_text",
-        "diagnosis_type",
+        "age_at_last_vital_status",
         "down_syndrome_status",
         "ethnicity",
         "external_id",
@@ -1343,9 +1470,6 @@
         "mother_id",
         "outcomes_vital_status",
         "participant_id",
-        "phenotype_hpo",
-        "phenotype_source_text",
-        "phenotype_interpretation",
         "race",
         "sex"
       ],
@@ -1462,13 +1586,35 @@
       "slot_usage": {},
       "class_uri": "https://w3id.org/include/Assay",
       "@type": "ClassDefinition"
+    },
+    {
+      "name": "Condition",
+      "definition_uri": "https://w3id.org/include/Condition",
+      "from_schema": "https://w3id.org/include",
+      "slots": [
+        "has_participant",
+        "age_at_condition_observation",
+        "mondo_label",
+        "mondo_code",
+        "condition_interpretation",
+        "condition_data_source",
+        "hpo_label",
+        "hpo_code",
+        "maxo_label",
+        "maxo_code",
+        "other_label",
+        "other_code"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/include/Condition",
+      "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "include_linkml.yaml",
-  "source_file_date": "2022-08-12T07:29:08",
-  "source_file_size": 23958,
-  "generation_date": "2022-08-12T07:29:17",
+  "source_file_date": "2022-09-30T06:54:28",
+  "source_file_size": 26786,
+  "generation_date": "2022-09-30T06:56:28",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/include_linkml.context.jsonld",

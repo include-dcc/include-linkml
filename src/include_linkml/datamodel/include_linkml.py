@@ -1,5 +1,5 @@
 # Auto generated from include_linkml.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-08-12T07:29:23
+# Generation date: 2022-09-30T06:56:34
 # Schema: IncludePortalV1
 #
 # id: https://w3id.org/include
@@ -31,6 +31,7 @@ version = None
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
+MONDO = CurieNamespace('MONDO', 'http://purl.obolibrary.org/obo/')
 INCLUDE = CurieNamespace('include', 'https://w3id.org/include/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 SCHEMA = CurieNamespace('schema', 'http://schema.org/')
@@ -138,9 +139,6 @@ class Biospecimen(Thing):
 
         if self.volume_unit is not None and not isinstance(self.volume_unit, str):
             self.volume_unit = str(self.volume_unit)
-
-        if self.has_study is not None and not isinstance(self.has_study, Study):
-            self.has_study = Study(**as_dict(self.has_study))
 
         if self.has_aliquot is not None and not isinstance(self.has_aliquot, Aliquot):
             self.has_aliquot = Aliquot()
@@ -254,14 +252,7 @@ class Participant(Thing):
     participant_id: str = None
     race: Union[str, "EnumRace"] = None
     sex: Union[str, "EnumSex"] = None
-    age_at_diagnosis: Optional[str] = None
-    age_at_phenotype_assignment: Optional[str] = None
-    age_at_the_last_vital_status: Optional[str] = None
-    diagnosis_icd: Optional[str] = None
-    diagnosis_mondo: Optional[str] = None
-    diagnosis_ncit: Optional[str] = None
-    diagnosis_source_text: Optional[str] = None
-    diagnosis_type: Optional[str] = None
+    age_at_last_vital_status: Optional[str] = None
     family_id: Optional[str] = None
     family_relationship: Optional[Union[dict, "Participant"]] = None
     father_id: Optional[str] = None
@@ -269,9 +260,6 @@ class Participant(Thing):
     has_study: Optional[Union[dict, "Study"]] = None
     mother_id: Optional[str] = None
     outcomes_vital_status: Optional[str] = None
-    phenotype_hpo: Optional[str] = None
-    phenotype_source_text: Optional[str] = None
-    phenotype_interpretation: Optional[Union[str, "EnumPhenotypeInterpretation"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.down_syndrome_status):
@@ -309,29 +297,8 @@ class Participant(Thing):
         if not isinstance(self.sex, EnumSex):
             self.sex = EnumSex(self.sex)
 
-        if self.age_at_diagnosis is not None and not isinstance(self.age_at_diagnosis, str):
-            self.age_at_diagnosis = str(self.age_at_diagnosis)
-
-        if self.age_at_phenotype_assignment is not None and not isinstance(self.age_at_phenotype_assignment, str):
-            self.age_at_phenotype_assignment = str(self.age_at_phenotype_assignment)
-
-        if self.age_at_the_last_vital_status is not None and not isinstance(self.age_at_the_last_vital_status, str):
-            self.age_at_the_last_vital_status = str(self.age_at_the_last_vital_status)
-
-        if self.diagnosis_icd is not None and not isinstance(self.diagnosis_icd, str):
-            self.diagnosis_icd = str(self.diagnosis_icd)
-
-        if self.diagnosis_mondo is not None and not isinstance(self.diagnosis_mondo, str):
-            self.diagnosis_mondo = str(self.diagnosis_mondo)
-
-        if self.diagnosis_ncit is not None and not isinstance(self.diagnosis_ncit, str):
-            self.diagnosis_ncit = str(self.diagnosis_ncit)
-
-        if self.diagnosis_source_text is not None and not isinstance(self.diagnosis_source_text, str):
-            self.diagnosis_source_text = str(self.diagnosis_source_text)
-
-        if self.diagnosis_type is not None and not isinstance(self.diagnosis_type, str):
-            self.diagnosis_type = str(self.diagnosis_type)
+        if self.age_at_last_vital_status is not None and not isinstance(self.age_at_last_vital_status, str):
+            self.age_at_last_vital_status = str(self.age_at_last_vital_status)
 
         if self.family_id is not None and not isinstance(self.family_id, str):
             self.family_id = str(self.family_id)
@@ -353,15 +320,6 @@ class Participant(Thing):
 
         if self.outcomes_vital_status is not None and not isinstance(self.outcomes_vital_status, str):
             self.outcomes_vital_status = str(self.outcomes_vital_status)
-
-        if self.phenotype_hpo is not None and not isinstance(self.phenotype_hpo, str):
-            self.phenotype_hpo = str(self.phenotype_hpo)
-
-        if self.phenotype_source_text is not None and not isinstance(self.phenotype_source_text, str):
-            self.phenotype_source_text = str(self.phenotype_source_text)
-
-        if self.phenotype_interpretation is not None and not isinstance(self.phenotype_interpretation, EnumPhenotypeInterpretation):
-            self.phenotype_interpretation = EnumPhenotypeInterpretation(self.phenotype_interpretation)
 
         super().__post_init__(**kwargs)
 
@@ -463,11 +421,73 @@ class Assay(Thing):
         super().__post_init__(**kwargs)
 
 
+@dataclass
+class Condition(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = INCLUDE.Condition
+    class_class_curie: ClassVar[str] = "include:Condition"
+    class_name: ClassVar[str] = "Condition"
+    class_model_uri: ClassVar[URIRef] = INCLUDE.Condition
+
+    has_participant: Optional[Union[dict, Participant]] = None
+    age_at_condition_observation: Optional[str] = None
+    mondo_label: Optional[str] = None
+    mondo_code: Optional[str] = None
+    condition_interpretation: Optional[Union[str, "EnumConditionInterpretation"]] = None
+    condition_data_source: Optional[Union[str, "EnumConditionDataSource"]] = None
+    hpo_label: Optional[str] = None
+    hpo_code: Optional[str] = None
+    maxo_label: Optional[str] = None
+    maxo_code: Optional[str] = None
+    other_label: Optional[str] = None
+    other_code: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.has_participant is not None and not isinstance(self.has_participant, Participant):
+            self.has_participant = Participant(**as_dict(self.has_participant))
+
+        if self.age_at_condition_observation is not None and not isinstance(self.age_at_condition_observation, str):
+            self.age_at_condition_observation = str(self.age_at_condition_observation)
+
+        if self.mondo_label is not None and not isinstance(self.mondo_label, str):
+            self.mondo_label = str(self.mondo_label)
+
+        if self.mondo_code is not None and not isinstance(self.mondo_code, str):
+            self.mondo_code = str(self.mondo_code)
+
+        if self.condition_interpretation is not None and not isinstance(self.condition_interpretation, EnumConditionInterpretation):
+            self.condition_interpretation = EnumConditionInterpretation(self.condition_interpretation)
+
+        if self.condition_data_source is not None and not isinstance(self.condition_data_source, EnumConditionDataSource):
+            self.condition_data_source = EnumConditionDataSource(self.condition_data_source)
+
+        if self.hpo_label is not None and not isinstance(self.hpo_label, str):
+            self.hpo_label = str(self.hpo_label)
+
+        if self.hpo_code is not None and not isinstance(self.hpo_code, str):
+            self.hpo_code = str(self.hpo_code)
+
+        if self.maxo_label is not None and not isinstance(self.maxo_label, str):
+            self.maxo_label = str(self.maxo_label)
+
+        if self.maxo_code is not None and not isinstance(self.maxo_code, str):
+            self.maxo_code = str(self.maxo_code)
+
+        if self.other_label is not None and not isinstance(self.other_label, str):
+            self.other_label = str(self.other_label)
+
+        if self.other_code is not None and not isinstance(self.other_code, str):
+            self.other_code = str(self.other_code)
+
+        super().__post_init__(**kwargs)
+
+
 # Enumerations
 class EnumDataAccess(EnumDefinitionImpl):
 
     controlled = PermissibleValue(text="controlled")
-    cpen = PermissibleValue(text="cpen")
+    open = PermissibleValue(text="open")
     registered = PermissibleValue(text="registered")
 
     _defn = EnumDefinition(
@@ -477,7 +497,8 @@ class EnumDataAccess(EnumDefinitionImpl):
 class EnumDownSyndromeStatus(EnumDefinitionImpl):
 
     d21 = PermissibleValue(text="d21")
-    t21 = PermissibleValue(text="t21")
+    t21 = PermissibleValue(text="t21",
+                             meaning=MONDO["0008608"])
 
     _defn = EnumDefinition(
         name="EnumDownSyndromeStatus",
@@ -488,6 +509,8 @@ class EnumEthnicity(EnumDefinitionImpl):
     asked_but_unknown = PermissibleValue(text="asked_but_unknown")
     hispanic_or_latino = PermissibleValue(text="hispanic_or_latino")
     not_hispanic_or_latino = PermissibleValue(text="not_hispanic_or_latino")
+    prefer_not_to_answer = PermissibleValue(text="prefer_not_to_answer")
+    unknown = PermissibleValue(text="unknown")
 
     _defn = EnumDefinition(
         name="EnumEthnicity",
@@ -499,6 +522,7 @@ class EnumFamilyType(EnumDefinitionImpl):
     other = PermissibleValue(text="other")
     proband_only = PermissibleValue(text="proband_only")
     trio = PermissibleValue(text="trio")
+    trio_plus = PermissibleValue(text="trio_plus")
 
     _defn = EnumDefinition(
         name="EnumFamilyType",
@@ -531,6 +555,7 @@ class EnumRace(EnumDefinitionImpl):
     native_hawaiian_or_other_pacific_islander = PermissibleValue(text="native_hawaiian_or_other_pacific_islander")
     other = PermissibleValue(text="other")
     white = PermissibleValue(text="white")
+    prefer_not_to_answer = PermissibleValue(text="prefer_not_to_answer")
 
     _defn = EnumDefinition(
         name="EnumRace",
@@ -563,9 +588,41 @@ class EnumStudyCode(EnumDefinitionImpl):
     ds360_chd = PermissibleValue(text="ds360_chd")
     dsc = PermissibleValue(text="dsc")
     htp = PermissibleValue(text="htp")
+    abcds = PermissibleValue(text="abcds")
+    ads = PermissibleValue(text="ads")
+    ds_brain = PermissibleValue(text="ds_brain")
+    ds_cog_aml = PermissibleValue(text="ds_cog_aml")
+    bri_dsr = PermissibleValue(text="bri_dsr")
+    ds_isp = PermissibleValue(text="ds_isp")
+    ds_nexus = PermissibleValue(text="ds_nexus")
+    ds_pals = PermissibleValue(text="ds_pals")
+    ds_sleep = PermissibleValue(text="ds_sleep")
+    ecods = PermissibleValue(text="ecods")
+    exceeds = PermissibleValue(text="exceeds")
+    trc_ds = PermissibleValue(text="trc_ds")
+    x01_desmith = PermissibleValue(text="x01_desmith")
+    x01_hakon = PermissibleValue(text="x01_hakon")
 
     _defn = EnumDefinition(
         name="EnumStudyCode",
+    )
+
+class EnumConditionInterpretation(EnumDefinitionImpl):
+
+    observed = PermissibleValue(text="observed")
+    not_observed = PermissibleValue(text="not_observed")
+
+    _defn = EnumDefinition(
+        name="EnumConditionInterpretation",
+    )
+
+class EnumConditionDataSource(EnumDefinitionImpl):
+
+    clinical = PermissibleValue(text="clinical")
+    self_reported = PermissibleValue(text="self_reported")
+
+    _defn = EnumDefinition(
+        name="EnumConditionDataSource",
     )
 
 # Slots
@@ -578,14 +635,11 @@ slots.access_url = Slot(uri=INCLUDE.access_url, name="access_url", curie=INCLUDE
 slots.age_at_biospecimen_collection = Slot(uri=INCLUDE.age_at_biospecimen_collection, name="age_at_biospecimen_collection", curie=INCLUDE.curie('age_at_biospecimen_collection'),
                    model_uri=INCLUDE.age_at_biospecimen_collection, domain=None, range=Optional[str])
 
-slots.age_at_diagnosis = Slot(uri=INCLUDE.age_at_diagnosis, name="age_at_diagnosis", curie=INCLUDE.curie('age_at_diagnosis'),
-                   model_uri=INCLUDE.age_at_diagnosis, domain=None, range=Optional[str])
+slots.age_at_condition_observation = Slot(uri=INCLUDE.age_at_condition_observation, name="age_at_condition_observation", curie=INCLUDE.curie('age_at_condition_observation'),
+                   model_uri=INCLUDE.age_at_condition_observation, domain=None, range=Optional[str])
 
-slots.age_at_phenotype_assignment = Slot(uri=INCLUDE.age_at_phenotype_assignment, name="age_at_phenotype_assignment", curie=INCLUDE.curie('age_at_phenotype_assignment'),
-                   model_uri=INCLUDE.age_at_phenotype_assignment, domain=None, range=Optional[str])
-
-slots.age_at_the_last_vital_status = Slot(uri=INCLUDE.age_at_the_last_vital_status, name="age_at_the_last_vital_status", curie=INCLUDE.curie('age_at_the_last_vital_status'),
-                   model_uri=INCLUDE.age_at_the_last_vital_status, domain=None, range=Optional[str])
+slots.age_at_last_vital_status = Slot(uri=INCLUDE.age_at_last_vital_status, name="age_at_last_vital_status", curie=INCLUDE.curie('age_at_last_vital_status'),
+                   model_uri=INCLUDE.age_at_last_vital_status, domain=None, range=Optional[str])
 
 slots.biospecimen_storage = Slot(uri=INCLUDE.biospecimen_storage, name="biospecimen_storage", curie=INCLUDE.curie('biospecimen_storage'),
                    model_uri=INCLUDE.biospecimen_storage, domain=None, range=Optional[str])
@@ -595,6 +649,9 @@ slots.collection_id = Slot(uri=INCLUDE.collection_id, name="collection_id", curi
 
 slots.collection_sample_type = Slot(uri=INCLUDE.collection_sample_type, name="collection_sample_type", curie=INCLUDE.curie('collection_sample_type'),
                    model_uri=INCLUDE.collection_sample_type, domain=None, range=Optional[str])
+
+slots.condition_description = Slot(uri=INCLUDE.condition_description, name="condition_description", curie=INCLUDE.curie('condition_description'),
+                   model_uri=INCLUDE.condition_description, domain=None, range=str)
 
 slots.container_id = Slot(uri=INCLUDE.container_id, name="container_id", curie=INCLUDE.curie('container_id'),
                    model_uri=INCLUDE.container_id, domain=None, range=Optional[str])
@@ -611,20 +668,11 @@ slots.data_type = Slot(uri=INCLUDE.data_type, name="data_type", curie=INCLUDE.cu
 slots.dbgap = Slot(uri=INCLUDE.dbgap, name="dbgap", curie=INCLUDE.curie('dbgap'),
                    model_uri=INCLUDE.dbgap, domain=None, range=Optional[str])
 
-slots.diagnosis_icd = Slot(uri=INCLUDE.diagnosis_icd, name="diagnosis_icd", curie=INCLUDE.curie('diagnosis_icd'),
-                   model_uri=INCLUDE.diagnosis_icd, domain=None, range=Optional[str])
+slots.mondo_label = Slot(uri=INCLUDE.mondo_label, name="mondo_label", curie=INCLUDE.curie('mondo_label'),
+                   model_uri=INCLUDE.mondo_label, domain=None, range=Optional[str])
 
-slots.diagnosis_mondo = Slot(uri=INCLUDE.diagnosis_mondo, name="diagnosis_mondo", curie=INCLUDE.curie('diagnosis_mondo'),
-                   model_uri=INCLUDE.diagnosis_mondo, domain=None, range=Optional[str])
-
-slots.diagnosis_ncit = Slot(uri=INCLUDE.diagnosis_ncit, name="diagnosis_ncit", curie=INCLUDE.curie('diagnosis_ncit'),
-                   model_uri=INCLUDE.diagnosis_ncit, domain=None, range=Optional[str])
-
-slots.diagnosis_source_text = Slot(uri=INCLUDE.diagnosis_source_text, name="diagnosis_source_text", curie=INCLUDE.curie('diagnosis_source_text'),
-                   model_uri=INCLUDE.diagnosis_source_text, domain=None, range=Optional[str])
-
-slots.diagnosis_type = Slot(uri=INCLUDE.diagnosis_type, name="diagnosis_type", curie=INCLUDE.curie('diagnosis_type'),
-                   model_uri=INCLUDE.diagnosis_type, domain=None, range=Optional[str])
+slots.mondo_code = Slot(uri=INCLUDE.mondo_code, name="mondo_code", curie=INCLUDE.curie('mondo_code'),
+                   model_uri=INCLUDE.mondo_code, domain=None, range=Optional[str])
 
 slots.down_syndrome_status = Slot(uri=INCLUDE.down_syndrome_status, name="down_syndrome_status", curie=INCLUDE.curie('down_syndrome_status'),
                    model_uri=INCLUDE.down_syndrome_status, domain=None, range=Union[str, "EnumDownSyndromeStatus"])
@@ -634,6 +682,12 @@ slots.ethnicity = Slot(uri=INCLUDE.ethnicity, name="ethnicity", curie=INCLUDE.cu
 
 slots.experimental_strategy = Slot(uri=INCLUDE.experimental_strategy, name="experimental_strategy", curie=INCLUDE.curie('experimental_strategy'),
                    model_uri=INCLUDE.experimental_strategy, domain=None, range=Optional[str])
+
+slots.condition_interpretation = Slot(uri=INCLUDE.condition_interpretation, name="condition_interpretation", curie=INCLUDE.curie('condition_interpretation'),
+                   model_uri=INCLUDE.condition_interpretation, domain=None, range=Optional[Union[str, "EnumConditionInterpretation"]])
+
+slots.condition_data_source = Slot(uri=INCLUDE.condition_data_source, name="condition_data_source", curie=INCLUDE.curie('condition_data_source'),
+                   model_uri=INCLUDE.condition_data_source, domain=None, range=Optional[Union[str, "EnumConditionDataSource"]])
 
 slots.external_id = Slot(uri=INCLUDE.external_id, name="external_id", curie=INCLUDE.curie('external_id'),
                    model_uri=INCLUDE.external_id, domain=None, range=str)
@@ -701,14 +755,23 @@ slots.parent_sample_type = Slot(uri=INCLUDE.parent_sample_type, name="parent_sam
 slots.participant_id = Slot(uri=INCLUDE.participant_id, name="participant_id", curie=INCLUDE.curie('participant_id'),
                    model_uri=INCLUDE.participant_id, domain=None, range=str)
 
-slots.phenotype_hpo = Slot(uri=INCLUDE.phenotype_hpo, name="phenotype_hpo", curie=INCLUDE.curie('phenotype_hpo'),
-                   model_uri=INCLUDE.phenotype_hpo, domain=None, range=Optional[str])
+slots.hpo_label = Slot(uri=INCLUDE.hpo_label, name="hpo_label", curie=INCLUDE.curie('hpo_label'),
+                   model_uri=INCLUDE.hpo_label, domain=None, range=Optional[str])
 
-slots.phenotype_interpretation = Slot(uri=INCLUDE.phenotype_interpretation, name="phenotype_interpretation", curie=INCLUDE.curie('phenotype_interpretation'),
-                   model_uri=INCLUDE.phenotype_interpretation, domain=None, range=Optional[Union[str, "EnumPhenotypeInterpretation"]])
+slots.hpo_code = Slot(uri=INCLUDE.hpo_code, name="hpo_code", curie=INCLUDE.curie('hpo_code'),
+                   model_uri=INCLUDE.hpo_code, domain=None, range=Optional[str])
 
-slots.phenotype_source_text = Slot(uri=INCLUDE.phenotype_source_text, name="phenotype_source_text", curie=INCLUDE.curie('phenotype_source_text'),
-                   model_uri=INCLUDE.phenotype_source_text, domain=None, range=Optional[str])
+slots.maxo_label = Slot(uri=INCLUDE.maxo_label, name="maxo_label", curie=INCLUDE.curie('maxo_label'),
+                   model_uri=INCLUDE.maxo_label, domain=None, range=Optional[str])
+
+slots.maxo_code = Slot(uri=INCLUDE.maxo_code, name="maxo_code", curie=INCLUDE.curie('maxo_code'),
+                   model_uri=INCLUDE.maxo_code, domain=None, range=Optional[str])
+
+slots.other_label = Slot(uri=INCLUDE.other_label, name="other_label", curie=INCLUDE.curie('other_label'),
+                   model_uri=INCLUDE.other_label, domain=None, range=Optional[str])
+
+slots.other_code = Slot(uri=INCLUDE.other_code, name="other_code", curie=INCLUDE.curie('other_code'),
+                   model_uri=INCLUDE.other_code, domain=None, range=Optional[str])
 
 slots.program = Slot(uri=INCLUDE.program, name="program", curie=INCLUDE.curie('program'),
                    model_uri=INCLUDE.program, domain=None, range=Union[str, "EnumProgram"])

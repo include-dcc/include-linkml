@@ -72,9 +72,6 @@ URI: [include:Biospecimen](https://w3id.org/include/Biospecimen)
  * [volume_unit](volume_unit.md)  <sub>0..1</sub>
      * Description: Unit of sample volume
      * Range: [String](types/String.md)
- * [has_study](has_study.md)  <sub>0..1</sub>
-     * Description: Link to a Study
-     * Range: [Study](Study.md)
  * [has_aliquot](has_aliquot.md)  <sub>0..1</sub>
      * Description: An aliquot of a sample
      * Range: [Aliquot](Aliquot.md)

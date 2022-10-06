@@ -20,4 +20,5 @@ URI: [include:enum_family_type](https://w3id.org/include/enum_family_type)
 | other |  |  | {'title': 'Other'} |
 | proband_only |  |  | {'title': 'Proband-only'} |
 | trio |  |  | {'title': 'Trio'} |
+| trio_plus |  |  | {'title': 'Trio+'} |
 

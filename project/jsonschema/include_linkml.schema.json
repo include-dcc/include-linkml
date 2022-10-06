@@ -105,6 +105,63 @@
          "title": "Biospecimen",
          "type": "object"
       },
+      "Condition": {
+         "additionalProperties": false,
+         "description": "",
+         "properties": {
+            "age_at_condition_observation": {
+               "description": "Age in days at which condition was observed, recorded, or diagnosed",
+               "type": "string"
+            },
+            "condition_data_source": {
+               "$ref": "#/$defs/EnumConditionDataSource",
+               "description": "Whether condition information was obtained from medical records (Clinical) or patient survey (Self-Reported)"
+            },
+            "condition_interpretation": {
+               "$ref": "#/$defs/EnumConditionInterpretation",
+               "description": "Whether condition was observed or not. \"Not Observed\" indicates participant was specifically examined for that condition, or health record specifically queried for that condition, and found to be negative. Sept. 2022 release will only include positive assertions."
+            },
+            "has_participant": {
+               "$ref": "#/$defs/Participant",
+               "description": "Link to a Participant"
+            },
+            "hpo_code": {
+               "description": "Code for condition in the Human Phenotype Ontology (HPO)",
+               "type": "string"
+            },
+            "hpo_label": {
+               "description": "Label for condition in the Human Phenotype Ontology (HPO)",
+               "type": "string"
+            },
+            "maxo_code": {
+               "description": "Code for condition in the Medical Action Ontology (MAXO)",
+               "type": "string"
+            },
+            "maxo_label": {
+               "description": "Label for condition in the Medical Action Ontology (MAXO)",
+               "type": "string"
+            },
+            "mondo_code": {
+               "description": "Code for condition in the Mondo Disease Ontology (MONDO)",
+               "type": "string"
+            },
+            "mondo_label": {
+               "description": "Label for condition in the Mondo Disease Ontology (MONDO)",
+               "type": "string"
+            },
+            "other_code": {
+               "description": "Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)",
+               "type": "string"
+            },
+            "other_label": {
+               "description": "Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)",
+               "type": "string"
+            }
+         },
+         "required": [],
+         "title": "Condition",
+         "type": "object"
+      },
       "DataFile": {
          "additionalProperties": false,
          "description": "A DataFile Associated with a Participant or Study or Biospecimen",
@@ -180,11 +237,29 @@
          "title": "DataFile",
          "type": "object"
       },
+      "EnumConditionDataSource": {
+         "description": "",
+         "enum": [
+            "clinical",
+            "self_reported"
+         ],
+         "title": "EnumConditionDataSource",
+         "type": "string"
+      },
+      "EnumConditionInterpretation": {
+         "description": "",
+         "enum": [
+            "observed",
+            "not_observed"
+         ],
+         "title": "EnumConditionInterpretation",
+         "type": "string"
+      },
       "EnumDataAccess": {
          "description": "",
          "enum": [
             "controlled",
-            "cpen",
+            "open",
             "registered"
          ],
          "title": "EnumDataAccess",
@@ -204,7 +279,9 @@
          "enum": [
             "asked_but_unknown",
             "hispanic_or_latino",
-            "not_hispanic_or_latino"
+            "not_hispanic_or_latino",
+            "prefer_not_to_answer",
+            "unknown"
          ],
          "title": "EnumEthnicity",
          "type": "string"
@@ -215,7 +292,8 @@
             "duo",
             "other",
             "proband_only",
-            "trio"
+            "trio",
+            "trio_plus"
          ],
          "title": "EnumFamilyType",
          "type": "string"
@@ -247,7 +325,8 @@
             "more_than_one_race",
             "native_hawaiian_or_other_pacific_islander",
             "other",
-            "white"
+            "white",
+            "prefer_not_to_answer"
          ],
          "title": "EnumRace",
          "type": "string"
@@ -279,7 +358,21 @@
             "ds_pcgc",
             "ds360_chd",
             "dsc",
-            "htp"
+            "htp",
+            "abcds",
+            "ads",
+            "ds_brain",
+            "ds_cog_aml",
+            "bri_dsr",
+            "ds_isp",
+            "ds_nexus",
+            "ds_pals",
+            "ds_sleep",
+            "ecods",
+            "exceeds",
+            "trc_ds",
+            "x01_desmith",
+            "x01_hakon"
          ],
          "title": "EnumStudyCode",
          "type": "string"
@@ -301,36 +394,8 @@
          "additionalProperties": false,
          "description": "A Participant in a Study",
          "properties": {
-            "age_at_diagnosis": {
-               "description": "Age in days at which phenotype was assigned",
-               "type": "string"
-            },
-            "age_at_phenotype_assignment": {
-               "description": "Age in days at which phenotype was recorded",
-               "type": "string"
-            },
-            "age_at_the_last_vital_status": {
-               "description": "Age of last vital status",
-               "type": "string"
-            },
-            "diagnosis_icd": {
-               "description": "ICD-10 code (annotated by data contributor or DCC)",
-               "type": "string"
-            },
-            "diagnosis_mondo": {
-               "description": "Mondo disease ontology code (annotated by data contributor or DCC)",
-               "type": "string"
-            },
-            "diagnosis_ncit": {
-               "description": "NCI Thesaurus code (annotated by data contributor or DCC)",
-               "type": "string"
-            },
-            "diagnosis_source_text": {
-               "description": "Diagnosis as described by data contributor",
-               "type": "string"
-            },
-            "diagnosis_type": {
-               "description": "How diagnosis was assigned",
+            "age_at_last_vital_status": {
+               "description": "Age in days when participant's vital status was last recorded",
                "type": "string"
             },
             "down_syndrome_status": {
@@ -379,18 +444,6 @@
             },
             "participant_id": {
                "description": "Unique identifier for the participant, assigned by DCC",
-               "type": "string"
-            },
-            "phenotype_hpo": {
-               "description": "Human Phenotype Ontology code (annotated by data contributor or DCC)",
-               "type": "string"
-            },
-            "phenotype_interpretation": {
-               "$ref": "#/$defs/EnumPhenotypeInterpretation",
-               "description": "Whether phenotype was observed or not"
-            },
-            "phenotype_source_text": {
-               "description": "Phenotype as described by data contributor",
                "type": "string"
             },
             "race": {

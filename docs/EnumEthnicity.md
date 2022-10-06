@@ -11,6 +11,8 @@ URI: EnumEthnicity
 | asked_but_unknown | None |  | |
 | hispanic_or_latino | None |  | |
 | not_hispanic_or_latino | None |  | |
+| prefer_not_to_answer | None |  | |
+| unknown | None |  | |
 
 
 ## Identifier and Mapping Information

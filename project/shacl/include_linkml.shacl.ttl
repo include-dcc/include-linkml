@@ -1,3 +1,4 @@
+@prefix MONDO: <http://purl.obolibrary.org/obo/> .
 @prefix include: <https://w3id.org/include/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
@@ -21,6 +22,63 @@ include:Assay a sh:NodeShape ;
             sh:order 0 ;
             sh:path include:uses_biospecimen ] ;
     sh:targetClass include:Assay .
+
+include:Condition a sh:NodeShape ;
+    sh:closed true ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:description "Code for condition in the Mondo Disease Ontology (MONDO)" ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path include:mondo_code ],
+        [ sh:description "Code for condition in the Human Phenotype Ontology (HPO)" ;
+            sh:maxCount 1 ;
+            sh:order 7 ;
+            sh:path include:hpo_code ],
+        [ sh:description "Whether condition information was obtained from medical records (Clinical) or patient survey (Self-Reported)" ;
+            sh:in ( "clinical" "self_reported" ) ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path include:condition_data_source ],
+        [ sh:description "Label for condition in the Mondo Disease Ontology (MONDO)" ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path include:mondo_label ],
+        [ sh:description "Label for condition in the Medical Action Ontology (MAXO)" ;
+            sh:maxCount 1 ;
+            sh:order 8 ;
+            sh:path include:maxo_label ],
+        [ sh:description "Code for condition in the Medical Action Ontology (MAXO)" ;
+            sh:maxCount 1 ;
+            sh:order 9 ;
+            sh:path include:maxo_code ],
+        [ sh:description "Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)" ;
+            sh:maxCount 1 ;
+            sh:order 11 ;
+            sh:path include:other_code ],
+        [ sh:class include:Participant ;
+            sh:description "Link to a Participant" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 0 ;
+            sh:path include:has_participant ],
+        [ sh:description "Label for condition in the Human Phenotype Ontology (HPO)" ;
+            sh:maxCount 1 ;
+            sh:order 6 ;
+            sh:path include:hpo_label ],
+        [ sh:description "Age in days at which condition was observed, recorded, or diagnosed" ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path include:age_at_condition_observation ],
+        [ sh:description "Whether condition was observed or not. \"Not Observed\" indicates participant was specifically examined for that condition, or health record specifically queried for that condition, and found to be negative. Sept. 2022 release will only include positive assertions." ;
+            sh:in ( "observed" "not_observed" ) ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path include:condition_interpretation ],
+        [ sh:description "Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)" ;
+            sh:maxCount 1 ;
+            sh:order 10 ;
+            sh:path include:other_label ] ;
+    sh:targetClass include:Condition .
 
 include:FamilyGroup a sh:NodeShape ;
     sh:closed true ;
@@ -54,75 +112,31 @@ include:Biospecimen a sh:NodeShape ;
     sh:description "A Biospecimen Collected from A Participant" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "Biospecimen" ;
-    sh:property [ sh:description "Identifier for sample. A sample is a unique biological material; two samples with two different IDs are biologically distinct." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 12 ;
-            sh:path include:sample_id ],
-        [ sh:class include:Participant ;
-            sh:description "Link to a Participant" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 6 ;
-            sh:path include:has_participant ],
-        [ sh:description "Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)" ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path include:biospecimen_storage ],
-        [ sh:description "Whether or not the sample is potentially available for sharing through the Virtual Biorepository" ;
-            sh:in ( "available" "unavailable" ) ;
-            sh:maxCount 1 ;
-            sh:order 11 ;
-            sh:path include:sample_availability ],
-        [ sh:description "Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs." ;
+    sh:property [ sh:description "Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs." ;
             sh:maxCount 1 ;
             sh:order 4 ;
             sh:path include:container_id ],
-        [ sh:description "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed)." ;
+        [ sh:description "Procedure by which Sample was derived from Parent Sample (e.g. RBC lysis, Centrifugation, Ficoll, etc.)" ;
             sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path include:collection_id ],
-        [ sh:description "Age in days of participant at time of biospecimen collection" ;
-            sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path include:age_at_biospecimen_collection ],
-        [ sh:class include:Study ;
-            sh:description "Link to a Study" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 7 ;
-            sh:path include:has_study ],
-        [ sh:description "Type of biological material comprising the parent sample (e.g. Plasma, Serum, White blood cells, etc.)" ;
-            sh:maxCount 1 ;
-            sh:order 10 ;
-            sh:path include:parent_sample_type ],
+            sh:order 8 ;
+            sh:path include:laboratory_procedure ],
         [ sh:class include:DataFile ;
             sh:description "Link to a DataFile" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNode ;
             sh:order 5 ;
             sh:path include:has_datafile ],
-        [ sh:description "Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable)" ;
+        [ sh:class include:Study ;
+            sh:description "Link to a Study" ;
             sh:maxCount 1 ;
-            sh:order 9 ;
-            sh:path include:parent_sample_id ],
-        [ sh:description "Procedure by which Sample was derived from Parent Sample (e.g. RBC lysis, Centrifugation, Ficoll, etc.)" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 7 ;
+            sh:path include:has_study ],
+        [ sh:description "Whether or not the sample is potentially available for sharing through the Virtual Biorepository" ;
+            sh:in ( "available" "unavailable" ) ;
             sh:maxCount 1 ;
-            sh:order 8 ;
-            sh:path include:laboratory_procedure ],
-        [ sh:description "Amount of sample in container" ;
-            sh:maxCount 1 ;
-            sh:order 14 ;
-            sh:path include:volume ],
-        [ sh:description "Type of biological material comprising the sample (e.g. Plasma, Serum, White blood cells, DNA, RNA, etc.)" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 13 ;
-            sh:path include:sample_type ],
-        [ sh:description "Unit of sample volume" ;
-            sh:maxCount 1 ;
-            sh:order 15 ;
-            sh:path include:volume_unit ],
+            sh:order 11 ;
+            sh:path include:sample_availability ],
         [ sh:class include:Aliquot ;
             sh:description "An aliquot of a sample" ;
             sh:maxCount 1 ;
@@ -132,7 +146,51 @@ include:Biospecimen a sh:NodeShape ;
         [ sh:description "Type of biological material comprising the collected sample (e.g. Whole blood, Bone marrow, Saliva, etc.)" ;
             sh:maxCount 1 ;
             sh:order 3 ;
-            sh:path include:collection_sample_type ] ;
+            sh:path include:collection_sample_type ],
+        [ sh:description "Age in days of participant at time of biospecimen collection" ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path include:age_at_biospecimen_collection ],
+        [ sh:description "Amount of sample in container" ;
+            sh:maxCount 1 ;
+            sh:order 14 ;
+            sh:path include:volume ],
+        [ sh:description "Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)" ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path include:biospecimen_storage ],
+        [ sh:description "Identifier for sample. A sample is a unique biological material; two samples with two different IDs are biologically distinct." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 12 ;
+            sh:path include:sample_id ],
+        [ sh:description "Unit of sample volume" ;
+            sh:maxCount 1 ;
+            sh:order 15 ;
+            sh:path include:volume_unit ],
+        [ sh:description "Type of biological material comprising the sample (e.g. Plasma, Serum, White blood cells, DNA, RNA, etc.)" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 13 ;
+            sh:path include:sample_type ],
+        [ sh:description "Type of biological material comprising the parent sample (e.g. Plasma, Serum, White blood cells, etc.)" ;
+            sh:maxCount 1 ;
+            sh:order 10 ;
+            sh:path include:parent_sample_type ],
+        [ sh:class include:Participant ;
+            sh:description "Link to a Participant" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 6 ;
+            sh:path include:has_participant ],
+        [ sh:description "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed)." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path include:collection_id ],
+        [ sh:description "Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable)" ;
+            sh:maxCount 1 ;
+            sh:order 9 ;
+            sh:path include:parent_sample_id ] ;
     sh:targetClass include:Biospecimen .
 
 include:DataFile a sh:NodeShape ;
@@ -140,78 +198,78 @@ include:DataFile a sh:NodeShape ;
     sh:description "A DataFile Associated with a Participant or Study or Biospecimen" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "DataFile" ;
-    sh:property [ sh:description "Specific type of data contained in file (e.g. Aligned reads, Unaligned reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification, Structural variations, Cytokine profiles, Operation reports, Pathology reports, Histology images, Clinical supplement, Protein expression quantification, etc.)" ;
+    sh:property [ sh:description "General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune maps, Transcriptomics, etc.)" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 3 ;
+            sh:path include:data_category ],
+        [ sh:description "Specific type of data contained in file (e.g. Aligned reads, Unaligned reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification, Structural variations, Cytokine profiles, Operation reports, Pathology reports, Histology images, Clinical supplement, Protein expression quantification, etc.)" ;
             sh:maxCount 1 ;
             sh:order 4 ;
             sh:path include:data_type ],
-        [ sh:description "Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom, etc.)" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 8 ;
-            sh:path include:format ],
-        [ sh:description "Size of file" ;
-            sh:maxCount 1 ;
-            sh:order 13 ;
-            sh:path include:size ],
-        [ sh:description "Type of access control on this file, determined by DCC" ;
-            sh:in ( "controlled" "cpen" "registered" ) ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path include:data_access ],
-        [ sh:description "Name of file, assigned by data contributor" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 14 ;
-            sh:path include:original_file_name ],
-        [ sh:description "Storage location for this file" ;
-            sh:maxCount 1 ;
-            sh:order 0 ;
-            sh:path include:access_url ],
-        [ sh:class include:Participant ;
-            sh:description "Link to a Participant" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 10 ;
-            sh:path include:has_participant ],
         [ sh:class include:Study ;
             sh:description "Link to a Study" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNode ;
             sh:order 11 ;
             sh:path include:has_study ],
+        [ sh:class include:Participant ;
+            sh:description "Link to a Participant" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 10 ;
+            sh:path include:has_participant ],
+        [ sh:description "Synapse ID for file" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 7 ;
+            sh:path include:file_name ],
+        [ sh:description "Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom, etc.)" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 8 ;
+            sh:path include:format ],
+        [ sh:description "Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale Discovery, etc.)" ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path include:experimental_strategy ],
+        [ sh:description "Type of access control on this file, determined by DCC" ;
+            sh:in ( "controlled" "open" "registered" ) ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path include:data_access ],
+        [ sh:description "File identifier, assigned by DCC" ;
+            sh:maxCount 1 ;
+            sh:order 6 ;
+            sh:path include:file_id ],
+        [ sh:description "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed)." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path include:collection_id ],
+        [ sh:description "Storage location for this file" ;
+            sh:maxCount 1 ;
+            sh:order 0 ;
+            sh:path include:access_url ],
         [ sh:class include:Biospecimen ;
             sh:description "Link to a Biospecimen" ;
             sh:maxCount 1 ;
             sh:nodeKind sh:BlankNode ;
             sh:order 9 ;
             sh:path include:has_biospecimen ],
-        [ sh:description "File identifier, assigned by DCC" ;
+        [ sh:description "Size of file" ;
             sh:maxCount 1 ;
-            sh:order 6 ;
-            sh:path include:file_id ],
-        [ sh:description "General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune maps, Transcriptomics, etc.)" ;
+            sh:order 13 ;
+            sh:path include:size ],
+        [ sh:description "Name of file, assigned by data contributor" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:order 3 ;
-            sh:path include:data_category ],
+            sh:order 14 ;
+            sh:path include:original_file_name ],
         [ sh:description "Unique identifier for the participant, assigned by DCC" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 12 ;
-            sh:path include:participant_id ],
-        [ sh:description "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed)." ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path include:collection_id ],
-        [ sh:description "Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale Discovery, etc.)" ;
-            sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path include:experimental_strategy ],
-        [ sh:description "Synapse ID for file" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 7 ;
-            sh:path include:file_name ] ;
+            sh:path include:participant_id ] ;
     sh:targetClass include:DataFile .
 
 include:Study a sh:NodeShape ;
@@ -219,7 +277,19 @@ include:Study a sh:NodeShape ;
     sh:description "A Study" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "Study" ;
-    sh:property [ sh:description "dbGaP study accession code" ;
+    sh:property [ sh:description "Funding source for the study" ;
+            sh:in ( "include" "kf" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path include:program ],
+        [ sh:description "Unique identifer for the study, assigned by DCC" ;
+            sh:in ( "ds_cog_all" "ds_pcgc" "ds360_chd" "dsc" "htp" "abcds" "ads" "ds_brain" "ds_cog_aml" "bri_dsr" "ds_isp" "ds_nexus" "ds_pals" "ds_sleep" "ecods" "exceeds" "trc_ds" "x01_desmith" "x01_hakon" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 2 ;
+            sh:path include:study_code ],
+        [ sh:description "dbGaP study accession code" ;
             sh:maxCount 1 ;
             sh:order 0 ;
             sh:path include:dbgap ],
@@ -227,19 +297,7 @@ include:Study a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:order 3 ;
-            sh:path include:study_name ],
-        [ sh:description "Unique identifer for the study, assigned by DCC" ;
-            sh:in ( "ds_cog_all" "ds_pcgc" "ds360_chd" "dsc" "htp" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 2 ;
-            sh:path include:study_code ],
-        [ sh:description "Funding source for the study" ;
-            sh:in ( "include" "kf" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 1 ;
-            sh:path include:program ] ;
+            sh:path include:study_name ] ;
     sh:targetClass include:Study .
 
 include:Participant a sh:NodeShape ;
@@ -247,124 +305,83 @@ include:Participant a sh:NodeShape ;
     sh:description "A Participant in a Study" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "Participant" ;
-    sh:property [ sh:description "Age in days at which phenotype was recorded" ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path include:age_at_phenotype_assignment ],
-        [ sh:description "Whether participant is alive or dead" ;
-            sh:maxCount 1 ;
-            sh:order 18 ;
-            sh:path include:outcomes_vital_status ],
-        [ sh:description "Phenotype as described by data contributor" ;
-            sh:maxCount 1 ;
-            sh:order 21 ;
-            sh:path include:phenotype_source_text ],
-        [ sh:description "Diagnosis as described by data contributor" ;
-            sh:maxCount 1 ;
-            sh:order 6 ;
-            sh:path include:diagnosis_source_text ],
-        [ sh:description "How diagnosis was assigned" ;
-            sh:maxCount 1 ;
-            sh:order 7 ;
-            sh:path include:diagnosis_type ],
-        [ sh:description "Ethnicity of participant" ;
-            sh:in ( "asked_but_unknown" "hispanic_or_latino" "not_hispanic_or_latino" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 9 ;
-            sh:path include:ethnicity ],
-        [ sh:description "Age in days at which phenotype was assigned" ;
+    sh:property [ sh:description "Age in days when participant's vital status was last recorded" ;
             sh:maxCount 1 ;
             sh:order 0 ;
-            sh:path include:age_at_diagnosis ],
-        [ sh:description "Unique identifier for the participant, assigned by DCC" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 19 ;
-            sh:path include:participant_id ],
-        [ sh:class include:DataFile ;
-            sh:description "Link to a DataFile" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 15 ;
-            sh:path include:has_datafile ],
+            sh:path include:age_at_last_vital_status ],
         [ sh:description "Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)" ;
-            sh:in ( "d21" "t21" ) ;
+            sh:in ( "d21" MONDO:0008608 ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:order 8 ;
+            sh:order 1 ;
             sh:path include:down_syndrome_status ],
-        [ sh:description "Whether phenotype was observed or not" ;
-            sh:in ( "not_observed" "observed" ) ;
-            sh:maxCount 1 ;
-            sh:order 22 ;
-            sh:path include:phenotype_interpretation ],
-        [ sh:description "Age of last vital status" ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path include:age_at_the_last_vital_status ],
-        [ sh:class include:Participant ;
-            sh:description "Relationship of Participant to other family members" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 12 ;
-            sh:path include:family_relationship ],
-        [ sh:description "Race of participant" ;
-            sh:in ( "american_indian_or_alaskan_native" "asian" "black_or_african_american" "more_than_one_race" "native_hawaiian_or_other_pacific_islander" "other" "white" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 23 ;
-            sh:path include:race ],
-        [ sh:description "NCI Thesaurus code (annotated by data contributor or DCC)" ;
-            sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path include:diagnosis_ncit ],
-        [ sh:description "Unique identifer for family to which Participant belongs" ;
-            sh:maxCount 1 ;
-            sh:order 11 ;
-            sh:path include:family_id ],
-        [ sh:description "Human Phenotype Ontology code (annotated by data contributor or DCC)" ;
-            sh:maxCount 1 ;
-            sh:order 20 ;
-            sh:path include:phenotype_hpo ],
         [ sh:description "Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives)" ;
-            sh:in ( "duo" "other" "proband_only" "trio" ) ;
+            sh:in ( "duo" "other" "proband_only" "trio" "trio_plus" ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:order 13 ;
+            sh:order 6 ;
             sh:path include:family_type ],
-        [ sh:description "ICD-10 code (annotated by data contributor or DCC)" ;
-            sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path include:diagnosis_icd ],
-        [ sh:description "Unique identifier for the participant, assigned by data contributor" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 10 ;
-            sh:path include:external_id ],
-        [ sh:description "Participant ID for Participant's father" ;
-            sh:maxCount 1 ;
-            sh:order 14 ;
-            sh:path include:father_id ],
-        [ sh:description "Mondo disease ontology code (annotated by data contributor or DCC)" ;
-            sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path include:diagnosis_mondo ],
-        [ sh:class include:Study ;
-            sh:description "Link to a Study" ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 16 ;
-            sh:path include:has_study ],
         [ sh:description "Sex of participant" ;
             sh:in ( "female" "male" "other" "unknown" ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:order 24 ;
+            sh:order 14 ;
             sh:path include:sex ],
+        [ sh:class include:DataFile ;
+            sh:description "Link to a DataFile" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 8 ;
+            sh:path include:has_datafile ],
+        [ sh:description "Race of participant" ;
+            sh:in ( "american_indian_or_alaskan_native" "asian" "black_or_african_american" "more_than_one_race" "native_hawaiian_or_other_pacific_islander" "other" "white" "prefer_not_to_answer" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 13 ;
+            sh:path include:race ],
+        [ sh:description "Unique identifier for the participant, assigned by data contributor" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 3 ;
+            sh:path include:external_id ],
+        [ sh:description "Whether participant is alive or dead" ;
+            sh:maxCount 1 ;
+            sh:order 11 ;
+            sh:path include:outcomes_vital_status ],
+        [ sh:class include:Participant ;
+            sh:description "Relationship of Participant to other family members" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 5 ;
+            sh:path include:family_relationship ],
+        [ sh:description "Participant ID for Participant's father" ;
+            sh:maxCount 1 ;
+            sh:order 7 ;
+            sh:path include:father_id ],
+        [ sh:description "Unique identifer for family to which Participant belongs" ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path include:family_id ],
+        [ sh:class include:Study ;
+            sh:description "Link to a Study" ;
+            sh:maxCount 1 ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 9 ;
+            sh:path include:has_study ],
+        [ sh:description "Ethnicity of participant" ;
+            sh:in ( "asked_but_unknown" "hispanic_or_latino" "not_hispanic_or_latino" "prefer_not_to_answer" "unknown" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 2 ;
+            sh:path include:ethnicity ],
         [ sh:description "Participant ID for Participant's mother" ;
             sh:maxCount 1 ;
-            sh:order 17 ;
-            sh:path include:mother_id ] ;
+            sh:order 10 ;
+            sh:path include:mother_id ],
+        [ sh:description "Unique identifier for the participant, assigned by DCC" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 12 ;
+            sh:path include:participant_id ] ;
     sh:targetClass include:Participant .
 
