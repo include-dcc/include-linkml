@@ -1,598 +1,788 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://my-org.github.io/my-datamodel/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Address/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Address/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Biospecimen/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Aliquot/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Boolean/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Assay/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/DataFile/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Biospecimen/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Date/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Boolean/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Datetime/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Condition/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Decimal/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/DataFile/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Double/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Date/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EnumDataAccess/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/DateOrDatetime/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EnumDownSyndromeStatus/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Datetime/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EnumEthnicity/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Decimal/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EnumFamilyType/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Double/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EnumPhenotypeInterpretation/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/EnumConditionDataSource/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EnumProgram/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/EnumConditionInterpretation/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EnumRace/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/EnumDataAccess/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EnumSampleAvailability/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/EnumDownSyndromeStatus/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EnumSex/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/EnumEthnicity/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/EnumStudyCode/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/EnumFamilyType/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/FamilialRelationship/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/EnumPhenotypeInterpretation/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/FamilialRelationshipType/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/EnumProgram/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Float/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/EnumRace/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/HasAliases/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/EnumSampleAvailability/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/IncludePortalV1/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/EnumSex/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Integer/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/EnumStudyCode/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/NamedThing/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/FamilialRelationship/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Ncname/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/FamilialRelationshipType/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Nodeidentifier/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/FamilyGroup/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Objectidentifier/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Float/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Organization/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/HasAliases/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Participant/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/IncludeV2DataModel/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Person/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Integer/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/PersonStatus/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/NamedThing/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Registry/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Ncname/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Relationship/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Nodeidentifier/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/String/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Objectidentifier/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Study/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Organization/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Time/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Participant/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Uri/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Person/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/Uriorcurie/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/PersonStatus/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/about/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Registry/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/access_url/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Relationship/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/age_at_biospecimen_collection__days/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/String/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/age_at_diagnosis__days/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Study/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/age_at_phenotype_assignment__days/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Thing/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/age_at_the_last_vital_status__days/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Time/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/age_in_years/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Uri/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/aliases/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/Uriorcurie/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/biospecimen_storage/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/about/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/birth_date/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/access_url/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/city/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/age_at_biospecimen_collection/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/collection_id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/age_at_biospecimen_collection__days/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/collection_sample_type/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/age_at_condition_observation/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/container_id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/age_at_diagnosis/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/current_address/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/age_at_diagnosis__days/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/data_access/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/age_at_last_vital_status/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/data_category/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/age_at_phenotype_assignment/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/data_type/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/age_at_phenotype_assignment__days/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/dbgap/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/age_at_the_last_vital_status/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/description/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/age_at_the_last_vital_status__days/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/diagnosis__icd/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/age_in_years/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/diagnosis__mondo/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/aliases/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/diagnosis__ncit/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/biospecimen_storage/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/diagnosis__source_text/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/birth_date/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/diagnosis_type/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/city/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/down_syndrome_status/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/collection_id/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/employed_at/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/collection_sample_type/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/ended_at_time/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/condition_data_source/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/ethnicity/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/condition_description/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/experimental_strategy/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/condition_interpretation/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/external_id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/container_id/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/family_id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/current_address/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/family_relationship/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/data_access/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/family_type/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/data_category/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/father_id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/data_type/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/file_id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/dbgap/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/file_name/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/description/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/format/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/diagnosis__icd/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/founding_date/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/diagnosis__mondo/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/has_biospecimen/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/diagnosis__ncit/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/has_datafile/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/diagnosis__source_text/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/has_familial_relationships/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/diagnosis_icd/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/has_participant/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/diagnosis_mondo/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/has_study/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/diagnosis_ncit/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/diagnosis_source_text/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/image/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/diagnosis_type/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/is_current/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/down_syndrome_status/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/laboratory_procedure/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/employed_at/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/mission_statement/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/ended_at_time/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/mother_id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/ethnicity/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/my_datamodel/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/experimental_strategy/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/name/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/external_id/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/organizations/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/family_id/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/outcomes_vital_status/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/family_relationship/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/parent_sample_id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/family_type/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/parent_sample_type/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/father_id/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/participant_id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/file_id/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/persons/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/file_name/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/phenotype__hpo/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/format/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/phenotype__source_text/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/founding_date/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/phenotype_interpretation/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/has_aliquot/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/postal_code/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/has_biospecimen/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/primary_email/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/has_datafile/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/program/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/has_familial_relationships/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/race/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/has_output/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/related_to/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/has_parent_sample/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/sample_availability/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/has_participant/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/sample_id/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/has_study/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/sample_type/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/has_subject/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/sex/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/hpo_code/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/size/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/hpo_label/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/started_at_time/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/id/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/street/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/image/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/study_code/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/is_current/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/study_name/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/laboratory_procedure/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/type/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/maxo_code/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/types/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/maxo_label/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/volume/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/mission_statement/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://my-org.github.io/my-datamodel/volume_unit/</loc>
-         <lastmod>2022-05-23</lastmod>
+         <loc>https://include-dcc.github.io/include_linkml/mondo_code/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/mondo_label/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/mother_id/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/my_datamodel/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/name/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/organizations/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/original_file_name/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/other_code/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/other_label/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/outcomes_vital_status/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/parent_sample_id/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/parent_sample_type/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/participant_id/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/persons/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/phenotype__hpo/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/phenotype__source_text/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/phenotype_hpo/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/phenotype_interpretation/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/phenotype_source_text/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/postal_code/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/primary_email/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/program/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/race/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/related_to/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/sample_availability/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/sample_id/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/sample_type/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/sex/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/size/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/started_at_time/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/street/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/study_code/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/study_name/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/type/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/types/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/uses_biospecimen/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/validation_rules/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/volume/</loc>
+         <lastmod>2022-10-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://include-dcc.github.io/include_linkml/volume_unit/</loc>
+         <lastmod>2022-10-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
