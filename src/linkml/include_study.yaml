@@ -1,0 +1,69 @@
+id: https://w3id.org/include/study
+name: include-study-schema
+prefixes:
+  include:
+    prefix_prefix: include
+    prefix_reference: https://w3id.org/include/
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+
+imports:
+  - linkml:types
+  - include_core
+  - include_enums
+
+default_curi_maps:
+  - semweb_context
+
+classes:
+  Study:
+    name: Study
+    definition_uri: include:Study
+    annotations:
+      required:
+        tag: required
+        value: 'True'
+    description: A Study
+    title: Study
+    from_schema: https://w3id.org/include
+    is_a: Thing
+    slots:
+    - dbgap
+    - program
+    - study_code
+    - study_name
+slots:
+  dbgap:
+    definition_uri: include:dbgap
+    description: dbGaP study accession code
+    domain_of:
+      - Study
+    from_schema: https://w3id.org/include
+    name: dbgap
+  program:
+    definition_uri: include:program
+    description: Funding source for the study
+    domain_of:
+      - Study
+    from_schema: https://w3id.org/include
+    name: program
+    range: enum_program
+    required: true
+  study_code:
+    definition_uri: include:study_code
+    description: Unique identifer for the study, assigned by DCC
+    domain_of:
+      - Study
+    from_schema: https://w3id.org/include
+    name: study_code
+    range: enum_study_code
+    required: true
+  study_name:
+    definition_uri: include:study_name
+    description: Name of the study, chosen by data contributor
+    domain_of:
+      - Study
+    from_schema: https://w3id.org/include
+    name: study_name
+    required: true

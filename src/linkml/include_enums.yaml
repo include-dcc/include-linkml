@@ -1,0 +1,239 @@
+id: https://w3id.org/include/enums
+name: include-enums
+prefixes:
+  include:
+    prefix_prefix: include
+    prefix_reference: https://w3id.org/include/
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+
+enums:
+  enum_data_access:
+    name: enum_data_access
+    definition_uri: include:enum_data_access
+    from_schema: https://w3id.org/include
+    permissible_values:
+      controlled:
+        text: controlled
+        title: Controlled
+      open:
+        text: open
+        title: Open
+      registered:
+        text: registered
+        title: Registered
+  enum_down_syndrome_status:
+    name: enum_down_syndrome_status
+    definition_uri: include:enum_down_syndrome_status
+    from_schema: https://w3id.org/include
+    permissible_values:
+      d21:
+        text: d21
+        title: D21
+      t21:
+        text: t21
+        meaning: MONDO:0008608
+        title: T21
+  enum_ethnicity:
+    name: enum_ethnicity
+    definition_uri: include:enum_ethnicity
+    from_schema: https://w3id.org/include
+    permissible_values:
+      asked_but_unknown:
+        text: asked_but_unknown
+        title: Asked but unknown
+      hispanic_or_latino:
+        text: hispanic_or_latino
+        title: Hispanic or Latino
+      not_hispanic_or_latino:
+        text: not_hispanic_or_latino
+        title: Not Hispanic or Latino
+      prefer_not_to_answer:
+        text: prefer_not_to_answer
+        title: Prefer not to answer
+      unknown:
+        text: unknown
+        title: Unknown
+  enum_family_type:
+    name: enum_family_type
+    definition_uri: include:enum_family_type
+    from_schema: https://w3id.org/include
+    permissible_values:
+      duo:
+        text: duo
+        title: Duo
+      other:
+        text: other
+        title: Other
+      proband_only:
+        text: proband_only
+        title: Proband-only
+      trio:
+        text: trio
+        title: Trio
+      trio_plus:
+        text: trio_plus
+        title: Trio+
+  enum_phenotype_interpretation:
+    name: enum_phenotype_interpretation
+    definition_uri: include:enum_phenotype_interpretation
+    from_schema: https://w3id.org/include
+    permissible_values:
+      not_observed:
+        text: not_observed
+        title: Not Observed
+      observed:
+        text: observed
+        title: Observed
+  enum_program:
+    name: enum_program
+    definition_uri: include:enum_program
+    from_schema: https://w3id.org/include
+    permissible_values:
+      include:
+        text: include
+        title: INCLUDE
+      kf:
+        text: kf
+        title: KF
+  enum_race:
+    name: enum_race
+    definition_uri: include:enum_race
+    title: Unknown
+    from_schema: https://w3id.org/include
+    permissible_values:
+      american_indian_or_alaskan_native:
+        text: american_indian_or_alaskan_native
+        title: American Indian or Alaska Native
+      asian:
+        text: asian
+        title: Asian
+      black_or_african_american:
+        text: black_or_african_american
+        title: Black or African American
+      more_than_one_race:
+        text: more_than_one_race
+        title: More than one race
+      native_hawaiian_or_other_pacific_islander:
+        text: native_hawaiian_or_other_pacific_islander
+        title: Native Hawaiian or Other Pacific Islander
+      other:
+        text: other
+        title: Other
+      white:
+        text: white
+        title: White
+      prefer_not_to_answer:
+        text: prefer_not_to_answer
+        title: Prefer not to answer
+  enum_sample_availability:
+    name: enum_sample_availability
+    definition_uri: include:enum_sample_availability
+    from_schema: https://w3id.org/include
+    permissible_values:
+      available:
+        text: available
+        title: Available
+      unavailable:
+        text: unavailable
+        title: Unavailable
+  enum_sex:
+    name: enum_sex
+    definition_uri: include:enum_sex
+    from_schema: https://w3id.org/include
+    permissible_values:
+      female:
+        text: female
+        title: Female
+      male:
+        text: male
+        title: Male
+      other:
+        text: other
+        title: Other
+      unknown:
+        text: unknown
+        title: Unknown
+  enum_study_code:
+    name: enum_study_code
+    definition_uri: include:enum_study_code
+    from_schema: https://w3id.org/include
+    permissible_values:
+      ds_cog_all:
+        text: ds_cog_all
+        title: DS-COG-ALL
+      ds_pcgc:
+        text: ds_pcgc
+        title: DS-PCGC
+      ds360_chd:
+        text: ds360_chd
+        title: DS360-CHD
+      dsc:
+        text: dsc
+        title: DSC
+      htp:
+        text: htp
+        title: HTP
+      abcds:
+        text: abcds
+        title: ABC-DS
+      ads:
+        text: ads
+        title: ADS
+      ds_brain:
+        text: ds_brain
+        title: DS-Brain
+      ds_cog_aml:
+        text: ds_cog_aml
+        title: DS-COG-AML
+      bri_dsr:
+        text: bri_dsr
+        title: BRI-DSR
+      ds_isp:
+        text: ds_isp
+        title: DS-ISP
+      ds_nexus:
+        text: ds_nexus
+        title: DS-Nexus
+      ds_pals:
+        text: ds_pals
+        title: DS-PALS
+      ds_sleep:
+        text: ds_sleep
+        title: DS-Sleep
+      ecods:
+        text: ecods
+        title: ECODS
+      exceeds:
+        text: exceeds
+        title: ExCEEDS
+      trc_ds:
+        text: trc_ds
+        title: TRC-DS
+      x01_desmith:
+        text: x01_desmith
+        title: X01-DeSmith
+      x01_hakon:
+        text: x01_hakon
+        title: X01-Hakon
+  enum_condition_interpretation:
+    name: enum_condition_interpretation
+    from_schema: https://w3id.org/include
+    permissible_values:
+      observed:
+        text: observed
+        title: Observed
+      not_observed:
+        text: not_observed
+        title: Not Observed
+  enum_condition_data_source:
+    name: enum_condition_data_source
+    from_schema: https://w3id.org/include
+    permissible_values:
+      clinical:
+        text: clinical
+        title: Clinical
+      self_reported:
+        text: self_reported
+        title: Self-reported

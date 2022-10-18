@@ -1,0 +1,17 @@
+id: https://w3id.org/include/core
+name: include-core-schema
+prefixes:
+  include:
+    prefix_prefix: include
+    prefix_reference: https://w3id.org/include/
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+
+classes:
+  Thing:
+    name: Thing
+    definition_uri: schema:Thing
+    description: Highest Level Class
+    title: Thing
+    from_schema: https://w3id.org/include

@@ -1,0 +1,301 @@
+id: https://w3id.org/include/participant
+name: include-participant-schema
+prefixes:
+  include:
+    prefix_prefix: include
+    prefix_reference: https://w3id.org/include/
+  MONDO:
+    prefix_prefix: MONDO
+    prefix_reference: http://purl.obolibrary.org/obo/
+  linkml:
+    prefix_prefix: linkml
+    prefix_reference: https://w3id.org/linkml/
+
+imports:
+  - linkml:types
+  - include_core
+  - include_enums
+  - include_study
+  - include_assay
+
+default_curi_maps:
+  - semweb_context
+classes:
+  Participant:
+    name: Participant
+    definition_uri: include:Participant
+    annotations:
+      required:
+        tag: required
+        value: 'False'
+      requires_component:
+        tag: requires_component
+        value: Study,DataFile
+    description: A Participant in a Study
+    title: Participant
+    from_schema: https://w3id.org/include
+    is_a: Thing
+    slots:
+      - age_at_last_vital_status
+      - down_syndrome_status
+      - ethnicity
+      - external_id
+      - family_id
+      - family_relationship
+      - family_type
+      - father_id
+      - has_datafile
+      - has_study
+      - mother_id
+      - outcomes_vital_status
+      - participant_id
+      - race
+      - sex
+  FamilyGroup:
+    name: FamilyGroup
+    definition_uri: include:FamilyGroup
+    annotations:
+      required:
+        tag: required
+        value: 'False'
+      requires_component:
+        tag: requires_component
+        value: Study,Participant
+    description: A group of Participants in the same Study
+    title: FamilyGroup
+    from_schema: https://w3id.org/include
+    is_a: Thing
+    slots:
+      - has_participant
+  Condition:
+    name: Condition
+    from_schema: https://w3id.org/include
+    slots:
+      - has_participant
+      - age_at_condition_observation
+      - mondo_label
+      - mondo_code
+      - condition_interpretation
+      - condition_data_source
+      - hpo_label
+      - hpo_code
+      - maxo_label
+      - maxo_code
+      - other_label
+      - other_code
+
+
+slots:
+  age_at_condition_observation:
+    definition_uri: include:age_at_condition_observation
+    description: Age in days at which condition was observed, recorded, or diagnosed
+    domain_of:
+      - Condition
+    from_schema: https://w3id.org/include
+    name: age_at_condition_observation
+  age_at_last_vital_status:
+    definition_uri: include:age_at_last_vital_status
+    description: Age in days when participant's vital status was last recorded
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: age_at_last_vital_status
+  condition_data_source:
+    definition_uri: include:condition_data_source
+    description: Whether condition information was obtained from medical records (Clinical)
+      or patient survey (Self-Reported)
+    domain_of:
+      - Condition
+    from_schema: https://w3id.org/include
+    name: condition_data_source
+    range: enum_condition_data_source
+  condition_interpretation:
+    definition_uri: include:condition_interpretation
+    description: Whether condition was observed or not. "Not Observed" indicates participant
+      was specifically examined for that condition, or health record specifically queried
+      for that condition, and found to be negative. Sept. 2022 release will only include
+      positive assertions.
+    domain_of:
+      - Condition
+    from_schema: https://w3id.org/include
+    name: condition_interpretation
+    range: enum_condition_interpretation
+  down_syndrome_status:
+    definition_uri: include:down_syndrome_status
+    description: Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy
+      21, euploid)
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: down_syndrome_status
+    range: enum_down_syndrome_status
+    required: true
+  ethnicity:
+    definition_uri: include:ethnicity
+    description: Ethnicity of participant
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: ethnicity
+    range: enum_ethnicity
+    required: true
+  external_id:
+    definition_uri: include:external_id
+    description: Unique identifier for the participant, assigned by data contributor
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: external_id
+    required: true
+  family_id:
+    definition_uri: include:family_id
+    description: Unique identifer for family to which Participant belongs
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: family_id
+  family_relationship:
+    definition_uri: include:family_relationship
+    description: Relationship of Participant to other family members
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: family_relationship
+    range: Participant
+  family_type:
+    definition_uri: include:family_type
+    description: Structure of family members participating in the study (proband-only
+      = no family members participating; duo = proband + parent; trio = proband + 2
+      parents; trio+ = proband + 2 parents + other relatives)
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: family_type
+    range: enum_family_type
+    required: true
+  father_id:
+    definition_uri: include:father_id
+    description: Participant ID for Participant's father
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: father_id
+  has_participant:
+    definition_uri: include:has_participant
+    description: Link to a Participant
+    domain_of:
+      - Biospecimen
+      - DataFile
+      - Condition
+    from_schema: https://w3id.org/include
+    name: has_participant
+    range: Participant
+  has_study:
+    definition_uri: include:has_study
+    description: Link to a Study
+    domain_of:
+      - Biospecimen
+      - DataFile
+      - Participant
+    from_schema: https://w3id.org/include
+    name: has_study
+    range: Study
+  hpo_code:
+    definition_uri: include:hpo_code
+    description: Code for condition in the Human Phenotype Ontology (HPO)
+    domain_of:
+      - Condition
+    from_schema: https://w3id.org/include
+    name: hpo_code
+  hpo_label:
+    definition_uri: include:hpo_label
+    description: Label for condition in the Human Phenotype Ontology (HPO)
+    domain_of:
+      - Condition
+    from_schema: https://w3id.org/include
+    name: hpo_label
+  maxo_code:
+    definition_uri: include:maxo_code
+    description: Code for condition in the Medical Action Ontology (MAXO)
+    domain_of:
+      - Condition
+    from_schema: https://w3id.org/include
+    name: maxo_code
+  maxo_label:
+    definition_uri: include:maxo_label
+    description: Label for condition in the Medical Action Ontology (MAXO)
+    domain_of:
+      - Condition
+    from_schema: https://w3id.org/include
+    name: maxo_label
+  mondo_code:
+    definition_uri: include:mondo_code
+    description: Code for condition in the Mondo Disease Ontology (MONDO)
+    domain_of:
+      - Condition
+    from_schema: https://w3id.org/include
+    name: mondo_code
+  mondo_label:
+    definition_uri: include:mondo_label
+    description: Label for condition in the Mondo Disease Ontology (MONDO)
+    domain_of:
+      - Condition
+    from_schema: https://w3id.org/include
+    name: mondo_label
+  mother_id:
+    definition_uri: include:mother_id
+    description: Participant ID for Participant's mother
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: mother_id
+  other_code:
+    definition_uri: include:other_code
+    description: Code for condition in another ontology (if no match in HPO, MONDO,
+      or MAXO)
+    domain_of:
+      - Condition
+    from_schema: https://w3id.org/include
+    name: other_code
+  other_label:
+    definition_uri: include:other_label
+    description: Label for condition in another ontology (if no match in HPO, MONDO,
+      or MAXO)
+    domain_of:
+      - Condition
+    from_schema: https://w3id.org/include
+    name: other_label
+  outcomes_vital_status:
+    definition_uri: include:outcomes_vital_status
+    description: Whether participant is alive or dead
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: outcomes_vital_status
+  participant_id:
+    definition_uri: include:participant_id
+    description: Unique identifier for the participant, assigned by DCC
+    domain_of:
+      - DataFile
+      - Participant
+    from_schema: https://w3id.org/include
+    name: participant_id
+    required: true
+  race:
+    definition_uri: include:race
+    description: Race of participant
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: race
+    range: enum_race
+    required: true
+  sex:
+    definition_uri: include:sex
+    description: Sex of participant
+    domain_of:
+      - Participant
+    from_schema: https://w3id.org/include
+    name: sex
+    range: enum_sex
+    required: true
