@@ -1,0 +1,11 @@
+BASE <https://w3id.org/include/core/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+
+<Thing> CLOSED {
+    (  $<Thing_tes> rdf:type . * ;
+       rdf:type [ <Thing> ] ?
+    )
+}
+
+

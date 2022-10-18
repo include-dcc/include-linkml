@@ -1,0 +1,11 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/include/core/:Thing> a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "Highest Level Class" ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:name "Thing" ;
+    sh:targetClass <https://w3id.org/include/core/:Thing> .
+

@@ -1,0 +1,40 @@
+{
+  "name": "include-core-schema",
+  "id": "https://w3id.org/include/core",
+  "prefixes": [
+    {
+      "prefix_prefix": "include",
+      "prefix_reference": "https://w3id.org/include/"
+    },
+    {
+      "prefix_prefix": "linkml",
+      "prefix_reference": "https://w3id.org/linkml/"
+    }
+  ],
+  "default_prefix": "https://w3id.org/include/core/",
+  "default_range": "string",
+  "classes": [
+    {
+      "name": "Thing",
+      "definition_uri": "https://w3id.org/include/core/Thing",
+      "description": "Highest Level Class",
+      "title": "Thing",
+      "from_schema": "https://w3id.org/include/core",
+      "slot_usage": {},
+      "class_uri": "https://w3id.org/include/core/Thing",
+      "@type": "ClassDefinition"
+    }
+  ],
+  "metamodel_version": "1.7.0",
+  "source_file": "include_core.yaml",
+  "source_file_date": "2022-10-18T09:07:41",
+  "source_file_size": 402,
+  "generation_date": "2022-10-18T10:16:42",
+  "@type": "SchemaDefinition",
+  "@context": [
+    "project/jsonld/include_core.context.jsonld",
+    {
+      "@base": "https://w3id.org/include/core/"
+    }
+  ]
+}
