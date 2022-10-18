@@ -20,3 +20,6 @@ mkdocs-mermaid2-plugin = "^0.6.0"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.extras]
+docs = ["linkml", "mkdocs-material"]
