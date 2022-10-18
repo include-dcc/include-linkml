@@ -21,7 +21,7 @@ from pprint import pprint
 #  'sms:validationRules': []}
 
 # In[3]: Load the linkml yaml spec and the por
-with open("src/linkml/include_linkml.yaml", 'r') as lmly:
+with open("src/linkml/include_linkml.yaml.bak", 'r') as lmly:
     lml_yaml = yaml.load(lmly, Loader=FullLoader)
 
 

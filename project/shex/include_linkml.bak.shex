@@ -1,0 +1,173 @@
+BASE <https://w3id.org/include/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:dateTime
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:DateOrDatetime linkml:DateOrDatetime
+
+linkml:Uriorcurie IRI
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+<Aliquot> CLOSED {
+    (  $<Aliquot_tes> (  &<Thing_tes> ;
+          rdf:type [ <Thing> ] ?
+       ) ;
+       rdf:type [ <Aliquot> ] ?
+    )
+}
+
+<Assay> CLOSED {
+    (  $<Assay_tes> (  &<Thing_tes> ;
+          rdf:type [ <Thing> ] ? ;
+          <uses_biospecimen> @<Biospecimen> ? ;
+          <has_output> @<DataFile> ?
+       ) ;
+       rdf:type [ <Assay> ] ?
+    )
+}
+
+<Biospecimen> CLOSED {
+    (  $<Biospecimen_tes> (  &<Thing_tes> ;
+          rdf:type [ <Thing> ] ? ;
+          <age_at_biospecimen_collection> @linkml:String ? ;
+          <biospecimen_storage> @linkml:String ? ;
+          <collection_id> @linkml:String ? ;
+          <collection_sample_type> @linkml:String ? ;
+          <container_id> @linkml:String ? ;
+          <has_datafile> @<DataFile> ? ;
+          <has_participant> @<Participant> ? ;
+          <has_study> @<Study> ? ;
+          <laboratory_procedure> @linkml:String ? ;
+          <parent_sample_id> @linkml:String ? ;
+          <parent_sample_type> @linkml:String ? ;
+          <sample_availability> @<EnumSampleAvailability> ? ;
+          <sample_id> @linkml:String ;
+          <sample_type> @linkml:String ;
+          <volume> @linkml:String ? ;
+          <volume_unit> @linkml:String ? ;
+          <has_aliquot> @<Aliquot> ?
+       ) ;
+       rdf:type [ <Biospecimen> ] ?
+    )
+}
+
+<Condition> CLOSED {
+    (  $<Condition_tes> (  <has_participant> @<Participant> ? ;
+          <age_at_condition_observation> @linkml:String ? ;
+          <mondo_label> @linkml:String ? ;
+          <mondo_code> @linkml:String ? ;
+          <condition_interpretation> @<EnumConditionInterpretation> ? ;
+          <condition_data_source> @<EnumConditionDataSource> ? ;
+          <hpo_label> @linkml:String ? ;
+          <hpo_code> @linkml:String ? ;
+          <maxo_label> @linkml:String ? ;
+          <maxo_code> @linkml:String ? ;
+          <other_label> @linkml:String ? ;
+          <other_code> @linkml:String ?
+       ) ;
+       rdf:type [ <Condition> ] ?
+    )
+}
+
+<DataFile> CLOSED {
+    (  $<DataFile_tes> (  &<Thing_tes> ;
+          rdf:type [ <Thing> ] ? ;
+          <access_url> @linkml:String ? ;
+          <collection_id> @linkml:String ? ;
+          <data_access> @<EnumDataAccess> ? ;
+          <data_category> @linkml:String ;
+          <data_type> @linkml:String ? ;
+          <experimental_strategy> @linkml:String ? ;
+          <file_id> @linkml:String ? ;
+          <file_name> @linkml:String ;
+          <format> @linkml:String ;
+          <has_biospecimen> @<Biospecimen> ? ;
+          <has_participant> @<Participant> ? ;
+          <has_study> @<Study> ? ;
+          <participant_id> @linkml:String ;
+          <size> @linkml:String ? ;
+          <original_file_name> @linkml:String
+       ) ;
+       rdf:type [ <DataFile> ] ?
+    )
+}
+
+<FamilyGroup> CLOSED {
+    (  $<FamilyGroup_tes> (  &<Thing_tes> ;
+          rdf:type [ <Thing> ] ? ;
+          <has_participant> @<Participant> ?
+       ) ;
+       rdf:type [ <FamilyGroup> ] ?
+    )
+}
+
+<Participant> CLOSED {
+    (  $<Participant_tes> (  &<Thing_tes> ;
+          rdf:type [ <Thing> ] ? ;
+          <age_at_last_vital_status> @linkml:String ? ;
+          <down_syndrome_status> @<EnumDownSyndromeStatus> ;
+          <ethnicity> @<EnumEthnicity> ;
+          <external_id> @linkml:String ;
+          <family_id> @linkml:String ? ;
+          <family_relationship> @<Participant> ? ;
+          <family_type> @<EnumFamilyType> ;
+          <father_id> @linkml:String ? ;
+          <has_datafile> @<DataFile> ? ;
+          <has_study> @<Study> ? ;
+          <mother_id> @linkml:String ? ;
+          <outcomes_vital_status> @linkml:String ? ;
+          <participant_id> @linkml:String ;
+          <race> @<EnumRace> ;
+          <sex> @<EnumSex>
+       ) ;
+       rdf:type [ <Participant> ] ?
+    )
+}
+
+<Study> CLOSED {
+    (  $<Study_tes> (  &<Thing_tes> ;
+          rdf:type [ <Thing> ] ? ;
+          <dbgap> @linkml:String ? ;
+          <program> @<EnumProgram> ;
+          <study_code> @<EnumStudyCode> ;
+          <study_name> @linkml:String
+       ) ;
+       rdf:type [ <Study> ] ?
+    )
+}
+
+<Thing>  (
+    CLOSED {
+       (  $<Thing_tes> rdf:type . * ;
+          rdf:type [ <Thing> ] ?
+       )
+    } OR @<Aliquot> OR @<Assay> OR @<Biospecimen> OR @<DataFile> OR @<FamilyGroup> OR @<Participant> OR @<Study>
+)
+
+
