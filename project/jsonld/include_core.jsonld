@@ -27,9 +27,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "include_core.yaml",
-  "source_file_date": "2022-10-18T09:07:41",
+  "source_file_date": "2022-10-18T10:47:47",
   "source_file_size": 402,
-  "generation_date": "2022-10-18T10:16:42",
+  "generation_date": "2022-10-18T10:51:26",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/include_core.context.jsonld",

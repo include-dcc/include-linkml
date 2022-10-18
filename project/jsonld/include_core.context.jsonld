@@ -1,5 +1,5 @@
 {
-   "_comments": "Auto generated from include_core.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-10-18T10:16:42\n    Schema: include-core-schema\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/include/core\n    description: \n    license: \n    ",
+   "_comments": "Auto generated from include_core.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-10-18T10:51:26\n    Schema: include-core-schema\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/include/core\n    description: \n    license: \n    ",
    "@context": {
       "include": "https://w3id.org/include/",
       "include-core-schema": "https://w3id.org/include/core/",
