@@ -196,11 +196,6 @@ slots:
     description: Unique identifier for the participant, assigned by DCC
     title: Participant Id
     required: true
-  phenotype_interpretation:
-    definition_uri: include:phenotype_interpretation
-    description: Interpretation of a Phenotype
-    range: enum_phenotype_interpretation
-    title: Phenotype Interpretation
   race:
     definition_uri: include:race
     description: Race of participant
@@ -326,13 +321,3 @@ enums:
       unknown:
         text: unknown
         title: Unknown
-  enum_phenotype_interpretation:
-    title: enum_phenotype_interpretation
-    definition_uri: include:enum_phenotype_interpretation
-    permissible_values:
-      not_observed:
-        text: not_observed
-        title: Not Observed
-      observed:
-        text: observed
-        title: Observed

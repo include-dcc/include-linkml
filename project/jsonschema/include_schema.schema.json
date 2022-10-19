@@ -298,15 +298,6 @@
          "title": "EnumFamilyType",
          "type": "string"
       },
-      "EnumPhenotypeInterpretation": {
-         "description": "",
-         "enum": [
-            "not_observed",
-            "observed"
-         ],
-         "title": "EnumPhenotypeInterpretation",
-         "type": "string"
-      },
       "EnumProgram": {
          "description": "",
          "enum": [

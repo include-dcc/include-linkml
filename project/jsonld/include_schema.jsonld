@@ -391,22 +391,6 @@
       ]
     },
     {
-      "name": "enum_phenotype_interpretation",
-      "definition_uri": "https://w3id.org/include/participant/EnumPhenotypeInterpretation",
-      "title": "enum_phenotype_interpretation",
-      "from_schema": "https://w3id.org/include/participant",
-      "permissible_values": [
-        {
-          "text": "not_observed",
-          "title": "Not Observed"
-        },
-        {
-          "text": "observed",
-          "title": "Observed"
-        }
-      ]
-    },
-    {
       "name": "enum_program",
       "definition_uri": "https://w3id.org/include/study/EnumProgram",
       "from_schema": "https://w3id.org/include/study",
@@ -1262,16 +1246,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "phenotype_interpretation",
-      "definition_uri": "https://w3id.org/include/participant/phenotype_interpretation",
-      "description": "Interpretation of a Phenotype",
-      "title": "Phenotype Interpretation",
-      "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/phenotype_interpretation",
-      "range": "enum_phenotype_interpretation",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "race",
       "definition_uri": "https://w3id.org/include/participant/race",
       "description": "Race of participant",
@@ -1621,7 +1595,7 @@
   "source_file": "include_schema.yaml",
   "source_file_date": "2022-10-19T08:41:53",
   "source_file_size": 346,
-  "generation_date": "2022-10-19T09:49:09",
+  "generation_date": "2022-10-19T11:17:24",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/include_schema.context.jsonld",

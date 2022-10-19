@@ -1,5 +1,5 @@
 # Auto generated from include_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-10-19T09:49:20
+# Generation date: 2022-10-19T11:17:35
 # Schema: include-schema
 #
 # id: include-schema
@@ -578,15 +578,6 @@ class EnumSex(EnumDefinitionImpl):
         name="EnumSex",
     )
 
-class EnumPhenotypeInterpretation(EnumDefinitionImpl):
-
-    not_observed = PermissibleValue(text="not_observed")
-    observed = PermissibleValue(text="observed")
-
-    _defn = EnumDefinition(
-        name="EnumPhenotypeInterpretation",
-    )
-
 class EnumProgram(EnumDefinitionImpl):
 
     include = PermissibleValue(text="include")
@@ -781,9 +772,6 @@ slots.outcomes_vital_status = Slot(uri=INCLUDE['participant/outcomes_vital_statu
 
 slots.participant_id = Slot(uri=INCLUDE['participant/participant_id'], name="participant_id", curie=INCLUDE.curie('participant/participant_id'),
                    model_uri=INCLUDE.participant_id, domain=None, range=str)
-
-slots.phenotype_interpretation = Slot(uri=INCLUDE['participant/phenotype_interpretation'], name="phenotype_interpretation", curie=INCLUDE.curie('participant/phenotype_interpretation'),
-                   model_uri=INCLUDE.phenotype_interpretation, domain=None, range=Optional[Union[str, "EnumPhenotypeInterpretation"]])
 
 slots.race = Slot(uri=INCLUDE['participant/race'], name="race", curie=INCLUDE.curie('participant/race'),
                    model_uri=INCLUDE.race, domain=None, range=Union[str, "EnumRace"])
