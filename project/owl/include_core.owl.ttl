@@ -10,7 +10,7 @@
 include:core a owl:Ontology ;
     rdfs:label "include-core-schema" ;
     IAO:0000700 <https://w3id.org/include/core/Thing> ;
-    linkml:generation_date "2022-10-18T10:51:28" ;
+    linkml:generation_date "2022-10-19T08:06:50" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "include_core.yaml" ;
     linkml:source_file_date "2022-10-18T10:47:47" ;

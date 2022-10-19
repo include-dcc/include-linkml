@@ -1,5 +1,5 @@
 # Auto generated from include_core.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-10-18T10:51:29
+# Generation date: 2022-10-19T08:06:51
 # Schema: include-core-schema
 #
 # id: https://w3id.org/include/core
