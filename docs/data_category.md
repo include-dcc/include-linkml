@@ -48,11 +48,11 @@ name: data_category
 definition_uri: include:data_category
 description: General category of data in file (e.g. Clinical, Genomics, Proteomics,
   Metabolomics, Immune maps, Transcriptomics, etc.)
+title: Data Category
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: data_category
 domain_of:
-- DataFile
 - DataFile
 required: true
 

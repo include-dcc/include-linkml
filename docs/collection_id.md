@@ -47,12 +47,11 @@ definition_uri: include:collection_id
 description: Identifier for the eldest sample in a lineage of processed, pooled, or
   aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no
   processing was performed).
+title: Collection Id
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: collection_id
 domain_of:
-- Biospecimen
-- DataFile
 - Biospecimen
 - DataFile
 

@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/assay/:has_aliquot](https://w3id.org/include/assa
 name: has_aliquot
 definition_uri: include:has_aliquot
 description: An aliquot of a sample
+title: Has Aliquot
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: has_aliquot
 domain_of:
-- Biospecimen
 - Biospecimen
 range: Aliquot
 

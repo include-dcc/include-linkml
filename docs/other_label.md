@@ -46,11 +46,11 @@ name: other_label
 definition_uri: include:other_label
 description: Label for condition in another ontology (if no match in HPO, MONDO, or
   MAXO)
+title: Other Label
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: other_label
 domain_of:
-- Condition
 - Condition
 
 ```

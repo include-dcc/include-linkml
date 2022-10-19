@@ -46,11 +46,11 @@ name: condition_data_source
 definition_uri: include:condition_data_source
 description: Whether condition information was obtained from medical records (Clinical)
   or patient survey (Self-Reported)
+title: Condition Data Source
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: condition_data_source
 domain_of:
-- Condition
 - Condition
 range: enum_condition_data_source
 

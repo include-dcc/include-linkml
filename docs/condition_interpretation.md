@@ -48,11 +48,11 @@ description: Whether condition was observed or not. "Not Observed" indicates par
   was specifically examined for that condition, or health record specifically queried
   for that condition, and found to be negative. Sept. 2022 release will only include
   positive assertions.
+title: Condition Interpretation
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: condition_interpretation
 domain_of:
-- Condition
 - Condition
 range: enum_condition_interpretation
 

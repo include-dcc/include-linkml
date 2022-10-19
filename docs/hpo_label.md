@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/participant/:hpo_label](https://w3id.org/include/
 name: hpo_label
 definition_uri: include:hpo_label
 description: Label for condition in the Human Phenotype Ontology (HPO)
+title: Hpo Label
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: hpo_label
 domain_of:
-- Condition
 - Condition
 
 ```

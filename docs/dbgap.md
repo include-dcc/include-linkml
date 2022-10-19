@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/study/:dbgap](https://w3id.org/include/study/:dbg
 name: dbgap
 definition_uri: include:dbgap
 description: dbGaP study accession code
+title: Dbgap
 from_schema: https://w3id.org/include/study
 rank: 1000
 alias: dbgap
 domain_of:
-- Study
 - Study
 
 ```

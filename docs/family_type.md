@@ -49,11 +49,11 @@ definition_uri: include:family_type
 description: Structure of family members participating in the study (proband-only
   = no family members participating; duo = proband + parent; trio = proband + 2 parents;
   trio+ = proband + 2 parents + other relatives)
+title: Family Type
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: family_type
 domain_of:
-- Participant
 - Participant
 range: enum_family_type
 required: true

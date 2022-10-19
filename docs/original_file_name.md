@@ -47,11 +47,11 @@ URI: [https://w3id.org/include/assay/:original_file_name](https://w3id.org/inclu
 name: original_file_name
 definition_uri: include:original_file_name
 description: Name of file, assigned by data contributor
+title: Original File Name
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: original_file_name
 domain_of:
-- DataFile
 - DataFile
 required: true
 

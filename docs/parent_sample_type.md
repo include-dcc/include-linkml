@@ -46,11 +46,11 @@ name: parent_sample_type
 definition_uri: include:parent_sample_type
 description: Type of biological material comprising the parent sample (e.g. Plasma,
   Serum, White blood cells, etc.)
+title: Parent Sample Type
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: parent_sample_type
 domain_of:
-- Biospecimen
 - Biospecimen
 
 ```

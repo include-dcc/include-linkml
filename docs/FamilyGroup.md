@@ -126,14 +126,12 @@ attributes:
     name: has_participant
     definition_uri: include:has_participant
     description: Link to a Participant
+    title: Has Participant
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: has_participant
     owner: FamilyGroup
     domain_of:
-    - Biospecimen
-    - DataFile
-    - Condition
     - FamilyGroup
     - Condition
     - Biospecimen

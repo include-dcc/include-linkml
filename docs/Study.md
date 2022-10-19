@@ -135,23 +135,23 @@ attributes:
     name: dbgap
     definition_uri: include:dbgap
     description: dbGaP study accession code
+    title: Dbgap
     from_schema: https://w3id.org/include/study
     rank: 1000
     alias: dbgap
     owner: Study
     domain_of:
     - Study
-    - Study
   program:
     name: program
     definition_uri: include:program
     description: Funding source for the study
+    title: Program
     from_schema: https://w3id.org/include/study
     rank: 1000
     alias: program
     owner: Study
     domain_of:
-    - Study
     - Study
     range: enum_program
     required: true
@@ -159,12 +159,12 @@ attributes:
     name: study_code
     definition_uri: include:study_code
     description: Unique identifer for the study, assigned by DCC
+    title: Study Code
     from_schema: https://w3id.org/include/study
     rank: 1000
     alias: study_code
     owner: Study
     domain_of:
-    - Study
     - Study
     range: enum_study_code
     required: true
@@ -172,12 +172,12 @@ attributes:
     name: study_name
     definition_uri: include:study_name
     description: Name of the study, chosen by data contributor
+    title: Study Name
     from_schema: https://w3id.org/include/study
     rank: 1000
     alias: study_name
     owner: Study
     domain_of:
-    - Study
     - Study
     required: true
 

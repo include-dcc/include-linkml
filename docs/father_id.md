@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/participant/:father_id](https://w3id.org/include/
 name: father_id
 definition_uri: include:father_id
 description: Participant ID for Participant's father
+title: Father Id
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: father_id
 domain_of:
-- Participant
 - Participant
 
 ```

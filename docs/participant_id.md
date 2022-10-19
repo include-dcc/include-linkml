@@ -47,12 +47,11 @@ URI: [https://w3id.org/include/participant/:participant_id](https://w3id.org/inc
 name: participant_id
 definition_uri: include:participant_id
 description: Unique identifier for the participant, assigned by DCC
+title: Participant Id
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: participant_id
 domain_of:
-- DataFile
-- Participant
 - Participant
 - DataFile
 required: true

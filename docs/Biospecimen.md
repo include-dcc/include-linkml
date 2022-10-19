@@ -180,24 +180,24 @@ attributes:
     name: age_at_biospecimen_collection
     definition_uri: include:age_at_biospecimen_collection
     description: Age in days of participant at time of biospecimen collection
+    title: Age At Biospecimen Collection
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: age_at_biospecimen_collection
     owner: Biospecimen
     domain_of:
     - Biospecimen
-    - Biospecimen
   biospecimen_storage:
     name: biospecimen_storage
     definition_uri: include:biospecimen_storage
     description: Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen,
       etc.)
+    title: Biospecimen Storage
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: biospecimen_storage
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
   collection_id:
     name: collection_id
@@ -205,6 +205,7 @@ attributes:
     description: Identifier for the eldest sample in a lineage of processed, pooled,
       or aliquoted samples. This may be the same as Parent Sample ID or Sample ID
       (if no processing was performed).
+    title: Collection Id
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: collection_id
@@ -212,19 +213,17 @@ attributes:
     domain_of:
     - Biospecimen
     - DataFile
-    - Biospecimen
-    - DataFile
   collection_sample_type:
     name: collection_sample_type
     definition_uri: include:collection_sample_type
     description: Type of biological material comprising the collected sample (e.g.
       Whole blood, Bone marrow, Saliva, etc.)
+    title: Collection Sample Type
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: collection_sample_type
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
   container_id:
     name: container_id
@@ -232,24 +231,23 @@ attributes:
     description: Identifier for specific container/aliquot of sample, if applicable.
       For example, distinct aliquots of a sample will have the same Sample ID but
       different Container IDs.
+    title: Container Id
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: container_id
     owner: Biospecimen
     domain_of:
     - Biospecimen
-    - Biospecimen
   has_datafile:
     name: has_datafile
     definition_uri: include:has_datafile
     description: Link to a DataFile
+    title: Has Datafile
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: has_datafile
     owner: Biospecimen
     domain_of:
-    - Biospecimen
-    - Participant
     - Participant
     - Biospecimen
     range: DataFile
@@ -257,14 +255,12 @@ attributes:
     name: has_participant
     definition_uri: include:has_participant
     description: Link to a Participant
+    title: Has Participant
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: has_participant
     owner: Biospecimen
     domain_of:
-    - Biospecimen
-    - DataFile
-    - Condition
     - FamilyGroup
     - Condition
     - Biospecimen
@@ -274,14 +270,12 @@ attributes:
     name: has_study
     definition_uri: include:has_study
     description: Link to a Study
+    title: Has Study
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: has_study
     owner: Biospecimen
     domain_of:
-    - Biospecimen
-    - DataFile
-    - Participant
     - Participant
     - Biospecimen
     - DataFile
@@ -291,48 +285,48 @@ attributes:
     definition_uri: include:laboratory_procedure
     description: Procedure by which Sample was derived from Parent Sample (e.g. RBC
       lysis, Centrifugation, Ficoll, etc.)
+    title: Laboratory Procedure
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: laboratory_procedure
     owner: Biospecimen
     domain_of:
     - Biospecimen
-    - Biospecimen
   parent_sample_id:
     name: parent_sample_id
     definition_uri: include:parent_sample_id
     description: Identifier for the direct parent from which Sample was derived, processed,
       pooled, etc. (if applicable)
+    title: Parent Sample Id
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: parent_sample_id
     owner: Biospecimen
     domain_of:
     - Biospecimen
-    - Biospecimen
   parent_sample_type:
     name: parent_sample_type
     definition_uri: include:parent_sample_type
     description: Type of biological material comprising the parent sample (e.g. Plasma,
       Serum, White blood cells, etc.)
+    title: Parent Sample Type
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: parent_sample_type
     owner: Biospecimen
     domain_of:
     - Biospecimen
-    - Biospecimen
   sample_availability:
     name: sample_availability
     definition_uri: include:sample_availability
     description: Whether or not the sample is potentially available for sharing through
       the Virtual Biorepository
+    title: Sample Availability
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: sample_availability
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
     range: enum_sample_availability
   sample_id:
@@ -340,12 +334,12 @@ attributes:
     definition_uri: include:sample_id
     description: Identifier for sample. A sample is a unique biological material;
       two samples with two different IDs are biologically distinct.
+    title: Sample Id
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: sample_id
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
     required: true
   sample_type:
@@ -353,46 +347,46 @@ attributes:
     definition_uri: include:sample_type
     description: Type of biological material comprising the sample (e.g. Plasma, Serum,
       White blood cells, DNA, RNA, etc.)
+    title: Sample Type
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: sample_type
     owner: Biospecimen
     domain_of:
     - Biospecimen
-    - Biospecimen
     required: true
   volume:
     name: volume
     definition_uri: include:volume
     description: Amount of sample in container
+    title: Volume
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: volume
     owner: Biospecimen
     domain_of:
     - Biospecimen
-    - Biospecimen
   volume_unit:
     name: volume_unit
     definition_uri: include:volume_unit
     description: Unit of sample volume
+    title: Volume Unit
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: volume_unit
     owner: Biospecimen
     domain_of:
     - Biospecimen
-    - Biospecimen
   has_aliquot:
     name: has_aliquot
     definition_uri: include:has_aliquot
     description: An aliquot of a sample
+    title: Has Aliquot
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: has_aliquot
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
     range: Aliquot
 

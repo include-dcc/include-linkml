@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/participant/:outcomes_vital_status](https://w3id.
 name: outcomes_vital_status
 definition_uri: include:outcomes_vital_status
 description: Whether participant is alive or dead
+title: Outcomes Vital Status
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: outcomes_vital_status
 domain_of:
-- Participant
 - Participant
 
 ```

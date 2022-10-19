@@ -48,11 +48,11 @@ name: format
 definition_uri: include:format
 description: Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom,
   etc.)
+title: Format
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: format
 domain_of:
-- DataFile
 - DataFile
 required: true
 

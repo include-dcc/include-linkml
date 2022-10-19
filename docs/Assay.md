@@ -129,24 +129,24 @@ attributes:
     name: uses_biospecimen
     definition_uri: include:uses_biospecimen
     description: The Biospecimen an Assay is performed on
+    title: Uses Biospecimen
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: uses_biospecimen
     owner: Assay
     domain_of:
     - Assay
-    - Assay
     range: Biospecimen
   has_output:
     name: has_output
     definition_uri: include:has_output
     description: The DataFile Output of an Assay
+    title: Has Output
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: has_output
     owner: Assay
     domain_of:
-    - Assay
     - Assay
     range: DataFile
 

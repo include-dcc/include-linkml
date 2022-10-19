@@ -121,14 +121,12 @@ attributes:
     name: has_participant
     definition_uri: include:has_participant
     description: Link to a Participant
+    title: Has Participant
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: has_participant
     owner: Condition
     domain_of:
-    - Biospecimen
-    - DataFile
-    - Condition
     - FamilyGroup
     - Condition
     - Biospecimen
@@ -138,34 +136,34 @@ attributes:
     name: age_at_condition_observation
     definition_uri: include:age_at_condition_observation
     description: Age in days at which condition was observed, recorded, or diagnosed
+    title: Age At Condition Observation
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: age_at_condition_observation
     owner: Condition
     domain_of:
     - Condition
-    - Condition
   mondo_label:
     name: mondo_label
     definition_uri: include:mondo_label
     description: Label for condition in the Mondo Disease Ontology (MONDO)
+    title: Mondo Label
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: mondo_label
     owner: Condition
     domain_of:
     - Condition
-    - Condition
   mondo_code:
     name: mondo_code
     definition_uri: include:mondo_code
     description: Code for condition in the Mondo Disease Ontology (MONDO)
+    title: Mondo Code
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: mondo_code
     owner: Condition
     domain_of:
-    - Condition
     - Condition
   condition_interpretation:
     name: condition_interpretation
@@ -174,12 +172,12 @@ attributes:
       was specifically examined for that condition, or health record specifically
       queried for that condition, and found to be negative. Sept. 2022 release will
       only include positive assertions.
+    title: Condition Interpretation
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: condition_interpretation
     owner: Condition
     domain_of:
-    - Condition
     - Condition
     range: enum_condition_interpretation
   condition_data_source:
@@ -187,81 +185,81 @@ attributes:
     definition_uri: include:condition_data_source
     description: Whether condition information was obtained from medical records (Clinical)
       or patient survey (Self-Reported)
+    title: Condition Data Source
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: condition_data_source
     owner: Condition
     domain_of:
     - Condition
-    - Condition
     range: enum_condition_data_source
   hpo_label:
     name: hpo_label
     definition_uri: include:hpo_label
     description: Label for condition in the Human Phenotype Ontology (HPO)
+    title: Hpo Label
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: hpo_label
     owner: Condition
     domain_of:
     - Condition
-    - Condition
   hpo_code:
     name: hpo_code
     definition_uri: include:hpo_code
     description: Code for condition in the Human Phenotype Ontology (HPO)
+    title: Hpo Code
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: hpo_code
     owner: Condition
     domain_of:
     - Condition
-    - Condition
   maxo_label:
     name: maxo_label
     definition_uri: include:maxo_label
     description: Label for condition in the Medical Action Ontology (MAXO)
+    title: Maxo Label
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: maxo_label
     owner: Condition
     domain_of:
     - Condition
-    - Condition
   maxo_code:
     name: maxo_code
     definition_uri: include:maxo_code
     description: Code for condition in the Medical Action Ontology (MAXO)
+    title: Maxo Code
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: maxo_code
     owner: Condition
     domain_of:
     - Condition
-    - Condition
   other_label:
     name: other_label
     definition_uri: include:other_label
     description: Label for condition in another ontology (if no match in HPO, MONDO,
       or MAXO)
+    title: Other Label
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: other_label
     owner: Condition
     domain_of:
     - Condition
-    - Condition
   other_code:
     name: other_code
     definition_uri: include:other_code
     description: Code for condition in another ontology (if no match in HPO, MONDO,
       or MAXO)
+    title: Other Code
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: other_code
     owner: Condition
     domain_of:
-    - Condition
     - Condition
 
 ```

@@ -1,5 +1,12 @@
 id: https://w3id.org/include/assay
+imports:
+- linkml:types
+- include_core
+- include_participant
+- include_study
 name: include-assay-schema
+default_curi_maps:
+- semweb_context
 prefixes:
   include:
     prefix_prefix: include
@@ -7,20 +14,8 @@ prefixes:
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
-
-imports:
-  - linkml:types
-  - include_core
-  - include_participant
-  - include_study
-
-default_curi_maps:
-  - semweb_context
-
 classes:
   Aliquot:
-    name: Aliquot
-    definition_uri: include:Aliquot
     annotations:
       required:
         tag: required
@@ -28,13 +23,12 @@ classes:
       requires_component:
         tag: requires_component
         value: Biospecimen
+    definition_uri: include:Aliquot
     description: An aliquot of a sample
-    title: Aliquot
-    from_schema: https://w3id.org/include
     is_a: Thing
+    name: Aliquot
+    title: Aliquot
   Assay:
-    name: Assay
-    definition_uri: include:Assay
     annotations:
       required:
         tag: required
@@ -42,16 +36,15 @@ classes:
       requires_component:
         tag: requires_component
         value: Biospecimen,DataFile
+    definition_uri: include:Assay
     description: An assay
-    title: Assay
-    from_schema: https://w3id.org/include
     is_a: Thing
+    name: Assay
     slots:
-      - uses_biospecimen
-      - has_output
+    - uses_biospecimen
+    - has_output
+    title: Assay
   Biospecimen:
-    name: Biospecimen
-    definition_uri: include:Biospecimen
     annotations:
       required:
         tag: required
@@ -59,31 +52,30 @@ classes:
       requires_component:
         tag: requires_component
         value: Study,Participant,DataFile
+    definition_uri: include:Biospecimen
     description: A Biospecimen Collected from A Participant
-    title: Biospecimen
-    from_schema: https://w3id.org/include
     is_a: Thing
+    name: Biospecimen
     slots:
-      - age_at_biospecimen_collection
-      - biospecimen_storage
-      - collection_id
-      - collection_sample_type
-      - container_id
-      - has_datafile
-      - has_participant
-      - has_study
-      - laboratory_procedure
-      - parent_sample_id
-      - parent_sample_type
-      - sample_availability
-      - sample_id
-      - sample_type
-      - volume
-      - volume_unit
-      - has_aliquot
+    - age_at_biospecimen_collection
+    - biospecimen_storage
+    - collection_id
+    - collection_sample_type
+    - container_id
+    - has_datafile
+    - has_participant
+    - has_study
+    - laboratory_procedure
+    - parent_sample_id
+    - parent_sample_type
+    - sample_availability
+    - sample_id
+    - sample_type
+    - volume
+    - volume_unit
+    - has_aliquot
+    title: Biospecimen
   DataFile:
-    name: DataFile
-    definition_uri: include:DataFile
     annotations:
       required:
         tag: required
@@ -91,93 +83,68 @@ classes:
       requires_component:
         tag: requires_component
         value: Study,Participant,Biospecimen
+    definition_uri: include:DataFile
     description: A DataFile Associated with a Participant or Study or Biospecimen
-    title: DataFile
-    from_schema: https://w3id.org/include
     is_a: Thing
+    name: DataFile
     slots:
-      - access_url
-      - collection_id
-      - data_access
-      - data_category
-      - data_type
-      - experimental_strategy
-      - file_id
-      - file_name
-      - format
-      - has_biospecimen
-      - has_participant
-      - has_study
-      - participant_id
-      - size
-      - original_file_name
-
+    - access_url
+    - collection_id
+    - data_access
+    - data_category
+    - data_type
+    - experimental_strategy
+    - file_id
+    - file_name
+    - format
+    - has_biospecimen
+    - has_participant
+    - has_study
+    - participant_id
+    - size
+    - original_file_name
+    title: DataFile
 slots:
   access_url:
     definition_uri: include:access_url
     description: Storage location for this file
-    domain_of:
-      - DataFile
-    from_schema: https://w3id.org/include
-    name: access_url
+    title: Access Url
   age_at_biospecimen_collection:
     definition_uri: include:age_at_biospecimen_collection
     description: Age in days of participant at time of biospecimen collection
-    domain_of:
-      - Biospecimen
-    from_schema: https://w3id.org/include
-    name: age_at_biospecimen_collection
+    title: Age At Biospecimen Collection
   biospecimen_storage:
     definition_uri: include:biospecimen_storage
     description: Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen,
       etc.)
-    domain_of:
-      - Biospecimen
-    from_schema: https://w3id.org/include
-    name: biospecimen_storage
+    title: Biospecimen Storage
   collection_id:
     definition_uri: include:collection_id
     description: Identifier for the eldest sample in a lineage of processed, pooled,
-      or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if
-      no processing was performed).
-    domain_of:
-      - Biospecimen
-      - DataFile
-    from_schema: https://w3id.org/include
-    name: collection_id
+      or aliquoted samples. This may be the same as Parent Sample ID or Sample ID
+      (if no processing was performed).
+    title: Collection Id
   collection_sample_type:
     definition_uri: include:collection_sample_type
-    description: Type of biological material comprising the collected sample (e.g. Whole
-      blood, Bone marrow, Saliva, etc.)
-    domain_of:
-      - Biospecimen
-    from_schema: https://w3id.org/include
-    name: collection_sample_type
+    description: Type of biological material comprising the collected sample (e.g.
+      Whole blood, Bone marrow, Saliva, etc.)
+    title: Collection Sample Type
   container_id:
     definition_uri: include:container_id
     description: Identifier for specific container/aliquot of sample, if applicable.
-      For example, distinct aliquots of a sample will have the same Sample ID but different
-      Container IDs.
-    domain_of:
-      - Biospecimen
-    from_schema: https://w3id.org/include
-    name: container_id
+      For example, distinct aliquots of a sample will have the same Sample ID but
+      different Container IDs.
+    title: Container Id
   data_access:
     definition_uri: include:data_access
     description: Type of access control on this file, determined by DCC
-    domain_of:
-      - DataFile
-    from_schema: https://w3id.org/include
-    name: data_access
+    title: Data Access
     range: enum_data_access
   data_category:
     definition_uri: include:data_category
     description: General category of data in file (e.g. Clinical, Genomics, Proteomics,
       Metabolomics, Immune maps, Transcriptomics, etc.)
-    domain_of:
-      - DataFile
-    from_schema: https://w3id.org/include
-    name: data_category
+    title: Data Category
     required: true
   data_type:
     definition_uri: include:data_type
@@ -185,170 +152,107 @@ slots:
       reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification,
       Structural variations, Cytokine profiles, Operation reports, Pathology reports,
       Histology images, Clinical supplement, Protein expression quantification, etc.)
-    domain_of:
-      - DataFile
-    from_schema: https://w3id.org/include
-    name: data_type
+    title: Data Type
   experimental_strategy:
     definition_uri: include:experimental_strategy
     description: Experimental method used to obtain data in file (e.g. WGS, RNAseq,
       WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay,
       Meso Scale Discovery, etc.)
-    domain_of:
-      - DataFile
-    from_schema: https://w3id.org/include
-    name: experimental_strategy
+    title: Experimental Strategy
   file_id:
     definition_uri: include:file_id
     description: File identifier, assigned by DCC
-    domain_of:
-      - DataFile
-    from_schema: https://w3id.org/include
-    name: file_id
+    title: File Id
   file_name:
     definition_uri: include:file_name
     description: Synapse ID for file
-    domain_of:
-      - DataFile
-    from_schema: https://w3id.org/include
-    name: file_name
+    title: File Name
     required: true
   format:
     definition_uri: include:format
-    description: Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom,
-      etc.)
-    domain_of:
-      - DataFile
-    from_schema: https://w3id.org/include
-    name: format
+    description: Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf,
+      dicom, etc.)
+    title: Format
     required: true
   has_aliquot:
     definition_uri: include:has_aliquot
     description: An aliquot of a sample
-    domain_of:
-      - Biospecimen
-    from_schema: https://w3id.org/include
-    name: has_aliquot
+    title: Has Aliquot
     range: Aliquot
   has_biospecimen:
     definition_uri: include:has_biospecimen
     description: Link to a Biospecimen
-    domain_of:
-      - DataFile
-    from_schema: https://w3id.org/include
-    name: has_biospecimen
+    title: Has Biospecimen
     range: Biospecimen
   has_datafile:
     definition_uri: include:has_datafile
     description: Link to a DataFile
-    domain_of:
-      - Biospecimen
-      - Participant
-    from_schema: https://w3id.org/include
-    name: has_datafile
+    title: Has Datafile
     range: DataFile
   has_output:
     definition_uri: include:has_output
     description: The DataFile Output of an Assay
-    domain_of:
-      - Assay
-    from_schema: https://w3id.org/include
-    name: has_output
+    title: Has Output
     range: DataFile
   laboratory_procedure:
     definition_uri: include:laboratory_procedure
     description: Procedure by which Sample was derived from Parent Sample (e.g. RBC
       lysis, Centrifugation, Ficoll, etc.)
-    domain_of:
-      - Biospecimen
-    from_schema: https://w3id.org/include
-    name: laboratory_procedure
+    title: Laboratory Procedure
   original_file_name:
     definition_uri: include:original_file_name
     description: Name of file, assigned by data contributor
-    domain_of:
-      - DataFile
-    from_schema: https://w3id.org/include
-    name: original_file_name
+    title: Original File Name
     required: true
   parent_sample_id:
     definition_uri: include:parent_sample_id
     description: Identifier for the direct parent from which Sample was derived, processed,
       pooled, etc. (if applicable)
-    domain_of:
-      - Biospecimen
-    from_schema: https://w3id.org/include
-    name: parent_sample_id
+    title: Parent Sample Id
   parent_sample_type:
     definition_uri: include:parent_sample_type
     description: Type of biological material comprising the parent sample (e.g. Plasma,
       Serum, White blood cells, etc.)
-    domain_of:
-      - Biospecimen
-    from_schema: https://w3id.org/include
-    name: parent_sample_type
+    title: Parent Sample Type
   sample_availability:
     definition_uri: include:sample_availability
     description: Whether or not the sample is potentially available for sharing through
       the Virtual Biorepository
-    domain_of:
-      - Biospecimen
-    from_schema: https://w3id.org/include
-    name: sample_availability
+    title: Sample Availability
     range: enum_sample_availability
   sample_id:
     definition_uri: include:sample_id
-    description: Identifier for sample. A sample is a unique biological material; two
-      samples with two different IDs are biologically distinct.
-    domain_of:
-      - Biospecimen
-    from_schema: https://w3id.org/include
-    name: sample_id
+    description: Identifier for sample. A sample is a unique biological material;
+      two samples with two different IDs are biologically distinct.
+    title: Sample Id
     required: true
   sample_type:
     definition_uri: include:sample_type
     description: Type of biological material comprising the sample (e.g. Plasma, Serum,
       White blood cells, DNA, RNA, etc.)
-    domain_of:
-      - Biospecimen
-    from_schema: https://w3id.org/include
-    name: sample_type
+    title: Sample Type
     required: true
   size:
     definition_uri: include:size
     description: Size of file
-    domain_of:
-      - DataFile
-    from_schema: https://w3id.org/include
-    name: size
+    title: Size
   uses_biospecimen:
     definition_uri: include:uses_biospecimen
     description: The Biospecimen an Assay is performed on
-    domain_of:
-      - Assay
-    from_schema: https://w3id.org/include
-    name: uses_biospecimen
+    title: Uses Biospecimen
     range: Biospecimen
   volume:
     definition_uri: include:volume
     description: Amount of sample in container
-    domain_of:
-      - Biospecimen
-    from_schema: https://w3id.org/include
-    name: volume
+    title: Volume
   volume_unit:
     definition_uri: include:volume_unit
     description: Unit of sample volume
-    domain_of:
-      - Biospecimen
-    from_schema: https://w3id.org/include
-    name: volume_unit
-
+    title: Volume Unit
 enums:
   enum_data_access:
-    name: enum_data_access
     definition_uri: include:enum_data_access
-    from_schema: https://w3id.org/include
+    name: enum_data_access
     permissible_values:
       controlled:
         text: controlled
@@ -360,9 +264,8 @@ enums:
         text: registered
         title: Registered
   enum_sample_availability:
-    name: enum_sample_availability
     definition_uri: include:enum_sample_availability
-    from_schema: https://w3id.org/include
+    name: enum_sample_availability
     permissible_values:
       available:
         text: available

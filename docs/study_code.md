@@ -47,11 +47,11 @@ URI: [https://w3id.org/include/study/:study_code](https://w3id.org/include/study
 name: study_code
 definition_uri: include:study_code
 description: Unique identifer for the study, assigned by DCC
+title: Study Code
 from_schema: https://w3id.org/include/study
 rank: 1000
 alias: study_code
 domain_of:
-- Study
 - Study
 range: enum_study_code
 required: true

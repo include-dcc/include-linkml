@@ -47,11 +47,11 @@ URI: [https://w3id.org/include/participant/:race](https://w3id.org/include/parti
 name: race
 definition_uri: include:race
 description: Race of participant
+title: Race
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: race
 domain_of:
-- Participant
 - Participant
 range: enum_race
 required: true

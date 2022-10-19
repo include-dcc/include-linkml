@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/participant/:maxo_code](https://w3id.org/include/
 name: maxo_code
 definition_uri: include:maxo_code
 description: Code for condition in the Medical Action Ontology (MAXO)
+title: Maxo Code
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: maxo_code
 domain_of:
-- Condition
 - Condition
 
 ```

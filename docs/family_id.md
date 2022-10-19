@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/participant/:family_id](https://w3id.org/include/
 name: family_id
 definition_uri: include:family_id
 description: Unique identifer for family to which Participant belongs
+title: Family Id
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: family_id
 domain_of:
-- Participant
 - Participant
 
 ```

@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/participant/:mondo_label](https://w3id.org/includ
 name: mondo_label
 definition_uri: include:mondo_label
 description: Label for condition in the Mondo Disease Ontology (MONDO)
+title: Mondo Label
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: mondo_label
 domain_of:
-- Condition
 - Condition
 
 ```

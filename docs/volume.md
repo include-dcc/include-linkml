@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/assay/:volume](https://w3id.org/include/assay/:vo
 name: volume
 definition_uri: include:volume
 description: Amount of sample in container
+title: Volume
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: volume
 domain_of:
-- Biospecimen
 - Biospecimen
 
 ```

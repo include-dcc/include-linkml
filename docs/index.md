@@ -70,6 +70,7 @@ Name: include-schema
 | [parent_sample_id](parent_sample_id.md) | Identifier for the direct parent from which Sample was derived, processed, po... |
 | [parent_sample_type](parent_sample_type.md) | Type of biological material comprising the parent sample (e |
 | [participant_id](participant_id.md) | Unique identifier for the participant, assigned by DCC |
+| [phenotype_interpretation](phenotype_interpretation.md) | Interpretation of a Phenotype |
 | [program](program.md) | Funding source for the study |
 | [race](race.md) | Race of participant |
 | [sample_availability](sample_availability.md) | Whether or not the sample is potentially available for sharing through the Vi... |

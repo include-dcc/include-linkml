@@ -48,11 +48,11 @@ name: sample_id
 definition_uri: include:sample_id
 description: Identifier for sample. A sample is a unique biological material; two
   samples with two different IDs are biologically distinct.
+title: Sample Id
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: sample_id
 domain_of:
-- Biospecimen
 - Biospecimen
 required: true
 

@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/participant/:family_relationship](https://w3id.or
 name: family_relationship
 definition_uri: include:family_relationship
 description: Relationship of Participant to other family members
+title: Family Relationship
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: family_relationship
 domain_of:
-- Participant
 - Participant
 range: Participant
 

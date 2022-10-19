@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/assay/:access_url](https://w3id.org/include/assay
 name: access_url
 definition_uri: include:access_url
 description: Storage location for this file
+title: Access Url
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: access_url
 domain_of:
-- DataFile
 - DataFile
 
 ```

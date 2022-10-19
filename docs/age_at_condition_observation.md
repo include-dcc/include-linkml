@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/participant/:age_at_condition_observation](https:
 name: age_at_condition_observation
 definition_uri: include:age_at_condition_observation
 description: Age in days at which condition was observed, recorded, or diagnosed
+title: Age At Condition Observation
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: age_at_condition_observation
 domain_of:
-- Condition
 - Condition
 
 ```

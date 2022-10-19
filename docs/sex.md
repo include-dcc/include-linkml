@@ -47,11 +47,11 @@ URI: [https://w3id.org/include/participant/:sex](https://w3id.org/include/partic
 name: sex
 definition_uri: include:sex
 description: Sex of participant
+title: Sex
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: sex
 domain_of:
-- Participant
 - Participant
 range: enum_sex
 required: true

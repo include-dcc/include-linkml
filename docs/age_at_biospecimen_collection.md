@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/assay/:age_at_biospecimen_collection](https://w3i
 name: age_at_biospecimen_collection
 definition_uri: include:age_at_biospecimen_collection
 description: Age in days of participant at time of biospecimen collection
+title: Age At Biospecimen Collection
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: age_at_biospecimen_collection
 domain_of:
-- Biospecimen
 - Biospecimen
 
 ```

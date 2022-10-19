@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/assay/:size](https://w3id.org/include/assay/:size
 name: size
 definition_uri: include:size
 description: Size of file
+title: Size
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: size
 domain_of:
-- DataFile
 - DataFile
 
 ```

@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/assay/:data_access](https://w3id.org/include/assa
 name: data_access
 definition_uri: include:data_access
 description: Type of access control on this file, determined by DCC
+title: Data Access
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: data_access
 domain_of:
-- DataFile
 - DataFile
 range: enum_data_access
 

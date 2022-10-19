@@ -47,11 +47,11 @@ URI: [https://w3id.org/include/participant/:ethnicity](https://w3id.org/include/
 name: ethnicity
 definition_uri: include:ethnicity
 description: Ethnicity of participant
+title: Ethnicity
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: ethnicity
 domain_of:
-- Participant
 - Participant
 range: enum_ethnicity
 required: true

@@ -45,13 +45,11 @@ URI: [https://w3id.org/include/participant/:has_study](https://w3id.org/include/
 name: has_study
 definition_uri: include:has_study
 description: Link to a Study
+title: Has Study
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: has_study
 domain_of:
-- Biospecimen
-- DataFile
-- Participant
 - Participant
 - Biospecimen
 - DataFile

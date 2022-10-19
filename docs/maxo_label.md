@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/participant/:maxo_label](https://w3id.org/include
 name: maxo_label
 definition_uri: include:maxo_label
 description: Label for condition in the Medical Action Ontology (MAXO)
+title: Maxo Label
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: maxo_label
 domain_of:
-- Condition
 - Condition
 
 ```

@@ -47,11 +47,11 @@ definition_uri: include:experimental_strategy
 description: Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS,
   SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale
   Discovery, etc.)
+title: Experimental Strategy
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: experimental_strategy
 domain_of:
-- DataFile
 - DataFile
 
 ```

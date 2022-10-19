@@ -46,11 +46,11 @@ name: laboratory_procedure
 definition_uri: include:laboratory_procedure
 description: Procedure by which Sample was derived from Parent Sample (e.g. RBC lysis,
   Centrifugation, Ficoll, etc.)
+title: Laboratory Procedure
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: laboratory_procedure
 domain_of:
-- Biospecimen
 - Biospecimen
 
 ```

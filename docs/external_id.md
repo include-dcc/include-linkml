@@ -47,11 +47,11 @@ URI: [https://w3id.org/include/participant/:external_id](https://w3id.org/includ
 name: external_id
 definition_uri: include:external_id
 description: Unique identifier for the participant, assigned by data contributor
+title: External Id
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: external_id
 domain_of:
-- Participant
 - Participant
 required: true
 

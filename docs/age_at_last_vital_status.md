@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/participant/:age_at_last_vital_status](https://w3
 name: age_at_last_vital_status
 definition_uri: include:age_at_last_vital_status
 description: Age in days when participant's vital status was last recorded
+title: Age At Last Vital Status
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: age_at_last_vital_status
 domain_of:
-- Participant
 - Participant
 
 ```

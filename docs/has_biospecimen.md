@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/assay/:has_biospecimen](https://w3id.org/include/
 name: has_biospecimen
 definition_uri: include:has_biospecimen
 description: Link to a Biospecimen
+title: Has Biospecimen
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: has_biospecimen
 domain_of:
-- DataFile
 - DataFile
 range: Biospecimen
 

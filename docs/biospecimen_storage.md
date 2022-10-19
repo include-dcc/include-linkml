@@ -46,11 +46,11 @@ name: biospecimen_storage
 definition_uri: include:biospecimen_storage
 description: Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen,
   etc.)
+title: Biospecimen Storage
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: biospecimen_storage
 domain_of:
-- Biospecimen
 - Biospecimen
 
 ```

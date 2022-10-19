@@ -35,6 +35,7 @@ URI: EnumPhenotypeInterpretation
 ```yaml
 name: enum_phenotype_interpretation
 definition_uri: include:enum_phenotype_interpretation
+title: enum_phenotype_interpretation
 from_schema: https://w3id.org/include/participant
 rank: 1000
 permissible_values:

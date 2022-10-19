@@ -45,11 +45,11 @@ URI: [https://w3id.org/include/participant/:mother_id](https://w3id.org/include/
 name: mother_id
 definition_uri: include:mother_id
 description: Participant ID for Participant's mother
+title: Mother Id
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: mother_id
 domain_of:
-- Participant
 - Participant
 
 ```

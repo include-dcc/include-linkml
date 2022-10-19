@@ -177,24 +177,24 @@ attributes:
     name: age_at_last_vital_status
     definition_uri: include:age_at_last_vital_status
     description: Age in days when participant's vital status was last recorded
+    title: Age At Last Vital Status
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: age_at_last_vital_status
     owner: Participant
     domain_of:
     - Participant
-    - Participant
   down_syndrome_status:
     name: down_syndrome_status
     definition_uri: include:down_syndrome_status
     description: Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy
       21, euploid)
+    title: Down Syndrome Status
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: down_syndrome_status
     owner: Participant
     domain_of:
-    - Participant
     - Participant
     range: enum_down_syndrome_status
     required: true
@@ -202,12 +202,12 @@ attributes:
     name: ethnicity
     definition_uri: include:ethnicity
     description: Ethnicity of participant
+    title: Ethnicity
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: ethnicity
     owner: Participant
     domain_of:
-    - Participant
     - Participant
     range: enum_ethnicity
     required: true
@@ -215,35 +215,35 @@ attributes:
     name: external_id
     definition_uri: include:external_id
     description: Unique identifier for the participant, assigned by data contributor
+    title: External Id
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: external_id
     owner: Participant
     domain_of:
     - Participant
-    - Participant
     required: true
   family_id:
     name: family_id
     definition_uri: include:family_id
     description: Unique identifer for family to which Participant belongs
+    title: Family Id
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: family_id
     owner: Participant
     domain_of:
     - Participant
-    - Participant
   family_relationship:
     name: family_relationship
     definition_uri: include:family_relationship
     description: Relationship of Participant to other family members
+    title: Family Relationship
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: family_relationship
     owner: Participant
     domain_of:
-    - Participant
     - Participant
     range: Participant
   family_type:
@@ -252,12 +252,12 @@ attributes:
     description: Structure of family members participating in the study (proband-only
       = no family members participating; duo = proband + parent; trio = proband +
       2 parents; trio+ = proband + 2 parents + other relatives)
+    title: Family Type
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: family_type
     owner: Participant
     domain_of:
-    - Participant
     - Participant
     range: enum_family_type
     required: true
@@ -265,24 +265,23 @@ attributes:
     name: father_id
     definition_uri: include:father_id
     description: Participant ID for Participant's father
+    title: Father Id
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: father_id
     owner: Participant
     domain_of:
     - Participant
-    - Participant
   has_datafile:
     name: has_datafile
     definition_uri: include:has_datafile
     description: Link to a DataFile
+    title: Has Datafile
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: has_datafile
     owner: Participant
     domain_of:
-    - Biospecimen
-    - Participant
     - Participant
     - Biospecimen
     range: DataFile
@@ -290,14 +289,12 @@ attributes:
     name: has_study
     definition_uri: include:has_study
     description: Link to a Study
+    title: Has Study
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: has_study
     owner: Participant
     domain_of:
-    - Biospecimen
-    - DataFile
-    - Participant
     - Participant
     - Biospecimen
     - DataFile
@@ -306,35 +303,34 @@ attributes:
     name: mother_id
     definition_uri: include:mother_id
     description: Participant ID for Participant's mother
+    title: Mother Id
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: mother_id
     owner: Participant
     domain_of:
     - Participant
-    - Participant
   outcomes_vital_status:
     name: outcomes_vital_status
     definition_uri: include:outcomes_vital_status
     description: Whether participant is alive or dead
+    title: Outcomes Vital Status
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: outcomes_vital_status
     owner: Participant
     domain_of:
     - Participant
-    - Participant
   participant_id:
     name: participant_id
     definition_uri: include:participant_id
     description: Unique identifier for the participant, assigned by DCC
+    title: Participant Id
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: participant_id
     owner: Participant
     domain_of:
-    - DataFile
-    - Participant
     - Participant
     - DataFile
     required: true
@@ -342,12 +338,12 @@ attributes:
     name: race
     definition_uri: include:race
     description: Race of participant
+    title: Race
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: race
     owner: Participant
     domain_of:
-    - Participant
     - Participant
     range: enum_race
     required: true
@@ -355,12 +351,12 @@ attributes:
     name: sex
     definition_uri: include:sex
     description: Sex of participant
+    title: Sex
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: sex
     owner: Participant
     domain_of:
-    - Participant
     - Participant
     range: enum_sex
     required: true

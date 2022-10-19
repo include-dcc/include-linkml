@@ -46,11 +46,11 @@ name: collection_sample_type
 definition_uri: include:collection_sample_type
 description: Type of biological material comprising the collected sample (e.g. Whole
   blood, Bone marrow, Saliva, etc.)
+title: Collection Sample Type
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: collection_sample_type
 domain_of:
-- Biospecimen
 - Biospecimen
 
 ```

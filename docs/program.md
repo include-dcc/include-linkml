@@ -47,11 +47,11 @@ URI: [https://w3id.org/include/study/:program](https://w3id.org/include/study/:p
 name: program
 definition_uri: include:program
 description: Funding source for the study
+title: Program
 from_schema: https://w3id.org/include/study
 rank: 1000
 alias: program
 domain_of:
-- Study
 - Study
 range: enum_program
 required: true

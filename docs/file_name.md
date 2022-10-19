@@ -47,11 +47,11 @@ URI: [https://w3id.org/include/assay/:file_name](https://w3id.org/include/assay/
 name: file_name
 definition_uri: include:file_name
 description: Synapse ID for file
+title: File Name
 from_schema: https://w3id.org/include/assay
 rank: 1000
 alias: file_name
 domain_of:
-- DataFile
 - DataFile
 required: true
 

@@ -48,11 +48,11 @@ name: down_syndrome_status
 definition_uri: include:down_syndrome_status
 description: Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21,
   euploid)
+title: Down Syndrome Status
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: down_syndrome_status
 domain_of:
-- Participant
 - Participant
 range: enum_down_syndrome_status
 required: true
