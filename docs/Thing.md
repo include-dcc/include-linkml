@@ -13,13 +13,31 @@ URI: [https://w3id.org/include/core/:Thing](https://w3id.org/include/core/:Thing
 ```mermaid
  classDiagram
     class Thing
+      Thing <|-- Study
+      Thing <|-- Participant
+      Thing <|-- FamilyGroup
+      Thing <|-- Aliquot
+      Thing <|-- Assay
+      Thing <|-- Biospecimen
+      Thing <|-- DataFile
+      
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **Thing**
+    * [Study](Study.md)
+    * [Participant](Participant.md)
+    * [FamilyGroup](FamilyGroup.md)
+    * [Aliquot](Aliquot.md)
+    * [Assay](Assay.md)
+    * [Biospecimen](Biospecimen.md)
+    * [DataFile](DataFile.md)
+
 
 
 ## Slots

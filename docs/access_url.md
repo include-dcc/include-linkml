@@ -2,16 +2,23 @@
 _Storage location for this file_
 
 
-URI: [https://w3id.org/include/access_url](https://w3id.org/include/access_url)
+URI: [https://w3id.org/include/assay/:access_url](https://w3id.org/include/assay/:access_url)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,24 @@ URI: [https://w3id.org/include/access_url](https://w3id.org/include/access_url)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: access_url
+definition_uri: include:access_url
+description: Storage location for this file
+from_schema: https://w3id.org/include/assay
+rank: 1000
+alias: access_url
+domain_of:
+- DataFile
+- DataFile
+
+```
+</details>

@@ -5,17 +5,17 @@ _An aliquot of a sample_
 
 
 
-URI: [include:Aliquot](https://w3id.org/include/Aliquot)
+URI: [https://w3id.org/include/assay/:Aliquot](https://w3id.org/include/assay/:Aliquot)
 
 
 
 
 ```mermaid
  classDiagram
+    class Aliquot
       Thing <|-- Aliquot
       
       
-
 ```
 
 
@@ -62,7 +62,7 @@ URI: [include:Aliquot](https://w3id.org/include/Aliquot)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
@@ -74,8 +74,8 @@ URI: [include:Aliquot](https://w3id.org/include/Aliquot)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ['include:Aliquot'] |
-| native | ['include:Aliquot'] |
+| self | ['https://w3id.org/include/assay/:Aliquot'] |
+| native | ['https://w3id.org/include/assay/:Aliquot'] |
 
 
 ## LinkML Specification
@@ -97,7 +97,7 @@ annotations:
     value: Biospecimen
 description: An aliquot of a sample
 title: Aliquot
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/assay
 rank: 1000
 is_a: Thing
 
@@ -119,7 +119,7 @@ annotations:
     value: Biospecimen
 description: An aliquot of a sample
 title: Aliquot
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/assay
 rank: 1000
 is_a: Thing
 

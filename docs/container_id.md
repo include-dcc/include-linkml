@@ -2,16 +2,23 @@
 _Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs._
 
 
-URI: [https://w3id.org/include/container_id](https://w3id.org/include/container_id)
+URI: [https://w3id.org/include/assay/:container_id](https://w3id.org/include/assay/:container_id)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,26 @@ URI: [https://w3id.org/include/container_id](https://w3id.org/include/container_
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: container_id
+definition_uri: include:container_id
+description: Identifier for specific container/aliquot of sample, if applicable. For
+  example, distinct aliquots of a sample will have the same Sample ID but different
+  Container IDs.
+from_schema: https://w3id.org/include/assay
+rank: 1000
+alias: container_id
+domain_of:
+- Biospecimen
+- Biospecimen
+
+```
+</details>

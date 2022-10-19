@@ -2,16 +2,23 @@
 _Whether condition was observed or not. "Not Observed" indicates participant was specifically examined for that condition, or health record specifically queried for that condition, and found to be negative. Sept. 2022 release will only include positive assertions._
 
 
-URI: [https://w3id.org/include/condition_interpretation](https://w3id.org/include/condition_interpretation)
+URI: [https://w3id.org/include/participant/:condition_interpretation](https://w3id.org/include/participant/:condition_interpretation)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [EnumConditionInterpretation](EnumConditionInterpretation.md)
+* Range: [EnumConditionInterpretation](EnumConditionInterpretation.md)
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,28 @@ URI: [https://w3id.org/include/condition_interpretation](https://w3id.org/includ
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/participant
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: condition_interpretation
+definition_uri: include:condition_interpretation
+description: Whether condition was observed or not. "Not Observed" indicates participant
+  was specifically examined for that condition, or health record specifically queried
+  for that condition, and found to be negative. Sept. 2022 release will only include
+  positive assertions.
+from_schema: https://w3id.org/include/participant
+rank: 1000
+alias: condition_interpretation
+domain_of:
+- Condition
+- Condition
+range: enum_condition_interpretation
+
+```
+</details>

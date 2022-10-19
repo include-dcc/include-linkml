@@ -2,16 +2,23 @@
 _Whether or not the sample is potentially available for sharing through the Virtual Biorepository_
 
 
-URI: [https://w3id.org/include/sample_availability](https://w3id.org/include/sample_availability)
+URI: [https://w3id.org/include/assay/:sample_availability](https://w3id.org/include/assay/:sample_availability)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [EnumSampleAvailability](EnumSampleAvailability.md)
+* Range: [EnumSampleAvailability](EnumSampleAvailability.md)
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,26 @@ URI: [https://w3id.org/include/sample_availability](https://w3id.org/include/sam
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: sample_availability
+definition_uri: include:sample_availability
+description: Whether or not the sample is potentially available for sharing through
+  the Virtual Biorepository
+from_schema: https://w3id.org/include/assay
+rank: 1000
+alias: sample_availability
+domain_of:
+- Biospecimen
+- Biospecimen
+range: enum_sample_availability
+
+```
+</details>

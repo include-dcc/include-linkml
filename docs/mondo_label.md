@@ -2,16 +2,23 @@
 _Label for condition in the Mondo Disease Ontology (MONDO)_
 
 
-URI: [https://w3id.org/include/mondo_label](https://w3id.org/include/mondo_label)
+URI: [https://w3id.org/include/participant/:mondo_label](https://w3id.org/include/participant/:mondo_label)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,24 @@ URI: [https://w3id.org/include/mondo_label](https://w3id.org/include/mondo_label
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/participant
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: mondo_label
+definition_uri: include:mondo_label
+description: Label for condition in the Mondo Disease Ontology (MONDO)
+from_schema: https://w3id.org/include/participant
+rank: 1000
+alias: mondo_label
+domain_of:
+- Condition
+- Condition
+
+```
+</details>

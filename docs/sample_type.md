@@ -2,16 +2,25 @@
 _Type of biological material comprising the sample (e.g. Plasma, Serum, White blood cells, DNA, RNA, etc.)_
 
 
-URI: [https://w3id.org/include/sample_type](https://w3id.org/include/sample_type)
+URI: [https://w3id.org/include/assay/:sample_type](https://w3id.org/include/assay/:sample_type)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+* Required: True
+
+
 
 
 
@@ -26,7 +35,26 @@ URI: [https://w3id.org/include/sample_type](https://w3id.org/include/sample_type
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: sample_type
+definition_uri: include:sample_type
+description: Type of biological material comprising the sample (e.g. Plasma, Serum,
+  White blood cells, DNA, RNA, etc.)
+from_schema: https://w3id.org/include/assay
+rank: 1000
+alias: sample_type
+domain_of:
+- Biospecimen
+- Biospecimen
+required: true
+
+```
+</details>

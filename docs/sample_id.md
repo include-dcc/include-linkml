@@ -2,16 +2,25 @@
 _Identifier for sample. A sample is a unique biological material; two samples with two different IDs are biologically distinct._
 
 
-URI: [https://w3id.org/include/sample_id](https://w3id.org/include/sample_id)
+URI: [https://w3id.org/include/assay/:sample_id](https://w3id.org/include/assay/:sample_id)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+* Required: True
+
+
 
 
 
@@ -26,7 +35,26 @@ URI: [https://w3id.org/include/sample_id](https://w3id.org/include/sample_id)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: sample_id
+definition_uri: include:sample_id
+description: Identifier for sample. A sample is a unique biological material; two
+  samples with two different IDs are biologically distinct.
+from_schema: https://w3id.org/include/assay
+rank: 1000
+alias: sample_id
+domain_of:
+- Biospecimen
+- Biospecimen
+required: true
+
+```
+</details>

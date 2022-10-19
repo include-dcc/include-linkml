@@ -5,19 +5,19 @@ _An assay_
 
 
 
-URI: [include:Assay](https://w3id.org/include/Assay)
+URI: [https://w3id.org/include/assay/:Assay](https://w3id.org/include/assay/:Assay)
 
 
 
 
 ```mermaid
  classDiagram
+    class Assay
       Thing <|-- Assay
       
       Assay : has_output
       Assay : uses_biospecimen
       
-
 ```
 
 
@@ -61,7 +61,7 @@ URI: [include:Assay](https://w3id.org/include/Assay)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
@@ -73,8 +73,8 @@ URI: [include:Assay](https://w3id.org/include/Assay)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ['include:Assay'] |
-| native | ['include:Assay'] |
+| self | ['https://w3id.org/include/assay/:Assay'] |
+| native | ['https://w3id.org/include/assay/:Assay'] |
 
 
 ## LinkML Specification
@@ -96,7 +96,7 @@ annotations:
     value: Biospecimen,DataFile
 description: An assay
 title: Assay
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/assay
 rank: 1000
 is_a: Thing
 slots:
@@ -121,7 +121,7 @@ annotations:
     value: Biospecimen,DataFile
 description: An assay
 title: Assay
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/assay
 rank: 1000
 is_a: Thing
 attributes:
@@ -129,7 +129,7 @@ attributes:
     name: uses_biospecimen
     definition_uri: include:uses_biospecimen
     description: The Biospecimen an Assay is performed on
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: uses_biospecimen
     owner: Assay
@@ -141,7 +141,7 @@ attributes:
     name: has_output
     definition_uri: include:has_output
     description: The DataFile Output of an Assay
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: has_output
     owner: Assay

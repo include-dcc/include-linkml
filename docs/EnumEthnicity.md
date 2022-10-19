@@ -15,6 +15,7 @@ URI: EnumEthnicity
 | unknown | None |  | |
 
 
+
 ## Identifier and Mapping Information
 
 
@@ -26,7 +27,35 @@ URI: EnumEthnicity
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/participant
 
 
 
+
+## Schema
+
+<details>
+```yaml
+name: enum_ethnicity
+definition_uri: include:enum_ethnicity
+from_schema: https://w3id.org/include/participant
+rank: 1000
+permissible_values:
+  asked_but_unknown:
+    text: asked_but_unknown
+    title: Asked but unknown
+  hispanic_or_latino:
+    text: hispanic_or_latino
+    title: Hispanic or Latino
+  not_hispanic_or_latino:
+    text: not_hispanic_or_latino
+    title: Not Hispanic or Latino
+  prefer_not_to_answer:
+    text: prefer_not_to_answer
+    title: Prefer not to answer
+  unknown:
+    text: unknown
+    title: Unknown
+
+```
+</details>

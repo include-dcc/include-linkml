@@ -2,16 +2,23 @@
 _Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed)._
 
 
-URI: [https://w3id.org/include/collection_id](https://w3id.org/include/collection_id)
+URI: [https://w3id.org/include/assay/:collection_id](https://w3id.org/include/assay/:collection_id)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,28 @@ URI: [https://w3id.org/include/collection_id](https://w3id.org/include/collectio
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: collection_id
+definition_uri: include:collection_id
+description: Identifier for the eldest sample in a lineage of processed, pooled, or
+  aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no
+  processing was performed).
+from_schema: https://w3id.org/include/assay
+rank: 1000
+alias: collection_id
+domain_of:
+- Biospecimen
+- DataFile
+- Biospecimen
+- DataFile
+
+```
+</details>

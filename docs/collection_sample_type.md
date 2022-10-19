@@ -2,16 +2,23 @@
 _Type of biological material comprising the collected sample (e.g. Whole blood, Bone marrow, Saliva, etc.)_
 
 
-URI: [https://w3id.org/include/collection_sample_type](https://w3id.org/include/collection_sample_type)
+URI: [https://w3id.org/include/assay/:collection_sample_type](https://w3id.org/include/assay/:collection_sample_type)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,25 @@ URI: [https://w3id.org/include/collection_sample_type](https://w3id.org/include/
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: collection_sample_type
+definition_uri: include:collection_sample_type
+description: Type of biological material comprising the collected sample (e.g. Whole
+  blood, Bone marrow, Saliva, etc.)
+from_schema: https://w3id.org/include/assay
+rank: 1000
+alias: collection_sample_type
+domain_of:
+- Biospecimen
+- Biospecimen
+
+```
+</details>

@@ -2,16 +2,23 @@
 _The DataFile Output of an Assay_
 
 
-URI: [https://w3id.org/include/has_output](https://w3id.org/include/has_output)
+URI: [https://w3id.org/include/assay/:has_output](https://w3id.org/include/assay/:has_output)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [DataFile](DataFile.md)
+* Range: [DataFile](DataFile.md)
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,25 @@ URI: [https://w3id.org/include/has_output](https://w3id.org/include/has_output)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: has_output
+definition_uri: include:has_output
+description: The DataFile Output of an Assay
+from_schema: https://w3id.org/include/assay
+rank: 1000
+alias: has_output
+domain_of:
+- Assay
+- Assay
+range: DataFile
+
+```
+</details>

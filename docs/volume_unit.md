@@ -2,16 +2,23 @@
 _Unit of sample volume_
 
 
-URI: [https://w3id.org/include/volume_unit](https://w3id.org/include/volume_unit)
+URI: [https://w3id.org/include/assay/:volume_unit](https://w3id.org/include/assay/:volume_unit)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,24 @@ URI: [https://w3id.org/include/volume_unit](https://w3id.org/include/volume_unit
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: volume_unit
+definition_uri: include:volume_unit
+description: Unit of sample volume
+from_schema: https://w3id.org/include/assay
+rank: 1000
+alias: volume_unit
+domain_of:
+- Biospecimen
+- Biospecimen
+
+```
+</details>

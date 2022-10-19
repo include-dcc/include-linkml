@@ -2,16 +2,23 @@
 _Whether condition information was obtained from medical records (Clinical) or patient survey (Self-Reported)_
 
 
-URI: [https://w3id.org/include/condition_data_source](https://w3id.org/include/condition_data_source)
+URI: [https://w3id.org/include/participant/:condition_data_source](https://w3id.org/include/participant/:condition_data_source)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [EnumConditionDataSource](EnumConditionDataSource.md)
+* Range: [EnumConditionDataSource](EnumConditionDataSource.md)
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,26 @@ URI: [https://w3id.org/include/condition_data_source](https://w3id.org/include/c
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/participant
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: condition_data_source
+definition_uri: include:condition_data_source
+description: Whether condition information was obtained from medical records (Clinical)
+  or patient survey (Self-Reported)
+from_schema: https://w3id.org/include/participant
+rank: 1000
+alias: condition_data_source
+domain_of:
+- Condition
+- Condition
+range: enum_condition_data_source
+
+```
+</details>

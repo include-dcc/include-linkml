@@ -2,16 +2,23 @@
 _Amount of sample in container_
 
 
-URI: [https://w3id.org/include/volume](https://w3id.org/include/volume)
+URI: [https://w3id.org/include/assay/:volume](https://w3id.org/include/assay/:volume)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,24 @@ URI: [https://w3id.org/include/volume](https://w3id.org/include/volume)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: volume
+definition_uri: include:volume
+description: Amount of sample in container
+from_schema: https://w3id.org/include/assay
+rank: 1000
+alias: volume
+domain_of:
+- Biospecimen
+- Biospecimen
+
+```
+</details>

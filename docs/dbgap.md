@@ -2,16 +2,23 @@
 _dbGaP study accession code_
 
 
-URI: [https://w3id.org/include/dbgap](https://w3id.org/include/dbgap)
+URI: [https://w3id.org/include/study/:dbgap](https://w3id.org/include/study/:dbgap)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,24 @@ URI: [https://w3id.org/include/dbgap](https://w3id.org/include/dbgap)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/study
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: dbgap
+definition_uri: include:dbgap
+description: dbGaP study accession code
+from_schema: https://w3id.org/include/study
+rank: 1000
+alias: dbgap
+domain_of:
+- Study
+- Study
+
+```
+</details>

@@ -2,16 +2,25 @@
 _Race of participant_
 
 
-URI: [https://w3id.org/include/race](https://w3id.org/include/race)
+URI: [https://w3id.org/include/participant/:race](https://w3id.org/include/participant/:race)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [EnumRace](EnumRace.md)
+* Range: [EnumRace](EnumRace.md)
+* Multivalued: None
+
+
+
+* Required: True
+
+
 
 
 
@@ -26,7 +35,26 @@ URI: [https://w3id.org/include/race](https://w3id.org/include/race)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/participant
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: race
+definition_uri: include:race
+description: Race of participant
+from_schema: https://w3id.org/include/participant
+rank: 1000
+alias: race
+domain_of:
+- Participant
+- Participant
+range: enum_race
+required: true
+
+```
+</details>

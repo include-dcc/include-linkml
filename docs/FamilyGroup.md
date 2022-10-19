@@ -5,18 +5,18 @@ _A group of Participants in the same Study_
 
 
 
-URI: [include:FamilyGroup](https://w3id.org/include/FamilyGroup)
+URI: [https://w3id.org/include/participant/:FamilyGroup](https://w3id.org/include/participant/:FamilyGroup)
 
 
 
 
 ```mermaid
  classDiagram
+    class FamilyGroup
       Thing <|-- FamilyGroup
       
       FamilyGroup : has_participant
       
-
 ```
 
 
@@ -59,7 +59,7 @@ URI: [include:FamilyGroup](https://w3id.org/include/FamilyGroup)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/participant
 
 
 
@@ -71,8 +71,8 @@ URI: [include:FamilyGroup](https://w3id.org/include/FamilyGroup)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ['include:FamilyGroup'] |
-| native | ['include:FamilyGroup'] |
+| self | ['https://w3id.org/include/participant/:FamilyGroup'] |
+| native | ['https://w3id.org/include/participant/:FamilyGroup'] |
 
 
 ## LinkML Specification
@@ -94,7 +94,7 @@ annotations:
     value: Study,Participant
 description: A group of Participants in the same Study
 title: FamilyGroup
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/participant
 rank: 1000
 is_a: Thing
 slots:
@@ -118,7 +118,7 @@ annotations:
     value: Study,Participant
 description: A group of Participants in the same Study
 title: FamilyGroup
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/participant
 rank: 1000
 is_a: Thing
 attributes:
@@ -126,7 +126,7 @@ attributes:
     name: has_participant
     definition_uri: include:has_participant
     description: Link to a Participant
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: has_participant
     owner: FamilyGroup
@@ -134,10 +134,10 @@ attributes:
     - Biospecimen
     - DataFile
     - Condition
-    - Biospecimen
-    - DataFile
     - FamilyGroup
     - Condition
+    - Biospecimen
+    - DataFile
     range: Participant
 
 ```

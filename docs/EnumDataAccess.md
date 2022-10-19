@@ -13,6 +13,7 @@ URI: EnumDataAccess
 | registered | None |  | |
 
 
+
 ## Identifier and Mapping Information
 
 
@@ -24,7 +25,29 @@ URI: EnumDataAccess
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
+
+## Schema
+
+<details>
+```yaml
+name: enum_data_access
+definition_uri: include:enum_data_access
+from_schema: https://w3id.org/include/assay
+rank: 1000
+permissible_values:
+  controlled:
+    text: controlled
+    title: Controlled
+  open:
+    text: open
+    title: Open
+  registered:
+    text: registered
+    title: Registered
+
+```
+</details>

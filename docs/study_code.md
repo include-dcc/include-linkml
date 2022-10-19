@@ -2,16 +2,25 @@
 _Unique identifer for the study, assigned by DCC_
 
 
-URI: [https://w3id.org/include/study_code](https://w3id.org/include/study_code)
+URI: [https://w3id.org/include/study/:study_code](https://w3id.org/include/study/:study_code)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [EnumStudyCode](EnumStudyCode.md)
+* Range: [EnumStudyCode](EnumStudyCode.md)
+* Multivalued: None
+
+
+
+* Required: True
+
+
 
 
 
@@ -26,7 +35,26 @@ URI: [https://w3id.org/include/study_code](https://w3id.org/include/study_code)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/study
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: study_code
+definition_uri: include:study_code
+description: Unique identifer for the study, assigned by DCC
+from_schema: https://w3id.org/include/study
+rank: 1000
+alias: study_code
+domain_of:
+- Study
+- Study
+range: enum_study_code
+required: true
+
+```
+</details>

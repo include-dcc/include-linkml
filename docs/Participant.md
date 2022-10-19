@@ -5,13 +5,14 @@ _A Participant in a Study_
 
 
 
-URI: [include:Participant](https://w3id.org/include/Participant)
+URI: [https://w3id.org/include/participant/:Participant](https://w3id.org/include/participant/:Participant)
 
 
 
 
 ```mermaid
  classDiagram
+    class Participant
       Thing <|-- Participant
       
       Participant : age_at_last_vital_status
@@ -30,7 +31,6 @@ URI: [include:Participant](https://w3id.org/include/Participant)
       Participant : race
       Participant : sex
       
-
 ```
 
 
@@ -47,19 +47,19 @@ URI: [include:Participant](https://w3id.org/include/Participant)
 
 | Name | Cardinality and Range  | Description  |
 | ---  | ---  | --- |
-| [age_at_last_vital_status](age_at_last_vital_status.md) | 0..1 <br/> [xsd:string](xsd:string)  | Age in days when participant's vital status was last recorded  |
+| [age_at_last_vital_status](age_at_last_vital_status.md) | 0..1 <br/> NONE  | Age in days when participant's vital status was last recorded  |
 | [down_syndrome_status](down_syndrome_status.md) | 1..1 <br/> [EnumDownSyndromeStatus](EnumDownSyndromeStatus.md)  | Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euplo...  |
 | [ethnicity](ethnicity.md) | 1..1 <br/> [EnumEthnicity](EnumEthnicity.md)  | Ethnicity of participant  |
-| [external_id](external_id.md) | 1..1 <br/> [xsd:string](xsd:string)  | Unique identifier for the participant, assigned by data contributor  |
-| [family_id](family_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | Unique identifer for family to which Participant belongs  |
+| [external_id](external_id.md) | 1..1 <br/> NONE  | Unique identifier for the participant, assigned by data contributor  |
+| [family_id](family_id.md) | 0..1 <br/> NONE  | Unique identifer for family to which Participant belongs  |
 | [family_relationship](family_relationship.md) | 0..1 <br/> [Participant](Participant.md)  | Relationship of Participant to other family members  |
 | [family_type](family_type.md) | 1..1 <br/> [EnumFamilyType](EnumFamilyType.md)  | Structure of family members participating in the study (proband-only = no fam...  |
-| [father_id](father_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | Participant ID for Participant's father  |
+| [father_id](father_id.md) | 0..1 <br/> NONE  | Participant ID for Participant's father  |
 | [has_datafile](has_datafile.md) | 0..1 <br/> [DataFile](DataFile.md)  | Link to a DataFile  |
 | [has_study](has_study.md) | 0..1 <br/> [Study](Study.md)  | Link to a Study  |
-| [mother_id](mother_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | Participant ID for Participant's mother  |
-| [outcomes_vital_status](outcomes_vital_status.md) | 0..1 <br/> [xsd:string](xsd:string)  | Whether participant is alive or dead  |
-| [participant_id](participant_id.md) | 1..1 <br/> [xsd:string](xsd:string)  | Unique identifier for the participant, assigned by DCC  |
+| [mother_id](mother_id.md) | 0..1 <br/> NONE  | Participant ID for Participant's mother  |
+| [outcomes_vital_status](outcomes_vital_status.md) | 0..1 <br/> NONE  | Whether participant is alive or dead  |
+| [participant_id](participant_id.md) | 1..1 <br/> NONE  | Unique identifier for the participant, assigned by DCC  |
 | [race](race.md) | 1..1 <br/> [EnumRace](EnumRace.md)  | Race of participant  |
 | [sex](sex.md) | 1..1 <br/> [EnumSex](EnumSex.md)  | Sex of participant  |
 
@@ -69,11 +69,11 @@ URI: [include:Participant](https://w3id.org/include/Participant)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Biospecimen](Biospecimen.md) | [has_participant](has_participant.md) | range | Participant |
-| [DataFile](DataFile.md) | [has_participant](has_participant.md) | range | Participant |
 | [Participant](Participant.md) | [family_relationship](family_relationship.md) | range | Participant |
 | [FamilyGroup](FamilyGroup.md) | [has_participant](has_participant.md) | range | Participant |
 | [Condition](Condition.md) | [has_participant](has_participant.md) | range | Participant |
+| [Biospecimen](Biospecimen.md) | [has_participant](has_participant.md) | range | Participant |
+| [DataFile](DataFile.md) | [has_participant](has_participant.md) | range | Participant |
 
 
 
@@ -96,7 +96,7 @@ URI: [include:Participant](https://w3id.org/include/Participant)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/participant
 
 
 
@@ -108,8 +108,8 @@ URI: [include:Participant](https://w3id.org/include/Participant)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ['include:Participant'] |
-| native | ['include:Participant'] |
+| self | ['https://w3id.org/include/participant/:Participant'] |
+| native | ['https://w3id.org/include/participant/:Participant'] |
 
 
 ## LinkML Specification
@@ -131,7 +131,7 @@ annotations:
     value: Study,DataFile
 description: A Participant in a Study
 title: Participant
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/participant
 rank: 1000
 is_a: Thing
 slots:
@@ -169,7 +169,7 @@ annotations:
     value: Study,DataFile
 description: A Participant in a Study
 title: Participant
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/participant
 rank: 1000
 is_a: Thing
 attributes:
@@ -177,20 +177,19 @@ attributes:
     name: age_at_last_vital_status
     definition_uri: include:age_at_last_vital_status
     description: Age in days when participant's vital status was last recorded
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: age_at_last_vital_status
     owner: Participant
     domain_of:
     - Participant
     - Participant
-    range: string
   down_syndrome_status:
     name: down_syndrome_status
     definition_uri: include:down_syndrome_status
     description: Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy
       21, euploid)
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: down_syndrome_status
     owner: Participant
@@ -203,7 +202,7 @@ attributes:
     name: ethnicity
     definition_uri: include:ethnicity
     description: Ethnicity of participant
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: ethnicity
     owner: Participant
@@ -216,32 +215,30 @@ attributes:
     name: external_id
     definition_uri: include:external_id
     description: Unique identifier for the participant, assigned by data contributor
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: external_id
     owner: Participant
     domain_of:
     - Participant
     - Participant
-    range: string
     required: true
   family_id:
     name: family_id
     definition_uri: include:family_id
     description: Unique identifer for family to which Participant belongs
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: family_id
     owner: Participant
     domain_of:
     - Participant
     - Participant
-    range: string
   family_relationship:
     name: family_relationship
     definition_uri: include:family_relationship
     description: Relationship of Participant to other family members
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: family_relationship
     owner: Participant
@@ -255,7 +252,7 @@ attributes:
     description: Structure of family members participating in the study (proband-only
       = no family members participating; duo = proband + parent; trio = proband +
       2 parents; trio+ = proband + 2 parents + other relatives)
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: family_type
     owner: Participant
@@ -268,33 +265,32 @@ attributes:
     name: father_id
     definition_uri: include:father_id
     description: Participant ID for Participant's father
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: father_id
     owner: Participant
     domain_of:
     - Participant
     - Participant
-    range: string
   has_datafile:
     name: has_datafile
     definition_uri: include:has_datafile
     description: Link to a DataFile
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: has_datafile
     owner: Participant
     domain_of:
     - Biospecimen
     - Participant
-    - Biospecimen
     - Participant
+    - Biospecimen
     range: DataFile
   has_study:
     name: has_study
     definition_uri: include:has_study
     description: Link to a Study
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: has_study
     owner: Participant
@@ -302,54 +298,51 @@ attributes:
     - Biospecimen
     - DataFile
     - Participant
+    - Participant
     - Biospecimen
     - DataFile
-    - Participant
     range: Study
   mother_id:
     name: mother_id
     definition_uri: include:mother_id
     description: Participant ID for Participant's mother
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: mother_id
     owner: Participant
     domain_of:
     - Participant
     - Participant
-    range: string
   outcomes_vital_status:
     name: outcomes_vital_status
     definition_uri: include:outcomes_vital_status
     description: Whether participant is alive or dead
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: outcomes_vital_status
     owner: Participant
     domain_of:
     - Participant
     - Participant
-    range: string
   participant_id:
     name: participant_id
     definition_uri: include:participant_id
     description: Unique identifier for the participant, assigned by DCC
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: participant_id
     owner: Participant
     domain_of:
     - DataFile
     - Participant
-    - DataFile
     - Participant
-    range: string
+    - DataFile
     required: true
   race:
     name: race
     definition_uri: include:race
     description: Race of participant
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: race
     owner: Participant
@@ -362,7 +355,7 @@ attributes:
     name: sex
     definition_uri: include:sex
     description: Sex of participant
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: sex
     owner: Participant

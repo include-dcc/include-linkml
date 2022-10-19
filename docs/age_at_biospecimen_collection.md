@@ -2,16 +2,23 @@
 _Age in days of participant at time of biospecimen collection_
 
 
-URI: [https://w3id.org/include/age_at_biospecimen_collection](https://w3id.org/include/age_at_biospecimen_collection)
+URI: [https://w3id.org/include/assay/:age_at_biospecimen_collection](https://w3id.org/include/assay/:age_at_biospecimen_collection)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,24 @@ URI: [https://w3id.org/include/age_at_biospecimen_collection](https://w3id.org/i
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: age_at_biospecimen_collection
+definition_uri: include:age_at_biospecimen_collection
+description: Age in days of participant at time of biospecimen collection
+from_schema: https://w3id.org/include/assay
+rank: 1000
+alias: age_at_biospecimen_collection
+domain_of:
+- Biospecimen
+- Biospecimen
+
+```
+</details>

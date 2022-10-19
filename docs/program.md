@@ -2,16 +2,25 @@
 _Funding source for the study_
 
 
-URI: [https://w3id.org/include/program](https://w3id.org/include/program)
+URI: [https://w3id.org/include/study/:program](https://w3id.org/include/study/:program)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [EnumProgram](EnumProgram.md)
+* Range: [EnumProgram](EnumProgram.md)
+* Multivalued: None
+
+
+
+* Required: True
+
+
 
 
 
@@ -26,7 +35,26 @@ URI: [https://w3id.org/include/program](https://w3id.org/include/program)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/study
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: program
+definition_uri: include:program
+description: Funding source for the study
+from_schema: https://w3id.org/include/study
+rank: 1000
+alias: program
+domain_of:
+- Study
+- Study
+range: enum_program
+required: true
+
+```
+</details>

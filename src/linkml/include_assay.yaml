@@ -13,7 +13,6 @@ imports:
   - include_core
   - include_participant
   - include_study
-  - include_enums
 
 default_curi_maps:
   - semweb_context
@@ -344,3 +343,30 @@ slots:
       - Biospecimen
     from_schema: https://w3id.org/include
     name: volume_unit
+
+enums:
+  enum_data_access:
+    name: enum_data_access
+    definition_uri: include:enum_data_access
+    from_schema: https://w3id.org/include
+    permissible_values:
+      controlled:
+        text: controlled
+        title: Controlled
+      open:
+        text: open
+        title: Open
+      registered:
+        text: registered
+        title: Registered
+  enum_sample_availability:
+    name: enum_sample_availability
+    definition_uri: include:enum_sample_availability
+    from_schema: https://w3id.org/include
+    permissible_values:
+      available:
+        text: available
+        title: Available
+      unavailable:
+        text: unavailable
+        title: Unavailable

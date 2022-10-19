@@ -2,16 +2,23 @@
 _Label for condition in the Medical Action Ontology (MAXO)_
 
 
-URI: [https://w3id.org/include/maxo_label](https://w3id.org/include/maxo_label)
+URI: [https://w3id.org/include/participant/:maxo_label](https://w3id.org/include/participant/:maxo_label)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,24 @@ URI: [https://w3id.org/include/maxo_label](https://w3id.org/include/maxo_label)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/participant
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: maxo_label
+definition_uri: include:maxo_label
+description: Label for condition in the Medical Action Ontology (MAXO)
+from_schema: https://w3id.org/include/participant
+rank: 1000
+alias: maxo_label
+domain_of:
+- Condition
+- Condition
+
+```
+</details>

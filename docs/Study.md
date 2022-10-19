@@ -5,13 +5,14 @@ _A Study_
 
 
 
-URI: [include:Study](https://w3id.org/include/Study)
+URI: [https://w3id.org/include/study/:Study](https://w3id.org/include/study/:Study)
 
 
 
 
 ```mermaid
  classDiagram
+    class Study
       Thing <|-- Study
       
       Study : dbgap
@@ -19,7 +20,6 @@ URI: [include:Study](https://w3id.org/include/Study)
       Study : study_code
       Study : study_name
       
-
 ```
 
 
@@ -36,10 +36,10 @@ URI: [include:Study](https://w3id.org/include/Study)
 
 | Name | Cardinality and Range  | Description  |
 | ---  | ---  | --- |
-| [dbgap](dbgap.md) | 0..1 <br/> [xsd:string](xsd:string)  | dbGaP study accession code  |
+| [dbgap](dbgap.md) | 0..1 <br/> NONE  | dbGaP study accession code  |
 | [program](program.md) | 1..1 <br/> [EnumProgram](EnumProgram.md)  | Funding source for the study  |
 | [study_code](study_code.md) | 1..1 <br/> [EnumStudyCode](EnumStudyCode.md)  | Unique identifer for the study, assigned by DCC  |
-| [study_name](study_name.md) | 1..1 <br/> [xsd:string](xsd:string)  | Name of the study, chosen by data contributor  |
+| [study_name](study_name.md) | 1..1 <br/> NONE  | Name of the study, chosen by data contributor  |
 
 
 ## Usages
@@ -47,9 +47,9 @@ URI: [include:Study](https://w3id.org/include/Study)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
+| [Participant](Participant.md) | [has_study](has_study.md) | range | Study |
 | [Biospecimen](Biospecimen.md) | [has_study](has_study.md) | range | Study |
 | [DataFile](DataFile.md) | [has_study](has_study.md) | range | Study |
-| [Participant](Participant.md) | [has_study](has_study.md) | range | Study |
 
 
 
@@ -71,7 +71,7 @@ URI: [include:Study](https://w3id.org/include/Study)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/study
 
 
 
@@ -83,8 +83,8 @@ URI: [include:Study](https://w3id.org/include/Study)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ['include:Study'] |
-| native | ['include:Study'] |
+| self | ['https://w3id.org/include/study/:Study'] |
+| native | ['https://w3id.org/include/study/:Study'] |
 
 
 ## LinkML Specification
@@ -103,7 +103,7 @@ annotations:
     value: 'True'
 description: A Study
 title: Study
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/study
 rank: 1000
 is_a: Thing
 slots:
@@ -127,7 +127,7 @@ annotations:
     value: 'True'
 description: A Study
 title: Study
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/study
 rank: 1000
 is_a: Thing
 attributes:
@@ -135,19 +135,18 @@ attributes:
     name: dbgap
     definition_uri: include:dbgap
     description: dbGaP study accession code
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/study
     rank: 1000
     alias: dbgap
     owner: Study
     domain_of:
     - Study
     - Study
-    range: string
   program:
     name: program
     definition_uri: include:program
     description: Funding source for the study
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/study
     rank: 1000
     alias: program
     owner: Study
@@ -160,7 +159,7 @@ attributes:
     name: study_code
     definition_uri: include:study_code
     description: Unique identifer for the study, assigned by DCC
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/study
     rank: 1000
     alias: study_code
     owner: Study
@@ -173,14 +172,13 @@ attributes:
     name: study_name
     definition_uri: include:study_name
     description: Name of the study, chosen by data contributor
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/study
     rank: 1000
     alias: study_name
     owner: Study
     domain_of:
     - Study
     - Study
-    range: string
     required: true
 
 ```

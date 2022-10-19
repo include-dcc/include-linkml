@@ -2,16 +2,23 @@
 _File identifier, assigned by DCC_
 
 
-URI: [https://w3id.org/include/file_id](https://w3id.org/include/file_id)
+URI: [https://w3id.org/include/assay/:file_id](https://w3id.org/include/assay/:file_id)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,24 @@ URI: [https://w3id.org/include/file_id](https://w3id.org/include/file_id)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: file_id
+definition_uri: include:file_id
+description: File identifier, assigned by DCC
+from_schema: https://w3id.org/include/assay
+rank: 1000
+alias: file_id
+domain_of:
+- DataFile
+- DataFile
+
+```
+</details>

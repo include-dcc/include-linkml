@@ -14,7 +14,6 @@ prefixes:
 imports:
   - linkml:types
   - include_core
-  - include_enums
   - include_study
   - include_assay
 
@@ -299,3 +298,135 @@ slots:
     name: sex
     range: enum_sex
     required: true
+
+enums:
+  enum_condition_interpretation:
+    name: enum_condition_interpretation
+    from_schema: https://w3id.org/include
+    permissible_values:
+      observed:
+        text: observed
+        title: Observed
+      not_observed:
+        text: not_observed
+        title: Not Observed
+  enum_condition_data_source:
+    name: enum_condition_data_source
+    from_schema: https://w3id.org/include
+    permissible_values:
+      clinical:
+        text: clinical
+        title: Clinical
+      self_reported:
+        text: self_reported
+        title: Self-reported
+  enum_down_syndrome_status:
+    name: enum_down_syndrome_status
+    definition_uri: include:enum_down_syndrome_status
+    from_schema: https://w3id.org/include
+    permissible_values:
+      d21:
+        text: d21
+        title: D21
+      t21:
+        text: t21
+        meaning: MONDO:0008608
+        title: T21
+  enum_ethnicity:
+    name: enum_ethnicity
+    definition_uri: include:enum_ethnicity
+    from_schema: https://w3id.org/include
+    permissible_values:
+      asked_but_unknown:
+        text: asked_but_unknown
+        title: Asked but unknown
+      hispanic_or_latino:
+        text: hispanic_or_latino
+        title: Hispanic or Latino
+      not_hispanic_or_latino:
+        text: not_hispanic_or_latino
+        title: Not Hispanic or Latino
+      prefer_not_to_answer:
+        text: prefer_not_to_answer
+        title: Prefer not to answer
+      unknown:
+        text: unknown
+        title: Unknown
+  enum_family_type:
+    name: enum_family_type
+    definition_uri: include:enum_family_type
+    from_schema: https://w3id.org/include
+    permissible_values:
+      duo:
+        text: duo
+        title: Duo
+      other:
+        text: other
+        title: Other
+      proband_only:
+        text: proband_only
+        title: Proband-only
+      trio:
+        text: trio
+        title: Trio
+      trio_plus:
+        text: trio_plus
+        title: Trio+
+  enum_race:
+    name: enum_race
+    definition_uri: include:enum_race
+    title: Unknown
+    from_schema: https://w3id.org/include
+    permissible_values:
+      american_indian_or_alaskan_native:
+        text: american_indian_or_alaskan_native
+        title: American Indian or Alaska Native
+      asian:
+        text: asian
+        title: Asian
+      black_or_african_american:
+        text: black_or_african_american
+        title: Black or African American
+      more_than_one_race:
+        text: more_than_one_race
+        title: More than one race
+      native_hawaiian_or_other_pacific_islander:
+        text: native_hawaiian_or_other_pacific_islander
+        title: Native Hawaiian or Other Pacific Islander
+      other:
+        text: other
+        title: Other
+      white:
+        text: white
+        title: White
+      prefer_not_to_answer:
+        text: prefer_not_to_answer
+        title: Prefer not to answer
+  enum_sex:
+    name: enum_sex
+    definition_uri: include:enum_sex
+    from_schema: https://w3id.org/include
+    permissible_values:
+      female:
+        text: female
+        title: Female
+      male:
+        text: male
+        title: Male
+      other:
+        text: other
+        title: Other
+      unknown:
+        text: unknown
+        title: Unknown
+  enum_phenotype_interpretation:
+    name: enum_phenotype_interpretation
+    definition_uri: include:enum_phenotype_interpretation
+    from_schema: https://w3id.org/include
+    permissible_values:
+      not_observed:
+        text: not_observed
+        title: Not Observed
+      observed:
+        text: observed
+        title: Observed

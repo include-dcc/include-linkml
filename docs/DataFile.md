@@ -5,13 +5,14 @@ _A DataFile Associated with a Participant or Study or Biospecimen_
 
 
 
-URI: [include:DataFile](https://w3id.org/include/DataFile)
+URI: [https://w3id.org/include/assay/:DataFile](https://w3id.org/include/assay/:DataFile)
 
 
 
 
 ```mermaid
  classDiagram
+    class DataFile
       Thing <|-- DataFile
       
       DataFile : access_url
@@ -30,7 +31,6 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
       DataFile : participant_id
       DataFile : size
       
-
 ```
 
 
@@ -47,21 +47,21 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
 
 | Name | Cardinality and Range  | Description  |
 | ---  | ---  | --- |
-| [access_url](access_url.md) | 0..1 <br/> [xsd:string](xsd:string)  | Storage location for this file  |
-| [collection_id](collection_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | Identifier for the eldest sample in a lineage of processed, pooled, or aliquo...  |
+| [access_url](access_url.md) | 0..1 <br/> NONE  | Storage location for this file  |
+| [collection_id](collection_id.md) | 0..1 <br/> NONE  | Identifier for the eldest sample in a lineage of processed, pooled, or aliquo...  |
 | [data_access](data_access.md) | 0..1 <br/> [EnumDataAccess](EnumDataAccess.md)  | Type of access control on this file, determined by DCC  |
-| [data_category](data_category.md) | 1..1 <br/> [xsd:string](xsd:string)  | General category of data in file (e  |
-| [data_type](data_type.md) | 0..1 <br/> [xsd:string](xsd:string)  | Specific type of data contained in file (e  |
-| [experimental_strategy](experimental_strategy.md) | 0..1 <br/> [xsd:string](xsd:string)  | Experimental method used to obtain data in file (e  |
-| [file_id](file_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | File identifier, assigned by DCC  |
-| [file_name](file_name.md) | 1..1 <br/> [xsd:string](xsd:string)  | Synapse ID for file  |
-| [format](format.md) | 1..1 <br/> [xsd:string](xsd:string)  | Format of file (e  |
+| [data_category](data_category.md) | 1..1 <br/> NONE  | General category of data in file (e  |
+| [data_type](data_type.md) | 0..1 <br/> NONE  | Specific type of data contained in file (e  |
+| [experimental_strategy](experimental_strategy.md) | 0..1 <br/> NONE  | Experimental method used to obtain data in file (e  |
+| [file_id](file_id.md) | 0..1 <br/> NONE  | File identifier, assigned by DCC  |
+| [file_name](file_name.md) | 1..1 <br/> NONE  | Synapse ID for file  |
+| [format](format.md) | 1..1 <br/> NONE  | Format of file (e  |
 | [has_biospecimen](has_biospecimen.md) | 0..1 <br/> [Biospecimen](Biospecimen.md)  | Link to a Biospecimen  |
 | [has_participant](has_participant.md) | 0..1 <br/> [Participant](Participant.md)  | Link to a Participant  |
 | [has_study](has_study.md) | 0..1 <br/> [Study](Study.md)  | Link to a Study  |
-| [participant_id](participant_id.md) | 1..1 <br/> [xsd:string](xsd:string)  | Unique identifier for the participant, assigned by DCC  |
-| [size](size.md) | 0..1 <br/> [xsd:string](xsd:string)  | Size of file  |
-| [original_file_name](original_file_name.md) | 1..1 <br/> [xsd:string](xsd:string)  | Name of file, assigned by data contributor  |
+| [participant_id](participant_id.md) | 1..1 <br/> NONE  | Unique identifier for the participant, assigned by DCC  |
+| [size](size.md) | 0..1 <br/> NONE  | Size of file  |
+| [original_file_name](original_file_name.md) | 1..1 <br/> NONE  | Name of file, assigned by data contributor  |
 
 
 ## Usages
@@ -69,9 +69,9 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [Biospecimen](Biospecimen.md) | [has_datafile](has_datafile.md) | range | DataFile |
 | [Participant](Participant.md) | [has_datafile](has_datafile.md) | range | DataFile |
 | [Assay](Assay.md) | [has_output](has_output.md) | range | DataFile |
+| [Biospecimen](Biospecimen.md) | [has_datafile](has_datafile.md) | range | DataFile |
 
 
 
@@ -94,7 +94,7 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/assay
 
 
 
@@ -106,8 +106,8 @@ URI: [include:DataFile](https://w3id.org/include/DataFile)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ['include:DataFile'] |
-| native | ['include:DataFile'] |
+| self | ['https://w3id.org/include/assay/:DataFile'] |
+| native | ['https://w3id.org/include/assay/:DataFile'] |
 
 
 ## LinkML Specification
@@ -129,7 +129,7 @@ annotations:
     value: Study,Participant,Biospecimen
 description: A DataFile Associated with a Participant or Study or Biospecimen
 title: DataFile
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/assay
 rank: 1000
 is_a: Thing
 slots:
@@ -167,7 +167,7 @@ annotations:
     value: Study,Participant,Biospecimen
 description: A DataFile Associated with a Participant or Study or Biospecimen
 title: DataFile
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/assay
 rank: 1000
 is_a: Thing
 attributes:
@@ -175,21 +175,20 @@ attributes:
     name: access_url
     definition_uri: include:access_url
     description: Storage location for this file
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: access_url
     owner: DataFile
     domain_of:
     - DataFile
     - DataFile
-    range: string
   collection_id:
     name: collection_id
     definition_uri: include:collection_id
     description: Identifier for the eldest sample in a lineage of processed, pooled,
       or aliquoted samples. This may be the same as Parent Sample ID or Sample ID
       (if no processing was performed).
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: collection_id
     owner: DataFile
@@ -198,12 +197,11 @@ attributes:
     - DataFile
     - Biospecimen
     - DataFile
-    range: string
   data_access:
     name: data_access
     definition_uri: include:data_access
     description: Type of access control on this file, determined by DCC
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: data_access
     owner: DataFile
@@ -216,14 +214,13 @@ attributes:
     definition_uri: include:data_category
     description: General category of data in file (e.g. Clinical, Genomics, Proteomics,
       Metabolomics, Immune maps, Transcriptomics, etc.)
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: data_category
     owner: DataFile
     domain_of:
     - DataFile
     - DataFile
-    range: string
     required: true
   data_type:
     name: data_type
@@ -232,72 +229,67 @@ attributes:
       reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification,
       Structural variations, Cytokine profiles, Operation reports, Pathology reports,
       Histology images, Clinical supplement, Protein expression quantification, etc.)
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: data_type
     owner: DataFile
     domain_of:
     - DataFile
     - DataFile
-    range: string
   experimental_strategy:
     name: experimental_strategy
     definition_uri: include:experimental_strategy
     description: Experimental method used to obtain data in file (e.g. WGS, RNAseq,
       WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay,
       Meso Scale Discovery, etc.)
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: experimental_strategy
     owner: DataFile
     domain_of:
     - DataFile
     - DataFile
-    range: string
   file_id:
     name: file_id
     definition_uri: include:file_id
     description: File identifier, assigned by DCC
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: file_id
     owner: DataFile
     domain_of:
     - DataFile
     - DataFile
-    range: string
   file_name:
     name: file_name
     definition_uri: include:file_name
     description: Synapse ID for file
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: file_name
     owner: DataFile
     domain_of:
     - DataFile
     - DataFile
-    range: string
     required: true
   format:
     name: format
     definition_uri: include:format
     description: Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf,
       dicom, etc.)
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: format
     owner: DataFile
     domain_of:
     - DataFile
     - DataFile
-    range: string
     required: true
   has_biospecimen:
     name: has_biospecimen
     definition_uri: include:has_biospecimen
     description: Link to a Biospecimen
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: has_biospecimen
     owner: DataFile
@@ -309,7 +301,7 @@ attributes:
     name: has_participant
     definition_uri: include:has_participant
     description: Link to a Participant
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: has_participant
     owner: DataFile
@@ -317,16 +309,16 @@ attributes:
     - Biospecimen
     - DataFile
     - Condition
-    - Biospecimen
-    - DataFile
     - FamilyGroup
     - Condition
+    - Biospecimen
+    - DataFile
     range: Participant
   has_study:
     name: has_study
     definition_uri: include:has_study
     description: Link to a Study
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: has_study
     owner: DataFile
@@ -334,49 +326,46 @@ attributes:
     - Biospecimen
     - DataFile
     - Participant
+    - Participant
     - Biospecimen
     - DataFile
-    - Participant
     range: Study
   participant_id:
     name: participant_id
     definition_uri: include:participant_id
     description: Unique identifier for the participant, assigned by DCC
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: participant_id
     owner: DataFile
     domain_of:
     - DataFile
     - Participant
-    - DataFile
     - Participant
-    range: string
+    - DataFile
     required: true
   size:
     name: size
     definition_uri: include:size
     description: Size of file
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: size
     owner: DataFile
     domain_of:
     - DataFile
     - DataFile
-    range: string
   original_file_name:
     name: original_file_name
     definition_uri: include:original_file_name
     description: Name of file, assigned by data contributor
-    from_schema: https://w3id.org/include
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: original_file_name
     owner: DataFile
     domain_of:
     - DataFile
     - DataFile
-    range: string
     required: true
 
 ```

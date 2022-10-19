@@ -2,16 +2,23 @@
 _Unique identifer for family to which Participant belongs_
 
 
-URI: [https://w3id.org/include/family_id](https://w3id.org/include/family_id)
+URI: [https://w3id.org/include/participant/:family_id](https://w3id.org/include/participant/:family_id)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,24 @@ URI: [https://w3id.org/include/family_id](https://w3id.org/include/family_id)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/participant
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: family_id
+definition_uri: include:family_id
+description: Unique identifer for family to which Participant belongs
+from_schema: https://w3id.org/include/participant
+rank: 1000
+alias: family_id
+domain_of:
+- Participant
+- Participant
+
+```
+</details>

@@ -2,16 +2,23 @@
 _Participant ID for Participant's father_
 
 
-URI: [https://w3id.org/include/father_id](https://w3id.org/include/father_id)
+URI: [https://w3id.org/include/participant/:father_id](https://w3id.org/include/participant/:father_id)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,24 @@ URI: [https://w3id.org/include/father_id](https://w3id.org/include/father_id)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/participant
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: father_id
+definition_uri: include:father_id
+description: Participant ID for Participant's father
+from_schema: https://w3id.org/include/participant
+rank: 1000
+alias: father_id
+domain_of:
+- Participant
+- Participant
+
+```
+</details>

@@ -2,16 +2,23 @@
 _Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)_
 
 
-URI: [https://w3id.org/include/other_code](https://w3id.org/include/other_code)
+URI: [https://w3id.org/include/participant/:other_code](https://w3id.org/include/participant/:other_code)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+
 
 
 
@@ -26,7 +33,25 @@ URI: [https://w3id.org/include/other_code](https://w3id.org/include/other_code)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/participant
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: other_code
+definition_uri: include:other_code
+description: Code for condition in another ontology (if no match in HPO, MONDO, or
+  MAXO)
+from_schema: https://w3id.org/include/participant
+rank: 1000
+alias: other_code
+domain_of:
+- Condition
+- Condition
+
+```
+</details>

@@ -2,16 +2,25 @@
 _Unique identifier for the participant, assigned by DCC_
 
 
-URI: [https://w3id.org/include/participant_id](https://w3id.org/include/participant_id)
+URI: [https://w3id.org/include/participant/:participant_id](https://w3id.org/include/participant/:participant_id)
 
 
 
 <!-- no inheritance hierarchy -->
 
 
+
+
 ## Properties
 
- * Range: [xsd:string](xsd:string)
+* Range: NONE
+* Multivalued: None
+
+
+
+* Required: True
+
+
 
 
 
@@ -26,7 +35,27 @@ URI: [https://w3id.org/include/participant_id](https://w3id.org/include/particip
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/participant
 
 
 
+
+## LinkML Specification
+
+<details>
+```yaml
+name: participant_id
+definition_uri: include:participant_id
+description: Unique identifier for the participant, assigned by DCC
+from_schema: https://w3id.org/include/participant
+rank: 1000
+alias: participant_id
+domain_of:
+- DataFile
+- Participant
+- Participant
+- DataFile
+required: true
+
+```
+</details>
