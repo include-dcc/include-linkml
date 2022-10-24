@@ -5,38 +5,21 @@ _Highest Level Class_
 
 
 
-URI: [include:Thing](https://w3id.org/include/Thing)
+URI: [https://w3id.org/include/core/:Thing](https://w3id.org/include/core/:Thing)
 
 
 
 
 ```mermaid
  classDiagram
-      Thing <|-- Biospecimen
-      Thing <|-- DataFile
-      Thing <|-- Participant
-      Thing <|-- Study
-      Thing <|-- FamilyGroup
-      Thing <|-- Aliquot
-      Thing <|-- Assay
-      
+    class Thing
       
 ```
 
 
 
 
-
-## Inheritance
-* **Thing**
-    * [Biospecimen](Biospecimen.md)
-    * [DataFile](DataFile.md)
-    * [Participant](Participant.md)
-    * [Study](Study.md)
-    * [FamilyGroup](FamilyGroup.md)
-    * [Aliquot](Aliquot.md)
-    * [Assay](Assay.md)
-
+<!-- no inheritance hierarchy -->
 
 
 ## Slots
@@ -60,7 +43,7 @@ URI: [include:Thing](https://w3id.org/include/Thing)
 ### Schema Source
 
 
-* from schema: https://w3id.org/include
+* from schema: https://w3id.org/include/core
 
 
 
@@ -72,8 +55,8 @@ URI: [include:Thing](https://w3id.org/include/Thing)
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | ['include:Thing'] |
-| native | ['include:Thing'] |
+| self | ['https://w3id.org/include/core/:Thing'] |
+| native | ['https://w3id.org/include/core/:Thing'] |
 
 
 ## LinkML Specification
@@ -88,7 +71,7 @@ name: Thing
 definition_uri: schema:Thing
 description: Highest Level Class
 title: Thing
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/core
 rank: 1000
 
 ```
@@ -102,7 +85,7 @@ name: Thing
 definition_uri: schema:Thing
 description: Highest Level Class
 title: Thing
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/core
 rank: 1000
 
 ```
