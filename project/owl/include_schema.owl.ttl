@@ -12,7 +12,7 @@ include: a owl:Ontology ;
     rdfs:label "include-schema" ;
     IAO:0000700 <https://w3id.org/include/core/Thing> ;
     dcterms:license "https://creativecommons.org/publicdomain/zero/1.0/" ;
-    linkml:generation_date "2022-11-04T05:49:44" ;
+    linkml:generation_date "2022-11-04T05:59:50" ;
     linkml:metamodel_version "1.7.0" ;
     linkml:source_file "include_schema.yaml" ;
     linkml:source_file_date "2022-10-21T12:55:28" ;
@@ -24,12 +24,12 @@ include: a owl:Ontology ;
     dcterms:title "Assay" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/include/assay/DataFile> ;
-            owl:onProperty <https://w3id.org/include/assay/has_output> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/include/assay/Biospecimen> ;
             owl:onProperty <https://w3id.org/include/assay/uses_biospecimen> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/include/assay/DataFile> ;
+            owl:onProperty <https://w3id.org/include/assay/has_output> ],
         <https://w3id.org/include/core/Thing> ;
     skos:definition "An assay" ;
     include:required "False" ;
@@ -42,27 +42,19 @@ include: a owl:Ontology ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/participant/maxo_label> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/participant/maxo_code> ],
+            owl:onProperty <https://w3id.org/include/participant/hpo_label> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:Integer ;
             owl:onProperty <https://w3id.org/include/participant/age_at_condition_observation> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/include/participant/EnumConditionDataSource> ;
-            owl:onProperty <https://w3id.org/include/participant/condition_data_source> ],
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/include/participant/mondo_code> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/participant/hpo_code> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/participant/hpo_label> ],
+            owl:onProperty <https://w3id.org/include/participant/maxo_code> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/include/participant/Participant> ;
@@ -70,11 +62,23 @@ include: a owl:Ontology ;
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/participant/mondo_label> ],
+            owl:onProperty <https://w3id.org/include/participant/hpo_code> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/participant/mondo_code> ],
+            owl:onProperty <https://w3id.org/include/participant/maxo_label> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/include/participant/other_code> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/include/participant/other_label> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/include/participant/EnumConditionDataSource> ;
+            owl:onProperty <https://w3id.org/include/participant/condition_data_source> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/include/participant/EnumConditionInterpretation> ;
@@ -82,11 +86,7 @@ include: a owl:Ontology ;
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/participant/other_label> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/participant/other_code> ],
+            owl:onProperty <https://w3id.org/include/participant/mondo_label> ],
         <https://w3id.org/include/core/Thing> ;
     skos:definition "A Condition of a Participant" .
 
@@ -116,7 +116,7 @@ linkml:topValue a owl:DatatypeProperty ;
         linkml:SlotDefinition ;
     rdfs:label "access_url" ;
     dcterms:title "Access Url" ;
-    rdfs:range linkml:String ;
+    rdfs:range linkml:Uriorcurie ;
     skos:definition "Storage location for this file" .
 
 <https://w3id.org/include/assay/age_at_biospecimen_collection> a owl:ObjectProperty,
@@ -438,7 +438,7 @@ linkml:topValue a owl:DatatypeProperty ;
         linkml:SlotDefinition ;
     rdfs:label "outcomes_vital_status" ;
     dcterms:title "Outcomes Vital Status" ;
-    rdfs:range linkml:String ;
+    rdfs:range <https://w3id.org/include/participant/EnumVitalStatus> ;
     skos:definition "Whether participant is alive or dead" .
 
 <https://w3id.org/include/participant/race> a owl:ObjectProperty,
@@ -671,6 +671,16 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "unknown" ;
     dcterms:title "Unknown" .
 
+<https://w3id.org/include/participant/EnumVitalStatus#alive> a owl:Class,
+        <https://w3id.org/include/participant/EnumVitalStatus> ;
+    rdfs:label "alive" ;
+    dcterms:title "Alive" .
+
+<https://w3id.org/include/participant/EnumVitalStatus#dead> a owl:Class,
+        <https://w3id.org/include/participant/EnumVitalStatus> ;
+    rdfs:label "dead" ;
+    dcterms:title "Dead" .
+
 <https://w3id.org/include/participant/participant_id> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "participant_id" ;
@@ -796,16 +806,28 @@ linkml:topValue a owl:DatatypeProperty ;
     dcterms:title "Biospecimen" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/include/study/Study> ;
-            owl:onProperty <https://w3id.org/include/participant/has_study> ],
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/include/assay/collection_id> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/include/assay/laboratory_procedure> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/include/assay/collection_sample_type> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/include/assay/Aliquot> ;
+            owl:onProperty <https://w3id.org/include/assay/has_aliquot> ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/include/assay/sample_id> ;
+            owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/include/assay/sample_type> ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/volume> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/include/participant/Participant> ;
@@ -813,15 +835,15 @@ linkml:topValue a owl:DatatypeProperty ;
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/age_at_biospecimen_collection> ],
+            owl:onProperty <https://w3id.org/include/assay/volume> ],
         [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/sample_id> ;
-            owl:qualifiedCardinality 1 ],
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/include/assay/DataFile> ;
+            owl:onProperty <https://w3id.org/include/assay/has_datafile> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/parent_sample_id> ],
+            owl:onProperty <https://w3id.org/include/assay/age_at_biospecimen_collection> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
@@ -829,19 +851,15 @@ linkml:topValue a owl:DatatypeProperty ;
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/parent_sample_type> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/include/assay/biospecimen_storage> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/collection_id> ],
+            owl:onClass <https://w3id.org/include/study/Study> ;
+            owl:onProperty <https://w3id.org/include/participant/has_study> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/include/assay/DataFile> ;
-            owl:onProperty <https://w3id.org/include/assay/has_datafile> ],
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/include/assay/container_id> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/include/assay/EnumSampleAvailability> ;
@@ -849,19 +867,11 @@ linkml:topValue a owl:DatatypeProperty ;
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/collection_sample_type> ],
+            owl:onProperty <https://w3id.org/include/assay/parent_sample_id> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/container_id> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/laboratory_procedure> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/include/assay/Aliquot> ;
-            owl:onProperty <https://w3id.org/include/assay/has_aliquot> ],
+            owl:onProperty <https://w3id.org/include/assay/parent_sample_type> ],
         <https://w3id.org/include/core/Thing> ;
     skos:definition "A Biospecimen Collected from A Participant" ;
     include:required "False" ;
@@ -895,6 +905,13 @@ linkml:topValue a owl:DatatypeProperty ;
     linkml:permissible_values <http://purl.obolibrary.org/obo/0008608>,
         <https://w3id.org/include/participant/EnumDownSyndromeStatus#d21> .
 
+<https://w3id.org/include/participant/EnumVitalStatus> a owl:Class,
+        linkml:EnumDefinition ;
+    rdfs:label "enum_vital_status" ;
+    owl:unionOf ( <https://w3id.org/include/participant/EnumVitalStatus#dead> <https://w3id.org/include/participant/EnumVitalStatus#alive> ) ;
+    linkml:permissible_values <https://w3id.org/include/participant/EnumVitalStatus#alive>,
+        <https://w3id.org/include/participant/EnumVitalStatus#dead> .
+
 <https://w3id.org/include/participant/has_participant> a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "has_participant" ;
@@ -914,21 +931,21 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "Study" ;
     dcterms:title "Study" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/include/study/study_name> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/include/study/EnumStudyCode> ;
             owl:onProperty <https://w3id.org/include/study/study_code> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/study/study_name> ;
+            owl:onClass <https://w3id.org/include/study/EnumProgram> ;
+            owl:onProperty <https://w3id.org/include/study/program> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/include/study/dbgap> ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/include/study/EnumProgram> ;
-            owl:onProperty <https://w3id.org/include/study/program> ;
-            owl:qualifiedCardinality 1 ],
         <https://w3id.org/include/core/Thing> ;
     skos:definition "A Study" ;
     include:required "True" .
@@ -938,33 +955,45 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "DataFile" ;
     dcterms:title "DataFile" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/include/participant/Participant> ;
-            owl:onProperty <https://w3id.org/include/participant/has_participant> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass <https://w3id.org/include/study/Study> ;
-            owl:onProperty <https://w3id.org/include/participant/has_study> ],
-        [ a owl:Restriction ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/data_category> ;
+            owl:onProperty <https://w3id.org/include/assay/original_file_name> ;
             owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/include/assay/size> ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/include/assay/file_name> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/participant/participant_id> ;
-            owl:qualifiedCardinality 1 ],
+            owl:onProperty <https://w3id.org/include/assay/file_id> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/include/participant/Participant> ;
+            owl:onProperty <https://w3id.org/include/participant/has_participant> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/include/assay/EnumDataAccess> ;
             owl:onProperty <https://w3id.org/include/assay/data_access> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Uriorcurie ;
+            owl:onProperty <https://w3id.org/include/assay/access_url> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/data_type> ],
+            owl:onProperty <https://w3id.org/include/assay/experimental_strategy> ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/include/participant/participant_id> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/include/assay/collection_id> ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/include/assay/format> ;
@@ -974,29 +1003,17 @@ linkml:topValue a owl:DatatypeProperty ;
             owl:onClass <https://w3id.org/include/assay/Biospecimen> ;
             owl:onProperty <https://w3id.org/include/assay/has_biospecimen> ],
         [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/size> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/experimental_strategy> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/file_id> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/collection_id> ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/original_file_name> ;
+            owl:onProperty <https://w3id.org/include/assay/data_category> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/assay/access_url> ],
+            owl:onProperty <https://w3id.org/include/assay/data_type> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass <https://w3id.org/include/study/Study> ;
+            owl:onProperty <https://w3id.org/include/participant/has_study> ],
         <https://w3id.org/include/core/Thing> ;
     skos:definition "A DataFile Associated with a Participant or Study or Biospecimen" ;
     include:required "False" ;
@@ -1044,52 +1061,36 @@ linkml:topValue a owl:DatatypeProperty ;
     rdfs:label "Participant" ;
     dcterms:title "Participant" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:Integer ;
+            owl:onProperty <https://w3id.org/include/participant/age_at_last_vital_status> ],
+        [ a owl:Restriction ;
             owl:onClass <https://w3id.org/include/participant/EnumDownSyndromeStatus> ;
             owl:onProperty <https://w3id.org/include/participant/down_syndrome_status> ;
             owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/participant/father_id> ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/participant/outcomes_vital_status> ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/include/participant/EnumFamilyType> ;
-            owl:onProperty <https://w3id.org/include/participant/family_type> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/participant/participant_id> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/include/participant/EnumRace> ;
-            owl:onProperty <https://w3id.org/include/participant/race> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/include/participant/EnumSex> ;
-            owl:onProperty <https://w3id.org/include/participant/sex> ;
-            owl:qualifiedCardinality 1 ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:String ;
-            owl:onProperty <https://w3id.org/include/participant/family_id> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass <https://w3id.org/include/assay/DataFile> ;
             owl:onProperty <https://w3id.org/include/assay/has_datafile> ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
-            owl:onClass linkml:Integer ;
-            owl:onProperty <https://w3id.org/include/participant/age_at_last_vital_status> ],
+            owl:onClass <https://w3id.org/include/participant/EnumVitalStatus> ;
+            owl:onProperty <https://w3id.org/include/participant/outcomes_vital_status> ],
         [ a owl:Restriction ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/include/participant/external_id> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
-            owl:onClass <https://w3id.org/include/participant/EnumEthnicity> ;
-            owl:onProperty <https://w3id.org/include/participant/ethnicity> ;
+            owl:onClass <https://w3id.org/include/participant/EnumFamilyType> ;
+            owl:onProperty <https://w3id.org/include/participant/family_type> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/include/participant/family_id> ],
+        [ a owl:Restriction ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/include/participant/participant_id> ;
             owl:qualifiedCardinality 1 ],
         [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
@@ -1100,9 +1101,25 @@ linkml:topValue a owl:DatatypeProperty ;
             owl:onClass <https://w3id.org/include/participant/Participant> ;
             owl:onProperty <https://w3id.org/include/participant/family_relationship> ],
         [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/include/participant/EnumEthnicity> ;
+            owl:onProperty <https://w3id.org/include/participant/ethnicity> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/include/participant/EnumSex> ;
+            owl:onProperty <https://w3id.org/include/participant/sex> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
+            owl:onClass <https://w3id.org/include/participant/EnumRace> ;
+            owl:onProperty <https://w3id.org/include/participant/race> ;
+            owl:qualifiedCardinality 1 ],
+        [ a owl:Restriction ;
             owl:maxQualifiedCardinality 1 ;
             owl:onClass linkml:String ;
             owl:onProperty <https://w3id.org/include/participant/mother_id> ],
+        [ a owl:Restriction ;
+            owl:maxQualifiedCardinality 1 ;
+            owl:onClass linkml:String ;
+            owl:onProperty <https://w3id.org/include/participant/father_id> ],
         <https://w3id.org/include/core/Thing> ;
     skos:definition "A Participant in a Study" ;
     include:required "False" ;

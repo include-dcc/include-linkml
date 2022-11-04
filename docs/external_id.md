@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/participant/:external_id](https://w3id.org/includ
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -53,6 +53,7 @@ rank: 1000
 alias: external_id
 domain_of:
 - Participant
+range: string
 required: true
 
 ```

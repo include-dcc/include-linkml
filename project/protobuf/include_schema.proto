@@ -44,7 +44,7 @@ message Condition
 // A DataFile Associated with a Participant or Study or Biospecimen
 message DataFile
  {
-  string accessUrl = 0
+  uriorcurie accessUrl = 0
   string collectionId = 0
   enumDataAccess dataAccess = 0
   string dataCategory = 0
@@ -79,7 +79,7 @@ message Participant
   dataFile hasDatafile = 0
   study hasStudy = 0
   string motherId = 0
-  string outcomesVitalStatus = 0
+  enumVitalStatus outcomesVitalStatus = 0
   string participantId = 0
   enumRace race = 0
   enumSex sex = 0

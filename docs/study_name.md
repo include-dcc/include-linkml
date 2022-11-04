@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/study/:study_name](https://w3id.org/include/study
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -53,6 +53,7 @@ rank: 1000
 alias: study_name
 domain_of:
 - Study
+range: string
 required: true
 
 ```

@@ -102,7 +102,7 @@ linkml:Nodeidentifier NONLITERAL
 <https://w3id.org/include/assay/DataFile> CLOSED {
     (  $<https://w3id.org/include/assay/DataFile_tes> (  &<https://w3id.org/include/core/Thing_tes> ;
           rdf:type [ <https://w3id.org/include/core/Thing> ] ? ;
-          <https://w3id.org/include/assay/access_url> @linkml:String ? ;
+          <https://w3id.org/include/assay/access_url> @linkml:Uriorcurie ? ;
           <https://w3id.org/include/assay/collection_id> @linkml:String ? ;
           <https://w3id.org/include/assay/data_access> @<https://w3id.org/include/assay/EnumDataAccess> ? ;
           <https://w3id.org/include/assay/data_category> @linkml:String ;
@@ -146,7 +146,7 @@ linkml:Nodeidentifier NONLITERAL
           <https://w3id.org/include/assay/has_datafile> @<https://w3id.org/include/assay/DataFile> ? ;
           <https://w3id.org/include/participant/has_study> @<https://w3id.org/include/study/Study> ? ;
           <https://w3id.org/include/participant/mother_id> @linkml:String ? ;
-          <https://w3id.org/include/participant/outcomes_vital_status> @linkml:String ? ;
+          <https://w3id.org/include/participant/outcomes_vital_status> @<https://w3id.org/include/participant/EnumVitalStatus> ? ;
           <https://w3id.org/include/participant/participant_id> @linkml:String ;
           <https://w3id.org/include/participant/race> @<https://w3id.org/include/participant/EnumRace> ;
           <https://w3id.org/include/participant/sex> @<https://w3id.org/include/participant/EnumSex>

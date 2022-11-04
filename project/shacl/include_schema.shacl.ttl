@@ -7,20 +7,20 @@
     sh:description "An assay" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "Assay" ;
-    sh:property [ sh:class <https://w3id.org/include/assay/:DataFile> ;
-            sh:description "The DataFile Output of an Assay" ;
-            sh:maxCount 1 ;
-            sh:name "Has Output" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/include/assay/:has_output> ],
-        [ sh:class <https://w3id.org/include/assay/:Biospecimen> ;
+    sh:property [ sh:class <https://w3id.org/include/assay/:Biospecimen> ;
             sh:description "The Biospecimen an Assay is performed on" ;
             sh:maxCount 1 ;
             sh:name "Uses Biospecimen" ;
             sh:nodeKind sh:BlankNode ;
             sh:order 0 ;
-            sh:path <https://w3id.org/include/assay/:uses_biospecimen> ] ;
+            sh:path <https://w3id.org/include/assay/:uses_biospecimen> ],
+        [ sh:class <https://w3id.org/include/assay/:DataFile> ;
+            sh:description "The DataFile Output of an Assay" ;
+            sh:maxCount 1 ;
+            sh:name "Has Output" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/include/assay/:has_output> ] ;
     sh:targetClass <https://w3id.org/include/assay/:Assay> .
 
 <https://w3id.org/include/core/:Thing> a sh:NodeShape ;
@@ -35,70 +35,70 @@
     sh:description "A Condition of a Participant" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "Condition" ;
-    sh:property [ sh:description "Label for condition in the Medical Action Ontology (MAXO)" ;
+    sh:property [ sh:description "Code for condition in the Mondo Disease Ontology (MONDO)" ;
             sh:maxCount 1 ;
-            sh:name "Maxo Label" ;
-            sh:order 8 ;
-            sh:path <https://w3id.org/include/participant/:maxo_label> ],
-        [ sh:description "Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)" ;
-            sh:maxCount 1 ;
-            sh:name "Other Label" ;
-            sh:order 10 ;
-            sh:path <https://w3id.org/include/participant/:other_label> ],
-        [ sh:description "Label for condition in the Mondo Disease Ontology (MONDO)" ;
-            sh:maxCount 1 ;
-            sh:name "Mondo Label" ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/include/participant/:mondo_label> ],
-        [ sh:description "Whether condition was observed or not. \"Not Observed\" indicates participant was specifically examined for that condition, or health record specifically queried for that condition, and found to be negative. Sept. 2022 release will only include positive assertions." ;
-            sh:in ( "observed" "not_observed" ) ;
-            sh:maxCount 1 ;
-            sh:name "Condition Interpretation" ;
-            sh:order 4 ;
-            sh:path <https://w3id.org/include/participant/:condition_interpretation> ],
+            sh:name "Mondo Code" ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/include/participant/:mondo_code> ],
         [ sh:description "Code for condition in the Medical Action Ontology (MAXO)" ;
             sh:maxCount 1 ;
             sh:name "Maxo Code" ;
             sh:order 9 ;
             sh:path <https://w3id.org/include/participant/:maxo_code> ],
-        [ sh:description "Age in days at which condition was observed, recorded, or diagnosed" ;
+        [ sh:description "Label for condition in the Human Phenotype Ontology (HPO)" ;
             sh:maxCount 1 ;
-            sh:name "Age At Condition Observation" ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/include/participant/:age_at_condition_observation> ],
+            sh:name "Hpo Label" ;
+            sh:order 6 ;
+            sh:path <https://w3id.org/include/participant/:hpo_label> ],
+        [ sh:description "Label for condition in the Mondo Disease Ontology (MONDO)" ;
+            sh:maxCount 1 ;
+            sh:name "Mondo Label" ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/include/participant/:mondo_label> ],
         [ sh:description "Whether condition information was obtained from medical records (Clinical) or patient survey (Self-Reported)" ;
             sh:in ( "clinical" "self_reported" ) ;
             sh:maxCount 1 ;
             sh:name "Condition Data Source" ;
             sh:order 5 ;
             sh:path <https://w3id.org/include/participant/:condition_data_source> ],
-        [ sh:description "Label for condition in the Human Phenotype Ontology (HPO)" ;
-            sh:maxCount 1 ;
-            sh:name "Hpo Label" ;
-            sh:order 6 ;
-            sh:path <https://w3id.org/include/participant/:hpo_label> ],
-        [ sh:description "Code for condition in the Mondo Disease Ontology (MONDO)" ;
-            sh:maxCount 1 ;
-            sh:name "Mondo Code" ;
-            sh:order 3 ;
-            sh:path <https://w3id.org/include/participant/:mondo_code> ],
-        [ sh:description "Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)" ;
-            sh:maxCount 1 ;
-            sh:name "Other Code" ;
-            sh:order 11 ;
-            sh:path <https://w3id.org/include/participant/:other_code> ],
         [ sh:description "Code for condition in the Human Phenotype Ontology (HPO)" ;
             sh:maxCount 1 ;
             sh:name "Hpo Code" ;
             sh:order 7 ;
             sh:path <https://w3id.org/include/participant/:hpo_code> ],
+        [ sh:description "Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)" ;
+            sh:maxCount 1 ;
+            sh:name "Other Label" ;
+            sh:order 10 ;
+            sh:path <https://w3id.org/include/participant/:other_label> ],
+        [ sh:description "Whether condition was observed or not. \"Not Observed\" indicates participant was specifically examined for that condition, or health record specifically queried for that condition, and found to be negative. Sept. 2022 release will only include positive assertions." ;
+            sh:in ( "observed" "not_observed" ) ;
+            sh:maxCount 1 ;
+            sh:name "Condition Interpretation" ;
+            sh:order 4 ;
+            sh:path <https://w3id.org/include/participant/:condition_interpretation> ],
+        [ sh:description "Age in days at which condition was observed, recorded, or diagnosed" ;
+            sh:maxCount 1 ;
+            sh:name "Age At Condition Observation" ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/include/participant/:age_at_condition_observation> ],
         [ sh:class <https://w3id.org/include/participant/:Participant> ;
             sh:description "Link to a Participant" ;
             sh:maxCount 1 ;
             sh:name "Has Participant" ;
             sh:nodeKind sh:BlankNode ;
             sh:order 0 ;
-            sh:path <https://w3id.org/include/participant/:has_participant> ] ;
+            sh:path <https://w3id.org/include/participant/:has_participant> ],
+        [ sh:description "Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)" ;
+            sh:maxCount 1 ;
+            sh:name "Other Code" ;
+            sh:order 11 ;
+            sh:path <https://w3id.org/include/participant/:other_code> ],
+        [ sh:description "Label for condition in the Medical Action Ontology (MAXO)" ;
+            sh:maxCount 1 ;
+            sh:name "Maxo Label" ;
+            sh:order 8 ;
+            sh:path <https://w3id.org/include/participant/:maxo_label> ] ;
     sh:targetClass <https://w3id.org/include/participant/:Condition> .
 
 <https://w3id.org/include/participant/:FamilyGroup> a sh:NodeShape ;
@@ -127,11 +127,53 @@
     sh:description "A Biospecimen Collected from A Participant" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "Biospecimen" ;
-    sh:property [ sh:description "Type of biological material comprising the collected sample (e.g. Whole blood, Bone marrow, Saliva, etc.)" ;
+    sh:property [ sh:description "Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)" ;
+            sh:maxCount 1 ;
+            sh:name "Biospecimen Storage" ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/include/assay/:biospecimen_storage> ],
+        [ sh:description "Unit of sample volume" ;
+            sh:maxCount 1 ;
+            sh:name "Volume Unit" ;
+            sh:order 15 ;
+            sh:path <https://w3id.org/include/assay/:volume_unit> ],
+        [ sh:description "Amount of sample in container" ;
+            sh:maxCount 1 ;
+            sh:name "Volume" ;
+            sh:order 14 ;
+            sh:path <https://w3id.org/include/assay/:volume> ],
+        [ sh:description "Type of biological material comprising the collected sample (e.g. Whole blood, Bone marrow, Saliva, etc.)" ;
             sh:maxCount 1 ;
             sh:name "Collection Sample Type" ;
             sh:order 3 ;
             sh:path <https://w3id.org/include/assay/:collection_sample_type> ],
+        [ sh:description "Type of biological material comprising the parent sample (e.g. Plasma, Serum, White blood cells, etc.)" ;
+            sh:maxCount 1 ;
+            sh:name "Parent Sample Type" ;
+            sh:order 10 ;
+            sh:path <https://w3id.org/include/assay/:parent_sample_type> ],
+        [ sh:description "Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable)" ;
+            sh:maxCount 1 ;
+            sh:name "Parent Sample Id" ;
+            sh:order 9 ;
+            sh:path <https://w3id.org/include/assay/:parent_sample_id> ],
+        [ sh:description "Whether or not the sample is potentially available for sharing through the Virtual Biorepository" ;
+            sh:in ( "available" "unavailable" ) ;
+            sh:maxCount 1 ;
+            sh:name "Sample Availability" ;
+            sh:order 11 ;
+            sh:path <https://w3id.org/include/assay/:sample_availability> ],
+        [ sh:description "Age in days of participant at time of biospecimen collection" ;
+            sh:maxCount 1 ;
+            sh:name "Age At Biospecimen Collection" ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/include/assay/:age_at_biospecimen_collection> ],
+        [ sh:description "Identifier for sample. A sample is a unique biological material; two samples with two different IDs are biologically distinct." ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Sample Id" ;
+            sh:order 12 ;
+            sh:path <https://w3id.org/include/assay/:sample_id> ],
         [ sh:class <https://w3id.org/include/study/:Study> ;
             sh:description "Link to a Study" ;
             sh:maxCount 1 ;
@@ -139,58 +181,16 @@
             sh:nodeKind sh:BlankNode ;
             sh:order 7 ;
             sh:path <https://w3id.org/include/participant/:has_study> ],
-        [ sh:description "Whether or not the sample is potentially available for sharing through the Virtual Biorepository" ;
-            sh:in ( "available" "unavailable" ) ;
+        [ sh:description "Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs." ;
             sh:maxCount 1 ;
-            sh:name "Sample Availability" ;
-            sh:order 11 ;
-            sh:path <https://w3id.org/include/assay/:sample_availability> ],
-        [ sh:description "Amount of sample in container" ;
+            sh:name "Container Id" ;
+            sh:order 4 ;
+            sh:path <https://w3id.org/include/assay/:container_id> ],
+        [ sh:description "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed)." ;
             sh:maxCount 1 ;
-            sh:name "Volume" ;
-            sh:order 14 ;
-            sh:path <https://w3id.org/include/assay/:volume> ],
-        [ sh:description "Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable)" ;
-            sh:maxCount 1 ;
-            sh:name "Parent Sample Id" ;
-            sh:order 9 ;
-            sh:path <https://w3id.org/include/assay/:parent_sample_id> ],
-        [ sh:class <https://w3id.org/include/participant/:Participant> ;
-            sh:description "Link to a Participant" ;
-            sh:maxCount 1 ;
-            sh:name "Has Participant" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 6 ;
-            sh:path <https://w3id.org/include/participant/:has_participant> ],
-        [ sh:description "Identifier for sample. A sample is a unique biological material; two samples with two different IDs are biologically distinct." ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Sample Id" ;
-            sh:order 12 ;
-            sh:path <https://w3id.org/include/assay/:sample_id> ],
-        [ sh:description "Procedure by which Sample was derived from Parent Sample (e.g. RBC lysis, Centrifugation, Ficoll, etc.)" ;
-            sh:maxCount 1 ;
-            sh:name "Laboratory Procedure" ;
-            sh:order 8 ;
-            sh:path <https://w3id.org/include/assay/:laboratory_procedure> ],
-        [ sh:description "Unit of sample volume" ;
-            sh:maxCount 1 ;
-            sh:name "Volume Unit" ;
-            sh:order 15 ;
-            sh:path <https://w3id.org/include/assay/:volume_unit> ],
-        [ sh:description "Type of biological material comprising the sample (e.g. Plasma, Serum, White blood cells, DNA, RNA, etc.)" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Sample Type" ;
-            sh:order 13 ;
-            sh:path <https://w3id.org/include/assay/:sample_type> ],
-        [ sh:class <https://w3id.org/include/assay/:DataFile> ;
-            sh:description "Link to a DataFile" ;
-            sh:maxCount 1 ;
-            sh:name "Has Datafile" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 5 ;
-            sh:path <https://w3id.org/include/assay/:has_datafile> ],
+            sh:name "Collection Id" ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/include/assay/:collection_id> ],
         [ sh:class <https://w3id.org/include/assay/:Aliquot> ;
             sh:description "An aliquot of a sample" ;
             sh:maxCount 1 ;
@@ -198,31 +198,31 @@
             sh:nodeKind sh:BlankNode ;
             sh:order 16 ;
             sh:path <https://w3id.org/include/assay/:has_aliquot> ],
-        [ sh:description "Age in days of participant at time of biospecimen collection" ;
+        [ sh:description "Procedure by which Sample was derived from Parent Sample (e.g. RBC lysis, Centrifugation, Ficoll, etc.)" ;
             sh:maxCount 1 ;
-            sh:name "Age At Biospecimen Collection" ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/include/assay/:age_at_biospecimen_collection> ],
-        [ sh:description "Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)" ;
+            sh:name "Laboratory Procedure" ;
+            sh:order 8 ;
+            sh:path <https://w3id.org/include/assay/:laboratory_procedure> ],
+        [ sh:description "Type of biological material comprising the sample (e.g. Plasma, Serum, White blood cells, DNA, RNA, etc.)" ;
             sh:maxCount 1 ;
-            sh:name "Biospecimen Storage" ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/include/assay/:biospecimen_storage> ],
-        [ sh:description "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed)." ;
+            sh:minCount 1 ;
+            sh:name "Sample Type" ;
+            sh:order 13 ;
+            sh:path <https://w3id.org/include/assay/:sample_type> ],
+        [ sh:class <https://w3id.org/include/participant/:Participant> ;
+            sh:description "Link to a Participant" ;
             sh:maxCount 1 ;
-            sh:name "Collection Id" ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/include/assay/:collection_id> ],
-        [ sh:description "Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs." ;
+            sh:name "Has Participant" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 6 ;
+            sh:path <https://w3id.org/include/participant/:has_participant> ],
+        [ sh:class <https://w3id.org/include/assay/:DataFile> ;
+            sh:description "Link to a DataFile" ;
             sh:maxCount 1 ;
-            sh:name "Container Id" ;
-            sh:order 4 ;
-            sh:path <https://w3id.org/include/assay/:container_id> ],
-        [ sh:description "Type of biological material comprising the parent sample (e.g. Plasma, Serum, White blood cells, etc.)" ;
-            sh:maxCount 1 ;
-            sh:name "Parent Sample Type" ;
-            sh:order 10 ;
-            sh:path <https://w3id.org/include/assay/:parent_sample_type> ] ;
+            sh:name "Has Datafile" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 5 ;
+            sh:path <https://w3id.org/include/assay/:has_datafile> ] ;
     sh:targetClass <https://w3id.org/include/assay/:Biospecimen> .
 
 <https://w3id.org/include/assay/:DataFile> a sh:NodeShape ;
@@ -230,18 +230,35 @@
     sh:description "A DataFile Associated with a Participant or Study or Biospecimen" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "DataFile" ;
-    sh:property [ sh:description "General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune maps, Transcriptomics, etc.)" ;
+    sh:property [ sh:class <https://w3id.org/include/participant/:Participant> ;
+            sh:description "Link to a Participant" ;
+            sh:maxCount 1 ;
+            sh:name "Has Participant" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 10 ;
+            sh:path <https://w3id.org/include/participant/:has_participant> ],
+        [ sh:description "Specific type of data contained in file (e.g. Aligned reads, Unaligned reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification, Structural variations, Cytokine profiles, Operation reports, Pathology reports, Histology images, Clinical supplement, Protein expression quantification, etc.)" ;
+            sh:maxCount 1 ;
+            sh:name "Data Type" ;
+            sh:order 4 ;
+            sh:path <https://w3id.org/include/assay/:data_type> ],
+        [ sh:description "Synapse ID for file" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:name "Data Category" ;
-            sh:order 3 ;
-            sh:path <https://w3id.org/include/assay/:data_category> ],
-        [ sh:description "Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom, etc.)" ;
+            sh:name "File Name" ;
+            sh:order 7 ;
+            sh:path <https://w3id.org/include/assay/:file_name> ],
+        [ sh:description "Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale Discovery, etc.)" ;
             sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Format" ;
-            sh:order 8 ;
-            sh:path <https://w3id.org/include/assay/:format> ],
+            sh:name "Experimental Strategy" ;
+            sh:order 5 ;
+            sh:path <https://w3id.org/include/assay/:experimental_strategy> ],
+        [ sh:description "Type of access control on this file, determined by DCC" ;
+            sh:in ( "controlled" "open" "registered" ) ;
+            sh:maxCount 1 ;
+            sh:name "Data Access" ;
+            sh:order 2 ;
+            sh:path <https://w3id.org/include/assay/:data_access> ],
         [ sh:class <https://w3id.org/include/assay/:Biospecimen> ;
             sh:description "Link to a Biospecimen" ;
             sh:maxCount 1 ;
@@ -249,17 +266,22 @@
             sh:nodeKind sh:BlankNode ;
             sh:order 9 ;
             sh:path <https://w3id.org/include/assay/:has_biospecimen> ],
-        [ sh:description "Synapse ID for file" ;
+        [ sh:description "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed)." ;
+            sh:maxCount 1 ;
+            sh:name "Collection Id" ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/include/assay/:collection_id> ],
+        [ sh:description "General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune maps, Transcriptomics, etc.)" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
-            sh:name "File Name" ;
-            sh:order 7 ;
-            sh:path <https://w3id.org/include/assay/:file_name> ],
-        [ sh:description "Size of file" ;
+            sh:name "Data Category" ;
+            sh:order 3 ;
+            sh:path <https://w3id.org/include/assay/:data_category> ],
+        [ sh:description "File identifier, assigned by DCC" ;
             sh:maxCount 1 ;
-            sh:name "Size" ;
-            sh:order 13 ;
-            sh:path <https://w3id.org/include/assay/:size> ],
+            sh:name "File Id" ;
+            sh:order 6 ;
+            sh:path <https://w3id.org/include/assay/:file_id> ],
         [ sh:class <https://w3id.org/include/study/:Study> ;
             sh:description "Link to a Study" ;
             sh:maxCount 1 ;
@@ -267,29 +289,12 @@
             sh:nodeKind sh:BlankNode ;
             sh:order 11 ;
             sh:path <https://w3id.org/include/participant/:has_study> ],
-        [ sh:class <https://w3id.org/include/participant/:Participant> ;
-            sh:description "Link to a Participant" ;
+        [ sh:description "Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom, etc.)" ;
             sh:maxCount 1 ;
-            sh:name "Has Participant" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 10 ;
-            sh:path <https://w3id.org/include/participant/:has_participant> ],
-        [ sh:description "Type of access control on this file, determined by DCC" ;
-            sh:in ( "controlled" "open" "registered" ) ;
-            sh:maxCount 1 ;
-            sh:name "Data Access" ;
-            sh:order 2 ;
-            sh:path <https://w3id.org/include/assay/:data_access> ],
-        [ sh:description "Specific type of data contained in file (e.g. Aligned reads, Unaligned reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification, Structural variations, Cytokine profiles, Operation reports, Pathology reports, Histology images, Clinical supplement, Protein expression quantification, etc.)" ;
-            sh:maxCount 1 ;
-            sh:name "Data Type" ;
-            sh:order 4 ;
-            sh:path <https://w3id.org/include/assay/:data_type> ],
-        [ sh:description "Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale Discovery, etc.)" ;
-            sh:maxCount 1 ;
-            sh:name "Experimental Strategy" ;
-            sh:order 5 ;
-            sh:path <https://w3id.org/include/assay/:experimental_strategy> ],
+            sh:minCount 1 ;
+            sh:name "Format" ;
+            sh:order 8 ;
+            sh:path <https://w3id.org/include/assay/:format> ],
         [ sh:description "Name of file, assigned by data contributor" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -302,21 +307,16 @@
             sh:name "Participant Id" ;
             sh:order 12 ;
             sh:path <https://w3id.org/include/participant/:participant_id> ],
-        [ sh:description "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed)." ;
+        [ sh:description "Size of file" ;
             sh:maxCount 1 ;
-            sh:name "Collection Id" ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/include/assay/:collection_id> ],
+            sh:name "Size" ;
+            sh:order 13 ;
+            sh:path <https://w3id.org/include/assay/:size> ],
         [ sh:description "Storage location for this file" ;
             sh:maxCount 1 ;
             sh:name "Access Url" ;
             sh:order 0 ;
-            sh:path <https://w3id.org/include/assay/:access_url> ],
-        [ sh:description "File identifier, assigned by DCC" ;
-            sh:maxCount 1 ;
-            sh:name "File Id" ;
-            sh:order 6 ;
-            sh:path <https://w3id.org/include/assay/:file_id> ] ;
+            sh:path <https://w3id.org/include/assay/:access_url> ] ;
     sh:targetClass <https://w3id.org/include/assay/:DataFile> .
 
 <https://w3id.org/include/study/:Study> a sh:NodeShape ;
@@ -324,31 +324,31 @@
     sh:description "A Study" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "Study" ;
-    sh:property [ sh:description "Funding source for the study" ;
-            sh:in ( "include" "kf" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Program" ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/include/study/:program> ],
-        [ sh:description "dbGaP study accession code" ;
-            sh:maxCount 1 ;
-            sh:name "Dbgap" ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/include/study/:dbgap> ],
-        [ sh:description "Name of the study, chosen by data contributor" ;
+    sh:property [ sh:description "Name of the study, chosen by data contributor" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Study Name" ;
             sh:order 3 ;
             sh:path <https://w3id.org/include/study/:study_name> ],
+        [ sh:description "dbGaP study accession code" ;
+            sh:maxCount 1 ;
+            sh:name "Dbgap" ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/include/study/:dbgap> ],
         [ sh:description "Unique identifer for the study, assigned by DCC" ;
             sh:in ( "ds_cog_all" "ds_pcgc" "ds360_chd" "dsc" "htp" "abcds" "ads" "ds_brain" "ds_cog_aml" "bri_dsr" "ds_isp" "ds_nexus" "ds_pals" "ds_sleep" "ecods" "exceeds" "trc_ds" "x01_desmith" "x01_hakon" ) ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:name "Study Code" ;
             sh:order 2 ;
-            sh:path <https://w3id.org/include/study/:study_code> ] ;
+            sh:path <https://w3id.org/include/study/:study_code> ],
+        [ sh:description "Funding source for the study" ;
+            sh:in ( "include" "kf" ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Program" ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/include/study/:program> ] ;
     sh:targetClass <https://w3id.org/include/study/:Study> .
 
 <https://w3id.org/include/participant/:Participant> a sh:NodeShape ;
@@ -356,21 +356,13 @@
     sh:description "A Participant in a Study" ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:name "Participant" ;
-    sh:property [ sh:description "Unique identifer for family to which Participant belongs" ;
+    sh:property [ sh:description "Sex of participant" ;
+            sh:in ( "female" "male" "other" "unknown" ) ;
             sh:maxCount 1 ;
-            sh:name "Family Id" ;
-            sh:order 4 ;
-            sh:path <https://w3id.org/include/participant/:family_id> ],
-        [ sh:description "Age in days when participant's vital status was last recorded" ;
-            sh:maxCount 1 ;
-            sh:name "Age At Last Vital Status" ;
-            sh:order 0 ;
-            sh:path <https://w3id.org/include/participant/:age_at_last_vital_status> ],
-        [ sh:description "Participant ID for Participant's father" ;
-            sh:maxCount 1 ;
-            sh:name "Father Id" ;
-            sh:order 7 ;
-            sh:path <https://w3id.org/include/participant/:father_id> ],
+            sh:minCount 1 ;
+            sh:name "Sex" ;
+            sh:order 14 ;
+            sh:path <https://w3id.org/include/participant/:sex> ],
         [ sh:description "Ethnicity of participant" ;
             sh:in ( "asked_but_unknown" "hispanic_or_latino" "not_hispanic_or_latino" "prefer_not_to_answer" "unknown" ) ;
             sh:maxCount 1 ;
@@ -378,52 +370,6 @@
             sh:name "Ethnicity" ;
             sh:order 2 ;
             sh:path <https://w3id.org/include/participant/:ethnicity> ],
-        [ sh:description "Unique identifier for the participant, assigned by DCC" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Participant Id" ;
-            sh:order 12 ;
-            sh:path <https://w3id.org/include/participant/:participant_id> ],
-        [ sh:description "Sex of participant" ;
-            sh:in ( "female" "male" "other" "unknown" ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Sex" ;
-            sh:order 14 ;
-            sh:path <https://w3id.org/include/participant/:sex> ],
-        [ sh:class <https://w3id.org/include/participant/:Participant> ;
-            sh:description "Relationship of Participant to other family members" ;
-            sh:maxCount 1 ;
-            sh:name "Family Relationship" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 5 ;
-            sh:path <https://w3id.org/include/participant/:family_relationship> ],
-        [ sh:class <https://w3id.org/include/study/:Study> ;
-            sh:description "Link to a Study" ;
-            sh:maxCount 1 ;
-            sh:name "Has Study" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 9 ;
-            sh:path <https://w3id.org/include/participant/:has_study> ],
-        [ sh:class <https://w3id.org/include/assay/:DataFile> ;
-            sh:description "Link to a DataFile" ;
-            sh:maxCount 1 ;
-            sh:name "Has Datafile" ;
-            sh:nodeKind sh:BlankNode ;
-            sh:order 8 ;
-            sh:path <https://w3id.org/include/assay/:has_datafile> ],
-        [ sh:description "Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)" ;
-            sh:in ( "d21" <MONDO:0008608> ) ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:name "Down Syndrome Status" ;
-            sh:order 1 ;
-            sh:path <https://w3id.org/include/participant/:down_syndrome_status> ],
-        [ sh:description "Participant ID for Participant's mother" ;
-            sh:maxCount 1 ;
-            sh:name "Mother Id" ;
-            sh:order 10 ;
-            sh:path <https://w3id.org/include/participant/:mother_id> ],
         [ sh:description "Unique identifier for the participant, assigned by data contributor" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -437,7 +383,42 @@
             sh:name "Family Type" ;
             sh:order 6 ;
             sh:path <https://w3id.org/include/participant/:family_type> ],
+        [ sh:description "Participant ID for Participant's father" ;
+            sh:maxCount 1 ;
+            sh:name "Father Id" ;
+            sh:order 7 ;
+            sh:path <https://w3id.org/include/participant/:father_id> ],
+        [ sh:description "Participant ID for Participant's mother" ;
+            sh:maxCount 1 ;
+            sh:name "Mother Id" ;
+            sh:order 10 ;
+            sh:path <https://w3id.org/include/participant/:mother_id> ],
+        [ sh:description "Age in days when participant's vital status was last recorded" ;
+            sh:maxCount 1 ;
+            sh:name "Age At Last Vital Status" ;
+            sh:order 0 ;
+            sh:path <https://w3id.org/include/participant/:age_at_last_vital_status> ],
+        [ sh:class <https://w3id.org/include/assay/:DataFile> ;
+            sh:description "Link to a DataFile" ;
+            sh:maxCount 1 ;
+            sh:name "Has Datafile" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 8 ;
+            sh:path <https://w3id.org/include/assay/:has_datafile> ],
+        [ sh:description "Unique identifer for family to which Participant belongs" ;
+            sh:maxCount 1 ;
+            sh:name "Family Id" ;
+            sh:order 4 ;
+            sh:path <https://w3id.org/include/participant/:family_id> ],
+        [ sh:class <https://w3id.org/include/participant/:Participant> ;
+            sh:description "Relationship of Participant to other family members" ;
+            sh:maxCount 1 ;
+            sh:name "Family Relationship" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 5 ;
+            sh:path <https://w3id.org/include/participant/:family_relationship> ],
         [ sh:description "Whether participant is alive or dead" ;
+            sh:in ( "dead" "alive" ) ;
             sh:maxCount 1 ;
             sh:name "Outcomes Vital Status" ;
             sh:order 11 ;
@@ -448,6 +429,26 @@
             sh:minCount 1 ;
             sh:name "Race" ;
             sh:order 13 ;
-            sh:path <https://w3id.org/include/participant/:race> ] ;
+            sh:path <https://w3id.org/include/participant/:race> ],
+        [ sh:description "Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)" ;
+            sh:in ( "d21" <MONDO:0008608> ) ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Down Syndrome Status" ;
+            sh:order 1 ;
+            sh:path <https://w3id.org/include/participant/:down_syndrome_status> ],
+        [ sh:class <https://w3id.org/include/study/:Study> ;
+            sh:description "Link to a Study" ;
+            sh:maxCount 1 ;
+            sh:name "Has Study" ;
+            sh:nodeKind sh:BlankNode ;
+            sh:order 9 ;
+            sh:path <https://w3id.org/include/participant/:has_study> ],
+        [ sh:description "Unique identifier for the participant, assigned by DCC" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Participant Id" ;
+            sh:order 12 ;
+            sh:path <https://w3id.org/include/participant/:participant_id> ] ;
     sh:targetClass <https://w3id.org/include/participant/:Participant> .
 

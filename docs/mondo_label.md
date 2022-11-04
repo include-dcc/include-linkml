@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/participant/:mondo_label](https://w3id.org/includ
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -51,6 +51,7 @@ rank: 1000
 alias: mondo_label
 domain_of:
 - Condition
+range: string
 
 ```
 </details>

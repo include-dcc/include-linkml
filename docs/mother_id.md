@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/participant/:mother_id](https://w3id.org/include/
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -51,6 +51,7 @@ rank: 1000
 alias: mother_id
 domain_of:
 - Participant
+range: string
 
 ```
 </details>

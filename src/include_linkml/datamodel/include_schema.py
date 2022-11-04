@@ -1,5 +1,5 @@
 # Auto generated from include_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-04T05:49:48
+# Generation date: 2022-11-04T05:59:53
 # Schema: include-schema
 #
 # id: https://w3id.org/include/
@@ -22,7 +22,8 @@ from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.linkml_model.types import Integer, String
+from linkml_runtime.linkml_model.types import Integer, String, Uriorcurie
+from linkml_runtime.utils.metamodelcore import URIorCURIE
 
 metamodel_version = "1.7.0"
 version = None
@@ -197,7 +198,7 @@ class DataFile(Thing):
     format: str = None
     participant_id: str = None
     original_file_name: str = None
-    access_url: Optional[str] = None
+    access_url: Optional[Union[str, URIorCURIE]] = None
     collection_id: Optional[str] = None
     data_access: Optional[Union[str, "EnumDataAccess"]] = None
     data_type: Optional[str] = None
@@ -234,8 +235,8 @@ class DataFile(Thing):
         if not isinstance(self.original_file_name, str):
             self.original_file_name = str(self.original_file_name)
 
-        if self.access_url is not None and not isinstance(self.access_url, str):
-            self.access_url = str(self.access_url)
+        if self.access_url is not None and not isinstance(self.access_url, URIorCURIE):
+            self.access_url = URIorCURIE(self.access_url)
 
         if self.collection_id is not None and not isinstance(self.collection_id, str):
             self.collection_id = str(self.collection_id)
@@ -293,7 +294,7 @@ class Participant(Thing):
     has_datafile: Optional[Union[dict, DataFile]] = None
     has_study: Optional[Union[dict, "Study"]] = None
     mother_id: Optional[str] = None
-    outcomes_vital_status: Optional[str] = None
+    outcomes_vital_status: Optional[Union[str, "EnumVitalStatus"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.down_syndrome_status):
@@ -352,8 +353,8 @@ class Participant(Thing):
         if self.mother_id is not None and not isinstance(self.mother_id, str):
             self.mother_id = str(self.mother_id)
 
-        if self.outcomes_vital_status is not None and not isinstance(self.outcomes_vital_status, str):
-            self.outcomes_vital_status = str(self.outcomes_vital_status)
+        if self.outcomes_vital_status is not None and not isinstance(self.outcomes_vital_status, EnumVitalStatus):
+            self.outcomes_vital_status = EnumVitalStatus(self.outcomes_vital_status)
 
         super().__post_init__(**kwargs)
 
@@ -581,6 +582,15 @@ class EnumSex(EnumDefinitionImpl):
         name="EnumSex",
     )
 
+class EnumVitalStatus(EnumDefinitionImpl):
+
+    dead = PermissibleValue(text="dead")
+    alive = PermissibleValue(text="alive")
+
+    _defn = EnumDefinition(
+        name="EnumVitalStatus",
+    )
+
 class EnumProgram(EnumDefinitionImpl):
 
     include = PermissibleValue(text="include")
@@ -621,7 +631,7 @@ class slots:
     pass
 
 slots.access_url = Slot(uri=INCLUDE['assay/access_url'], name="access_url", curie=INCLUDE.curie('assay/access_url'),
-                   model_uri=INCLUDE.access_url, domain=None, range=Optional[str])
+                   model_uri=INCLUDE.access_url, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.age_at_biospecimen_collection = Slot(uri=INCLUDE['assay/age_at_biospecimen_collection'], name="age_at_biospecimen_collection", curie=INCLUDE.curie('assay/age_at_biospecimen_collection'),
                    model_uri=INCLUDE.age_at_biospecimen_collection, domain=None, range=Optional[str])
@@ -771,7 +781,7 @@ slots.other_label = Slot(uri=INCLUDE['participant/other_label'], name="other_lab
                    model_uri=INCLUDE.other_label, domain=None, range=Optional[str])
 
 slots.outcomes_vital_status = Slot(uri=INCLUDE['participant/outcomes_vital_status'], name="outcomes_vital_status", curie=INCLUDE.curie('participant/outcomes_vital_status'),
-                   model_uri=INCLUDE.outcomes_vital_status, domain=None, range=Optional[str])
+                   model_uri=INCLUDE.outcomes_vital_status, domain=None, range=Optional[Union[str, "EnumVitalStatus"]])
 
 slots.participant_id = Slot(uri=INCLUDE['participant/participant_id'], name="participant_id", curie=INCLUDE.curie('participant/participant_id'),
                    model_uri=INCLUDE.participant_id, domain=None, range=str)

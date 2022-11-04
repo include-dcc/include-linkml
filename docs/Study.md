@@ -36,10 +36,10 @@ URI: [https://w3id.org/include/study/:Study](https://w3id.org/include/study/:Stu
 
 | Name | Cardinality and Range  | Description  |
 | ---  | ---  | --- |
-| [dbgap](dbgap.md) | 0..1 <br/> NONE  | dbGaP study accession code  |
+| [dbgap](dbgap.md) | 0..1 <br/> [xsd:string](xsd:string)  | dbGaP study accession code  |
 | [program](program.md) | 1..1 <br/> [EnumProgram](EnumProgram.md)  | Funding source for the study  |
 | [study_code](study_code.md) | 1..1 <br/> [EnumStudyCode](EnumStudyCode.md)  | Unique identifer for the study, assigned by DCC  |
-| [study_name](study_name.md) | 1..1 <br/> NONE  | Name of the study, chosen by data contributor  |
+| [study_name](study_name.md) | 1..1 <br/> [xsd:string](xsd:string)  | Name of the study, chosen by data contributor  |
 
 
 ## Usages
@@ -142,6 +142,7 @@ attributes:
     owner: Study
     domain_of:
     - Study
+    range: string
   program:
     name: program
     definition_uri: include:program
@@ -179,6 +180,7 @@ attributes:
     owner: Study
     domain_of:
     - Study
+    range: string
     required: true
 
 ```

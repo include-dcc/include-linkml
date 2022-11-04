@@ -47,7 +47,7 @@ URI: [https://w3id.org/include/assay/:DataFile](https://w3id.org/include/assay/:
 
 | Name | Cardinality and Range  | Description  |
 | ---  | ---  | --- |
-| [access_url](access_url.md) | 0..1 <br/> NONE  | Storage location for this file  |
+| [access_url](access_url.md) | 0..1 <br/> [xsd:anyURI](xsd:anyURI)  | Storage location for this file  |
 | [collection_id](collection_id.md) | 0..1 <br/> NONE  | Identifier for the eldest sample in a lineage of processed, pooled, or aliquo...  |
 | [data_access](data_access.md) | 0..1 <br/> [EnumDataAccess](EnumDataAccess.md)  | Type of access control on this file, determined by DCC  |
 | [data_category](data_category.md) | 1..1 <br/> NONE  | General category of data in file (e  |
@@ -182,6 +182,7 @@ attributes:
     owner: DataFile
     domain_of:
     - DataFile
+    range: uriorcurie
   collection_id:
     name: collection_id
     definition_uri: include:collection_id

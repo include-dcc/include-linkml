@@ -33,6 +33,7 @@ slots:
     definition_uri: include:dbgap
     description: dbGaP study accession code
     title: Dbgap
+    range: string
   program:
     definition_uri: include:program
     description: Funding source for the study
@@ -50,6 +51,7 @@ slots:
     description: Name of the study, chosen by data contributor
     title: Study Name
     required: true
+    range: string
 enums:
   enum_program:
     name: enum_program

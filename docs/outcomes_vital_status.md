@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/participant/:outcomes_vital_status](https://w3id.
 
 ## Properties
 
-* Range: NONE
+* Range: [EnumVitalStatus](EnumVitalStatus.md)
 * Multivalued: None
 
 
@@ -51,6 +51,7 @@ rank: 1000
 alias: outcomes_vital_status
 domain_of:
 - Participant
+range: enum_vital_status
 
 ```
 </details>

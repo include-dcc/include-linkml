@@ -123,11 +123,13 @@ slots:
     definition_uri: include:external_id
     description: Unique identifier for the participant, assigned by data contributor
     title: External Id
+    range: string
     required: true
   family_id:
     definition_uri: include:family_id
     description: Unique identifer for family to which Participant belongs
     title: Family Id
+    range: string
   family_relationship:
     definition_uri: include:family_relationship
     description: Relationship of Participant to other family members
@@ -145,6 +147,7 @@ slots:
     definition_uri: include:father_id
     description: Participant ID for Participant's father
     title: Father Id
+    range: string
   has_participant:
     definition_uri: include:has_participant
     description: Link to a Participant
@@ -159,44 +162,54 @@ slots:
     definition_uri: include:hpo_code
     description: Code for condition in the Human Phenotype Ontology (HPO)
     title: Hpo Code
+    range: string
   hpo_label:
     definition_uri: include:hpo_label
     description: Label for condition in the Human Phenotype Ontology (HPO)
     title: Hpo Label
+    range: string
   maxo_code:
     definition_uri: include:maxo_code
     description: Code for condition in the Medical Action Ontology (MAXO)
     title: Maxo Code
+    range: string
   maxo_label:
     definition_uri: include:maxo_label
     description: Label for condition in the Medical Action Ontology (MAXO)
     title: Maxo Label
+    range: string
   mondo_code:
     definition_uri: include:mondo_code
     description: Code for condition in the Mondo Disease Ontology (MONDO)
     title: Mondo Code
+    range: string
   mondo_label:
     definition_uri: include:mondo_label
     description: Label for condition in the Mondo Disease Ontology (MONDO)
     title: Mondo Label
+    range: string
   mother_id:
     definition_uri: include:mother_id
     description: Participant ID for Participant's mother
     title: Mother Id
+    range: string
   other_code:
     definition_uri: include:other_code
     description: Code for condition in another ontology (if no match in HPO, MONDO,
       or MAXO)
     title: Other Code
+    range: string
   other_label:
     definition_uri: include:other_label
     description: Label for condition in another ontology (if no match in HPO, MONDO,
       or MAXO)
     title: Other Label
+    range: string
   outcomes_vital_status:
     definition_uri: include:outcomes_vital_status
     description: Whether participant is alive or dead
     title: Outcomes Vital Status
+    range: enum_vital_status
   participant_id:
     definition_uri: include:participant_id
     description: Unique identifier for the participant, assigned by DCC
@@ -327,3 +340,13 @@ enums:
       unknown:
         text: unknown
         title: Unknown
+  enum_vital_status:
+    name: enum_vital_status
+    definition_uri: include:vital_status
+    permissible_values:
+      dead:
+        text: dead
+        title: Dead
+      alive:
+        text: alive
+        title: Alive

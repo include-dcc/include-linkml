@@ -391,6 +391,21 @@
       ]
     },
     {
+      "name": "enum_vital_status",
+      "definition_uri": "https://w3id.org/include/participant/EnumVitalStatus",
+      "from_schema": "https://w3id.org/include/participant",
+      "permissible_values": [
+        {
+          "text": "dead",
+          "title": "Dead"
+        },
+        {
+          "text": "alive",
+          "title": "Alive"
+        }
+      ]
+    },
+    {
       "name": "enum_program",
       "definition_uri": "https://w3id.org/include/study/EnumProgram",
       "from_schema": "https://w3id.org/include/study",
@@ -501,7 +516,7 @@
       "domain_of": [
         "DataFile"
       ],
-      "range": "string",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -1226,7 +1241,7 @@
       "domain_of": [
         "Participant"
       ],
-      "range": "string",
+      "range": "enum_vital_status",
       "@type": "SlotDefinition"
     },
     {
@@ -1598,7 +1613,7 @@
   "source_file": "include_schema.yaml",
   "source_file_date": "2022-10-21T12:55:28",
   "source_file_size": 357,
-  "generation_date": "2022-11-04T05:49:38",
+  "generation_date": "2022-11-04T05:59:43",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/include_schema.context.jsonld",

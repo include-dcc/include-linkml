@@ -47,7 +47,7 @@ type Condition
 
 type DataFile
   {
-    accessUrl: String
+    accessUrl: Uriorcurie
     collectionId: String
     dataAccess: EnumDataAccess
     dataCategory: String!
@@ -82,7 +82,7 @@ type Participant
     hasDatafile: DataFile
     hasStudy: Study
     motherId: String
-    outcomesVitalStatus: String
+    outcomesVitalStatus: EnumVitalStatus
     participantId: String!
     race: EnumRace!
     sex: EnumSex!

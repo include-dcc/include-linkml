@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/participant/:hpo_code](https://w3id.org/include/p
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -51,6 +51,7 @@ rank: 1000
 alias: hpo_code
 domain_of:
 - Condition
+range: string
 
 ```
 </details>

@@ -368,6 +368,15 @@
          "title": "EnumStudyCode",
          "type": "string"
       },
+      "EnumVitalStatus": {
+         "description": "",
+         "enum": [
+            "dead",
+            "alive"
+         ],
+         "title": "EnumVitalStatus",
+         "type": "string"
+      },
       "FamilyGroup": {
          "additionalProperties": false,
          "description": "A group of Participants in the same Study",
@@ -430,8 +439,8 @@
                "type": "string"
             },
             "outcomes_vital_status": {
-               "description": "Whether participant is alive or dead",
-               "type": "string"
+               "$ref": "#/$defs/EnumVitalStatus",
+               "description": "Whether participant is alive or dead"
             },
             "participant_id": {
                "description": "Unique identifier for the participant, assigned by DCC",

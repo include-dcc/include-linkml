@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/assay/:access_url](https://w3id.org/include/assay
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:anyURI](xsd:anyURI)
 * Multivalued: None
 
 
@@ -51,6 +51,7 @@ rank: 1000
 alias: access_url
 domain_of:
 - DataFile
+range: uriorcurie
 
 ```
 </details>

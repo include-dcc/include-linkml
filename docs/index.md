@@ -99,6 +99,7 @@ Name: include-schema
 | [EnumSampleAvailability](EnumSampleAvailability.md) |  |
 | [EnumSex](EnumSex.md) |  |
 | [EnumStudyCode](EnumStudyCode.md) |  |
+| [EnumVitalStatus](EnumVitalStatus.md) |  |
 
 
 ## Types

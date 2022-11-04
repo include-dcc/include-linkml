@@ -109,6 +109,7 @@ slots:
     definition_uri: include:access_url
     description: Storage location for this file
     title: Access Url
+    range: uriorcurie
   age_at_biospecimen_collection:
     definition_uri: include:age_at_biospecimen_collection
     description: Age in days of participant at time of biospecimen collection

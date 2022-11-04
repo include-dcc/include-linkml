@@ -50,15 +50,15 @@ URI: [https://w3id.org/include/participant/:Participant](https://w3id.org/includ
 | [age_at_last_vital_status](age_at_last_vital_status.md) | 0..1 <br/> [xsd:integer](xsd:integer)  | Age in days when participant's vital status was last recorded  |
 | [down_syndrome_status](down_syndrome_status.md) | 1..1 <br/> [EnumDownSyndromeStatus](EnumDownSyndromeStatus.md)  | Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euplo...  |
 | [ethnicity](ethnicity.md) | 1..1 <br/> [EnumEthnicity](EnumEthnicity.md)  | Ethnicity of participant  |
-| [external_id](external_id.md) | 1..1 <br/> NONE  | Unique identifier for the participant, assigned by data contributor  |
-| [family_id](family_id.md) | 0..1 <br/> NONE  | Unique identifer for family to which Participant belongs  |
+| [external_id](external_id.md) | 1..1 <br/> [xsd:string](xsd:string)  | Unique identifier for the participant, assigned by data contributor  |
+| [family_id](family_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | Unique identifer for family to which Participant belongs  |
 | [family_relationship](family_relationship.md) | 0..1 <br/> [Participant](Participant.md)  | Relationship of Participant to other family members  |
 | [family_type](family_type.md) | 1..1 <br/> [EnumFamilyType](EnumFamilyType.md)  | Structure of family members participating in the study (proband-only = no fam...  |
-| [father_id](father_id.md) | 0..1 <br/> NONE  | Participant ID for Participant's father  |
+| [father_id](father_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | Participant ID for Participant's father  |
 | [has_datafile](has_datafile.md) | 0..1 <br/> [DataFile](DataFile.md)  | Link to a DataFile  |
 | [has_study](has_study.md) | 0..1 <br/> [Study](Study.md)  | Link to a Study  |
-| [mother_id](mother_id.md) | 0..1 <br/> NONE  | Participant ID for Participant's mother  |
-| [outcomes_vital_status](outcomes_vital_status.md) | 0..1 <br/> NONE  | Whether participant is alive or dead  |
+| [mother_id](mother_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | Participant ID for Participant's mother  |
+| [outcomes_vital_status](outcomes_vital_status.md) | 0..1 <br/> [EnumVitalStatus](EnumVitalStatus.md)  | Whether participant is alive or dead  |
 | [participant_id](participant_id.md) | 1..1 <br/> NONE  | Unique identifier for the participant, assigned by DCC  |
 | [race](race.md) | 1..1 <br/> [EnumRace](EnumRace.md)  | Race of participant  |
 | [sex](sex.md) | 1..1 <br/> [EnumSex](EnumSex.md)  | Sex of participant  |
@@ -223,6 +223,7 @@ attributes:
     owner: Participant
     domain_of:
     - Participant
+    range: string
     required: true
   family_id:
     name: family_id
@@ -235,6 +236,7 @@ attributes:
     owner: Participant
     domain_of:
     - Participant
+    range: string
   family_relationship:
     name: family_relationship
     definition_uri: include:family_relationship
@@ -273,6 +275,7 @@ attributes:
     owner: Participant
     domain_of:
     - Participant
+    range: string
   has_datafile:
     name: has_datafile
     definition_uri: include:has_datafile
@@ -311,6 +314,7 @@ attributes:
     owner: Participant
     domain_of:
     - Participant
+    range: string
   outcomes_vital_status:
     name: outcomes_vital_status
     definition_uri: include:outcomes_vital_status
@@ -322,6 +326,7 @@ attributes:
     owner: Participant
     domain_of:
     - Participant
+    range: enum_vital_status
   participant_id:
     name: participant_id
     definition_uri: include:participant_id

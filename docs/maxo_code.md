@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/participant/:maxo_code](https://w3id.org/include/
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -51,6 +51,7 @@ rank: 1000
 alias: maxo_code
 domain_of:
 - Condition
+range: string
 
 ```
 </details>

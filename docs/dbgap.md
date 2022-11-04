@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/study/:dbgap](https://w3id.org/include/study/:dbg
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -51,6 +51,7 @@ rank: 1000
 alias: dbgap
 domain_of:
 - Study
+range: string
 
 ```
 </details>

@@ -79,7 +79,7 @@ CREATE TABLE "Participant" (
 	has_datafile TEXT, 
 	has_study TEXT, 
 	mother_id TEXT, 
-	outcomes_vital_status TEXT, 
+	outcomes_vital_status VARCHAR(5), 
 	participant_id TEXT NOT NULL, 
 	race VARCHAR(41) NOT NULL, 
 	sex VARCHAR(7) NOT NULL, 

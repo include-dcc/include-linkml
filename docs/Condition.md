@@ -46,16 +46,16 @@ URI: [https://w3id.org/include/participant/:Condition](https://w3id.org/include/
 | ---  | ---  | --- |
 | [has_participant](has_participant.md) | 0..1 <br/> [Participant](Participant.md)  | Link to a Participant  |
 | [age_at_condition_observation](age_at_condition_observation.md) | 0..1 <br/> [xsd:integer](xsd:integer)  | Age in days at which condition was observed, recorded, or diagnosed  |
-| [mondo_label](mondo_label.md) | 0..1 <br/> NONE  | Label for condition in the Mondo Disease Ontology (MONDO)  |
-| [mondo_code](mondo_code.md) | 0..1 <br/> NONE  | Code for condition in the Mondo Disease Ontology (MONDO)  |
+| [mondo_label](mondo_label.md) | 0..1 <br/> [xsd:string](xsd:string)  | Label for condition in the Mondo Disease Ontology (MONDO)  |
+| [mondo_code](mondo_code.md) | 0..1 <br/> [xsd:string](xsd:string)  | Code for condition in the Mondo Disease Ontology (MONDO)  |
 | [condition_interpretation](condition_interpretation.md) | 0..1 <br/> [EnumConditionInterpretation](EnumConditionInterpretation.md)  | Whether condition was observed or not  |
 | [condition_data_source](condition_data_source.md) | 0..1 <br/> [EnumConditionDataSource](EnumConditionDataSource.md)  | Whether condition information was obtained from medical records (Clinical) or...  |
-| [hpo_label](hpo_label.md) | 0..1 <br/> NONE  | Label for condition in the Human Phenotype Ontology (HPO)  |
-| [hpo_code](hpo_code.md) | 0..1 <br/> NONE  | Code for condition in the Human Phenotype Ontology (HPO)  |
-| [maxo_label](maxo_label.md) | 0..1 <br/> NONE  | Label for condition in the Medical Action Ontology (MAXO)  |
-| [maxo_code](maxo_code.md) | 0..1 <br/> NONE  | Code for condition in the Medical Action Ontology (MAXO)  |
-| [other_label](other_label.md) | 0..1 <br/> NONE  | Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)  |
-| [other_code](other_code.md) | 0..1 <br/> NONE  | Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)  |
+| [hpo_label](hpo_label.md) | 0..1 <br/> [xsd:string](xsd:string)  | Label for condition in the Human Phenotype Ontology (HPO)  |
+| [hpo_code](hpo_code.md) | 0..1 <br/> [xsd:string](xsd:string)  | Code for condition in the Human Phenotype Ontology (HPO)  |
+| [maxo_label](maxo_label.md) | 0..1 <br/> [xsd:string](xsd:string)  | Label for condition in the Medical Action Ontology (MAXO)  |
+| [maxo_code](maxo_code.md) | 0..1 <br/> [xsd:string](xsd:string)  | Code for condition in the Medical Action Ontology (MAXO)  |
+| [other_label](other_label.md) | 0..1 <br/> [xsd:string](xsd:string)  | Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)  |
+| [other_code](other_code.md) | 0..1 <br/> [xsd:string](xsd:string)  | Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)  |
 
 
 ## Usages
@@ -171,6 +171,7 @@ attributes:
     owner: Condition
     domain_of:
     - Condition
+    range: string
   mondo_code:
     name: mondo_code
     definition_uri: include:mondo_code
@@ -182,6 +183,7 @@ attributes:
     owner: Condition
     domain_of:
     - Condition
+    range: string
   condition_interpretation:
     name: condition_interpretation
     definition_uri: include:condition_interpretation
@@ -221,6 +223,7 @@ attributes:
     owner: Condition
     domain_of:
     - Condition
+    range: string
   hpo_code:
     name: hpo_code
     definition_uri: include:hpo_code
@@ -232,6 +235,7 @@ attributes:
     owner: Condition
     domain_of:
     - Condition
+    range: string
   maxo_label:
     name: maxo_label
     definition_uri: include:maxo_label
@@ -243,6 +247,7 @@ attributes:
     owner: Condition
     domain_of:
     - Condition
+    range: string
   maxo_code:
     name: maxo_code
     definition_uri: include:maxo_code
@@ -254,6 +259,7 @@ attributes:
     owner: Condition
     domain_of:
     - Condition
+    range: string
   other_label:
     name: other_label
     definition_uri: include:other_label
@@ -266,6 +272,7 @@ attributes:
     owner: Condition
     domain_of:
     - Condition
+    range: string
   other_code:
     name: other_code
     definition_uri: include:other_code
@@ -278,6 +285,7 @@ attributes:
     owner: Condition
     domain_of:
     - Condition
+    range: string
 
 ```
 </details>
