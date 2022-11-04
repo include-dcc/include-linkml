@@ -14,5 +14,9 @@ classes:
     name: Thing
     definition_uri: include:Thing
     description: Highest Level Class
+    annotations:
+      required:
+        tag: required
+        value: 'False'
     title: Thing
     from_schema: https://w3id.org/include

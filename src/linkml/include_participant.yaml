@@ -65,6 +65,10 @@ classes:
   Condition:
     name: Condition
     title: Condition
+    annotations:
+      required:
+        tag: required
+        value: 'False'
     definition_uri: include:Condition
     is_a: Thing
     description: A Condition of a Participant
