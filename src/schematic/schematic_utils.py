@@ -29,16 +29,17 @@ def enum_value_object(value):
         "sms:required": "sms:false"
     }
 
-def set_required(value):
+def set_annotation_required(value):
     return "sms:true" if value == "True" else "sms:false"
 
-def process_enum_values(enum):
+def set_slot_required(value):
+    return "sms:true" if value else "sms:false"
+
+def process_enum_range(enum_object):
     range_includes = []
-    value_objects = []
-    for k, v in enum['permissible_values'].items():
-        range_includes.append(make_object(includify_curie(v['text'].replace(" ", ""))))
-        value_objects.append(enum_value_object(v['text']))
-    return range_includes, value_objects
+    for pv in enum_object.permissible_values:
+        range_includes.append(make_object(includify_curie(pv)))
+    return range_includes
 
 
 def gen_domain_list(domain_data):
