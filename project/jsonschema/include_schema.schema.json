@@ -107,11 +107,11 @@
       },
       "Condition": {
          "additionalProperties": false,
-         "description": "",
+         "description": "A Condition of a Participant",
          "properties": {
             "age_at_condition_observation": {
                "description": "Age in days at which condition was observed, recorded, or diagnosed",
-               "type": "string"
+               "type": "integer"
             },
             "condition_data_source": {
                "$ref": "#/$defs/EnumConditionDataSource",
@@ -387,7 +387,7 @@
          "properties": {
             "age_at_last_vital_status": {
                "description": "Age in days when participant's vital status was last recorded",
-               "type": "string"
+               "type": "integer"
             },
             "down_syndrome_status": {
                "$ref": "#/$defs/EnumDownSyndromeStatus",
@@ -496,7 +496,7 @@
          "type": "object"
       }
    },
-   "$id": "include-schema",
+   "$id": "https://w3id.org/include/",
    "$schema": "http://json-schema.org/draft-07/schema#",
    "additionalProperties": true,
    "metamodel_version": "1.7.0",

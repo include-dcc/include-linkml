@@ -1,10 +1,16 @@
 {
-   "_comments": "Auto generated from include_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-10-19T11:17:23\n    Schema: include-schema\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: include-schema\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from include_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-11-04T05:49:37\n    Schema: include-schema\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/include/\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "include": "https://w3id.org/include/",
       "linkml": "https://w3id.org/linkml/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
       "@vocab": "https://w3id.org/include/",
+      "age_at_condition_observation": {
+         "@type": "xsd:integer"
+      },
+      "age_at_last_vital_status": {
+         "@type": "xsd:integer"
+      },
       "condition_data_source": {
          "@context": {
             "@vocab": "@null",

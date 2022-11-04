@@ -25,10 +25,11 @@ message Biospecimen
   string volumeUnit = 0
   aliquot hasAliquot = 0
  }
+// A Condition of a Participant
 message Condition
  {
   participant hasParticipant = 0
-  string ageAtConditionObservation = 0
+  integer ageAtConditionObservation = 0
   string mondoLabel = 0
   string mondoCode = 0
   enumConditionInterpretation conditionInterpretation = 0
@@ -67,7 +68,7 @@ message FamilyGroup
 // A Participant in a Study
 message Participant
  {
-  string ageAtLastVitalStatus = 0
+  integer ageAtLastVitalStatus = 0
   enumDownSyndromeStatus downSyndromeStatus = 0
   enumEthnicity ethnicity = 0
   string externalId = 0

@@ -1,4 +1,6 @@
 # Class: Condition
+_A Condition of a Participant_
+
 
 
 
@@ -11,6 +13,8 @@ URI: [https://w3id.org/include/participant/:Condition](https://w3id.org/include/
 ```mermaid
  classDiagram
     class Condition
+      Thing <|-- Condition
+      
       Condition : age_at_condition_observation
       Condition : condition_data_source
       Condition : condition_interpretation
@@ -29,7 +33,11 @@ URI: [https://w3id.org/include/participant/:Condition](https://w3id.org/include/
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* [Thing](Thing.md)
+    * **Condition**
+
 
 
 ## Slots
@@ -37,7 +45,7 @@ URI: [https://w3id.org/include/participant/:Condition](https://w3id.org/include/
 | Name | Cardinality and Range  | Description  |
 | ---  | ---  | --- |
 | [has_participant](has_participant.md) | 0..1 <br/> [Participant](Participant.md)  | Link to a Participant  |
-| [age_at_condition_observation](age_at_condition_observation.md) | 0..1 <br/> NONE  | Age in days at which condition was observed, recorded, or diagnosed  |
+| [age_at_condition_observation](age_at_condition_observation.md) | 0..1 <br/> [xsd:integer](xsd:integer)  | Age in days at which condition was observed, recorded, or diagnosed  |
 | [mondo_label](mondo_label.md) | 0..1 <br/> NONE  | Label for condition in the Mondo Disease Ontology (MONDO)  |
 | [mondo_code](mondo_code.md) | 0..1 <br/> NONE  | Code for condition in the Mondo Disease Ontology (MONDO)  |
 | [condition_interpretation](condition_interpretation.md) | 0..1 <br/> [EnumConditionInterpretation](EnumConditionInterpretation.md)  | Whether condition was observed or not  |
@@ -90,8 +98,12 @@ URI: [https://w3id.org/include/participant/:Condition](https://w3id.org/include/
 <details>
 ```yaml
 name: Condition
+definition_uri: include:Condition
+description: A Condition of a Participant
+title: Condition
 from_schema: https://w3id.org/include/participant
 rank: 1000
+is_a: Thing
 slots:
 - has_participant
 - age_at_condition_observation
@@ -114,8 +126,12 @@ slots:
 <details>
 ```yaml
 name: Condition
+definition_uri: include:Condition
+description: A Condition of a Participant
+title: Condition
 from_schema: https://w3id.org/include/participant
 rank: 1000
+is_a: Thing
 attributes:
   has_participant:
     name: has_participant
@@ -143,6 +159,7 @@ attributes:
     owner: Condition
     domain_of:
     - Condition
+    range: integer
   mondo_label:
     name: mondo_label
     definition_uri: include:mondo_label

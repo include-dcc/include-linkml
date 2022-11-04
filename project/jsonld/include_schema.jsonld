@@ -1,6 +1,6 @@
 {
   "name": "include-schema",
-  "id": "include-schema",
+  "id": "https://w3id.org/include/",
   "imports": [
     "linkml:types",
     "include_core",
@@ -906,7 +906,7 @@
       "domain_of": [
         "Condition"
       ],
-      "range": "string",
+      "range": "integer",
       "@type": "SlotDefinition"
     },
     {
@@ -920,7 +920,7 @@
       "domain_of": [
         "Participant"
       ],
-      "range": "string",
+      "range": "integer",
       "@type": "SlotDefinition"
     },
     {
@@ -1547,7 +1547,10 @@
     {
       "name": "Condition",
       "definition_uri": "https://w3id.org/include/participant/Condition",
+      "description": "A Condition of a Participant",
+      "title": "Condition",
       "from_schema": "https://w3id.org/include/participant",
+      "is_a": "Thing",
       "slots": [
         "has_participant",
         "age_at_condition_observation",
@@ -1593,9 +1596,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "include_schema.yaml",
-  "source_file_date": "2022-10-19T08:41:53",
-  "source_file_size": 346,
-  "generation_date": "2022-10-19T11:17:24",
+  "source_file_date": "2022-10-21T12:55:28",
+  "source_file_size": 357,
+  "generation_date": "2022-11-04T05:49:38",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/include_schema.context.jsonld",

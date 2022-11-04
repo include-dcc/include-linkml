@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/participant/:age_at_last_vital_status](https://w3
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:integer](xsd:integer)
 * Multivalued: None
 
 
@@ -51,6 +51,7 @@ rank: 1000
 alias: age_at_last_vital_status
 domain_of:
 - Participant
+range: integer
 
 ```
 </details>

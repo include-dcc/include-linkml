@@ -2,7 +2,7 @@
 
 None
 
-URI: include-schema
+URI: https://w3id.org/include/
 Name: include-schema
 
 ## Classes
@@ -12,7 +12,7 @@ Name: include-schema
 | [Aliquot](Aliquot.md) | An aliquot of a sample |
 | [Assay](Assay.md) | An assay |
 | [Biospecimen](Biospecimen.md) | A Biospecimen Collected from A Participant |
-| [Condition](Condition.md) |  |
+| [Condition](Condition.md) | A Condition of a Participant |
 | [DataFile](DataFile.md) | A DataFile Associated with a Participant or Study or Biospecimen |
 | [FamilyGroup](FamilyGroup.md) | A group of Participants in the same Study |
 | [Participant](Participant.md) | A Participant in a Study |

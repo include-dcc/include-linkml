@@ -1,8 +1,8 @@
 # Auto generated from include_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-10-19T11:17:35
+# Generation date: 2022-11-04T05:49:48
 # Schema: include-schema
 #
-# id: include-schema
+# id: https://w3id.org/include/
 # description:
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
@@ -22,7 +22,7 @@ from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.linkml_model.types import String
+from linkml_runtime.linkml_model.types import Integer, String
 
 metamodel_version = "1.7.0"
 version = None
@@ -286,7 +286,7 @@ class Participant(Thing):
     participant_id: str = None
     race: Union[str, "EnumRace"] = None
     sex: Union[str, "EnumSex"] = None
-    age_at_last_vital_status: Optional[str] = None
+    age_at_last_vital_status: Optional[int] = None
     family_id: Optional[str] = None
     family_relationship: Optional[Union[dict, "Participant"]] = None
     father_id: Optional[str] = None
@@ -331,8 +331,8 @@ class Participant(Thing):
         if not isinstance(self.sex, EnumSex):
             self.sex = EnumSex(self.sex)
 
-        if self.age_at_last_vital_status is not None and not isinstance(self.age_at_last_vital_status, str):
-            self.age_at_last_vital_status = str(self.age_at_last_vital_status)
+        if self.age_at_last_vital_status is not None and not isinstance(self.age_at_last_vital_status, int):
+            self.age_at_last_vital_status = int(self.age_at_last_vital_status)
 
         if self.family_id is not None and not isinstance(self.family_id, str):
             self.family_id = str(self.family_id)
@@ -380,7 +380,10 @@ class FamilyGroup(Thing):
 
 
 @dataclass
-class Condition(YAMLRoot):
+class Condition(Thing):
+    """
+    A Condition of a Participant
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = INCLUDE["participant/Condition"]
@@ -389,7 +392,7 @@ class Condition(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = INCLUDE.Condition
 
     has_participant: Optional[Union[dict, Participant]] = None
-    age_at_condition_observation: Optional[str] = None
+    age_at_condition_observation: Optional[int] = None
     mondo_label: Optional[str] = None
     mondo_code: Optional[str] = None
     condition_interpretation: Optional[Union[str, "EnumConditionInterpretation"]] = None
@@ -405,8 +408,8 @@ class Condition(YAMLRoot):
         if self.has_participant is not None and not isinstance(self.has_participant, Participant):
             self.has_participant = Participant(**as_dict(self.has_participant))
 
-        if self.age_at_condition_observation is not None and not isinstance(self.age_at_condition_observation, str):
-            self.age_at_condition_observation = str(self.age_at_condition_observation)
+        if self.age_at_condition_observation is not None and not isinstance(self.age_at_condition_observation, int):
+            self.age_at_condition_observation = int(self.age_at_condition_observation)
 
         if self.mondo_label is not None and not isinstance(self.mondo_label, str):
             self.mondo_label = str(self.mondo_label)
@@ -702,10 +705,10 @@ slots.volume_unit = Slot(uri=INCLUDE['assay/volume_unit'], name="volume_unit", c
                    model_uri=INCLUDE.volume_unit, domain=None, range=Optional[str])
 
 slots.age_at_condition_observation = Slot(uri=INCLUDE['participant/age_at_condition_observation'], name="age_at_condition_observation", curie=INCLUDE.curie('participant/age_at_condition_observation'),
-                   model_uri=INCLUDE.age_at_condition_observation, domain=None, range=Optional[str])
+                   model_uri=INCLUDE.age_at_condition_observation, domain=None, range=Optional[int])
 
 slots.age_at_last_vital_status = Slot(uri=INCLUDE['participant/age_at_last_vital_status'], name="age_at_last_vital_status", curie=INCLUDE.curie('participant/age_at_last_vital_status'),
-                   model_uri=INCLUDE.age_at_last_vital_status, domain=None, range=Optional[str])
+                   model_uri=INCLUDE.age_at_last_vital_status, domain=None, range=Optional[int])
 
 slots.condition_data_source = Slot(uri=INCLUDE['participant/condition_data_source'], name="condition_data_source", curie=INCLUDE.curie('participant/condition_data_source'),
                    model_uri=INCLUDE.condition_data_source, domain=None, range=Optional[Union[str, "EnumConditionDataSource"]])

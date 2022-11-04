@@ -32,7 +32,7 @@ type Biospecimen
 type Condition
   {
     hasParticipant: Participant
-    ageAtConditionObservation: String
+    ageAtConditionObservation: Integer
     mondoLabel: String
     mondoCode: String
     conditionInterpretation: EnumConditionInterpretation
@@ -71,7 +71,7 @@ type FamilyGroup
 
 type Participant
   {
-    ageAtLastVitalStatus: String
+    ageAtLastVitalStatus: Integer
     downSyndromeStatus: EnumDownSyndromeStatus!
     ethnicity: EnumEthnicity!
     externalId: String!

@@ -78,9 +78,10 @@ linkml:Nodeidentifier NONLITERAL
 }
 
 <https://w3id.org/include/participant/Condition> CLOSED {
-    (  $<https://w3id.org/include/participant/Condition_tes> (  <https://w3id.org/include/participant/has_participant>
-          @<https://w3id.org/include/participant/Participant> ? ;
-          <https://w3id.org/include/participant/age_at_condition_observation> @linkml:String ? ;
+    (  $<https://w3id.org/include/participant/Condition_tes> (  &<https://w3id.org/include/core/Thing_tes> ;
+          rdf:type [ <https://w3id.org/include/core/Thing> ] ? ;
+          <https://w3id.org/include/participant/has_participant> @<https://w3id.org/include/participant/Participant> ? ;
+          <https://w3id.org/include/participant/age_at_condition_observation> @linkml:Integer ? ;
           <https://w3id.org/include/participant/mondo_label> @linkml:String ? ;
           <https://w3id.org/include/participant/mondo_code> @linkml:String ? ;
           <https://w3id.org/include/participant/condition_interpretation>
@@ -133,7 +134,7 @@ linkml:Nodeidentifier NONLITERAL
 <https://w3id.org/include/participant/Participant> CLOSED {
     (  $<https://w3id.org/include/participant/Participant_tes> (  &<https://w3id.org/include/core/Thing_tes> ;
           rdf:type [ <https://w3id.org/include/core/Thing> ] ? ;
-          <https://w3id.org/include/participant/age_at_last_vital_status> @linkml:String ? ;
+          <https://w3id.org/include/participant/age_at_last_vital_status> @linkml:Integer ? ;
           <https://w3id.org/include/participant/down_syndrome_status>
           @<https://w3id.org/include/participant/EnumDownSyndromeStatus> ;
           <https://w3id.org/include/participant/ethnicity> @<https://w3id.org/include/participant/EnumEthnicity> ;
@@ -172,9 +173,9 @@ linkml:Nodeidentifier NONLITERAL
           rdf:type [ <https://w3id.org/include/core/Thing> ] ?
        )
     } OR @<https://w3id.org/include/assay/Aliquot> OR @<https://w3id.org/include/assay/Assay> OR
-    @<https://w3id.org/include/assay/Biospecimen> OR @<https://w3id.org/include/assay/DataFile> OR
-    @<https://w3id.org/include/participant/FamilyGroup> OR @<https://w3id.org/include/participant/Participant> OR
-    @<https://w3id.org/include/study/Study>
+    @<https://w3id.org/include/assay/Biospecimen> OR @<https://w3id.org/include/participant/Condition> OR
+    @<https://w3id.org/include/assay/DataFile> OR @<https://w3id.org/include/participant/FamilyGroup> OR
+    @<https://w3id.org/include/participant/Participant> OR @<https://w3id.org/include/study/Study>
 )
 
 

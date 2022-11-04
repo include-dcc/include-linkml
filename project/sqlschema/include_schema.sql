@@ -29,7 +29,7 @@ CREATE TABLE "Biospecimen" (
 
 CREATE TABLE "Condition" (
 	has_participant TEXT, 
-	age_at_condition_observation TEXT, 
+	age_at_condition_observation INTEGER, 
 	mondo_label TEXT, 
 	mondo_code TEXT, 
 	condition_interpretation VARCHAR(12), 
@@ -68,7 +68,7 @@ CREATE TABLE "FamilyGroup" (
 );
 
 CREATE TABLE "Participant" (
-	age_at_last_vital_status TEXT, 
+	age_at_last_vital_status INTEGER, 
 	down_syndrome_status VARCHAR(3) NOT NULL, 
 	ethnicity VARCHAR(22) NOT NULL, 
 	external_id TEXT NOT NULL, 

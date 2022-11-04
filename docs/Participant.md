@@ -47,7 +47,7 @@ URI: [https://w3id.org/include/participant/:Participant](https://w3id.org/includ
 
 | Name | Cardinality and Range  | Description  |
 | ---  | ---  | --- |
-| [age_at_last_vital_status](age_at_last_vital_status.md) | 0..1 <br/> NONE  | Age in days when participant's vital status was last recorded  |
+| [age_at_last_vital_status](age_at_last_vital_status.md) | 0..1 <br/> [xsd:integer](xsd:integer)  | Age in days when participant's vital status was last recorded  |
 | [down_syndrome_status](down_syndrome_status.md) | 1..1 <br/> [EnumDownSyndromeStatus](EnumDownSyndromeStatus.md)  | Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euplo...  |
 | [ethnicity](ethnicity.md) | 1..1 <br/> [EnumEthnicity](EnumEthnicity.md)  | Ethnicity of participant  |
 | [external_id](external_id.md) | 1..1 <br/> NONE  | Unique identifier for the participant, assigned by data contributor  |
@@ -184,6 +184,7 @@ attributes:
     owner: Participant
     domain_of:
     - Participant
+    range: integer
   down_syndrome_status:
     name: down_syndrome_status
     definition_uri: include:down_syndrome_status

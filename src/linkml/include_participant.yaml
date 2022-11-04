@@ -64,6 +64,10 @@ classes:
     - has_participant
   Condition:
     name: Condition
+    title: Condition
+    definition_uri: include:Condition
+    is_a: Thing
+    description: A Condition of a Participant
     slots:
     - has_participant
     - age_at_condition_observation
@@ -82,10 +86,12 @@ slots:
     definition_uri: include:age_at_condition_observation
     description: Age in days at which condition was observed, recorded, or diagnosed
     title: Age At Condition Observation
+    range: integer
   age_at_last_vital_status:
     definition_uri: include:age_at_last_vital_status
     description: Age in days when participant's vital status was last recorded
     title: Age At Last Vital Status
+    range: integer
   condition_data_source:
     definition_uri: include:condition_data_source
     description: Whether condition information was obtained from medical records (Clinical)

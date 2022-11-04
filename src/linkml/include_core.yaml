@@ -12,7 +12,7 @@ imports:
 classes:
   Thing:
     name: Thing
-    definition_uri: schema:Thing
+    definition_uri: include:Thing
     description: Highest Level Class
     title: Thing
     from_schema: https://w3id.org/include

@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/participant/:age_at_condition_observation](https:
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:integer](xsd:integer)
 * Multivalued: None
 
 
@@ -51,6 +51,7 @@ rank: 1000
 alias: age_at_condition_observation
 domain_of:
 - Condition
+range: integer
 
 ```
 </details>

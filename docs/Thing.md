@@ -16,6 +16,7 @@ URI: [https://w3id.org/include/core/:Thing](https://w3id.org/include/core/:Thing
       Thing <|-- Study
       Thing <|-- Participant
       Thing <|-- FamilyGroup
+      Thing <|-- Condition
       Thing <|-- Aliquot
       Thing <|-- Assay
       Thing <|-- Biospecimen
@@ -33,6 +34,7 @@ URI: [https://w3id.org/include/core/:Thing](https://w3id.org/include/core/:Thing
     * [Study](Study.md)
     * [Participant](Participant.md)
     * [FamilyGroup](FamilyGroup.md)
+    * [Condition](Condition.md)
     * [Aliquot](Aliquot.md)
     * [Assay](Assay.md)
     * [Biospecimen](Biospecimen.md)
@@ -86,7 +88,7 @@ URI: [https://w3id.org/include/core/:Thing](https://w3id.org/include/core/:Thing
 <details>
 ```yaml
 name: Thing
-definition_uri: schema:Thing
+definition_uri: include:Thing
 description: Highest Level Class
 title: Thing
 from_schema: https://w3id.org/include/core
@@ -100,7 +102,7 @@ rank: 1000
 <details>
 ```yaml
 name: Thing
-definition_uri: schema:Thing
+definition_uri: include:Thing
 description: Highest Level Class
 title: Thing
 from_schema: https://w3id.org/include/core
