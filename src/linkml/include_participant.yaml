@@ -215,6 +215,7 @@ slots:
     description: Unique identifier for the participant, assigned by DCC
     title: Participant Id
     required: true
+    range: string
   race:
     definition_uri: include:race
     description: Race of participant

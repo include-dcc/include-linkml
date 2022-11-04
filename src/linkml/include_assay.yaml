@@ -114,28 +114,33 @@ slots:
     definition_uri: include:age_at_biospecimen_collection
     description: Age in days of participant at time of biospecimen collection
     title: Age At Biospecimen Collection
+    range: integer
   biospecimen_storage:
     definition_uri: include:biospecimen_storage
     description: Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen,
       etc.)
     title: Biospecimen Storage
+    range: string
   collection_id:
     definition_uri: include:collection_id
     description: Identifier for the eldest sample in a lineage of processed, pooled,
       or aliquoted samples. This may be the same as Parent Sample ID or Sample ID
       (if no processing was performed).
     title: Collection Id
+    range: string
   collection_sample_type:
     definition_uri: include:collection_sample_type
     description: Type of biological material comprising the collected sample (e.g.
       Whole blood, Bone marrow, Saliva, etc.)
     title: Collection Sample Type
+    range: string
   container_id:
     definition_uri: include:container_id
     description: Identifier for specific container/aliquot of sample, if applicable.
       For example, distinct aliquots of a sample will have the same Sample ID but
       different Container IDs.
     title: Container Id
+    range: string
   data_access:
     definition_uri: include:data_access
     description: Type of access control on this file, determined by DCC
@@ -147,6 +152,7 @@ slots:
       Metabolomics, Immune maps, Transcriptomics, etc.)
     title: Data Category
     required: true
+    range: string
   data_type:
     definition_uri: include:data_type
     description: Specific type of data contained in file (e.g. Aligned reads, Unaligned
@@ -154,27 +160,32 @@ slots:
       Structural variations, Cytokine profiles, Operation reports, Pathology reports,
       Histology images, Clinical supplement, Protein expression quantification, etc.)
     title: Data Type
+    range: string
   experimental_strategy:
     definition_uri: include:experimental_strategy
     description: Experimental method used to obtain data in file (e.g. WGS, RNAseq,
       WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay,
       Meso Scale Discovery, etc.)
     title: Experimental Strategy
+    range: string
   file_id:
     definition_uri: include:file_id
     description: File identifier, assigned by DCC
     title: File Id
+    range: string
   file_name:
     definition_uri: include:file_name
     description: Synapse ID for file
     title: File Name
     required: true
+    range: string
   format:
     definition_uri: include:format
     description: Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf,
       dicom, etc.)
     title: Format
     required: true
+    range: string
   has_aliquot:
     definition_uri: include:has_aliquot
     description: An aliquot of a sample
@@ -200,21 +211,25 @@ slots:
     description: Procedure by which Sample was derived from Parent Sample (e.g. RBC
       lysis, Centrifugation, Ficoll, etc.)
     title: Laboratory Procedure
+    range: string
   original_file_name:
     definition_uri: include:original_file_name
     description: Name of file, assigned by data contributor
     title: Original File Name
     required: true
+    range: string
   parent_sample_id:
     definition_uri: include:parent_sample_id
     description: Identifier for the direct parent from which Sample was derived, processed,
       pooled, etc. (if applicable)
     title: Parent Sample Id
+    range: string
   parent_sample_type:
     definition_uri: include:parent_sample_type
     description: Type of biological material comprising the parent sample (e.g. Plasma,
       Serum, White blood cells, etc.)
     title: Parent Sample Type
+    range: string
   sample_availability:
     definition_uri: include:sample_availability
     description: Whether or not the sample is potentially available for sharing through
@@ -227,16 +242,19 @@ slots:
       two samples with two different IDs are biologically distinct.
     title: Sample Id
     required: true
+    range: string
   sample_type:
     definition_uri: include:sample_type
     description: Type of biological material comprising the sample (e.g. Plasma, Serum,
       White blood cells, DNA, RNA, etc.)
     title: Sample Type
     required: true
+    range: string
   size:
     definition_uri: include:size
     description: Size of file
     title: Size
+    range: string
   uses_biospecimen:
     definition_uri: include:uses_biospecimen
     description: The Biospecimen an Assay is performed on
@@ -246,10 +264,12 @@ slots:
     definition_uri: include:volume
     description: Amount of sample in container
     title: Volume
+    range: float
   volume_unit:
     definition_uri: include:volume_unit
     description: Unit of sample volume
     title: Volume Unit
+    range: string
 enums:
   enum_data_access:
     definition_uri: include:enum_data_access
