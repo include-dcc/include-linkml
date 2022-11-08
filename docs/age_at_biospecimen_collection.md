@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/assay/:age_at_biospecimen_collection](https://w3i
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:integer](xsd:integer)
 * Multivalued: None
 
 
@@ -51,6 +51,7 @@ rank: 1000
 alias: age_at_biospecimen_collection
 domain_of:
 - Biospecimen
+range: integer
 
 ```
 </details>

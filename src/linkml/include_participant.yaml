@@ -24,7 +24,7 @@ classes:
     annotations:
       required:
         tag: required
-        value: 'False'
+        value: 'True'
       requires_component:
         tag: requires_component
         value: Study,DataFile

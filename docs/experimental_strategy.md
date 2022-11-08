@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/assay/:experimental_strategy](https://w3id.org/in
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -53,6 +53,7 @@ rank: 1000
 alias: experimental_strategy
 domain_of:
 - DataFile
+range: string
 
 ```
 </details>

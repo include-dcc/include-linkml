@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/INCLUDE.Biospecimen.manifest",
+  "title": "INCLUDE.Biospecimen.manifest",
+  "type": "object",
+  "properties": {
+    "Parent Sample Id": {},
+    "Volume Unit": {},
+    "Collection Id": {},
+    "Age At Biospecimen Collection": {},
+    "Sample Id": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Container Id": {},
+    "Sample Availability": {
+      "enum": [
+        "Unavailable",
+        "Available",
+        ""
+      ]
+    },
+    "Sample Type": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Volume": {},
+    "Has Aliquot": {},
+    "Laboratory Procedure": {},
+    "Has Participant": {},
+    "Parent Sample Type": {},
+    "Collection Sample Type": {},
+    "Biospecimen Storage": {},
+    "Has Study": {},
+    "Has Datafile": {}
+  },
+  "required": [
+    "Sample Id",
+    "Sample Type"
+  ]
+}

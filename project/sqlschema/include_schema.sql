@@ -7,7 +7,7 @@ CREATE TABLE "Assay" (
 );
 
 CREATE TABLE "Biospecimen" (
-	age_at_biospecimen_collection TEXT, 
+	age_at_biospecimen_collection INTEGER, 
 	biospecimen_storage TEXT, 
 	collection_id TEXT, 
 	collection_sample_type TEXT, 
@@ -21,7 +21,7 @@ CREATE TABLE "Biospecimen" (
 	sample_availability VARCHAR(11), 
 	sample_id TEXT NOT NULL, 
 	sample_type TEXT NOT NULL, 
-	volume TEXT, 
+	volume FLOAT, 
 	volume_unit TEXT, 
 	has_aliquot TEXT, 
 	PRIMARY KEY (age_at_biospecimen_collection, biospecimen_storage, collection_id, collection_sample_type, container_id, has_datafile, has_participant, has_study, laboratory_procedure, parent_sample_id, parent_sample_type, sample_availability, sample_id, sample_type, volume, volume_unit, has_aliquot)

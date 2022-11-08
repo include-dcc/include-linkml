@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/assay/:data_category](https://w3id.org/include/as
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -54,6 +54,7 @@ rank: 1000
 alias: data_category
 domain_of:
 - DataFile
+range: string
 required: true
 
 ```

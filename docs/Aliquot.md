@@ -53,7 +53,7 @@ URI: [https://w3id.org/include/assay/:Aliquot](https://w3id.org/include/assay/:A
 
 | property | value |
 | --- | --- |
-| required | False |
+| required | True |
 | requires_component | Biospecimen |
 
 
@@ -91,7 +91,7 @@ definition_uri: include:Aliquot
 annotations:
   required:
     tag: required
-    value: 'False'
+    value: 'True'
   requires_component:
     tag: requires_component
     value: Biospecimen
@@ -113,7 +113,7 @@ definition_uri: include:Aliquot
 annotations:
   required:
     tag: required
-    value: 'False'
+    value: 'True'
   requires_component:
     tag: requires_component
     value: Biospecimen

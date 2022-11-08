@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/assay/:collection_id](https://w3id.org/include/as
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -54,6 +54,7 @@ alias: collection_id
 domain_of:
 - Biospecimen
 - DataFile
+range: string
 
 ```
 </details>

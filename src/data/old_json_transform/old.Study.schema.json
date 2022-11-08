@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/INCLUDE.Study.manifest",
+  "title": "INCLUDE.Study.manifest",
+  "type": "object",
+  "properties": {
+    "Program": {
+      "enum": [
+        "Kf",
+        "Include"
+      ]
+    },
+    "Dbgap": {},
+    "Study Code": {
+      "enum": [
+        "Dsc",
+        "Htp",
+        "Ds Pcgc",
+        "Ds Cog All",
+        "Ds360 Chd"
+      ]
+    },
+    "Study Name": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    }
+  },
+  "required": [
+    "Program",
+    "Study Code",
+    "Study Name"
+  ]
+}

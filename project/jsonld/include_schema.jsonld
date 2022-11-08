@@ -1,6 +1,6 @@
 {
   "name": "include-schema",
-  "id": "https://w3id.org/include/",
+  "id": "https://w3id.org/include",
   "imports": [
     "linkml:types",
     "include_core",
@@ -17,6 +17,10 @@
     {
       "prefix_prefix": "linkml",
       "prefix_reference": "https://w3id.org/linkml/"
+    },
+    {
+      "prefix_prefix": "schema",
+      "prefix_reference": "http://schema.org/"
     }
   ],
   "default_prefix": "include",
@@ -530,7 +534,7 @@
       "domain_of": [
         "Biospecimen"
       ],
-      "range": "string",
+      "range": "integer",
       "@type": "SlotDefinition"
     },
     {
@@ -893,7 +897,7 @@
       "domain_of": [
         "Biospecimen"
       ],
-      "range": "string",
+      "range": "float",
       "@type": "SlotDefinition"
     },
     {
@@ -1354,6 +1358,13 @@
     {
       "name": "Thing",
       "definition_uri": "https://w3id.org/include/core/Thing",
+      "annotations": [
+        {
+          "tag": "required",
+          "value": "False",
+          "@type": "Annotation"
+        }
+      ],
       "description": "Highest Level Class",
       "title": "Thing",
       "from_schema": "https://w3id.org/include/core",
@@ -1367,7 +1378,7 @@
       "annotations": [
         {
           "tag": "required",
-          "value": "False",
+          "value": "True",
           "@type": "Annotation"
         },
         {
@@ -1390,7 +1401,7 @@
       "annotations": [
         {
           "tag": "required",
-          "value": "False",
+          "value": "True",
           "@type": "Annotation"
         },
         {
@@ -1417,7 +1428,7 @@
       "annotations": [
         {
           "tag": "required",
-          "value": "False",
+          "value": "True",
           "@type": "Annotation"
         },
         {
@@ -1459,7 +1470,7 @@
       "annotations": [
         {
           "tag": "required",
-          "value": "False",
+          "value": "True",
           "@type": "Annotation"
         },
         {
@@ -1499,7 +1510,7 @@
       "annotations": [
         {
           "tag": "required",
-          "value": "False",
+          "value": "True",
           "@type": "Annotation"
         },
         {
@@ -1562,6 +1573,13 @@
     {
       "name": "Condition",
       "definition_uri": "https://w3id.org/include/participant/Condition",
+      "annotations": [
+        {
+          "tag": "required",
+          "value": "False",
+          "@type": "Annotation"
+        }
+      ],
       "description": "A Condition of a Participant",
       "title": "Condition",
       "from_schema": "https://w3id.org/include/participant",
@@ -1611,9 +1629,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "include_schema.yaml",
-  "source_file_date": "2022-10-21T12:55:28",
-  "source_file_size": 357,
-  "generation_date": "2022-11-04T05:59:43",
+  "source_file_date": "2022-11-08T07:44:49",
+  "source_file_size": 433,
+  "generation_date": "2022-11-08T08:52:33",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/include_schema.context.jsonld",

@@ -1,8 +1,8 @@
 # Auto generated from include_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-04T05:59:53
+# Generation date: 2022-11-08T08:52:43
 # Schema: include-schema
 #
-# id: https://w3id.org/include/
+# id: https://w3id.org/include
 # description:
 # license: https://creativecommons.org/publicdomain/zero/1.0/
 
@@ -22,7 +22,7 @@ from linkml_runtime.utils.formatutils import camelcase, underscore, sfx
 from linkml_runtime.utils.enumerations import EnumDefinitionImpl
 from rdflib import Namespace, URIRef
 from linkml_runtime.utils.curienamespace import CurieNamespace
-from linkml_runtime.linkml_model.types import Integer, String, Uriorcurie
+from linkml_runtime.linkml_model.types import Float, Integer, String, Uriorcurie
 from linkml_runtime.utils.metamodelcore import URIorCURIE
 
 metamodel_version = "1.7.0"
@@ -34,6 +34,7 @@ dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 # Namespaces
 INCLUDE = CurieNamespace('include', 'https://w3id.org/include/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
+SCHEMA = CurieNamespace('schema', 'http://schema.org/')
 DEFAULT_ = INCLUDE
 
 
@@ -106,7 +107,7 @@ class Biospecimen(Thing):
 
     sample_id: str = None
     sample_type: str = None
-    age_at_biospecimen_collection: Optional[str] = None
+    age_at_biospecimen_collection: Optional[int] = None
     biospecimen_storage: Optional[str] = None
     collection_id: Optional[str] = None
     collection_sample_type: Optional[str] = None
@@ -118,7 +119,7 @@ class Biospecimen(Thing):
     parent_sample_id: Optional[str] = None
     parent_sample_type: Optional[str] = None
     sample_availability: Optional[Union[str, "EnumSampleAvailability"]] = None
-    volume: Optional[str] = None
+    volume: Optional[float] = None
     volume_unit: Optional[str] = None
     has_aliquot: Optional[Union[dict, Aliquot]] = None
 
@@ -133,8 +134,8 @@ class Biospecimen(Thing):
         if not isinstance(self.sample_type, str):
             self.sample_type = str(self.sample_type)
 
-        if self.age_at_biospecimen_collection is not None and not isinstance(self.age_at_biospecimen_collection, str):
-            self.age_at_biospecimen_collection = str(self.age_at_biospecimen_collection)
+        if self.age_at_biospecimen_collection is not None and not isinstance(self.age_at_biospecimen_collection, int):
+            self.age_at_biospecimen_collection = int(self.age_at_biospecimen_collection)
 
         if self.biospecimen_storage is not None and not isinstance(self.biospecimen_storage, str):
             self.biospecimen_storage = str(self.biospecimen_storage)
@@ -169,8 +170,8 @@ class Biospecimen(Thing):
         if self.sample_availability is not None and not isinstance(self.sample_availability, EnumSampleAvailability):
             self.sample_availability = EnumSampleAvailability(self.sample_availability)
 
-        if self.volume is not None and not isinstance(self.volume, str):
-            self.volume = str(self.volume)
+        if self.volume is not None and not isinstance(self.volume, float):
+            self.volume = float(self.volume)
 
         if self.volume_unit is not None and not isinstance(self.volume_unit, str):
             self.volume_unit = str(self.volume_unit)
@@ -634,7 +635,7 @@ slots.access_url = Slot(uri=INCLUDE['assay/access_url'], name="access_url", curi
                    model_uri=INCLUDE.access_url, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.age_at_biospecimen_collection = Slot(uri=INCLUDE['assay/age_at_biospecimen_collection'], name="age_at_biospecimen_collection", curie=INCLUDE.curie('assay/age_at_biospecimen_collection'),
-                   model_uri=INCLUDE.age_at_biospecimen_collection, domain=None, range=Optional[str])
+                   model_uri=INCLUDE.age_at_biospecimen_collection, domain=None, range=Optional[int])
 
 slots.biospecimen_storage = Slot(uri=INCLUDE['assay/biospecimen_storage'], name="biospecimen_storage", curie=INCLUDE.curie('assay/biospecimen_storage'),
                    model_uri=INCLUDE.biospecimen_storage, domain=None, range=Optional[str])
@@ -709,7 +710,7 @@ slots.uses_biospecimen = Slot(uri=INCLUDE['assay/uses_biospecimen'], name="uses_
                    model_uri=INCLUDE.uses_biospecimen, domain=None, range=Optional[Union[dict, Biospecimen]])
 
 slots.volume = Slot(uri=INCLUDE['assay/volume'], name="volume", curie=INCLUDE.curie('assay/volume'),
-                   model_uri=INCLUDE.volume, domain=None, range=Optional[str])
+                   model_uri=INCLUDE.volume, domain=None, range=Optional[float])
 
 slots.volume_unit = Slot(uri=INCLUDE['assay/volume_unit'], name="volume_unit", curie=INCLUDE.curie('assay/volume_unit'),
                    model_uri=INCLUDE.volume_unit, domain=None, range=Optional[str])

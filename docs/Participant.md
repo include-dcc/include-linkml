@@ -59,7 +59,7 @@ URI: [https://w3id.org/include/participant/:Participant](https://w3id.org/includ
 | [has_study](has_study.md) | 0..1 <br/> [Study](Study.md)  | Link to a Study  |
 | [mother_id](mother_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | Participant ID for Participant's mother  |
 | [outcomes_vital_status](outcomes_vital_status.md) | 0..1 <br/> [EnumVitalStatus](EnumVitalStatus.md)  | Whether participant is alive or dead  |
-| [participant_id](participant_id.md) | 1..1 <br/> NONE  | Unique identifier for the participant, assigned by DCC  |
+| [participant_id](participant_id.md) | 1..1 <br/> [xsd:string](xsd:string)  | Unique identifier for the participant, assigned by DCC  |
 | [race](race.md) | 1..1 <br/> [EnumRace](EnumRace.md)  | Race of participant  |
 | [sex](sex.md) | 1..1 <br/> [EnumSex](EnumSex.md)  | Sex of participant  |
 
@@ -87,7 +87,7 @@ URI: [https://w3id.org/include/participant/:Participant](https://w3id.org/includ
 
 | property | value |
 | --- | --- |
-| required | False |
+| required | True |
 | requires_component | Study,DataFile |
 
 
@@ -125,7 +125,7 @@ definition_uri: include:Participant
 annotations:
   required:
     tag: required
-    value: 'False'
+    value: 'True'
   requires_component:
     tag: requires_component
     value: Study,DataFile
@@ -163,7 +163,7 @@ definition_uri: include:Participant
 annotations:
   required:
     tag: required
-    value: 'False'
+    value: 'True'
   requires_component:
     tag: requires_component
     value: Study,DataFile
@@ -339,6 +339,7 @@ attributes:
     domain_of:
     - Participant
     - DataFile
+    range: string
     required: true
   race:
     name: race

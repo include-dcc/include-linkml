@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/participant/:participant_id](https://w3id.org/inc
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -54,6 +54,7 @@ alias: participant_id
 domain_of:
 - Participant
 - DataFile
+range: string
 required: true
 
 ```

@@ -1,0 +1,1858 @@
+{
+  "@context": {
+    "include": "https://w3id.org/include/",
+    "linkml": "https://w3id.org/linkml/",
+    "schema": "http://schema.org/",
+    "sms": "www.sms.org"
+  },
+  "@graph": [
+    {
+      "@id": "include:Aliquot",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "An aliquot of a sample",
+      "rdfs:label": "Aliquot",
+      "rdfs:subClassOf": [
+        {
+          "@id": "schema:Thing"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Aliquot",
+      "sms:required": "sms:true",
+      "sms:requiresComponent": [
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "sms:validationRules": []
+    },
+    {
+      "@id": "include:Assay",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "An assay",
+      "rdfs:label": "Assay",
+      "rdfs:subClassOf": [
+        {
+          "@id": "schema:Thing"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Assay",
+      "sms:required": "sms:true",
+      "sms:requiresComponent": [
+        {
+          "@id": "include:Biospecimen"
+        },
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "sms:requiresDependency": [
+        {
+          "@id": "include:uses_biospecimen"
+        },
+        {
+          "@id": "include:has_output"
+        }
+      ],
+      "sms:validationRules": []
+    },
+    {
+      "@id": "include:Biospecimen",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A Biospecimen Collected from A Participant",
+      "rdfs:label": "Biospecimen",
+      "rdfs:subClassOf": [
+        {
+          "@id": "schema:Thing"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Biospecimen",
+      "sms:required": "sms:true",
+      "sms:requiresComponent": [
+        {
+          "@id": "include:Study"
+        },
+        {
+          "@id": "include:Participant"
+        },
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "sms:requiresDependency": [
+        {
+          "@id": "include:age_at_biospecimen_collection"
+        },
+        {
+          "@id": "include:biospecimen_storage"
+        },
+        {
+          "@id": "include:collection_id"
+        },
+        {
+          "@id": "include:collection_sample_type"
+        },
+        {
+          "@id": "include:container_id"
+        },
+        {
+          "@id": "include:has_datafile"
+        },
+        {
+          "@id": "include:has_participant"
+        },
+        {
+          "@id": "include:has_study"
+        },
+        {
+          "@id": "include:laboratory_procedure"
+        },
+        {
+          "@id": "include:parent_sample_id"
+        },
+        {
+          "@id": "include:parent_sample_type"
+        },
+        {
+          "@id": "include:sample_availability"
+        },
+        {
+          "@id": "include:sample_id"
+        },
+        {
+          "@id": "include:sample_type"
+        },
+        {
+          "@id": "include:volume"
+        },
+        {
+          "@id": "include:volume_unit"
+        },
+        {
+          "@id": "include:has_study"
+        },
+        {
+          "@id": "include:has_aliquot"
+        }
+      ],
+      "sms:validationRules": []
+    },
+    {
+      "@id": "include:DataFile",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A DataFile Associated with a Participant or Study or Biospecimen",
+      "rdfs:label": "DataFile",
+      "rdfs:subClassOf": [
+        {
+          "@id": "schema:Thing"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "DataFile",
+      "sms:required": "sms:true",
+      "sms:requiresComponent": [
+        {
+          "@id": "include:Study"
+        },
+        {
+          "@id": "include:Participant"
+        },
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "sms:requiresDependency": [
+        {
+          "@id": "include:access_url"
+        },
+        {
+          "@id": "include:collection_id"
+        },
+        {
+          "@id": "include:data_access"
+        },
+        {
+          "@id": "include:data_category"
+        },
+        {
+          "@id": "include:data_type"
+        },
+        {
+          "@id": "include:experimental_strategy"
+        },
+        {
+          "@id": "include:file_id"
+        },
+        {
+          "@id": "include:file_name"
+        },
+        {
+          "@id": "include:format"
+        },
+        {
+          "@id": "include:has_biospecimen"
+        },
+        {
+          "@id": "include:has_participant"
+        },
+        {
+          "@id": "include:has_study"
+        },
+        {
+          "@id": "include:participant_id"
+        },
+        {
+          "@id": "include:size"
+        },
+        {
+          "@id": "include:original_file_name"
+        }
+      ],
+      "sms:validationRules": []
+    },
+    {
+      "@id": "include:FamilyGroup",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A group of Participants in the same Study",
+      "rdfs:label": "FamilyGroup",
+      "rdfs:subClassOf": [
+        {
+          "@id": "schema:Thing"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "FamilyGroup",
+      "sms:required": "sms:true",
+      "sms:requiresComponent": [
+        {
+          "@id": "include:Study"
+        },
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "sms:requiresDependency": [
+        {
+          "@id": "include:has_participant"
+        }
+      ],
+      "sms:validationRules": []
+    },
+    {
+      "@id": "include:Participant",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A Participant in a Study",
+      "rdfs:label": "Participant",
+      "rdfs:subClassOf": [
+        {
+          "@id": "schema:Thing"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Participant",
+      "sms:required": "sms:true",
+      "sms:requiresComponent": [
+        {
+          "@id": "include:Study"
+        },
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "sms:requiresDependency": [
+        {
+          "@id": "include:age_at_diagnosis"
+        },
+        {
+          "@id": "include:age_at_phenotype_assignment"
+        },
+        {
+          "@id": "include:age_at_the_last_vital_status"
+        },
+        {
+          "@id": "include:diagnosis_icd"
+        },
+        {
+          "@id": "include:diagnosis_mondo"
+        },
+        {
+          "@id": "include:diagnosis_ncit"
+        },
+        {
+          "@id": "include:diagnosis_source_text"
+        },
+        {
+          "@id": "include:diagnosis_type"
+        },
+        {
+          "@id": "include:down_syndrome_status"
+        },
+        {
+          "@id": "include:ethnicity"
+        },
+        {
+          "@id": "include:external_id"
+        },
+        {
+          "@id": "include:family_id"
+        },
+        {
+          "@id": "include:family_relationship"
+        },
+        {
+          "@id": "include:family_type"
+        },
+        {
+          "@id": "include:father_id"
+        },
+        {
+          "@id": "include:has_datafile"
+        },
+        {
+          "@id": "include:has_study"
+        },
+        {
+          "@id": "include:mother_id"
+        },
+        {
+          "@id": "include:outcomes_vital_status"
+        },
+        {
+          "@id": "include:participant_id"
+        },
+        {
+          "@id": "include:phenotype_hpo"
+        },
+        {
+          "@id": "include:phenotype_source_text"
+        },
+        {
+          "@id": "include:phenotype_interpretation"
+        },
+        {
+          "@id": "include:race"
+        },
+        {
+          "@id": "include:sex"
+        }
+      ],
+      "sms:validationRules": []
+    },
+    {
+      "@id": "include:Study",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A Study",
+      "rdfs:label": "Study",
+      "rdfs:subClassOf": [
+        {
+          "@id": "schema:Thing"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Study",
+      "sms:required": "sms:true",
+      "sms:requiresDependency": [
+        {
+          "@id": "include:dbgap"
+        },
+        {
+          "@id": "include:program"
+        },
+        {
+          "@id": "include:study_code"
+        },
+        {
+          "@id": "include:study_name"
+        }
+      ],
+      "sms:validationRules": []
+    },
+    {
+      "@id": "include:access_url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Storage location for this file",
+      "rdfs:label": "access_url",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Access Url",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:age_at_biospecimen_collection",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Age in days of participant at time of biospecimen collection",
+      "rdfs:label": "age_at_biospecimen_collection",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Age At Biospecimen Collection",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:age_at_diagnosis",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Age in days at which phenotype was assigned",
+      "rdfs:label": "age_at_diagnosis",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Age At Diagnosis",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:age_at_phenotype_assignment",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Age in days at which phenotype was recorded",
+      "rdfs:label": "age_at_phenotype_assignment",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Age At Phenotype Assignment",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:age_at_the_last_vital_status",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Age of last vital status",
+      "rdfs:label": "age_at_the_last_vital_status",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Age At The Last Vital Status",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:american_indian_or_alaskan_native",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "american_indian_or_alaskan_native",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "American Indian Or Alaskan Native",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:asian",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "asian",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Asian",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:asked_but_unknown",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "asked_but_unknown",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Asked But Unknown",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:available",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "available",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Available",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:biospecimen_storage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)",
+      "rdfs:label": "biospecimen_storage",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Biospecimen Storage",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:black_or_african_american",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "black_or_african_american",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Black Or African American",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:collection_id",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed).",
+      "rdfs:label": "collection_id",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        },
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Collection Id",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:collection_sample_type",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Type of biological material comprising the collected sample (e.g. Whole blood, Bone marrow, Saliva, etc.)",
+      "rdfs:label": "collection_sample_type",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Collection Sample Type",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:container_id",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.",
+      "rdfs:label": "container_id",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Container Id",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:controlled",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "controlled",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Controlled",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:cpen",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "cpen",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Cpen",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:d21",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "d21",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "D21",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:data_access",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Type of access control on this file, determined by DCC",
+      "rdfs:label": "data_access",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:controlled"
+        },
+        {
+          "@id": "include:cpen"
+        },
+        {
+          "@id": "include:registered"
+        }
+      ],
+      "sms:displayName": "Data Access",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:data_category",
+      "@type": "rdf:Property",
+      "rdfs:comment": "General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune maps, Transcriptomics, etc.)",
+      "rdfs:label": "data_category",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Data Category",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:data_type",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Specific type of data contained in file (e.g. Aligned reads, Unaligned reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification, Structural variations, Cytokine profiles, Operation reports, Pathology reports, Histology images, Clinical supplement, Protein expression quantification, etc.)",
+      "rdfs:label": "data_type",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Data Type",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:dbgap",
+      "@type": "rdf:Property",
+      "rdfs:comment": "dbGaP study accession code",
+      "rdfs:label": "dbgap",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Study"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Dbgap",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:diagnosis_icd",
+      "@type": "rdf:Property",
+      "rdfs:comment": "ICD-10 code (annotated by data contributor or DCC)",
+      "rdfs:label": "diagnosis_icd",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Diagnosis Icd",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:diagnosis_mondo",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Mondo disease ontology code (annotated by data contributor or DCC)",
+      "rdfs:label": "diagnosis_mondo",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Diagnosis Mondo",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:diagnosis_ncit",
+      "@type": "rdf:Property",
+      "rdfs:comment": "NCI Thesaurus code (annotated by data contributor or DCC)",
+      "rdfs:label": "diagnosis_ncit",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Diagnosis Ncit",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:diagnosis_source_text",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Diagnosis as described by data contributor",
+      "rdfs:label": "diagnosis_source_text",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Diagnosis Source Text",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:diagnosis_type",
+      "@type": "rdf:Property",
+      "rdfs:comment": "How diagnosis was assigned",
+      "rdfs:label": "diagnosis_type",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Diagnosis Type",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:down_syndrome_status",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)",
+      "rdfs:label": "down_syndrome_status",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:d21"
+        },
+        {
+          "@id": "include:t21"
+        }
+      ],
+      "sms:displayName": "Down Syndrome Status",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:ds360_chd",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "ds360_chd",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Ds360 Chd",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:ds_cog_all",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "ds_cog_all",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Ds Cog All",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:ds_pcgc",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "ds_pcgc",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Ds Pcgc",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:dsc",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "dsc",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Dsc",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:duo",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "duo",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Duo",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:ethnicity",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Ethnicity of participant",
+      "rdfs:label": "ethnicity",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:asked_but_unknown"
+        },
+        {
+          "@id": "include:hispanic_or_latino"
+        },
+        {
+          "@id": "include:not_hispanic_or_latino"
+        }
+      ],
+      "sms:displayName": "Ethnicity",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:experimental_strategy",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale Discovery, etc.)",
+      "rdfs:label": "experimental_strategy",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Experimental Strategy",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:external_id",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Unique identifier for the participant, assigned by data contributor",
+      "rdfs:label": "external_id",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "External Id",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:family_id",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Unique identifer for family to which Participant belongs",
+      "rdfs:label": "family_id",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Family Id",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:family_relationship",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Relationship of Participant to other family members",
+      "rdfs:label": "family_relationship",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Family Relationship",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:family_type",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives)",
+      "rdfs:label": "family_type",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:duo"
+        },
+        {
+          "@id": "include:other"
+        },
+        {
+          "@id": "include:proband_only"
+        },
+        {
+          "@id": "include:trio"
+        }
+      ],
+      "sms:displayName": "Family Type",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:father_id",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Participant ID for Participant's father",
+      "rdfs:label": "father_id",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Father Id",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:female",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "female",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Female",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:file_id",
+      "@type": "rdf:Property",
+      "rdfs:comment": "File identifier, assigned by DCC",
+      "rdfs:label": "file_id",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "File Id",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:file_name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Synapse ID for file",
+      "rdfs:label": "file_name",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "File Name",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:format",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom, etc.)",
+      "rdfs:label": "format",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Format",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:has_aliquot",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An aliquot of a sample",
+      "rdfs:label": "has_aliquot",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Has Aliquot",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:has_biospecimen",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Link to a Biospecimen",
+      "rdfs:label": "has_biospecimen",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Has Biospecimen",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:has_datafile",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Link to a DataFile",
+      "rdfs:label": "has_datafile",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        },
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Has Datafile",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:has_output",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The DataFile Output of an Assay",
+      "rdfs:label": "has_output",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Assay"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Has Output",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:has_parent_sample",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Link from a sample to its parent Sample",
+      "rdfs:label": "has_parent_sample",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Has Parent Sample",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:has_participant",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Link to a Participant",
+      "rdfs:label": "has_participant",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        },
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Has Participant",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:has_study",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Link to a Study",
+      "rdfs:label": "has_study",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        },
+        {
+          "@id": "include:DataFile"
+        },
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Has Study",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:has_subject",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Link from Data File to a Participant",
+      "rdfs:label": "has_subject",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Has Subject",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:hispanic_or_latino",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "hispanic_or_latino",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Hispanic Or Latino",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:htp",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "htp",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Htp",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:include",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "include",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Include",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:kf",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "kf",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Kf",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:laboratory_procedure",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Procedure by which Sample was derived from Parent Sample (e.g. RBC lysis, Centrifugation, Ficoll, etc.)",
+      "rdfs:label": "laboratory_procedure",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Laboratory Procedure",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:male",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "male",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Male",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:more_than_one_race",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "more_than_one_race",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "More Than One Race",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:mother_id",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Participant ID for Participant's mother",
+      "rdfs:label": "mother_id",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Mother Id",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:native_hawaiian_or_other_pacific_islander",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "native_hawaiian_or_other_pacific_islander",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Native Hawaiian Or Other Pacific Islander",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:not_hispanic_or_latino",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "not_hispanic_or_latino",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Not Hispanic Or Latino",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:not_observed",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "not_observed",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Not Observed",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:observed",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "observed",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Observed",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:original_file_name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Name of file, assigned by data contributor",
+      "rdfs:label": "original_file_name",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Original File Name",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:other",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "other",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Other",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:other",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "other",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Other",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:other",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "other",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Other",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:other",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "other",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Other",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:other",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "other",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Other",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:other",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "other",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Other",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:other",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "other",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Other",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:other",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "other",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Other",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:other",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "other",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Other",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:outcomes_vital_status",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Whether participant is alive or dead",
+      "rdfs:label": "outcomes_vital_status",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Outcomes Vital Status",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:parent_sample_id",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable)",
+      "rdfs:label": "parent_sample_id",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Parent Sample Id",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:parent_sample_type",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Type of biological material comprising the parent sample (e.g. Plasma, Serum, White blood cells, etc.)",
+      "rdfs:label": "parent_sample_type",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Parent Sample Type",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:participant_id",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Unique identifier for the participant, assigned by DCC",
+      "rdfs:label": "participant_id",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:DataFile"
+        },
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Participant Id",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:phenotype_hpo",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Human Phenotype Ontology code (annotated by data contributor or DCC)",
+      "rdfs:label": "phenotype_hpo",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Phenotype Hpo",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:phenotype_interpretation",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Whether phenotype was observed or not",
+      "rdfs:label": "phenotype_interpretation",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:not_observed"
+        },
+        {
+          "@id": "include:observed"
+        }
+      ],
+      "sms:displayName": "Phenotype Interpretation",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:phenotype_source_text",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Phenotype as described by data contributor",
+      "rdfs:label": "phenotype_source_text",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Phenotype Source Text",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:proband_only",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "proband_only",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Proband Only",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:program",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Funding source for the study",
+      "rdfs:label": "program",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Study"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:include"
+        },
+        {
+          "@id": "include:kf"
+        }
+      ],
+      "sms:displayName": "Program",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:race",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Race of participant",
+      "rdfs:label": "race",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:american_indian_or_alaskan_native"
+        },
+        {
+          "@id": "include:asian"
+        },
+        {
+          "@id": "include:black_or_african_american"
+        },
+        {
+          "@id": "include:more_than_one_race"
+        },
+        {
+          "@id": "include:native_hawaiian_or_other_pacific_islander"
+        },
+        {
+          "@id": "include:other"
+        },
+        {
+          "@id": "include:white"
+        }
+      ],
+      "sms:displayName": "Race",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:registered",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "registered",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Registered",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:sample_availability",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Whether or not the sample is potentially available for sharing through the Virtual Biorepository",
+      "rdfs:label": "sample_availability",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:available"
+        },
+        {
+          "@id": "include:unavailable"
+        }
+      ],
+      "sms:displayName": "Sample Availability",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:sample_id",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Identifier for sample. A sample is a unique biological material; two samples with two different IDs are biologically distinct.",
+      "rdfs:label": "sample_id",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Sample Id",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:sample_type",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Type of biological material comprising the sample (e.g. Plasma, Serum, White blood cells, DNA, RNA, etc.)",
+      "rdfs:label": "sample_type",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Sample Type",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:sex",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Sex of participant",
+      "rdfs:label": "sex",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Participant"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:female"
+        },
+        {
+          "@id": "include:male"
+        },
+        {
+          "@id": "include:other"
+        },
+        {
+          "@id": "include:unknown"
+        }
+      ],
+      "sms:displayName": "Sex",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:size",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Size of file",
+      "rdfs:label": "size",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:DataFile"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Size",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:study_code",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Unique identifer for the study, assigned by DCC",
+      "rdfs:label": "study_code",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Study"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "include:ds_cog_all"
+        },
+        {
+          "@id": "include:ds_pcgc"
+        },
+        {
+          "@id": "include:ds360_chd"
+        },
+        {
+          "@id": "include:dsc"
+        },
+        {
+          "@id": "include:htp"
+        }
+      ],
+      "sms:displayName": "Study Code",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:study_name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Name of the study, chosen by data contributor",
+      "rdfs:label": "study_name",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Study"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Study Name",
+      "sms:required": "sms:true"
+    },
+    {
+      "@id": "include:t21",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "t21",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "T21",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:trio",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "trio",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Trio",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:unavailable",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "unavailable",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Unavailable",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:unknown",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "unknown",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "Unknown",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:uses_biospecimen",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The Biospecimen an Assay is performed on",
+      "rdfs:label": "uses_biospecimen",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Assay"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Uses Biospecimen",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:validation_rules",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Rules for Validation of Property Constraints and Values",
+      "rdfs:label": "validation_rules",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Thing"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Validation Rules",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:volume",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Amount of sample in container",
+      "rdfs:label": "volume",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Volume",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:volume_unit",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Unit of sample volume",
+      "rdfs:label": "volume_unit",
+      "schema:domainIncludes": [
+        {
+          "@id": "include:Biospecimen"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Volume Unit",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "include:white",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "TBD",
+      "rdfs:label": "white",
+      "schema:isPartOf": "https://w3id.org/include",
+      "sms:displayName": "White",
+      "sms:required": "sms:false"
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Highest Level Class",
+      "rdfs:label": "Thing",
+      "schema:isPartOf": {
+        "@id": "https://w3id.org/include"
+      },
+      "sms:displayName": "Thing",
+      "sms:validationRules": []
+    }
+  ]
+}

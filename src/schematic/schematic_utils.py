@@ -29,6 +29,17 @@ def enum_value_object(value):
         "sms:required": "sms:false"
     }
 
+def schema_value_object(value):
+    return {
+        "@id" : value,
+        "@type": "rdfs:Class",
+        "rdfs:comment": "TBD",
+        "rdfs:label": "INCLUDE",
+        "sms:displayName": "INCLUDE",
+        "schema:isPartOf": "https://w3id.org/include",
+        "sms:required": "sms:false"
+    }
+
 def set_annotation_required(value):
     return "sms:true" if value == "True" else "sms:false"
 

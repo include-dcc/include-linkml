@@ -146,7 +146,7 @@ for slot_key, slot_data in lml_yaml['slots'].items():
             inc_prop['sms:required'] = 'sms:false'
     include_graph['@graph'].append(inc_prop)
 
-with open("src/schematic/include_schematic_linkml.json", 'w') as islj:
+with open("src/schematic/include_schematic_linkml.jsonld", 'w') as islj:
     json.dump(include_graph, islj)
 with open("src/schematic/include_schematic_linkml.jsonld", 'w') as isljd:
     json.dump(include_graph, isljd)

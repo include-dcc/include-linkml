@@ -58,6 +58,13 @@ URI: [https://w3id.org/include/core/:Thing](https://w3id.org/include/core/:Thing
 
 
 
+### Annotations
+
+| property | value |
+| --- | --- |
+| required | False |
+
+
 
 
 ### Schema Source
@@ -88,7 +95,11 @@ URI: [https://w3id.org/include/core/:Thing](https://w3id.org/include/core/:Thing
 <details>
 ```yaml
 name: Thing
-definition_uri: include:Thing
+definition_uri: schema:Thing
+annotations:
+  required:
+    tag: required
+    value: 'False'
 description: Highest Level Class
 title: Thing
 from_schema: https://w3id.org/include/core
@@ -102,7 +113,11 @@ rank: 1000
 <details>
 ```yaml
 name: Thing
-definition_uri: include:Thing
+definition_uri: schema:Thing
+annotations:
+  required:
+    tag: required
+    value: 'False'
 description: Highest Level Class
 title: Thing
 from_schema: https://w3id.org/include/core

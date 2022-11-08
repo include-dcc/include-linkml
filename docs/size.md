@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/assay/:size](https://w3id.org/include/assay/:size
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -51,6 +51,7 @@ rank: 1000
 alias: size
 domain_of:
 - DataFile
+range: string
 
 ```
 </details>

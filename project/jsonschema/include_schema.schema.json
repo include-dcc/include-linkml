@@ -31,7 +31,7 @@
          "properties": {
             "age_at_biospecimen_collection": {
                "description": "Age in days of participant at time of biospecimen collection",
-               "type": "string"
+               "type": "integer"
             },
             "biospecimen_storage": {
                "description": "Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)",
@@ -91,7 +91,7 @@
             },
             "volume": {
                "description": "Amount of sample in container",
-               "type": "string"
+               "type": "number"
             },
             "volume_unit": {
                "description": "Unit of sample volume",
@@ -505,7 +505,7 @@
          "type": "object"
       }
    },
-   "$id": "https://w3id.org/include/",
+   "$id": "https://w3id.org/include",
    "$schema": "http://json-schema.org/draft-07/schema#",
    "additionalProperties": true,
    "metamodel_version": "1.7.0",

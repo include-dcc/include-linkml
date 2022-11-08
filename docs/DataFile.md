@@ -48,20 +48,20 @@ URI: [https://w3id.org/include/assay/:DataFile](https://w3id.org/include/assay/:
 | Name | Cardinality and Range  | Description  |
 | ---  | ---  | --- |
 | [access_url](access_url.md) | 0..1 <br/> [xsd:anyURI](xsd:anyURI)  | Storage location for this file  |
-| [collection_id](collection_id.md) | 0..1 <br/> NONE  | Identifier for the eldest sample in a lineage of processed, pooled, or aliquo...  |
+| [collection_id](collection_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | Identifier for the eldest sample in a lineage of processed, pooled, or aliquo...  |
 | [data_access](data_access.md) | 0..1 <br/> [EnumDataAccess](EnumDataAccess.md)  | Type of access control on this file, determined by DCC  |
-| [data_category](data_category.md) | 1..1 <br/> NONE  | General category of data in file (e  |
-| [data_type](data_type.md) | 0..1 <br/> NONE  | Specific type of data contained in file (e  |
-| [experimental_strategy](experimental_strategy.md) | 0..1 <br/> NONE  | Experimental method used to obtain data in file (e  |
-| [file_id](file_id.md) | 0..1 <br/> NONE  | File identifier, assigned by DCC  |
-| [file_name](file_name.md) | 1..1 <br/> NONE  | Synapse ID for file  |
-| [format](format.md) | 1..1 <br/> NONE  | Format of file (e  |
+| [data_category](data_category.md) | 1..1 <br/> [xsd:string](xsd:string)  | General category of data in file (e  |
+| [data_type](data_type.md) | 0..1 <br/> [xsd:string](xsd:string)  | Specific type of data contained in file (e  |
+| [experimental_strategy](experimental_strategy.md) | 0..1 <br/> [xsd:string](xsd:string)  | Experimental method used to obtain data in file (e  |
+| [file_id](file_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | File identifier, assigned by DCC  |
+| [file_name](file_name.md) | 1..1 <br/> [xsd:string](xsd:string)  | Synapse ID for file  |
+| [format](format.md) | 1..1 <br/> [xsd:string](xsd:string)  | Format of file (e  |
 | [has_biospecimen](has_biospecimen.md) | 0..1 <br/> [Biospecimen](Biospecimen.md)  | Link to a Biospecimen  |
 | [has_participant](has_participant.md) | 0..1 <br/> [Participant](Participant.md)  | Link to a Participant  |
 | [has_study](has_study.md) | 0..1 <br/> [Study](Study.md)  | Link to a Study  |
-| [participant_id](participant_id.md) | 1..1 <br/> NONE  | Unique identifier for the participant, assigned by DCC  |
-| [size](size.md) | 0..1 <br/> NONE  | Size of file  |
-| [original_file_name](original_file_name.md) | 1..1 <br/> NONE  | Name of file, assigned by data contributor  |
+| [participant_id](participant_id.md) | 1..1 <br/> [xsd:string](xsd:string)  | Unique identifier for the participant, assigned by DCC  |
+| [size](size.md) | 0..1 <br/> [xsd:string](xsd:string)  | Size of file  |
+| [original_file_name](original_file_name.md) | 1..1 <br/> [xsd:string](xsd:string)  | Name of file, assigned by data contributor  |
 
 
 ## Usages
@@ -85,7 +85,7 @@ URI: [https://w3id.org/include/assay/:DataFile](https://w3id.org/include/assay/:
 
 | property | value |
 | --- | --- |
-| required | False |
+| required | True |
 | requires_component | Study,Participant,Biospecimen |
 
 
@@ -123,7 +123,7 @@ definition_uri: include:DataFile
 annotations:
   required:
     tag: required
-    value: 'False'
+    value: 'True'
   requires_component:
     tag: requires_component
     value: Study,Participant,Biospecimen
@@ -161,7 +161,7 @@ definition_uri: include:DataFile
 annotations:
   required:
     tag: required
-    value: 'False'
+    value: 'True'
   requires_component:
     tag: requires_component
     value: Study,Participant,Biospecimen
@@ -197,6 +197,7 @@ attributes:
     domain_of:
     - Biospecimen
     - DataFile
+    range: string
   data_access:
     name: data_access
     definition_uri: include:data_access
@@ -221,6 +222,7 @@ attributes:
     owner: DataFile
     domain_of:
     - DataFile
+    range: string
     required: true
   data_type:
     name: data_type
@@ -236,6 +238,7 @@ attributes:
     owner: DataFile
     domain_of:
     - DataFile
+    range: string
   experimental_strategy:
     name: experimental_strategy
     definition_uri: include:experimental_strategy
@@ -249,6 +252,7 @@ attributes:
     owner: DataFile
     domain_of:
     - DataFile
+    range: string
   file_id:
     name: file_id
     definition_uri: include:file_id
@@ -260,6 +264,7 @@ attributes:
     owner: DataFile
     domain_of:
     - DataFile
+    range: string
   file_name:
     name: file_name
     definition_uri: include:file_name
@@ -271,6 +276,7 @@ attributes:
     owner: DataFile
     domain_of:
     - DataFile
+    range: string
     required: true
   format:
     name: format
@@ -284,6 +290,7 @@ attributes:
     owner: DataFile
     domain_of:
     - DataFile
+    range: string
     required: true
   has_biospecimen:
     name: has_biospecimen
@@ -338,6 +345,7 @@ attributes:
     domain_of:
     - Participant
     - DataFile
+    range: string
     required: true
   size:
     name: size
@@ -350,6 +358,7 @@ attributes:
     owner: DataFile
     domain_of:
     - DataFile
+    range: string
   original_file_name:
     name: original_file_name
     definition_uri: include:original_file_name
@@ -361,6 +370,7 @@ attributes:
     owner: DataFile
     domain_of:
     - DataFile
+    range: string
     required: true
 
 ```

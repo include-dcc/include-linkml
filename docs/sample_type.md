@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/assay/:sample_type](https://w3id.org/include/assa
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -54,6 +54,7 @@ rank: 1000
 alias: sample_type
 domain_of:
 - Biospecimen
+range: string
 required: true
 
 ```

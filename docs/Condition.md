@@ -68,6 +68,13 @@ URI: [https://w3id.org/include/participant/:Condition](https://w3id.org/include/
 
 
 
+### Annotations
+
+| property | value |
+| --- | --- |
+| required | False |
+
+
 
 
 ### Schema Source
@@ -99,6 +106,10 @@ URI: [https://w3id.org/include/participant/:Condition](https://w3id.org/include/
 ```yaml
 name: Condition
 definition_uri: include:Condition
+annotations:
+  required:
+    tag: required
+    value: 'False'
 description: A Condition of a Participant
 title: Condition
 from_schema: https://w3id.org/include/participant
@@ -127,6 +138,10 @@ slots:
 ```yaml
 name: Condition
 definition_uri: include:Condition
+annotations:
+  required:
+    tag: required
+    value: 'False'
 description: A Condition of a Participant
 title: Condition
 from_schema: https://w3id.org/include/participant

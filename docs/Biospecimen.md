@@ -49,22 +49,22 @@ URI: [https://w3id.org/include/assay/:Biospecimen](https://w3id.org/include/assa
 
 | Name | Cardinality and Range  | Description  |
 | ---  | ---  | --- |
-| [age_at_biospecimen_collection](age_at_biospecimen_collection.md) | 0..1 <br/> NONE  | Age in days of participant at time of biospecimen collection  |
-| [biospecimen_storage](biospecimen_storage.md) | 0..1 <br/> NONE  | Method by which Container is stored (e  |
-| [collection_id](collection_id.md) | 0..1 <br/> NONE  | Identifier for the eldest sample in a lineage of processed, pooled, or aliquo...  |
-| [collection_sample_type](collection_sample_type.md) | 0..1 <br/> NONE  | Type of biological material comprising the collected sample (e  |
-| [container_id](container_id.md) | 0..1 <br/> NONE  | Identifier for specific container/aliquot of sample, if applicable  |
+| [age_at_biospecimen_collection](age_at_biospecimen_collection.md) | 0..1 <br/> [xsd:integer](xsd:integer)  | Age in days of participant at time of biospecimen collection  |
+| [biospecimen_storage](biospecimen_storage.md) | 0..1 <br/> [xsd:string](xsd:string)  | Method by which Container is stored (e  |
+| [collection_id](collection_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | Identifier for the eldest sample in a lineage of processed, pooled, or aliquo...  |
+| [collection_sample_type](collection_sample_type.md) | 0..1 <br/> [xsd:string](xsd:string)  | Type of biological material comprising the collected sample (e  |
+| [container_id](container_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | Identifier for specific container/aliquot of sample, if applicable  |
 | [has_datafile](has_datafile.md) | 0..1 <br/> [DataFile](DataFile.md)  | Link to a DataFile  |
 | [has_participant](has_participant.md) | 0..1 <br/> [Participant](Participant.md)  | Link to a Participant  |
 | [has_study](has_study.md) | 0..1 <br/> [Study](Study.md)  | Link to a Study  |
-| [laboratory_procedure](laboratory_procedure.md) | 0..1 <br/> NONE  | Procedure by which Sample was derived from Parent Sample (e  |
-| [parent_sample_id](parent_sample_id.md) | 0..1 <br/> NONE  | Identifier for the direct parent from which Sample was derived, processed, po...  |
-| [parent_sample_type](parent_sample_type.md) | 0..1 <br/> NONE  | Type of biological material comprising the parent sample (e  |
+| [laboratory_procedure](laboratory_procedure.md) | 0..1 <br/> [xsd:string](xsd:string)  | Procedure by which Sample was derived from Parent Sample (e  |
+| [parent_sample_id](parent_sample_id.md) | 0..1 <br/> [xsd:string](xsd:string)  | Identifier for the direct parent from which Sample was derived, processed, po...  |
+| [parent_sample_type](parent_sample_type.md) | 0..1 <br/> [xsd:string](xsd:string)  | Type of biological material comprising the parent sample (e  |
 | [sample_availability](sample_availability.md) | 0..1 <br/> [EnumSampleAvailability](EnumSampleAvailability.md)  | Whether or not the sample is potentially available for sharing through the Vi...  |
-| [sample_id](sample_id.md) | 1..1 <br/> NONE  | Identifier for sample  |
-| [sample_type](sample_type.md) | 1..1 <br/> NONE  | Type of biological material comprising the sample (e  |
-| [volume](volume.md) | 0..1 <br/> NONE  | Amount of sample in container  |
-| [volume_unit](volume_unit.md) | 0..1 <br/> NONE  | Unit of sample volume  |
+| [sample_id](sample_id.md) | 1..1 <br/> [xsd:string](xsd:string)  | Identifier for sample  |
+| [sample_type](sample_type.md) | 1..1 <br/> [xsd:string](xsd:string)  | Type of biological material comprising the sample (e  |
+| [volume](volume.md) | 0..1 <br/> [xsd:float](xsd:float)  | Amount of sample in container  |
+| [volume_unit](volume_unit.md) | 0..1 <br/> [xsd:string](xsd:string)  | Unit of sample volume  |
 | [has_aliquot](has_aliquot.md) | 0..1 <br/> [Aliquot](Aliquot.md)  | An aliquot of a sample  |
 
 
@@ -88,7 +88,7 @@ URI: [https://w3id.org/include/assay/:Biospecimen](https://w3id.org/include/assa
 
 | property | value |
 | --- | --- |
-| required | False |
+| required | True |
 | requires_component | Study,Participant,DataFile |
 
 
@@ -126,7 +126,7 @@ definition_uri: include:Biospecimen
 annotations:
   required:
     tag: required
-    value: 'False'
+    value: 'True'
   requires_component:
     tag: requires_component
     value: Study,Participant,DataFile
@@ -166,7 +166,7 @@ definition_uri: include:Biospecimen
 annotations:
   required:
     tag: required
-    value: 'False'
+    value: 'True'
   requires_component:
     tag: requires_component
     value: Study,Participant,DataFile
@@ -187,6 +187,7 @@ attributes:
     owner: Biospecimen
     domain_of:
     - Biospecimen
+    range: integer
   biospecimen_storage:
     name: biospecimen_storage
     definition_uri: include:biospecimen_storage
@@ -199,6 +200,7 @@ attributes:
     owner: Biospecimen
     domain_of:
     - Biospecimen
+    range: string
   collection_id:
     name: collection_id
     definition_uri: include:collection_id
@@ -213,6 +215,7 @@ attributes:
     domain_of:
     - Biospecimen
     - DataFile
+    range: string
   collection_sample_type:
     name: collection_sample_type
     definition_uri: include:collection_sample_type
@@ -225,6 +228,7 @@ attributes:
     owner: Biospecimen
     domain_of:
     - Biospecimen
+    range: string
   container_id:
     name: container_id
     definition_uri: include:container_id
@@ -238,6 +242,7 @@ attributes:
     owner: Biospecimen
     domain_of:
     - Biospecimen
+    range: string
   has_datafile:
     name: has_datafile
     definition_uri: include:has_datafile
@@ -292,6 +297,7 @@ attributes:
     owner: Biospecimen
     domain_of:
     - Biospecimen
+    range: string
   parent_sample_id:
     name: parent_sample_id
     definition_uri: include:parent_sample_id
@@ -304,6 +310,7 @@ attributes:
     owner: Biospecimen
     domain_of:
     - Biospecimen
+    range: string
   parent_sample_type:
     name: parent_sample_type
     definition_uri: include:parent_sample_type
@@ -316,6 +323,7 @@ attributes:
     owner: Biospecimen
     domain_of:
     - Biospecimen
+    range: string
   sample_availability:
     name: sample_availability
     definition_uri: include:sample_availability
@@ -341,6 +349,7 @@ attributes:
     owner: Biospecimen
     domain_of:
     - Biospecimen
+    range: string
     required: true
   sample_type:
     name: sample_type
@@ -354,6 +363,7 @@ attributes:
     owner: Biospecimen
     domain_of:
     - Biospecimen
+    range: string
     required: true
   volume:
     name: volume
@@ -366,6 +376,7 @@ attributes:
     owner: Biospecimen
     domain_of:
     - Biospecimen
+    range: float
   volume_unit:
     name: volume_unit
     definition_uri: include:volume_unit
@@ -377,6 +388,7 @@ attributes:
     owner: Biospecimen
     domain_of:
     - Biospecimen
+    range: string
   has_aliquot:
     name: has_aliquot
     definition_uri: include:has_aliquot

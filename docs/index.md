@@ -2,7 +2,7 @@
 
 None
 
-URI: https://w3id.org/include/
+URI: https://w3id.org/include
 Name: include-schema
 
 ## Classes

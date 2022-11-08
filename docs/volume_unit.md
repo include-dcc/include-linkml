@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/assay/:volume_unit](https://w3id.org/include/assa
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -51,6 +51,7 @@ rank: 1000
 alias: volume_unit
 domain_of:
 - Biospecimen
+range: string
 
 ```
 </details>

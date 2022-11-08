@@ -55,7 +55,7 @@ linkml:Nodeidentifier NONLITERAL
 <https://w3id.org/include/assay/Biospecimen> CLOSED {
     (  $<https://w3id.org/include/assay/Biospecimen_tes> (  &<https://w3id.org/include/core/Thing_tes> ;
           rdf:type [ <https://w3id.org/include/core/Thing> ] ? ;
-          <https://w3id.org/include/assay/age_at_biospecimen_collection> @linkml:String ? ;
+          <https://w3id.org/include/assay/age_at_biospecimen_collection> @linkml:Integer ? ;
           <https://w3id.org/include/assay/biospecimen_storage> @linkml:String ? ;
           <https://w3id.org/include/assay/collection_id> @linkml:String ? ;
           <https://w3id.org/include/assay/collection_sample_type> @linkml:String ? ;
@@ -69,7 +69,7 @@ linkml:Nodeidentifier NONLITERAL
           <https://w3id.org/include/assay/sample_availability> @<https://w3id.org/include/assay/EnumSampleAvailability> ? ;
           <https://w3id.org/include/assay/sample_id> @linkml:String ;
           <https://w3id.org/include/assay/sample_type> @linkml:String ;
-          <https://w3id.org/include/assay/volume> @linkml:String ? ;
+          <https://w3id.org/include/assay/volume> @linkml:Float ? ;
           <https://w3id.org/include/assay/volume_unit> @linkml:String ? ;
           <https://w3id.org/include/assay/has_aliquot> @<https://w3id.org/include/assay/Aliquot> ?
        ) ;

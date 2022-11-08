@@ -52,7 +52,7 @@ URI: [https://w3id.org/include/assay/:Assay](https://w3id.org/include/assay/:Ass
 
 | property | value |
 | --- | --- |
-| required | False |
+| required | True |
 | requires_component | Biospecimen,DataFile |
 
 
@@ -90,7 +90,7 @@ definition_uri: include:Assay
 annotations:
   required:
     tag: required
-    value: 'False'
+    value: 'True'
   requires_component:
     tag: requires_component
     value: Biospecimen,DataFile
@@ -115,7 +115,7 @@ definition_uri: include:Assay
 annotations:
   required:
     tag: required
-    value: 'False'
+    value: 'True'
   requires_component:
     tag: requires_component
     value: Biospecimen,DataFile

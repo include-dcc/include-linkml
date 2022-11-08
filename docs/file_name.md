@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/assay/:file_name](https://w3id.org/include/assay/
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -53,6 +53,7 @@ rank: 1000
 alias: file_name
 domain_of:
 - DataFile
+range: string
 required: true
 
 ```

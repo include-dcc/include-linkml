@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/assay/:laboratory_procedure](https://w3id.org/inc
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -52,6 +52,7 @@ rank: 1000
 alias: laboratory_procedure
 domain_of:
 - Biospecimen
+range: string
 
 ```
 </details>

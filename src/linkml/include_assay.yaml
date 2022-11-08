@@ -19,7 +19,7 @@ classes:
     annotations:
       required:
         tag: required
-        value: 'False'
+        value: 'True'
       requires_component:
         tag: requires_component
         value: Biospecimen
@@ -32,7 +32,7 @@ classes:
     annotations:
       required:
         tag: required
-        value: 'False'
+        value: 'True'
       requires_component:
         tag: requires_component
         value: Biospecimen,DataFile
@@ -48,7 +48,7 @@ classes:
     annotations:
       required:
         tag: required
-        value: 'False'
+        value: 'True'
       requires_component:
         tag: requires_component
         value: Study,Participant,DataFile
@@ -79,7 +79,7 @@ classes:
     annotations:
       required:
         tag: required
-        value: 'False'
+        value: 'True'
       requires_component:
         tag: requires_component
         value: Study,Participant,Biospecimen

@@ -10,7 +10,7 @@ type Assay
 
 type Biospecimen
   {
-    ageAtBiospecimenCollection: String
+    ageAtBiospecimenCollection: Integer
     biospecimenStorage: String
     collectionId: String
     collectionSampleType: String
@@ -24,7 +24,7 @@ type Biospecimen
     sampleAvailability: EnumSampleAvailability
     sampleId: String!
     sampleType: String!
-    volume: String
+    volume: Float
     volumeUnit: String
     hasAliquot: Aliquot
   }

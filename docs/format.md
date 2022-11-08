@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/assay/:format](https://w3id.org/include/assay/:fo
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -54,6 +54,7 @@ rank: 1000
 alias: format
 domain_of:
 - DataFile
+range: string
 required: true
 
 ```

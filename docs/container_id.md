@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/assay/:container_id](https://w3id.org/include/ass
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -53,6 +53,7 @@ rank: 1000
 alias: container_id
 domain_of:
 - Biospecimen
+range: string
 
 ```
 </details>

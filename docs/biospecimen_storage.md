@@ -13,7 +13,7 @@ URI: [https://w3id.org/include/assay/:biospecimen_storage](https://w3id.org/incl
 
 ## Properties
 
-* Range: NONE
+* Range: [xsd:string](xsd:string)
 * Multivalued: None
 
 
@@ -52,6 +52,7 @@ rank: 1000
 alias: biospecimen_storage
 domain_of:
 - Biospecimen
+range: string
 
 ```
 </details>

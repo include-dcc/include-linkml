@@ -7,7 +7,7 @@ message Assay
 // A Biospecimen Collected from A Participant
 message Biospecimen
  {
-  string ageAtBiospecimenCollection = 0
+  integer ageAtBiospecimenCollection = 0
   string biospecimenStorage = 0
   string collectionId = 0
   string collectionSampleType = 0
@@ -21,7 +21,7 @@ message Biospecimen
   enumSampleAvailability sampleAvailability = 0
   string sampleId = 0
   string sampleType = 0
-  string volume = 0
+  float volume = 0
   string volumeUnit = 0
   aliquot hasAliquot = 0
  }
