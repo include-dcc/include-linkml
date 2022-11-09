@@ -10,7 +10,8 @@ from schematic_utils import TRANSFORM_MAP, \
     includify_curie, \
     process_enum_range,\
     enum_value_object, \
-    schema_value_object
+    schema_value_object, \
+    pascal_to_camel
 
 from linkml_runtime.utils.schemaview import SchemaView
 
@@ -61,7 +62,9 @@ class SchematicJSONTransformer(object):
 
         # Build the schematic json
         self.schematic_classes = []
+        self.class_keys = []
         self.schematic_properties = []
+        self.prop_keys = []
         self.generate_schema_object()
 
     def class_generator(self):
@@ -89,7 +92,7 @@ class SchematicJSONTransformer(object):
             if len(sdef['slots']):
                 class_object['sms:requiresDependency'] = []
                 for slot in sdef['slots']:
-                    slot_sv = self.sv.get_slot(slot).definition_uri
+                    slot_sv = includify_curie(pascal_to_camel(self.sv.get_slot(slot).name))
                     class_object['sms:requiresDependency'].append(make_object(slot_sv))
             self.schematic_classes.append(class_object)
 
@@ -97,14 +100,13 @@ class SchematicJSONTransformer(object):
         for slot, slotdef in self.sv.all_slots().items():
             slot_object = copy.deepcopy(PROPERTY_TEMPLATE)
             slot_object['@type'] = 'rdf:Property'
-            slot_object['@id'] = includify_curie(slotdef.name)
-            slot_object['rdfs:label'] = slotdef.name
+            slot_object['@id'] = includify_curie(pascal_to_camel(slotdef.name))
+            slot_object['rdfs:label'] = pascal_to_camel(slotdef.name)
             slot_object['rdfs:comment'] = slotdef.description
             slot_object['sms:displayName'] = slotdef.title
             slot_object['schema:isPartOf'] = make_object(self.sv.schema.id)
             slot_object['sms:required'] = set_slot_required(slotdef.required)
-            # slot_object['sms:validationRules'] = []
-            # sinstance['schema:rangeIncludes']
+            slot_object['sms:validationRules'] = []
             domain_list = self.sv.get_classes_by_slot(slotdef)
             slot_object['schema:domainIncludes'] = [make_object(includify_curie(x)) for x in domain_list]
             type_string = str(type(self.sv.get_element(slotdef.range)))
@@ -121,13 +123,18 @@ class SchematicJSONTransformer(object):
             if "EnumDefinition" in type_string:
                 slot_object['schema:rangeIncludes'] = process_enum_range(self.sv.get_enum(slotdef.range))
                 for enum_value in self.sv.get_enum(slotdef.range).permissible_values:
-                    self.schematic_classes.append(enum_value_object(enum_value))
+                    if enum_value not in self.class_keys:
+                        self.schematic_classes.append(enum_value_object(enum_value))
+                        self.class_keys.append(enum_value)
+                    else:
+                        pass
+
             self.schematic_properties.append(slot_object)
     def generate_schema_object(self):
         self.schematic_classes.append(schema_value_object(self.sv.schema.id))
     def generate_context(self):
         context = self.sv.namespaces()
-        context['sms'] = 'http://www.sms.org'
+        context['sms'] = 'www.sms.org'
         return {x:str(y) for x, y in context.items()}
 
     def write_output(self):
@@ -135,10 +142,8 @@ class SchematicJSONTransformer(object):
             '@context': self.context ,
             "@graph": self.schematic_classes + self.schematic_properties
         }
-        with open(f"{self.output_path}/include_schematic_linkml.json", 'w') as islj:
-            json.dump(include_graph, islj)
         with open(f"{self.output_path}/include_schematic_linkml.jsonld", 'w') as isljd:
-            json.dump(include_graph, isljd)
+            json.dump(include_graph, isljd, sort_keys=True, indent=4)
 
 st = SchematicJSONTransformer(f"{project_root}/src/linkml/include_schema.yaml", f"{project_root}/src/data/schematic")
 st.class_generator()

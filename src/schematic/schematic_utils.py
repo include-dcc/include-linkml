@@ -13,30 +13,38 @@ def generate_context(prefixes):
         prefix_context[k] = v['prefix_reference']
     return prefix_context
 
+def pascal_to_camel(word):
+    words = word.split("_")
+    ret_words = [words[0]]
+    for wd in words[1:]:
+        ret_words.append(wd.replace(wd[0], wd[0].upper(),1))
+    return "".join(ret_words)
+
 def display_name(name):
     names = name.split('_')
     capitalized = ' '.join([x.title() for x in names])
     return capitalized
 
 def enum_value_object(value):
-    return {
-        "@id" : includify_curie(value.replace(" ", "")),
+    evo = {
+        "@id" : includify_curie(pascal_to_camel(value)),
         "@type": "rdfs:Class",
         "rdfs:comment": "TBD",
-        "rdfs:label": value.replace(" ", ""),
+        "rdfs:label": pascal_to_camel(value),
         "sms:displayName": display_name(value),
-        "schema:isPartOf": "https://w3id.org/include",
+        "schema:isPartOf": make_object("https://w3id.org/include"),
         "sms:required": "sms:false"
     }
+    return evo
 
 def schema_value_object(value):
     return {
         "@id" : value,
         "@type": "rdfs:Class",
         "rdfs:comment": "TBD",
-        "rdfs:label": "INCLUDE",
+        "rdfs:label": "include",
         "sms:displayName": "INCLUDE",
-        "schema:isPartOf": "https://w3id.org/include",
+        "schema:isPartOf": make_object("https://w3id.org/include"),
         "sms:required": "sms:false"
     }
 
@@ -49,7 +57,7 @@ def set_slot_required(value):
 def process_enum_range(enum_object):
     range_includes = []
     for pv in enum_object.permissible_values:
-        range_includes.append(make_object(includify_curie(pv)))
+        range_includes.append(make_object(includify_curie(pascal_to_camel(pv))))
     return range_includes
 
 
