@@ -15,9 +15,6 @@ from schematic_utils import TRANSFORM_MAP, \
 
 from linkml_runtime.utils.schemaview import SchemaView
 
-OBJECT_TEMPLATE = {}
-
-PROPERTY_TEMPLATE = {}
 
 # EXAMPLE SCHEMATIC OBJECT
 # {'@id': 'bts:Study',
@@ -43,16 +40,6 @@ PROPERTY_TEMPLATE = {}
 #  'sms:validationRules': []}
 
 
-def lodash2camel(label):
-    labels = label.split("_")
-    if len(labels) > 1:
-        for index, l in enumerate(labels[1:]):
-            labels[index+1] = l.replace(l[0], l[0].upper(), 1)
-        return "".join(labels)
-    else:
-        return label
-
-
 class SchematicJSONTransformer(object):
     def __init__(self, schema_path, output_path):
         self.schema_path = schema_path
@@ -69,7 +56,7 @@ class SchematicJSONTransformer(object):
 
     def class_generator(self):
         for sclass, sdef in self.sv.all_classes().items():
-            class_object = copy.deepcopy(OBJECT_TEMPLATE)
+            class_object = dict()
             class_object['@type'] = 'rdfs:Class'
             class_object['@id'] = sdef.definition_uri
             class_object['rdfs:label'] = sdef.name
@@ -98,7 +85,7 @@ class SchematicJSONTransformer(object):
 
     def property_generator(self):
         for slot, slotdef in self.sv.all_slots().items():
-            slot_object = copy.deepcopy(PROPERTY_TEMPLATE)
+            slot_object = dict()
             slot_object['@type'] = 'rdf:Property'
             slot_object['@id'] = includify_curie(pascal_to_camel(slotdef.name))
             slot_object['rdfs:label'] = pascal_to_camel(slotdef.name)
@@ -110,14 +97,6 @@ class SchematicJSONTransformer(object):
             domain_list = self.sv.get_classes_by_slot(slotdef)
             slot_object['schema:domainIncludes'] = [make_object(includify_curie(x)) for x in domain_list]
             type_string = str(type(self.sv.get_element(slotdef.range)))
-            # if "TypeDefinition" in type_string:
-            #     schema_types = {
-            #         "integer": "schema:Integer",
-            #         "string": "schema:Text",
-            #         "uriorcurie": "schema:Text",
-            #         "float": "schema:Float"
-            #     }
-            #     slot_object['schema:rangeIncludes'] = [make_object(schema_types[slotdef.range])]
             if "ClassDefinition" in type_string:
                 slot_object['schema:rangeIncludes'] = [make_object(includify_curie(slotdef.range))]
             if "EnumDefinition" in type_string:
@@ -128,10 +107,11 @@ class SchematicJSONTransformer(object):
                         self.class_keys.append(enum_value)
                     else:
                         pass
-
             self.schematic_properties.append(slot_object)
+
     def generate_schema_object(self):
         self.schematic_classes.append(schema_value_object(self.sv.schema.id))
+
     def generate_context(self):
         context = self.sv.namespaces()
         context['sms'] = 'www.sms.org'
