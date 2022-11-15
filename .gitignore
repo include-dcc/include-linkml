@@ -73,6 +73,7 @@ docs/_build/
 site/
 docs/*md
 docs/types/
+project/
 # PyBuilder
 target/
 
