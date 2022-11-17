@@ -7,11 +7,15 @@ prefixes:
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
-
+imports:
+  - linkml:types
 classes:
   Thing:
     name: Thing
     definition_uri: schema:Thing
     description: Highest Level Class
+    annotations:
+      required:
+        tag: required
+        value: 'False'
     title: Thing
-    from_schema: https://w3id.org/include

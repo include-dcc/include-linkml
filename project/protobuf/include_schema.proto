@@ -1,0 +1,94 @@
+// An assay
+message Assay
+ {
+  biospecimen usesBiospecimen = 0
+  dataFile hasOutput = 0
+ }
+// A Biospecimen Collected from A Participant
+message Biospecimen
+ {
+  integer ageAtBiospecimenCollection = 0
+  string biospecimenStorage = 0
+  string collectionId = 0
+  string collectionSampleType = 0
+  string containerId = 0
+  dataFile hasDatafile = 0
+  participant hasParticipant = 0
+  study hasStudy = 0
+  string laboratoryProcedure = 0
+  string parentSampleId = 0
+  string parentSampleType = 0
+  enumSampleAvailability sampleAvailability = 0
+  string sampleId = 0
+  string sampleType = 0
+  float volume = 0
+  string volumeUnit = 0
+  aliquot hasAliquot = 0
+ }
+// A Condition of a Participant
+message Condition
+ {
+  participant hasParticipant = 0
+  integer ageAtConditionObservation = 0
+  string mondoLabel = 0
+  string mondoCode = 0
+  enumConditionInterpretation conditionInterpretation = 0
+  enumConditionDataSource conditionDataSource = 0
+  string hpoLabel = 0
+  string hpoCode = 0
+  string maxoLabel = 0
+  string maxoCode = 0
+  string otherLabel = 0
+  string otherCode = 0
+ }
+// A DataFile Associated with a Participant or Study or Biospecimen
+message DataFile
+ {
+  uriorcurie accessUrl = 0
+  string collectionId = 0
+  enumDataAccess dataAccess = 0
+  string dataCategory = 0
+  string dataType = 0
+  string experimentalStrategy = 0
+  string fileId = 0
+  string fileName = 0
+  string format = 0
+  biospecimen hasBiospecimen = 0
+  participant hasParticipant = 0
+  study hasStudy = 0
+  string participantId = 0
+  string size = 0
+  string originalFileName = 0
+ }
+// A group of Participants in the same Study
+message FamilyGroup
+ {
+  participant hasParticipant = 0
+ }
+// A Participant in a Study
+message Participant
+ {
+  integer ageAtLastVitalStatus = 0
+  enumDownSyndromeStatus downSyndromeStatus = 0
+  enumEthnicity ethnicity = 0
+  string externalId = 0
+  string familyId = 0
+  participant familyRelationship = 0
+  enumFamilyType familyType = 0
+  string fatherId = 0
+  dataFile hasDatafile = 0
+  study hasStudy = 0
+  string motherId = 0
+  enumVitalStatus outcomesVitalStatus = 0
+  string participantId = 0
+  enumRace race = 0
+  enumSex sex = 0
+ }
+// A Study
+message Study
+ {
+  string dbgap = 0
+  enumProgram program = 0
+  enumStudyCode studyCode = 0
+  string studyName = 0
+ }

@@ -1,0 +1,102 @@
+type Aliquot
+  {
+  }
+
+type Assay
+  {
+    usesBiospecimen: Biospecimen
+    hasOutput: DataFile
+  }
+
+type Biospecimen
+  {
+    ageAtBiospecimenCollection: Integer
+    biospecimenStorage: String
+    collectionId: String
+    collectionSampleType: String
+    containerId: String
+    hasDatafile: DataFile
+    hasParticipant: Participant
+    hasStudy: Study
+    laboratoryProcedure: String
+    parentSampleId: String
+    parentSampleType: String
+    sampleAvailability: EnumSampleAvailability
+    sampleId: String!
+    sampleType: String!
+    volume: Float
+    volumeUnit: String
+    hasAliquot: Aliquot
+  }
+
+type Condition
+  {
+    hasParticipant: Participant
+    ageAtConditionObservation: Integer
+    mondoLabel: String
+    mondoCode: String
+    conditionInterpretation: EnumConditionInterpretation
+    conditionDataSource: EnumConditionDataSource
+    hpoLabel: String
+    hpoCode: String
+    maxoLabel: String
+    maxoCode: String
+    otherLabel: String
+    otherCode: String
+  }
+
+type DataFile
+  {
+    accessUrl: Uriorcurie
+    collectionId: String
+    dataAccess: EnumDataAccess
+    dataCategory: String!
+    dataType: String
+    experimentalStrategy: String
+    fileId: String
+    fileName: String!
+    format: String!
+    hasBiospecimen: Biospecimen
+    hasParticipant: Participant
+    hasStudy: Study
+    participantId: String!
+    size: String
+    originalFileName: String!
+  }
+
+type FamilyGroup
+  {
+    hasParticipant: Participant
+  }
+
+type Participant
+  {
+    ageAtLastVitalStatus: Integer
+    downSyndromeStatus: EnumDownSyndromeStatus!
+    ethnicity: EnumEthnicity!
+    externalId: String!
+    familyId: String
+    familyRelationship: Participant
+    familyType: EnumFamilyType!
+    fatherId: String
+    hasDatafile: DataFile
+    hasStudy: Study
+    motherId: String
+    outcomesVitalStatus: EnumVitalStatus
+    participantId: String!
+    race: EnumRace!
+    sex: EnumSex!
+  }
+
+type Study
+  {
+    dbgap: String
+    program: EnumProgram!
+    studyCode: EnumStudyCode!
+    studyName: String!
+  }
+
+type Thing
+  {
+  }
+

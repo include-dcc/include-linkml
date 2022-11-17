@@ -1,7 +1,0 @@
-{
-   "include": "https://w3id.org/include/",
-   "linkml": "https://w3id.org/linkml/",
-   "Thing": {
-      "@id": "https://w3id.org/include/core/Thing"
-   }
-}
