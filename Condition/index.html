@@ -57,7 +57,7 @@
 <label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to light mode">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"></path></svg>
 </label>
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="amber" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="teal" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="amber" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="teal" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
 <label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"></path></svg>
 </label>
@@ -134,7 +134,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../about/">
+<a class="md-nav__link" href="../about.md">
         About
       </a>
 </li>
@@ -153,6 +153,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -168,6 +173,11 @@
   </a>
 <nav aria-label="Identifier and Mapping Information" class="md-nav">
 <ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#annotations">
+    Annotations
+  </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#schema-source">
     Schema Source
@@ -211,9 +221,12 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-condition">Class: Condition</h1>
-<p>URI: <a href="https://w3id.org/include/Condition">include:Condition</a></p>
+<p><em>A Condition of a Participant</em></p>
+<p>URI: <a href="https://w3id.org/include/participant/:Condition">https://w3id.org/include/participant/:Condition</a></p>
 <div class="mermaid"> classDiagram
     class Condition
+      Thing &lt;|-- Condition
+
       Condition : age_at_condition_observation
       Condition : condition_data_source
       Condition : condition_interpretation
@@ -228,7 +241,13 @@
       Condition : other_label
 
 </div>
-<!-- no inheritance hierarchy -->
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../Thing/">Thing</a><ul>
+<li><strong>Condition</strong></li>
+</ul>
+</li>
+</ul>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -246,7 +265,7 @@
 </tr>
 <tr>
 <td><a href="../age_at_condition_observation/">age_at_condition_observation</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="xsd:integer">xsd:integer</a></td>
 <td>Age in days at which condition was observed, recorded, or diagnosed</td>
 </tr>
 <tr>
@@ -303,9 +322,24 @@
 </table>
 <h2 id="usages">Usages</h2>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>required</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/include</li>
+<li>from schema: https://w3id.org/include/participant</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -318,11 +352,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>['include:Condition']</td>
+<td>['https://w3id.org/include/participant/:Condition']</td>
 </tr>
 <tr>
 <td>native</td>
-<td>['include:Condition']</td>
+<td>['https://w3id.org/include/participant/:Condition']</td>
 </tr>
 </tbody>
 </table>
@@ -331,8 +365,16 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: Condition
-from_schema: https://w3id.org/include
+definition_uri: include:Condition
+annotations:
+  required:
+    tag: required
+    value: 'False'
+description: A Condition of a Participant
+title: Condition
+from_schema: https://w3id.org/include/participant
 rank: 1000
+is_a: Thing
 slots:
 - has_participant
 - age_at_condition_observation
@@ -352,60 +394,66 @@ slots:
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: Condition
-from_schema: https://w3id.org/include
+definition_uri: include:Condition
+annotations:
+  required:
+    tag: required
+    value: 'False'
+description: A Condition of a Participant
+title: Condition
+from_schema: https://w3id.org/include/participant
 rank: 1000
+is_a: Thing
 attributes:
   has_participant:
     name: has_participant
     definition_uri: include:has_participant
     description: Link to a Participant
-    from_schema: https://w3id.org/include
+    title: Has Participant
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: has_participant
     owner: Condition
     domain_of:
-    - Biospecimen
-    - DataFile
-    - Condition
-    - Biospecimen
-    - DataFile
     - FamilyGroup
     - Condition
+    - Biospecimen
+    - DataFile
     range: Participant
   age_at_condition_observation:
     name: age_at_condition_observation
     definition_uri: include:age_at_condition_observation
     description: Age in days at which condition was observed, recorded, or diagnosed
-    from_schema: https://w3id.org/include
+    title: Age At Condition Observation
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: age_at_condition_observation
     owner: Condition
     domain_of:
     - Condition
-    - Condition
-    range: string
+    range: integer
   mondo_label:
     name: mondo_label
     definition_uri: include:mondo_label
     description: Label for condition in the Mondo Disease Ontology (MONDO)
-    from_schema: https://w3id.org/include
+    title: Mondo Label
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: mondo_label
     owner: Condition
     domain_of:
-    - Condition
     - Condition
     range: string
   mondo_code:
     name: mondo_code
     definition_uri: include:mondo_code
     description: Code for condition in the Mondo Disease Ontology (MONDO)
-    from_schema: https://w3id.org/include
+    title: Mondo Code
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: mondo_code
     owner: Condition
     domain_of:
-    - Condition
     - Condition
     range: string
   condition_interpretation:
@@ -415,12 +463,12 @@ attributes:
       was specifically examined for that condition, or health record specifically
       queried for that condition, and found to be negative. Sept. 2022 release will
       only include positive assertions.
-    from_schema: https://w3id.org/include
+    title: Condition Interpretation
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: condition_interpretation
     owner: Condition
     domain_of:
-    - Condition
     - Condition
     range: enum_condition_interpretation
   condition_data_source:
@@ -428,60 +476,60 @@ attributes:
     definition_uri: include:condition_data_source
     description: Whether condition information was obtained from medical records (Clinical)
       or patient survey (Self-Reported)
-    from_schema: https://w3id.org/include
+    title: Condition Data Source
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: condition_data_source
     owner: Condition
     domain_of:
-    - Condition
     - Condition
     range: enum_condition_data_source
   hpo_label:
     name: hpo_label
     definition_uri: include:hpo_label
     description: Label for condition in the Human Phenotype Ontology (HPO)
-    from_schema: https://w3id.org/include
+    title: Hpo Label
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: hpo_label
     owner: Condition
     domain_of:
-    - Condition
     - Condition
     range: string
   hpo_code:
     name: hpo_code
     definition_uri: include:hpo_code
     description: Code for condition in the Human Phenotype Ontology (HPO)
-    from_schema: https://w3id.org/include
+    title: Hpo Code
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: hpo_code
     owner: Condition
     domain_of:
-    - Condition
     - Condition
     range: string
   maxo_label:
     name: maxo_label
     definition_uri: include:maxo_label
     description: Label for condition in the Medical Action Ontology (MAXO)
-    from_schema: https://w3id.org/include
+    title: Maxo Label
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: maxo_label
     owner: Condition
     domain_of:
-    - Condition
     - Condition
     range: string
   maxo_code:
     name: maxo_code
     definition_uri: include:maxo_code
     description: Code for condition in the Medical Action Ontology (MAXO)
-    from_schema: https://w3id.org/include
+    title: Maxo Code
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: maxo_code
     owner: Condition
     domain_of:
-    - Condition
     - Condition
     range: string
   other_label:
@@ -489,12 +537,12 @@ attributes:
     definition_uri: include:other_label
     description: Label for condition in another ontology (if no match in HPO, MONDO,
       or MAXO)
-    from_schema: https://w3id.org/include
+    title: Other Label
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: other_label
     owner: Condition
     domain_of:
-    - Condition
     - Condition
     range: string
   other_code:
@@ -502,12 +550,12 @@ attributes:
     definition_uri: include:other_code
     description: Code for condition in another ontology (if no match in HPO, MONDO,
       or MAXO)
-    from_schema: https://w3id.org/include
+    title: Other Code
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: other_code
     owner: Condition
     domain_of:
-    - Condition
     - Condition
     range: string
 

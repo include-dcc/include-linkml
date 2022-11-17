@@ -57,7 +57,7 @@
 <label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to light mode">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"></path></svg>
 </label>
-<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="amber" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="teal" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="amber" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="teal" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
 <label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"></path></svg>
 </label>
@@ -134,7 +134,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../about/">
+<a class="md-nav__link" href="../about.md">
         About
       </a>
 </li>
@@ -222,7 +222,7 @@
 </a>
 <h1 id="class-biospecimen">Class: Biospecimen</h1>
 <p><em>A Biospecimen Collected from A Participant</em></p>
-<p>URI: <a href="https://w3id.org/include/Biospecimen">include:Biospecimen</a></p>
+<p>URI: <a href="https://w3id.org/include/assay/:Biospecimen">https://w3id.org/include/assay/:Biospecimen</a></p>
 <div class="mermaid"> classDiagram
     class Biospecimen
       Thing &lt;|-- Biospecimen
@@ -265,7 +265,7 @@
 <tbody>
 <tr>
 <td><a href="../age_at_biospecimen_collection/">age_at_biospecimen_collection</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="xsd:integer">xsd:integer</a></td>
 <td>Age in days of participant at time of biospecimen collection</td>
 </tr>
 <tr>
@@ -335,7 +335,7 @@
 </tr>
 <tr>
 <td><a href="../volume/">volume</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="xsd:float">xsd:float</a></td>
 <td>Amount of sample in container</td>
 </tr>
 <tr>
@@ -362,14 +362,14 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../DataFile/">DataFile</a></td>
-<td><a href="../has_biospecimen/">has_biospecimen</a></td>
+<td><a href="../Assay/">Assay</a></td>
+<td><a href="../uses_biospecimen/">uses_biospecimen</a></td>
 <td>range</td>
 <td>Biospecimen</td>
 </tr>
 <tr>
-<td><a href="../Assay/">Assay</a></td>
-<td><a href="../uses_biospecimen/">uses_biospecimen</a></td>
+<td><a href="../DataFile/">DataFile</a></td>
+<td><a href="../has_biospecimen/">has_biospecimen</a></td>
 <td>range</td>
 <td>Biospecimen</td>
 </tr>
@@ -387,7 +387,7 @@
 <tbody>
 <tr>
 <td>required</td>
-<td>False</td>
+<td>True</td>
 </tr>
 <tr>
 <td>requires_component</td>
@@ -397,7 +397,7 @@
 </table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/include</li>
+<li>from schema: https://w3id.org/include/assay</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -410,11 +410,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>['include:Biospecimen']</td>
+<td>['https://w3id.org/include/assay/:Biospecimen']</td>
 </tr>
 <tr>
 <td>native</td>
-<td>['include:Biospecimen']</td>
+<td>['https://w3id.org/include/assay/:Biospecimen']</td>
 </tr>
 </tbody>
 </table>
@@ -427,13 +427,13 @@ definition_uri: include:Biospecimen
 annotations:
   required:
     tag: required
-    value: 'False'
+    value: 'True'
   requires_component:
     tag: requires_component
     value: Study,Participant,DataFile
 description: A Biospecimen Collected from A Participant
 title: Biospecimen
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/assay
 rank: 1000
 is_a: Thing
 slots:
@@ -464,13 +464,13 @@ definition_uri: include:Biospecimen
 annotations:
   required:
     tag: required
-    value: 'False'
+    value: 'True'
   requires_component:
     tag: requires_component
     value: Study,Participant,DataFile
 description: A Biospecimen Collected from A Participant
 title: Biospecimen
-from_schema: https://w3id.org/include
+from_schema: https://w3id.org/include/assay
 rank: 1000
 is_a: Thing
 attributes:
@@ -478,25 +478,25 @@ attributes:
     name: age_at_biospecimen_collection
     definition_uri: include:age_at_biospecimen_collection
     description: Age in days of participant at time of biospecimen collection
-    from_schema: https://w3id.org/include
+    title: Age At Biospecimen Collection
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: age_at_biospecimen_collection
     owner: Biospecimen
     domain_of:
     - Biospecimen
-    - Biospecimen
-    range: string
+    range: integer
   biospecimen_storage:
     name: biospecimen_storage
     definition_uri: include:biospecimen_storage
     description: Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen,
       etc.)
-    from_schema: https://w3id.org/include
+    title: Biospecimen Storage
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: biospecimen_storage
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
     range: string
   collection_id:
@@ -505,13 +505,12 @@ attributes:
     description: Identifier for the eldest sample in a lineage of processed, pooled,
       or aliquoted samples. This may be the same as Parent Sample ID or Sample ID
       (if no processing was performed).
-    from_schema: https://w3id.org/include
+    title: Collection Id
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: collection_id
     owner: Biospecimen
     domain_of:
-    - Biospecimen
-    - DataFile
     - Biospecimen
     - DataFile
     range: string
@@ -520,12 +519,12 @@ attributes:
     definition_uri: include:collection_sample_type
     description: Type of biological material comprising the collected sample (e.g.
       Whole blood, Bone marrow, Saliva, etc.)
-    from_schema: https://w3id.org/include
+    title: Collection Sample Type
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: collection_sample_type
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
     range: string
   container_id:
@@ -534,72 +533,67 @@ attributes:
     description: Identifier for specific container/aliquot of sample, if applicable.
       For example, distinct aliquots of a sample will have the same Sample ID but
       different Container IDs.
-    from_schema: https://w3id.org/include
+    title: Container Id
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: container_id
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
     range: string
   has_datafile:
     name: has_datafile
     definition_uri: include:has_datafile
     description: Link to a DataFile
-    from_schema: https://w3id.org/include
+    title: Has Datafile
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: has_datafile
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Participant
     - Biospecimen
-    - Participant
     range: DataFile
   has_participant:
     name: has_participant
     definition_uri: include:has_participant
     description: Link to a Participant
-    from_schema: https://w3id.org/include
+    title: Has Participant
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: has_participant
     owner: Biospecimen
     domain_of:
-    - Biospecimen
-    - DataFile
-    - Condition
-    - Biospecimen
-    - DataFile
     - FamilyGroup
     - Condition
+    - Biospecimen
+    - DataFile
     range: Participant
   has_study:
     name: has_study
     definition_uri: include:has_study
     description: Link to a Study
-    from_schema: https://w3id.org/include
+    title: Has Study
+    from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: has_study
     owner: Biospecimen
     domain_of:
-    - Biospecimen
-    - DataFile
     - Participant
     - Biospecimen
     - DataFile
-    - Participant
     range: Study
   laboratory_procedure:
     name: laboratory_procedure
     definition_uri: include:laboratory_procedure
     description: Procedure by which Sample was derived from Parent Sample (e.g. RBC
       lysis, Centrifugation, Ficoll, etc.)
-    from_schema: https://w3id.org/include
+    title: Laboratory Procedure
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: laboratory_procedure
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
     range: string
   parent_sample_id:
@@ -607,12 +601,12 @@ attributes:
     definition_uri: include:parent_sample_id
     description: Identifier for the direct parent from which Sample was derived, processed,
       pooled, etc. (if applicable)
-    from_schema: https://w3id.org/include
+    title: Parent Sample Id
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: parent_sample_id
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
     range: string
   parent_sample_type:
@@ -620,12 +614,12 @@ attributes:
     definition_uri: include:parent_sample_type
     description: Type of biological material comprising the parent sample (e.g. Plasma,
       Serum, White blood cells, etc.)
-    from_schema: https://w3id.org/include
+    title: Parent Sample Type
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: parent_sample_type
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
     range: string
   sample_availability:
@@ -633,12 +627,12 @@ attributes:
     definition_uri: include:sample_availability
     description: Whether or not the sample is potentially available for sharing through
       the Virtual Biorepository
-    from_schema: https://w3id.org/include
+    title: Sample Availability
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: sample_availability
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
     range: enum_sample_availability
   sample_id:
@@ -646,12 +640,12 @@ attributes:
     definition_uri: include:sample_id
     description: Identifier for sample. A sample is a unique biological material;
       two samples with two different IDs are biologically distinct.
-    from_schema: https://w3id.org/include
+    title: Sample Id
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: sample_id
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
     range: string
     required: true
@@ -660,12 +654,12 @@ attributes:
     definition_uri: include:sample_type
     description: Type of biological material comprising the sample (e.g. Plasma, Serum,
       White blood cells, DNA, RNA, etc.)
-    from_schema: https://w3id.org/include
+    title: Sample Type
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: sample_type
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
     range: string
     required: true
@@ -673,36 +667,36 @@ attributes:
     name: volume
     definition_uri: include:volume
     description: Amount of sample in container
-    from_schema: https://w3id.org/include
+    title: Volume
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: volume
     owner: Biospecimen
     domain_of:
     - Biospecimen
-    - Biospecimen
-    range: string
+    range: float
   volume_unit:
     name: volume_unit
     definition_uri: include:volume_unit
     description: Unit of sample volume
-    from_schema: https://w3id.org/include
+    title: Volume Unit
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: volume_unit
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
     range: string
   has_aliquot:
     name: has_aliquot
     definition_uri: include:has_aliquot
     description: An aliquot of a sample
-    from_schema: https://w3id.org/include
+    title: Has Aliquot
+    from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: has_aliquot
     owner: Biospecimen
     domain_of:
-    - Biospecimen
     - Biospecimen
     range: Aliquot
 

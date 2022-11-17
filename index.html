@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#includev2datamodel" class="md-skip">
+        <a href="#include-schema" class="md-skip">
           Skip to content
         </a>
       
@@ -121,7 +121,7 @@
         
           
           
-          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
           
             <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
@@ -317,7 +317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="about/" class="md-nav__link">
+      <a href="about.md" class="md-nav__link">
         About
       </a>
     </li>
@@ -405,10 +405,10 @@
   </a>
 
 
-<h1 id="includev2datamodel">IncludeV2DataModel</h1>
-<p>Initial Include Schema</p>
+<h1 id="include-schema">include-schema</h1>
+<p>None</p>
 <p>URI: https://w3id.org/include
-Name: IncludeV2DataModel</p>
+Name: include-schema</p>
 <h2 id="classes">Classes</h2>
 <table>
 <thead>
@@ -432,7 +432,7 @@ Name: IncludeV2DataModel</p>
 </tr>
 <tr>
 <td><a href="Condition/">Condition</a></td>
-<td></td>
+<td>A Condition of a Participant</td>
 </tr>
 <tr>
 <td><a href="DataFile/">DataFile</a></td>
@@ -496,10 +496,6 @@ Name: IncludeV2DataModel</p>
 <tr>
 <td><a href="condition_data_source/">condition_data_source</a></td>
 <td>Whether condition information was obtained from medical records (Clinical) or...</td>
-</tr>
-<tr>
-<td><a href="condition_description/">condition_description</a></td>
-<td>Condition as worded by data contributor - this will be displayed in the porta...</td>
 </tr>
 <tr>
 <td><a href="condition_interpretation/">condition_interpretation</a></td>
@@ -586,20 +582,12 @@ Name: IncludeV2DataModel</p>
 <td>The DataFile Output of an Assay</td>
 </tr>
 <tr>
-<td><a href="has_parent_sample/">has_parent_sample</a></td>
-<td>Link from a sample to its parent Sample</td>
-</tr>
-<tr>
 <td><a href="has_participant/">has_participant</a></td>
 <td>Link to a Participant</td>
 </tr>
 <tr>
 <td><a href="has_study/">has_study</a></td>
 <td>Link to a Study</td>
-</tr>
-<tr>
-<td><a href="has_subject/">has_subject</a></td>
-<td>Link from Data File to a Participant</td>
 </tr>
 <tr>
 <td><a href="hpo_code/">hpo_code</a></td>
@@ -702,10 +690,6 @@ Name: IncludeV2DataModel</p>
 <td>The Biospecimen an Assay is performed on</td>
 </tr>
 <tr>
-<td><a href="validation_rules/">validation_rules</a></td>
-<td>Rules for Validation of Property Constraints and Values</td>
-</tr>
-<tr>
 <td><a href="volume/">volume</a></td>
 <td>Amount of sample in container</td>
 </tr>
@@ -749,10 +733,6 @@ Name: IncludeV2DataModel</p>
 <td></td>
 </tr>
 <tr>
-<td><a href="EnumPhenotypeInterpretation/">EnumPhenotypeInterpretation</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="EnumProgram/">EnumProgram</a></td>
 <td></td>
 </tr>
@@ -770,6 +750,10 @@ Name: IncludeV2DataModel</p>
 </tr>
 <tr>
 <td><a href="EnumStudyCode/">EnumStudyCode</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="EnumVitalStatus/">EnumVitalStatus</a></td>
 <td></td>
 </tr>
 </tbody>
@@ -875,27 +859,6 @@ Name: IncludeV2DataModel</p>
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Footer" >
-      
-      
-        
-        <a href="about/" class="md-footer__link md-footer__link--next" aria-label="Next: About" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              About
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
