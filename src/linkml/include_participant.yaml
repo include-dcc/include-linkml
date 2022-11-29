@@ -36,17 +36,23 @@ classes:
     - down_syndrome_status
     - ethnicity
     - external_id
-    - family_id
     - family_relationship
-    - family_type
-    - father_id
     - has_datafile
     - has_study
-    - mother_id
     - outcomes_vital_status
     - participant_id
     - race
     - sex
+  FamilyRelationship:
+    name: FamilyRelationship
+    definition_uri: include:FamilyRelationship
+    description: Object that captures relationships between the Participants and metadata about that relationship
+    title: FamilyRelationship
+    is_a: Thing
+    slots:
+      - relationship_type
+      - has_participant
+      - related_participant
   FamilyGroup:
     name: FamilyGroup
     definition_uri: include:FamilyGroup
@@ -62,6 +68,7 @@ classes:
     is_a: Thing
     slots:
     - has_participant
+    - has_relationship
   Condition:
     name: Condition
     title: Condition
@@ -129,16 +136,12 @@ slots:
     title: External Id
     range: string
     required: true
-  family_id:
-    definition_uri: include:family_id
-    description: Unique identifer for family to which Participant belongs
-    title: Family Id
-    range: string
   family_relationship:
     definition_uri: include:family_relationship
     description: Relationship of Participant to other family members
     title: Family Relationship
-    range: Participant
+    multivalued: true
+    range: FamilyRelationship
   family_type:
     definition_uri: include:family_type
     description: Structure of family members participating in the study (proband-only
@@ -147,16 +150,21 @@ slots:
     title: Family Type
     range: enum_family_type
     required: true
-  father_id:
-    definition_uri: include:father_id
-    description: Participant ID for Participant's father
-    title: Father Id
-    range: string
+  relationship_type:
+    definition_uri: include:relationship_type
+    description: Type of familial relationship
+    title: Relationship Type
+    range: enum_relationship_type
   has_participant:
     definition_uri: include:has_participant
     description: Link to a Participant
     title: Has Participant
     range: Participant
+  has_relationship:
+    definition_uri: include:has_relationship
+    description: Link to a Relationship
+    title: Has Relationship
+    range: FamilyRelationship
   has_study:
     definition_uri: include:has_study
     description: Link to a Study
@@ -192,11 +200,6 @@ slots:
     description: Label for condition in the Mondo Disease Ontology (MONDO)
     title: Mondo Label
     range: string
-  mother_id:
-    definition_uri: include:mother_id
-    description: Participant ID for Participant's mother
-    title: Mother Id
-    range: string
   other_code:
     definition_uri: include:other_code
     description: Code for condition in another ontology (if no match in HPO, MONDO,
@@ -226,6 +229,12 @@ slots:
     title: Race
     range: enum_race
     required: true
+  related_participant:
+    definition_uri: include:related_participant
+    description: Participant related to Subject Participant
+    title: Related Participant
+    domain: FamilyRelationship
+    range: Participant
   sex:
     definition_uri: include:sex
     description: Sex of participant
@@ -233,6 +242,18 @@ slots:
     range: enum_sex
     required: true
 enums:
+  enum_relationship_type:
+    name: enum_relationship_type
+    permissible_values:
+      mother:
+        text: mother
+        title: Mother
+      father:
+        text: father
+        title: Father
+      sibling:
+        text: sibling
+        title: Sibling
   enum_condition_interpretation:
     name: enum_condition_interpretation
     permissible_values:
