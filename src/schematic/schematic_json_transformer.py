@@ -2,6 +2,7 @@ import json
 from pprint import pprint
 from os.path import dirname
 import copy
+import logging
 project_root = dirname(dirname(dirname(__file__)))
 from schematic_utils import make_object, \
     set_annotation_required, \
@@ -13,7 +14,7 @@ from schematic_utils import make_object, \
     pascal_to_camel
 
 from linkml_runtime.utils.schemaview import SchemaView
-
+logging.info("running transformer")
 # EXAMPLE SCHEMATIC OBJECT
 # {'@id': 'bts:Study',
 #  '@type': 'rdfs:Class',
@@ -121,9 +122,11 @@ class SchematicJSONTransformer(object):
             "@graph": self.schematic_classes + self.schematic_properties
         }
         with open(f"{self.output_path}/include_schematic_linkml.jsonld", 'w') as isljd:
+            logging.info(f"writing to {self.output_path}/include_schematic_linkml.jsonld")
             json.dump(include_graph, isljd, sort_keys=True, indent=4)
 
 st = SchematicJSONTransformer(f"{project_root}/src/linkml/include_schema.yaml", f"{project_root}/src/data/schematic")
 st.class_generator()
 st.property_generator()
+
 st.write_output()
