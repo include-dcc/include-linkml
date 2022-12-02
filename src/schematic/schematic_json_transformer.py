@@ -15,7 +15,6 @@ from schematic_utils import TRANSFORM_MAP, \
 
 from linkml_runtime.utils.schemaview import SchemaView
 
-
 # EXAMPLE SCHEMATIC OBJECT
 # {'@id': 'bts:Study',
 #  '@type': 'rdfs:Class',
