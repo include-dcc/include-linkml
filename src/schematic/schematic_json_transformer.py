@@ -11,8 +11,7 @@ from schematic_utils import make_object, \
     enum_value_object, \
     schema_value_object, \
     pascal_to_camel
-import pandas as pd
-dataframe = pd.DataFrame()
+
 from linkml_runtime.utils.schemaview import SchemaView
 
 # EXAMPLE SCHEMATIC OBJECT

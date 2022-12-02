@@ -32,7 +32,7 @@ jobs:
       - name: Transform linkml to .jsonld
         shell: bash
         run: |
-          poetry run python src/schematic/schematic_json_transformer.py
+          python src/schematic/schematic_json_transformer.py
 
       - name: Commit the changes
         run: |
