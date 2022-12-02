@@ -40,6 +40,7 @@ message Condition
   string maxoCode = 0
   string otherLabel = 0
   string otherCode = 0
+  neuronTypeEnum neuronType = 0
  }
 // A DataFile Associated with a Participant or Study or Biospecimen
 message DataFile

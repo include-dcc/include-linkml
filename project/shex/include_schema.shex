@@ -93,7 +93,8 @@ linkml:Nodeidentifier NONLITERAL
           <https://w3id.org/include/participant/maxo_label> @linkml:String ? ;
           <https://w3id.org/include/participant/maxo_code> @linkml:String ? ;
           <https://w3id.org/include/participant/other_label> @linkml:String ? ;
-          <https://w3id.org/include/participant/other_code> @linkml:String ?
+          <https://w3id.org/include/participant/other_code> @linkml:String ? ;
+          <https://w3id.org/include/participant/neuron_type> @<https://w3id.org/include/participant/NeuronTypeEnum>
        ) ;
        rdf:type [ <https://w3id.org/include/participant/Condition> ] ?
     )

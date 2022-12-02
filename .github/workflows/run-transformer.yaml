@@ -1,0 +1,42 @@
+# This workflow is used to convert changed HTAN.model.csv to HTAN.model.jsonld
+# and push the updated HTAN.model.jsonld to feature branch
+
+name: JSONLDTransformer
+
+on:
+  push:
+    branches: '*'
+
+jobs:
+  JSONLDTransformer:
+    name: run-transform
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install LinkML Environment
+        shell: bash
+        run: |
+          pip3 install poetry
+          git clone --single-branch --branch ${GITHUB_REF#refs/heads/} https://github.com/include-dcc/include-linkml.git
+          cd include-linkml
+          poetry install
+          
+
+      - name: Transform linkml to .jsonld
+        shell: bash
+        run: |
+          poetry run python src/schematic/schematic_json_transformer.py
+
+      - name: Commit the changes
+        run: |
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git add src/data/schematic/include_schematic_linkml.jsonld
+          git commit -m "GitHub Action: convert linkML yaml to schematic *.jsonld" || echo "No changes to commit"

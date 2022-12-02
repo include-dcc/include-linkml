@@ -1,5 +1,5 @@
 # Auto generated from include_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-09T12:04:58
+# Generation date: 2022-12-02T13:05:23
 # Schema: include-schema
 #
 # id: https://w3id.org/include
@@ -393,6 +393,7 @@ class Condition(Thing):
     class_name: ClassVar[str] = "Condition"
     class_model_uri: ClassVar[URIRef] = INCLUDE.Condition
 
+    neuron_type: Union[str, "NeuronTypeEnum"] = None
     has_participant: Optional[Union[dict, Participant]] = None
     age_at_condition_observation: Optional[int] = None
     mondo_label: Optional[str] = None
@@ -407,6 +408,11 @@ class Condition(Thing):
     other_code: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.neuron_type):
+            self.MissingRequiredField("neuron_type")
+        if not isinstance(self.neuron_type, NeuronTypeEnum):
+            self.neuron_type = NeuronTypeEnum(self.neuron_type)
+
         if self.has_participant is not None and not isinstance(self.has_participant, Participant):
             self.has_participant = Participant(**as_dict(self.has_participant))
 
@@ -503,6 +509,12 @@ class EnumSampleAvailability(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="EnumSampleAvailability",
+    )
+
+class NeuronTypeEnum(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="NeuronTypeEnum",
     )
 
 class EnumConditionInterpretation(EnumDefinitionImpl):
@@ -792,6 +804,9 @@ slots.race = Slot(uri=INCLUDE['participant/race'], name="race", curie=INCLUDE.cu
 
 slots.sex = Slot(uri=INCLUDE['participant/sex'], name="sex", curie=INCLUDE.curie('participant/sex'),
                    model_uri=INCLUDE.sex, domain=None, range=Union[str, "EnumSex"])
+
+slots.neuron_type = Slot(uri=INCLUDE['participant/neuron_type'], name="neuron_type", curie=INCLUDE.curie('participant/neuron_type'),
+                   model_uri=INCLUDE.neuron_type, domain=None, range=Union[str, "NeuronTypeEnum"])
 
 slots.dbgap = Slot(uri=INCLUDE['study/dbgap'], name="dbgap", curie=INCLUDE.curie('study/dbgap'),
                    model_uri=INCLUDE.dbgap, domain=None, range=Optional[str])

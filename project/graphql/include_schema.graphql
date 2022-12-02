@@ -43,6 +43,7 @@ type Condition
     maxoCode: String
     otherLabel: String
     otherCode: String
+    neuronType: NeuronTypeEnum!
   }
 
 type DataFile

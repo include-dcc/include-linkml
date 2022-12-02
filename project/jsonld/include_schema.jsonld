@@ -232,6 +232,20 @@
       ]
     },
     {
+      "name": "NeuronTypeEnum",
+      "definition_uri": "https://w3id.org/include/participant/NeuronTypeEnum",
+      "from_schema": "https://w3id.org/include/participant",
+      "reachable_from": {
+        "source_ontology": "obo:cl",
+        "source_nodes": [
+          "CL:0000540"
+        ],
+        "relationship_types": [
+          "rdfs:subClassOf"
+        ]
+      }
+    },
+    {
       "name": "enum_condition_interpretation",
       "definition_uri": "https://w3id.org/include/participant/EnumConditionInterpretation",
       "from_schema": "https://w3id.org/include/participant",
@@ -1295,6 +1309,21 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "neuron_type",
+      "definition_uri": "https://w3id.org/include/participant/neuron_type",
+      "description": "NT",
+      "title": "Neuron Type",
+      "from_schema": "https://w3id.org/include/participant",
+      "slot_uri": "https://w3id.org/include/participant/neuron_type",
+      "owner": "Condition",
+      "domain_of": [
+        "Condition"
+      ],
+      "range": "NeuronTypeEnum",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "dbgap",
       "definition_uri": "https://w3id.org/include/study/dbgap",
       "description": "dbGaP study accession code",
@@ -1596,7 +1625,8 @@
         "maxo_label",
         "maxo_code",
         "other_label",
-        "other_code"
+        "other_code",
+        "neuron_type"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/include/participant/Condition",
@@ -1629,9 +1659,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "include_schema.yaml",
-  "source_file_date": "2022-11-08T07:44:49",
+  "source_file_date": "2022-11-29T13:33:41",
   "source_file_size": 433,
-  "generation_date": "2022-11-09T12:04:49",
+  "generation_date": "2022-12-02T13:05:12",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/include_schema.context.jsonld",

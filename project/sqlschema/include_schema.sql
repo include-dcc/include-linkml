@@ -40,7 +40,8 @@ CREATE TABLE "Condition" (
 	maxo_code TEXT, 
 	other_label TEXT, 
 	other_code TEXT, 
-	PRIMARY KEY (has_participant, age_at_condition_observation, mondo_label, mondo_code, condition_interpretation, condition_data_source, hpo_label, hpo_code, maxo_label, maxo_code, other_label, other_code)
+	neuron_type VARCHAR NOT NULL, 
+	PRIMARY KEY (has_participant, age_at_condition_observation, mondo_label, mondo_code, condition_interpretation, condition_data_source, hpo_label, hpo_code, maxo_label, maxo_code, other_label, other_code, neuron_type)
 );
 
 CREATE TABLE "DataFile" (
