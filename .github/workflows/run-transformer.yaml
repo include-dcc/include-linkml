@@ -28,11 +28,7 @@ jobs:
           git status
           cd include-linkml
           poetry install
-
-      - name: Transform linkml to .jsonld
-        shell: bash
-        run: |
-          python src/schematic/schematic_json_transformer.py
+          poetry run python src/schematic/schematic_json_transformer.py
 
       - name: Commit the changes
         run: |
