@@ -33,7 +33,8 @@ jobs:
         shell: bash
         run: |
           pwd
-          poetry run python src/schematic/schematic_json_transformer.py
+          cd src/schematic
+          poetry run python schematic_json_transformer.py
 
       - name: Commit the changes
         run: |
