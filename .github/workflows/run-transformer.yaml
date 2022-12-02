@@ -28,8 +28,9 @@ jobs:
           git status
           cd include-linkml
           poetry install
+          echo "run transformer"
           poetry run python src/schematic/schematic_json_transformer.py
-
+          echo "finish transformer"
       - name: Commit the changes
         run: |
           git config --local user.name "$GITHUB_ACTOR"
