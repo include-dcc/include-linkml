@@ -15,7 +15,7 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
           python-version: '3.9'
@@ -24,13 +24,14 @@ jobs:
         shell: bash
         run: |
           pip3 install poetry
-          git clone --single-branch --branch ${GITHUB_REF#refs/heads/} https://github.com/include-dcc/include-linkml.git
           git status
-          cd include-linkml
           poetry install
-          echo "run transformer"
+
+      - name: Transform linkml to .jsonld
+        shell: bash
+        run: |
           poetry run python src/schematic/schematic_json_transformer.py
-          echo "finish transformer"
+
       - name: Commit the changes
         run: |
           git config --local user.name "$GITHUB_ACTOR"
