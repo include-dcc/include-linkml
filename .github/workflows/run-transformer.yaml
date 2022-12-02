@@ -27,6 +27,7 @@ jobs:
           git clone --single-branch --branch ${GITHUB_REF#refs/heads/} https://github.com/include-dcc/include-linkml.git
           cd include-linkml
           poetry install
+          git status
           
 
       - name: Transform linkml to .jsonld

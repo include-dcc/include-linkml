@@ -213,6 +213,9 @@
                 },
                 {
                     "@id": "include:otherCode"
+                },
+                {
+                    "@id": "include:neuronType"
                 }
             ],
             "sms:validationRules": []
@@ -1713,6 +1716,24 @@
                 }
             ],
             "sms:displayName": "Sex",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:neuronType",
+            "@type": "rdf:Property",
+            "rdfs:comment": "NT",
+            "rdfs:label": "neuronType",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Condition"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "schema:rangeIncludes": [],
+            "sms:displayName": "Neuron Type",
             "sms:required": "sms:true",
             "sms:validationRules": []
         },
