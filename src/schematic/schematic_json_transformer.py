@@ -3,8 +3,7 @@ from pprint import pprint
 from os.path import dirname
 import copy
 project_root = dirname(dirname(dirname(__file__)))
-from schematic_utils import TRANSFORM_MAP, \
-    make_object, \
+from schematic_utils import make_object, \
     set_annotation_required, \
     set_slot_required, \
     includify_curie, \
@@ -12,7 +11,8 @@ from schematic_utils import TRANSFORM_MAP, \
     enum_value_object, \
     schema_value_object, \
     pascal_to_camel
-
+import pandas as pd
+dataframe = pd.DataFrame()
 from linkml_runtime.utils.schemaview import SchemaView
 
 # EXAMPLE SCHEMATIC OBJECT
