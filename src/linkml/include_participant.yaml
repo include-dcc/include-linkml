@@ -69,6 +69,7 @@ classes:
     slots:
     - has_participant
     - has_relationship
+    - family_id
   Condition:
     name: Condition
     title: Condition
@@ -136,6 +137,11 @@ slots:
     title: External Id
     range: string
     required: true
+  family_id:
+    definition_uri: include:family_id
+    description: Unique identifer for family to which Participant belongs
+    title: Family Id
+    range: string
   family_relationship:
     definition_uri: include:family_relationship
     description: Relationship of Participant to other family members
