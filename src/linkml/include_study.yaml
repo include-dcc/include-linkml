@@ -24,22 +24,11 @@ classes:
     title: Study
     is_a: Thing
     slots:
-    - dbgap
-    - program
     - study_code
     - study_name
+    - program
+    - dbgap
 slots:
-  dbgap:
-    definition_uri: include:dbgap
-    description: dbGaP study accession code
-    title: Dbgap
-    range: string
-  program:
-    definition_uri: include:program
-    description: Funding source for the study
-    title: Program
-    range: enum_program
-    required: true
   study_code:
     definition_uri: include:study_code
     description: Unique identifer for the study, assigned by DCC
@@ -48,10 +37,21 @@ slots:
     required: true
   study_name:
     definition_uri: include:study_name
-    description: Name of the study, chosen by data contributor
+    description: Full name of the study, chosen by data contributor
     title: Study Name
     required: true
     range: string
+  program:
+    definition_uri: include:program
+    description: Funding source for the study
+    title: Program
+    range: enum_program
+    required: true
+  dbgap:
+    definition_uri: include:dbgap
+    description: dbGaP study accession code
+    title: Dbgap
+    range: string  
 enums:
   enum_program:
     name: enum_program
@@ -67,36 +67,39 @@ enums:
     name: enum_study_code
     definition_uri: include:enum_study_code
     permissible_values:
-      ds_cog_all:
-        text: ds_cog_all
-        title: DS-COG-ALL
-      ds_pcgc:
-        text: ds_pcgc
-        title: DS-PCGC
-      ds360_chd:
-        text: ds360_chd
-        title: DS360-CHD
-      dsc:
-        text: dsc
-        title: DSC
-      htp:
-        text: htp
-        title: HTP
       abcds:
         text: abcds
         title: ABC-DS
       ads:
         text: ads
         title: ADS
-      ds_brain:
-        text: ds_brain
-        title: DS-Brain
-      ds_cog_aml:
-        text: ds_cog_aml
-        title: DS-COG-AML
+      aecom_ds:
+        text: aecom_ds
+        title: AECOM-DS
+      brainpower:
+        text: brainpower
+        title: BrainPower
       bri_dsr:
         text: bri_dsr
         title: BRI-DSR
+      charge_ds:
+        text: charge_ds
+        title: CHARGE-DS
+      ds_brain:
+        text: ds_brain
+        title: DS-Brain
+      ds_cog_all:
+        text: ds_cog_all
+        title: DS-COG-ALL
+      ds_cog_aml:
+        text: ds_cog_aml
+        title: DS-COG-AML
+      ds_determined:
+        text: ds_determined
+        title: DS-DETERMINED
+      ds_hsat:
+        text: ds_hsat
+        title: DS-HSAT
       ds_isp:
         text: ds_isp
         title: DS-ISP
@@ -106,15 +109,27 @@ enums:
       ds_pals:
         text: ds_pals
         title: DS-PALS
+      ds_pcgc:
+        text: ds_pcgc
+        title: DS-PCGC
       ds_sleep:
         text: ds_sleep
         title: DS-Sleep
+      ds360_chd:
+        text: ds360_chd
+        title: DS360-CHD
+      dsc:
+        text: dsc
+        title: DSC
       ecods:
         text: ecods
         title: ECODS
       exceeds:
         text: exceeds
         title: ExCEEDS
+      htp:
+        text: htp
+        title: HTP
       trc_ds:
         text: trc_ds
         title: TRC-DS
