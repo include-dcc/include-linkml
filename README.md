@@ -23,7 +23,7 @@ When poetry is installed run:
 ## [INCLUDE Schemasheets Google Sheets Project](https://docs.google.com/spreadsheets/d/1w6zDfz3_yrCjjrqfpXBGNmd0LZL4B03gr1KfzJtk5Cs/edit?usp=sharing)
 1. Run the Schematic JSON-LD transformer to generate the JSON-LD that Schematic will use to generate Manifests
 
-`poetry run python src/schematic/schematic_json_transformer.py`
+` poetry run python src/main.py schematic_transform   `
 
 4. Run Schematic configured to point at the generated json-ld at src/schematic/include_schematic_linkml.jsonld
 

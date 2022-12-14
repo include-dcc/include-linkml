@@ -1,0 +1,996 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/INCLUDE.Participant.manifest",
+  "title": "INCLUDE.Participant.manifest",
+  "type": "object",
+  "properties": {
+    "Outcomes Vital Status": {
+      "enum": [
+        "Dead",
+        "Alive",
+        ""
+      ]
+    },
+    "Has Datafile": {
+      "enum": [
+        "DataFile",
+        ""
+      ]
+    },
+    "Race": {
+      "enum": [
+        "American Indian or Alaska Native",
+        "White",
+        "Native Hawaiian or Other Pacific Islander",
+        "More than one Race",
+        "Other",
+        "Asian",
+        "Black or African American",
+        "Prefer not to answer"
+      ]
+    },
+    "Has Study": {
+      "enum": [
+        "Study",
+        ""
+      ]
+    },
+    "Mother ID": {},
+    "Down Syndrome Status": {
+      "enum": [
+        "D21",
+        "T21"
+      ]
+    },
+    "Participant ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Sex": {
+      "enum": [
+        "Male",
+        "Other",
+        "Female",
+        "Unknown"
+      ]
+    },
+    "Ethnicity": {
+      "enum": [
+        "Not Hispanic or Latino",
+        "Hispanic or Latino",
+        "Asked but unknown",
+        "Prefer not to answer",
+        "Unknown"
+      ]
+    },
+    "Family Type": {
+      "enum": [
+        "Trio",
+        "Proband-only",
+        "Other",
+        "Duo",
+        "Trio+"
+      ]
+    },
+    "Age At Last Vital Status": {},
+    "Family ID": {},
+    "Family Relationship": {
+      "enum": [
+        "Participant",
+        ""
+      ]
+    },
+    "Father ID": {},
+    "External ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "DataFile": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Study": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "File ID": {},
+    "Data Type": {},
+    "Collection ID": {},
+    "File Name": {},
+    "Data Access": {
+      "enum": [
+        "Registered",
+        "Controlled",
+        "Open",
+        ""
+      ]
+    },
+    "Data Category": {},
+    "Experimental Strategy": {},
+    "Access URL": {},
+    "Size": {},
+    "Format": {},
+    "Has Participant": {
+      "enum": [
+        "Participant",
+        ""
+      ]
+    },
+    "Original File Name": {},
+    "Has Biospecimen": {
+      "enum": [
+        "Biospecimen",
+        ""
+      ]
+    },
+    "Program": {
+      "enum": [
+        "KF",
+        "INCLUDE",
+        ""
+      ]
+    },
+    "Study Name": {},
+    "Study Code": {
+      "enum": [
+        "DS-PALS",
+        "TRC-DS",
+        "ExCEEDS",
+        "DS-Sleep",
+        "DS-PCGC",
+        "HTP",
+        "DS-COG-AML",
+        "DS-Nexus",
+        "DS-Brain",
+        "DS360-CHD",
+        "DSC",
+        "ABC-DS",
+        "BRI-DSR",
+        "DS-COG-ALL",
+        "ADS",
+        "X01-DeSmith",
+        "X01-Hakon",
+        "ECODS",
+        "DS-ISP",
+        ""
+      ]
+    },
+    "dbGap": {},
+    "Biospecimen": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Has Aliquot": {
+      "enum": [
+        "Aliquot",
+        ""
+      ]
+    },
+    "Age At Biospecimen Collection": {},
+    "Collection Sample Type": {},
+    "Parent Sample Type": {},
+    "Volume Unit": {},
+    "Container ID": {},
+    "Parent Sample ID": {},
+    "Sample ID": {},
+    "Sample Type": {},
+    "Biospecimen Storage": {},
+    "Sample Availability": {
+      "enum": [
+        "Available",
+        "Unavailable",
+        ""
+      ]
+    },
+    "Laboratory Procedure": {},
+    "Volume": {},
+    "Aliquot": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    }
+  },
+  "required": [
+    "Race",
+    "Down Syndrome Status",
+    "Participant ID",
+    "Sex",
+    "Ethnicity",
+    "Family Type",
+    "External ID",
+    "DataFile",
+    "Study",
+    "Biospecimen",
+    "Aliquot"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "Has Datafile": {
+            "enum": [
+              "DataFile"
+            ]
+          }
+        },
+        "required": [
+          "Has Datafile"
+        ]
+      },
+      "then": {
+        "properties": {
+          "File ID": {}
+        },
+        "required": [
+          "File ID"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Datafile": {
+            "enum": [
+              "DataFile"
+            ]
+          }
+        },
+        "required": [
+          "Has Datafile"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Data Type": {}
+        },
+        "required": [
+          "Data Type"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Datafile": {
+            "enum": [
+              "DataFile"
+            ]
+          }
+        },
+        "required": [
+          "Has Datafile"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Collection ID": {}
+        },
+        "required": [
+          "Collection ID"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Datafile": {
+            "enum": [
+              "DataFile"
+            ]
+          }
+        },
+        "required": [
+          "Has Datafile"
+        ]
+      },
+      "then": {
+        "properties": {
+          "File Name": {
+            "not": {
+              "type": "null"
+            },
+            "minLength": 1
+          }
+        },
+        "required": [
+          "File Name"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Datafile": {
+            "enum": [
+              "DataFile"
+            ]
+          }
+        },
+        "required": [
+          "Has Datafile"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Data Access": {
+            "enum": [
+              "Registered",
+              "Controlled",
+              "Open",
+              ""
+            ]
+          }
+        },
+        "required": [
+          "Data Access"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Datafile": {
+            "enum": [
+              "DataFile"
+            ]
+          }
+        },
+        "required": [
+          "Has Datafile"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Data Category": {
+            "not": {
+              "type": "null"
+            },
+            "minLength": 1
+          }
+        },
+        "required": [
+          "Data Category"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Datafile": {
+            "enum": [
+              "DataFile"
+            ]
+          }
+        },
+        "required": [
+          "Has Datafile"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Experimental Strategy": {}
+        },
+        "required": [
+          "Experimental Strategy"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Datafile": {
+            "enum": [
+              "DataFile"
+            ]
+          }
+        },
+        "required": [
+          "Has Datafile"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Access URL": {}
+        },
+        "required": [
+          "Access URL"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Datafile": {
+            "enum": [
+              "DataFile"
+            ]
+          }
+        },
+        "required": [
+          "Has Datafile"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Size": {}
+        },
+        "required": [
+          "Size"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Datafile": {
+            "enum": [
+              "DataFile"
+            ]
+          }
+        },
+        "required": [
+          "Has Datafile"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Format": {
+            "not": {
+              "type": "null"
+            },
+            "minLength": 1
+          }
+        },
+        "required": [
+          "Format"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Datafile": {
+            "enum": [
+              "DataFile"
+            ]
+          }
+        },
+        "required": [
+          "Has Datafile"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Has Participant": {
+            "enum": [
+              "Participant",
+              ""
+            ]
+          }
+        },
+        "required": [
+          "Has Participant"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Study": {
+            "enum": [
+              "Study"
+            ]
+          }
+        },
+        "required": [
+          "Has Study"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Has Participant": {
+            "enum": [
+              "Participant",
+              ""
+            ]
+          }
+        },
+        "required": [
+          "Has Participant"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Datafile": {
+            "enum": [
+              "DataFile"
+            ]
+          }
+        },
+        "required": [
+          "Has Datafile"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Original File Name": {
+            "not": {
+              "type": "null"
+            },
+            "minLength": 1
+          }
+        },
+        "required": [
+          "Original File Name"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Datafile": {
+            "enum": [
+              "DataFile"
+            ]
+          }
+        },
+        "required": [
+          "Has Datafile"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Has Biospecimen": {
+            "enum": [
+              "Biospecimen",
+              ""
+            ]
+          }
+        },
+        "required": [
+          "Has Biospecimen"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Study": {
+            "enum": [
+              "Study"
+            ]
+          }
+        },
+        "required": [
+          "Has Study"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Program": {
+            "enum": [
+              "KF",
+              "INCLUDE"
+            ]
+          }
+        },
+        "required": [
+          "Program"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Study": {
+            "enum": [
+              "Study"
+            ]
+          }
+        },
+        "required": [
+          "Has Study"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Study Name": {
+            "not": {
+              "type": "null"
+            },
+            "minLength": 1
+          }
+        },
+        "required": [
+          "Study Name"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Study": {
+            "enum": [
+              "Study"
+            ]
+          }
+        },
+        "required": [
+          "Has Study"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Study Code": {
+            "enum": [
+              "DS-PALS",
+              "TRC-DS",
+              "ExCEEDS",
+              "DS-Sleep",
+              "DS-PCGC",
+              "HTP",
+              "DS-COG-AML",
+              "DS-Nexus",
+              "DS-Brain",
+              "DS360-CHD",
+              "DSC",
+              "ABC-DS",
+              "BRI-DSR",
+              "DS-COG-ALL",
+              "ADS",
+              "X01-DeSmith",
+              "X01-Hakon",
+              "ECODS",
+              "DS-ISP"
+            ]
+          }
+        },
+        "required": [
+          "Study Code"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Study": {
+            "enum": [
+              "Study"
+            ]
+          }
+        },
+        "required": [
+          "Has Study"
+        ]
+      },
+      "then": {
+        "properties": {
+          "dbGap": {}
+        },
+        "required": [
+          "dbGap"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Biospecimen": {
+            "enum": [
+              "Biospecimen"
+            ]
+          }
+        },
+        "required": [
+          "Has Biospecimen"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Has Aliquot": {
+            "enum": [
+              "Aliquot",
+              ""
+            ]
+          }
+        },
+        "required": [
+          "Has Aliquot"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Biospecimen": {
+            "enum": [
+              "Biospecimen"
+            ]
+          }
+        },
+        "required": [
+          "Has Biospecimen"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Age At Biospecimen Collection": {}
+        },
+        "required": [
+          "Age At Biospecimen Collection"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Biospecimen": {
+            "enum": [
+              "Biospecimen"
+            ]
+          }
+        },
+        "required": [
+          "Has Biospecimen"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Collection Sample Type": {}
+        },
+        "required": [
+          "Collection Sample Type"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Biospecimen": {
+            "enum": [
+              "Biospecimen"
+            ]
+          }
+        },
+        "required": [
+          "Has Biospecimen"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Parent Sample Type": {}
+        },
+        "required": [
+          "Parent Sample Type"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Biospecimen": {
+            "enum": [
+              "Biospecimen"
+            ]
+          }
+        },
+        "required": [
+          "Has Biospecimen"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Volume Unit": {}
+        },
+        "required": [
+          "Volume Unit"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Biospecimen": {
+            "enum": [
+              "Biospecimen"
+            ]
+          }
+        },
+        "required": [
+          "Has Biospecimen"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Container ID": {}
+        },
+        "required": [
+          "Container ID"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Biospecimen": {
+            "enum": [
+              "Biospecimen"
+            ]
+          }
+        },
+        "required": [
+          "Has Biospecimen"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Parent Sample ID": {}
+        },
+        "required": [
+          "Parent Sample ID"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Biospecimen": {
+            "enum": [
+              "Biospecimen"
+            ]
+          }
+        },
+        "required": [
+          "Has Biospecimen"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Sample ID": {
+            "not": {
+              "type": "null"
+            },
+            "minLength": 1
+          }
+        },
+        "required": [
+          "Sample ID"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Biospecimen": {
+            "enum": [
+              "Biospecimen"
+            ]
+          }
+        },
+        "required": [
+          "Has Biospecimen"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Sample Type": {
+            "not": {
+              "type": "null"
+            },
+            "minLength": 1
+          }
+        },
+        "required": [
+          "Sample Type"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Biospecimen": {
+            "enum": [
+              "Biospecimen"
+            ]
+          }
+        },
+        "required": [
+          "Has Biospecimen"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Biospecimen Storage": {}
+        },
+        "required": [
+          "Biospecimen Storage"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Biospecimen": {
+            "enum": [
+              "Biospecimen"
+            ]
+          }
+        },
+        "required": [
+          "Has Biospecimen"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Sample Availability": {
+            "enum": [
+              "Available",
+              "Unavailable",
+              ""
+            ]
+          }
+        },
+        "required": [
+          "Sample Availability"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Biospecimen": {
+            "enum": [
+              "Biospecimen"
+            ]
+          }
+        },
+        "required": [
+          "Has Biospecimen"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Laboratory Procedure": {}
+        },
+        "required": [
+          "Laboratory Procedure"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "Has Biospecimen": {
+            "enum": [
+              "Biospecimen"
+            ]
+          }
+        },
+        "required": [
+          "Has Biospecimen"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Volume": {}
+        },
+        "required": [
+          "Volume"
+        ]
+      }
+    }
+  ]
+}

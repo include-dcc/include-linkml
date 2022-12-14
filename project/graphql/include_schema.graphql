@@ -12,17 +12,17 @@ type Biospecimen
   {
     ageAtBiospecimenCollection: Integer
     biospecimenStorage: String
-    collectionId: String
+    collectionID: String
     collectionSampleType: String
-    containerId: String
+    containerID: String
     hasDatafile: DataFile
     hasParticipant: Participant
     hasStudy: Study
     laboratoryProcedure: String
-    parentSampleId: String
+    parentSampleID: String
     parentSampleType: String
     sampleAvailability: EnumSampleAvailability
-    sampleId: String!
+    sampleID: String!
     sampleType: String!
     volume: Float
     volumeUnit: String
@@ -33,33 +33,33 @@ type Condition
   {
     hasParticipant: Participant
     ageAtConditionObservation: Integer
-    mondoLabel: String
-    mondoCode: String
+    mONDOLabel: String
+    mONDOCode: String
     conditionInterpretation: EnumConditionInterpretation
     conditionDataSource: EnumConditionDataSource
-    hpoLabel: String
-    hpoCode: String
-    maxoLabel: String
-    maxoCode: String
+    hPOLabel: String
+    hPOCode: String
+    mAXOLabel: String
+    mAXOCode: String
     otherLabel: String
     otherCode: String
   }
 
 type DataFile
   {
-    accessUrl: Uriorcurie
-    collectionId: String
+    accessURL: Uriorcurie
+    collectionID: String
     dataAccess: EnumDataAccess
     dataCategory: String!
     dataType: String
     experimentalStrategy: String
-    fileId: String
+    fileID: String
     fileName: String!
     format: String!
     hasBiospecimen: Biospecimen
     hasParticipant: Participant
     hasStudy: Study
-    participantId: String!
+    participantID: String!
     size: String
     originalFileName: String!
   }
@@ -74,26 +74,27 @@ type Participant
     ageAtLastVitalStatus: Integer
     downSyndromeStatus: EnumDownSyndromeStatus!
     ethnicity: EnumEthnicity!
-    externalId: String!
-    familyId: String
+    externalID: String!
+    familyID: String
     familyRelationship: Participant
     familyType: EnumFamilyType!
-    fatherId: String
+    fatherID: String
     hasDatafile: DataFile
     hasStudy: Study
-    motherId: String
+    motherID: String
     outcomesVitalStatus: EnumVitalStatus
-    participantId: String!
+    participantID: String!
     race: EnumRace!
     sex: EnumSex!
   }
 
 type Study
   {
-    dbgap: String
+    dbGap: String
     program: EnumProgram!
     studyCode: EnumStudyCode!
     studyName: String!
+    hasParticipant: Participant
   }
 
 type Thing

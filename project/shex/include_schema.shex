@@ -45,8 +45,8 @@ linkml:Nodeidentifier NONLITERAL
 <https://w3id.org/include/assay/Assay> CLOSED {
     (  $<https://w3id.org/include/assay/Assay_tes> (  &<https://w3id.org/include/core/Thing_tes> ;
           rdf:type [ <https://w3id.org/include/core/Thing> ] ? ;
-          <https://w3id.org/include/assay/uses_biospecimen> @<https://w3id.org/include/assay/Biospecimen> ? ;
-          <https://w3id.org/include/assay/has_output> @<https://w3id.org/include/assay/DataFile> ?
+          <https://w3id.org/include/assay/UsesBiospecimen> @<https://w3id.org/include/assay/Biospecimen> ? ;
+          <https://w3id.org/include/assay/HasOutput> @<https://w3id.org/include/assay/DataFile> ?
        ) ;
        rdf:type [ <https://w3id.org/include/assay/Assay> ] ?
     )
@@ -55,23 +55,23 @@ linkml:Nodeidentifier NONLITERAL
 <https://w3id.org/include/assay/Biospecimen> CLOSED {
     (  $<https://w3id.org/include/assay/Biospecimen_tes> (  &<https://w3id.org/include/core/Thing_tes> ;
           rdf:type [ <https://w3id.org/include/core/Thing> ] ? ;
-          <https://w3id.org/include/assay/age_at_biospecimen_collection> @linkml:Integer ? ;
-          <https://w3id.org/include/assay/biospecimen_storage> @linkml:String ? ;
-          <https://w3id.org/include/assay/collection_id> @linkml:String ? ;
-          <https://w3id.org/include/assay/collection_sample_type> @linkml:String ? ;
-          <https://w3id.org/include/assay/container_id> @linkml:String ? ;
-          <https://w3id.org/include/assay/has_datafile> @<https://w3id.org/include/assay/DataFile> ? ;
-          <https://w3id.org/include/participant/has_participant> @<https://w3id.org/include/participant/Participant> ? ;
-          <https://w3id.org/include/participant/has_study> @<https://w3id.org/include/study/Study> ? ;
-          <https://w3id.org/include/assay/laboratory_procedure> @linkml:String ? ;
-          <https://w3id.org/include/assay/parent_sample_id> @linkml:String ? ;
-          <https://w3id.org/include/assay/parent_sample_type> @linkml:String ? ;
-          <https://w3id.org/include/assay/sample_availability> @<https://w3id.org/include/assay/EnumSampleAvailability> ? ;
-          <https://w3id.org/include/assay/sample_id> @linkml:String ;
-          <https://w3id.org/include/assay/sample_type> @linkml:String ;
-          <https://w3id.org/include/assay/volume> @linkml:Float ? ;
-          <https://w3id.org/include/assay/volume_unit> @linkml:String ? ;
-          <https://w3id.org/include/assay/has_aliquot> @<https://w3id.org/include/assay/Aliquot> ?
+          <https://w3id.org/include/assay/AgeAtBiospecimenCollection> @linkml:Integer ? ;
+          <https://w3id.org/include/assay/BiospecimenStorage> @linkml:String ? ;
+          <https://w3id.org/include/assay/CollectionID> @linkml:String ? ;
+          <https://w3id.org/include/assay/CollectionSampleType> @linkml:String ? ;
+          <https://w3id.org/include/assay/ContainerID> @linkml:String ? ;
+          <https://w3id.org/include/assay/HasDatafile> @<https://w3id.org/include/assay/DataFile> ? ;
+          <https://w3id.org/include/participant/HasParticipant> @<https://w3id.org/include/participant/Participant> ? ;
+          <https://w3id.org/include/participant/HasStudy> @<https://w3id.org/include/study/Study> ? ;
+          <https://w3id.org/include/assay/LaboratoryProcedure> @linkml:String ? ;
+          <https://w3id.org/include/assay/ParentSampleID> @linkml:String ? ;
+          <https://w3id.org/include/assay/ParentSampleType> @linkml:String ? ;
+          <https://w3id.org/include/assay/SampleAvailability> @<https://w3id.org/include/assay/EnumSampleAvailability> ? ;
+          <https://w3id.org/include/assay/SampleID> @linkml:String ;
+          <https://w3id.org/include/assay/SampleType> @linkml:String ;
+          <https://w3id.org/include/assay/Volume> @linkml:Float ? ;
+          <https://w3id.org/include/assay/VolumeUnit> @linkml:String ? ;
+          <https://w3id.org/include/assay/HasAliquot> @<https://w3id.org/include/assay/Aliquot> ?
        ) ;
        rdf:type [ <https://w3id.org/include/assay/Biospecimen> ] ?
     )
@@ -80,20 +80,20 @@ linkml:Nodeidentifier NONLITERAL
 <https://w3id.org/include/participant/Condition> CLOSED {
     (  $<https://w3id.org/include/participant/Condition_tes> (  &<https://w3id.org/include/core/Thing_tes> ;
           rdf:type [ <https://w3id.org/include/core/Thing> ] ? ;
-          <https://w3id.org/include/participant/has_participant> @<https://w3id.org/include/participant/Participant> ? ;
-          <https://w3id.org/include/participant/age_at_condition_observation> @linkml:Integer ? ;
-          <https://w3id.org/include/participant/mondo_label> @linkml:String ? ;
-          <https://w3id.org/include/participant/mondo_code> @linkml:String ? ;
-          <https://w3id.org/include/participant/condition_interpretation>
+          <https://w3id.org/include/participant/HasParticipant> @<https://w3id.org/include/participant/Participant> ? ;
+          <https://w3id.org/include/participant/AgeAtConditionObservation> @linkml:Integer ? ;
+          <https://w3id.org/include/participant/MONDOLabel> @linkml:String ? ;
+          <https://w3id.org/include/participant/MONDOCode> @linkml:String ? ;
+          <https://w3id.org/include/participant/ConditionInterpretation>
           @<https://w3id.org/include/participant/EnumConditionInterpretation> ? ;
-          <https://w3id.org/include/participant/condition_data_source>
+          <https://w3id.org/include/participant/ConditionDataSource>
           @<https://w3id.org/include/participant/EnumConditionDataSource> ? ;
-          <https://w3id.org/include/participant/hpo_label> @linkml:String ? ;
-          <https://w3id.org/include/participant/hpo_code> @linkml:String ? ;
-          <https://w3id.org/include/participant/maxo_label> @linkml:String ? ;
-          <https://w3id.org/include/participant/maxo_code> @linkml:String ? ;
-          <https://w3id.org/include/participant/other_label> @linkml:String ? ;
-          <https://w3id.org/include/participant/other_code> @linkml:String ?
+          <https://w3id.org/include/participant/HPOLabel> @linkml:String ? ;
+          <https://w3id.org/include/participant/HPOCode> @linkml:String ? ;
+          <https://w3id.org/include/participant/MAXOLabel> @linkml:String ? ;
+          <https://w3id.org/include/participant/MAXOCode> @linkml:String ? ;
+          <https://w3id.org/include/participant/OtherLabel> @linkml:String ? ;
+          <https://w3id.org/include/participant/OtherCode> @linkml:String ?
        ) ;
        rdf:type [ <https://w3id.org/include/participant/Condition> ] ?
     )
@@ -102,21 +102,21 @@ linkml:Nodeidentifier NONLITERAL
 <https://w3id.org/include/assay/DataFile> CLOSED {
     (  $<https://w3id.org/include/assay/DataFile_tes> (  &<https://w3id.org/include/core/Thing_tes> ;
           rdf:type [ <https://w3id.org/include/core/Thing> ] ? ;
-          <https://w3id.org/include/assay/access_url> @linkml:Uriorcurie ? ;
-          <https://w3id.org/include/assay/collection_id> @linkml:String ? ;
-          <https://w3id.org/include/assay/data_access> @<https://w3id.org/include/assay/EnumDataAccess> ? ;
-          <https://w3id.org/include/assay/data_category> @linkml:String ;
-          <https://w3id.org/include/assay/data_type> @linkml:String ? ;
-          <https://w3id.org/include/assay/experimental_strategy> @linkml:String ? ;
-          <https://w3id.org/include/assay/file_id> @linkml:String ? ;
-          <https://w3id.org/include/assay/file_name> @linkml:String ;
-          <https://w3id.org/include/assay/format> @linkml:String ;
-          <https://w3id.org/include/assay/has_biospecimen> @<https://w3id.org/include/assay/Biospecimen> ? ;
-          <https://w3id.org/include/participant/has_participant> @<https://w3id.org/include/participant/Participant> ? ;
-          <https://w3id.org/include/participant/has_study> @<https://w3id.org/include/study/Study> ? ;
-          <https://w3id.org/include/participant/participant_id> @linkml:String ;
-          <https://w3id.org/include/assay/size> @linkml:String ? ;
-          <https://w3id.org/include/assay/original_file_name> @linkml:String
+          <https://w3id.org/include/assay/AccessURL> @linkml:Uriorcurie ? ;
+          <https://w3id.org/include/assay/CollectionID> @linkml:String ? ;
+          <https://w3id.org/include/assay/DataAccess> @<https://w3id.org/include/assay/EnumDataAccess> ? ;
+          <https://w3id.org/include/assay/DataCategory> @linkml:String ;
+          <https://w3id.org/include/assay/DataType> @linkml:String ? ;
+          <https://w3id.org/include/assay/ExperimentalStrategy> @linkml:String ? ;
+          <https://w3id.org/include/assay/FileID> @linkml:String ? ;
+          <https://w3id.org/include/assay/FileName> @linkml:String ;
+          <https://w3id.org/include/assay/Format> @linkml:String ;
+          <https://w3id.org/include/assay/HasBiospecimen> @<https://w3id.org/include/assay/Biospecimen> ? ;
+          <https://w3id.org/include/participant/HasParticipant> @<https://w3id.org/include/participant/Participant> ? ;
+          <https://w3id.org/include/participant/HasStudy> @<https://w3id.org/include/study/Study> ? ;
+          <https://w3id.org/include/participant/ParticipantID> @linkml:String ;
+          <https://w3id.org/include/assay/Size> @linkml:String ? ;
+          <https://w3id.org/include/assay/OriginalFileName> @linkml:String
        ) ;
        rdf:type [ <https://w3id.org/include/assay/DataFile> ] ?
     )
@@ -125,7 +125,7 @@ linkml:Nodeidentifier NONLITERAL
 <https://w3id.org/include/participant/FamilyGroup> CLOSED {
     (  $<https://w3id.org/include/participant/FamilyGroup_tes> (  &<https://w3id.org/include/core/Thing_tes> ;
           rdf:type [ <https://w3id.org/include/core/Thing> ] ? ;
-          <https://w3id.org/include/participant/has_participant> @<https://w3id.org/include/participant/Participant> ?
+          <https://w3id.org/include/participant/HasParticipant> @<https://w3id.org/include/participant/Participant> ?
        ) ;
        rdf:type [ <https://w3id.org/include/participant/FamilyGroup> ] ?
     )
@@ -134,22 +134,22 @@ linkml:Nodeidentifier NONLITERAL
 <https://w3id.org/include/participant/Participant> CLOSED {
     (  $<https://w3id.org/include/participant/Participant_tes> (  &<https://w3id.org/include/core/Thing_tes> ;
           rdf:type [ <https://w3id.org/include/core/Thing> ] ? ;
-          <https://w3id.org/include/participant/age_at_last_vital_status> @linkml:Integer ? ;
-          <https://w3id.org/include/participant/down_syndrome_status>
-          @<https://w3id.org/include/participant/EnumDownSyndromeStatus> ;
-          <https://w3id.org/include/participant/ethnicity> @<https://w3id.org/include/participant/EnumEthnicity> ;
-          <https://w3id.org/include/participant/external_id> @linkml:String ;
-          <https://w3id.org/include/participant/family_id> @linkml:String ? ;
-          <https://w3id.org/include/participant/family_relationship> @<https://w3id.org/include/participant/Participant> ? ;
-          <https://w3id.org/include/participant/family_type> @<https://w3id.org/include/participant/EnumFamilyType> ;
-          <https://w3id.org/include/participant/father_id> @linkml:String ? ;
-          <https://w3id.org/include/assay/has_datafile> @<https://w3id.org/include/assay/DataFile> ? ;
-          <https://w3id.org/include/participant/has_study> @<https://w3id.org/include/study/Study> ? ;
-          <https://w3id.org/include/participant/mother_id> @linkml:String ? ;
-          <https://w3id.org/include/participant/outcomes_vital_status> @<https://w3id.org/include/participant/EnumVitalStatus> ? ;
-          <https://w3id.org/include/participant/participant_id> @linkml:String ;
-          <https://w3id.org/include/participant/race> @<https://w3id.org/include/participant/EnumRace> ;
-          <https://w3id.org/include/participant/sex> @<https://w3id.org/include/participant/EnumSex>
+          <https://w3id.org/include/participant/AgeAtLastVitalStatus> @linkml:Integer ? ;
+          <https://w3id.org/include/participant/DownSyndromeStatus> @<https://w3id.org/include/participant/EnumDownSyndromeStatus>
+          ;
+          <https://w3id.org/include/participant/Ethnicity> @<https://w3id.org/include/participant/EnumEthnicity> ;
+          <https://w3id.org/include/participant/ExternalID> @linkml:String ;
+          <https://w3id.org/include/participant/FamilyID> @linkml:String ? ;
+          <https://w3id.org/include/participant/FamilyRelationship> @<https://w3id.org/include/participant/Participant> ? ;
+          <https://w3id.org/include/participant/FamilyType> @<https://w3id.org/include/participant/EnumFamilyType> ;
+          <https://w3id.org/include/participant/FatherID> @linkml:String ? ;
+          <https://w3id.org/include/assay/HasDatafile> @<https://w3id.org/include/assay/DataFile> ? ;
+          <https://w3id.org/include/participant/HasStudy> @<https://w3id.org/include/study/Study> ? ;
+          <https://w3id.org/include/participant/MotherID> @linkml:String ? ;
+          <https://w3id.org/include/participant/OutcomesVitalStatus> @<https://w3id.org/include/participant/EnumVitalStatus> ? ;
+          <https://w3id.org/include/participant/ParticipantID> @linkml:String ;
+          <https://w3id.org/include/participant/Race> @<https://w3id.org/include/participant/EnumRace> ;
+          <https://w3id.org/include/participant/Sex> @<https://w3id.org/include/participant/EnumSex>
        ) ;
        rdf:type [ <https://w3id.org/include/participant/Participant> ] ?
     )
@@ -158,10 +158,11 @@ linkml:Nodeidentifier NONLITERAL
 <https://w3id.org/include/study/Study> CLOSED {
     (  $<https://w3id.org/include/study/Study_tes> (  &<https://w3id.org/include/core/Thing_tes> ;
           rdf:type [ <https://w3id.org/include/core/Thing> ] ? ;
-          <https://w3id.org/include/study/dbgap> @linkml:String ? ;
-          <https://w3id.org/include/study/program> @<https://w3id.org/include/study/EnumProgram> ;
-          <https://w3id.org/include/study/study_code> @<https://w3id.org/include/study/EnumStudyCode> ;
-          <https://w3id.org/include/study/study_name> @linkml:String
+          <https://w3id.org/include/study/dbGap> @linkml:String ? ;
+          <https://w3id.org/include/study/Program> @<https://w3id.org/include/study/EnumProgram> ;
+          <https://w3id.org/include/study/StudyCode> @<https://w3id.org/include/study/EnumStudyCode> ;
+          <https://w3id.org/include/study/StudyName> @linkml:String ;
+          <https://w3id.org/include/participant/HasParticipant> @<https://w3id.org/include/participant/Participant> ?
        ) ;
        rdf:type [ <https://w3id.org/include/study/Study> ] ?
     )

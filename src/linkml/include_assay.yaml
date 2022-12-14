@@ -41,8 +41,8 @@ classes:
     is_a: Thing
     name: Assay
     slots:
-    - uses_biospecimen
-    - has_output
+    - UsesBiospecimen
+    - HasOutput
     title: Assay
   Biospecimen:
     annotations:
@@ -57,23 +57,23 @@ classes:
     is_a: Thing
     name: Biospecimen
     slots:
-    - age_at_biospecimen_collection
-    - biospecimen_storage
-    - collection_id
-    - collection_sample_type
-    - container_id
-    - has_datafile
-    - has_participant
-    - has_study
-    - laboratory_procedure
-    - parent_sample_id
-    - parent_sample_type
-    - sample_availability
-    - sample_id
-    - sample_type
-    - volume
-    - volume_unit
-    - has_aliquot
+    - AgeAtBiospecimenCollection
+    - BiospecimenStorage
+    - CollectionID
+    - CollectionSampleType
+    - ContainerID
+    - HasDatafile
+    - HasParticipant
+    - HasStudy
+    - LaboratoryProcedure
+    - ParentSampleID
+    - ParentSampleType
+    - SampleAvailability
+    - SampleID
+    - SampleType
+    - Volume
+    - VolumeUnit
+    - HasAliquot
     title: Biospecimen
   DataFile:
     annotations:
@@ -88,192 +88,214 @@ classes:
     is_a: Thing
     name: DataFile
     slots:
-    - access_url
-    - collection_id
-    - data_access
-    - data_category
-    - data_type
-    - experimental_strategy
-    - file_id
-    - file_name
-    - format
-    - has_biospecimen
-    - has_participant
-    - has_study
-    - participant_id
-    - size
-    - original_file_name
+    - AccessURL
+    - CollectionID
+    - DataAccess
+    - DataCategory
+    - DataType
+    - ExperimentalStrategy
+    - FileID
+    - FileName
+    - Format
+    - HasBiospecimen
+    - HasParticipant
+    - HasStudy
+    - ParticipantID
+    - Size
+    - OriginalFileName
     title: DataFile
 slots:
-  access_url:
-    definition_uri: include:access_url
+  AccessURL:
+    definition_uri: include:AccessURL
     description: Storage location for this file
-    title: Access Url
+    title: Access URL
     range: uriorcurie
-  age_at_biospecimen_collection:
-    definition_uri: include:age_at_biospecimen_collection
+    required: false
+  AgeAtBiospecimenCollection:
+    definition_uri: include:AgeAtBiospecimenCollection
     description: Age in days of participant at time of biospecimen collection
     title: Age At Biospecimen Collection
     range: integer
-  biospecimen_storage:
-    definition_uri: include:biospecimen_storage
+    required: false
+  BiospecimenStorage:
+    definition_uri: include:BiospecimenStorage
     description: Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen,
       etc.)
     title: Biospecimen Storage
     range: string
-  collection_id:
-    definition_uri: include:collection_id
+    required: false
+  CollectionID:
+    definition_uri: include:CollectionID
     description: Identifier for the eldest sample in a lineage of processed, pooled,
       or aliquoted samples. This may be the same as Parent Sample ID or Sample ID
       (if no processing was performed).
-    title: Collection Id
+    title: Collection ID
     range: string
-  collection_sample_type:
-    definition_uri: include:collection_sample_type
+    required: false
+  CollectionSampleType:
+    definition_uri: include:CollectionSampleType
     description: Type of biological material comprising the collected sample (e.g.
       Whole blood, Bone marrow, Saliva, etc.)
     title: Collection Sample Type
     range: string
-  container_id:
-    definition_uri: include:container_id
+    required: false
+  ContainerID:
+    definition_uri: include:ContainerID
     description: Identifier for specific container/aliquot of sample, if applicable.
       For example, distinct aliquots of a sample will have the same Sample ID but
       different Container IDs.
-    title: Container Id
+    title: Container ID
     range: string
-  data_access:
-    definition_uri: include:data_access
+    required: false
+  DataAccess:
+    definition_uri: include:DataAccess
     description: Type of access control on this file, determined by DCC
     title: Data Access
-    range: enum_data_access
-  data_category:
-    definition_uri: include:data_category
+    range: enum_DataAccess
+    required: false
+  DataCategory:
+    definition_uri: include:DataCategory
     description: General category of data in file (e.g. Clinical, Genomics, Proteomics,
       Metabolomics, Immune maps, Transcriptomics, etc.)
     title: Data Category
     required: true
     range: string
-  data_type:
-    definition_uri: include:data_type
+  DataType:
+    definition_uri: include:DataType
     description: Specific type of data contained in file (e.g. Aligned reads, Unaligned
       reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification,
       Structural variations, Cytokine profiles, Operation reports, Pathology reports,
       Histology images, Clinical supplement, Protein expression quantification, etc.)
     title: Data Type
     range: string
-  experimental_strategy:
-    definition_uri: include:experimental_strategy
+    required: false
+  ExperimentalStrategy:
+    definition_uri: include:ExperimentalStrategy
     description: Experimental method used to obtain data in file (e.g. WGS, RNAseq,
       WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay,
       Meso Scale Discovery, etc.)
     title: Experimental Strategy
     range: string
-  file_id:
-    definition_uri: include:file_id
+    required: false
+  FileID:
+    definition_uri: include:FileID
     description: File identifier, assigned by DCC
-    title: File Id
+    title: File ID
     range: string
-  file_name:
-    definition_uri: include:file_name
+    required: false
+  FileName:
+    definition_uri: include:FileName
     description: Synapse ID for file
     title: File Name
     required: true
     range: string
-  format:
-    definition_uri: include:format
+  Format:
+    definition_uri: include:Format
     description: Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf,
       dicom, etc.)
     title: Format
     required: true
     range: string
-  has_aliquot:
-    definition_uri: include:has_aliquot
+  HasAliquot:
+    definition_uri: include:HasAliquot
     description: An aliquot of a sample
+    required: false
     title: Has Aliquot
     range: Aliquot
-  has_biospecimen:
-    definition_uri: include:has_biospecimen
+  HasBiospecimen:
+    definition_uri: include:HasBiospecimen
     description: Link to a Biospecimen
     title: Has Biospecimen
     range: Biospecimen
-  has_datafile:
-    definition_uri: include:has_datafile
+    required: false
+  HasDatafile:
+    definition_uri: include:HasDatafile
     description: Link to a DataFile
     title: Has Datafile
     range: DataFile
-  has_output:
-    definition_uri: include:has_output
+    required: false
+  HasOutput:
+    definition_uri: include:HasOutput
     description: The DataFile Output of an Assay
     title: Has Output
     range: DataFile
-  laboratory_procedure:
-    definition_uri: include:laboratory_procedure
+    required: false
+  LaboratoryProcedure:
+    definition_uri: include:LaboratoryProcedure
     description: Procedure by which Sample was derived from Parent Sample (e.g. RBC
       lysis, Centrifugation, Ficoll, etc.)
     title: Laboratory Procedure
     range: string
-  original_file_name:
-    definition_uri: include:original_file_name
+    required: false
+  OriginalFileName:
+    definition_uri: include:OriginalFileName
     description: Name of file, assigned by data contributor
     title: Original File Name
     required: true
     range: string
-  parent_sample_id:
-    definition_uri: include:parent_sample_id
+  ParentSampleID:
+    definition_uri: include:ParentSampleID
     description: Identifier for the direct parent from which Sample was derived, processed,
       pooled, etc. (if applicable)
-    title: Parent Sample Id
+    title: Parent Sample ID
     range: string
-  parent_sample_type:
-    definition_uri: include:parent_sample_type
+    required: false
+  ParentSampleType:
+    definition_uri: include:ParentSampleType
     description: Type of biological material comprising the parent sample (e.g. Plasma,
       Serum, White blood cells, etc.)
     title: Parent Sample Type
     range: string
-  sample_availability:
-    definition_uri: include:sample_availability
+    required: false
+  SampleAvailability:
+    definition_uri: include:SampleAvailability
     description: Whether or not the sample is potentially available for sharing through
       the Virtual Biorepository
     title: Sample Availability
-    range: enum_sample_availability
-  sample_id:
-    definition_uri: include:sample_id
+    range: enum_SampleAvailability
+    required: false
+  SampleID:
+    definition_uri: include:SampleID
     description: Identifier for sample. A sample is a unique biological material;
       two samples with two different IDs are biologically distinct.
-    title: Sample Id
+    title: Sample ID
     required: true
     range: string
-  sample_type:
-    definition_uri: include:sample_type
+  SampleType:
+    definition_uri: include:SampleType
     description: Type of biological material comprising the sample (e.g. Plasma, Serum,
       White blood cells, DNA, RNA, etc.)
     title: Sample Type
     required: true
     range: string
-  size:
-    definition_uri: include:size
+  Size:
+    definition_uri: include:Size
     description: Size of file
     title: Size
     range: string
-  uses_biospecimen:
-    definition_uri: include:uses_biospecimen
+    required: false
+  UsesBiospecimen:
+    definition_uri: include:UsesBiospecimen
     description: The Biospecimen an Assay is performed on
     title: Uses Biospecimen
     range: Biospecimen
-  volume:
-    definition_uri: include:volume
+    required: false
+  Volume:
+    definition_uri: include:Volume
     description: Amount of sample in container
     title: Volume
     range: float
-  volume_unit:
-    definition_uri: include:volume_unit
-    description: Unit of sample volume
+    required: false
+  VolumeUnit:
+    definition_uri: include:VolumeUnit
+    description: Unit of sample Volume
     title: Volume Unit
     range: string
+    required: false
 enums:
-  enum_data_access:
-    definition_uri: include:enum_data_access
-    name: enum_data_access
+  enum_DataAccess:
+    definition_uri: include:enum_DataAccess
+    name: enum_DataAccess
     permissible_values:
       controlled:
         text: controlled
@@ -284,9 +306,9 @@ enums:
       registered:
         text: registered
         title: Registered
-  enum_sample_availability:
-    definition_uri: include:enum_sample_availability
-    name: enum_sample_availability
+  enum_SampleAvailability:
+    definition_uri: include:enum_SampleAvailability
+    name: enum_SampleAvailability
     permissible_values:
       available:
         text: available

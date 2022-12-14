@@ -1,24 +1,24 @@
 {
-   "_comments": "Auto generated from include_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-11-09T12:04:48\n    Schema: include-schema\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/include\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
+   "_comments": "Auto generated from include_schema.yaml by jsonldcontextgen.py version: 0.1.1\n    Generation date: 2022-12-14T09:10:01\n    Schema: include-schema\n    metamodel version: 1.7.0\n    model version: None\n    \n    id: https://w3id.org/include\n    description: \n    license: https://creativecommons.org/publicdomain/zero/1.0/\n    ",
    "@context": {
       "include": "https://w3id.org/include/",
       "linkml": "https://w3id.org/linkml/",
       "schema": "http://schema.org/",
       "skos": "http://www.w3.org/2004/02/skos/core#",
       "@vocab": "https://w3id.org/include/",
-      "access_url": {
+      "AccessURL": {
          "@type": "@id"
       },
-      "age_at_biospecimen_collection": {
+      "AgeAtBiospecimenCollection": {
          "@type": "xsd:integer"
       },
-      "age_at_condition_observation": {
+      "AgeAtConditionObservation": {
          "@type": "xsd:integer"
       },
-      "age_at_last_vital_status": {
+      "AgeAtLastVitalStatus": {
          "@type": "xsd:integer"
       },
-      "condition_data_source": {
+      "ConditionDataSource": {
          "@context": {
             "@vocab": "@null",
             "text": "skos:notation",
@@ -26,7 +26,7 @@
             "meaning": "@id"
          }
       },
-      "condition_interpretation": {
+      "ConditionInterpretation": {
          "@context": {
             "@vocab": "@null",
             "text": "skos:notation",
@@ -34,7 +34,7 @@
             "meaning": "@id"
          }
       },
-      "data_access": {
+      "DataAccess": {
          "@context": {
             "@vocab": "@null",
             "text": "skos:notation",
@@ -42,7 +42,7 @@
             "meaning": "@id"
          }
       },
-      "down_syndrome_status": {
+      "DownSyndromeStatus": {
          "@context": {
             "@vocab": "@null",
             "text": "skos:notation",
@@ -50,7 +50,7 @@
             "meaning": "@id"
          }
       },
-      "ethnicity": {
+      "Ethnicity": {
          "@context": {
             "@vocab": "@null",
             "text": "skos:notation",
@@ -58,10 +58,10 @@
             "meaning": "@id"
          }
       },
-      "family_relationship": {
+      "FamilyRelationship": {
          "@type": "@id"
       },
-      "family_type": {
+      "FamilyType": {
          "@context": {
             "@vocab": "@null",
             "text": "skos:notation",
@@ -69,25 +69,25 @@
             "meaning": "@id"
          }
       },
-      "has_aliquot": {
+      "HasAliquot": {
          "@type": "@id"
       },
-      "has_biospecimen": {
+      "HasBiospecimen": {
          "@type": "@id"
       },
-      "has_datafile": {
+      "HasDatafile": {
          "@type": "@id"
       },
-      "has_output": {
+      "HasOutput": {
          "@type": "@id"
       },
-      "has_participant": {
+      "HasParticipant": {
          "@type": "@id"
       },
-      "has_study": {
+      "HasStudy": {
          "@type": "@id"
       },
-      "outcomes_vital_status": {
+      "OutcomesVitalStatus": {
          "@context": {
             "@vocab": "@null",
             "text": "skos:notation",
@@ -95,7 +95,7 @@
             "meaning": "@id"
          }
       },
-      "program": {
+      "Program": {
          "@context": {
             "@vocab": "@null",
             "text": "skos:notation",
@@ -103,7 +103,7 @@
             "meaning": "@id"
          }
       },
-      "race": {
+      "Race": {
          "@context": {
             "@vocab": "@null",
             "text": "skos:notation",
@@ -111,7 +111,7 @@
             "meaning": "@id"
          }
       },
-      "sample_availability": {
+      "SampleAvailability": {
          "@context": {
             "@vocab": "@null",
             "text": "skos:notation",
@@ -119,7 +119,7 @@
             "meaning": "@id"
          }
       },
-      "sex": {
+      "Sex": {
          "@context": {
             "@vocab": "@null",
             "text": "skos:notation",
@@ -127,7 +127,7 @@
             "meaning": "@id"
          }
       },
-      "study_code": {
+      "StudyCode": {
          "@context": {
             "@vocab": "@null",
             "text": "skos:notation",
@@ -135,10 +135,10 @@
             "meaning": "@id"
          }
       },
-      "uses_biospecimen": {
+      "UsesBiospecimen": {
          "@type": "@id"
       },
-      "volume": {
+      "Volume": {
          "@type": "xsd:float"
       }
    }

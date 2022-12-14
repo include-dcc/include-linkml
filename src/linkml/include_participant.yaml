@@ -24,7 +24,7 @@ classes:
     annotations:
       required:
         tag: required
-        value: 'True'
+        value: 'False'
       requires_component:
         tag: requires_component
         value: Study,DataFile
@@ -32,21 +32,21 @@ classes:
     title: Participant
     is_a: Thing
     slots:
-    - age_at_last_vital_status
-    - down_syndrome_status
-    - ethnicity
-    - external_id
-    - family_id
-    - family_relationship
-    - family_type
-    - father_id
-    - has_datafile
-    - has_study
-    - mother_id
-    - outcomes_vital_status
-    - participant_id
-    - race
-    - sex
+    - AgeAtLastVitalStatus
+    - DownSyndromeStatus
+    - Ethnicity
+    - ExternalID
+    - FamilyID
+    - FamilyRelationship
+    - FamilyType
+    - FatherID
+    - HasDatafile
+    - HasStudy
+    - MotherID
+    - OutcomesVitalStatus
+    - ParticipantID
+    - Race
+    - Sex
   FamilyGroup:
     name: FamilyGroup
     definition_uri: include:FamilyGroup
@@ -61,7 +61,7 @@ classes:
     title: FamilyGroup
     is_a: Thing
     slots:
-    - has_participant
+    - HasParticipant
   Condition:
     name: Condition
     title: Condition
@@ -73,168 +73,187 @@ classes:
     is_a: Thing
     description: A Condition of a Participant
     slots:
-    - has_participant
-    - age_at_condition_observation
-    - mondo_label
-    - mondo_code
-    - condition_interpretation
-    - condition_data_source
-    - hpo_label
-    - hpo_code
-    - maxo_label
-    - maxo_code
-    - other_label
-    - other_code
+    - HasParticipant
+    - AgeAtConditionObservation
+    - MONDOLabel
+    - MONDOCode
+    - ConditionInterpretation
+    - ConditionDataSource
+    - HPOLabel
+    - HPOCode
+    - MAXOLabel
+    - MAXOCode
+    - OtherLabel
+    - OtherCode
 slots:
-  age_at_condition_observation:
-    definition_uri: include:age_at_condition_observation
+  AgeAtConditionObservation:
+    definition_uri: include:AgeAtConditionObservation
     description: Age in days at which condition was observed, recorded, or diagnosed
     title: Age At Condition Observation
     range: integer
-  age_at_last_vital_status:
-    definition_uri: include:age_at_last_vital_status
+    required: false
+  AgeAtLastVitalStatus:
+    definition_uri: include:AgeAtLastVitalStatus
     description: Age in days when participant's vital status was last recorded
     title: Age At Last Vital Status
     range: integer
-  condition_data_source:
-    definition_uri: include:condition_data_source
+    required: false
+  ConditionDataSource:
+    definition_uri: include:ConditionDataSource
     description: Whether condition information was obtained from medical records (Clinical)
       or patient survey (Self-Reported)
     title: Condition Data Source
-    range: enum_condition_data_source
-  condition_interpretation:
-    definition_uri: include:condition_interpretation
+    range: enum_ConditionDataSource
+    required: false
+  ConditionInterpretation:
+    definition_uri: include:ConditionInterpretation
     description: Whether condition was observed or not. "Not Observed" indicates participant
       was specifically examined for that condition, or health record specifically
       queried for that condition, and found to be negative. Sept. 2022 release will
       only include positive assertions.
     title: Condition Interpretation
-    range: enum_condition_interpretation
-  down_syndrome_status:
-    definition_uri: include:down_syndrome_status
+    range: enum_ConditionInterpretation
+    required: false
+  DownSyndromeStatus:
+    definition_uri: include:DownSyndromeStatus
     description: Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy
       21, euploid)
     title: Down Syndrome Status
-    range: enum_down_syndrome_status
+    range: enum_DownSyndromeStatus
     required: true
-  ethnicity:
-    definition_uri: include:ethnicity
+  Ethnicity:
+    definition_uri: include:Ethnicity
     description: Ethnicity of participant
     title: Ethnicity
-    range: enum_ethnicity
+    range: enum_Ethnicity
     required: true
-  external_id:
-    definition_uri: include:external_id
+  ExternalID:
+    definition_uri: include:ExternalID
     description: Unique identifier for the participant, assigned by data contributor
-    title: External Id
+    title: External ID
     range: string
     required: true
-  family_id:
-    definition_uri: include:family_id
+  FamilyID:
+    definition_uri: include:FamilyID
     description: Unique identifer for family to which Participant belongs
-    title: Family Id
+    title: Family ID
     range: string
-  family_relationship:
-    definition_uri: include:family_relationship
+    required: false
+  FamilyRelationship:
+    definition_uri: include:FamilyRelationship
     description: Relationship of Participant to other family members
     title: Family Relationship
     range: Participant
-  family_type:
-    definition_uri: include:family_type
+    required: false
+  FamilyType:
+    definition_uri: include:FamilyType
     description: Structure of family members participating in the study (proband-only
       = no family members participating; duo = proband + parent; trio = proband +
       2 parents; trio+ = proband + 2 parents + other relatives)
     title: Family Type
-    range: enum_family_type
+    range: enum_FamilyType
     required: true
-  father_id:
-    definition_uri: include:father_id
+  FatherID:
+    definition_uri: include:FatherID
     description: Participant ID for Participant's father
-    title: Father Id
+    title: Father ID
     range: string
-  has_participant:
-    definition_uri: include:has_participant
+    required: false
+  HasParticipant:
+    definition_uri: include:HasParticipant
     description: Link to a Participant
     title: Has Participant
     range: Participant
-  has_study:
-    definition_uri: include:has_study
+    required: false
+  HasStudy:
+    definition_uri: include:HasStudy
     description: Link to a Study
     title: Has Study
     range: Study
-  hpo_code:
-    definition_uri: include:hpo_code
+    required: false
+  HPOCode:
+    definition_uri: include:HPOCode
     description: Code for condition in the Human Phenotype Ontology (HPO)
     title: Hpo Code
     range: string
-  hpo_label:
-    definition_uri: include:hpo_label
+    required: false
+  HPOLabel:
+    definition_uri: include:HPOLabel
     description: Label for condition in the Human Phenotype Ontology (HPO)
     title: Hpo Label
     range: string
-  maxo_code:
-    definition_uri: include:maxo_code
+    required: false
+  MAXOCode:
+    definition_uri: include:MAXOCode
     description: Code for condition in the Medical Action Ontology (MAXO)
     title: Maxo Code
     range: string
-  maxo_label:
-    definition_uri: include:maxo_label
+    required: false
+  MAXOLabel:
+    definition_uri: include:MAXOLabel
     description: Label for condition in the Medical Action Ontology (MAXO)
     title: Maxo Label
     range: string
-  mondo_code:
-    definition_uri: include:mondo_code
+    required: false
+  MONDOCode:
+    definition_uri: include:MONDOCode
     description: Code for condition in the Mondo Disease Ontology (MONDO)
     title: Mondo Code
     range: string
-  mondo_label:
-    definition_uri: include:mondo_label
+    required: false
+  MONDOLabel:
+    definition_uri: include:MONDOLabel
     description: Label for condition in the Mondo Disease Ontology (MONDO)
     title: Mondo Label
     range: string
-  mother_id:
-    definition_uri: include:mother_id
+    required: false
+  MotherID:
+    definition_uri: include:MotherID
     description: Participant ID for Participant's mother
-    title: Mother Id
+    title: Mother ID
     range: string
-  other_code:
-    definition_uri: include:other_code
+    required: false
+  OtherCode:
+    definition_uri: include:OtherCode
     description: Code for condition in another ontology (if no match in HPO, MONDO,
       or MAXO)
     title: Other Code
     range: string
-  other_label:
-    definition_uri: include:other_label
+    required: false
+  OtherLabel:
+    definition_uri: include:OtherLabel
     description: Label for condition in another ontology (if no match in HPO, MONDO,
       or MAXO)
     title: Other Label
     range: string
-  outcomes_vital_status:
-    definition_uri: include:outcomes_vital_status
+    required: false
+  OutcomesVitalStatus:
+    definition_uri: include:OutcomesVitalStatus
     description: Whether participant is alive or dead
     title: Outcomes Vital Status
     range: enum_vital_status
-  participant_id:
-    definition_uri: include:participant_id
+    required: false
+  ParticipantID:
+    definition_uri: include:ParticipantID
     description: Unique identifier for the participant, assigned by DCC
-    title: Participant Id
+    title: Participant ID
     required: true
     range: string
-  race:
-    definition_uri: include:race
+  Race:
+    definition_uri: include:Race
     description: Race of participant
     title: Race
-    range: enum_race
+    range: enum_Race
     required: true
-  sex:
-    definition_uri: include:sex
+  Sex:
+    definition_uri: include:Sex
     description: Sex of participant
     title: Sex
-    range: enum_sex
+    range: enum_Sex
     required: true
 enums:
-  enum_condition_interpretation:
-    name: enum_condition_interpretation
+  enum_ConditionInterpretation:
+    name: enum_ConditionInterpretation
     permissible_values:
       observed:
         text: observed
@@ -242,8 +261,8 @@ enums:
       not_observed:
         text: not_observed
         title: Not Observed
-  enum_condition_data_source:
-    name: enum_condition_data_source
+  enum_ConditionDataSource:
+    name: enum_ConditionDataSource
     permissible_values:
       clinical:
         text: clinical
@@ -251,9 +270,9 @@ enums:
       self_reported:
         text: self_reported
         title: Self-reported
-  enum_down_syndrome_status:
-    name: enum_down_syndrome_status
-    definition_uri: include:enum_down_syndrome_status
+  enum_DownSyndromeStatus:
+    name: enum_DownSyndromeStatus
+    definition_uri: include:enum_DownSyndromeStatus
     permissible_values:
       d21:
         text: d21
@@ -262,9 +281,9 @@ enums:
         text: t21
         meaning: MONDO:0008608
         title: T21
-  enum_ethnicity:
-    name: enum_ethnicity
-    definition_uri: include:enum_ethnicity
+  enum_Ethnicity:
+    name: enum_Ethnicity
+    definition_uri: include:enum_Ethnicity
     permissible_values:
       asked_but_unknown:
         text: asked_but_unknown
@@ -281,9 +300,9 @@ enums:
       unknown:
         text: unknown
         title: Unknown
-  enum_family_type:
-    name: enum_family_type
-    definition_uri: include:enum_family_type
+  enum_FamilyType:
+    name: enum_FamilyType
+    definition_uri: include:enum_FamilyType
     permissible_values:
       duo:
         text: duo
@@ -300,9 +319,9 @@ enums:
       trio_plus:
         text: trio_plus
         title: Trio+
-  enum_race:
-    name: enum_race
-    definition_uri: include:enum_race
+  enum_Race:
+    name: enum_Race
+    definition_uri: include:enum_Race
     title: Unknown
     permissible_values:
       american_indian_or_alaskan_native:
@@ -314,9 +333,9 @@ enums:
       black_or_african_american:
         text: black_or_african_american
         title: Black or African American
-      more_than_one_race:
-        text: more_than_one_race
-        title: More than one race
+      more_than_one_Race:
+        text: more_than_one_Race
+        title: More than one Race
       native_hawaiian_or_other_pacific_islander:
         text: native_hawaiian_or_other_pacific_islander
         title: Native Hawaiian or Other Pacific Islander
@@ -329,9 +348,9 @@ enums:
       prefer_not_to_answer:
         text: prefer_not_to_answer
         title: Prefer not to answer
-  enum_sex:
-    name: enum_sex
-    definition_uri: include:enum_sex
+  enum_Sex:
+    name: enum_Sex
+    definition_uri: include:enum_Sex
     permissible_values:
       female:
         text: female

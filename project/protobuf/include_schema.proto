@@ -9,17 +9,17 @@ message Biospecimen
  {
   integer ageAtBiospecimenCollection = 0
   string biospecimenStorage = 0
-  string collectionId = 0
+  string collectionID = 0
   string collectionSampleType = 0
-  string containerId = 0
+  string containerID = 0
   dataFile hasDatafile = 0
   participant hasParticipant = 0
   study hasStudy = 0
   string laboratoryProcedure = 0
-  string parentSampleId = 0
+  string parentSampleID = 0
   string parentSampleType = 0
   enumSampleAvailability sampleAvailability = 0
-  string sampleId = 0
+  string sampleID = 0
   string sampleType = 0
   float volume = 0
   string volumeUnit = 0
@@ -30,33 +30,33 @@ message Condition
  {
   participant hasParticipant = 0
   integer ageAtConditionObservation = 0
-  string mondoLabel = 0
-  string mondoCode = 0
+  string mONDOLabel = 0
+  string mONDOCode = 0
   enumConditionInterpretation conditionInterpretation = 0
   enumConditionDataSource conditionDataSource = 0
-  string hpoLabel = 0
-  string hpoCode = 0
-  string maxoLabel = 0
-  string maxoCode = 0
+  string hPOLabel = 0
+  string hPOCode = 0
+  string mAXOLabel = 0
+  string mAXOCode = 0
   string otherLabel = 0
   string otherCode = 0
  }
 // A DataFile Associated with a Participant or Study or Biospecimen
 message DataFile
  {
-  uriorcurie accessUrl = 0
-  string collectionId = 0
+  uriorcurie accessURL = 0
+  string collectionID = 0
   enumDataAccess dataAccess = 0
   string dataCategory = 0
   string dataType = 0
   string experimentalStrategy = 0
-  string fileId = 0
+  string fileID = 0
   string fileName = 0
   string format = 0
   biospecimen hasBiospecimen = 0
   participant hasParticipant = 0
   study hasStudy = 0
-  string participantId = 0
+  string participantID = 0
   string size = 0
   string originalFileName = 0
  }
@@ -71,24 +71,25 @@ message Participant
   integer ageAtLastVitalStatus = 0
   enumDownSyndromeStatus downSyndromeStatus = 0
   enumEthnicity ethnicity = 0
-  string externalId = 0
-  string familyId = 0
+  string externalID = 0
+  string familyID = 0
   participant familyRelationship = 0
   enumFamilyType familyType = 0
-  string fatherId = 0
+  string fatherID = 0
   dataFile hasDatafile = 0
   study hasStudy = 0
-  string motherId = 0
+  string motherID = 0
   enumVitalStatus outcomesVitalStatus = 0
-  string participantId = 0
+  string participantID = 0
   enumRace race = 0
   enumSex sex = 0
  }
 // A Study
 message Study
  {
-  string dbgap = 0
+  string dbGap = 0
   enumProgram program = 0
   enumStudyCode studyCode = 0
   string studyName = 0
+  participant hasParticipant = 0
  }

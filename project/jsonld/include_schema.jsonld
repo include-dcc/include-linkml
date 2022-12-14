@@ -198,7 +198,7 @@
   ],
   "enums": [
     {
-      "name": "enum_data_access",
+      "name": "enum_DataAccess",
       "definition_uri": "https://w3id.org/include/assay/EnumDataAccess",
       "from_schema": "https://w3id.org/include/assay",
       "permissible_values": [
@@ -217,7 +217,7 @@
       ]
     },
     {
-      "name": "enum_sample_availability",
+      "name": "enum_SampleAvailability",
       "definition_uri": "https://w3id.org/include/assay/EnumSampleAvailability",
       "from_schema": "https://w3id.org/include/assay",
       "permissible_values": [
@@ -232,7 +232,7 @@
       ]
     },
     {
-      "name": "enum_condition_interpretation",
+      "name": "enum_ConditionInterpretation",
       "definition_uri": "https://w3id.org/include/participant/EnumConditionInterpretation",
       "from_schema": "https://w3id.org/include/participant",
       "permissible_values": [
@@ -247,7 +247,7 @@
       ]
     },
     {
-      "name": "enum_condition_data_source",
+      "name": "enum_ConditionDataSource",
       "definition_uri": "https://w3id.org/include/participant/EnumConditionDataSource",
       "from_schema": "https://w3id.org/include/participant",
       "permissible_values": [
@@ -262,7 +262,7 @@
       ]
     },
     {
-      "name": "enum_down_syndrome_status",
+      "name": "enum_DownSyndromeStatus",
       "definition_uri": "https://w3id.org/include/participant/EnumDownSyndromeStatus",
       "from_schema": "https://w3id.org/include/participant",
       "permissible_values": [
@@ -278,7 +278,7 @@
       ]
     },
     {
-      "name": "enum_ethnicity",
+      "name": "enum_Ethnicity",
       "definition_uri": "https://w3id.org/include/participant/EnumEthnicity",
       "from_schema": "https://w3id.org/include/participant",
       "permissible_values": [
@@ -305,7 +305,7 @@
       ]
     },
     {
-      "name": "enum_family_type",
+      "name": "enum_FamilyType",
       "definition_uri": "https://w3id.org/include/participant/EnumFamilyType",
       "from_schema": "https://w3id.org/include/participant",
       "permissible_values": [
@@ -332,7 +332,7 @@
       ]
     },
     {
-      "name": "enum_race",
+      "name": "enum_Race",
       "definition_uri": "https://w3id.org/include/participant/EnumRace",
       "title": "Unknown",
       "from_schema": "https://w3id.org/include/participant",
@@ -350,8 +350,8 @@
           "title": "Black or African American"
         },
         {
-          "text": "more_than_one_race",
-          "title": "More than one race"
+          "text": "more_than_one_Race",
+          "title": "More than one Race"
         },
         {
           "text": "native_hawaiian_or_other_pacific_islander",
@@ -372,7 +372,7 @@
       ]
     },
     {
-      "name": "enum_sex",
+      "name": "enum_Sex",
       "definition_uri": "https://w3id.org/include/participant/EnumSex",
       "from_schema": "https://w3id.org/include/participant",
       "permissible_values": [
@@ -425,7 +425,7 @@
       ]
     },
     {
-      "name": "enum_study_code",
+      "name": "enum_StudyCode",
       "definition_uri": "https://w3id.org/include/study/EnumStudyCode",
       "from_schema": "https://w3id.org/include/study",
       "permissible_values": [
@@ -510,12 +510,12 @@
   ],
   "slots": [
     {
-      "name": "access_url",
-      "definition_uri": "https://w3id.org/include/assay/access_url",
+      "name": "AccessURL",
+      "definition_uri": "https://w3id.org/include/assay/AccessURL",
       "description": "Storage location for this file",
       "title": "Access Url",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/access_url",
+      "slot_uri": "https://w3id.org/include/assay/AccessURL",
       "owner": "DataFile",
       "domain_of": [
         "DataFile"
@@ -524,12 +524,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "age_at_biospecimen_collection",
-      "definition_uri": "https://w3id.org/include/assay/age_at_biospecimen_collection",
+      "name": "AgeAtBiospecimenCollection",
+      "definition_uri": "https://w3id.org/include/assay/AgeAtBiospecimenCollection",
       "description": "Age in days of participant at time of biospecimen collection",
       "title": "Age At Biospecimen Collection",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/age_at_biospecimen_collection",
+      "slot_uri": "https://w3id.org/include/assay/AgeAtBiospecimenCollection",
       "owner": "Biospecimen",
       "domain_of": [
         "Biospecimen"
@@ -538,12 +538,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "biospecimen_storage",
-      "definition_uri": "https://w3id.org/include/assay/biospecimen_storage",
+      "name": "BiospecimenStorage",
+      "definition_uri": "https://w3id.org/include/assay/BiospecimenStorage",
       "description": "Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)",
       "title": "Biospecimen Storage",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/biospecimen_storage",
+      "slot_uri": "https://w3id.org/include/assay/BiospecimenStorage",
       "owner": "Biospecimen",
       "domain_of": [
         "Biospecimen"
@@ -552,12 +552,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "collection_id",
-      "definition_uri": "https://w3id.org/include/assay/collection_id",
+      "name": "CollectionID",
+      "definition_uri": "https://w3id.org/include/assay/CollectionID",
       "description": "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed).",
       "title": "Collection Id",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/collection_id",
+      "slot_uri": "https://w3id.org/include/assay/CollectionID",
       "owner": "DataFile",
       "domain_of": [
         "Biospecimen",
@@ -567,12 +567,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "collection_sample_type",
-      "definition_uri": "https://w3id.org/include/assay/collection_sample_type",
+      "name": "CollectionSampleType",
+      "definition_uri": "https://w3id.org/include/assay/CollectionSampleType",
       "description": "Type of biological material comprising the collected sample (e.g. Whole blood, Bone marrow, Saliva, etc.)",
       "title": "Collection Sample Type",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/collection_sample_type",
+      "slot_uri": "https://w3id.org/include/assay/CollectionSampleType",
       "owner": "Biospecimen",
       "domain_of": [
         "Biospecimen"
@@ -581,12 +581,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "container_id",
-      "definition_uri": "https://w3id.org/include/assay/container_id",
+      "name": "ContainerID",
+      "definition_uri": "https://w3id.org/include/assay/ContainerID",
       "description": "Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.",
       "title": "Container Id",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/container_id",
+      "slot_uri": "https://w3id.org/include/assay/ContainerID",
       "owner": "Biospecimen",
       "domain_of": [
         "Biospecimen"
@@ -595,26 +595,26 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "data_access",
-      "definition_uri": "https://w3id.org/include/assay/data_access",
+      "name": "DataAccess",
+      "definition_uri": "https://w3id.org/include/assay/DataAccess",
       "description": "Type of access control on this file, determined by DCC",
       "title": "Data Access",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/data_access",
+      "slot_uri": "https://w3id.org/include/assay/DataAccess",
       "owner": "DataFile",
       "domain_of": [
         "DataFile"
       ],
-      "range": "enum_data_access",
+      "range": "enum_DataAccess",
       "@type": "SlotDefinition"
     },
     {
-      "name": "data_category",
-      "definition_uri": "https://w3id.org/include/assay/data_category",
+      "name": "DataCategory",
+      "definition_uri": "https://w3id.org/include/assay/DataCategory",
       "description": "General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune maps, Transcriptomics, etc.)",
       "title": "Data Category",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/data_category",
+      "slot_uri": "https://w3id.org/include/assay/DataCategory",
       "owner": "DataFile",
       "domain_of": [
         "DataFile"
@@ -624,12 +624,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "data_type",
-      "definition_uri": "https://w3id.org/include/assay/data_type",
+      "name": "DataType",
+      "definition_uri": "https://w3id.org/include/assay/DataType",
       "description": "Specific type of data contained in file (e.g. Aligned reads, Unaligned reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification, Structural variations, Cytokine profiles, Operation reports, Pathology reports, Histology images, Clinical supplement, Protein expression quantification, etc.)",
       "title": "Data Type",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/data_type",
+      "slot_uri": "https://w3id.org/include/assay/DataType",
       "owner": "DataFile",
       "domain_of": [
         "DataFile"
@@ -638,12 +638,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "experimental_strategy",
-      "definition_uri": "https://w3id.org/include/assay/experimental_strategy",
+      "name": "ExperimentalStrategy",
+      "definition_uri": "https://w3id.org/include/assay/ExperimentalStrategy",
       "description": "Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale Discovery, etc.)",
       "title": "Experimental Strategy",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/experimental_strategy",
+      "slot_uri": "https://w3id.org/include/assay/ExperimentalStrategy",
       "owner": "DataFile",
       "domain_of": [
         "DataFile"
@@ -652,12 +652,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "file_id",
-      "definition_uri": "https://w3id.org/include/assay/file_id",
+      "name": "FileID",
+      "definition_uri": "https://w3id.org/include/assay/FileID",
       "description": "File identifier, assigned by DCC",
       "title": "File Id",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/file_id",
+      "slot_uri": "https://w3id.org/include/assay/FileID",
       "owner": "DataFile",
       "domain_of": [
         "DataFile"
@@ -666,12 +666,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "file_name",
-      "definition_uri": "https://w3id.org/include/assay/file_name",
+      "name": "FileName",
+      "definition_uri": "https://w3id.org/include/assay/FileName",
       "description": "Synapse ID for file",
       "title": "File Name",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/file_name",
+      "slot_uri": "https://w3id.org/include/assay/FileName",
       "owner": "DataFile",
       "domain_of": [
         "DataFile"
@@ -681,12 +681,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "format",
-      "definition_uri": "https://w3id.org/include/assay/format",
+      "name": "Format",
+      "definition_uri": "https://w3id.org/include/assay/Format",
       "description": "Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom, etc.)",
       "title": "Format",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/format",
+      "slot_uri": "https://w3id.org/include/assay/Format",
       "owner": "DataFile",
       "domain_of": [
         "DataFile"
@@ -696,12 +696,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "has_aliquot",
-      "definition_uri": "https://w3id.org/include/assay/has_aliquot",
+      "name": "HasAliquot",
+      "definition_uri": "https://w3id.org/include/assay/HasAliquot",
       "description": "An aliquot of a sample",
       "title": "Has Aliquot",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/has_aliquot",
+      "slot_uri": "https://w3id.org/include/assay/HasAliquot",
       "owner": "Biospecimen",
       "domain_of": [
         "Biospecimen"
@@ -711,12 +711,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "has_biospecimen",
-      "definition_uri": "https://w3id.org/include/assay/has_biospecimen",
+      "name": "HasBiospecimen",
+      "definition_uri": "https://w3id.org/include/assay/HasBiospecimen",
       "description": "Link to a Biospecimen",
       "title": "Has Biospecimen",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/has_biospecimen",
+      "slot_uri": "https://w3id.org/include/assay/HasBiospecimen",
       "owner": "DataFile",
       "domain_of": [
         "DataFile"
@@ -726,12 +726,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "has_datafile",
-      "definition_uri": "https://w3id.org/include/assay/has_datafile",
+      "name": "HasDatafile",
+      "definition_uri": "https://w3id.org/include/assay/HasDatafile",
       "description": "Link to a DataFile",
       "title": "Has Datafile",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/has_datafile",
+      "slot_uri": "https://w3id.org/include/assay/HasDatafile",
       "owner": "Participant",
       "domain_of": [
         "Biospecimen",
@@ -742,12 +742,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "has_output",
-      "definition_uri": "https://w3id.org/include/assay/has_output",
+      "name": "HasOutput",
+      "definition_uri": "https://w3id.org/include/assay/HasOutput",
       "description": "The DataFile Output of an Assay",
       "title": "Has Output",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/has_output",
+      "slot_uri": "https://w3id.org/include/assay/HasOutput",
       "owner": "Assay",
       "domain_of": [
         "Assay"
@@ -757,12 +757,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "laboratory_procedure",
-      "definition_uri": "https://w3id.org/include/assay/laboratory_procedure",
+      "name": "LaboratoryProcedure",
+      "definition_uri": "https://w3id.org/include/assay/LaboratoryProcedure",
       "description": "Procedure by which Sample was derived from Parent Sample (e.g. RBC lysis, Centrifugation, Ficoll, etc.)",
       "title": "Laboratory Procedure",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/laboratory_procedure",
+      "slot_uri": "https://w3id.org/include/assay/LaboratoryProcedure",
       "owner": "Biospecimen",
       "domain_of": [
         "Biospecimen"
@@ -771,12 +771,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "original_file_name",
-      "definition_uri": "https://w3id.org/include/assay/original_file_name",
+      "name": "OriginalFileName",
+      "definition_uri": "https://w3id.org/include/assay/OriginalFileName",
       "description": "Name of file, assigned by data contributor",
       "title": "Original File Name",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/original_file_name",
+      "slot_uri": "https://w3id.org/include/assay/OriginalFileName",
       "owner": "DataFile",
       "domain_of": [
         "DataFile"
@@ -786,12 +786,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "parent_sample_id",
-      "definition_uri": "https://w3id.org/include/assay/parent_sample_id",
+      "name": "ParentSampleID",
+      "definition_uri": "https://w3id.org/include/assay/ParentSampleID",
       "description": "Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable)",
       "title": "Parent Sample Id",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/parent_sample_id",
+      "slot_uri": "https://w3id.org/include/assay/ParentSampleID",
       "owner": "Biospecimen",
       "domain_of": [
         "Biospecimen"
@@ -800,12 +800,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "parent_sample_type",
-      "definition_uri": "https://w3id.org/include/assay/parent_sample_type",
+      "name": "ParentSampleType",
+      "definition_uri": "https://w3id.org/include/assay/ParentSampleType",
       "description": "Type of biological material comprising the parent sample (e.g. Plasma, Serum, White blood cells, etc.)",
       "title": "Parent Sample Type",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/parent_sample_type",
+      "slot_uri": "https://w3id.org/include/assay/ParentSampleType",
       "owner": "Biospecimen",
       "domain_of": [
         "Biospecimen"
@@ -814,26 +814,26 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "sample_availability",
-      "definition_uri": "https://w3id.org/include/assay/sample_availability",
+      "name": "SampleAvailability",
+      "definition_uri": "https://w3id.org/include/assay/SampleAvailability",
       "description": "Whether or not the sample is potentially available for sharing through the Virtual Biorepository",
       "title": "Sample Availability",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/sample_availability",
+      "slot_uri": "https://w3id.org/include/assay/SampleAvailability",
       "owner": "Biospecimen",
       "domain_of": [
         "Biospecimen"
       ],
-      "range": "enum_sample_availability",
+      "range": "enum_SampleAvailability",
       "@type": "SlotDefinition"
     },
     {
-      "name": "sample_id",
-      "definition_uri": "https://w3id.org/include/assay/sample_id",
+      "name": "SampleID",
+      "definition_uri": "https://w3id.org/include/assay/SampleID",
       "description": "Identifier for sample. A sample is a unique biological material; two samples with two different IDs are biologically distinct.",
       "title": "Sample Id",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/sample_id",
+      "slot_uri": "https://w3id.org/include/assay/SampleID",
       "owner": "Biospecimen",
       "domain_of": [
         "Biospecimen"
@@ -843,12 +843,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "sample_type",
-      "definition_uri": "https://w3id.org/include/assay/sample_type",
+      "name": "SampleType",
+      "definition_uri": "https://w3id.org/include/assay/SampleType",
       "description": "Type of biological material comprising the sample (e.g. Plasma, Serum, White blood cells, DNA, RNA, etc.)",
       "title": "Sample Type",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/sample_type",
+      "slot_uri": "https://w3id.org/include/assay/SampleType",
       "owner": "Biospecimen",
       "domain_of": [
         "Biospecimen"
@@ -858,12 +858,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "size",
-      "definition_uri": "https://w3id.org/include/assay/size",
+      "name": "Size",
+      "definition_uri": "https://w3id.org/include/assay/Size",
       "description": "Size of file",
       "title": "Size",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/size",
+      "slot_uri": "https://w3id.org/include/assay/Size",
       "owner": "DataFile",
       "domain_of": [
         "DataFile"
@@ -872,12 +872,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "uses_biospecimen",
-      "definition_uri": "https://w3id.org/include/assay/uses_biospecimen",
+      "name": "UsesBiospecimen",
+      "definition_uri": "https://w3id.org/include/assay/UsesBiospecimen",
       "description": "The Biospecimen an Assay is performed on",
       "title": "Uses Biospecimen",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/uses_biospecimen",
+      "slot_uri": "https://w3id.org/include/assay/UsesBiospecimen",
       "owner": "Assay",
       "domain_of": [
         "Assay"
@@ -887,12 +887,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "volume",
-      "definition_uri": "https://w3id.org/include/assay/volume",
+      "name": "Volume",
+      "definition_uri": "https://w3id.org/include/assay/Volume",
       "description": "Amount of sample in container",
       "title": "Volume",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/volume",
+      "slot_uri": "https://w3id.org/include/assay/Volume",
       "owner": "Biospecimen",
       "domain_of": [
         "Biospecimen"
@@ -901,12 +901,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "volume_unit",
-      "definition_uri": "https://w3id.org/include/assay/volume_unit",
-      "description": "Unit of sample volume",
+      "name": "VolumeUnit",
+      "definition_uri": "https://w3id.org/include/assay/VolumeUnit",
+      "description": "Unit of sample Volume",
       "title": "Volume Unit",
       "from_schema": "https://w3id.org/include/assay",
-      "slot_uri": "https://w3id.org/include/assay/volume_unit",
+      "slot_uri": "https://w3id.org/include/assay/VolumeUnit",
       "owner": "Biospecimen",
       "domain_of": [
         "Biospecimen"
@@ -915,12 +915,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "age_at_condition_observation",
-      "definition_uri": "https://w3id.org/include/participant/age_at_condition_observation",
+      "name": "AgeAtConditionObservation",
+      "definition_uri": "https://w3id.org/include/participant/AgeAtConditionObservation",
       "description": "Age in days at which condition was observed, recorded, or diagnosed",
       "title": "Age At Condition Observation",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/age_at_condition_observation",
+      "slot_uri": "https://w3id.org/include/participant/AgeAtConditionObservation",
       "owner": "Condition",
       "domain_of": [
         "Condition"
@@ -929,12 +929,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "age_at_last_vital_status",
-      "definition_uri": "https://w3id.org/include/participant/age_at_last_vital_status",
+      "name": "AgeAtLastVitalStatus",
+      "definition_uri": "https://w3id.org/include/participant/AgeAtLastVitalStatus",
       "description": "Age in days when participant's vital status was last recorded",
       "title": "Age At Last Vital Status",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/age_at_last_vital_status",
+      "slot_uri": "https://w3id.org/include/participant/AgeAtLastVitalStatus",
       "owner": "Participant",
       "domain_of": [
         "Participant"
@@ -943,70 +943,70 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "condition_data_source",
-      "definition_uri": "https://w3id.org/include/participant/condition_data_source",
+      "name": "ConditionDataSource",
+      "definition_uri": "https://w3id.org/include/participant/ConditionDataSource",
       "description": "Whether condition information was obtained from medical records (Clinical) or patient survey (Self-Reported)",
       "title": "Condition Data Source",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/condition_data_source",
+      "slot_uri": "https://w3id.org/include/participant/ConditionDataSource",
       "owner": "Condition",
       "domain_of": [
         "Condition"
       ],
-      "range": "enum_condition_data_source",
+      "range": "enum_ConditionDataSource",
       "@type": "SlotDefinition"
     },
     {
-      "name": "condition_interpretation",
-      "definition_uri": "https://w3id.org/include/participant/condition_interpretation",
+      "name": "ConditionInterpretation",
+      "definition_uri": "https://w3id.org/include/participant/ConditionInterpretation",
       "description": "Whether condition was observed or not. \"Not Observed\" indicates participant was specifically examined for that condition, or health record specifically queried for that condition, and found to be negative. Sept. 2022 release will only include positive assertions.",
       "title": "Condition Interpretation",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/condition_interpretation",
+      "slot_uri": "https://w3id.org/include/participant/ConditionInterpretation",
       "owner": "Condition",
       "domain_of": [
         "Condition"
       ],
-      "range": "enum_condition_interpretation",
+      "range": "enum_ConditionInterpretation",
       "@type": "SlotDefinition"
     },
     {
-      "name": "down_syndrome_status",
-      "definition_uri": "https://w3id.org/include/participant/down_syndrome_status",
+      "name": "DownSyndromeStatus",
+      "definition_uri": "https://w3id.org/include/participant/DownSyndromeStatus",
       "description": "Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)",
       "title": "Down Syndrome Status",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/down_syndrome_status",
+      "slot_uri": "https://w3id.org/include/participant/DownSyndromeStatus",
       "owner": "Participant",
       "domain_of": [
         "Participant"
       ],
-      "range": "enum_down_syndrome_status",
+      "range": "enum_DownSyndromeStatus",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "ethnicity",
-      "definition_uri": "https://w3id.org/include/participant/ethnicity",
+      "name": "Ethnicity",
+      "definition_uri": "https://w3id.org/include/participant/Ethnicity",
       "description": "Ethnicity of participant",
       "title": "Ethnicity",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/ethnicity",
+      "slot_uri": "https://w3id.org/include/participant/Ethnicity",
       "owner": "Participant",
       "domain_of": [
         "Participant"
       ],
-      "range": "enum_ethnicity",
+      "range": "enum_Ethnicity",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "external_id",
-      "definition_uri": "https://w3id.org/include/participant/external_id",
+      "name": "ExternalID",
+      "definition_uri": "https://w3id.org/include/participant/ExternalID",
       "description": "Unique identifier for the participant, assigned by data contributor",
-      "title": "External Id",
+      "title": "External ID",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/external_id",
+      "slot_uri": "https://w3id.org/include/participant/ExternalID",
       "owner": "Participant",
       "domain_of": [
         "Participant"
@@ -1016,12 +1016,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "family_id",
-      "definition_uri": "https://w3id.org/include/participant/family_id",
+      "name": "FamilyID",
+      "definition_uri": "https://w3id.org/include/participant/FamilyID",
       "description": "Unique identifer for family to which Participant belongs",
       "title": "Family Id",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/family_id",
+      "slot_uri": "https://w3id.org/include/participant/FamilyID",
       "owner": "Participant",
       "domain_of": [
         "Participant"
@@ -1030,12 +1030,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "family_relationship",
-      "definition_uri": "https://w3id.org/include/participant/family_relationship",
+      "name": "FamilyRelationship",
+      "definition_uri": "https://w3id.org/include/participant/FamilyRelationship",
       "description": "Relationship of Participant to other family members",
       "title": "Family Relationship",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/family_relationship",
+      "slot_uri": "https://w3id.org/include/participant/FamilyRelationship",
       "owner": "Participant",
       "domain_of": [
         "Participant"
@@ -1045,27 +1045,27 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "family_type",
-      "definition_uri": "https://w3id.org/include/participant/family_type",
+      "name": "FamilyType",
+      "definition_uri": "https://w3id.org/include/participant/FamilyType",
       "description": "Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives)",
       "title": "Family Type",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/family_type",
+      "slot_uri": "https://w3id.org/include/participant/FamilyType",
       "owner": "Participant",
       "domain_of": [
         "Participant"
       ],
-      "range": "enum_family_type",
+      "range": "enum_FamilyType",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "father_id",
-      "definition_uri": "https://w3id.org/include/participant/father_id",
+      "name": "FatherID",
+      "definition_uri": "https://w3id.org/include/participant/FatherID",
       "description": "Participant ID for Participant's father",
       "title": "Father Id",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/father_id",
+      "slot_uri": "https://w3id.org/include/participant/FatherID",
       "owner": "Participant",
       "domain_of": [
         "Participant"
@@ -1074,30 +1074,31 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "has_participant",
-      "definition_uri": "https://w3id.org/include/participant/has_participant",
+      "name": "HasParticipant",
+      "definition_uri": "https://w3id.org/include/participant/HasParticipant",
       "description": "Link to a Participant",
       "title": "Has Participant",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/has_participant",
-      "owner": "Condition",
+      "slot_uri": "https://w3id.org/include/participant/HasParticipant",
+      "owner": "Study",
       "domain_of": [
         "Biospecimen",
         "DataFile",
         "FamilyGroup",
-        "Condition"
+        "Condition",
+        "Study"
       ],
       "range": "Participant",
       "inlined": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "has_study",
-      "definition_uri": "https://w3id.org/include/participant/has_study",
+      "name": "HasStudy",
+      "definition_uri": "https://w3id.org/include/participant/HasStudy",
       "description": "Link to a Study",
       "title": "Has Study",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/has_study",
+      "slot_uri": "https://w3id.org/include/participant/HasStudy",
       "owner": "Participant",
       "domain_of": [
         "Biospecimen",
@@ -1109,12 +1110,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "hpo_code",
-      "definition_uri": "https://w3id.org/include/participant/hpo_code",
+      "name": "HPOCode",
+      "definition_uri": "https://w3id.org/include/participant/HPOCode",
       "description": "Code for condition in the Human Phenotype Ontology (HPO)",
       "title": "Hpo Code",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/hpo_code",
+      "slot_uri": "https://w3id.org/include/participant/HPOCode",
       "owner": "Condition",
       "domain_of": [
         "Condition"
@@ -1123,12 +1124,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "hpo_label",
-      "definition_uri": "https://w3id.org/include/participant/hpo_label",
+      "name": "HPOLabel",
+      "definition_uri": "https://w3id.org/include/participant/HPOLabel",
       "description": "Label for condition in the Human Phenotype Ontology (HPO)",
       "title": "Hpo Label",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/hpo_label",
+      "slot_uri": "https://w3id.org/include/participant/HPOLabel",
       "owner": "Condition",
       "domain_of": [
         "Condition"
@@ -1137,12 +1138,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "maxo_code",
-      "definition_uri": "https://w3id.org/include/participant/maxo_code",
+      "name": "MAXOCode",
+      "definition_uri": "https://w3id.org/include/participant/MAXOCode",
       "description": "Code for condition in the Medical Action Ontology (MAXO)",
       "title": "Maxo Code",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/maxo_code",
+      "slot_uri": "https://w3id.org/include/participant/MAXOCode",
       "owner": "Condition",
       "domain_of": [
         "Condition"
@@ -1151,12 +1152,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "maxo_label",
-      "definition_uri": "https://w3id.org/include/participant/maxo_label",
+      "name": "MAXOLabel",
+      "definition_uri": "https://w3id.org/include/participant/MAXOLabel",
       "description": "Label for condition in the Medical Action Ontology (MAXO)",
       "title": "Maxo Label",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/maxo_label",
+      "slot_uri": "https://w3id.org/include/participant/MAXOLabel",
       "owner": "Condition",
       "domain_of": [
         "Condition"
@@ -1165,12 +1166,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "mondo_code",
-      "definition_uri": "https://w3id.org/include/participant/mondo_code",
+      "name": "MONDOCode",
+      "definition_uri": "https://w3id.org/include/participant/MONDOCode",
       "description": "Code for condition in the Mondo Disease Ontology (MONDO)",
       "title": "Mondo Code",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/mondo_code",
+      "slot_uri": "https://w3id.org/include/participant/MONDOCode",
       "owner": "Condition",
       "domain_of": [
         "Condition"
@@ -1179,12 +1180,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "mondo_label",
-      "definition_uri": "https://w3id.org/include/participant/mondo_label",
+      "name": "MONDOLabel",
+      "definition_uri": "https://w3id.org/include/participant/MONDOLabel",
       "description": "Label for condition in the Mondo Disease Ontology (MONDO)",
       "title": "Mondo Label",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/mondo_label",
+      "slot_uri": "https://w3id.org/include/participant/MONDOLabel",
       "owner": "Condition",
       "domain_of": [
         "Condition"
@@ -1193,12 +1194,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "mother_id",
-      "definition_uri": "https://w3id.org/include/participant/mother_id",
+      "name": "MotherID",
+      "definition_uri": "https://w3id.org/include/participant/MotherID",
       "description": "Participant ID for Participant's mother",
       "title": "Mother Id",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/mother_id",
+      "slot_uri": "https://w3id.org/include/participant/MotherID",
       "owner": "Participant",
       "domain_of": [
         "Participant"
@@ -1207,12 +1208,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "other_code",
-      "definition_uri": "https://w3id.org/include/participant/other_code",
+      "name": "OtherCode",
+      "definition_uri": "https://w3id.org/include/participant/OtherCode",
       "description": "Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)",
       "title": "Other Code",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/other_code",
+      "slot_uri": "https://w3id.org/include/participant/OtherCode",
       "owner": "Condition",
       "domain_of": [
         "Condition"
@@ -1221,12 +1222,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "other_label",
-      "definition_uri": "https://w3id.org/include/participant/other_label",
+      "name": "OtherLabel",
+      "definition_uri": "https://w3id.org/include/participant/OtherLabel",
       "description": "Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)",
       "title": "Other Label",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/other_label",
+      "slot_uri": "https://w3id.org/include/participant/OtherLabel",
       "owner": "Condition",
       "domain_of": [
         "Condition"
@@ -1235,12 +1236,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "outcomes_vital_status",
-      "definition_uri": "https://w3id.org/include/participant/outcomes_vital_status",
+      "name": "OutcomesVitalStatus",
+      "definition_uri": "https://w3id.org/include/participant/OutcomesVitalStatus",
       "description": "Whether participant is alive or dead",
       "title": "Outcomes Vital Status",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/outcomes_vital_status",
+      "slot_uri": "https://w3id.org/include/participant/OutcomesVitalStatus",
       "owner": "Participant",
       "domain_of": [
         "Participant"
@@ -1249,12 +1250,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "participant_id",
-      "definition_uri": "https://w3id.org/include/participant/participant_id",
+      "name": "ParticipantID",
+      "definition_uri": "https://w3id.org/include/participant/ParticipantID",
       "description": "Unique identifier for the participant, assigned by DCC",
       "title": "Participant Id",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/participant_id",
+      "slot_uri": "https://w3id.org/include/participant/ParticipantID",
       "owner": "Participant",
       "domain_of": [
         "DataFile",
@@ -1265,42 +1266,42 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "race",
-      "definition_uri": "https://w3id.org/include/participant/race",
+      "name": "Race",
+      "definition_uri": "https://w3id.org/include/participant/Race",
       "description": "Race of participant",
       "title": "Race",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/race",
+      "slot_uri": "https://w3id.org/include/participant/Race",
       "owner": "Participant",
       "domain_of": [
         "Participant"
       ],
-      "range": "enum_race",
+      "range": "enum_Race",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "sex",
-      "definition_uri": "https://w3id.org/include/participant/sex",
+      "name": "Sex",
+      "definition_uri": "https://w3id.org/include/participant/Sex",
       "description": "Sex of participant",
       "title": "Sex",
       "from_schema": "https://w3id.org/include/participant",
-      "slot_uri": "https://w3id.org/include/participant/sex",
+      "slot_uri": "https://w3id.org/include/participant/Sex",
       "owner": "Participant",
       "domain_of": [
         "Participant"
       ],
-      "range": "enum_sex",
+      "range": "enum_Sex",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "dbgap",
-      "definition_uri": "https://w3id.org/include/study/dbgap",
-      "description": "dbGaP study accession code",
-      "title": "Dbgap",
+      "name": "dbGap",
+      "definition_uri": "https://w3id.org/include/study/dbGap",
+      "description": "dbGap study accession code",
+      "title": "dbGap",
       "from_schema": "https://w3id.org/include/study",
-      "slot_uri": "https://w3id.org/include/study/dbgap",
+      "slot_uri": "https://w3id.org/include/study/dbGap",
       "owner": "Study",
       "domain_of": [
         "Study"
@@ -1309,12 +1310,12 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "program",
-      "definition_uri": "https://w3id.org/include/study/program",
+      "name": "Program",
+      "definition_uri": "https://w3id.org/include/study/Program",
       "description": "Funding source for the study",
       "title": "Program",
       "from_schema": "https://w3id.org/include/study",
-      "slot_uri": "https://w3id.org/include/study/program",
+      "slot_uri": "https://w3id.org/include/study/Program",
       "owner": "Study",
       "domain_of": [
         "Study"
@@ -1324,27 +1325,27 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "study_code",
-      "definition_uri": "https://w3id.org/include/study/study_code",
+      "name": "StudyCode",
+      "definition_uri": "https://w3id.org/include/study/StudyCode",
       "description": "Unique identifer for the study, assigned by DCC",
       "title": "Study Code",
       "from_schema": "https://w3id.org/include/study",
-      "slot_uri": "https://w3id.org/include/study/study_code",
+      "slot_uri": "https://w3id.org/include/study/StudyCode",
       "owner": "Study",
       "domain_of": [
         "Study"
       ],
-      "range": "enum_study_code",
+      "range": "enum_StudyCode",
       "required": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "study_name",
-      "definition_uri": "https://w3id.org/include/study/study_name",
+      "name": "StudyName",
+      "definition_uri": "https://w3id.org/include/study/StudyName",
       "description": "Name of the study, chosen by data contributor",
       "title": "Study Name",
       "from_schema": "https://w3id.org/include/study",
-      "slot_uri": "https://w3id.org/include/study/study_name",
+      "slot_uri": "https://w3id.org/include/study/StudyName",
       "owner": "Study",
       "domain_of": [
         "Study"
@@ -1415,8 +1416,8 @@
       "from_schema": "https://w3id.org/include/assay",
       "is_a": "Thing",
       "slots": [
-        "uses_biospecimen",
-        "has_output"
+        "UsesBiospecimen",
+        "HasOutput"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/include/assay/Assay",
@@ -1442,23 +1443,23 @@
       "from_schema": "https://w3id.org/include/assay",
       "is_a": "Thing",
       "slots": [
-        "age_at_biospecimen_collection",
-        "biospecimen_storage",
-        "collection_id",
-        "collection_sample_type",
-        "container_id",
-        "has_datafile",
-        "has_participant",
-        "has_study",
-        "laboratory_procedure",
-        "parent_sample_id",
-        "parent_sample_type",
-        "sample_availability",
-        "sample_id",
-        "sample_type",
-        "volume",
-        "volume_unit",
-        "has_aliquot"
+        "AgeAtBiospecimenCollection",
+        "BiospecimenStorage",
+        "CollectionID",
+        "CollectionSampleType",
+        "ContainerID",
+        "HasDatafile",
+        "HasParticipant",
+        "HasStudy",
+        "LaboratoryProcedure",
+        "ParentSampleID",
+        "ParentSampleType",
+        "SampleAvailability",
+        "SampleID",
+        "SampleType",
+        "Volume",
+        "VolumeUnit",
+        "HasAliquot"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/include/assay/Biospecimen",
@@ -1484,21 +1485,21 @@
       "from_schema": "https://w3id.org/include/assay",
       "is_a": "Thing",
       "slots": [
-        "access_url",
-        "collection_id",
-        "data_access",
-        "data_category",
-        "data_type",
-        "experimental_strategy",
-        "file_id",
-        "file_name",
-        "format",
-        "has_biospecimen",
-        "has_participant",
-        "has_study",
-        "participant_id",
-        "size",
-        "original_file_name"
+        "AccessURL",
+        "CollectionID",
+        "DataAccess",
+        "DataCategory",
+        "DataType",
+        "ExperimentalStrategy",
+        "FileID",
+        "FileName",
+        "Format",
+        "HasBiospecimen",
+        "HasParticipant",
+        "HasStudy",
+        "ParticipantID",
+        "Size",
+        "OriginalFileName"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/include/assay/DataFile",
@@ -1510,7 +1511,7 @@
       "annotations": [
         {
           "tag": "required",
-          "value": "True",
+          "value": "False",
           "@type": "Annotation"
         },
         {
@@ -1524,21 +1525,21 @@
       "from_schema": "https://w3id.org/include/participant",
       "is_a": "Thing",
       "slots": [
-        "age_at_last_vital_status",
-        "down_syndrome_status",
-        "ethnicity",
-        "external_id",
-        "family_id",
-        "family_relationship",
-        "family_type",
-        "father_id",
-        "has_datafile",
-        "has_study",
-        "mother_id",
-        "outcomes_vital_status",
-        "participant_id",
-        "race",
-        "sex"
+        "AgeAtLastVitalStatus",
+        "DownSyndromeStatus",
+        "Ethnicity",
+        "ExternalID",
+        "FamilyID",
+        "FamilyRelationship",
+        "FamilyType",
+        "FatherID",
+        "HasDatafile",
+        "HasStudy",
+        "MotherID",
+        "OutcomesVitalStatus",
+        "ParticipantID",
+        "Race",
+        "Sex"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/include/participant/Participant",
@@ -1564,7 +1565,7 @@
       "from_schema": "https://w3id.org/include/participant",
       "is_a": "Thing",
       "slots": [
-        "has_participant"
+        "HasParticipant"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/include/participant/FamilyGroup",
@@ -1585,18 +1586,18 @@
       "from_schema": "https://w3id.org/include/participant",
       "is_a": "Thing",
       "slots": [
-        "has_participant",
-        "age_at_condition_observation",
-        "mondo_label",
-        "mondo_code",
-        "condition_interpretation",
-        "condition_data_source",
-        "hpo_label",
-        "hpo_code",
-        "maxo_label",
-        "maxo_code",
-        "other_label",
-        "other_code"
+        "HasParticipant",
+        "AgeAtConditionObservation",
+        "MONDOLabel",
+        "MONDOCode",
+        "ConditionInterpretation",
+        "ConditionDataSource",
+        "HPOLabel",
+        "HPOCode",
+        "MAXOLabel",
+        "MAXOCode",
+        "OtherLabel",
+        "OtherCode"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/include/participant/Condition",
@@ -1617,10 +1618,11 @@
       "from_schema": "https://w3id.org/include/study",
       "is_a": "Thing",
       "slots": [
-        "dbgap",
-        "program",
-        "study_code",
-        "study_name"
+        "dbGap",
+        "Program",
+        "StudyCode",
+        "StudyName",
+        "HasParticipant"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/include/study/Study",
@@ -1629,9 +1631,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "include_schema.yaml",
-  "source_file_date": "2022-11-08T07:44:49",
+  "source_file_date": "2022-11-29T13:33:41",
   "source_file_size": 433,
-  "generation_date": "2022-11-09T12:04:49",
+  "generation_date": "2022-12-14T09:10:01",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/include_schema.context.jsonld",

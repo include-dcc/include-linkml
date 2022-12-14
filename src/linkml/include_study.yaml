@@ -10,6 +10,7 @@ prefixes:
 imports:
 - linkml:types
 - include_core
+- include_participant
 default_curi_maps:
 - semweb_context
 classes:
@@ -24,30 +25,32 @@ classes:
     title: Study
     is_a: Thing
     slots:
-    - dbgap
-    - program
-    - study_code
-    - study_name
+    - dbGap
+    - Program
+    - StudyCode
+    - StudyName
+    - HasParticipant
 slots:
-  dbgap:
-    definition_uri: include:dbgap
-    description: dbGaP study accession code
-    title: Dbgap
+  dbGap:
+    definition_uri: include:dbGap
+    description: dbGap study accession code
+    title: dbGap
     range: string
-  program:
-    definition_uri: include:program
+    required: false
+  Program:
+    definition_uri: include:Program
     description: Funding source for the study
     title: Program
     range: enum_program
     required: true
-  study_code:
-    definition_uri: include:study_code
+  StudyCode:
+    definition_uri: include:StudyCode
     description: Unique identifer for the study, assigned by DCC
     title: Study Code
-    range: enum_study_code
+    range: enum_StudyCode
     required: true
-  study_name:
-    definition_uri: include:study_name
+  StudyName:
+    definition_uri: include:StudyName
     description: Name of the study, chosen by data contributor
     title: Study Name
     required: true
@@ -63,9 +66,9 @@ enums:
       kf:
         text: kf
         title: KF
-  enum_study_code:
-    name: enum_study_code
-    definition_uri: include:enum_study_code
+  enum_StudyCode:
+    name: enum_StudyCode
+    definition_uri: include:enum_StudyCode
     permissible_values:
       ds_cog_all:
         text: ds_cog_all

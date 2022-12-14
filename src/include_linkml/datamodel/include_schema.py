@@ -1,5 +1,5 @@
 # Auto generated from include_schema.yaml by pythongen.py version: 0.9.0
-# Generation date: 2022-11-09T12:04:58
+# Generation date: 2022-12-14T09:10:11
 # Schema: include-schema
 #
 # id: https://w3id.org/include
@@ -80,15 +80,15 @@ class Assay(Thing):
     class_name: ClassVar[str] = "Assay"
     class_model_uri: ClassVar[URIRef] = INCLUDE.Assay
 
-    uses_biospecimen: Optional[Union[dict, "Biospecimen"]] = None
-    has_output: Optional[Union[dict, "DataFile"]] = None
+    UsesBiospecimen: Optional[Union[dict, "Biospecimen"]] = None
+    HasOutput: Optional[Union[dict, "DataFile"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.uses_biospecimen is not None and not isinstance(self.uses_biospecimen, Biospecimen):
-            self.uses_biospecimen = Biospecimen(**as_dict(self.uses_biospecimen))
+        if self.UsesBiospecimen is not None and not isinstance(self.UsesBiospecimen, Biospecimen):
+            self.UsesBiospecimen = Biospecimen(**as_dict(self.UsesBiospecimen))
 
-        if self.has_output is not None and not isinstance(self.has_output, DataFile):
-            self.has_output = DataFile(**as_dict(self.has_output))
+        if self.HasOutput is not None and not isinstance(self.HasOutput, DataFile):
+            self.HasOutput = DataFile(**as_dict(self.HasOutput))
 
         super().__post_init__(**kwargs)
 
@@ -105,79 +105,79 @@ class Biospecimen(Thing):
     class_name: ClassVar[str] = "Biospecimen"
     class_model_uri: ClassVar[URIRef] = INCLUDE.Biospecimen
 
-    sample_id: str = None
-    sample_type: str = None
-    age_at_biospecimen_collection: Optional[int] = None
-    biospecimen_storage: Optional[str] = None
-    collection_id: Optional[str] = None
-    collection_sample_type: Optional[str] = None
-    container_id: Optional[str] = None
-    has_datafile: Optional[Union[dict, "DataFile"]] = None
-    has_participant: Optional[Union[dict, "Participant"]] = None
-    has_study: Optional[Union[dict, "Study"]] = None
-    laboratory_procedure: Optional[str] = None
-    parent_sample_id: Optional[str] = None
-    parent_sample_type: Optional[str] = None
-    sample_availability: Optional[Union[str, "EnumSampleAvailability"]] = None
-    volume: Optional[float] = None
-    volume_unit: Optional[str] = None
-    has_aliquot: Optional[Union[dict, Aliquot]] = None
+    SampleID: str = None
+    SampleType: str = None
+    AgeAtBiospecimenCollection: Optional[int] = None
+    BiospecimenStorage: Optional[str] = None
+    CollectionID: Optional[str] = None
+    CollectionSampleType: Optional[str] = None
+    ContainerID: Optional[str] = None
+    HasDatafile: Optional[Union[dict, "DataFile"]] = None
+    HasParticipant: Optional[Union[dict, "Participant"]] = None
+    HasStudy: Optional[Union[dict, "Study"]] = None
+    LaboratoryProcedure: Optional[str] = None
+    ParentSampleID: Optional[str] = None
+    ParentSampleType: Optional[str] = None
+    SampleAvailability: Optional[Union[str, "EnumSampleAvailability"]] = None
+    Volume: Optional[float] = None
+    VolumeUnit: Optional[str] = None
+    HasAliquot: Optional[Union[dict, Aliquot]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.sample_id):
-            self.MissingRequiredField("sample_id")
-        if not isinstance(self.sample_id, str):
-            self.sample_id = str(self.sample_id)
+        if self._is_empty(self.SampleID):
+            self.MissingRequiredField("SampleID")
+        if not isinstance(self.SampleID, str):
+            self.SampleID = str(self.SampleID)
 
-        if self._is_empty(self.sample_type):
-            self.MissingRequiredField("sample_type")
-        if not isinstance(self.sample_type, str):
-            self.sample_type = str(self.sample_type)
+        if self._is_empty(self.SampleType):
+            self.MissingRequiredField("SampleType")
+        if not isinstance(self.SampleType, str):
+            self.SampleType = str(self.SampleType)
 
-        if self.age_at_biospecimen_collection is not None and not isinstance(self.age_at_biospecimen_collection, int):
-            self.age_at_biospecimen_collection = int(self.age_at_biospecimen_collection)
+        if self.AgeAtBiospecimenCollection is not None and not isinstance(self.AgeAtBiospecimenCollection, int):
+            self.AgeAtBiospecimenCollection = int(self.AgeAtBiospecimenCollection)
 
-        if self.biospecimen_storage is not None and not isinstance(self.biospecimen_storage, str):
-            self.biospecimen_storage = str(self.biospecimen_storage)
+        if self.BiospecimenStorage is not None and not isinstance(self.BiospecimenStorage, str):
+            self.BiospecimenStorage = str(self.BiospecimenStorage)
 
-        if self.collection_id is not None and not isinstance(self.collection_id, str):
-            self.collection_id = str(self.collection_id)
+        if self.CollectionID is not None and not isinstance(self.CollectionID, str):
+            self.CollectionID = str(self.CollectionID)
 
-        if self.collection_sample_type is not None and not isinstance(self.collection_sample_type, str):
-            self.collection_sample_type = str(self.collection_sample_type)
+        if self.CollectionSampleType is not None and not isinstance(self.CollectionSampleType, str):
+            self.CollectionSampleType = str(self.CollectionSampleType)
 
-        if self.container_id is not None and not isinstance(self.container_id, str):
-            self.container_id = str(self.container_id)
+        if self.ContainerID is not None and not isinstance(self.ContainerID, str):
+            self.ContainerID = str(self.ContainerID)
 
-        if self.has_datafile is not None and not isinstance(self.has_datafile, DataFile):
-            self.has_datafile = DataFile(**as_dict(self.has_datafile))
+        if self.HasDatafile is not None and not isinstance(self.HasDatafile, DataFile):
+            self.HasDatafile = DataFile(**as_dict(self.HasDatafile))
 
-        if self.has_participant is not None and not isinstance(self.has_participant, Participant):
-            self.has_participant = Participant(**as_dict(self.has_participant))
+        if self.HasParticipant is not None and not isinstance(self.HasParticipant, Participant):
+            self.HasParticipant = Participant(**as_dict(self.HasParticipant))
 
-        if self.has_study is not None and not isinstance(self.has_study, Study):
-            self.has_study = Study(**as_dict(self.has_study))
+        if self.HasStudy is not None and not isinstance(self.HasStudy, Study):
+            self.HasStudy = Study(**as_dict(self.HasStudy))
 
-        if self.laboratory_procedure is not None and not isinstance(self.laboratory_procedure, str):
-            self.laboratory_procedure = str(self.laboratory_procedure)
+        if self.LaboratoryProcedure is not None and not isinstance(self.LaboratoryProcedure, str):
+            self.LaboratoryProcedure = str(self.LaboratoryProcedure)
 
-        if self.parent_sample_id is not None and not isinstance(self.parent_sample_id, str):
-            self.parent_sample_id = str(self.parent_sample_id)
+        if self.ParentSampleID is not None and not isinstance(self.ParentSampleID, str):
+            self.ParentSampleID = str(self.ParentSampleID)
 
-        if self.parent_sample_type is not None and not isinstance(self.parent_sample_type, str):
-            self.parent_sample_type = str(self.parent_sample_type)
+        if self.ParentSampleType is not None and not isinstance(self.ParentSampleType, str):
+            self.ParentSampleType = str(self.ParentSampleType)
 
-        if self.sample_availability is not None and not isinstance(self.sample_availability, EnumSampleAvailability):
-            self.sample_availability = EnumSampleAvailability(self.sample_availability)
+        if self.SampleAvailability is not None and not isinstance(self.SampleAvailability, EnumSampleAvailability):
+            self.SampleAvailability = EnumSampleAvailability(self.SampleAvailability)
 
-        if self.volume is not None and not isinstance(self.volume, float):
-            self.volume = float(self.volume)
+        if self.Volume is not None and not isinstance(self.Volume, float):
+            self.Volume = float(self.Volume)
 
-        if self.volume_unit is not None and not isinstance(self.volume_unit, str):
-            self.volume_unit = str(self.volume_unit)
+        if self.VolumeUnit is not None and not isinstance(self.VolumeUnit, str):
+            self.VolumeUnit = str(self.VolumeUnit)
 
-        if self.has_aliquot is not None and not isinstance(self.has_aliquot, Aliquot):
-            self.has_aliquot = Aliquot()
+        if self.HasAliquot is not None and not isinstance(self.HasAliquot, Aliquot):
+            self.HasAliquot = Aliquot()
 
         super().__post_init__(**kwargs)
 
@@ -194,77 +194,77 @@ class DataFile(Thing):
     class_name: ClassVar[str] = "DataFile"
     class_model_uri: ClassVar[URIRef] = INCLUDE.DataFile
 
-    data_category: str = None
-    file_name: str = None
-    format: str = None
-    participant_id: str = None
-    original_file_name: str = None
-    access_url: Optional[Union[str, URIorCURIE]] = None
-    collection_id: Optional[str] = None
-    data_access: Optional[Union[str, "EnumDataAccess"]] = None
-    data_type: Optional[str] = None
-    experimental_strategy: Optional[str] = None
-    file_id: Optional[str] = None
-    has_biospecimen: Optional[Union[dict, Biospecimen]] = None
-    has_participant: Optional[Union[dict, "Participant"]] = None
-    has_study: Optional[Union[dict, "Study"]] = None
-    size: Optional[str] = None
+    DataCategory: str = None
+    FileName: str = None
+    Format: str = None
+    ParticipantID: str = None
+    OriginalFileName: str = None
+    AccessURL: Optional[Union[str, URIorCURIE]] = None
+    CollectionID: Optional[str] = None
+    DataAccess: Optional[Union[str, "EnumDataAccess"]] = None
+    DataType: Optional[str] = None
+    ExperimentalStrategy: Optional[str] = None
+    FileID: Optional[str] = None
+    HasBiospecimen: Optional[Union[dict, Biospecimen]] = None
+    HasParticipant: Optional[Union[dict, "Participant"]] = None
+    HasStudy: Optional[Union[dict, "Study"]] = None
+    Size: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.data_category):
-            self.MissingRequiredField("data_category")
-        if not isinstance(self.data_category, str):
-            self.data_category = str(self.data_category)
+        if self._is_empty(self.DataCategory):
+            self.MissingRequiredField("DataCategory")
+        if not isinstance(self.DataCategory, str):
+            self.DataCategory = str(self.DataCategory)
 
-        if self._is_empty(self.file_name):
-            self.MissingRequiredField("file_name")
-        if not isinstance(self.file_name, str):
-            self.file_name = str(self.file_name)
+        if self._is_empty(self.FileName):
+            self.MissingRequiredField("FileName")
+        if not isinstance(self.FileName, str):
+            self.FileName = str(self.FileName)
 
-        if self._is_empty(self.format):
-            self.MissingRequiredField("format")
-        if not isinstance(self.format, str):
-            self.format = str(self.format)
+        if self._is_empty(self.Format):
+            self.MissingRequiredField("Format")
+        if not isinstance(self.Format, str):
+            self.Format = str(self.Format)
 
-        if self._is_empty(self.participant_id):
-            self.MissingRequiredField("participant_id")
-        if not isinstance(self.participant_id, str):
-            self.participant_id = str(self.participant_id)
+        if self._is_empty(self.ParticipantID):
+            self.MissingRequiredField("ParticipantID")
+        if not isinstance(self.ParticipantID, str):
+            self.ParticipantID = str(self.ParticipantID)
 
-        if self._is_empty(self.original_file_name):
-            self.MissingRequiredField("original_file_name")
-        if not isinstance(self.original_file_name, str):
-            self.original_file_name = str(self.original_file_name)
+        if self._is_empty(self.OriginalFileName):
+            self.MissingRequiredField("OriginalFileName")
+        if not isinstance(self.OriginalFileName, str):
+            self.OriginalFileName = str(self.OriginalFileName)
 
-        if self.access_url is not None and not isinstance(self.access_url, URIorCURIE):
-            self.access_url = URIorCURIE(self.access_url)
+        if self.AccessURL is not None and not isinstance(self.AccessURL, URIorCURIE):
+            self.AccessURL = URIorCURIE(self.AccessURL)
 
-        if self.collection_id is not None and not isinstance(self.collection_id, str):
-            self.collection_id = str(self.collection_id)
+        if self.CollectionID is not None and not isinstance(self.CollectionID, str):
+            self.CollectionID = str(self.CollectionID)
 
-        if self.data_access is not None and not isinstance(self.data_access, EnumDataAccess):
-            self.data_access = EnumDataAccess(self.data_access)
+        if self.DataAccess is not None and not isinstance(self.DataAccess, EnumDataAccess):
+            self.DataAccess = EnumDataAccess(self.DataAccess)
 
-        if self.data_type is not None and not isinstance(self.data_type, str):
-            self.data_type = str(self.data_type)
+        if self.DataType is not None and not isinstance(self.DataType, str):
+            self.DataType = str(self.DataType)
 
-        if self.experimental_strategy is not None and not isinstance(self.experimental_strategy, str):
-            self.experimental_strategy = str(self.experimental_strategy)
+        if self.ExperimentalStrategy is not None and not isinstance(self.ExperimentalStrategy, str):
+            self.ExperimentalStrategy = str(self.ExperimentalStrategy)
 
-        if self.file_id is not None and not isinstance(self.file_id, str):
-            self.file_id = str(self.file_id)
+        if self.FileID is not None and not isinstance(self.FileID, str):
+            self.FileID = str(self.FileID)
 
-        if self.has_biospecimen is not None and not isinstance(self.has_biospecimen, Biospecimen):
-            self.has_biospecimen = Biospecimen(**as_dict(self.has_biospecimen))
+        if self.HasBiospecimen is not None and not isinstance(self.HasBiospecimen, Biospecimen):
+            self.HasBiospecimen = Biospecimen(**as_dict(self.HasBiospecimen))
 
-        if self.has_participant is not None and not isinstance(self.has_participant, Participant):
-            self.has_participant = Participant(**as_dict(self.has_participant))
+        if self.HasParticipant is not None and not isinstance(self.HasParticipant, Participant):
+            self.HasParticipant = Participant(**as_dict(self.HasParticipant))
 
-        if self.has_study is not None and not isinstance(self.has_study, Study):
-            self.has_study = Study(**as_dict(self.has_study))
+        if self.HasStudy is not None and not isinstance(self.HasStudy, Study):
+            self.HasStudy = Study(**as_dict(self.HasStudy))
 
-        if self.size is not None and not isinstance(self.size, str):
-            self.size = str(self.size)
+        if self.Size is not None and not isinstance(self.Size, str):
+            self.Size = str(self.Size)
 
         super().__post_init__(**kwargs)
 
@@ -281,81 +281,81 @@ class Participant(Thing):
     class_name: ClassVar[str] = "Participant"
     class_model_uri: ClassVar[URIRef] = INCLUDE.Participant
 
-    down_syndrome_status: Union[str, "EnumDownSyndromeStatus"] = None
-    ethnicity: Union[str, "EnumEthnicity"] = None
-    external_id: str = None
-    family_type: Union[str, "EnumFamilyType"] = None
-    participant_id: str = None
-    race: Union[str, "EnumRace"] = None
-    sex: Union[str, "EnumSex"] = None
-    age_at_last_vital_status: Optional[int] = None
-    family_id: Optional[str] = None
-    family_relationship: Optional[Union[dict, "Participant"]] = None
-    father_id: Optional[str] = None
-    has_datafile: Optional[Union[dict, DataFile]] = None
-    has_study: Optional[Union[dict, "Study"]] = None
-    mother_id: Optional[str] = None
-    outcomes_vital_status: Optional[Union[str, "EnumVitalStatus"]] = None
+    DownSyndromeStatus: Union[str, "EnumDownSyndromeStatus"] = None
+    Ethnicity: Union[str, "EnumEthnicity"] = None
+    ExternalID: str = None
+    FamilyType: Union[str, "EnumFamilyType"] = None
+    ParticipantID: str = None
+    Race: Union[str, "EnumRace"] = None
+    Sex: Union[str, "EnumSex"] = None
+    AgeAtLastVitalStatus: Optional[int] = None
+    FamilyID: Optional[str] = None
+    FamilyRelationship: Optional[Union[dict, "Participant"]] = None
+    FatherID: Optional[str] = None
+    HasDatafile: Optional[Union[dict, DataFile]] = None
+    HasStudy: Optional[Union[dict, "Study"]] = None
+    MotherID: Optional[str] = None
+    OutcomesVitalStatus: Optional[Union[str, "EnumVitalStatus"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.down_syndrome_status):
-            self.MissingRequiredField("down_syndrome_status")
-        if not isinstance(self.down_syndrome_status, EnumDownSyndromeStatus):
-            self.down_syndrome_status = EnumDownSyndromeStatus(self.down_syndrome_status)
+        if self._is_empty(self.DownSyndromeStatus):
+            self.MissingRequiredField("DownSyndromeStatus")
+        if not isinstance(self.DownSyndromeStatus, EnumDownSyndromeStatus):
+            self.DownSyndromeStatus = EnumDownSyndromeStatus(self.DownSyndromeStatus)
 
-        if self._is_empty(self.ethnicity):
-            self.MissingRequiredField("ethnicity")
-        if not isinstance(self.ethnicity, EnumEthnicity):
-            self.ethnicity = EnumEthnicity(self.ethnicity)
+        if self._is_empty(self.Ethnicity):
+            self.MissingRequiredField("Ethnicity")
+        if not isinstance(self.Ethnicity, EnumEthnicity):
+            self.Ethnicity = EnumEthnicity(self.Ethnicity)
 
-        if self._is_empty(self.external_id):
-            self.MissingRequiredField("external_id")
-        if not isinstance(self.external_id, str):
-            self.external_id = str(self.external_id)
+        if self._is_empty(self.ExternalID):
+            self.MissingRequiredField("ExternalID")
+        if not isinstance(self.ExternalID, str):
+            self.ExternalID = str(self.ExternalID)
 
-        if self._is_empty(self.family_type):
-            self.MissingRequiredField("family_type")
-        if not isinstance(self.family_type, EnumFamilyType):
-            self.family_type = EnumFamilyType(self.family_type)
+        if self._is_empty(self.FamilyType):
+            self.MissingRequiredField("FamilyType")
+        if not isinstance(self.FamilyType, EnumFamilyType):
+            self.FamilyType = EnumFamilyType(self.FamilyType)
 
-        if self._is_empty(self.participant_id):
-            self.MissingRequiredField("participant_id")
-        if not isinstance(self.participant_id, str):
-            self.participant_id = str(self.participant_id)
+        if self._is_empty(self.ParticipantID):
+            self.MissingRequiredField("ParticipantID")
+        if not isinstance(self.ParticipantID, str):
+            self.ParticipantID = str(self.ParticipantID)
 
-        if self._is_empty(self.race):
-            self.MissingRequiredField("race")
-        if not isinstance(self.race, EnumRace):
-            self.race = EnumRace(self.race)
+        if self._is_empty(self.Race):
+            self.MissingRequiredField("Race")
+        if not isinstance(self.Race, EnumRace):
+            self.Race = EnumRace(self.Race)
 
-        if self._is_empty(self.sex):
-            self.MissingRequiredField("sex")
-        if not isinstance(self.sex, EnumSex):
-            self.sex = EnumSex(self.sex)
+        if self._is_empty(self.Sex):
+            self.MissingRequiredField("Sex")
+        if not isinstance(self.Sex, EnumSex):
+            self.Sex = EnumSex(self.Sex)
 
-        if self.age_at_last_vital_status is not None and not isinstance(self.age_at_last_vital_status, int):
-            self.age_at_last_vital_status = int(self.age_at_last_vital_status)
+        if self.AgeAtLastVitalStatus is not None and not isinstance(self.AgeAtLastVitalStatus, int):
+            self.AgeAtLastVitalStatus = int(self.AgeAtLastVitalStatus)
 
-        if self.family_id is not None and not isinstance(self.family_id, str):
-            self.family_id = str(self.family_id)
+        if self.FamilyID is not None and not isinstance(self.FamilyID, str):
+            self.FamilyID = str(self.FamilyID)
 
-        if self.family_relationship is not None and not isinstance(self.family_relationship, Participant):
-            self.family_relationship = Participant(**as_dict(self.family_relationship))
+        if self.FamilyRelationship is not None and not isinstance(self.FamilyRelationship, Participant):
+            self.FamilyRelationship = Participant(**as_dict(self.FamilyRelationship))
 
-        if self.father_id is not None and not isinstance(self.father_id, str):
-            self.father_id = str(self.father_id)
+        if self.FatherID is not None and not isinstance(self.FatherID, str):
+            self.FatherID = str(self.FatherID)
 
-        if self.has_datafile is not None and not isinstance(self.has_datafile, DataFile):
-            self.has_datafile = DataFile(**as_dict(self.has_datafile))
+        if self.HasDatafile is not None and not isinstance(self.HasDatafile, DataFile):
+            self.HasDatafile = DataFile(**as_dict(self.HasDatafile))
 
-        if self.has_study is not None and not isinstance(self.has_study, Study):
-            self.has_study = Study(**as_dict(self.has_study))
+        if self.HasStudy is not None and not isinstance(self.HasStudy, Study):
+            self.HasStudy = Study(**as_dict(self.HasStudy))
 
-        if self.mother_id is not None and not isinstance(self.mother_id, str):
-            self.mother_id = str(self.mother_id)
+        if self.MotherID is not None and not isinstance(self.MotherID, str):
+            self.MotherID = str(self.MotherID)
 
-        if self.outcomes_vital_status is not None and not isinstance(self.outcomes_vital_status, EnumVitalStatus):
-            self.outcomes_vital_status = EnumVitalStatus(self.outcomes_vital_status)
+        if self.OutcomesVitalStatus is not None and not isinstance(self.OutcomesVitalStatus, EnumVitalStatus):
+            self.OutcomesVitalStatus = EnumVitalStatus(self.OutcomesVitalStatus)
 
         super().__post_init__(**kwargs)
 
@@ -372,11 +372,11 @@ class FamilyGroup(Thing):
     class_name: ClassVar[str] = "FamilyGroup"
     class_model_uri: ClassVar[URIRef] = INCLUDE.FamilyGroup
 
-    has_participant: Optional[Union[dict, Participant]] = None
+    HasParticipant: Optional[Union[dict, Participant]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.has_participant is not None and not isinstance(self.has_participant, Participant):
-            self.has_participant = Participant(**as_dict(self.has_participant))
+        if self.HasParticipant is not None and not isinstance(self.HasParticipant, Participant):
+            self.HasParticipant = Participant(**as_dict(self.HasParticipant))
 
         super().__post_init__(**kwargs)
 
@@ -393,55 +393,55 @@ class Condition(Thing):
     class_name: ClassVar[str] = "Condition"
     class_model_uri: ClassVar[URIRef] = INCLUDE.Condition
 
-    has_participant: Optional[Union[dict, Participant]] = None
-    age_at_condition_observation: Optional[int] = None
-    mondo_label: Optional[str] = None
-    mondo_code: Optional[str] = None
-    condition_interpretation: Optional[Union[str, "EnumConditionInterpretation"]] = None
-    condition_data_source: Optional[Union[str, "EnumConditionDataSource"]] = None
-    hpo_label: Optional[str] = None
-    hpo_code: Optional[str] = None
-    maxo_label: Optional[str] = None
-    maxo_code: Optional[str] = None
-    other_label: Optional[str] = None
-    other_code: Optional[str] = None
+    HasParticipant: Optional[Union[dict, Participant]] = None
+    AgeAtConditionObservation: Optional[int] = None
+    MONDOLabel: Optional[str] = None
+    MONDOCode: Optional[str] = None
+    ConditionInterpretation: Optional[Union[str, "EnumConditionInterpretation"]] = None
+    ConditionDataSource: Optional[Union[str, "EnumConditionDataSource"]] = None
+    HPOLabel: Optional[str] = None
+    HPOCode: Optional[str] = None
+    MAXOLabel: Optional[str] = None
+    MAXOCode: Optional[str] = None
+    OtherLabel: Optional[str] = None
+    OtherCode: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.has_participant is not None and not isinstance(self.has_participant, Participant):
-            self.has_participant = Participant(**as_dict(self.has_participant))
+        if self.HasParticipant is not None and not isinstance(self.HasParticipant, Participant):
+            self.HasParticipant = Participant(**as_dict(self.HasParticipant))
 
-        if self.age_at_condition_observation is not None and not isinstance(self.age_at_condition_observation, int):
-            self.age_at_condition_observation = int(self.age_at_condition_observation)
+        if self.AgeAtConditionObservation is not None and not isinstance(self.AgeAtConditionObservation, int):
+            self.AgeAtConditionObservation = int(self.AgeAtConditionObservation)
 
-        if self.mondo_label is not None and not isinstance(self.mondo_label, str):
-            self.mondo_label = str(self.mondo_label)
+        if self.MONDOLabel is not None and not isinstance(self.MONDOLabel, str):
+            self.MONDOLabel = str(self.MONDOLabel)
 
-        if self.mondo_code is not None and not isinstance(self.mondo_code, str):
-            self.mondo_code = str(self.mondo_code)
+        if self.MONDOCode is not None and not isinstance(self.MONDOCode, str):
+            self.MONDOCode = str(self.MONDOCode)
 
-        if self.condition_interpretation is not None and not isinstance(self.condition_interpretation, EnumConditionInterpretation):
-            self.condition_interpretation = EnumConditionInterpretation(self.condition_interpretation)
+        if self.ConditionInterpretation is not None and not isinstance(self.ConditionInterpretation, EnumConditionInterpretation):
+            self.ConditionInterpretation = EnumConditionInterpretation(self.ConditionInterpretation)
 
-        if self.condition_data_source is not None and not isinstance(self.condition_data_source, EnumConditionDataSource):
-            self.condition_data_source = EnumConditionDataSource(self.condition_data_source)
+        if self.ConditionDataSource is not None and not isinstance(self.ConditionDataSource, EnumConditionDataSource):
+            self.ConditionDataSource = EnumConditionDataSource(self.ConditionDataSource)
 
-        if self.hpo_label is not None and not isinstance(self.hpo_label, str):
-            self.hpo_label = str(self.hpo_label)
+        if self.HPOLabel is not None and not isinstance(self.HPOLabel, str):
+            self.HPOLabel = str(self.HPOLabel)
 
-        if self.hpo_code is not None and not isinstance(self.hpo_code, str):
-            self.hpo_code = str(self.hpo_code)
+        if self.HPOCode is not None and not isinstance(self.HPOCode, str):
+            self.HPOCode = str(self.HPOCode)
 
-        if self.maxo_label is not None and not isinstance(self.maxo_label, str):
-            self.maxo_label = str(self.maxo_label)
+        if self.MAXOLabel is not None and not isinstance(self.MAXOLabel, str):
+            self.MAXOLabel = str(self.MAXOLabel)
 
-        if self.maxo_code is not None and not isinstance(self.maxo_code, str):
-            self.maxo_code = str(self.maxo_code)
+        if self.MAXOCode is not None and not isinstance(self.MAXOCode, str):
+            self.MAXOCode = str(self.MAXOCode)
 
-        if self.other_label is not None and not isinstance(self.other_label, str):
-            self.other_label = str(self.other_label)
+        if self.OtherLabel is not None and not isinstance(self.OtherLabel, str):
+            self.OtherLabel = str(self.OtherLabel)
 
-        if self.other_code is not None and not isinstance(self.other_code, str):
-            self.other_code = str(self.other_code)
+        if self.OtherCode is not None and not isinstance(self.OtherCode, str):
+            self.OtherCode = str(self.OtherCode)
 
         super().__post_init__(**kwargs)
 
@@ -458,29 +458,33 @@ class Study(Thing):
     class_name: ClassVar[str] = "Study"
     class_model_uri: ClassVar[URIRef] = INCLUDE.Study
 
-    program: Union[str, "EnumProgram"] = None
-    study_code: Union[str, "EnumStudyCode"] = None
-    study_name: str = None
-    dbgap: Optional[str] = None
+    Program: Union[str, "EnumProgram"] = None
+    StudyCode: Union[str, "EnumStudyCode"] = None
+    StudyName: str = None
+    dbGap: Optional[str] = None
+    HasParticipant: Optional[Union[dict, Participant]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.program):
-            self.MissingRequiredField("program")
-        if not isinstance(self.program, EnumProgram):
-            self.program = EnumProgram(self.program)
+        if self._is_empty(self.Program):
+            self.MissingRequiredField("Program")
+        if not isinstance(self.Program, EnumProgram):
+            self.Program = EnumProgram(self.Program)
 
-        if self._is_empty(self.study_code):
-            self.MissingRequiredField("study_code")
-        if not isinstance(self.study_code, EnumStudyCode):
-            self.study_code = EnumStudyCode(self.study_code)
+        if self._is_empty(self.StudyCode):
+            self.MissingRequiredField("StudyCode")
+        if not isinstance(self.StudyCode, EnumStudyCode):
+            self.StudyCode = EnumStudyCode(self.StudyCode)
 
-        if self._is_empty(self.study_name):
-            self.MissingRequiredField("study_name")
-        if not isinstance(self.study_name, str):
-            self.study_name = str(self.study_name)
+        if self._is_empty(self.StudyName):
+            self.MissingRequiredField("StudyName")
+        if not isinstance(self.StudyName, str):
+            self.StudyName = str(self.StudyName)
 
-        if self.dbgap is not None and not isinstance(self.dbgap, str):
-            self.dbgap = str(self.dbgap)
+        if self.dbGap is not None and not isinstance(self.dbGap, str):
+            self.dbGap = str(self.dbGap)
+
+        if self.HasParticipant is not None and not isinstance(self.HasParticipant, Participant):
+            self.HasParticipant = Participant(**as_dict(self.HasParticipant))
 
         super().__post_init__(**kwargs)
 
@@ -562,7 +566,7 @@ class EnumRace(EnumDefinitionImpl):
     american_indian_or_alaskan_native = PermissibleValue(text="american_indian_or_alaskan_native")
     asian = PermissibleValue(text="asian")
     black_or_african_american = PermissibleValue(text="black_or_african_american")
-    more_than_one_race = PermissibleValue(text="more_than_one_race")
+    more_than_one_Race = PermissibleValue(text="more_than_one_Race")
     native_hawaiian_or_other_pacific_islander = PermissibleValue(text="native_hawaiian_or_other_pacific_islander")
     other = PermissibleValue(text="other")
     white = PermissibleValue(text="white")
@@ -631,176 +635,176 @@ class EnumStudyCode(EnumDefinitionImpl):
 class slots:
     pass
 
-slots.access_url = Slot(uri=INCLUDE['assay/access_url'], name="access_url", curie=INCLUDE.curie('assay/access_url'),
-                   model_uri=INCLUDE.access_url, domain=None, range=Optional[Union[str, URIorCURIE]])
+slots.AccessURL = Slot(uri=INCLUDE['assay/AccessURL'], name="AccessURL", curie=INCLUDE.curie('assay/AccessURL'),
+                   model_uri=INCLUDE.AccessURL, domain=None, range=Optional[Union[str, URIorCURIE]])
 
-slots.age_at_biospecimen_collection = Slot(uri=INCLUDE['assay/age_at_biospecimen_collection'], name="age_at_biospecimen_collection", curie=INCLUDE.curie('assay/age_at_biospecimen_collection'),
-                   model_uri=INCLUDE.age_at_biospecimen_collection, domain=None, range=Optional[int])
+slots.AgeAtBiospecimenCollection = Slot(uri=INCLUDE['assay/AgeAtBiospecimenCollection'], name="AgeAtBiospecimenCollection", curie=INCLUDE.curie('assay/AgeAtBiospecimenCollection'),
+                   model_uri=INCLUDE.AgeAtBiospecimenCollection, domain=None, range=Optional[int])
 
-slots.biospecimen_storage = Slot(uri=INCLUDE['assay/biospecimen_storage'], name="biospecimen_storage", curie=INCLUDE.curie('assay/biospecimen_storage'),
-                   model_uri=INCLUDE.biospecimen_storage, domain=None, range=Optional[str])
+slots.BiospecimenStorage = Slot(uri=INCLUDE['assay/BiospecimenStorage'], name="BiospecimenStorage", curie=INCLUDE.curie('assay/BiospecimenStorage'),
+                   model_uri=INCLUDE.BiospecimenStorage, domain=None, range=Optional[str])
 
-slots.collection_id = Slot(uri=INCLUDE['assay/collection_id'], name="collection_id", curie=INCLUDE.curie('assay/collection_id'),
-                   model_uri=INCLUDE.collection_id, domain=None, range=Optional[str])
+slots.CollectionID = Slot(uri=INCLUDE['assay/CollectionID'], name="CollectionID", curie=INCLUDE.curie('assay/CollectionID'),
+                   model_uri=INCLUDE.CollectionID, domain=None, range=Optional[str])
 
-slots.collection_sample_type = Slot(uri=INCLUDE['assay/collection_sample_type'], name="collection_sample_type", curie=INCLUDE.curie('assay/collection_sample_type'),
-                   model_uri=INCLUDE.collection_sample_type, domain=None, range=Optional[str])
+slots.CollectionSampleType = Slot(uri=INCLUDE['assay/CollectionSampleType'], name="CollectionSampleType", curie=INCLUDE.curie('assay/CollectionSampleType'),
+                   model_uri=INCLUDE.CollectionSampleType, domain=None, range=Optional[str])
 
-slots.container_id = Slot(uri=INCLUDE['assay/container_id'], name="container_id", curie=INCLUDE.curie('assay/container_id'),
-                   model_uri=INCLUDE.container_id, domain=None, range=Optional[str])
+slots.ContainerID = Slot(uri=INCLUDE['assay/ContainerID'], name="ContainerID", curie=INCLUDE.curie('assay/ContainerID'),
+                   model_uri=INCLUDE.ContainerID, domain=None, range=Optional[str])
 
-slots.data_access = Slot(uri=INCLUDE['assay/data_access'], name="data_access", curie=INCLUDE.curie('assay/data_access'),
-                   model_uri=INCLUDE.data_access, domain=None, range=Optional[Union[str, "EnumDataAccess"]])
+slots.DataAccess = Slot(uri=INCLUDE['assay/DataAccess'], name="DataAccess", curie=INCLUDE.curie('assay/DataAccess'),
+                   model_uri=INCLUDE.DataAccess, domain=None, range=Optional[Union[str, "EnumDataAccess"]])
 
-slots.data_category = Slot(uri=INCLUDE['assay/data_category'], name="data_category", curie=INCLUDE.curie('assay/data_category'),
-                   model_uri=INCLUDE.data_category, domain=None, range=str)
+slots.DataCategory = Slot(uri=INCLUDE['assay/DataCategory'], name="DataCategory", curie=INCLUDE.curie('assay/DataCategory'),
+                   model_uri=INCLUDE.DataCategory, domain=None, range=str)
 
-slots.data_type = Slot(uri=INCLUDE['assay/data_type'], name="data_type", curie=INCLUDE.curie('assay/data_type'),
-                   model_uri=INCLUDE.data_type, domain=None, range=Optional[str])
+slots.DataType = Slot(uri=INCLUDE['assay/DataType'], name="DataType", curie=INCLUDE.curie('assay/DataType'),
+                   model_uri=INCLUDE.DataType, domain=None, range=Optional[str])
 
-slots.experimental_strategy = Slot(uri=INCLUDE['assay/experimental_strategy'], name="experimental_strategy", curie=INCLUDE.curie('assay/experimental_strategy'),
-                   model_uri=INCLUDE.experimental_strategy, domain=None, range=Optional[str])
+slots.ExperimentalStrategy = Slot(uri=INCLUDE['assay/ExperimentalStrategy'], name="ExperimentalStrategy", curie=INCLUDE.curie('assay/ExperimentalStrategy'),
+                   model_uri=INCLUDE.ExperimentalStrategy, domain=None, range=Optional[str])
 
-slots.file_id = Slot(uri=INCLUDE['assay/file_id'], name="file_id", curie=INCLUDE.curie('assay/file_id'),
-                   model_uri=INCLUDE.file_id, domain=None, range=Optional[str])
+slots.FileID = Slot(uri=INCLUDE['assay/FileID'], name="FileID", curie=INCLUDE.curie('assay/FileID'),
+                   model_uri=INCLUDE.FileID, domain=None, range=Optional[str])
 
-slots.file_name = Slot(uri=INCLUDE['assay/file_name'], name="file_name", curie=INCLUDE.curie('assay/file_name'),
-                   model_uri=INCLUDE.file_name, domain=None, range=str)
+slots.FileName = Slot(uri=INCLUDE['assay/FileName'], name="FileName", curie=INCLUDE.curie('assay/FileName'),
+                   model_uri=INCLUDE.FileName, domain=None, range=str)
 
-slots.format = Slot(uri=INCLUDE['assay/format'], name="format", curie=INCLUDE.curie('assay/format'),
-                   model_uri=INCLUDE.format, domain=None, range=str)
+slots.Format = Slot(uri=INCLUDE['assay/Format'], name="Format", curie=INCLUDE.curie('assay/Format'),
+                   model_uri=INCLUDE.Format, domain=None, range=str)
 
-slots.has_aliquot = Slot(uri=INCLUDE['assay/has_aliquot'], name="has_aliquot", curie=INCLUDE.curie('assay/has_aliquot'),
-                   model_uri=INCLUDE.has_aliquot, domain=None, range=Optional[Union[dict, Aliquot]])
+slots.HasAliquot = Slot(uri=INCLUDE['assay/HasAliquot'], name="HasAliquot", curie=INCLUDE.curie('assay/HasAliquot'),
+                   model_uri=INCLUDE.HasAliquot, domain=None, range=Optional[Union[dict, Aliquot]])
 
-slots.has_biospecimen = Slot(uri=INCLUDE['assay/has_biospecimen'], name="has_biospecimen", curie=INCLUDE.curie('assay/has_biospecimen'),
-                   model_uri=INCLUDE.has_biospecimen, domain=None, range=Optional[Union[dict, Biospecimen]])
+slots.HasBiospecimen = Slot(uri=INCLUDE['assay/HasBiospecimen'], name="HasBiospecimen", curie=INCLUDE.curie('assay/HasBiospecimen'),
+                   model_uri=INCLUDE.HasBiospecimen, domain=None, range=Optional[Union[dict, Biospecimen]])
 
-slots.has_datafile = Slot(uri=INCLUDE['assay/has_datafile'], name="has_datafile", curie=INCLUDE.curie('assay/has_datafile'),
-                   model_uri=INCLUDE.has_datafile, domain=None, range=Optional[Union[dict, DataFile]])
+slots.HasDatafile = Slot(uri=INCLUDE['assay/HasDatafile'], name="HasDatafile", curie=INCLUDE.curie('assay/HasDatafile'),
+                   model_uri=INCLUDE.HasDatafile, domain=None, range=Optional[Union[dict, DataFile]])
 
-slots.has_output = Slot(uri=INCLUDE['assay/has_output'], name="has_output", curie=INCLUDE.curie('assay/has_output'),
-                   model_uri=INCLUDE.has_output, domain=None, range=Optional[Union[dict, DataFile]])
+slots.HasOutput = Slot(uri=INCLUDE['assay/HasOutput'], name="HasOutput", curie=INCLUDE.curie('assay/HasOutput'),
+                   model_uri=INCLUDE.HasOutput, domain=None, range=Optional[Union[dict, DataFile]])
 
-slots.laboratory_procedure = Slot(uri=INCLUDE['assay/laboratory_procedure'], name="laboratory_procedure", curie=INCLUDE.curie('assay/laboratory_procedure'),
-                   model_uri=INCLUDE.laboratory_procedure, domain=None, range=Optional[str])
+slots.LaboratoryProcedure = Slot(uri=INCLUDE['assay/LaboratoryProcedure'], name="LaboratoryProcedure", curie=INCLUDE.curie('assay/LaboratoryProcedure'),
+                   model_uri=INCLUDE.LaboratoryProcedure, domain=None, range=Optional[str])
 
-slots.original_file_name = Slot(uri=INCLUDE['assay/original_file_name'], name="original_file_name", curie=INCLUDE.curie('assay/original_file_name'),
-                   model_uri=INCLUDE.original_file_name, domain=None, range=str)
+slots.OriginalFileName = Slot(uri=INCLUDE['assay/OriginalFileName'], name="OriginalFileName", curie=INCLUDE.curie('assay/OriginalFileName'),
+                   model_uri=INCLUDE.OriginalFileName, domain=None, range=str)
 
-slots.parent_sample_id = Slot(uri=INCLUDE['assay/parent_sample_id'], name="parent_sample_id", curie=INCLUDE.curie('assay/parent_sample_id'),
-                   model_uri=INCLUDE.parent_sample_id, domain=None, range=Optional[str])
+slots.ParentSampleID = Slot(uri=INCLUDE['assay/ParentSampleID'], name="ParentSampleID", curie=INCLUDE.curie('assay/ParentSampleID'),
+                   model_uri=INCLUDE.ParentSampleID, domain=None, range=Optional[str])
 
-slots.parent_sample_type = Slot(uri=INCLUDE['assay/parent_sample_type'], name="parent_sample_type", curie=INCLUDE.curie('assay/parent_sample_type'),
-                   model_uri=INCLUDE.parent_sample_type, domain=None, range=Optional[str])
+slots.ParentSampleType = Slot(uri=INCLUDE['assay/ParentSampleType'], name="ParentSampleType", curie=INCLUDE.curie('assay/ParentSampleType'),
+                   model_uri=INCLUDE.ParentSampleType, domain=None, range=Optional[str])
 
-slots.sample_availability = Slot(uri=INCLUDE['assay/sample_availability'], name="sample_availability", curie=INCLUDE.curie('assay/sample_availability'),
-                   model_uri=INCLUDE.sample_availability, domain=None, range=Optional[Union[str, "EnumSampleAvailability"]])
+slots.SampleAvailability = Slot(uri=INCLUDE['assay/SampleAvailability'], name="SampleAvailability", curie=INCLUDE.curie('assay/SampleAvailability'),
+                   model_uri=INCLUDE.SampleAvailability, domain=None, range=Optional[Union[str, "EnumSampleAvailability"]])
 
-slots.sample_id = Slot(uri=INCLUDE['assay/sample_id'], name="sample_id", curie=INCLUDE.curie('assay/sample_id'),
-                   model_uri=INCLUDE.sample_id, domain=None, range=str)
+slots.SampleID = Slot(uri=INCLUDE['assay/SampleID'], name="SampleID", curie=INCLUDE.curie('assay/SampleID'),
+                   model_uri=INCLUDE.SampleID, domain=None, range=str)
 
-slots.sample_type = Slot(uri=INCLUDE['assay/sample_type'], name="sample_type", curie=INCLUDE.curie('assay/sample_type'),
-                   model_uri=INCLUDE.sample_type, domain=None, range=str)
+slots.SampleType = Slot(uri=INCLUDE['assay/SampleType'], name="SampleType", curie=INCLUDE.curie('assay/SampleType'),
+                   model_uri=INCLUDE.SampleType, domain=None, range=str)
 
-slots.size = Slot(uri=INCLUDE['assay/size'], name="size", curie=INCLUDE.curie('assay/size'),
-                   model_uri=INCLUDE.size, domain=None, range=Optional[str])
+slots.Size = Slot(uri=INCLUDE['assay/Size'], name="Size", curie=INCLUDE.curie('assay/Size'),
+                   model_uri=INCLUDE.Size, domain=None, range=Optional[str])
 
-slots.uses_biospecimen = Slot(uri=INCLUDE['assay/uses_biospecimen'], name="uses_biospecimen", curie=INCLUDE.curie('assay/uses_biospecimen'),
-                   model_uri=INCLUDE.uses_biospecimen, domain=None, range=Optional[Union[dict, Biospecimen]])
+slots.UsesBiospecimen = Slot(uri=INCLUDE['assay/UsesBiospecimen'], name="UsesBiospecimen", curie=INCLUDE.curie('assay/UsesBiospecimen'),
+                   model_uri=INCLUDE.UsesBiospecimen, domain=None, range=Optional[Union[dict, Biospecimen]])
 
-slots.volume = Slot(uri=INCLUDE['assay/volume'], name="volume", curie=INCLUDE.curie('assay/volume'),
-                   model_uri=INCLUDE.volume, domain=None, range=Optional[float])
+slots.Volume = Slot(uri=INCLUDE['assay/Volume'], name="Volume", curie=INCLUDE.curie('assay/Volume'),
+                   model_uri=INCLUDE.Volume, domain=None, range=Optional[float])
 
-slots.volume_unit = Slot(uri=INCLUDE['assay/volume_unit'], name="volume_unit", curie=INCLUDE.curie('assay/volume_unit'),
-                   model_uri=INCLUDE.volume_unit, domain=None, range=Optional[str])
+slots.VolumeUnit = Slot(uri=INCLUDE['assay/VolumeUnit'], name="VolumeUnit", curie=INCLUDE.curie('assay/VolumeUnit'),
+                   model_uri=INCLUDE.VolumeUnit, domain=None, range=Optional[str])
 
-slots.age_at_condition_observation = Slot(uri=INCLUDE['participant/age_at_condition_observation'], name="age_at_condition_observation", curie=INCLUDE.curie('participant/age_at_condition_observation'),
-                   model_uri=INCLUDE.age_at_condition_observation, domain=None, range=Optional[int])
+slots.AgeAtConditionObservation = Slot(uri=INCLUDE['participant/AgeAtConditionObservation'], name="AgeAtConditionObservation", curie=INCLUDE.curie('participant/AgeAtConditionObservation'),
+                   model_uri=INCLUDE.AgeAtConditionObservation, domain=None, range=Optional[int])
 
-slots.age_at_last_vital_status = Slot(uri=INCLUDE['participant/age_at_last_vital_status'], name="age_at_last_vital_status", curie=INCLUDE.curie('participant/age_at_last_vital_status'),
-                   model_uri=INCLUDE.age_at_last_vital_status, domain=None, range=Optional[int])
+slots.AgeAtLastVitalStatus = Slot(uri=INCLUDE['participant/AgeAtLastVitalStatus'], name="AgeAtLastVitalStatus", curie=INCLUDE.curie('participant/AgeAtLastVitalStatus'),
+                   model_uri=INCLUDE.AgeAtLastVitalStatus, domain=None, range=Optional[int])
 
-slots.condition_data_source = Slot(uri=INCLUDE['participant/condition_data_source'], name="condition_data_source", curie=INCLUDE.curie('participant/condition_data_source'),
-                   model_uri=INCLUDE.condition_data_source, domain=None, range=Optional[Union[str, "EnumConditionDataSource"]])
+slots.ConditionDataSource = Slot(uri=INCLUDE['participant/ConditionDataSource'], name="ConditionDataSource", curie=INCLUDE.curie('participant/ConditionDataSource'),
+                   model_uri=INCLUDE.ConditionDataSource, domain=None, range=Optional[Union[str, "EnumConditionDataSource"]])
 
-slots.condition_interpretation = Slot(uri=INCLUDE['participant/condition_interpretation'], name="condition_interpretation", curie=INCLUDE.curie('participant/condition_interpretation'),
-                   model_uri=INCLUDE.condition_interpretation, domain=None, range=Optional[Union[str, "EnumConditionInterpretation"]])
+slots.ConditionInterpretation = Slot(uri=INCLUDE['participant/ConditionInterpretation'], name="ConditionInterpretation", curie=INCLUDE.curie('participant/ConditionInterpretation'),
+                   model_uri=INCLUDE.ConditionInterpretation, domain=None, range=Optional[Union[str, "EnumConditionInterpretation"]])
 
-slots.down_syndrome_status = Slot(uri=INCLUDE['participant/down_syndrome_status'], name="down_syndrome_status", curie=INCLUDE.curie('participant/down_syndrome_status'),
-                   model_uri=INCLUDE.down_syndrome_status, domain=None, range=Union[str, "EnumDownSyndromeStatus"])
+slots.DownSyndromeStatus = Slot(uri=INCLUDE['participant/DownSyndromeStatus'], name="DownSyndromeStatus", curie=INCLUDE.curie('participant/DownSyndromeStatus'),
+                   model_uri=INCLUDE.DownSyndromeStatus, domain=None, range=Union[str, "EnumDownSyndromeStatus"])
 
-slots.ethnicity = Slot(uri=INCLUDE['participant/ethnicity'], name="ethnicity", curie=INCLUDE.curie('participant/ethnicity'),
-                   model_uri=INCLUDE.ethnicity, domain=None, range=Union[str, "EnumEthnicity"])
+slots.Ethnicity = Slot(uri=INCLUDE['participant/Ethnicity'], name="Ethnicity", curie=INCLUDE.curie('participant/Ethnicity'),
+                   model_uri=INCLUDE.Ethnicity, domain=None, range=Union[str, "EnumEthnicity"])
 
-slots.external_id = Slot(uri=INCLUDE['participant/external_id'], name="external_id", curie=INCLUDE.curie('participant/external_id'),
-                   model_uri=INCLUDE.external_id, domain=None, range=str)
+slots.ExternalID = Slot(uri=INCLUDE['participant/ExternalID'], name="ExternalID", curie=INCLUDE.curie('participant/ExternalID'),
+                   model_uri=INCLUDE.ExternalID, domain=None, range=str)
 
-slots.family_id = Slot(uri=INCLUDE['participant/family_id'], name="family_id", curie=INCLUDE.curie('participant/family_id'),
-                   model_uri=INCLUDE.family_id, domain=None, range=Optional[str])
+slots.FamilyID = Slot(uri=INCLUDE['participant/FamilyID'], name="FamilyID", curie=INCLUDE.curie('participant/FamilyID'),
+                   model_uri=INCLUDE.FamilyID, domain=None, range=Optional[str])
 
-slots.family_relationship = Slot(uri=INCLUDE['participant/family_relationship'], name="family_relationship", curie=INCLUDE.curie('participant/family_relationship'),
-                   model_uri=INCLUDE.family_relationship, domain=None, range=Optional[Union[dict, Participant]])
+slots.FamilyRelationship = Slot(uri=INCLUDE['participant/FamilyRelationship'], name="FamilyRelationship", curie=INCLUDE.curie('participant/FamilyRelationship'),
+                   model_uri=INCLUDE.FamilyRelationship, domain=None, range=Optional[Union[dict, Participant]])
 
-slots.family_type = Slot(uri=INCLUDE['participant/family_type'], name="family_type", curie=INCLUDE.curie('participant/family_type'),
-                   model_uri=INCLUDE.family_type, domain=None, range=Union[str, "EnumFamilyType"])
+slots.FamilyType = Slot(uri=INCLUDE['participant/FamilyType'], name="FamilyType", curie=INCLUDE.curie('participant/FamilyType'),
+                   model_uri=INCLUDE.FamilyType, domain=None, range=Union[str, "EnumFamilyType"])
 
-slots.father_id = Slot(uri=INCLUDE['participant/father_id'], name="father_id", curie=INCLUDE.curie('participant/father_id'),
-                   model_uri=INCLUDE.father_id, domain=None, range=Optional[str])
+slots.FatherID = Slot(uri=INCLUDE['participant/FatherID'], name="FatherID", curie=INCLUDE.curie('participant/FatherID'),
+                   model_uri=INCLUDE.FatherID, domain=None, range=Optional[str])
 
-slots.has_participant = Slot(uri=INCLUDE['participant/has_participant'], name="has_participant", curie=INCLUDE.curie('participant/has_participant'),
-                   model_uri=INCLUDE.has_participant, domain=None, range=Optional[Union[dict, Participant]])
+slots.HasParticipant = Slot(uri=INCLUDE['participant/HasParticipant'], name="HasParticipant", curie=INCLUDE.curie('participant/HasParticipant'),
+                   model_uri=INCLUDE.HasParticipant, domain=None, range=Optional[Union[dict, Participant]])
 
-slots.has_study = Slot(uri=INCLUDE['participant/has_study'], name="has_study", curie=INCLUDE.curie('participant/has_study'),
-                   model_uri=INCLUDE.has_study, domain=None, range=Optional[Union[dict, Study]])
+slots.HasStudy = Slot(uri=INCLUDE['participant/HasStudy'], name="HasStudy", curie=INCLUDE.curie('participant/HasStudy'),
+                   model_uri=INCLUDE.HasStudy, domain=None, range=Optional[Union[dict, Study]])
 
-slots.hpo_code = Slot(uri=INCLUDE['participant/hpo_code'], name="hpo_code", curie=INCLUDE.curie('participant/hpo_code'),
-                   model_uri=INCLUDE.hpo_code, domain=None, range=Optional[str])
+slots.HPOCode = Slot(uri=INCLUDE['participant/HPOCode'], name="HPOCode", curie=INCLUDE.curie('participant/HPOCode'),
+                   model_uri=INCLUDE.HPOCode, domain=None, range=Optional[str])
 
-slots.hpo_label = Slot(uri=INCLUDE['participant/hpo_label'], name="hpo_label", curie=INCLUDE.curie('participant/hpo_label'),
-                   model_uri=INCLUDE.hpo_label, domain=None, range=Optional[str])
+slots.HPOLabel = Slot(uri=INCLUDE['participant/HPOLabel'], name="HPOLabel", curie=INCLUDE.curie('participant/HPOLabel'),
+                   model_uri=INCLUDE.HPOLabel, domain=None, range=Optional[str])
 
-slots.maxo_code = Slot(uri=INCLUDE['participant/maxo_code'], name="maxo_code", curie=INCLUDE.curie('participant/maxo_code'),
-                   model_uri=INCLUDE.maxo_code, domain=None, range=Optional[str])
+slots.MAXOCode = Slot(uri=INCLUDE['participant/MAXOCode'], name="MAXOCode", curie=INCLUDE.curie('participant/MAXOCode'),
+                   model_uri=INCLUDE.MAXOCode, domain=None, range=Optional[str])
 
-slots.maxo_label = Slot(uri=INCLUDE['participant/maxo_label'], name="maxo_label", curie=INCLUDE.curie('participant/maxo_label'),
-                   model_uri=INCLUDE.maxo_label, domain=None, range=Optional[str])
+slots.MAXOLabel = Slot(uri=INCLUDE['participant/MAXOLabel'], name="MAXOLabel", curie=INCLUDE.curie('participant/MAXOLabel'),
+                   model_uri=INCLUDE.MAXOLabel, domain=None, range=Optional[str])
 
-slots.mondo_code = Slot(uri=INCLUDE['participant/mondo_code'], name="mondo_code", curie=INCLUDE.curie('participant/mondo_code'),
-                   model_uri=INCLUDE.mondo_code, domain=None, range=Optional[str])
+slots.MONDOCode = Slot(uri=INCLUDE['participant/MONDOCode'], name="MONDOCode", curie=INCLUDE.curie('participant/MONDOCode'),
+                   model_uri=INCLUDE.MONDOCode, domain=None, range=Optional[str])
 
-slots.mondo_label = Slot(uri=INCLUDE['participant/mondo_label'], name="mondo_label", curie=INCLUDE.curie('participant/mondo_label'),
-                   model_uri=INCLUDE.mondo_label, domain=None, range=Optional[str])
+slots.MONDOLabel = Slot(uri=INCLUDE['participant/MONDOLabel'], name="MONDOLabel", curie=INCLUDE.curie('participant/MONDOLabel'),
+                   model_uri=INCLUDE.MONDOLabel, domain=None, range=Optional[str])
 
-slots.mother_id = Slot(uri=INCLUDE['participant/mother_id'], name="mother_id", curie=INCLUDE.curie('participant/mother_id'),
-                   model_uri=INCLUDE.mother_id, domain=None, range=Optional[str])
+slots.MotherID = Slot(uri=INCLUDE['participant/MotherID'], name="MotherID", curie=INCLUDE.curie('participant/MotherID'),
+                   model_uri=INCLUDE.MotherID, domain=None, range=Optional[str])
 
-slots.other_code = Slot(uri=INCLUDE['participant/other_code'], name="other_code", curie=INCLUDE.curie('participant/other_code'),
-                   model_uri=INCLUDE.other_code, domain=None, range=Optional[str])
+slots.OtherCode = Slot(uri=INCLUDE['participant/OtherCode'], name="OtherCode", curie=INCLUDE.curie('participant/OtherCode'),
+                   model_uri=INCLUDE.OtherCode, domain=None, range=Optional[str])
 
-slots.other_label = Slot(uri=INCLUDE['participant/other_label'], name="other_label", curie=INCLUDE.curie('participant/other_label'),
-                   model_uri=INCLUDE.other_label, domain=None, range=Optional[str])
+slots.OtherLabel = Slot(uri=INCLUDE['participant/OtherLabel'], name="OtherLabel", curie=INCLUDE.curie('participant/OtherLabel'),
+                   model_uri=INCLUDE.OtherLabel, domain=None, range=Optional[str])
 
-slots.outcomes_vital_status = Slot(uri=INCLUDE['participant/outcomes_vital_status'], name="outcomes_vital_status", curie=INCLUDE.curie('participant/outcomes_vital_status'),
-                   model_uri=INCLUDE.outcomes_vital_status, domain=None, range=Optional[Union[str, "EnumVitalStatus"]])
+slots.OutcomesVitalStatus = Slot(uri=INCLUDE['participant/OutcomesVitalStatus'], name="OutcomesVitalStatus", curie=INCLUDE.curie('participant/OutcomesVitalStatus'),
+                   model_uri=INCLUDE.OutcomesVitalStatus, domain=None, range=Optional[Union[str, "EnumVitalStatus"]])
 
-slots.participant_id = Slot(uri=INCLUDE['participant/participant_id'], name="participant_id", curie=INCLUDE.curie('participant/participant_id'),
-                   model_uri=INCLUDE.participant_id, domain=None, range=str)
+slots.ParticipantID = Slot(uri=INCLUDE['participant/ParticipantID'], name="ParticipantID", curie=INCLUDE.curie('participant/ParticipantID'),
+                   model_uri=INCLUDE.ParticipantID, domain=None, range=str)
 
-slots.race = Slot(uri=INCLUDE['participant/race'], name="race", curie=INCLUDE.curie('participant/race'),
-                   model_uri=INCLUDE.race, domain=None, range=Union[str, "EnumRace"])
+slots.Race = Slot(uri=INCLUDE['participant/Race'], name="Race", curie=INCLUDE.curie('participant/Race'),
+                   model_uri=INCLUDE.Race, domain=None, range=Union[str, "EnumRace"])
 
-slots.sex = Slot(uri=INCLUDE['participant/sex'], name="sex", curie=INCLUDE.curie('participant/sex'),
-                   model_uri=INCLUDE.sex, domain=None, range=Union[str, "EnumSex"])
+slots.Sex = Slot(uri=INCLUDE['participant/Sex'], name="Sex", curie=INCLUDE.curie('participant/Sex'),
+                   model_uri=INCLUDE.Sex, domain=None, range=Union[str, "EnumSex"])
 
-slots.dbgap = Slot(uri=INCLUDE['study/dbgap'], name="dbgap", curie=INCLUDE.curie('study/dbgap'),
-                   model_uri=INCLUDE.dbgap, domain=None, range=Optional[str])
+slots.dbGap = Slot(uri=INCLUDE['study/dbGap'], name="dbGap", curie=INCLUDE.curie('study/dbGap'),
+                   model_uri=INCLUDE.dbGap, domain=None, range=Optional[str])
 
-slots.program = Slot(uri=INCLUDE['study/program'], name="program", curie=INCLUDE.curie('study/program'),
-                   model_uri=INCLUDE.program, domain=None, range=Union[str, "EnumProgram"])
+slots.Program = Slot(uri=INCLUDE['study/Program'], name="Program", curie=INCLUDE.curie('study/Program'),
+                   model_uri=INCLUDE.Program, domain=None, range=Union[str, "EnumProgram"])
 
-slots.study_code = Slot(uri=INCLUDE['study/study_code'], name="study_code", curie=INCLUDE.curie('study/study_code'),
-                   model_uri=INCLUDE.study_code, domain=None, range=Union[str, "EnumStudyCode"])
+slots.StudyCode = Slot(uri=INCLUDE['study/StudyCode'], name="StudyCode", curie=INCLUDE.curie('study/StudyCode'),
+                   model_uri=INCLUDE.StudyCode, domain=None, range=Union[str, "EnumStudyCode"])
 
-slots.study_name = Slot(uri=INCLUDE['study/study_name'], name="study_name", curie=INCLUDE.curie('study/study_name'),
-                   model_uri=INCLUDE.study_name, domain=None, range=str)
+slots.StudyName = Slot(uri=INCLUDE['study/StudyName'], name="StudyName", curie=INCLUDE.curie('study/StudyName'),
+                   model_uri=INCLUDE.StudyName, domain=None, range=str)

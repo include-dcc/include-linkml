@@ -12,11 +12,11 @@
          "additionalProperties": false,
          "description": "An assay",
          "properties": {
-            "has_output": {
+            "HasOutput": {
                "$ref": "#/$defs/DataFile",
                "description": "The DataFile Output of an Assay"
             },
-            "uses_biospecimen": {
+            "UsesBiospecimen": {
                "$ref": "#/$defs/Biospecimen",
                "description": "The Biospecimen an Assay is performed on"
             }
@@ -29,78 +29,78 @@
          "additionalProperties": false,
          "description": "A Biospecimen Collected from A Participant",
          "properties": {
-            "age_at_biospecimen_collection": {
+            "AgeAtBiospecimenCollection": {
                "description": "Age in days of participant at time of biospecimen collection",
                "type": "integer"
             },
-            "biospecimen_storage": {
+            "BiospecimenStorage": {
                "description": "Method by which Container is stored (e.g. -80C freezer, Liquid nitrogen, etc.)",
                "type": "string"
             },
-            "collection_id": {
+            "CollectionID": {
                "description": "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed).",
                "type": "string"
             },
-            "collection_sample_type": {
+            "CollectionSampleType": {
                "description": "Type of biological material comprising the collected sample (e.g. Whole blood, Bone marrow, Saliva, etc.)",
                "type": "string"
             },
-            "container_id": {
+            "ContainerID": {
                "description": "Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.",
                "type": "string"
             },
-            "has_aliquot": {
+            "HasAliquot": {
                "$ref": "#/$defs/Aliquot",
                "description": "An aliquot of a sample"
             },
-            "has_datafile": {
+            "HasDatafile": {
                "$ref": "#/$defs/DataFile",
                "description": "Link to a DataFile"
             },
-            "has_participant": {
+            "HasParticipant": {
                "$ref": "#/$defs/Participant",
                "description": "Link to a Participant"
             },
-            "has_study": {
+            "HasStudy": {
                "$ref": "#/$defs/Study",
                "description": "Link to a Study"
             },
-            "laboratory_procedure": {
+            "LaboratoryProcedure": {
                "description": "Procedure by which Sample was derived from Parent Sample (e.g. RBC lysis, Centrifugation, Ficoll, etc.)",
                "type": "string"
             },
-            "parent_sample_id": {
+            "ParentSampleID": {
                "description": "Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable)",
                "type": "string"
             },
-            "parent_sample_type": {
+            "ParentSampleType": {
                "description": "Type of biological material comprising the parent sample (e.g. Plasma, Serum, White blood cells, etc.)",
                "type": "string"
             },
-            "sample_availability": {
+            "SampleAvailability": {
                "$ref": "#/$defs/EnumSampleAvailability",
                "description": "Whether or not the sample is potentially available for sharing through the Virtual Biorepository"
             },
-            "sample_id": {
+            "SampleID": {
                "description": "Identifier for sample. A sample is a unique biological material; two samples with two different IDs are biologically distinct.",
                "type": "string"
             },
-            "sample_type": {
+            "SampleType": {
                "description": "Type of biological material comprising the sample (e.g. Plasma, Serum, White blood cells, DNA, RNA, etc.)",
                "type": "string"
             },
-            "volume": {
+            "Volume": {
                "description": "Amount of sample in container",
                "type": "number"
             },
-            "volume_unit": {
-               "description": "Unit of sample volume",
+            "VolumeUnit": {
+               "description": "Unit of sample Volume",
                "type": "string"
             }
          },
          "required": [
-            "sample_id",
-            "sample_type"
+            "SampleID",
+            "SampleType"
          ],
          "title": "Biospecimen",
          "type": "object"
@@ -109,51 +109,51 @@
          "additionalProperties": false,
          "description": "A Condition of a Participant",
          "properties": {
-            "age_at_condition_observation": {
+            "AgeAtConditionObservation": {
                "description": "Age in days at which condition was observed, recorded, or diagnosed",
                "type": "integer"
             },
-            "condition_data_source": {
+            "ConditionDataSource": {
                "$ref": "#/$defs/EnumConditionDataSource",
                "description": "Whether condition information was obtained from medical records (Clinical) or patient survey (Self-Reported)"
             },
-            "condition_interpretation": {
+            "ConditionInterpretation": {
                "$ref": "#/$defs/EnumConditionInterpretation",
                "description": "Whether condition was observed or not. \"Not Observed\" indicates participant was specifically examined for that condition, or health record specifically queried for that condition, and found to be negative. Sept. 2022 release will only include positive assertions."
             },
-            "has_participant": {
-               "$ref": "#/$defs/Participant",
-               "description": "Link to a Participant"
-            },
-            "hpo_code": {
+            "HPOCode": {
                "description": "Code for condition in the Human Phenotype Ontology (HPO)",
                "type": "string"
             },
-            "hpo_label": {
+            "HPOLabel": {
                "description": "Label for condition in the Human Phenotype Ontology (HPO)",
                "type": "string"
             },
-            "maxo_code": {
+            "HasParticipant": {
+               "$ref": "#/$defs/Participant",
+               "description": "Link to a Participant"
+            },
+            "MAXOCode": {
                "description": "Code for condition in the Medical Action Ontology (MAXO)",
                "type": "string"
             },
-            "maxo_label": {
+            "MAXOLabel": {
                "description": "Label for condition in the Medical Action Ontology (MAXO)",
                "type": "string"
             },
-            "mondo_code": {
+            "MONDOCode": {
                "description": "Code for condition in the Mondo Disease Ontology (MONDO)",
                "type": "string"
             },
-            "mondo_label": {
+            "MONDOLabel": {
                "description": "Label for condition in the Mondo Disease Ontology (MONDO)",
                "type": "string"
             },
-            "other_code": {
+            "OtherCode": {
                "description": "Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)",
                "type": "string"
             },
-            "other_label": {
+            "OtherLabel": {
                "description": "Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)",
                "type": "string"
             }
@@ -166,73 +166,73 @@
          "additionalProperties": false,
          "description": "A DataFile Associated with a Participant or Study or Biospecimen",
          "properties": {
-            "access_url": {
+            "AccessURL": {
                "description": "Storage location for this file",
                "type": "string"
             },
-            "collection_id": {
+            "CollectionID": {
                "description": "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples. This may be the same as Parent Sample ID or Sample ID (if no processing was performed).",
                "type": "string"
             },
-            "data_access": {
+            "DataAccess": {
                "$ref": "#/$defs/EnumDataAccess",
                "description": "Type of access control on this file, determined by DCC"
             },
-            "data_category": {
+            "DataCategory": {
                "description": "General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune maps, Transcriptomics, etc.)",
                "type": "string"
             },
-            "data_type": {
+            "DataType": {
                "description": "Specific type of data contained in file (e.g. Aligned reads, Unaligned reads, SNV, CNV, Gene fusions, Isoform expression, Gene expression quantification, Structural variations, Cytokine profiles, Operation reports, Pathology reports, Histology images, Clinical supplement, Protein expression quantification, etc.)",
                "type": "string"
             },
-            "experimental_strategy": {
+            "ExperimentalStrategy": {
                "description": "Experimental method used to obtain data in file (e.g. WGS, RNAseq, WXS, SOMAscan, Mass spec proteomics, LCMS metabolomics, Multiplex immunoassay, Meso Scale Discovery, etc.)",
                "type": "string"
             },
-            "file_id": {
+            "FileID": {
                "description": "File identifier, assigned by DCC",
                "type": "string"
             },
-            "file_name": {
+            "FileName": {
                "description": "Synapse ID for file",
                "type": "string"
             },
-            "format": {
+            "Format": {
                "description": "Format of file (e.g. bam, cram, vcf, csv, html, png, fastq, pdf, dicom, etc.)",
                "type": "string"
             },
-            "has_biospecimen": {
+            "HasBiospecimen": {
                "$ref": "#/$defs/Biospecimen",
                "description": "Link to a Biospecimen"
             },
-            "has_participant": {
+            "HasParticipant": {
                "$ref": "#/$defs/Participant",
                "description": "Link to a Participant"
             },
-            "has_study": {
+            "HasStudy": {
                "$ref": "#/$defs/Study",
                "description": "Link to a Study"
             },
-            "original_file_name": {
+            "OriginalFileName": {
                "description": "Name of file, assigned by data contributor",
                "type": "string"
             },
-            "participant_id": {
+            "ParticipantID": {
                "description": "Unique identifier for the participant, assigned by DCC",
                "type": "string"
             },
-            "size": {
+            "Size": {
                "description": "Size of file",
                "type": "string"
             }
          },
          "required": [
-            "data_category",
-            "file_name",
-            "format",
-            "participant_id",
-            "original_file_name"
+            "DataCategory",
+            "FileName",
+            "Format",
+            "ParticipantID",
+            "OriginalFileName"
          ],
          "title": "DataFile",
          "type": "object"
@@ -313,7 +313,7 @@
             "american_indian_or_alaskan_native",
             "asian",
             "black_or_african_american",
-            "more_than_one_race",
+            "more_than_one_Race",
             "native_hawaiian_or_other_pacific_islander",
             "other",
             "white",
@@ -381,7 +381,7 @@
          "additionalProperties": false,
          "description": "A group of Participants in the same Study",
          "properties": {
-            "has_participant": {
+            "HasParticipant": {
                "$ref": "#/$defs/Participant",
                "description": "Link to a Participant"
             }
@@ -394,75 +394,75 @@
          "additionalProperties": false,
          "description": "A Participant in a Study",
          "properties": {
-            "age_at_last_vital_status": {
+            "AgeAtLastVitalStatus": {
                "description": "Age in days when participant's vital status was last recorded",
                "type": "integer"
             },
-            "down_syndrome_status": {
+            "DownSyndromeStatus": {
                "$ref": "#/$defs/EnumDownSyndromeStatus",
                "description": "Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)"
             },
-            "ethnicity": {
+            "Ethnicity": {
                "$ref": "#/$defs/EnumEthnicity",
                "description": "Ethnicity of participant"
             },
-            "external_id": {
+            "ExternalID": {
                "description": "Unique identifier for the participant, assigned by data contributor",
                "type": "string"
             },
-            "family_id": {
+            "FamilyID": {
                "description": "Unique identifer for family to which Participant belongs",
                "type": "string"
             },
-            "family_relationship": {
+            "FamilyRelationship": {
                "$ref": "#/$defs/Participant",
                "description": "Relationship of Participant to other family members"
             },
-            "family_type": {
+            "FamilyType": {
                "$ref": "#/$defs/EnumFamilyType",
                "description": "Structure of family members participating in the study (proband-only = no family members participating; duo = proband + parent; trio = proband + 2 parents; trio+ = proband + 2 parents + other relatives)"
             },
-            "father_id": {
+            "FatherID": {
                "description": "Participant ID for Participant's father",
                "type": "string"
             },
-            "has_datafile": {
+            "HasDatafile": {
                "$ref": "#/$defs/DataFile",
                "description": "Link to a DataFile"
             },
-            "has_study": {
+            "HasStudy": {
                "$ref": "#/$defs/Study",
                "description": "Link to a Study"
             },
-            "mother_id": {
+            "MotherID": {
                "description": "Participant ID for Participant's mother",
                "type": "string"
             },
-            "outcomes_vital_status": {
+            "OutcomesVitalStatus": {
                "$ref": "#/$defs/EnumVitalStatus",
                "description": "Whether participant is alive or dead"
             },
-            "participant_id": {
+            "ParticipantID": {
                "description": "Unique identifier for the participant, assigned by DCC",
                "type": "string"
             },
-            "race": {
+            "Race": {
                "$ref": "#/$defs/EnumRace",
                "description": "Race of participant"
             },
-            "sex": {
+            "Sex": {
                "$ref": "#/$defs/EnumSex",
                "description": "Sex of participant"
             }
          },
          "required": [
-            "down_syndrome_status",
-            "ethnicity",
-            "external_id",
-            "family_type",
-            "participant_id",
-            "race",
-            "sex"
+            "DownSyndromeStatus",
+            "Ethnicity",
+            "ExternalID",
+            "FamilyType",
+            "ParticipantID",
+            "Race",
+            "Sex"
          ],
          "title": "Participant",
          "type": "object"
@@ -471,27 +471,31 @@
          "additionalProperties": false,
          "description": "A Study",
          "properties": {
-            "dbgap": {
-               "description": "dbGaP study accession code",
-               "type": "string"
+            "HasParticipant": {
+               "$ref": "#/$defs/Participant",
+               "description": "Link to a Participant"
             },
-            "program": {
+            "Program": {
                "$ref": "#/$defs/EnumProgram",
                "description": "Funding source for the study"
             },
-            "study_code": {
+            "StudyCode": {
                "$ref": "#/$defs/EnumStudyCode",
                "description": "Unique identifer for the study, assigned by DCC"
             },
-            "study_name": {
+            "StudyName": {
                "description": "Name of the study, chosen by data contributor",
+               "type": "string"
+            },
+            "dbGap": {
+               "description": "dbGap study accession code",
                "type": "string"
             }
          },
          "required": [
-            "program",
-            "study_code",
-            "study_name"
+            "Program",
+            "StudyCode",
+            "StudyName"
          ],
          "title": "Study",
          "type": "object"
