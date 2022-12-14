@@ -46,7 +46,7 @@
                     "@id": "include:StudyName"
                 },
                 {
-                    "@id": "include:HasParticipant"
+                    "@id": "include:ParticipantID"
                 }
             ],
             "sms:validationRules": []
@@ -91,7 +91,7 @@
                     "@id": "include:FamilyID"
                 },
                 {
-                    "@id": "include:FamilyRelationship"
+                    "@id": "include:ParticipantID"
                 },
                 {
                     "@id": "include:FamilyType"
@@ -100,10 +100,10 @@
                     "@id": "include:FatherID"
                 },
                 {
-                    "@id": "include:HasDatafile"
+                    "@id": "include:FileID"
                 },
                 {
-                    "@id": "include:HasStudy"
+                    "@id": "include:StudyCode"
                 },
                 {
                     "@id": "include:MotherID"
@@ -148,7 +148,7 @@
             ],
             "sms:requiresDependency": [
                 {
-                    "@id": "include:HasParticipant"
+                    "@id": "include:ParticipantID"
                 }
             ],
             "sms:validationRules": []
@@ -170,7 +170,7 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
-                    "@id": "include:HasParticipant"
+                    "@id": "include:ParticipantID"
                 },
                 {
                     "@id": "include:AgeAtConditionObservation"
@@ -255,10 +255,10 @@
             ],
             "sms:requiresDependency": [
                 {
-                    "@id": "include:UsesBiospecimen"
+                    "@id": "include:SampleID"
                 },
                 {
-                    "@id": "include:HasOutput"
+                    "@id": "include:FileID"
                 }
             ],
             "sms:validationRules": []
@@ -306,13 +306,13 @@
                     "@id": "include:ContainerID"
                 },
                 {
-                    "@id": "include:HasDatafile"
+                    "@id": "include:FileID"
                 },
                 {
-                    "@id": "include:HasParticipant"
+                    "@id": "include:ParticipantID"
                 },
                 {
-                    "@id": "include:HasStudy"
+                    "@id": "include:StudyCode"
                 },
                 {
                     "@id": "include:LaboratoryProcedure"
@@ -399,13 +399,13 @@
                     "@id": "include:Format"
                 },
                 {
-                    "@id": "include:HasBiospecimen"
+                    "@id": "include:SampleID"
                 },
                 {
-                    "@id": "include:HasParticipant"
+                    "@id": "include:ParticipantID"
                 },
                 {
-                    "@id": "include:HasStudy"
+                    "@id": "include:StudyCode"
                 },
                 {
                     "@id": "include:ParticipantID"

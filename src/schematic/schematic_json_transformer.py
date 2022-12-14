@@ -40,6 +40,12 @@ logging.info("running transformer")
 #                             {'@id': 'bts:DbGaP'}],
 #  'sms:validationRules': []}
 
+OBJECT_RANGE_MAP = {
+    "Participant": "ParticipantID",
+    "Biospecimen": "SampleID",
+    "Study": "StudyCode",
+    "DataFile": "FileID"
+}
 class SchematicJSONTransformer(object):
     def __init__(self, schema_path, output_path):
         self.schema_path = schema_path
@@ -79,8 +85,12 @@ class SchematicJSONTransformer(object):
             if len(sdef['slots']):
                 class_object['sms:requiresDependency'] = []
                 for slot in sdef['slots']:
-                    # slot_sv = includify_curie(self.sv.get_slot(slot).name)
-                    slot_sv = self.sv.get_slot(slot).definition_uri
+                    slotdef = self.sv.get_slot(slot)
+                    slot_range = slotdef.range
+                    slot_sv = slotdef.definition_uri
+                    if slot_range in OBJECT_RANGE_MAP.keys():
+                        slot_sv = includify_curie(OBJECT_RANGE_MAP[slot_range])
+
                     class_object['sms:requiresDependency'].append(make_object(slot_sv))
             self.schematic_classes.append(class_object)
 
