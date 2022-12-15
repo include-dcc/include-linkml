@@ -126,7 +126,7 @@ slots:
     description: Identifier for the eldest sample in a lineage of processed, pooled,
       or aliquoted samples. This may be the same as Parent Sample ID or Sample ID
       (if no processing was performed).
-    title: Collection Id
+    title: Collection ID
     range: string
   collection_sample_type:
     definition_uri: include:collection_sample_type
@@ -139,7 +139,7 @@ slots:
     description: Identifier for specific container/aliquot of sample, if applicable.
       For example, distinct aliquots of a sample will have the same Sample ID but
       different Container IDs.
-    title: Container Id
+    title: Container ID
     range: string
   data_access:
     definition_uri: include:data_access
@@ -171,7 +171,7 @@ slots:
   file_id:
     definition_uri: include:file_id
     description: File identifier, assigned by DCC
-    title: File Id
+    title: File ID
     range: string
   file_name:
     definition_uri: include:file_name
@@ -240,7 +240,7 @@ slots:
     definition_uri: include:sample_id
     description: Identifier for sample. A sample is a unique biological material;
       two samples with two different IDs are biologically distinct.
-    title: Sample Id
+    title: Sample ID
     required: true
     range: string
   sample_type:
