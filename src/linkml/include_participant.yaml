@@ -49,7 +49,7 @@ classes:
     - first_patient_engagement_event
     - outcomes_vital_status
     - age_at_last_vital_status    
-    - has_datafile # there's no slot for this below? 
+    - has_datafile 
     - has_study     
   # FamilyGroup:
   #   name: FamilyGroup
@@ -79,6 +79,7 @@ classes:
     slots:
     - has_participant
     - event_id
+    - event_type
     - condition_source_text # will include DS Genetic Diagnosis
     - age_at_condition_observation
     - condition_interpretation
@@ -195,7 +196,6 @@ slots:
     description: Link to a Study
     title: Has Study
     range: Study
-  # has_datafile?
   has_participant:
     definition_uri: include:has_participant
     description: Link to a Participant # external or INCLUDE ID?
@@ -205,6 +205,10 @@ slots:
     definition_uri: include:event_id
     description: Identifier for event (Visit, Survey completion, Sample collection, etc.) to which the Condition data are linked, if applicable. There may be multiple events linked to a Participant.
     title: Event ID
+  event_type:
+    definition_uri: include:event_type
+    description: Type of event for which Event ID is given (Visit, Survey completion, Sample collection, etc.)
+    title: Event Type
   condition_source_text:
     definition_uri: include:condition_source_text
     description: Phenotype or diagnosis, as described by data contributor. The Down Syndrome Genetic Diagnosis will be rolled into this field.
@@ -311,7 +315,7 @@ enums:
         title: Self-reported
   enum_condition_status:
     name: enum_condition_status
-    permissible values:
+    permissible_values:
       current:
         text: current
         title: Current
@@ -425,6 +429,6 @@ enums:
       alive:
         text: alive
         title: Alive
-      unknown:
+      unknown_or_not_available:
         text: unknown_or_not_available
         title: Unknown or Not Available

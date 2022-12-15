@@ -135,7 +135,7 @@ enums:
         title: TRC-DS
       x01_desmith:
         text: x01_desmith
-        title: X01-DeSmith
+        title: X01-deSmith
       x01_hakon:
         text: x01_hakon
         title: X01-Hakon
