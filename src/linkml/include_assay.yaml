@@ -15,35 +15,35 @@ prefixes:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
 classes:
-  Aliquot:
-    annotations:
-      required:
-        tag: required
-        value: 'True'
-      requires_component:
-        tag: requires_component
-        value: Biospecimen
-    definition_uri: include:Aliquot
-    description: An aliquot of a sample
-    is_a: Thing
-    name: Aliquot
-    title: Aliquot
-  Assay:
-    annotations:
-      required:
-        tag: required
-        value: 'True'
-      requires_component:
-        tag: requires_component
-        value: Biospecimen,DataFile
-    definition_uri: include:Assay
-    description: An assay
-    is_a: Thing
-    name: Assay
-    slots:
-    - uses_biospecimen
-    - has_output
-    title: Assay
+  # Aliquot:
+  #   annotations:
+  #     required:
+  #       tag: required
+  #       value: 'True'
+  #     requires_component:
+  #       tag: requires_component
+  #       value: Biospecimen
+  #   definition_uri: include:Aliquot
+  #   description: An aliquot of a sample
+  #   is_a: Thing
+  #   name: Aliquot
+  #   title: Aliquot
+  # Assay:
+  #   annotations:
+  #     required:
+  #       tag: required
+  #       value: 'True'
+  #     requires_component:
+  #       tag: requires_component
+  #       value: Biospecimen,DataFile
+  #   definition_uri: include:Assay
+  #   description: An assay
+  #   is_a: Thing
+  #   name: Assay
+  #   slots:
+  #   - uses_biospecimen
+  #   - has_output
+  #   title: Assay
   Biospecimen:
     annotations:
       required:
@@ -73,7 +73,7 @@ classes:
     - sample_type
     - volume
     - volume_unit
-    - has_aliquot
+    # - has_aliquot
     title: Biospecimen
   DataFile:
     annotations:
@@ -186,11 +186,11 @@ slots:
     title: Format
     required: true
     range: string
-  has_aliquot:
-    definition_uri: include:has_aliquot
-    description: An aliquot of a sample
-    title: Has Aliquot
-    range: Aliquot
+  # has_aliquot:
+  #   definition_uri: include:has_aliquot
+  #   description: An aliquot of a sample
+  #   title: Has Aliquot
+  #   range: Aliquot
   has_biospecimen:
     definition_uri: include:has_biospecimen
     description: Link to a Biospecimen
@@ -201,11 +201,11 @@ slots:
     description: Link to a DataFile
     title: Has Datafile
     range: DataFile
-  has_output:
-    definition_uri: include:has_output
-    description: The DataFile Output of an Assay
-    title: Has Output
-    range: DataFile
+  # has_output:
+  #   definition_uri: include:has_output
+  #   description: The DataFile Output of an Assay
+  #   title: Has Output
+  #   range: DataFile
   laboratory_procedure:
     definition_uri: include:laboratory_procedure
     description: Procedure by which Sample was derived from Parent Sample (e.g. RBC
@@ -255,11 +255,11 @@ slots:
     description: Size of file
     title: Size
     range: string
-  uses_biospecimen:
-    definition_uri: include:uses_biospecimen
-    description: The Biospecimen an Assay is performed on
-    title: Uses Biospecimen
-    range: Biospecimen
+  # uses_biospecimen:
+  #   definition_uri: include:uses_biospecimen
+  #   description: The Biospecimen an Assay is performed on
+  #   title: Uses Biospecimen
+  #   range: Biospecimen
   volume:
     definition_uri: include:volume
     description: Amount of sample in container
