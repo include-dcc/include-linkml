@@ -164,11 +164,6 @@ slots:
     description: Unit of sample volume
     title: Volume Unit
     range: string
-  hasParticipant:
-    definition_uri: include:hasParticipant
-    description: Link to a Participant 
-    title: Has Participant
-    range: Participant # this should link to Participant External ID for now, then INCLUDE ID when we have them
   laboratoryProcedure:
     definition_uri: include:laboratoryProcedure
     description: Procedure by which Sample was derived from Parent Sample (e.g. Centrifugation, RBC lysis, Lyse/fix buffer, FACS, PAXgene DNA, PAXgene RNA, Qiagen Allprep, Ficoll)
@@ -185,6 +180,11 @@ slots:
       the Virtual Biorepository
     title: Sample Availability
     range: enum_sampleAvailability
+  hasParticipant:
+    definition_uri: include:hasParticipant
+    description: Link to a Participant 
+    title: Has Participant
+    range: Participant # this should link to Participant External ID for now, then INCLUDE ID when we have them
   fileId:
     definition_uri: include:fileId
     description: File identifier, assigned by DCC
@@ -196,11 +196,10 @@ slots:
     title: File Name
     required: true
     range: string
-  fileHash
+  fileHash:
     definition_uri: include:fileHash
     description: md5 hash of this file for validation (if known)
     title: File Hash
-    required: false
     range: string
   dataAccess:
     definition_uri: include:dataAccess
@@ -243,12 +242,12 @@ slots:
   fileSize:
     definition_uri: include:fileSize
     description: Size of file, if known (mainly important if large)
-    title: Size
+    title: File Size
     range: numeric
   fileSizeUnit:
     definition_uri: include:fileSizeUnit
     description: Unit of file size
-    title: Size
+    title: File Size Unit
     range: string # eventually want ontology terms here
   accessUrl:
     definition_uri: include:accessUrl
