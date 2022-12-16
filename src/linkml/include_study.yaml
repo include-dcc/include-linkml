@@ -24,19 +24,19 @@ classes:
     title: Study
     is_a: Thing
     slots:
-    - study_code
-    - study_name
+    - studyCode
+    - studyName
     - program
     - dbgap
 slots:
-  study_code:
-    definition_uri: include:study_code
+  studyCode:
+    definition_uri: include:studyCode
     description: Unique identifer for the study, assigned by DCC
     title: Study Code
-    range: enum_study_code
+    range: enum_studyCode
     required: true
-  study_name:
-    definition_uri: include:study_name
+  studyName:
+    definition_uri: include:studyName
     description: Full name of the study, chosen by data contributor
     title: Study Name
     required: true
@@ -50,7 +50,7 @@ slots:
   dbgap:
     definition_uri: include:dbgap
     description: dbGaP study accession code
-    title: Dbgap
+    title: dbGaP
     range: string  
 enums:
   enum_program:
@@ -63,9 +63,9 @@ enums:
       kf:
         text: kf
         title: KF
-  enum_study_code:
-    name: enum_study_code
-    definition_uri: include:enum_study_code
+  enum_studyCode:
+    name: enum_studyCode
+    definition_uri: include:enum_studyCode
     permissible_values:
       abcds:
         text: abcds
