@@ -50,7 +50,6 @@ classes:
     - outcomesVitalStatus
     - ageAtLastVitalStatus
     - hasCondition    
-    - hasDatafile 
     - hasStudy     
   # FamilyGroup:
   #   name: FamilyGroup
