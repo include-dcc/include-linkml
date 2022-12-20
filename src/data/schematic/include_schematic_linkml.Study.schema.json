@@ -4,53 +4,58 @@
   "title": "INCLUDE.Study.manifest",
   "type": "object",
   "properties": {
-    "Study Code": {
-      "enum": [
-        "DS-COG-AML",
-        "DS-Brain",
-        "DS360-CHD",
-        "DS-PCGC",
-        "BRI-DSR",
-        "X01-Hakon",
-        "DS-ISP",
-        "DS-Sleep",
-        "DSC",
-        "ADS",
-        "HTP",
-        "DS-COG-ALL",
-        "DS-PALS",
-        "DS-Nexus",
-        "ExCEEDS",
-        "ABC-DS",
-        "X01-DeSmith",
-        "ECODS",
-        "TRC-DS"
-      ]
-    },
     "Study Name": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
+    "Study Code": {
+      "enum": [
+        "DS-DETERMINED",
+        "TRC-DS",
+        "ECODS",
+        "AECOM-DS",
+        "BrainPower",
+        "DS-PALS",
+        "ExCEEDS",
+        "ADS",
+        "DS-HSAT",
+        "DS-Nexus",
+        "DS-Sleep",
+        "X01-Hakon",
+        "DS-COG-AML",
+        "DS-ISP",
+        "HTP",
+        "DS-PCGC",
+        "X01-deSmith",
+        "DS-Brain",
+        "BRI-DSR",
+        "DSC",
+        "ABC-DS",
+        "CHARGE-DS",
+        "DS-COG-ALL",
+        "DS360-CHD"
+      ]
+    },
     "dbGap": {},
+    "Program": {
+      "enum": [
+        "INCLUDE",
+        "KF"
+      ]
+    },
     "Participant ID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
-    },
-    "Program": {
-      "enum": [
-        "KF",
-        "INCLUDE"
-      ]
     }
   },
   "required": [
-    "Study Code",
     "Study Name",
-    "Participant ID",
-    "Program"
+    "Study Code",
+    "Program",
+    "Participant ID"
   ]
 }

@@ -34,16 +34,16 @@
             "sms:required": "sms:true",
             "sms:requiresDependency": [
                 {
-                    "@id": "include:dbGap"
-                },
-                {
-                    "@id": "include:Program"
-                },
-                {
                     "@id": "include:StudyCode"
                 },
                 {
                     "@id": "include:StudyName"
+                },
+                {
+                    "@id": "include:dbGap"
+                },
+                {
+                    "@id": "include:Program"
                 },
                 {
                     "@id": "include:ParticipantID"
@@ -464,86 +464,6 @@
             "sms:required": "sms:false"
         },
         {
-            "@id": "include:ds_cog_all",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "ds_cog_all",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "include:StudyCode"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "https://w3id.org/include"
-            },
-            "sms:displayName": "DS-COG-ALL",
-            "sms:required": "sms:false"
-        },
-        {
-            "@id": "include:ds_pcgc",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "ds_pcgc",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "include:StudyCode"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "https://w3id.org/include"
-            },
-            "sms:displayName": "DS-PCGC",
-            "sms:required": "sms:false"
-        },
-        {
-            "@id": "include:ds360_chd",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "ds360_chd",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "include:StudyCode"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "https://w3id.org/include"
-            },
-            "sms:displayName": "DS360-CHD",
-            "sms:required": "sms:false"
-        },
-        {
-            "@id": "include:dsc",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "dsc",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "include:StudyCode"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "https://w3id.org/include"
-            },
-            "sms:displayName": "DSC",
-            "sms:required": "sms:false"
-        },
-        {
-            "@id": "include:htp",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "htp",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "include:StudyCode"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "https://w3id.org/include"
-            },
-            "sms:displayName": "HTP",
-            "sms:required": "sms:false"
-        },
-        {
             "@id": "include:abcds",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -576,6 +496,70 @@
             "sms:required": "sms:false"
         },
         {
+            "@id": "include:aecom_ds",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "aecom_ds",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:StudyCode"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "AECOM-DS",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:brainpower",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "brainpower",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:StudyCode"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "BrainPower",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:bri_dsr",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "bri_dsr",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:StudyCode"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "BRI-DSR",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:charge_ds",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "charge_ds",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:StudyCode"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "CHARGE-DS",
+            "sms:required": "sms:false"
+        },
+        {
             "@id": "include:ds_brain",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -589,6 +573,22 @@
                 "@id": "https://w3id.org/include"
             },
             "sms:displayName": "DS-Brain",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:ds_cog_all",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ds_cog_all",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:StudyCode"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "DS-COG-ALL",
             "sms:required": "sms:false"
         },
         {
@@ -608,10 +608,10 @@
             "sms:required": "sms:false"
         },
         {
-            "@id": "include:bri_dsr",
+            "@id": "include:ds_determined",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "bri_dsr",
+            "rdfs:label": "ds_determined",
             "rdfs:subClassOf": [
                 {
                     "@id": "include:StudyCode"
@@ -620,7 +620,23 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "BRI-DSR",
+            "sms:displayName": "DS-DETERMINED",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:ds_hsat",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ds_hsat",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:StudyCode"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "DS-HSAT",
             "sms:required": "sms:false"
         },
         {
@@ -672,6 +688,22 @@
             "sms:required": "sms:false"
         },
         {
+            "@id": "include:ds_pcgc",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ds_pcgc",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:StudyCode"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "DS-PCGC",
+            "sms:required": "sms:false"
+        },
+        {
             "@id": "include:ds_sleep",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -685,6 +717,38 @@
                 "@id": "https://w3id.org/include"
             },
             "sms:displayName": "DS-Sleep",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:ds360_chd",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ds360_chd",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:StudyCode"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "DS360-CHD",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:dsc",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "dsc",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:StudyCode"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "DSC",
             "sms:required": "sms:false"
         },
         {
@@ -720,6 +784,22 @@
             "sms:required": "sms:false"
         },
         {
+            "@id": "include:htp",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "htp",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:StudyCode"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "HTP",
+            "sms:required": "sms:false"
+        },
+        {
             "@id": "include:trc_ds",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -748,7 +828,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "X01-DeSmith",
+            "sms:displayName": "X01-deSmith",
             "sms:required": "sms:false"
         },
         {
@@ -1320,34 +1400,37 @@
             },
             "schema:rangeIncludes": [
                 {
-                    "@id": "include:ds_cog_all"
-                },
-                {
-                    "@id": "include:ds_pcgc"
-                },
-                {
-                    "@id": "include:ds360_chd"
-                },
-                {
-                    "@id": "include:dsc"
-                },
-                {
-                    "@id": "include:htp"
-                },
-                {
                     "@id": "include:abcds"
                 },
                 {
                     "@id": "include:ads"
                 },
                 {
+                    "@id": "include:aecom_ds"
+                },
+                {
+                    "@id": "include:brainpower"
+                },
+                {
+                    "@id": "include:bri_dsr"
+                },
+                {
+                    "@id": "include:charge_ds"
+                },
+                {
                     "@id": "include:ds_brain"
+                },
+                {
+                    "@id": "include:ds_cog_all"
                 },
                 {
                     "@id": "include:ds_cog_aml"
                 },
                 {
-                    "@id": "include:bri_dsr"
+                    "@id": "include:ds_determined"
+                },
+                {
+                    "@id": "include:ds_hsat"
                 },
                 {
                     "@id": "include:ds_isp"
@@ -1359,13 +1442,25 @@
                     "@id": "include:ds_pals"
                 },
                 {
+                    "@id": "include:ds_pcgc"
+                },
+                {
                     "@id": "include:ds_sleep"
+                },
+                {
+                    "@id": "include:ds360_chd"
+                },
+                {
+                    "@id": "include:dsc"
                 },
                 {
                     "@id": "include:ecods"
                 },
                 {
                     "@id": "include:exceeds"
+                },
+                {
+                    "@id": "include:htp"
                 },
                 {
                     "@id": "include:trc_ds"

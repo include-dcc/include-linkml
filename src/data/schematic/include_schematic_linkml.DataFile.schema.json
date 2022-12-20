@@ -5,20 +5,22 @@
   "type": "object",
   "properties": {
     "Size": {},
-    "Sample ID": {
+    "File ID": {},
+    "Original File Name": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "Data Type": {},
     "Collection ID": {},
-    "File ID": {},
-    "File Name": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
+    "Access URL": {},
+    "Data Access": {
+      "enum": [
+        "Controlled",
+        "Registered",
+        "Open",
+        ""
+      ]
     },
     "Format": {
       "not": {
@@ -26,7 +28,18 @@
       },
       "minLength": 1
     },
-    "Experimental Strategy": {},
+    "File Name": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Sample ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
     "Data Category": {
       "not": {
         "type": "null"
@@ -35,56 +48,48 @@
     },
     "Study Code": {
       "enum": [
-        "DS-COG-AML",
-        "DS-Brain",
-        "DS360-CHD",
-        "DS-PCGC",
-        "BRI-DSR",
-        "X01-Hakon",
-        "DS-ISP",
-        "DS-Sleep",
-        "DSC",
-        "ADS",
-        "HTP",
-        "DS-COG-ALL",
-        "DS-PALS",
-        "DS-Nexus",
-        "ExCEEDS",
-        "ABC-DS",
-        "X01-DeSmith",
+        "DS-DETERMINED",
+        "TRC-DS",
         "ECODS",
-        "TRC-DS"
+        "AECOM-DS",
+        "BrainPower",
+        "DS-PALS",
+        "ExCEEDS",
+        "ADS",
+        "DS-HSAT",
+        "DS-Nexus",
+        "DS-Sleep",
+        "X01-Hakon",
+        "DS-COG-AML",
+        "DS-ISP",
+        "HTP",
+        "DS-PCGC",
+        "X01-deSmith",
+        "DS-Brain",
+        "BRI-DSR",
+        "DSC",
+        "ABC-DS",
+        "CHARGE-DS",
+        "DS-COG-ALL",
+        "DS360-CHD"
       ]
     },
-    "Original File Name": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
+    "Experimental Strategy": {},
     "Participant ID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "Data Access": {
-      "enum": [
-        "Open",
-        "Registered",
-        "Controlled",
-        ""
-      ]
-    },
-    "Access URL": {}
+    "Data Type": {}
   },
   "required": [
-    "Sample ID",
-    "File Name",
+    "Original File Name",
     "Format",
+    "File Name",
+    "Sample ID",
     "Data Category",
     "Study Code",
-    "Original File Name",
     "Participant ID"
   ]
 }

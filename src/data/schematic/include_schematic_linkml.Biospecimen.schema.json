@@ -4,71 +4,76 @@
   "title": "INCLUDE.Biospecimen.manifest",
   "type": "object",
   "properties": {
-    "Sample Availability": {
-      "enum": [
-        "Unavailable",
-        "Available",
-        ""
-      ]
-    },
-    "Age At Biospecimen Collection": {},
-    "Has Aliquot": {
-      "enum": [
-        "Aliquot",
-        ""
-      ]
-    },
-    "Collection ID": {},
-    "File ID": {},
-    "Parent Sample ID": {},
-    "Parent Sample Type": {},
     "Volume Unit": {},
-    "Study Code": {
-      "enum": [
-        "DS-COG-AML",
-        "DS-Brain",
-        "DS360-CHD",
-        "DS-PCGC",
-        "BRI-DSR",
-        "X01-Hakon",
-        "DS-ISP",
-        "DS-Sleep",
-        "DSC",
-        "ADS",
-        "HTP",
-        "DS-COG-ALL",
-        "DS-PALS",
-        "DS-Nexus",
-        "ExCEEDS",
-        "ABC-DS",
-        "X01-DeSmith",
-        "ECODS",
-        "TRC-DS"
-      ]
-    },
-    "Laboratory Procedure": {},
-    "Container ID": {},
     "Collection Sample Type": {},
-    "Participant ID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
+    "Parent Sample ID": {},
+    "Laboratory Procedure": {},
     "Sample Type": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
+    "File ID": {},
+    "Sample Availability": {
+      "enum": [
+        "Available",
+        "Unavailable",
+        ""
+      ]
+    },
+    "Collection ID": {},
+    "Parent Sample Type": {},
+    "Volume": {},
+    "Container ID": {},
+    "Biospecimen Storage": {},
     "Sample ID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "Biospecimen Storage": {},
-    "Volume": {},
+    "Study Code": {
+      "enum": [
+        "DS-DETERMINED",
+        "TRC-DS",
+        "ECODS",
+        "AECOM-DS",
+        "BrainPower",
+        "DS-PALS",
+        "ExCEEDS",
+        "ADS",
+        "DS-HSAT",
+        "DS-Nexus",
+        "DS-Sleep",
+        "X01-Hakon",
+        "DS-COG-AML",
+        "DS-ISP",
+        "HTP",
+        "DS-PCGC",
+        "X01-deSmith",
+        "DS-Brain",
+        "BRI-DSR",
+        "DSC",
+        "ABC-DS",
+        "CHARGE-DS",
+        "DS-COG-ALL",
+        "DS360-CHD"
+      ]
+    },
+    "Has Aliquot": {
+      "enum": [
+        "Aliquot",
+        ""
+      ]
+    },
+    "Participant ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Age At Biospecimen Collection": {},
     "Aliquot": {
       "not": {
         "type": "null"
@@ -77,10 +82,10 @@
     }
   },
   "required": [
-    "Study Code",
-    "Participant ID",
     "Sample Type",
     "Sample ID",
+    "Study Code",
+    "Participant ID",
     "Aliquot"
   ]
 }

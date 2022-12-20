@@ -4,75 +4,20 @@
   "title": "INCLUDE.Participant.manifest",
   "type": "object",
   "properties": {
-    "Father ID": {},
-    "Sex": {
-      "enum": [
-        "Unknown",
-        "Other",
-        "Male",
-        "Female"
-      ]
-    },
+    "Mother ID": {},
     "Down Syndrome Status": {
       "enum": [
-        "D21",
-        "T21"
+        "T21",
+        "D21"
       ]
     },
     "Ethnicity": {
       "enum": [
-        "Prefer not to answer",
-        "Hispanic or Latino",
-        "Asked but unknown",
         "Unknown",
-        "Not Hispanic or Latino"
-      ]
-    },
-    "File ID": {},
-    "Family Type": {
-      "enum": [
-        "Proband-only",
-        "Trio",
-        "Other",
-        "Trio+",
-        "Duo"
-      ]
-    },
-    "Mother ID": {},
-    "Race": {
-      "enum": [
-        "White",
-        "American Indian or Alaska Native",
-        "Asian",
-        "Native Hawaiian or Other Pacific Islander",
-        "Other",
-        "Black or African American",
-        "More than one Race",
+        "Asked but unknown",
+        "Not Hispanic or Latino",
+        "Hispanic or Latino",
         "Prefer not to answer"
-      ]
-    },
-    "Age At Last Vital Status": {},
-    "Study Code": {
-      "enum": [
-        "DS-COG-AML",
-        "DS-Brain",
-        "DS360-CHD",
-        "DS-PCGC",
-        "BRI-DSR",
-        "X01-Hakon",
-        "DS-ISP",
-        "DS-Sleep",
-        "DSC",
-        "ADS",
-        "HTP",
-        "DS-COG-ALL",
-        "DS-PALS",
-        "DS-Nexus",
-        "ExCEEDS",
-        "ABC-DS",
-        "X01-DeSmith",
-        "ECODS",
-        "TRC-DS"
       ]
     },
     "External ID": {
@@ -81,6 +26,72 @@
       },
       "minLength": 1
     },
+    "Family Type": {
+      "enum": [
+        "Duo",
+        "Trio+",
+        "Trio",
+        "Other",
+        "Proband-only"
+      ]
+    },
+    "File ID": {},
+    "Race": {
+      "enum": [
+        "More than one Race",
+        "Other",
+        "American Indian or Alaska Native",
+        "Black or African American",
+        "Native Hawaiian or Other Pacific Islander",
+        "Asian",
+        "White",
+        "Prefer not to answer"
+      ]
+    },
+    "Sex": {
+      "enum": [
+        "Female",
+        "Other",
+        "Unknown",
+        "Male"
+      ]
+    },
+    "Father ID": {},
+    "Study Code": {
+      "enum": [
+        "DS-DETERMINED",
+        "TRC-DS",
+        "ECODS",
+        "AECOM-DS",
+        "BrainPower",
+        "DS-PALS",
+        "ExCEEDS",
+        "ADS",
+        "DS-HSAT",
+        "DS-Nexus",
+        "DS-Sleep",
+        "X01-Hakon",
+        "DS-COG-AML",
+        "DS-ISP",
+        "HTP",
+        "DS-PCGC",
+        "X01-deSmith",
+        "DS-Brain",
+        "BRI-DSR",
+        "DSC",
+        "ABC-DS",
+        "CHARGE-DS",
+        "DS-COG-ALL",
+        "DS360-CHD"
+      ]
+    },
+    "Outcomes Vital Status": {
+      "enum": [
+        "Dead",
+        "Alive",
+        ""
+      ]
+    },
     "Participant ID": {
       "not": {
         "type": "null"
@@ -88,22 +99,16 @@
       "minLength": 1
     },
     "Family ID": {},
-    "Outcomes Vital Status": {
-      "enum": [
-        "Alive",
-        "Dead",
-        ""
-      ]
-    }
+    "Age At Last Vital Status": {}
   },
   "required": [
-    "Sex",
     "Down Syndrome Status",
     "Ethnicity",
+    "External ID",
     "Family Type",
     "Race",
+    "Sex",
     "Study Code",
-    "External ID",
     "Participant ID"
   ]
 }
