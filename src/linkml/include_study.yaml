@@ -29,7 +29,6 @@ classes:
     - StudyName
     - dbGap
     - Program
-    - HasParticipant
 slots:
   dbGap:
     definition_uri: include:dbGap
