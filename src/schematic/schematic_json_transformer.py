@@ -1,10 +1,12 @@
 import json
 from pprint import pprint
-from os.path import dirname
+
 import copy
-project_root = dirname(dirname(dirname(__file__)))
-from schematic_utils import TRANSFORM_MAP, \
-    make_object, \
+import logging
+
+
+
+from .schematic_utils import make_object, \
     set_annotation_required, \
     set_slot_required, \
     includify_curie, \
@@ -14,8 +16,7 @@ from schematic_utils import TRANSFORM_MAP, \
     pascal_to_camel
 
 from linkml_runtime.utils.schemaview import SchemaView
-
-
+logging.info("running transformer")
 # EXAMPLE SCHEMATIC OBJECT
 # {'@id': 'bts:Study',
 #  '@type': 'rdfs:Class',
@@ -39,7 +40,12 @@ from linkml_runtime.utils.schemaview import SchemaView
 #                             {'@id': 'bts:DbGaP'}],
 #  'sms:validationRules': []}
 
-
+OBJECT_RANGE_MAP = {
+    "hasParticipant": "participantId",
+    "hasBiospecimen": "sampleId",
+    "hasStudy": "studyCode",
+    "hasDatafile": "fileId"
+}
 class SchematicJSONTransformer(object):
     def __init__(self, schema_path, output_path):
         self.schema_path = schema_path
@@ -79,7 +85,12 @@ class SchematicJSONTransformer(object):
             if len(sdef['slots']):
                 class_object['sms:requiresDependency'] = []
                 for slot in sdef['slots']:
-                    slot_sv = includify_curie(pascal_to_camel(self.sv.get_slot(slot).name))
+                    slotdef = self.sv.get_slot(slot)
+                    slot_range = slotdef.range
+                    slot_sv = slotdef.definition_uri
+                    if slot in OBJECT_RANGE_MAP.keys():
+                        slot_sv = includify_curie(OBJECT_RANGE_MAP[slot])
+
                     class_object['sms:requiresDependency'].append(make_object(slot_sv))
             self.schematic_classes.append(class_object)
 
@@ -87,8 +98,8 @@ class SchematicJSONTransformer(object):
         for slot, slotdef in self.sv.all_slots().items():
             slot_object = dict()
             slot_object['@type'] = 'rdf:Property'
-            slot_object['@id'] = includify_curie(pascal_to_camel(slotdef.name))
-            slot_object['rdfs:label'] = pascal_to_camel(slotdef.name)
+            slot_object['@id'] = slotdef.definition_uri
+            slot_object['rdfs:label'] = slotdef.name
             slot_object['rdfs:comment'] = slotdef.description
             slot_object['sms:displayName'] = slotdef.title
             slot_object['schema:isPartOf'] = make_object(self.sv.schema.id)
@@ -101,9 +112,10 @@ class SchematicJSONTransformer(object):
                 slot_object['schema:rangeIncludes'] = [make_object(includify_curie(slotdef.range))]
             if "EnumDefinition" in type_string:
                 slot_object['schema:rangeIncludes'] = process_enum_range(self.sv.get_enum(slotdef.range))
-                for enum_value in self.sv.get_enum(slotdef.range).permissible_values:
+                enum = self.sv.get_enum(slotdef.range)
+                for enum_value in enum.permissible_values:
                     if enum_value not in self.class_keys:
-                        self.schematic_classes.append(enum_value_object(enum_value))
+                        self.schematic_classes.append(enum_value_object(enum.permissible_values[enum_value], slotdef.definition_uri))
                         self.class_keys.append(enum_value)
                     else:
                         pass
@@ -123,9 +135,6 @@ class SchematicJSONTransformer(object):
             "@graph": self.schematic_classes + self.schematic_properties
         }
         with open(f"{self.output_path}/include_schematic_linkml.jsonld", 'w') as isljd:
+            logging.info(f"writing to {self.output_path}/include_schematic_linkml.jsonld")
             json.dump(include_graph, isljd, sort_keys=True, indent=4)
 
-st = SchematicJSONTransformer(f"{project_root}/src/linkml/include_schema.yaml", f"{project_root}/src/data/schematic")
-st.class_generator()
-st.property_generator()
-st.write_output()

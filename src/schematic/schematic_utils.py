@@ -20,20 +20,16 @@ def pascal_to_camel(word):
         ret_words.append(wd.replace(wd[0], wd[0].upper(),1))
     return "".join(ret_words)
 
-def display_name(name):
-    names = name.split('_')
-    capitalized = ' '.join([x.title() for x in names])
-    return capitalized
-
-def enum_value_object(value):
+def enum_value_object(value, domain_uri):
     evo = {
-        "@id" : includify_curie(pascal_to_camel(value)),
+        "@id": includify_curie(value.text),
         "@type": "rdfs:Class",
         "rdfs:comment": "TBD",
-        "rdfs:label": pascal_to_camel(value),
-        "sms:displayName": display_name(value),
+        "rdfs:label": value.text,
+        "sms:displayName": value.title,
         "schema:isPartOf": make_object("https://w3id.org/include"),
-        "sms:required": "sms:false"
+        "sms:required": "sms:false",
+        "rdfs:subClassOf": [make_object(domain_uri)]
     }
     return evo
 
@@ -57,7 +53,7 @@ def set_slot_required(value):
 def process_enum_range(enum_object):
     range_includes = []
     for pv in enum_object.permissible_values:
-        range_includes.append(make_object(includify_curie(pascal_to_camel(pv))))
+        range_includes.append(make_object(includify_curie(pv)))
     return range_includes
 
 
