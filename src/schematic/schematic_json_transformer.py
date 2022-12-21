@@ -41,10 +41,10 @@ logging.info("running transformer")
 #  'sms:validationRules': []}
 
 OBJECT_RANGE_MAP = {
-    "Participant": "participantId",
-    "Biospecimen": "sampleId",
-    "Study": "studyCode",
-    "DataFile": "fileId"
+    "hasParticipant": "participantId",
+    "hasBiospecimen": "sampleId",
+    "hasStudy": "studyCode",
+    "hasDatafile": "fileId"
 }
 class SchematicJSONTransformer(object):
     def __init__(self, schema_path, output_path):
@@ -88,8 +88,8 @@ class SchematicJSONTransformer(object):
                     slotdef = self.sv.get_slot(slot)
                     slot_range = slotdef.range
                     slot_sv = slotdef.definition_uri
-                    if slot_range in OBJECT_RANGE_MAP.keys():
-                        slot_sv = includify_curie(OBJECT_RANGE_MAP[slot_range])
+                    if slot in OBJECT_RANGE_MAP.keys():
+                        slot_sv = includify_curie(OBJECT_RANGE_MAP[slot])
 
                     class_object['sms:requiresDependency'].append(make_object(slot_sv))
             self.schematic_classes.append(class_object)

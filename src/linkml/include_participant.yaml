@@ -49,7 +49,7 @@ classes:
     - firstPatientEngagementEvent
     - outcomesVitalStatus
     - ageAtLastVitalStatus
-    - hasCondition    
+#    - hasCondition
     - hasStudy     
   # FamilyGroup:
   #   name: FamilyGroup
@@ -144,7 +144,7 @@ slots:
     definition_uri: include:familyRelationship
     description: Relationship of Participant to proband
     title: Family Relationship
-    range: Participant
+    range: string
   sex:
     definition_uri: include:sex
     description: sex of Participant
@@ -190,11 +190,11 @@ slots:
     description: Age in days when participant's vital status was last recorded
     title: Age at Last Vital Status
     range: integer
-  hasCondition:
-    definition_uri: include:hasCondition
-    description: Link to a Condition
-    title: Has Condition
-    range: Condition
+#  hasCondition:
+#    definition_uri: include:hasCondition
+#    description: Link to a Condition
+#    title: Has Condition
+#    range: Condition
   hasStudy:
     definition_uri: include:hasStudy
     description: Link to a Study
