@@ -203,7 +203,7 @@ slots:
   eventId:
     definition_uri: include:eventId
     description: Identifier for event (Visit, Survey completion, Sample collection, etc.) to which the Condition data are linked, if applicable. There may be multiple events linked to a Participant.
-    title: Event ID
+    title: Event Id
   eventType:
     definition_uri: include:eventType
     description: Type of event for which Event ID is given (Visit, Survey completion, Sample collection, etc.)
@@ -215,7 +215,7 @@ slots:
   ageAtConditionObservation:
     definition_uri: include:ageAtConditionObservation
     description: Age in days at which condition was observed, recorded, or diagnosed
-    title: Age at Condition Observation
+    title: Age At Condition Observation
     range: integer
   conditionInterpretation:
     definition_uri: include:conditionInterpretation
@@ -235,32 +235,32 @@ slots:
   hpoLabel:
     definition_uri: include:hpoLabel
     description: Label for condition in the Human Phenotype Ontology (HPO)
-    title: HPO Label
+    title: Hpo Label
     range: string
   hpoCode:
     definition_uri: include:hpoCode
     description: Code for condition in the Human Phenotype Ontology (HPO)
-    title: HPO Code
+    title: Hpo Code
     range: string
   mondoLabel:
     definition_uri: include:mondoLabel
     description: Label for condition in the Mondo Disease Ontology (MONDO)
-    title: MONDO Label
+    title: Mondo Label
     range: string
   mondoCode:
     definition_uri: include:mondoCode
-    description: Code for condition in the Mondo Disease Ontology (MONDO)
-    title: MONDO Code
+    description: Code for condition in the Mondo Disease Ontology (Mondo)
+    title: Mondo Code
     range: string
   maxoLabel:
     definition_uri: include:maxoLabel
     description: Label for condition in the Medical Action Ontology (MAXO)
-    title: MAXO Label
+    title: Maxo Label
     range: string
   maxoCode:
     definition_uri: include:maxoCode
     description: Code for condition in the Medical Action Ontology (MAXO)
-    title: MAXO Code
+    title: Maxo Code
     range: string
   otherLabel:
     definition_uri: include:otherLabel
@@ -290,7 +290,7 @@ slots:
   ageAtMeasurement:  
     definition_uri: include:ageAtMeasurement
     description: Age in days at which measurement was performed
-    title: Age at Measurement
+    title: Age At Measurement
     range: integer
     
 enums:
