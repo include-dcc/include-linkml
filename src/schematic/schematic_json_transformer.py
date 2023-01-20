@@ -18,7 +18,8 @@ from .schematic_utils import make_object, \
 from linkml_runtime.utils.schemaview import SchemaView
 
 logging.info("running transformer")
-# EXAMPLE Target SCHEMATIC OBJECT 
+
+# EXAMPLE Target SCHEMATIC OBJECT
 # {'@id': 'bts:Study',
 #  '@type': 'rdfs:Class',
 #  'rdfs:comment': 'TBD',
@@ -140,4 +141,10 @@ class SchematicJSONTransformer(object):
         with open(f"{self.output_path}/include_schematic_linkml.jsonld", 'w') as isljd:
             logging.info(f"writing to {self.output_path}/include_schematic_linkml.jsonld")
             json.dump(include_graph, isljd, sort_keys=True, indent=4)
+
+
+st = SchematicJSONTransformer(f"{project_root}/src/linkml/include_schema.yaml", f"{project_root}/src/data/schematic")
+st.class_generator()
+st.property_generator()
+st.write_output()
 
