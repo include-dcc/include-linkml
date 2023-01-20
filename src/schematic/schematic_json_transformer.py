@@ -16,8 +16,9 @@ from .schematic_utils import make_object, \
     pascal_to_camel
 
 from linkml_runtime.utils.schemaview import SchemaView
+
 logging.info("running transformer")
-# EXAMPLE SCHEMATIC OBJECT
+# EXAMPLE Target SCHEMATIC OBJECT 
 # {'@id': 'bts:Study',
 #  '@type': 'rdfs:Class',
 #  'rdfs:comment': 'TBD',
@@ -40,12 +41,14 @@ logging.info("running transformer")
 #                             {'@id': 'bts:DbGaP'}],
 #  'sms:validationRules': []}
 
+
 OBJECT_RANGE_MAP = {
     "hasParticipant": "participantId",
     "hasBiospecimen": "sampleId",
     "hasStudy": "studyCode",
     "hasDatafile": "fileId"
 }
+
 class SchematicJSONTransformer(object):
     def __init__(self, schema_path, output_path):
         self.schema_path = schema_path
