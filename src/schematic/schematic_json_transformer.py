@@ -16,7 +16,7 @@ from schematic_utils import TRANSFORM_MAP, \
 from linkml_runtime.utils.schemaview import SchemaView
 
 
-# EXAMPLE SCHEMATIC OBJECT
+# EXAMPLE SCHEMATIC OBJECT for transformation from linkml
 # {'@id': 'bts:Study',
 #  '@type': 'rdfs:Class',
 #  'rdfs:comment': 'TBD',
@@ -38,6 +38,7 @@ from linkml_runtime.utils.schemaview import SchemaView
 #                             {'@id': 'bts:Program'},
 #                             {'@id': 'bts:DbGaP'}],
 #  'sms:validationRules': []}
+
 
 
 class SchematicJSONTransformer(object):
