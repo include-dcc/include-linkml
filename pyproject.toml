@@ -11,6 +11,7 @@ python = "^3.9"
 linkml-runtime = "^1.1.24"
 ontodev-cogs = "^0.3.3"
 schemasheets = "^0.1.13"
+typer = "^0.7.0"
 
 [tool.poetry.dev-dependencies]
 linkml = "^1.2.6"
