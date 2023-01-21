@@ -20,7 +20,7 @@ classes:
       required:
         tag: required
         value: 'True'
-    description: A Study
+    description: General information about the study
     title: Study
     is_a: Thing
     slots:

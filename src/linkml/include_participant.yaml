@@ -28,7 +28,7 @@ classes:
       requires_component:
         tag: requires_component
         value: Study,DataFile
-    description: A Participant in a Study
+    description: Demographic and clinical information about the participant
     title: Participant
     is_a: Thing
     slots:
@@ -75,7 +75,7 @@ classes:
         value: 'False'
     definition_uri: include:Condition
     is_a: Thing
-    description: A Condition of a Participant
+    description: Co-occurring conditions and other observations for the participant
     slots:
     - eventId
     - eventType
@@ -116,7 +116,7 @@ slots:
     range: string
   familyType:
     definition_uri: include:familyType
-    description: Structure of family members participating in the study (Proband-only = no family members participating; Duo = proband + parent; Trio = proband + 2 parents; Trio+ = proband + 2 parents + other relatives)
+    description: Structure of family members participating in the study
     title: Family Type
     range: enum_familyType
     required: true
@@ -144,10 +144,10 @@ slots:
     definition_uri: include:familyRelationship
     description: Relationship of Participant to proband
     title: Family Relationship
-    range: string
+    range: enum_familyRelationship
   sex:
     definition_uri: include:sex
-    description: sex of Participant
+    description: Sex of Participant
     title: sex
     range: enum_sex
     required: true
@@ -165,7 +165,7 @@ slots:
     required: true
   downSyndromeStatus:
     definition_uri: include:downSyndromeStatus
-    description: Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)
+    description: Down Syndrome status of participant
     title: Down Syndrome Status
     range: enum_downSyndromeStatus
     required: true
@@ -219,17 +219,17 @@ slots:
     range: integer
   conditionInterpretation:
     definition_uri: include:conditionInterpretation
-    description: Whether condition was observed or not. "Not Observed" indicates participant was specifically examined for that condition, or health record specifically queried for that condition, and found to be negative.
+    description: Whether condition was observed or not
     title: Condition Interpretation
     range: enum_conditionInterpretation
   conditionStatus:
     definition_uri: include:conditionStatus
-    description: Whether the Condition is ongoing (Current), has been resolved (Resolved), or a general history of the condition without known dates (History Of)
+    description: Whether the Condition is ongoing, has been resolved, or this is a general history of the condition without known dates
     title: Condition Status
     range: enum_conditionStatus
   conditionDataSource:
     definition_uri: include:conditionDataSource
-    description: Whether condition information was obtained from medical records (Clinical) or reported by participant/family member (Self-Reported)
+    description: Whether condition information was obtained from medical records or reported by participant/family member
     title: Condition Data Source
     range: enum_conditionDataSource
   hpoLabel:
@@ -300,30 +300,37 @@ enums:
       observed:
         text: observed
         title: Observed
+        description: Condition was observed or reported (this will be the case for most conditions)
       not_observed:
         text: not_observed
         title: Not Observed
+        description: Participant was specifically examined or medical record queried for condition and found to be negative
   enum_conditionDataSource:
     name: enum_conditionDataSource
     permissible_values:
       clinical:
         text: clinical
         title: Clinical
+        description: Information about condition was obtained from medical records or reported by investigator 
       self_reported:
         text: self_reported
         title: Self-reported
+        description: Information about condition was reported by participant or family member
   enum_conditionStatus:
     name: enum_conditionStatus
     permissible_values:
       current:
         text: current
         title: Current
+        description: Condition is ongoing
       resolved:
         text: resolved
         title: Resolved
+        description: Condition has been resolved
       history_of:
         text: history_of
         title: History Of
+        description: This is a general history of the condition, without known dates
   enum_downSyndromeStatus:
     name: enum_downSyndromeStatus
     definition_uri: include:enum_downSyndromeStatus
@@ -331,77 +338,152 @@ enums:
       d21:
         text: d21
         title: D21
+        description: Disomy 21 (euploid)
       t21:
         text: t21
         meaning: MONDO:0008608
         title: T21
+        description: Trisomy 21 (Down syndrome)
   enum_ethnicity:
     name: enum_ethnicity
     definition_uri: include:enum_ethnicity
     permissible_values:
-      asked_but_unknown:
-        text: asked_but_unknown
-        title: Asked but unknown
+      # asked_but_unknown:
+      #   text: asked_but_unknown
+      #   title: Asked but unknown
       hispanic_or_latino:
         text: hispanic_or_latino
         title: Hispanic or Latino
+        meaning: NCIT:C17459
       not_hispanic_or_latino:
         text: not_hispanic_or_latino
         title: Not Hispanic or Latino
+        meaning: NCIT:C41222
       prefer_not_to_answer:
         text: prefer_not_to_answer
         title: Prefer not to answer
+        meaning: NCIT:C132222
       unknown:
         text: unknown
         title: Unknown
+        meaning: NCIT:C17998
+  enum_familyRelationship:
+    name: enum_familyRelationship
+    definition_uri: include:enum_familyRelationship
+    permissible_values:
+      proband:
+        text: proband
+        title: Proband
+        meaning: NCIT:C64435
+        description: The first affected family member to join the study 
+      father:
+        text: father
+        title: Father
+        meaning: NCIT:C25174
+      mother:
+        text: mother
+        title: Mother
+        meaning: NCIT:C25189
+      sibling:
+        text: sibling
+        title: Sibling
+        meaning: NCIT:C25204
+      other_relative:
+        text: other_relative
+        title: Other relative
+        meaning: NCIT:C21480
+      unrelated_control:
+        text: unrelated_control
+        title: Unrelated control
+        meaning: NCIT:C25328
   enum_familyType:
     name: enum_familyType
     definition_uri: include:enum_familyType
     permissible_values:
+      control_only:
+        text: control_only
+        title: Control-only
+        description: Unrelated control, no Down syndrome family members
       duo:
         text: duo
         title: Duo
+        description: Proband + one parent
       other:
         text: other
         title: Other
+        description: Other family structure, e.g. one parent + twins
       proband_only:
         text: proband_only
         title: Proband-only
+        description: Proband only, no family members participating in study
       trio:
         text: trio
         title: Trio
+        description: Proband + two parents
       trio_plus:
         text: trio_plus
         title: Trio+
+        description: Proband + two parents + other relatives
   enum_race:
     name: enum_race
     definition_uri: include:enum_race
-    title: Unknown
     permissible_values:
       american_indian_or_alaskan_native:
         text: american_indian_or_alaskan_native
         title: American Indian or Alaska Native
+        meaning: NCIT:C41259
       asian:
         text: asian
         title: Asian
+        meaning: NCIT:C41260
       black_or_african_american:
         text: black_or_african_american
         title: Black or African American
+        meaning: NCIT:C16352
       more_than_one_race:
         text: more_than_one_race
         title: More than one race
+        meaning: NCIT:C67109
       native_hawaiian_or_other_pacific_islander:
         text: native_hawaiian_or_other_pacific_islander
         title: Native Hawaiian or Other Pacific Islander
+        meaning: NCIT:C41219
       other:
         text: other
         title: Other
+        meaning: NCIT:C17649
       white:
         text: white
         title: White
+        meaning: NCIT:C41261
       prefer_not_to_answer:
         text: prefer_not_to_answer
         title: Prefer not to answer
+        meaning: NCIT:C132222
+      unknown:
+        text: unknown
+        title: Unknown
+        meaning: NCIT:C17998
+      east_asian:
+        text: east_asian
+        title: East Asian
+        meaning: NCIT:C161419
+        description: UK only; do not use for US data
+      latin_american:
+        text: latin_american
+        title: Latin American
+        meaning: NCIT:C126531
+        description: UK only; do not use for US data
+      middle_eastern_or_north_african:
+        text: middle_eastern_or_north_african
+        title: Middle Eastern or North African
+        meaning: NCIT:C43866
+        description: UK only; do not use for US data
+      south_asian:
+        text: south_asian
+        title: South Asian
+        meaning: NCIT:C41263
+        description: UK only; do not use for US data
   enum_sex:
     name: enum_sex
     definition_uri: include:enum_sex
@@ -409,15 +491,19 @@ enums:
       female:
         text: female
         title: Female
+        meaning: NCIT:C16576
       male:
         text: male
         title: Male
+        meaning: NCIT:C20197
       other:
         text: other
         title: Other
+        meaning: NCIT:C17649
       unknown:
         text: unknown
         title: Unknown
+        meaning: NCIT:C17998
   enum_vital_status:
     name: enum_vital_status
     definition_uri: include:vital_status
@@ -425,9 +511,12 @@ enums:
       dead:
         text: dead
         title: Dead
+        meaning: NCIT:C28554
       alive:
         text: alive
         title: Alive
+        meaning: NCIT:C37987
       unknown_or_not_available:
         text: unknown_or_not_available
-        title: Unknown or Not Available
+        title: Unknown or not available
+        meaning: NCIT:C17998
