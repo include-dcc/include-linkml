@@ -284,7 +284,7 @@ slots:
     range: integer
   measureUnit:
     definition_uri: include:measureUnit
-    description: Unit associated with Measure Value (e.g. kg, cm, %, x10^9/L, etc.) 
+    description: Unit that is associated with Measure Value (e.g. kg, cm, %, x10^9/L, etc.)
     title: Measure Unit
     range: string # eventually want ontology terms here
   ageAtMeasurement:  
