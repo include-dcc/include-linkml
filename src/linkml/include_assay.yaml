@@ -58,6 +58,8 @@ classes:
     name: Biospecimen
     title: Biospecimen
     slots:
+    - hasStudy
+    - hasParticipant    
     - sampleId
     - sampleType
     - ageAtBiospecimenCollection
@@ -72,8 +74,7 @@ classes:
     - biospecimenStorage
     - sampleAvailability
     # - hasDataFile
-    - hasParticipant
-    - hasStudy
+
     # - hasAliquot
   DataFile:
     annotations:
@@ -89,6 +90,9 @@ classes:
     name: DataFile
     title: Data File
     slots:
+    - hasStudy
+    - hasParticipant    
+    - hasBiospecimen    
     - fileId
     - fileName
     - fileHash
@@ -102,9 +106,7 @@ classes:
     - fileSizeUnit
     - accessUrl
     - publicationDoi
-    - hasBiospecimen
-    - hasParticipant
-    - hasStudy
+
 slots:
   sampleId:
     definition_uri: include:sampleId

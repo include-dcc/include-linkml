@@ -20,7 +20,7 @@
         {
             "@id": "include:Study",
             "@type": "rdfs:Class",
-            "rdfs:comment": "A Study",
+            "rdfs:comment": "General information about the study",
             "rdfs:label": "Study",
             "rdfs:subClassOf": [
                 {
@@ -63,7 +63,7 @@
         {
             "@id": "include:Participant",
             "@type": "rdfs:Class",
-            "rdfs:comment": "A Participant in a Study",
+            "rdfs:comment": "Demographic and clinical information about the participant",
             "rdfs:label": "Participant",
             "rdfs:subClassOf": [
                 {
@@ -84,6 +84,9 @@
                 }
             ],
             "sms:requiresDependency": [
+                {
+                    "@id": "include:studyCode"
+                },
                 {
                     "@id": "include:participantId"
                 },
@@ -134,9 +137,6 @@
                 },
                 {
                     "@id": "include:ageAtLastVitalStatus"
-                },
-                {
-                    "@id": "include:studyCode"
                 }
             ],
             "sms:validationRules": []
@@ -144,7 +144,7 @@
         {
             "@id": "include:Condition",
             "@type": "rdfs:Class",
-            "rdfs:comment": "A Condition of a Participant",
+            "rdfs:comment": "Co-occurring conditions and other observations for the participant",
             "rdfs:label": "Condition",
             "rdfs:subClassOf": [
                 {
@@ -157,6 +157,9 @@
             "sms:displayName": "Condition",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
+                {
+                    "@id": "include:participantId"
+                },
                 {
                     "@id": "include:eventId"
                 },
@@ -245,6 +248,12 @@
             ],
             "sms:requiresDependency": [
                 {
+                    "@id": "include:studyCode"
+                },
+                {
+                    "@id": "include:participantId"
+                },
+                {
                     "@id": "include:sampleId"
                 },
                 {
@@ -282,12 +291,6 @@
                 },
                 {
                     "@id": "include:sampleAvailability"
-                },
-                {
-                    "@id": "include:participantId"
-                },
-                {
-                    "@id": "include:studyCode"
                 }
             ],
             "sms:validationRules": []
@@ -319,6 +322,15 @@
                 }
             ],
             "sms:requiresDependency": [
+                {
+                    "@id": "include:studyCode"
+                },
+                {
+                    "@id": "include:participantId"
+                },
+                {
+                    "@id": "include:sampleId"
+                },
                 {
                     "@id": "include:fileId"
                 },
@@ -357,15 +369,6 @@
                 },
                 {
                     "@id": "include:publicationDoi"
-                },
-                {
-                    "@id": "include:sampleId"
-                },
-                {
-                    "@id": "include:participantId"
-                },
-                {
-                    "@id": "include:studyCode"
                 }
             ],
             "sms:validationRules": []
@@ -787,6 +790,22 @@
             "sms:required": "sms:false"
         },
         {
+            "@id": "include:control_only",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "control_only",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:familyType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Control-only",
+            "sms:required": "sms:false"
+        },
+        {
             "@id": "include:duo",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -864,6 +883,102 @@
                 "@id": "https://w3id.org/include"
             },
             "sms:displayName": "Trio+",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:proband",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "proband",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:familyRelationship"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Proband",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:father",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "father",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:familyRelationship"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Father",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:mother",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "mother",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:familyRelationship"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Mother",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:sibling",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "sibling",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:familyRelationship"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Sibling",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:other_relative",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "other_relative",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:familyRelationship"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Other relative",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:unrelated_control",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "unrelated_control",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:familyRelationship"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Unrelated control",
             "sms:required": "sms:false"
         },
         {
@@ -1027,19 +1142,67 @@
             "sms:required": "sms:false"
         },
         {
-            "@id": "include:asked_but_unknown",
+            "@id": "include:east_asian",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "asked_but_unknown",
+            "rdfs:label": "east_asian",
             "rdfs:subClassOf": [
                 {
-                    "@id": "include:ethnicity"
+                    "@id": "include:race"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Asked but unknown",
+            "sms:displayName": "East Asian",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:latin_american",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "latin_american",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:race"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Latin American",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:middle_eastern_or_north_african",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "middle_eastern_or_north_african",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:race"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Middle Eastern or North African",
+            "sms:required": "sms:false"
+        },
+        {
+            "@id": "include:south_asian",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "south_asian",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:race"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "South Asian",
             "sms:required": "sms:false"
         },
         {
@@ -1151,7 +1314,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Unknown or Not Available",
+            "sms:displayName": "Unknown or not available",
             "sms:required": "sms:false"
         },
         {
@@ -1550,7 +1713,7 @@
         {
             "@id": "include:familyType",
             "@type": "rdf:Property",
-            "rdfs:comment": "Structure of family members participating in the study (Proband-only = no family members participating; Duo = proband + parent; Trio = proband + 2 parents; Trio+ = proband + 2 parents + other relatives)",
+            "rdfs:comment": "Structure of family members participating in the study",
             "rdfs:label": "familyType",
             "schema:domainIncludes": [
                 {
@@ -1561,6 +1724,9 @@
                 "@id": "https://w3id.org/include"
             },
             "schema:rangeIncludes": [
+                {
+                    "@id": "include:control_only"
+                },
                 {
                     "@id": "include:duo"
                 },
@@ -1662,6 +1828,26 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "include:proband"
+                },
+                {
+                    "@id": "include:father"
+                },
+                {
+                    "@id": "include:mother"
+                },
+                {
+                    "@id": "include:sibling"
+                },
+                {
+                    "@id": "include:other_relative"
+                },
+                {
+                    "@id": "include:unrelated_control"
+                }
+            ],
             "sms:displayName": "Family Relationship",
             "sms:required": "sms:false",
             "sms:validationRules": []
@@ -1669,7 +1855,7 @@
         {
             "@id": "include:sex",
             "@type": "rdf:Property",
-            "rdfs:comment": "sex of Participant",
+            "rdfs:comment": "Sex of Participant",
             "rdfs:label": "sex",
             "schema:domainIncludes": [
                 {
@@ -1734,6 +1920,21 @@
                 },
                 {
                     "@id": "include:prefer_not_to_answer"
+                },
+                {
+                    "@id": "include:unknown"
+                },
+                {
+                    "@id": "include:east_asian"
+                },
+                {
+                    "@id": "include:latin_american"
+                },
+                {
+                    "@id": "include:middle_eastern_or_north_african"
+                },
+                {
+                    "@id": "include:south_asian"
                 }
             ],
             "sms:displayName": "Race",
@@ -1755,9 +1956,6 @@
             },
             "schema:rangeIncludes": [
                 {
-                    "@id": "include:asked_but_unknown"
-                },
-                {
                     "@id": "include:hispanic_or_latino"
                 },
                 {
@@ -1777,7 +1975,7 @@
         {
             "@id": "include:downSyndromeStatus",
             "@type": "rdf:Property",
-            "rdfs:comment": "Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euploid)",
+            "rdfs:comment": "Down Syndrome status of participant",
             "rdfs:label": "downSyndromeStatus",
             "schema:domainIncludes": [
                 {
@@ -1977,7 +2175,7 @@
         {
             "@id": "include:conditionInterpretation",
             "@type": "rdf:Property",
-            "rdfs:comment": "Whether condition was observed or not. \"Not Observed\" indicates participant was specifically examined for that condition, or health record specifically queried for that condition, and found to be negative.",
+            "rdfs:comment": "Whether condition was observed or not",
             "rdfs:label": "conditionInterpretation",
             "schema:domainIncludes": [
                 {
@@ -2002,7 +2200,7 @@
         {
             "@id": "include:conditionStatus",
             "@type": "rdf:Property",
-            "rdfs:comment": "Whether the Condition is ongoing (Current), has been resolved (Resolved), or a general history of the condition without known dates (History Of)",
+            "rdfs:comment": "Whether the Condition is ongoing, has been resolved, or this is a general history of the condition without known dates",
             "rdfs:label": "conditionStatus",
             "schema:domainIncludes": [
                 {
@@ -2030,7 +2228,7 @@
         {
             "@id": "include:conditionDataSource",
             "@type": "rdf:Property",
-            "rdfs:comment": "Whether condition information was obtained from medical records (Clinical) or reported by participant/family member (Self-Reported)",
+            "rdfs:comment": "Whether condition information was obtained from medical records or reported by participant/family member",
             "rdfs:label": "conditionDataSource",
             "schema:domainIncludes": [
                 {
@@ -2491,6 +2689,9 @@
             "rdfs:comment": "Link to a Participant",
             "rdfs:label": "hasParticipant",
             "schema:domainIncludes": [
+                {
+                    "@id": "include:Condition"
+                },
                 {
                     "@id": "include:Biospecimen"
                 },
