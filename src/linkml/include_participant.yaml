@@ -6,7 +6,10 @@ prefixes:
     prefix_reference: https://w3id.org/include/
   MONDO:
     prefix_prefix: MONDO
-    prefix_reference: http://purl.obolibrary.org/obo/
+    prefix_reference: http://purl.obolibrary.org/obo/mondo
+  NCIT:
+    prefix_prefix: NCIT
+    prefix_reference: http://purl.obolibrary.org/obo/ncit
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
