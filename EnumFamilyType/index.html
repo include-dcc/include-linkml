@@ -357,29 +357,34 @@
 </thead>
 <tbody>
 <tr>
+<td>control_only</td>
+<td>None</td>
+<td>Unrelated control, no Down syndrome family members</td>
+</tr>
+<tr>
 <td>duo</td>
 <td>None</td>
-<td></td>
+<td>Proband + one parent</td>
 </tr>
 <tr>
 <td>other</td>
 <td>None</td>
-<td></td>
+<td>Other family structure, e</td>
 </tr>
 <tr>
 <td>proband_only</td>
 <td>None</td>
-<td></td>
+<td>Proband only, no family members participating in study</td>
 </tr>
 <tr>
 <td>trio</td>
 <td>None</td>
-<td></td>
+<td>Proband + two parents</td>
 </tr>
 <tr>
 <td>trio_plus</td>
 <td>None</td>
-<td></td>
+<td>Proband + two parents + other relatives</td>
 </tr>
 </tbody>
 </table>
@@ -394,7 +399,7 @@
 <tbody>
 <tr>
 <td><a href="../familyType/">familyType</a></td>
-<td>Structure of family members participating in the study (Proband-only = no fam...</td>
+<td>Structure of family members participating in the study</td>
 </tr>
 </tbody>
 </table>
@@ -411,20 +416,29 @@ definition_uri: include:enum_familyType
 from_schema: https://w3id.org/include/participant
 rank: 1000
 permissible_values:
+  control_only:
+    text: control_only
+    description: Unrelated control, no Down syndrome family members
+    title: Control-only
   duo:
     text: duo
+    description: Proband + one parent
     title: Duo
   other:
     text: other
+    description: Other family structure, e.g. one parent + twins
     title: Other
   proband_only:
     text: proband_only
+    description: Proband only, no family members participating in study
     title: Proband-only
   trio:
     text: trio
+    description: Proband + two parents
     title: Trio
   trio_plus:
     text: trio_plus
+    description: Proband + two parents + other relatives
     title: Trio+
 
 </code></pre>

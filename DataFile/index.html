@@ -259,6 +259,24 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../hasStudy/">hasStudy</a></td>
+<td>0..1 <br/> <a href="../Study/">Study</a></td>
+<td>Link to a Study</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../hasParticipant/">hasParticipant</a></td>
+<td>0..1 <br/> <a href="../Participant/">Participant</a></td>
+<td>Link to a Participant</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../hasBiospecimen/">hasBiospecimen</a></td>
+<td>0..1 <br/> <a href="../Biospecimen/">Biospecimen</a></td>
+<td>Link to a Biospecimen</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../fileId/">fileId</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>File identifier, assigned by DCC</td>
@@ -336,24 +354,6 @@
 <td>DOI of publication associated with this file, if published</td>
 <td>direct</td>
 </tr>
-<tr>
-<td><a href="../hasBiospecimen/">hasBiospecimen</a></td>
-<td>0..1 <br/> <a href="../Biospecimen/">Biospecimen</a></td>
-<td>Link to a Biospecimen</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../hasParticipant/">hasParticipant</a></td>
-<td>0..1 <br/> <a href="../Participant/">Participant</a></td>
-<td>Link to a Participant</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../hasStudy/">hasStudy</a></td>
-<td>0..1 <br/> <a href="../Study/">Study</a></td>
-<td>Link to a Study</td>
-<td>direct</td>
-</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -414,6 +414,9 @@ from_schema: https://w3id.org/include/assay
 rank: 1000
 is_a: Thing
 slots:
+- hasStudy
+- hasParticipant
+- hasBiospecimen
 - fileId
 - fileName
 - fileHash
@@ -427,9 +430,6 @@ slots:
 - fileSizeUnit
 - accessUrl
 - publicationDoi
-- hasBiospecimen
-- hasParticipant
-- hasStudy
 
 </code></pre>
 </details>
@@ -450,6 +450,46 @@ from_schema: https://w3id.org/include/assay
 rank: 1000
 is_a: Thing
 attributes:
+  hasStudy:
+    name: hasStudy
+    definition_uri: include:hasStudy
+    description: Link to a Study
+    title: Has Study
+    from_schema: https://w3id.org/include/participant
+    rank: 1000
+    alias: hasStudy
+    owner: DataFile
+    domain_of:
+    - Participant
+    - Biospecimen
+    - DataFile
+    range: Study
+  hasParticipant:
+    name: hasParticipant
+    definition_uri: include:hasParticipant
+    description: Link to a Participant
+    title: Has Participant
+    from_schema: https://w3id.org/include/assay
+    rank: 1000
+    alias: hasParticipant
+    owner: DataFile
+    domain_of:
+    - Condition
+    - Biospecimen
+    - DataFile
+    range: Participant
+  hasBiospecimen:
+    name: hasBiospecimen
+    definition_uri: include:hasBiospecimen
+    description: Link to a Biospecimen
+    title: Has Biospecimen
+    from_schema: https://w3id.org/include/assay
+    rank: 1000
+    alias: hasBiospecimen
+    owner: DataFile
+    domain_of:
+    - DataFile
+    range: Biospecimen
   fileId:
     name: fileId
     definition_uri: include:fileId
@@ -615,45 +655,6 @@ attributes:
     domain_of:
     - DataFile
     range: string
-  hasBiospecimen:
-    name: hasBiospecimen
-    definition_uri: include:hasBiospecimen
-    description: Link to a Biospecimen
-    title: Has Biospecimen
-    from_schema: https://w3id.org/include/assay
-    rank: 1000
-    alias: hasBiospecimen
-    owner: DataFile
-    domain_of:
-    - DataFile
-    range: Biospecimen
-  hasParticipant:
-    name: hasParticipant
-    definition_uri: include:hasParticipant
-    description: Link to a Participant
-    title: Has Participant
-    from_schema: https://w3id.org/include/assay
-    rank: 1000
-    alias: hasParticipant
-    owner: DataFile
-    domain_of:
-    - Biospecimen
-    - DataFile
-    range: Participant
-  hasStudy:
-    name: hasStudy
-    definition_uri: include:hasStudy
-    description: Link to a Study
-    title: Has Study
-    from_schema: https://w3id.org/include/participant
-    rank: 1000
-    alias: hasStudy
-    owner: DataFile
-    domain_of:
-    - Participant
-    - Biospecimen
-    - DataFile
-    range: Study
 
 </code></pre>
 </details>

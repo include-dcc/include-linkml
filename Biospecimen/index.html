@@ -263,6 +263,18 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../hasStudy/">hasStudy</a></td>
+<td>0..1 <br/> <a href="../Study/">Study</a></td>
+<td>Link to a Study</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../hasParticipant/">hasParticipant</a></td>
+<td>0..1 <br/> <a href="../Participant/">Participant</a></td>
+<td>Link to a Participant</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../sampleId/">sampleId</a></td>
 <td>1..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>Identifier for sample</td>
@@ -338,18 +350,6 @@
 <td><a href="../sampleAvailability/">sampleAvailability</a></td>
 <td>0..1 <br/> <a href="../EnumSampleAvailability/">EnumSampleAvailability</a></td>
 <td>Whether or not the sample is potentially available for sharing through the Vi...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../hasParticipant/">hasParticipant</a></td>
-<td>0..1 <br/> <a href="../Participant/">Participant</a></td>
-<td>Link to a Participant</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../hasStudy/">hasStudy</a></td>
-<td>0..1 <br/> <a href="../Study/">Study</a></td>
-<td>Link to a Study</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -431,6 +431,8 @@ from_schema: https://w3id.org/include/assay
 rank: 1000
 is_a: Thing
 slots:
+- hasStudy
+- hasParticipant
 - sampleId
 - sampleType
 - ageAtBiospecimenCollection
@@ -444,8 +446,6 @@ slots:
 - laboratoryProcedure
 - biospecimenStorage
 - sampleAvailability
-- hasParticipant
-- hasStudy
 
 </code></pre>
 </details>
@@ -466,6 +466,34 @@ from_schema: https://w3id.org/include/assay
 rank: 1000
 is_a: Thing
 attributes:
+  hasStudy:
+    name: hasStudy
+    definition_uri: include:hasStudy
+    description: Link to a Study
+    title: Has Study
+    from_schema: https://w3id.org/include/participant
+    rank: 1000
+    alias: hasStudy
+    owner: Biospecimen
+    domain_of:
+    - Participant
+    - Biospecimen
+    - DataFile
+    range: Study
+  hasParticipant:
+    name: hasParticipant
+    definition_uri: include:hasParticipant
+    description: Link to a Participant
+    title: Has Participant
+    from_schema: https://w3id.org/include/assay
+    rank: 1000
+    alias: hasParticipant
+    owner: Biospecimen
+    domain_of:
+    - Condition
+    - Biospecimen
+    - DataFile
+    range: Participant
   sampleId:
     name: sampleId
     definition_uri: include:sampleId
@@ -640,33 +668,6 @@ attributes:
     domain_of:
     - Biospecimen
     range: enum_sampleAvailability
-  hasParticipant:
-    name: hasParticipant
-    definition_uri: include:hasParticipant
-    description: Link to a Participant
-    title: Has Participant
-    from_schema: https://w3id.org/include/assay
-    rank: 1000
-    alias: hasParticipant
-    owner: Biospecimen
-    domain_of:
-    - Biospecimen
-    - DataFile
-    range: Participant
-  hasStudy:
-    name: hasStudy
-    definition_uri: include:hasStudy
-    description: Link to a Study
-    title: Has Study
-    from_schema: https://w3id.org/include/participant
-    rank: 1000
-    alias: hasStudy
-    owner: Biospecimen
-    domain_of:
-    - Participant
-    - Biospecimen
-    - DataFile
-    range: Study
 
 </code></pre>
 </details>

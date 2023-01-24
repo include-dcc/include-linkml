@@ -358,43 +358,68 @@
 <tbody>
 <tr>
 <td>american_indian_or_alaskan_native</td>
-<td>None</td>
+<td>NCIT:C41259</td>
 <td></td>
 </tr>
 <tr>
 <td>asian</td>
-<td>None</td>
+<td>NCIT:C41260</td>
 <td></td>
 </tr>
 <tr>
 <td>black_or_african_american</td>
-<td>None</td>
+<td>NCIT:C16352</td>
 <td></td>
 </tr>
 <tr>
 <td>more_than_one_race</td>
-<td>None</td>
+<td>NCIT:C67109</td>
 <td></td>
 </tr>
 <tr>
 <td>native_hawaiian_or_other_pacific_islander</td>
-<td>None</td>
+<td>NCIT:C41219</td>
 <td></td>
 </tr>
 <tr>
 <td>other</td>
-<td>None</td>
+<td>NCIT:C17649</td>
 <td></td>
 </tr>
 <tr>
 <td>white</td>
-<td>None</td>
+<td>NCIT:C41261</td>
 <td></td>
 </tr>
 <tr>
 <td>prefer_not_to_answer</td>
-<td>None</td>
+<td>NCIT:C132222</td>
 <td></td>
+</tr>
+<tr>
+<td>unknown</td>
+<td>NCIT:C17998</td>
+<td></td>
+</tr>
+<tr>
+<td>east_asian</td>
+<td>NCIT:C161419</td>
+<td>UK only; do not use for US data</td>
+</tr>
+<tr>
+<td>latin_american</td>
+<td>NCIT:C126531</td>
+<td>UK only; do not use for US data</td>
+</tr>
+<tr>
+<td>middle_eastern_or_north_african</td>
+<td>NCIT:C43866</td>
+<td>UK only; do not use for US data</td>
+</tr>
+<tr>
+<td>south_asian</td>
+<td>NCIT:C41263</td>
+<td>UK only; do not use for US data</td>
 </tr>
 </tbody>
 </table>
@@ -423,34 +448,65 @@
 
 <pre><code class="language-yaml">name: enum_race
 definition_uri: include:enum_race
-title: Unknown
 from_schema: https://w3id.org/include/participant
 rank: 1000
 permissible_values:
   american_indian_or_alaskan_native:
     text: american_indian_or_alaskan_native
+    meaning: NCIT:C41259
     title: American Indian or Alaska Native
   asian:
     text: asian
+    meaning: NCIT:C41260
     title: Asian
   black_or_african_american:
     text: black_or_african_american
+    meaning: NCIT:C16352
     title: Black or African American
   more_than_one_race:
     text: more_than_one_race
+    meaning: NCIT:C67109
     title: More than one race
   native_hawaiian_or_other_pacific_islander:
     text: native_hawaiian_or_other_pacific_islander
+    meaning: NCIT:C41219
     title: Native Hawaiian or Other Pacific Islander
   other:
     text: other
+    meaning: NCIT:C17649
     title: Other
   white:
     text: white
+    meaning: NCIT:C41261
     title: White
   prefer_not_to_answer:
     text: prefer_not_to_answer
+    meaning: NCIT:C132222
     title: Prefer not to answer
+  unknown:
+    text: unknown
+    meaning: NCIT:C17998
+    title: Unknown
+  east_asian:
+    text: east_asian
+    description: UK only; do not use for US data
+    meaning: NCIT:C161419
+    title: East Asian
+  latin_american:
+    text: latin_american
+    description: UK only; do not use for US data
+    meaning: NCIT:C126531
+    title: Latin American
+  middle_eastern_or_north_african:
+    text: middle_eastern_or_north_african
+    description: UK only; do not use for US data
+    meaning: NCIT:C43866
+    title: Middle Eastern or North African
+  south_asian:
+    text: south_asian
+    description: UK only; do not use for US data
+    meaning: NCIT:C41263
+    title: South Asian
 
 </code></pre>
 

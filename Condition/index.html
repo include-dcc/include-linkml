@@ -216,7 +216,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-condition">Class: Condition</h1>
-<p><em>A Condition of a Participant</em></p>
+<p><em>Co-occurring conditions and other observations for the participant</em></p>
 <p>URI: <a href="https://w3id.org/include/participant/:Condition">https://w3id.org/include/participant/:Condition</a></p>
 <div class="mermaid"> classDiagram
     class Condition
@@ -230,6 +230,7 @@
       Condition : conditionStatus
       Condition : eventId
       Condition : eventType
+      Condition : hasParticipant
       Condition : hpoCode
       Condition : hpoLabel
       Condition : maxoCode
@@ -261,6 +262,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../hasParticipant/">hasParticipant</a></td>
+<td>0..1 <br/> <a href="../Participant/">Participant</a></td>
+<td>Link to a Participant</td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../eventId/">eventId</a></td>
 <td>0..1 <br/> NONE</td>
@@ -294,13 +301,13 @@
 <tr>
 <td><a href="../conditionStatus/">conditionStatus</a></td>
 <td>0..1 <br/> <a href="../EnumConditionStatus/">EnumConditionStatus</a></td>
-<td>Whether the Condition is ongoing (Current), has been resolved (Resolved), or ...</td>
+<td>Whether the Condition is ongoing, has been resolved, or this is a general his...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../conditionDataSource/">conditionDataSource</a></td>
 <td>0..1 <br/> <a href="../EnumConditionDataSource/">EnumConditionDataSource</a></td>
-<td>Whether condition information was obtained from medical records (Clinical) or...</td>
+<td>Whether condition information was obtained from medical records or reported b...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -426,12 +433,13 @@ annotations:
   required:
     tag: required
     value: 'False'
-description: A Condition of a Participant
+description: Co-occurring conditions and other observations for the participant
 title: Condition
 from_schema: https://w3id.org/include/participant
 rank: 1000
 is_a: Thing
 slots:
+- hasParticipant
 - eventId
 - eventType
 - conditionSourceText
@@ -462,12 +470,26 @@ annotations:
   required:
     tag: required
     value: 'False'
-description: A Condition of a Participant
+description: Co-occurring conditions and other observations for the participant
 title: Condition
 from_schema: https://w3id.org/include/participant
 rank: 1000
 is_a: Thing
 attributes:
+  hasParticipant:
+    name: hasParticipant
+    definition_uri: include:hasParticipant
+    description: Link to a Participant
+    title: Has Participant
+    from_schema: https://w3id.org/include/assay
+    rank: 1000
+    alias: hasParticipant
+    owner: Condition
+    domain_of:
+    - Condition
+    - Biospecimen
+    - DataFile
+    range: Participant
   eventId:
     name: eventId
     definition_uri: include:eventId
@@ -520,9 +542,7 @@ attributes:
   conditionInterpretation:
     name: conditionInterpretation
     definition_uri: include:conditionInterpretation
-    description: Whether condition was observed or not. "Not Observed" indicates participant
-      was specifically examined for that condition, or health record specifically
-      queried for that condition, and found to be negative.
+    description: Whether condition was observed or not
     title: Condition Interpretation
     from_schema: https://w3id.org/include/participant
     rank: 1000
@@ -534,8 +554,8 @@ attributes:
   conditionStatus:
     name: conditionStatus
     definition_uri: include:conditionStatus
-    description: Whether the Condition is ongoing (Current), has been resolved (Resolved),
-      or a general history of the condition without known dates (History Of)
+    description: Whether the Condition is ongoing, has been resolved, or this is a
+      general history of the condition without known dates
     title: Condition Status
     from_schema: https://w3id.org/include/participant
     rank: 1000
@@ -547,8 +567,8 @@ attributes:
   conditionDataSource:
     name: conditionDataSource
     definition_uri: include:conditionDataSource
-    description: Whether condition information was obtained from medical records (Clinical)
-      or reported by participant/family member (Self-Reported)
+    description: Whether condition information was obtained from medical records or
+      reported by participant/family member
     title: Condition Data Source
     from_schema: https://w3id.org/include/participant
     rank: 1000

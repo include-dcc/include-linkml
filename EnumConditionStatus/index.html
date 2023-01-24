@@ -359,17 +359,17 @@
 <tr>
 <td>current</td>
 <td>None</td>
-<td></td>
+<td>Condition is ongoing</td>
 </tr>
 <tr>
 <td>resolved</td>
 <td>None</td>
-<td></td>
+<td>Condition has been resolved</td>
 </tr>
 <tr>
 <td>history_of</td>
 <td>None</td>
-<td></td>
+<td>This is a general history of the condition, without known dates</td>
 </tr>
 </tbody>
 </table>
@@ -384,7 +384,7 @@
 <tbody>
 <tr>
 <td><a href="../conditionStatus/">conditionStatus</a></td>
-<td>Whether the Condition is ongoing (Current), has been resolved (Resolved), or ...</td>
+<td>Whether the Condition is ongoing, has been resolved, or this is a general his...</td>
 </tr>
 </tbody>
 </table>
@@ -402,12 +402,15 @@ rank: 1000
 permissible_values:
   current:
     text: current
+    description: Condition is ongoing
     title: Current
   resolved:
     text: resolved
+    description: Condition has been resolved
     title: Resolved
   history_of:
     text: history_of
+    description: This is a general history of the condition, without known dates
     title: History Of
 
 </code></pre>

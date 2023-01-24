@@ -359,12 +359,12 @@
 <tr>
 <td>observed</td>
 <td>None</td>
-<td></td>
+<td>Condition was observed or reported (this will be the case for most conditions...</td>
 </tr>
 <tr>
 <td>not_observed</td>
 <td>None</td>
-<td></td>
+<td>Participant was specifically examined or medical record queried for condition...</td>
 </tr>
 </tbody>
 </table>
@@ -397,9 +397,13 @@ rank: 1000
 permissible_values:
   observed:
     text: observed
+    description: Condition was observed or reported (this will be the case for most
+      conditions)
     title: Observed
   not_observed:
     text: not_observed
+    description: Participant was specifically examined or medical record queried for
+      condition and found to be negative
     title: Not Observed
 
 </code></pre>

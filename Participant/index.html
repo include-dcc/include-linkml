@@ -221,7 +221,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-participant">Class: Participant</h1>
-<p><em>A Participant in a Study</em></p>
+<p><em>Demographic and clinical information about the participant</em></p>
 <p>URI: <a href="https://w3id.org/include/participant/:Participant">https://w3id.org/include/participant/:Participant</a></p>
 <div class="mermaid"> classDiagram
     class Participant
@@ -266,6 +266,12 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../hasStudy/">hasStudy</a></td>
+<td>0..1 <br/> <a href="../Study/">Study</a></td>
+<td>Link to a Study</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../participantId/">participantId</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>Unique identifier for the participant, assigned by DCC</td>
@@ -286,7 +292,7 @@
 <tr>
 <td><a href="../familyType/">familyType</a></td>
 <td>1..1 <br/> <a href="../EnumFamilyType/">EnumFamilyType</a></td>
-<td>Structure of family members participating in the study (Proband-only = no fam...</td>
+<td>Structure of family members participating in the study</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -315,14 +321,14 @@
 </tr>
 <tr>
 <td><a href="../familyRelationship/">familyRelationship</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../EnumFamilyRelationship/">EnumFamilyRelationship</a></td>
 <td>Relationship of Participant to proband</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sex/">sex</a></td>
 <td>1..1 <br/> <a href="../EnumSex/">EnumSex</a></td>
-<td>sex of Participant</td>
+<td>Sex of Participant</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -340,7 +346,7 @@
 <tr>
 <td><a href="../downSyndromeStatus/">downSyndromeStatus</a></td>
 <td>1..1 <br/> <a href="../EnumDownSyndromeStatus/">EnumDownSyndromeStatus</a></td>
-<td>Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy 21, euplo...</td>
+<td>Down Syndrome status of participant</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -367,12 +373,6 @@
 <td>Age in days when participant's vital status was last recorded</td>
 <td>direct</td>
 </tr>
-<tr>
-<td><a href="../hasStudy/">hasStudy</a></td>
-<td>0..1 <br/> <a href="../Study/">Study</a></td>
-<td>Link to a Study</td>
-<td>direct</td>
-</tr>
 </tbody>
 </table>
 <h2 id="usages">Usages</h2>
@@ -386,6 +386,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../Condition/">Condition</a></td>
+<td><a href="../hasParticipant/">hasParticipant</a></td>
+<td>range</td>
+<td><a href="./">Participant</a></td>
+</tr>
 <tr>
 <td><a href="../Biospecimen/">Biospecimen</a></td>
 <td><a href="../hasParticipant/">hasParticipant</a></td>
@@ -452,12 +458,13 @@ annotations:
   requires_component:
     tag: requires_component
     value: Study,DataFile
-description: A Participant in a Study
+description: Demographic and clinical information about the participant
 title: Participant
 from_schema: https://w3id.org/include/participant
 rank: 1000
 is_a: Thing
 slots:
+- hasStudy
 - participantId
 - participantExternalId
 - familyId
@@ -475,7 +482,6 @@ slots:
 - firstPatientEngagementEvent
 - outcomesVitalStatus
 - ageAtLastVitalStatus
-- hasStudy
 
 </code></pre>
 </details>
@@ -490,12 +496,26 @@ annotations:
   requires_component:
     tag: requires_component
     value: Study,DataFile
-description: A Participant in a Study
+description: Demographic and clinical information about the participant
 title: Participant
 from_schema: https://w3id.org/include/participant
 rank: 1000
 is_a: Thing
 attributes:
+  hasStudy:
+    name: hasStudy
+    definition_uri: include:hasStudy
+    description: Link to a Study
+    title: Has Study
+    from_schema: https://w3id.org/include/participant
+    rank: 1000
+    alias: hasStudy
+    owner: Participant
+    domain_of:
+    - Participant
+    - Biospecimen
+    - DataFile
+    range: Study
   participantId:
     name: participantId
     definition_uri: include:participantId
@@ -540,9 +560,7 @@ attributes:
   familyType:
     name: familyType
     definition_uri: include:familyType
-    description: Structure of family members participating in the study (Proband-only
-      = no family members participating; Duo = proband + parent; Trio = proband +
-      2 parents; Trio+ = proband + 2 parents + other relatives)
+    description: Structure of family members participating in the study
     title: Family Type
     from_schema: https://w3id.org/include/participant
     rank: 1000
@@ -615,11 +633,11 @@ attributes:
     owner: Participant
     domain_of:
     - Participant
-    range: string
+    range: enum_familyRelationship
   sex:
     name: sex
     definition_uri: include:sex
-    description: sex of Participant
+    description: Sex of Participant
     title: sex
     from_schema: https://w3id.org/include/participant
     rank: 1000
@@ -658,8 +676,7 @@ attributes:
   downSyndromeStatus:
     name: downSyndromeStatus
     definition_uri: include:downSyndromeStatus
-    description: Down Syndrome status of participant (T21 = Trisomy 21; D21 = Disomy
-      21, euploid)
+    description: Down Syndrome status of participant
     title: Down Syndrome Status
     from_schema: https://w3id.org/include/participant
     rank: 1000
@@ -722,20 +739,6 @@ attributes:
     domain_of:
     - Participant
     range: integer
-  hasStudy:
-    name: hasStudy
-    definition_uri: include:hasStudy
-    description: Link to a Study
-    title: Has Study
-    from_schema: https://w3id.org/include/participant
-    rank: 1000
-    alias: hasStudy
-    owner: Participant
-    domain_of:
-    - Participant
-    - Biospecimen
-    - DataFile
-    range: Study
 
 </code></pre>
 </details>
