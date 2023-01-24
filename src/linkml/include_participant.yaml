@@ -32,6 +32,7 @@ classes:
     title: Participant
     is_a: Thing
     slots:
+    - hasStudy     
     - participantId 
     - participantExternalId
     - familyId
@@ -50,7 +51,6 @@ classes:
     - outcomesVitalStatus
     - ageAtLastVitalStatus
 #    - hasCondition
-    - hasStudy     
   # FamilyGroup:
   #   name: FamilyGroup
   #   definition_uri: include:FamilyGroup
@@ -77,6 +77,7 @@ classes:
     is_a: Thing
     description: Co-occurring conditions and other observations for the participant
     slots:
+    - hasParticipant
     - eventId
     - eventType
     - conditionSourceText # will include DS Genetic Diagnosis

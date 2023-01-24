@@ -85,6 +85,9 @@
             ],
             "sms:requiresDependency": [
                 {
+                    "@id": "include:studyCode"
+                },
+                {
                     "@id": "include:participantId"
                 },
                 {
@@ -134,9 +137,6 @@
                 },
                 {
                     "@id": "include:ageAtLastVitalStatus"
-                },
-                {
-                    "@id": "include:studyCode"
                 }
             ],
             "sms:validationRules": []
@@ -157,6 +157,9 @@
             "sms:displayName": "Condition",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
+                {
+                    "@id": "include:participantId"
+                },
                 {
                     "@id": "include:eventId"
                 },
@@ -245,6 +248,12 @@
             ],
             "sms:requiresDependency": [
                 {
+                    "@id": "include:studyCode"
+                },
+                {
+                    "@id": "include:participantId"
+                },
+                {
                     "@id": "include:sampleId"
                 },
                 {
@@ -282,12 +291,6 @@
                 },
                 {
                     "@id": "include:sampleAvailability"
-                },
-                {
-                    "@id": "include:participantId"
-                },
-                {
-                    "@id": "include:studyCode"
                 }
             ],
             "sms:validationRules": []
@@ -319,6 +322,15 @@
                 }
             ],
             "sms:requiresDependency": [
+                {
+                    "@id": "include:studyCode"
+                },
+                {
+                    "@id": "include:participantId"
+                },
+                {
+                    "@id": "include:sampleId"
+                },
                 {
                     "@id": "include:fileId"
                 },
@@ -357,15 +369,6 @@
                 },
                 {
                     "@id": "include:publicationDoi"
-                },
-                {
-                    "@id": "include:sampleId"
-                },
-                {
-                    "@id": "include:participantId"
-                },
-                {
-                    "@id": "include:studyCode"
                 }
             ],
             "sms:validationRules": []
@@ -2686,6 +2689,9 @@
             "rdfs:comment": "Link to a Participant",
             "rdfs:label": "hasParticipant",
             "schema:domainIncludes": [
+                {
+                    "@id": "include:Condition"
+                },
                 {
                     "@id": "include:Biospecimen"
                 },
