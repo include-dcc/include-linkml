@@ -139,3 +139,9 @@ dmypy.json
 .DS_Store
 #cogs
 .cogs/
+
+#pierrette's stuff
+config.yml
+great_expectations/
+harmonized_data/
+schematic_service_account_creds.json
