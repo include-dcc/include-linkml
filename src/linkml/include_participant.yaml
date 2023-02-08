@@ -233,7 +233,7 @@ slots:
     range: enum_conditionStatus
   conditionDataSource:
     definition_uri: include:conditionDataSource
-    description: Whether condition information was obtained from medical records or reported by participant/family member
+    description: Whether condition information was obtained by the investigator or reported by participant/family member
     title: Condition Data Source
     range: enum_conditionDataSource
   hpoLabel:
