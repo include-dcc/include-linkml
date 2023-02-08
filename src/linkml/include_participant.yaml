@@ -103,7 +103,7 @@ classes:
 slots:
   participantId:
     definition_uri: include:participantId
-    description: Unique identifier for the participant, assigned by DCC
+    description: Unique INCLUDE identifier for the participant, assigned by DCC
     title: Participant ID
     required: false # change to true when we have INCLUDE IDs
     range: string
