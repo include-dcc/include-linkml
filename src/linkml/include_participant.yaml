@@ -175,13 +175,13 @@ slots:
     required: true
   ageAtFirstPatientEngagement:
     definition_uri: include:ageAtFirstPatientEngagement
-    description: Age in days of Participant at first recorded study event (registration/enrollment, visit, observation, sample collection, survey completion, etc.). Age at registration/enrollment is preferred, if available.
+    description: Age in days of Participant at first recorded study event (enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.
     title: Age at First Patient Engagement
     range: integer
     required: true
   firstPatientEngagementEvent:
     definition_uri: include:firstPatientEngagementEvent
-    description: Event for which Age at First Patient Engagement is given (registration/enrollment, visit, observation, sample collection, survey completion, etc.). Age at registration/enrollment is preferred, if available.
+    description: Event for which Age at First Patient Engagement is given (e.g. enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.
     title: First Patient Engagement Event
     required: true
   outcomesVitalStatus:
