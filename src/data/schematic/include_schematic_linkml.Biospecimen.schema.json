@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/INCLUDE.Biospecimen.manifest",
+  "title": "INCLUDE.Biospecimen.manifest",
+  "type": "object",
+  "properties": {
+    "Collection Sample Type": {},
+    "Concentration": {},
+    "Collection External ID": {},
+    "Parent Sample Id": {},
+    "Volume Unit": {},
+    "Container External ID": {},
+    "Volume": {},
+    "Sample External ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Sample ID": {},
+    "Biospecimen Storage": {},
+    "Age At Biospecimen Collection": {},
+    "Concentration Unit": {},
+    "Parent Sample External Id": {},
+    "Laboratory Procedure": {},
+    "Collection ID": {},
+    "Sample Availability": {
+      "enum": [
+        "Unavailable",
+        "Available",
+        ""
+      ]
+    },
+    "Parent Sample Type": {},
+    "Sample Type": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Container ID": {},
+    "Participant External ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Study Code": {
+      "enum": [
+        "DSC",
+        "AECOM-DS",
+        "DS-Brain",
+        "DS-DETERMINED",
+        "DS360-CHD",
+        "DS-PCGC",
+        "DS-COG-AML",
+        "BRI-DSR",
+        "ABC-DS",
+        "CHARGE-DS",
+        "DS-COG-ALL",
+        "DS-PALS",
+        "HTP",
+        "DS-ISP",
+        "ADS",
+        "ExCEEDS",
+        "DS-Nexus",
+        "X01-deSmith",
+        "BrainPower",
+        "DS-HSAT",
+        "ECODS",
+        "X01-Hakon",
+        "TRC-DS",
+        "DS-Sleep"
+      ]
+    }
+  },
+  "required": [
+    "Sample External ID",
+    "Sample Type",
+    "Participant External ID",
+    "Study Code"
+  ]
+}

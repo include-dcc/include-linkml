@@ -44,6 +44,9 @@
                 },
                 {
                     "@id": "include:dbgap"
+                },
+                {
+                    "@id": "include:vbrContact"
                 }
             ],
             "sms:validationRules": []
@@ -158,7 +161,7 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
-                    "@id": "include:participantId"
+                    "@id": "include:participantExternalId"
                 },
                 {
                     "@id": "include:eventId"
@@ -251,10 +254,13 @@
                     "@id": "include:studyCode"
                 },
                 {
-                    "@id": "include:participantId"
+                    "@id": "include:participantExternalId"
                 },
                 {
                     "@id": "include:sampleId"
+                },
+                {
+                    "@id": "include:sampleExternalId"
                 },
                 {
                     "@id": "include:sampleType"
@@ -266,10 +272,16 @@
                     "@id": "include:parentSampleId"
                 },
                 {
+                    "@id": "include:parentSampleExternalId"
+                },
+                {
                     "@id": "include:parentSampleType"
                 },
                 {
                     "@id": "include:collectionId"
+                },
+                {
+                    "@id": "include:collectionExternalId"
                 },
                 {
                     "@id": "include:collectionSampleType"
@@ -278,10 +290,19 @@
                     "@id": "include:containerId"
                 },
                 {
+                    "@id": "include:containerExternalId"
+                },
+                {
                     "@id": "include:volume"
                 },
                 {
                     "@id": "include:volumeUnit"
+                },
+                {
+                    "@id": "include:concentration"
+                },
+                {
+                    "@id": "include:concentrationUnit"
                 },
                 {
                     "@id": "include:laboratoryProcedure"
@@ -326,13 +347,16 @@
                     "@id": "include:studyCode"
                 },
                 {
-                    "@id": "include:participantId"
+                    "@id": "include:participantExternalId"
                 },
                 {
-                    "@id": "include:sampleId"
+                    "@id": "include:sampleExternalId"
                 },
                 {
                     "@id": "include:fileId"
+                },
+                {
+                    "@id": "include:fileExternalId"
                 },
                 {
                     "@id": "include:fileName"
@@ -1660,9 +1684,26 @@
             "sms:validationRules": []
         },
         {
+            "@id": "include:vbrContact",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Contact information for Virtual Biorepository inquiries to this Study (email or form)",
+            "rdfs:label": "vbrContact",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Virtual Biorepository Contact",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "include:participantId",
             "@type": "rdf:Property",
-            "rdfs:comment": "Unique identifier for the participant, assigned by DCC",
+            "rdfs:comment": "Unique INCLUDE identifier for the participant, assigned by DCC",
             "rdfs:label": "participantId",
             "schema:domainIncludes": [
                 {
@@ -1879,7 +1920,7 @@
                     "@id": "include:unknown"
                 }
             ],
-            "sms:displayName": "sex",
+            "sms:displayName": "Sex",
             "sms:required": "sms:true",
             "sms:validationRules": []
         },
@@ -2000,7 +2041,7 @@
         {
             "@id": "include:ageAtFirstPatientEngagement",
             "@type": "rdf:Property",
-            "rdfs:comment": "Age in days of Participant at first recorded study event (registration/enrollment, visit, observation, sample collection, survey completion, etc.). Age at registration/enrollment is preferred, if available.",
+            "rdfs:comment": "Age in days of Participant at first recorded study event (enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.",
             "rdfs:label": "ageAtFirstPatientEngagement",
             "schema:domainIncludes": [
                 {
@@ -2017,7 +2058,7 @@
         {
             "@id": "include:firstPatientEngagementEvent",
             "@type": "rdf:Property",
-            "rdfs:comment": "Event for which Age at First Patient Engagement is given (registration/enrollment, visit, observation, sample collection, survey completion, etc.). Age at registration/enrollment is preferred, if available.",
+            "rdfs:comment": "Event for which Age at First Patient Engagement is given (e.g. enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.",
             "rdfs:label": "firstPatientEngagementEvent",
             "schema:domainIncludes": [
                 {
@@ -2228,7 +2269,7 @@
         {
             "@id": "include:conditionDataSource",
             "@type": "rdf:Property",
-            "rdfs:comment": "Whether condition information was obtained from medical records or reported by participant/family member",
+            "rdfs:comment": "Whether condition information was obtained by the investigator or reported by participant/family member",
             "rdfs:label": "conditionDataSource",
             "schema:domainIncludes": [
                 {
@@ -2423,7 +2464,7 @@
         {
             "@id": "include:measureUnit",
             "@type": "rdf:Property",
-            "rdfs:comment": "Unit associated with Measure Value (e.g. kg, cm, %, x10^9/L, etc.)",
+            "rdfs:comment": "Unit that is associated with Measure Value (e.g. kg, cm, %, x10^9/L, etc.)",
             "rdfs:label": "measureUnit",
             "schema:domainIncludes": [
                 {
@@ -2457,7 +2498,7 @@
         {
             "@id": "include:sampleId",
             "@type": "rdf:Property",
-            "rdfs:comment": "Identifier for sample. A sample is a unique biological material; two samples with two different IDs are biologically distinct.",
+            "rdfs:comment": "INCLUDE identifier for sample, assigned by DCC",
             "rdfs:label": "sampleId",
             "schema:domainIncludes": [
                 {
@@ -2468,6 +2509,23 @@
                 "@id": "https://w3id.org/include"
             },
             "sms:displayName": "Sample ID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:sampleExternalId",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Unique identifier for sample, assigned by data contributor. A sample is a unique biological material; two samples with two different IDs are biologically distinct.",
+            "rdfs:label": "sampleExternalId",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Sample External ID",
             "sms:required": "sms:true",
             "sms:validationRules": []
         },
@@ -2508,7 +2566,7 @@
         {
             "@id": "include:parentSampleId",
             "@type": "rdf:Property",
-            "rdfs:comment": "Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable)",
+            "rdfs:comment": "INCLUDE identifier for the direct parent from which Sample was derived, assigned by DCC",
             "rdfs:label": "parentSampleId",
             "schema:domainIncludes": [
                 {
@@ -2519,6 +2577,23 @@
                 "@id": "https://w3id.org/include"
             },
             "sms:displayName": "Parent Sample Id",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:parentSampleExternalId",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable); assigned by data contributor",
+            "rdfs:label": "parentSampleExternalId",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Parent Sample External Id",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2542,7 +2617,7 @@
         {
             "@id": "include:collectionId",
             "@type": "rdf:Property",
-            "rdfs:comment": "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples - typically the material actually collected from the Participant. This may be the same as Parent Sample ID or Sample ID (if no processing was performed).",
+            "rdfs:comment": "INCLUDE identifier for the eldest sample in a lineage, assigned by DCC",
             "rdfs:label": "collectionId",
             "schema:domainIncludes": [
                 {
@@ -2553,6 +2628,23 @@
                 "@id": "https://w3id.org/include"
             },
             "sms:displayName": "Collection ID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:collectionExternalId",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples - typically the material actually collected from the Participant. This may be the same as Parent Sample ID or Sample ID (if no processing was performed). Assigned by data contributor.",
+            "rdfs:label": "collectionExternalId",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Collection External ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2576,7 +2668,7 @@
         {
             "@id": "include:containerId",
             "@type": "rdf:Property",
-            "rdfs:comment": "Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.",
+            "rdfs:comment": "INCLUDE identifier for specific container/aliquot of sample, assigned by DCC",
             "rdfs:label": "containerId",
             "schema:domainIncludes": [
                 {
@@ -2587,6 +2679,23 @@
                 "@id": "https://w3id.org/include"
             },
             "sms:displayName": "Container ID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:containerExternalId",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Identifier for specific container/aliquot of sample, assigned by data contributor. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.",
+            "rdfs:label": "containerExternalId",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Container External ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2621,6 +2730,40 @@
                 "@id": "https://w3id.org/include"
             },
             "sms:displayName": "Volume Unit",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:concentration",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Concentration of sample in container",
+            "rdfs:label": "concentration",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Concentration",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:concentrationUnit",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Unit of sample concentration",
+            "rdfs:label": "concentrationUnit",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Concentration Unit",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2714,7 +2857,7 @@
         {
             "@id": "include:fileId",
             "@type": "rdf:Property",
-            "rdfs:comment": "File identifier, assigned by DCC",
+            "rdfs:comment": "INCLUDE file identifier, assigned by DCC",
             "rdfs:label": "fileId",
             "schema:domainIncludes": [
                 {
@@ -2726,6 +2869,23 @@
             },
             "sms:displayName": "File ID",
             "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:fileExternalId",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Unique identifier for data file, assigned by data contributor",
+            "rdfs:label": "fileExternalId",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:DataFile"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "File External ID",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
