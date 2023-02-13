@@ -3,7 +3,8 @@ from pprint import pprint
 
 import copy
 import logging
-
+from os.path import dirname
+PROJECT_ROOT = dirname(dirname(dirname(__file__)))
 
 
 from .schematic_utils import make_object, \
@@ -143,7 +144,7 @@ class SchematicJSONTransformer(object):
             json.dump(include_graph, isljd, sort_keys=True, indent=4)
 
 
-st = SchematicJSONTransformer(f"{project_root}/src/linkml/include_schema.yaml", f"{project_root}/src/data/schematic")
+st = SchematicJSONTransformer(f"{PROJECT_ROOT}/src/linkml/include_schema.yaml", f"{PROJECT_ROOT}/src/data/schematic")
 st.class_generator()
 st.property_generator()
 st.write_output()
