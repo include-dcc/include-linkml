@@ -152,7 +152,7 @@ slots:
   sex:
     definition_uri: include:sex
     description: Sex of Participant
-    title: sex
+    title: Sex
     range: enum_sex
     required: true
   race:
