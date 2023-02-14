@@ -61,15 +61,21 @@ classes:
     - hasStudy
     - hasParticipant    
     - sampleId
+    - sampleExternalId
     - sampleType
     - ageAtBiospecimenCollection
     - parentSampleId
+    - parentSampleExternalId
     - parentSampleType
     - collectionId
+    - collectionExternalId
     - collectionSampleType
     - containerId
+    - containerExternalId
     - volume
     - volumeUnit
+    - concentration
+    - concentrationUnit
     - laboratoryProcedure
     - biospecimenStorage
     - sampleAvailability
@@ -94,6 +100,7 @@ classes:
     - hasParticipant    
     - hasBiospecimen    
     - fileId
+    - fileExternalId
     - fileName
     - fileHash
     - dataAccess
@@ -110,9 +117,15 @@ classes:
 slots:
   sampleId:
     definition_uri: include:sampleId
-    description: Identifier for sample. A sample is a unique biological material;
-      two samples with two different IDs are biologically distinct.
+    description: INCLUDE identifier for sample, assigned by DCC
     title: Sample ID
+    required: false
+    range: string
+  sampleExternalId:
+    definition_uri: include:sampleExternalId
+    description: Unique identifier for sample, assigned by data contributor. A sample is a unique biological material;
+      two samples with two different IDs are biologically distinct.
+    title: Sample External ID
     required: true
     range: string
   sampleType:
@@ -128,9 +141,14 @@ slots:
     range: integer
   parentSampleId:
     definition_uri: include:parentSampleId
-    description: Identifier for the direct parent from which Sample was derived, processed,
-      pooled, etc. (if applicable)
+    description: INCLUDE identifier for the direct parent from which Sample was derived, assigned by DCC
     title: Parent Sample Id
+    range: string
+  parentSampleExternalId:
+    definition_uri: include:parentSampleExternalId
+    description: Identifier for the direct parent from which Sample was derived, processed,
+      pooled, etc. (if applicable); assigned by data contributor
+    title: Parent Sample External Id
     range: string
   parentSampleType:
     definition_uri: include:parentSampleType
@@ -139,10 +157,15 @@ slots:
     range: string
   collectionId:
     definition_uri: include:collectionId
+    description: INCLUDE identifier for the eldest sample in a lineage, assigned by DCC
+    title: Collection ID
+    range: string
+  collectionExternalId:
+    definition_uri: include:collectionExternalId
     description: Identifier for the eldest sample in a lineage of processed, pooled,
       or aliquoted samples - typically the material actually collected from the Participant. This may be the same as Parent Sample ID or Sample ID
-      (if no processing was performed).
-    title: Collection ID
+      (if no processing was performed). Assigned by data contributor.
+    title: Collection External ID
     range: string
   collectionSampleType:
     definition_uri: include:collectionSampleType
@@ -151,10 +174,15 @@ slots:
     range: string
   containerId:
     definition_uri: include:containerId
-    description: Identifier for specific container/aliquot of sample, if applicable.
+    description: INCLUDE identifier for specific container/aliquot of sample, assigned by DCC
+    title: Container ID
+    range: string
+  containerExternalId:
+    definition_uri: include:containerExternalId
+    description: Identifier for specific container/aliquot of sample, assigned by data contributor.
       For example, distinct aliquots of a sample will have the same Sample ID but
       different Container IDs.
-    title: Container ID
+    title: Container External ID
     range: string
   volume:
     definition_uri: include:volume
@@ -165,6 +193,16 @@ slots:
     definition_uri: include:volumeUnit
     description: Unit of sample volume
     title: Volume Unit
+    range: string
+  concentration:
+    definition_uri: include:concentration
+    description: Concentration of sample in container
+    title: Concentration
+    range: float
+  concentrationUnit:
+    definition_uri: include:concentrationUnit
+    description: Unit of sample concentration
+    title: Concentration Unit
     range: string
   laboratoryProcedure:
     definition_uri: include:laboratoryProcedure
@@ -189,8 +227,14 @@ slots:
     range: Participant # this should link to Participant External ID for now, then INCLUDE ID when we have them
   fileId:
     definition_uri: include:fileId
-    description: File identifier, assigned by DCC
+    description: INCLUDE file identifier, assigned by DCC
     title: File ID
+    range: string
+  fileExternalId:
+    definition_uri: include:fileExternalId
+    description: Unique identifier for data file, assigned by data contributor
+    title: File External ID
+    required: true
     range: string
   fileName:
     definition_uri: include:fileName
@@ -302,6 +346,8 @@ enums:
       available:
         text: available
         title: Available
+        description: Sample is potentially available to be requested through the Virtual Biorepository (see VBR contact info in Study page)
       unavailable:
         text: unavailable
         title: Unavailable
+        description: Sample either was available through Virtual Biorepository but has been used up, or is part of a study that is not participating in the VBR

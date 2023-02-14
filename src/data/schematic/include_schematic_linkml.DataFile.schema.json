@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/INCLUDE.DataFile.manifest",
+  "title": "INCLUDE.DataFile.manifest",
+  "type": "object",
+  "properties": {
+    "Data Type": {},
+    "File Size Unit": {},
+    "Experimental Platform": {},
+    "Data Category": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Data Access": {
+      "enum": [
+        "Controlled",
+        "Registered",
+        "Open",
+        ""
+      ]
+    },
+    "Experimental Strategy": {},
+    "Publication DOI": {},
+    "File Name": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "File Format": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "File External ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "File Hash": {},
+    "File Size": {},
+    "Participant External ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "File ID": {},
+    "Study Code": {
+      "enum": [
+        "DSC",
+        "AECOM-DS",
+        "DS-Brain",
+        "DS-DETERMINED",
+        "DS360-CHD",
+        "DS-PCGC",
+        "DS-COG-AML",
+        "BRI-DSR",
+        "ABC-DS",
+        "CHARGE-DS",
+        "DS-COG-ALL",
+        "DS-PALS",
+        "HTP",
+        "DS-ISP",
+        "ADS",
+        "ExCEEDS",
+        "DS-Nexus",
+        "X01-deSmith",
+        "BrainPower",
+        "DS-HSAT",
+        "ECODS",
+        "X01-Hakon",
+        "TRC-DS",
+        "DS-Sleep"
+      ]
+    },
+    "Access URL": {},
+    "Sample External ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    }
+  },
+  "required": [
+    "Data Category",
+    "File Name",
+    "File Format",
+    "File External ID",
+    "Participant External ID",
+    "Study Code",
+    "Sample External ID"
+  ]
+}

@@ -103,7 +103,7 @@ classes:
 slots:
   participantId:
     definition_uri: include:participantId
-    description: Unique identifier for the participant, assigned by DCC
+    description: Unique INCLUDE identifier for the participant, assigned by DCC
     title: Participant ID
     required: false # change to true when we have INCLUDE IDs
     range: string
@@ -152,7 +152,7 @@ slots:
   sex:
     definition_uri: include:sex
     description: Sex of Participant
-    title: sex
+    title: Sex
     range: enum_sex
     required: true
   race:
@@ -175,13 +175,13 @@ slots:
     required: true
   ageAtFirstPatientEngagement:
     definition_uri: include:ageAtFirstPatientEngagement
-    description: Age in days of Participant at first recorded study event (registration/enrollment, visit, observation, sample collection, survey completion, etc.). Age at registration/enrollment is preferred, if available.
+    description: Age in days of Participant at first recorded study event (enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.
     title: Age at First Patient Engagement
     range: integer
     required: true
   firstPatientEngagementEvent:
     definition_uri: include:firstPatientEngagementEvent
-    description: Event for which Age at First Patient Engagement is given (registration/enrollment, visit, observation, sample collection, survey completion, etc.). Age at registration/enrollment is preferred, if available.
+    description: Event for which Age at First Patient Engagement is given (e.g. enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.
     title: First Patient Engagement Event
     required: true
   outcomesVitalStatus:
@@ -233,7 +233,7 @@ slots:
     range: enum_conditionStatus
   conditionDataSource:
     definition_uri: include:conditionDataSource
-    description: Whether condition information was obtained from medical records or reported by participant/family member
+    description: Whether condition information was obtained by the investigator or reported by participant/family member
     title: Condition Data Source
     range: enum_conditionDataSource
   hpoLabel:
