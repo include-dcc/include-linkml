@@ -170,10 +170,10 @@
                     "@id": "include:eventType"
                 },
                 {
-                    "@id": "include:conditionSourceText"
+                    "@id": "include:conditionMeasureSourceText"
                 },
                 {
-                    "@id": "include:ageAtConditionObservation"
+                    "@id": "include:ageAtConditionMeasureObservation"
                 },
                 {
                     "@id": "include:conditionInterpretation"
@@ -209,16 +209,10 @@
                     "@id": "include:otherCode"
                 },
                 {
-                    "@id": "include:measureType"
-                },
-                {
                     "@id": "include:measureValue"
                 },
                 {
                     "@id": "include:measureUnit"
-                },
-                {
-                    "@id": "include:ageAtMeasurement"
                 }
             ],
             "sms:validationRules": []
@@ -2180,10 +2174,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "include:conditionSourceText",
+            "@id": "include:conditionMeasureSourceText",
             "@type": "rdf:Property",
-            "rdfs:comment": "Phenotype or diagnosis, as described by data contributor. The Down Syndrome Genetic Diagnosis will be rolled into this field.",
-            "rdfs:label": "conditionSourceText",
+            "rdfs:comment": "Co-occurring Condition (phenotype or diagnosis) or Measure (observation with numeric value), as described by data contributor. The Down Syndrome Genetic Diagnosis will be rolled into this field.",
+            "rdfs:label": "conditionMeasureSourceText",
             "schema:domainIncludes": [
                 {
                     "@id": "include:Condition"
@@ -2192,15 +2186,15 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Condition Source Text",
+            "sms:displayName": "Condition or Measure Source Text",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
-            "@id": "include:ageAtConditionObservation",
+            "@id": "include:ageAtConditionMeasureObservation",
             "@type": "rdf:Property",
-            "rdfs:comment": "Age in days at which condition was observed, recorded, or diagnosed",
-            "rdfs:label": "ageAtConditionObservation",
+            "rdfs:comment": "Age in days at which Condition or Measure was observed, recorded, or diagnosed",
+            "rdfs:label": "ageAtConditionMeasureObservation",
             "schema:domainIncludes": [
                 {
                     "@id": "include:Condition"
@@ -2209,14 +2203,14 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Age At Condition Observation",
+            "sms:displayName": "Age At Condition or Measure Observation",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "include:conditionInterpretation",
             "@type": "rdf:Property",
-            "rdfs:comment": "Whether condition was observed or not",
+            "rdfs:comment": "Whether Condition was observed or not",
             "rdfs:label": "conditionInterpretation",
             "schema:domainIncludes": [
                 {
@@ -2269,7 +2263,7 @@
         {
             "@id": "include:conditionDataSource",
             "@type": "rdf:Property",
-            "rdfs:comment": "Whether condition information was obtained by the investigator or reported by participant/family member",
+            "rdfs:comment": "Whether Condition information was obtained by the investigator or reported by participant/family member",
             "rdfs:label": "conditionDataSource",
             "schema:domainIncludes": [
                 {
@@ -2294,7 +2288,7 @@
         {
             "@id": "include:hpoLabel",
             "@type": "rdf:Property",
-            "rdfs:comment": "Label for condition in the Human Phenotype Ontology (HPO)",
+            "rdfs:comment": "Label for Condition in the Human Phenotype Ontology (HPO)",
             "rdfs:label": "hpoLabel",
             "schema:domainIncludes": [
                 {
@@ -2304,14 +2298,14 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Hpo Label",
+            "sms:displayName": "HPO Label",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "include:hpoCode",
             "@type": "rdf:Property",
-            "rdfs:comment": "Code for condition in the Human Phenotype Ontology (HPO)",
+            "rdfs:comment": "Code for Condition in the Human Phenotype Ontology (HPO)",
             "rdfs:label": "hpoCode",
             "schema:domainIncludes": [
                 {
@@ -2321,14 +2315,14 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Hpo Code",
+            "sms:displayName": "HPO Code",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "include:mondoLabel",
             "@type": "rdf:Property",
-            "rdfs:comment": "Label for condition in the Mondo Disease Ontology (MONDO)",
+            "rdfs:comment": "Label for Condition in the Mondo Disease Ontology (MONDO)",
             "rdfs:label": "mondoLabel",
             "schema:domainIncludes": [
                 {
@@ -2338,14 +2332,14 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Mondo Label",
+            "sms:displayName": "MONDO Label",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "include:mondoCode",
             "@type": "rdf:Property",
-            "rdfs:comment": "Code for condition in the Mondo Disease Ontology (Mondo)",
+            "rdfs:comment": "Code for Condition in the Mondo Disease Ontology (Mondo)",
             "rdfs:label": "mondoCode",
             "schema:domainIncludes": [
                 {
@@ -2355,14 +2349,14 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Mondo Code",
+            "sms:displayName": "MONDO Code",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "include:maxoLabel",
             "@type": "rdf:Property",
-            "rdfs:comment": "Label for condition in the Medical Action Ontology (MAXO)",
+            "rdfs:comment": "Label for Condition in the Medical Action Ontology (MAXO)",
             "rdfs:label": "maxoLabel",
             "schema:domainIncludes": [
                 {
@@ -2372,7 +2366,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Maxo Label",
+            "sms:displayName": "MAXO Label",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2389,14 +2383,14 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Maxo Code",
+            "sms:displayName": "MAXO Code",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "include:otherLabel",
             "@type": "rdf:Property",
-            "rdfs:comment": "Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)",
+            "rdfs:comment": "Label for Condition in another ontology (if no match in HPO, MONDO, or MAXO)",
             "rdfs:label": "otherLabel",
             "schema:domainIncludes": [
                 {
@@ -2413,7 +2407,7 @@
         {
             "@id": "include:otherCode",
             "@type": "rdf:Property",
-            "rdfs:comment": "Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)",
+            "rdfs:comment": "Code for Condition in another ontology (if no match in HPO, MONDO, or MAXO)",
             "rdfs:label": "otherCode",
             "schema:domainIncludes": [
                 {
@@ -2424,23 +2418,6 @@
                 "@id": "https://w3id.org/include"
             },
             "sms:displayName": "Other Code",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "include:measureType",
-            "@type": "rdf:Property",
-            "rdfs:comment": "Type of measure. A Measure is an observation with a numeric value, e.g. Weight, Height, BMI, Blood glucose, Bone density, Blast percentage, etc.",
-            "rdfs:label": "measureType",
-            "schema:domainIncludes": [
-                {
-                    "@id": "include:Condition"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "https://w3id.org/include"
-            },
-            "sms:displayName": "Measure Type",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2475,23 +2452,6 @@
                 "@id": "https://w3id.org/include"
             },
             "sms:displayName": "Measure Unit",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "include:ageAtMeasurement",
-            "@type": "rdf:Property",
-            "rdfs:comment": "Age in days at which measurement was performed",
-            "rdfs:label": "ageAtMeasurement",
-            "schema:domainIncludes": [
-                {
-                    "@id": "include:Condition"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "https://w3id.org/include"
-            },
-            "sms:displayName": "Age At Measurement",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },

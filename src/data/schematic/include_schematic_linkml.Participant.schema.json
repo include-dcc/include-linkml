@@ -4,21 +4,13 @@
   "title": "INCLUDE.Participant.manifest",
   "type": "object",
   "properties": {
-    "Down Syndrome Status": {
+    "Participant ID": {},
+    "Ethnicity": {
       "enum": [
-        "T21",
-        "D21"
-      ]
-    },
-    "Family Relationship": {
-      "enum": [
-        "Mother",
-        "Father",
-        "Other relative",
-        "Unrelated control",
-        "Sibling",
-        "Proband",
-        ""
+        "Prefer not to answer",
+        "Not Hispanic or Latino",
+        "Hispanic or Latino",
+        "Unknown"
       ]
     },
     "First Patient Engagement Event": {
@@ -27,114 +19,122 @@
       },
       "minLength": 1
     },
-    "Family Type": {
-      "enum": [
-        "Duo",
-        "Trio+",
-        "Proband-only",
-        "Control-only",
-        "Trio",
-        "Other"
-      ]
-    },
+    "Sibling ID": {},
     "Mother ID": {},
-    "Participant ID": {},
-    "Age at First Patient Engagement": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "Father ID": {},
-    "Outcomes Vital Status": {
-      "enum": [
-        "Unknown or not available",
-        "Dead",
-        "Alive",
-        ""
-      ]
-    },
-    "Ethnicity": {
-      "enum": [
-        "Not Hispanic or Latino",
-        "Unknown",
-        "Prefer not to answer",
-        "Hispanic or Latino"
-      ]
-    },
-    "Age at Last Vital Status": {},
-    "Other Family Member ID": {},
-    "Sex": {
-      "enum": [
-        "Other",
-        "Male",
-        "Female",
-        "Unknown"
-      ]
-    },
     "Participant External ID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
+    "Other Family Member ID": {},
     "Race": {
       "enum": [
-        "Prefer not to answer",
-        "Black or African American",
         "Native Hawaiian or Other Pacific Islander",
         "Asian",
-        "More than one race",
-        "Unknown",
         "Middle Eastern or North African",
-        "Latin American",
-        "White",
+        "South Asian",
         "East Asian",
         "American Indian or Alaska Native",
-        "South Asian",
+        "Black or African American",
+        "Latin American",
+        "Prefer not to answer",
+        "More than one race",
+        "White",
+        "Unknown",
         "Other"
+      ]
+    },
+    "Family ID": {},
+    "Sex": {
+      "enum": [
+        "Other",
+        "Female",
+        "Male",
+        "Unknown"
+      ]
+    },
+    "Age at Last Vital Status": {},
+    "Outcomes Vital Status": {
+      "enum": [
+        "Alive",
+        "Dead",
+        "Unknown or not available",
+        ""
+      ]
+    },
+    "Father ID": {},
+    "Down Syndrome Status": {
+      "enum": [
+        "T21",
+        "D21"
+      ]
+    },
+    "Age at First Patient Engagement": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Family Type": {
+      "enum": [
+        "Duo",
+        "Trio",
+        "Control-only",
+        "Proband-only",
+        "Other",
+        "Trio+"
+      ]
+    },
+    "Family Relationship": {
+      "enum": [
+        "Father",
+        "Other relative",
+        "Mother",
+        "Proband",
+        "Sibling",
+        "Unrelated control",
+        ""
       ]
     },
     "Study Code": {
       "enum": [
-        "DSC",
-        "AECOM-DS",
-        "DS-Brain",
-        "DS-DETERMINED",
-        "DS360-CHD",
-        "DS-PCGC",
-        "DS-COG-AML",
-        "BRI-DSR",
-        "ABC-DS",
-        "CHARGE-DS",
-        "DS-COG-ALL",
         "DS-PALS",
-        "HTP",
-        "DS-ISP",
-        "ADS",
-        "ExCEEDS",
+        "DS-Brain",
+        "ABC-DS",
+        "TRC-DS",
         "DS-Nexus",
+        "AECOM-DS",
+        "DSC",
+        "HTP",
+        "X01-Hakon",
+        "DS360-CHD",
+        "ECODS",
+        "ADS",
+        "DS-COG-AML",
+        "DS-ISP",
+        "BRI-DSR",
+        "ExCEEDS",
         "X01-deSmith",
+        "DS-DETERMINED",
+        "DS-COG-ALL",
         "BrainPower",
         "DS-HSAT",
-        "ECODS",
-        "X01-Hakon",
-        "TRC-DS",
-        "DS-Sleep"
+        "CHARGE-DS",
+        "DS-Sleep",
+        "DS-PCGC"
       ]
-    },
-    "Sibling ID": {},
-    "Family ID": {}
+    }
   },
   "required": [
-    "Down Syndrome Status",
-    "First Patient Engagement Event",
-    "Family Type",
-    "Age at First Patient Engagement",
     "Ethnicity",
-    "Sex",
+    "First Patient Engagement Event",
     "Participant External ID",
     "Race",
+    "Sex",
+    "Down Syndrome Status",
+    "Age at First Patient Engagement",
+    "Family Type",
     "Study Code"
   ]
 }

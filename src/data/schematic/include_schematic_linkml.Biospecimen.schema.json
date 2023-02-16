@@ -4,80 +4,80 @@
   "title": "INCLUDE.Biospecimen.manifest",
   "type": "object",
   "properties": {
-    "Collection Sample Type": {},
-    "Concentration": {},
-    "Collection External ID": {},
-    "Parent Sample Id": {},
-    "Volume Unit": {},
     "Container External ID": {},
-    "Volume": {},
+    "Collection Sample Type": {},
+    "Biospecimen Storage": {},
+    "Study Code": {
+      "enum": [
+        "DS-PALS",
+        "DS-Brain",
+        "ABC-DS",
+        "TRC-DS",
+        "DS-Nexus",
+        "AECOM-DS",
+        "DSC",
+        "HTP",
+        "X01-Hakon",
+        "DS360-CHD",
+        "ECODS",
+        "ADS",
+        "DS-COG-AML",
+        "DS-ISP",
+        "BRI-DSR",
+        "ExCEEDS",
+        "X01-deSmith",
+        "DS-DETERMINED",
+        "DS-COG-ALL",
+        "BrainPower",
+        "DS-HSAT",
+        "CHARGE-DS",
+        "DS-Sleep",
+        "DS-PCGC"
+      ]
+    },
+    "Sample ID": {},
     "Sample External ID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "Sample ID": {},
-    "Biospecimen Storage": {},
-    "Age At Biospecimen Collection": {},
-    "Concentration Unit": {},
+    "Container ID": {},
     "Parent Sample External Id": {},
-    "Laboratory Procedure": {},
-    "Collection ID": {},
-    "Sample Availability": {
-      "enum": [
-        "Unavailable",
-        "Available",
-        ""
-      ]
-    },
-    "Parent Sample Type": {},
+    "Volume": {},
+    "Concentration Unit": {},
     "Sample Type": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "Container ID": {},
+    "Concentration": {},
+    "Laboratory Procedure": {},
+    "Sample Availability": {
+      "enum": [
+        "Available",
+        "Unavailable",
+        ""
+      ]
+    },
+    "Parent Sample Id": {},
+    "Collection ID": {},
+    "Collection External ID": {},
+    "Volume Unit": {},
+    "Age At Biospecimen Collection": {},
+    "Parent Sample Type": {},
     "Participant External ID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
-    },
-    "Study Code": {
-      "enum": [
-        "DSC",
-        "AECOM-DS",
-        "DS-Brain",
-        "DS-DETERMINED",
-        "DS360-CHD",
-        "DS-PCGC",
-        "DS-COG-AML",
-        "BRI-DSR",
-        "ABC-DS",
-        "CHARGE-DS",
-        "DS-COG-ALL",
-        "DS-PALS",
-        "HTP",
-        "DS-ISP",
-        "ADS",
-        "ExCEEDS",
-        "DS-Nexus",
-        "X01-deSmith",
-        "BrainPower",
-        "DS-HSAT",
-        "ECODS",
-        "X01-Hakon",
-        "TRC-DS",
-        "DS-Sleep"
-      ]
     }
   },
   "required": [
+    "Study Code",
     "Sample External ID",
     "Sample Type",
-    "Participant External ID",
-    "Study Code"
+    "Participant External ID"
   ]
 }
