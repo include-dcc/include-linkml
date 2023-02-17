@@ -4,50 +4,74 @@
   "title": "INCLUDE.DataFile.manifest",
   "type": "object",
   "properties": {
-    "Data Category": {
+    "File Hash": {},
+    "Publication DOI": {},
+    "Data Type": {},
+    "File External ID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
     "File Global ID": {},
-    "Experimental Strategy": {},
-    "File Size": {},
-    "File Size Unit": {},
-    "Access URL": {},
-    "Study Code": {
+    "Data Access": {
       "enum": [
-        "DS-COG-ALL",
-        "DS-COG-AML",
-        "DSC",
-        "DS-Brain",
-        "DS-Sleep",
-        "DS-PCGC",
-        "DS-ISP",
-        "DS360-CHD",
-        "BrainPower",
-        "BRI-DSR",
-        "DS-PALS",
-        "ECODS",
-        "ExCEEDS",
-        "ABC-DS",
-        "ADS",
-        "DS-DETERMINED",
-        "DS-HSAT",
-        "DS-Nexus",
-        "CHARGE-DS",
-        "TRC-DS",
-        "HTP",
-        "X01-deSmith",
-        "X01-Hakon",
-        "AECOM-DS"
+        "Controlled",
+        "Registered",
+        "Open",
+        ""
       ]
     },
-    "File External ID": {
+    "File Size Unit": {},
+    "Access URL": {},
+    "Data Category": {
       "not": {
         "type": "null"
       },
       "minLength": 1
+    },
+    "File Size": {},
+    "File Format": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Experimental Strategy": {},
+    "Experimental Platform": {},
+    "Sample External ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Study Code": {
+      "enum": [
+        "DS-ISP",
+        "DS-Sleep",
+        "DSC",
+        "ADS",
+        "ECODS",
+        "BRI-DSR",
+        "TRC-DS",
+        "CHARGE-DS",
+        "DS-COG-ALL",
+        "DS-PCGC",
+        "DS360-CHD",
+        "HTP",
+        "DS-COG-AML",
+        "DS-Nexus",
+        "BrainPower",
+        "DS-HSAT",
+        "DS-Brain",
+        "X01-Hakon",
+        "DS-PALS",
+        "AECOM-DS",
+        "ExCEEDS",
+        "ABC-DS",
+        "X01-deSmith",
+        "DS-DETERMINED"
+      ]
     },
     "File Name": {
       "not": {
@@ -55,44 +79,20 @@
       },
       "minLength": 1
     },
-    "Sample External ID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "Data Type": {},
-    "File Hash": {},
-    "Experimental Platform": {},
-    "File Format": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "Publication DOI": {},
     "Participant External ID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
-    },
-    "Data Access": {
-      "enum": [
-        "Open",
-        "Controlled",
-        "Registered",
-        ""
-      ]
     }
   },
   "required": [
-    "Data Category",
-    "Study Code",
     "File External ID",
-    "File Name",
-    "Sample External ID",
+    "Data Category",
     "File Format",
+    "Sample External ID",
+    "Study Code",
+    "File Name",
     "Participant External ID"
   ]
 }

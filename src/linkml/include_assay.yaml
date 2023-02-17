@@ -142,13 +142,13 @@ slots:
   parentSampleGlobalId:
     definition_uri: include:parentSampleGlobalId
     description: INCLUDE global identifier for the direct parent from which Sample was derived, assigned by DCC
-    title: Parent Sample Global Id
+    title: Parent Sample Global ID
     range: string
   parentSampleExternalId:
     definition_uri: include:parentSampleExternalId
     description: Identifier for the direct parent from which Sample was derived, processed,
       pooled, etc. (if applicable); assigned by data contributor
-    title: Parent Sample External Id
+    title: Parent Sample External ID
     range: string
   parentSampleType:
     definition_uri: include:parentSampleType

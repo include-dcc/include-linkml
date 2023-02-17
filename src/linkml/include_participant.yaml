@@ -205,7 +205,7 @@ slots:
   eventId:
     definition_uri: include:eventId
     description: Identifier for event (Visit, Survey completion, Sample collection, etc.) to which the Condition data are linked, if applicable. There may be multiple events linked to a Participant.
-    title: Event Id
+    title: Event ID
   eventType:
     definition_uri: include:eventType
     description: Type of event for which Event ID is given (Visit, Survey completion, Sample collection, etc.)
