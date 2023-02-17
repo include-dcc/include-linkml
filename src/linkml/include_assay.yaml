@@ -60,17 +60,17 @@ classes:
     slots:
     - hasStudy
     - hasParticipant    
-    - sampleId
+    - sampleGlobalId
     - sampleExternalId
     - sampleType
     - ageAtBiospecimenCollection
-    - parentSampleId
+    - parentSampleGlobalId
     - parentSampleExternalId
     - parentSampleType
-    - collectionId
+    - collectionGlobalId
     - collectionExternalId
     - collectionSampleType
-    - containerId
+    - containerGlobalId
     - containerExternalId
     - volume
     - volumeUnit
@@ -99,7 +99,7 @@ classes:
     - hasStudy
     - hasParticipant    
     - hasBiospecimen    
-    - fileId
+    - fileGlobalId
     - fileExternalId
     - fileName
     - fileHash
@@ -115,10 +115,10 @@ classes:
     - publicationDoi
 
 slots:
-  sampleId:
-    definition_uri: include:sampleId
-    description: INCLUDE identifier for sample, assigned by DCC
-    title: Sample ID
+  sampleGlobalId:
+    definition_uri: include:sampleGlobalId
+    description: INCLUDE global identifier for sample, assigned by DCC
+    title: Sample Global ID
     required: false
     range: string
   sampleExternalId:
@@ -139,10 +139,10 @@ slots:
     description: Age in days of participant at time of biospecimen collection
     title: Age At Biospecimen Collection
     range: integer
-  parentSampleId:
-    definition_uri: include:parentSampleId
-    description: INCLUDE identifier for the direct parent from which Sample was derived, assigned by DCC
-    title: Parent Sample Id
+  parentSampleGlobalId:
+    definition_uri: include:parentSampleGlobalId
+    description: INCLUDE global identifier for the direct parent from which Sample was derived, assigned by DCC
+    title: Parent Sample Global Id
     range: string
   parentSampleExternalId:
     definition_uri: include:parentSampleExternalId
@@ -155,10 +155,10 @@ slots:
     description: Type of biological material comprising the Parent Sample (e.g. Peripheral Whole Blood, Derived Cell Line, Saliva, Whole blood, WBCs) 
     title: Parent Sample Type
     range: string
-  collectionId:
-    definition_uri: include:collectionId
-    description: INCLUDE identifier for the eldest sample in a lineage, assigned by DCC
-    title: Collection ID
+  collectionGlobalId:
+    definition_uri: include:collectionGlobalId
+    description: INCLUDE global identifier for the eldest sample in a lineage, assigned by DCC
+    title: Collection Global ID
     range: string
   collectionExternalId:
     definition_uri: include:collectionExternalId
@@ -172,10 +172,10 @@ slots:
     description: Type of biological material comprising the Collected Sample (e.g. Whole blood, Not reported, Saliva, Derived cell line)
     title: Collection Sample Type
     range: string
-  containerId:
-    definition_uri: include:containerId
-    description: INCLUDE identifier for specific container/aliquot of sample, assigned by DCC
-    title: Container ID
+  containerGlobalId:
+    definition_uri: include:containerGlobalId
+    description: INCLUDE global identifier for specific container/aliquot of sample, assigned by DCC
+    title: Container Global ID
     range: string
   containerExternalId:
     definition_uri: include:containerExternalId
@@ -225,10 +225,10 @@ slots:
     description: Link to a Participant 
     title: Has Participant
     range: Participant # this should link to Participant External ID for now, then INCLUDE ID when we have them
-  fileId:
-    definition_uri: include:fileId
-    description: INCLUDE file identifier, assigned by DCC
-    title: File ID
+  fileGlobalId:
+    definition_uri: include:fileGlobalId
+    description: INCLUDE global file identifier, assigned by DCC
+    title: File Global ID
     range: string
   fileExternalId:
     definition_uri: include:fileExternalId

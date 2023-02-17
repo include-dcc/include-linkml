@@ -4,80 +4,80 @@
   "title": "INCLUDE.Biospecimen.manifest",
   "type": "object",
   "properties": {
-    "Container External ID": {},
-    "Collection Sample Type": {},
+    "Container Global ID": {},
     "Biospecimen Storage": {},
+    "Sample Global ID": {},
+    "Volume Unit": {},
+    "Concentration Unit": {},
     "Study Code": {
       "enum": [
-        "DS-PALS",
-        "DS-Brain",
-        "ABC-DS",
-        "TRC-DS",
-        "DS-Nexus",
-        "AECOM-DS",
-        "DSC",
-        "HTP",
-        "X01-Hakon",
-        "DS360-CHD",
-        "ECODS",
-        "ADS",
-        "DS-COG-AML",
-        "DS-ISP",
-        "BRI-DSR",
-        "ExCEEDS",
-        "X01-deSmith",
-        "DS-DETERMINED",
         "DS-COG-ALL",
-        "BrainPower",
-        "DS-HSAT",
-        "CHARGE-DS",
+        "DS-COG-AML",
+        "DSC",
+        "DS-Brain",
         "DS-Sleep",
-        "DS-PCGC"
+        "DS-PCGC",
+        "DS-ISP",
+        "DS360-CHD",
+        "BrainPower",
+        "BRI-DSR",
+        "DS-PALS",
+        "ECODS",
+        "ExCEEDS",
+        "ABC-DS",
+        "ADS",
+        "DS-DETERMINED",
+        "DS-HSAT",
+        "DS-Nexus",
+        "CHARGE-DS",
+        "TRC-DS",
+        "HTP",
+        "X01-deSmith",
+        "X01-Hakon",
+        "AECOM-DS"
       ]
     },
-    "Sample ID": {},
-    "Sample External ID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "Container ID": {},
-    "Parent Sample External Id": {},
+    "Parent Sample Type": {},
+    "Laboratory Procedure": {},
+    "Collection Global ID": {},
+    "Parent Sample Global Id": {},
+    "Collection External ID": {},
     "Volume": {},
-    "Concentration Unit": {},
+    "Age At Biospecimen Collection": {},
+    "Parent Sample External Id": {},
     "Sample Type": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "Concentration": {},
-    "Laboratory Procedure": {},
+    "Container External ID": {},
+    "Sample External ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Collection Sample Type": {},
     "Sample Availability": {
       "enum": [
-        "Available",
         "Unavailable",
+        "Available",
         ""
       ]
     },
-    "Parent Sample Id": {},
-    "Collection ID": {},
-    "Collection External ID": {},
-    "Volume Unit": {},
-    "Age At Biospecimen Collection": {},
-    "Parent Sample Type": {},
     "Participant External ID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
-    }
+    },
+    "Concentration": {}
   },
   "required": [
     "Study Code",
-    "Sample External ID",
     "Sample Type",
+    "Sample External ID",
     "Participant External ID"
   ]
 }

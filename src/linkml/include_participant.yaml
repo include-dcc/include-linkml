@@ -36,7 +36,7 @@ classes:
     is_a: Thing
     slots:
     - hasStudy     
-    - participantId 
+    - participantGlobalId 
     - participantExternalId
     - familyId
     - familyType
@@ -99,10 +99,10 @@ classes:
     - measureValue
     - measureUnit
 slots:
-  participantId:
-    definition_uri: include:participantId
-    description: Unique INCLUDE identifier for the participant, assigned by DCC
-    title: Participant ID
+  participantGlobalId:
+    definition_uri: include:participantGlobalId
+    description: Unique INCLUDE global identifier for the participant, assigned by DCC
+    title: Participant Global ID
     required: false # change to true when we have INCLUDE IDs
     range: string
   participantExternalId:
