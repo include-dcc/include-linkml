@@ -91,7 +91,7 @@
                     "@id": "include:studyCode"
                 },
                 {
-                    "@id": "include:participantId"
+                    "@id": "include:participantGlobalId"
                 },
                 {
                     "@id": "include:participantExternalId"
@@ -251,7 +251,7 @@
                     "@id": "include:participantExternalId"
                 },
                 {
-                    "@id": "include:sampleId"
+                    "@id": "include:sampleGlobalId"
                 },
                 {
                     "@id": "include:sampleExternalId"
@@ -263,7 +263,7 @@
                     "@id": "include:ageAtBiospecimenCollection"
                 },
                 {
-                    "@id": "include:parentSampleId"
+                    "@id": "include:parentSampleGlobalId"
                 },
                 {
                     "@id": "include:parentSampleExternalId"
@@ -272,7 +272,7 @@
                     "@id": "include:parentSampleType"
                 },
                 {
-                    "@id": "include:collectionId"
+                    "@id": "include:collectionGlobalId"
                 },
                 {
                     "@id": "include:collectionExternalId"
@@ -281,7 +281,7 @@
                     "@id": "include:collectionSampleType"
                 },
                 {
-                    "@id": "include:containerId"
+                    "@id": "include:containerGlobalId"
                 },
                 {
                     "@id": "include:containerExternalId"
@@ -347,7 +347,7 @@
                     "@id": "include:sampleExternalId"
                 },
                 {
-                    "@id": "include:fileId"
+                    "@id": "include:fileGlobalId"
                 },
                 {
                     "@id": "include:fileExternalId"
@@ -1695,10 +1695,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "include:participantId",
+            "@id": "include:participantGlobalId",
             "@type": "rdf:Property",
-            "rdfs:comment": "Unique INCLUDE identifier for the participant, assigned by DCC",
-            "rdfs:label": "participantId",
+            "rdfs:comment": "Unique INCLUDE global identifier for the participant, assigned by DCC",
+            "rdfs:label": "participantGlobalId",
             "schema:domainIncludes": [
                 {
                     "@id": "include:Participant"
@@ -1707,7 +1707,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Participant ID",
+            "sms:displayName": "Participant Global ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2456,10 +2456,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "include:sampleId",
+            "@id": "include:sampleGlobalId",
             "@type": "rdf:Property",
-            "rdfs:comment": "INCLUDE identifier for sample, assigned by DCC",
-            "rdfs:label": "sampleId",
+            "rdfs:comment": "INCLUDE global identifier for sample, assigned by DCC",
+            "rdfs:label": "sampleGlobalId",
             "schema:domainIncludes": [
                 {
                     "@id": "include:Biospecimen"
@@ -2468,7 +2468,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Sample ID",
+            "sms:displayName": "Sample Global ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2524,10 +2524,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "include:parentSampleId",
+            "@id": "include:parentSampleGlobalId",
             "@type": "rdf:Property",
-            "rdfs:comment": "INCLUDE identifier for the direct parent from which Sample was derived, assigned by DCC",
-            "rdfs:label": "parentSampleId",
+            "rdfs:comment": "INCLUDE global identifier for the direct parent from which Sample was derived, assigned by DCC",
+            "rdfs:label": "parentSampleGlobalId",
             "schema:domainIncludes": [
                 {
                     "@id": "include:Biospecimen"
@@ -2536,7 +2536,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Parent Sample Id",
+            "sms:displayName": "Parent Sample Global Id",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2575,10 +2575,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "include:collectionId",
+            "@id": "include:collectionGlobalId",
             "@type": "rdf:Property",
-            "rdfs:comment": "INCLUDE identifier for the eldest sample in a lineage, assigned by DCC",
-            "rdfs:label": "collectionId",
+            "rdfs:comment": "INCLUDE global identifier for the eldest sample in a lineage, assigned by DCC",
+            "rdfs:label": "collectionGlobalId",
             "schema:domainIncludes": [
                 {
                     "@id": "include:Biospecimen"
@@ -2587,7 +2587,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Collection ID",
+            "sms:displayName": "Collection Global ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2626,10 +2626,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "include:containerId",
+            "@id": "include:containerGlobalId",
             "@type": "rdf:Property",
-            "rdfs:comment": "INCLUDE identifier for specific container/aliquot of sample, assigned by DCC",
-            "rdfs:label": "containerId",
+            "rdfs:comment": "INCLUDE global identifier for specific container/aliquot of sample, assigned by DCC",
+            "rdfs:label": "containerGlobalId",
             "schema:domainIncludes": [
                 {
                     "@id": "include:Biospecimen"
@@ -2638,7 +2638,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Container ID",
+            "sms:displayName": "Container Global ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2815,10 +2815,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "include:fileId",
+            "@id": "include:fileGlobalId",
             "@type": "rdf:Property",
-            "rdfs:comment": "INCLUDE file identifier, assigned by DCC",
-            "rdfs:label": "fileId",
+            "rdfs:comment": "INCLUDE global file identifier, assigned by DCC",
+            "rdfs:label": "fileGlobalId",
             "schema:domainIncludes": [
                 {
                     "@id": "include:DataFile"
@@ -2827,7 +2827,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "File ID",
+            "sms:displayName": "File Global ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
