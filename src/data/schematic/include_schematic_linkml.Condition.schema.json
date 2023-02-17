@@ -4,9 +4,34 @@
   "title": "INCLUDE.Condition.manifest",
   "type": "object",
   "properties": {
-    "Age At Condition or Measure Observation": {},
+    "Condition Data Source": {
+      "enum": [
+        "Clinical",
+        "Self-reported",
+        ""
+      ]
+    },
+    "Condition or Measure Source Text": {},
+    "Other Code": {},
+    "HPO Code": {},
+    "MONDO Label": {},
+    "MONDO Code": {},
+    "Event Type": {},
+    "MAXO Code": {},
+    "MAXO Label": {},
+    "Event ID": {},
+    "Condition Interpretation": {
+      "enum": [
+        "Observed",
+        "Not Observed",
+        ""
+      ]
+    },
+    "Other Label": {},
+    "Measure Value": {},
     "Measure Unit": {},
-    "Event Id": {},
+    "HPO Label": {},
+    "Age At Condition or Measure Observation": {},
     "Condition Status": {
       "enum": [
         "Resolved",
@@ -15,37 +40,12 @@
         ""
       ]
     },
-    "MONDO Code": {},
-    "Other Label": {},
-    "MAXO Label": {},
-    "Condition or Measure Source Text": {},
-    "Condition Data Source": {
-      "enum": [
-        "Self-reported",
-        "Clinical",
-        ""
-      ]
-    },
-    "MAXO Code": {},
-    "HPO Label": {},
-    "Measure Value": {},
-    "MONDO Label": {},
-    "Other Code": {},
-    "HPO Code": {},
-    "Condition Interpretation": {
-      "enum": [
-        "Observed",
-        "Not Observed",
-        ""
-      ]
-    },
     "Participant External ID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
-    },
-    "Event Type": {}
+    }
   },
   "required": [
     "Participant External ID"

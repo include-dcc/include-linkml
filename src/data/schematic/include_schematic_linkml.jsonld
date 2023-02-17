@@ -2152,7 +2152,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Event Id",
+            "sms:displayName": "Event ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2536,7 +2536,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Parent Sample Global Id",
+            "sms:displayName": "Parent Sample Global ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2553,7 +2553,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Parent Sample External Id",
+            "sms:displayName": "Parent Sample External ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
