@@ -366,7 +366,7 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: NONE</li>
+<li>Range: <a href="xsd:string">xsd:string</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -381,12 +381,13 @@ definition_uri: include:eventId
 description: Identifier for event (Visit, Survey completion, Sample collection, etc.)
   to which the Condition data are linked, if applicable. There may be multiple events
   linked to a Participant.
-title: Event Id
+title: Event ID
 from_schema: https://w3id.org/include/participant
 rank: 1000
 alias: eventId
 domain_of:
 - Condition
+range: string
 
 </code></pre>
 

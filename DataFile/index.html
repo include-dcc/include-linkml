@@ -228,9 +228,10 @@
       DataFile : dataType
       DataFile : experimentalPlatform
       DataFile : experimentalStrategy
+      DataFile : fileExternalId
       DataFile : fileFormat
+      DataFile : fileGlobalId
       DataFile : fileHash
-      DataFile : fileId
       DataFile : fileName
       DataFile : fileSize
       DataFile : fileSizeUnit
@@ -277,9 +278,15 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../fileId/">fileId</a></td>
+<td><a href="../fileGlobalId/">fileGlobalId</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>File identifier, assigned by DCC</td>
+<td>INCLUDE global file identifier, assigned by DCC</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../fileExternalId/">fileExternalId</a></td>
+<td>1..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>Unique identifier for data file, assigned by data contributor</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -417,7 +424,8 @@ slots:
 - hasStudy
 - hasParticipant
 - hasBiospecimen
-- fileId
+- fileGlobalId
+- fileExternalId
 - fileName
 - fileHash
 - dataAccess
@@ -490,18 +498,31 @@ attributes:
     domain_of:
     - DataFile
     range: Biospecimen
-  fileId:
-    name: fileId
-    definition_uri: include:fileId
-    description: File identifier, assigned by DCC
-    title: File ID
+  fileGlobalId:
+    name: fileGlobalId
+    definition_uri: include:fileGlobalId
+    description: INCLUDE global file identifier, assigned by DCC
+    title: File Global ID
     from_schema: https://w3id.org/include/assay
     rank: 1000
-    alias: fileId
+    alias: fileGlobalId
     owner: DataFile
     domain_of:
     - DataFile
     range: string
+  fileExternalId:
+    name: fileExternalId
+    definition_uri: include:fileExternalId
+    description: Unique identifier for data file, assigned by data contributor
+    title: File External ID
+    from_schema: https://w3id.org/include/assay
+    rank: 1000
+    alias: fileExternalId
+    owner: DataFile
+    domain_of:
+    - DataFile
+    range: string
+    required: true
   fileName:
     name: fileName
     definition_uri: include:fileName

@@ -222,11 +222,10 @@
     class Condition
       Thing &lt;|-- Condition
 
-      Condition : ageAtConditionObservation
-      Condition : ageAtMeasurement
+      Condition : ageAtConditionMeasureObservation
       Condition : conditionDataSource
       Condition : conditionInterpretation
-      Condition : conditionSourceText
+      Condition : conditionMeasureSourceText
       Condition : conditionStatus
       Condition : eventId
       Condition : eventType
@@ -235,7 +234,6 @@
       Condition : hpoLabel
       Condition : maxoCode
       Condition : maxoLabel
-      Condition : measureType
       Condition : measureUnit
       Condition : measureValue
       Condition : mondoCode
@@ -270,32 +268,32 @@
 </tr>
 <tr>
 <td><a href="../eventId/">eventId</a></td>
-<td>0..1 <br/> NONE</td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>Identifier for event (Visit, Survey completion, Sample collection, etc</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../eventType/">eventType</a></td>
-<td>0..1 <br/> NONE</td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>Type of event for which Event ID is given (Visit, Survey completion, Sample c...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../conditionSourceText/">conditionSourceText</a></td>
-<td>0..1 <br/> NONE</td>
-<td>Phenotype or diagnosis, as described by data contributor</td>
+<td><a href="../conditionMeasureSourceText/">conditionMeasureSourceText</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>Co-occurring Condition (phenotype or diagnosis) or Measure (observation with ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../ageAtConditionObservation/">ageAtConditionObservation</a></td>
+<td><a href="../ageAtConditionMeasureObservation/">ageAtConditionMeasureObservation</a></td>
 <td>0..1 <br/> <a href="xsd:integer">xsd:integer</a></td>
-<td>Age in days at which condition was observed, recorded, or diagnosed</td>
+<td>Age in days at which Condition or Measure was observed, recorded, or diagnose...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../conditionInterpretation/">conditionInterpretation</a></td>
 <td>0..1 <br/> <a href="../EnumConditionInterpretation/">EnumConditionInterpretation</a></td>
-<td>Whether condition was observed or not</td>
+<td>Whether Condition was observed or not</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -307,37 +305,37 @@
 <tr>
 <td><a href="../conditionDataSource/">conditionDataSource</a></td>
 <td>0..1 <br/> <a href="../EnumConditionDataSource/">EnumConditionDataSource</a></td>
-<td>Whether condition information was obtained from medical records or reported b...</td>
+<td>Whether Condition information was obtained by the investigator or reported by...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../hpoLabel/">hpoLabel</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>Label for condition in the Human Phenotype Ontology (HPO)</td>
+<td>Label for Condition in the Human Phenotype Ontology (HPO)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../hpoCode/">hpoCode</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>Code for condition in the Human Phenotype Ontology (HPO)</td>
+<td>Code for Condition in the Human Phenotype Ontology (HPO)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../mondoLabel/">mondoLabel</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>Label for condition in the Mondo Disease Ontology (MONDO)</td>
+<td>Label for Condition in the Mondo Disease Ontology (MONDO)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../mondoCode/">mondoCode</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>Code for condition in the Mondo Disease Ontology (Mondo)</td>
+<td>Code for Condition in the Mondo Disease Ontology (Mondo)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../maxoLabel/">maxoLabel</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>Label for condition in the Medical Action Ontology (MAXO)</td>
+<td>Label for Condition in the Medical Action Ontology (MAXO)</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -349,19 +347,13 @@
 <tr>
 <td><a href="../otherLabel/">otherLabel</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)</td>
+<td>Label for Condition in another ontology (if no match in HPO, MONDO, or MAXO)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../otherCode/">otherCode</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../measureType/">measureType</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>Type of measure</td>
+<td>Code for Condition in another ontology (if no match in HPO, MONDO, or MAXO)</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -374,12 +366,6 @@
 <td><a href="../measureUnit/">measureUnit</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>Unit that is associated with Measure Value (e</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../ageAtMeasurement/">ageAtMeasurement</a></td>
-<td>0..1 <br/> <a href="xsd:integer">xsd:integer</a></td>
-<td>Age in days at which measurement was performed</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -442,8 +428,8 @@ slots:
 - hasParticipant
 - eventId
 - eventType
-- conditionSourceText
-- ageAtConditionObservation
+- conditionMeasureSourceText
+- ageAtConditionMeasureObservation
 - conditionInterpretation
 - conditionStatus
 - conditionDataSource
@@ -455,10 +441,8 @@ slots:
 - maxoCode
 - otherLabel
 - otherCode
-- measureType
 - measureValue
 - measureUnit
-- ageAtMeasurement
 
 </code></pre>
 </details>
@@ -496,7 +480,7 @@ attributes:
     description: Identifier for event (Visit, Survey completion, Sample collection,
       etc.) to which the Condition data are linked, if applicable. There may be multiple
       events linked to a Participant.
-    title: Event Id
+    title: Event ID
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: eventId
@@ -515,26 +499,28 @@ attributes:
     owner: Condition
     domain_of:
     - Condition
-  conditionSourceText:
-    name: conditionSourceText
-    definition_uri: include:conditionSourceText
-    description: Phenotype or diagnosis, as described by data contributor. The Down
-      Syndrome Genetic Diagnosis will be rolled into this field.
-    title: Condition Source Text
+  conditionMeasureSourceText:
+    name: conditionMeasureSourceText
+    definition_uri: include:conditionMeasureSourceText
+    description: Co-occurring Condition (phenotype or diagnosis) or Measure (observation
+      with numeric value), as described by data contributor. The Down Syndrome Genetic
+      Diagnosis will be rolled into this field.
+    title: Condition or Measure Source Text
     from_schema: https://w3id.org/include/participant
     rank: 1000
-    alias: conditionSourceText
+    alias: conditionMeasureSourceText
     owner: Condition
     domain_of:
     - Condition
-  ageAtConditionObservation:
-    name: ageAtConditionObservation
-    definition_uri: include:ageAtConditionObservation
-    description: Age in days at which condition was observed, recorded, or diagnosed
-    title: Age At Condition Observation
+  ageAtConditionMeasureObservation:
+    name: ageAtConditionMeasureObservation
+    definition_uri: include:ageAtConditionMeasureObservation
+    description: Age in days at which Condition or Measure was observed, recorded,
+      or diagnosed
+    title: Age At Condition or Measure Observation
     from_schema: https://w3id.org/include/participant
     rank: 1000
-    alias: ageAtConditionObservation
+    alias: ageAtConditionMeasureObservation
     owner: Condition
     domain_of:
     - Condition
@@ -542,7 +528,7 @@ attributes:
   conditionInterpretation:
     name: conditionInterpretation
     definition_uri: include:conditionInterpretation
-    description: Whether condition was observed or not
+    description: Whether Condition was observed or not
     title: Condition Interpretation
     from_schema: https://w3id.org/include/participant
     rank: 1000
@@ -567,7 +553,7 @@ attributes:
   conditionDataSource:
     name: conditionDataSource
     definition_uri: include:conditionDataSource
-    description: Whether condition information was obtained from medical records or
+    description: Whether Condition information was obtained by the investigator or
       reported by participant/family member
     title: Condition Data Source
     from_schema: https://w3id.org/include/participant
@@ -580,8 +566,8 @@ attributes:
   hpoLabel:
     name: hpoLabel
     definition_uri: include:hpoLabel
-    description: Label for condition in the Human Phenotype Ontology (HPO)
-    title: Hpo Label
+    description: Label for Condition in the Human Phenotype Ontology (HPO)
+    title: HPO Label
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: hpoLabel
@@ -592,8 +578,8 @@ attributes:
   hpoCode:
     name: hpoCode
     definition_uri: include:hpoCode
-    description: Code for condition in the Human Phenotype Ontology (HPO)
-    title: Hpo Code
+    description: Code for Condition in the Human Phenotype Ontology (HPO)
+    title: HPO Code
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: hpoCode
@@ -604,8 +590,8 @@ attributes:
   mondoLabel:
     name: mondoLabel
     definition_uri: include:mondoLabel
-    description: Label for condition in the Mondo Disease Ontology (MONDO)
-    title: Mondo Label
+    description: Label for Condition in the Mondo Disease Ontology (MONDO)
+    title: MONDO Label
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: mondoLabel
@@ -616,8 +602,8 @@ attributes:
   mondoCode:
     name: mondoCode
     definition_uri: include:mondoCode
-    description: Code for condition in the Mondo Disease Ontology (Mondo)
-    title: Mondo Code
+    description: Code for Condition in the Mondo Disease Ontology (Mondo)
+    title: MONDO Code
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: mondoCode
@@ -628,8 +614,8 @@ attributes:
   maxoLabel:
     name: maxoLabel
     definition_uri: include:maxoLabel
-    description: Label for condition in the Medical Action Ontology (MAXO)
-    title: Maxo Label
+    description: Label for Condition in the Medical Action Ontology (MAXO)
+    title: MAXO Label
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: maxoLabel
@@ -641,7 +627,7 @@ attributes:
     name: maxoCode
     definition_uri: include:maxoCode
     description: Code for condition in the Medical Action Ontology (MAXO)
-    title: Maxo Code
+    title: MAXO Code
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: maxoCode
@@ -652,7 +638,7 @@ attributes:
   otherLabel:
     name: otherLabel
     definition_uri: include:otherLabel
-    description: Label for condition in another ontology (if no match in HPO, MONDO,
+    description: Label for Condition in another ontology (if no match in HPO, MONDO,
       or MAXO)
     title: Other Label
     from_schema: https://w3id.org/include/participant
@@ -665,25 +651,12 @@ attributes:
   otherCode:
     name: otherCode
     definition_uri: include:otherCode
-    description: Code for condition in another ontology (if no match in HPO, MONDO,
+    description: Code for Condition in another ontology (if no match in HPO, MONDO,
       or MAXO)
     title: Other Code
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: otherCode
-    owner: Condition
-    domain_of:
-    - Condition
-    range: string
-  measureType:
-    name: measureType
-    definition_uri: include:measureType
-    description: Type of measure. A Measure is an observation with a numeric value,
-      e.g. Weight, Height, BMI, Blood glucose, Bone density, Blast percentage, etc.
-    title: Measure Type
-    from_schema: https://w3id.org/include/participant
-    rank: 1000
-    alias: measureType
     owner: Condition
     domain_of:
     - Condition
@@ -713,18 +686,6 @@ attributes:
     domain_of:
     - Condition
     range: string
-  ageAtMeasurement:
-    name: ageAtMeasurement
-    definition_uri: include:ageAtMeasurement
-    description: Age in days at which measurement was performed
-    title: Age At Measurement
-    from_schema: https://w3id.org/include/participant
-    rank: 1000
-    alias: ageAtMeasurement
-    owner: Condition
-    domain_of:
-    - Condition
-    range: integer
 
 </code></pre>
 </details>

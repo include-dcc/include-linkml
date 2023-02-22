@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://include-dcc.github.io/include_linkml/fileId/">
+        <link rel="canonical" href="https://include-dcc.github.io/include_linkml/containerExternalId/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: fileId - INCLUDE V2 Data Model</title>
+        <title>Slot: containerExternalId - INCLUDE V2 Data Model</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-fileid" class="md-skip">
+        <a href="#slot-containerexternalid" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: fileId
+              Slot: containerExternalId
             
           </span>
         </div>
@@ -338,15 +338,15 @@
                 
                   
 
-  <a href="https://github.com/include-dcc/include_linkml/edit/master/docs/fileId.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/include-dcc/include_linkml/edit/master/docs/containerExternalId.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-fileid">Slot: fileId</h1>
-<p><em>File identifier, assigned by DCC</em></p>
-<p>URI: <a href="https://w3id.org/include/assay/:fileId">https://w3id.org/include/assay/:fileId</a></p>
+<h1 id="slot-containerexternalid">Slot: containerExternalId</h1>
+<p><em>Identifier for specific container/aliquot of sample, assigned by data contributor. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.</em></p>
+<p>URI: <a href="https://w3id.org/include/assay/:containerExternalId">https://w3id.org/include/assay/:containerExternalId</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -359,8 +359,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../DataFile/">DataFile</a></td>
-<td>A DataFile Associated with a Participant or Study or Biospecimen</td>
+<td><a href="../Biospecimen/">Biospecimen</a></td>
+<td>A Biospecimen Collected from A Participant</td>
 </tr>
 </tbody>
 </table>
@@ -376,15 +376,17 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: fileId
-definition_uri: include:fileId
-description: File identifier, assigned by DCC
-title: File ID
+<pre><code class="language-yaml">name: containerExternalId
+definition_uri: include:containerExternalId
+description: Identifier for specific container/aliquot of sample, assigned by data
+  contributor. For example, distinct aliquots of a sample will have the same Sample
+  ID but different Container IDs.
+title: Container External ID
 from_schema: https://w3id.org/include/assay
 rank: 1000
-alias: fileId
+alias: containerExternalId
 domain_of:
-- DataFile
+- Biospecimen
 range: string
 
 </code></pre>

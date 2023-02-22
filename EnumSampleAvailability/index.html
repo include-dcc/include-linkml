@@ -359,12 +359,12 @@
 <tr>
 <td>available</td>
 <td>None</td>
-<td></td>
+<td>Sample is potentially available to be requested through the Virtual Bioreposi...</td>
 </tr>
 <tr>
 <td>unavailable</td>
 <td>None</td>
-<td></td>
+<td>Sample either was available through Virtual Biorepository but has been used u...</td>
 </tr>
 </tbody>
 </table>
@@ -398,9 +398,13 @@ rank: 1000
 permissible_values:
   available:
     text: available
+    description: Sample is potentially available to be requested through the Virtual
+      Biorepository (see VBR contact info in Study page)
     title: Available
   unavailable:
     text: unavailable
+    description: Sample either was available through Virtual Biorepository but has
+      been used up, or is part of a study that is not participating in the VBR
     title: Unavailable
 
 </code></pre>

@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://include-dcc.github.io/include_linkml/conditionInterpretation/">
+        <link rel="canonical" href="https://include-dcc.github.io/include_linkml/conditionMeasureSourceText/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: conditionInterpretation - INCLUDE V2 Data Model</title>
+        <title>Slot: conditionMeasureSourceText - INCLUDE V2 Data Model</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-conditioninterpretation" class="md-skip">
+        <a href="#slot-conditionmeasuresourcetext" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: conditionInterpretation
+              Slot: conditionMeasureSourceText
             
           </span>
         </div>
@@ -338,15 +338,15 @@
                 
                   
 
-  <a href="https://github.com/include-dcc/include_linkml/edit/master/docs/conditionInterpretation.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/include-dcc/include_linkml/edit/master/docs/conditionMeasureSourceText.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-conditioninterpretation">Slot: conditionInterpretation</h1>
-<p><em>Whether Condition was observed or not</em></p>
-<p>URI: <a href="https://w3id.org/include/participant/:conditionInterpretation">https://w3id.org/include/participant/:conditionInterpretation</a></p>
+<h1 id="slot-conditionmeasuresourcetext">Slot: conditionMeasureSourceText</h1>
+<p><em>Co-occurring Condition (phenotype or diagnosis) or Measure (observation with numeric value), as described by data contributor. The Down Syndrome Genetic Diagnosis will be rolled into this field.</em></p>
+<p>URI: <a href="https://w3id.org/include/participant/:conditionMeasureSourceText">https://w3id.org/include/participant/:conditionMeasureSourceText</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -366,7 +366,7 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../EnumConditionInterpretation/">EnumConditionInterpretation</a></li>
+<li>Range: <a href="xsd:string">xsd:string</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -376,16 +376,18 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: conditionInterpretation
-definition_uri: include:conditionInterpretation
-description: Whether Condition was observed or not
-title: Condition Interpretation
+<pre><code class="language-yaml">name: conditionMeasureSourceText
+definition_uri: include:conditionMeasureSourceText
+description: Co-occurring Condition (phenotype or diagnosis) or Measure (observation
+  with numeric value), as described by data contributor. The Down Syndrome Genetic
+  Diagnosis will be rolled into this field.
+title: Condition or Measure Source Text
 from_schema: https://w3id.org/include/participant
 rank: 1000
-alias: conditionInterpretation
+alias: conditionMeasureSourceText
 domain_of:
 - Condition
-range: enum_conditionInterpretation
+range: string
 
 </code></pre>
 

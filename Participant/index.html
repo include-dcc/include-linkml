@@ -241,7 +241,7 @@
       Participant : otherFamilyMemberId
       Participant : outcomesVitalStatus
       Participant : participantExternalId
-      Participant : participantId
+      Participant : participantGlobalId
       Participant : race
       Participant : sex
       Participant : siblingId
@@ -272,9 +272,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../participantId/">participantId</a></td>
+<td><a href="../participantGlobalId/">participantGlobalId</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>Unique identifier for the participant, assigned by DCC</td>
+<td>Unique INCLUDE global identifier for the participant, assigned by DCC</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -352,13 +352,13 @@
 <tr>
 <td><a href="../ageAtFirstPatientEngagement/">ageAtFirstPatientEngagement</a></td>
 <td>1..1 <br/> <a href="xsd:integer">xsd:integer</a></td>
-<td>Age in days of Participant at first recorded study event (registration/enroll...</td>
+<td>Age in days of Participant at first recorded study event (enrollment, visit, ...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../firstPatientEngagementEvent/">firstPatientEngagementEvent</a></td>
-<td>1..1 <br/> NONE</td>
-<td>Event for which Age at First Patient Engagement is given (registration/enroll...</td>
+<td>1..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>Event for which Age at First Patient Engagement is given (e</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -465,7 +465,7 @@ rank: 1000
 is_a: Thing
 slots:
 - hasStudy
-- participantId
+- participantGlobalId
 - participantExternalId
 - familyId
 - familyType
@@ -516,14 +516,15 @@ attributes:
     - Biospecimen
     - DataFile
     range: Study
-  participantId:
-    name: participantId
-    definition_uri: include:participantId
-    description: Unique identifier for the participant, assigned by DCC
-    title: Participant ID
+  participantGlobalId:
+    name: participantGlobalId
+    definition_uri: include:participantGlobalId
+    description: Unique INCLUDE global identifier for the participant, assigned by
+      DCC
+    title: Participant Global ID
     from_schema: https://w3id.org/include/participant
     rank: 1000
-    alias: participantId
+    alias: participantGlobalId
     owner: Participant
     domain_of:
     - Participant
@@ -638,7 +639,7 @@ attributes:
     name: sex
     definition_uri: include:sex
     description: Sex of Participant
-    title: sex
+    title: Sex
     from_schema: https://w3id.org/include/participant
     rank: 1000
     alias: sex
@@ -689,8 +690,8 @@ attributes:
   ageAtFirstPatientEngagement:
     name: ageAtFirstPatientEngagement
     definition_uri: include:ageAtFirstPatientEngagement
-    description: Age in days of Participant at first recorded study event (registration/enrollment,
-      visit, observation, sample collection, survey completion, etc.). Age at registration/enrollment
+    description: Age in days of Participant at first recorded study event (enrollment,
+      visit, observation, sample collection, survey completion, etc.). Age at enrollment
       is preferred, if available.
     title: Age at First Patient Engagement
     from_schema: https://w3id.org/include/participant
@@ -704,8 +705,8 @@ attributes:
   firstPatientEngagementEvent:
     name: firstPatientEngagementEvent
     definition_uri: include:firstPatientEngagementEvent
-    description: Event for which Age at First Patient Engagement is given (registration/enrollment,
-      visit, observation, sample collection, survey completion, etc.). Age at registration/enrollment
+    description: Event for which Age at First Patient Engagement is given (e.g. enrollment,
+      visit, observation, sample collection, survey completion, etc.). Age at enrollment
       is preferred, if available.
     title: First Patient Engagement Event
     from_schema: https://w3id.org/include/participant

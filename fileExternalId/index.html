@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://include-dcc.github.io/include_linkml/measureType/">
+        <link rel="canonical" href="https://include-dcc.github.io/include_linkml/fileExternalId/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: measureType - INCLUDE V2 Data Model</title>
+        <title>Slot: fileExternalId - INCLUDE V2 Data Model</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-measuretype" class="md-skip">
+        <a href="#slot-fileexternalid" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: measureType
+              Slot: fileExternalId
             
           </span>
         </div>
@@ -338,15 +338,15 @@
                 
                   
 
-  <a href="https://github.com/include-dcc/include_linkml/edit/master/docs/measureType.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/include-dcc/include_linkml/edit/master/docs/fileExternalId.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-measuretype">Slot: measureType</h1>
-<p><em>Type of measure. A Measure is an observation with a numeric value, e.g. Weight, Height, BMI, Blood glucose, Bone density, Blast percentage, etc.</em></p>
-<p>URI: <a href="https://w3id.org/include/participant/:measureType">https://w3id.org/include/participant/:measureType</a></p>
+<h1 id="slot-fileexternalid">Slot: fileExternalId</h1>
+<p><em>Unique identifier for data file, assigned by data contributor</em></p>
+<p>URI: <a href="https://w3id.org/include/assay/:fileExternalId">https://w3id.org/include/assay/:fileExternalId</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -359,34 +359,35 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Condition/">Condition</a></td>
-<td>Co-occurring conditions and other observations for the participant</td>
+<td><a href="../DataFile/">DataFile</a></td>
+<td>A DataFile Associated with a Participant or Study or Biospecimen</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="xsd:string">xsd:string</a></li>
+<li>Required: True</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/include/participant</li>
+<li>from schema: https://w3id.org/include/assay</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: measureType
-definition_uri: include:measureType
-description: Type of measure. A Measure is an observation with a numeric value, e.g.
-  Weight, Height, BMI, Blood glucose, Bone density, Blast percentage, etc.
-title: Measure Type
-from_schema: https://w3id.org/include/participant
+<pre><code class="language-yaml">name: fileExternalId
+definition_uri: include:fileExternalId
+description: Unique identifier for data file, assigned by data contributor
+title: File External ID
+from_schema: https://w3id.org/include/assay
 rank: 1000
-alias: measureType
+alias: fileExternalId
 domain_of:
-- Condition
+- DataFile
 range: string
+required: true
 
 </code></pre>
 

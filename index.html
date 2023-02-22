@@ -464,52 +464,64 @@ Name: include-schema</p>
 <td>Age in days of participant at time of biospecimen collection</td>
 </tr>
 <tr>
-<td><a href="ageAtConditionObservation/">ageAtConditionObservation</a></td>
-<td>Age in days at which condition was observed, recorded, or diagnosed</td>
+<td><a href="ageAtConditionMeasureObservation/">ageAtConditionMeasureObservation</a></td>
+<td>Age in days at which Condition or Measure was observed, recorded, or diagnose...</td>
 </tr>
 <tr>
 <td><a href="ageAtFirstPatientEngagement/">ageAtFirstPatientEngagement</a></td>
-<td>Age in days of Participant at first recorded study event (registration/enroll...</td>
+<td>Age in days of Participant at first recorded study event (enrollment, visit, ...</td>
 </tr>
 <tr>
 <td><a href="ageAtLastVitalStatus/">ageAtLastVitalStatus</a></td>
 <td>Age in days when participant's vital status was last recorded</td>
 </tr>
 <tr>
-<td><a href="ageAtMeasurement/">ageAtMeasurement</a></td>
-<td>Age in days at which measurement was performed</td>
-</tr>
-<tr>
 <td><a href="biospecimenStorage/">biospecimenStorage</a></td>
 <td>Method by which Container is stored (e</td>
 </tr>
 <tr>
-<td><a href="collectionId/">collectionId</a></td>
+<td><a href="collectionExternalId/">collectionExternalId</a></td>
 <td>Identifier for the eldest sample in a lineage of processed, pooled, or aliquo...</td>
+</tr>
+<tr>
+<td><a href="collectionGlobalId/">collectionGlobalId</a></td>
+<td>INCLUDE global identifier for the eldest sample in a lineage, assigned by DCC</td>
 </tr>
 <tr>
 <td><a href="collectionSampleType/">collectionSampleType</a></td>
 <td>Type of biological material comprising the Collected Sample (e</td>
 </tr>
 <tr>
+<td><a href="concentration/">concentration</a></td>
+<td>Concentration of sample in container</td>
+</tr>
+<tr>
+<td><a href="concentrationUnit/">concentrationUnit</a></td>
+<td>Unit of sample concentration</td>
+</tr>
+<tr>
 <td><a href="conditionDataSource/">conditionDataSource</a></td>
-<td>Whether condition information was obtained from medical records or reported b...</td>
+<td>Whether Condition information was obtained by the investigator or reported by...</td>
 </tr>
 <tr>
 <td><a href="conditionInterpretation/">conditionInterpretation</a></td>
-<td>Whether condition was observed or not</td>
+<td>Whether Condition was observed or not</td>
 </tr>
 <tr>
-<td><a href="conditionSourceText/">conditionSourceText</a></td>
-<td>Phenotype or diagnosis, as described by data contributor</td>
+<td><a href="conditionMeasureSourceText/">conditionMeasureSourceText</a></td>
+<td>Co-occurring Condition (phenotype or diagnosis) or Measure (observation with ...</td>
 </tr>
 <tr>
 <td><a href="conditionStatus/">conditionStatus</a></td>
 <td>Whether the Condition is ongoing, has been resolved, or this is a general his...</td>
 </tr>
 <tr>
-<td><a href="containerId/">containerId</a></td>
-<td>Identifier for specific container/aliquot of sample, if applicable</td>
+<td><a href="containerExternalId/">containerExternalId</a></td>
+<td>Identifier for specific container/aliquot of sample, assigned by data contrib...</td>
+</tr>
+<tr>
+<td><a href="containerGlobalId/">containerGlobalId</a></td>
+<td>INCLUDE global identifier for specific container/aliquot of sample, assigned ...</td>
 </tr>
 <tr>
 <td><a href="dataAccess/">dataAccess</a></td>
@@ -568,16 +580,20 @@ Name: include-schema</p>
 <td>Participant External ID for Participant's father (NA if Participant is not th...</td>
 </tr>
 <tr>
+<td><a href="fileExternalId/">fileExternalId</a></td>
+<td>Unique identifier for data file, assigned by data contributor</td>
+</tr>
+<tr>
 <td><a href="fileFormat/">fileFormat</a></td>
 <td>Format of file (e</td>
 </tr>
 <tr>
-<td><a href="fileHash/">fileHash</a></td>
-<td>md5 hash of this file for validation (if known)</td>
+<td><a href="fileGlobalId/">fileGlobalId</a></td>
+<td>INCLUDE global file identifier, assigned by DCC</td>
 </tr>
 <tr>
-<td><a href="fileId/">fileId</a></td>
-<td>File identifier, assigned by DCC</td>
+<td><a href="fileHash/">fileHash</a></td>
+<td>md5 hash of this file for validation (if known)</td>
 </tr>
 <tr>
 <td><a href="fileName/">fileName</a></td>
@@ -593,7 +609,7 @@ Name: include-schema</p>
 </tr>
 <tr>
 <td><a href="firstPatientEngagementEvent/">firstPatientEngagementEvent</a></td>
-<td>Event for which Age at First Patient Engagement is given (registration/enroll...</td>
+<td>Event for which Age at First Patient Engagement is given (e</td>
 </tr>
 <tr>
 <td><a href="hasBiospecimen/">hasBiospecimen</a></td>
@@ -609,11 +625,11 @@ Name: include-schema</p>
 </tr>
 <tr>
 <td><a href="hpoCode/">hpoCode</a></td>
-<td>Code for condition in the Human Phenotype Ontology (HPO)</td>
+<td>Code for Condition in the Human Phenotype Ontology (HPO)</td>
 </tr>
 <tr>
 <td><a href="hpoLabel/">hpoLabel</a></td>
-<td>Label for condition in the Human Phenotype Ontology (HPO)</td>
+<td>Label for Condition in the Human Phenotype Ontology (HPO)</td>
 </tr>
 <tr>
 <td><a href="laboratoryProcedure/">laboratoryProcedure</a></td>
@@ -625,11 +641,7 @@ Name: include-schema</p>
 </tr>
 <tr>
 <td><a href="maxoLabel/">maxoLabel</a></td>
-<td>Label for condition in the Medical Action Ontology (MAXO)</td>
-</tr>
-<tr>
-<td><a href="measureType/">measureType</a></td>
-<td>Type of measure</td>
+<td>Label for Condition in the Medical Action Ontology (MAXO)</td>
 </tr>
 <tr>
 <td><a href="measureUnit/">measureUnit</a></td>
@@ -641,11 +653,11 @@ Name: include-schema</p>
 </tr>
 <tr>
 <td><a href="mondoCode/">mondoCode</a></td>
-<td>Code for condition in the Mondo Disease Ontology (Mondo)</td>
+<td>Code for Condition in the Mondo Disease Ontology (Mondo)</td>
 </tr>
 <tr>
 <td><a href="mondoLabel/">mondoLabel</a></td>
-<td>Label for condition in the Mondo Disease Ontology (MONDO)</td>
+<td>Label for Condition in the Mondo Disease Ontology (MONDO)</td>
 </tr>
 <tr>
 <td><a href="motherId/">motherId</a></td>
@@ -653,7 +665,7 @@ Name: include-schema</p>
 </tr>
 <tr>
 <td><a href="otherCode/">otherCode</a></td>
-<td>Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)</td>
+<td>Code for Condition in another ontology (if no match in HPO, MONDO, or MAXO)</td>
 </tr>
 <tr>
 <td><a href="otherFamilyMemberId/">otherFamilyMemberId</a></td>
@@ -661,15 +673,19 @@ Name: include-schema</p>
 </tr>
 <tr>
 <td><a href="otherLabel/">otherLabel</a></td>
-<td>Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)</td>
+<td>Label for Condition in another ontology (if no match in HPO, MONDO, or MAXO)</td>
 </tr>
 <tr>
 <td><a href="outcomesVitalStatus/">outcomesVitalStatus</a></td>
 <td>Whether participant is alive or dead</td>
 </tr>
 <tr>
-<td><a href="parentSampleId/">parentSampleId</a></td>
+<td><a href="parentSampleExternalId/">parentSampleExternalId</a></td>
 <td>Identifier for the direct parent from which Sample was derived, processed, po...</td>
+</tr>
+<tr>
+<td><a href="parentSampleGlobalId/">parentSampleGlobalId</a></td>
+<td>INCLUDE global identifier for the direct parent from which Sample was derived...</td>
 </tr>
 <tr>
 <td><a href="parentSampleType/">parentSampleType</a></td>
@@ -680,8 +696,8 @@ Name: include-schema</p>
 <td>Unique, de-identified identifier for the participant, assigned by data contri...</td>
 </tr>
 <tr>
-<td><a href="participantId/">participantId</a></td>
-<td>Unique identifier for the participant, assigned by DCC</td>
+<td><a href="participantGlobalId/">participantGlobalId</a></td>
+<td>Unique INCLUDE global identifier for the participant, assigned by DCC</td>
 </tr>
 <tr>
 <td><a href="program/">program</a></td>
@@ -700,8 +716,12 @@ Name: include-schema</p>
 <td>Whether or not the sample is potentially available for sharing through the Vi...</td>
 </tr>
 <tr>
-<td><a href="sampleId/">sampleId</a></td>
-<td>Identifier for sample</td>
+<td><a href="sampleExternalId/">sampleExternalId</a></td>
+<td>Unique identifier for sample, assigned by data contributor</td>
+</tr>
+<tr>
+<td><a href="sampleGlobalId/">sampleGlobalId</a></td>
+<td>INCLUDE global identifier for sample, assigned by DCC</td>
 </tr>
 <tr>
 <td><a href="sampleType/">sampleType</a></td>
@@ -722,6 +742,10 @@ Name: include-schema</p>
 <tr>
 <td><a href="studyName/">studyName</a></td>
 <td>Full name of the study, chosen by data contributor</td>
+</tr>
+<tr>
+<td><a href="vbrContact/">vbrContact</a></td>
+<td>Contact information for Virtual Biorepository inquiries to this Study (email ...</td>
 </tr>
 <tr>
 <td><a href="volume/">volume</a></td>

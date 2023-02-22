@@ -229,16 +229,22 @@
 
       Biospecimen : ageAtBiospecimenCollection
       Biospecimen : biospecimenStorage
-      Biospecimen : collectionId
+      Biospecimen : collectionExternalId
+      Biospecimen : collectionGlobalId
       Biospecimen : collectionSampleType
-      Biospecimen : containerId
+      Biospecimen : concentration
+      Biospecimen : concentrationUnit
+      Biospecimen : containerExternalId
+      Biospecimen : containerGlobalId
       Biospecimen : hasParticipant
       Biospecimen : hasStudy
       Biospecimen : laboratoryProcedure
-      Biospecimen : parentSampleId
+      Biospecimen : parentSampleExternalId
+      Biospecimen : parentSampleGlobalId
       Biospecimen : parentSampleType
       Biospecimen : sampleAvailability
-      Biospecimen : sampleId
+      Biospecimen : sampleExternalId
+      Biospecimen : sampleGlobalId
       Biospecimen : sampleType
       Biospecimen : volume
       Biospecimen : volumeUnit
@@ -275,9 +281,15 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../sampleId/">sampleId</a></td>
+<td><a href="../sampleGlobalId/">sampleGlobalId</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>INCLUDE global identifier for sample, assigned by DCC</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sampleExternalId/">sampleExternalId</a></td>
 <td>1..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>Identifier for sample</td>
+<td>Unique identifier for sample, assigned by data contributor</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -293,7 +305,13 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../parentSampleId/">parentSampleId</a></td>
+<td><a href="../parentSampleGlobalId/">parentSampleGlobalId</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>INCLUDE global identifier for the direct parent from which Sample was derived...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../parentSampleExternalId/">parentSampleExternalId</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>Identifier for the direct parent from which Sample was derived, processed, po...</td>
 <td>direct</td>
@@ -305,7 +323,13 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../collectionId/">collectionId</a></td>
+<td><a href="../collectionGlobalId/">collectionGlobalId</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>INCLUDE global identifier for the eldest sample in a lineage, assigned by DCC</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../collectionExternalId/">collectionExternalId</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>Identifier for the eldest sample in a lineage of processed, pooled, or aliquo...</td>
 <td>direct</td>
@@ -317,9 +341,15 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../containerId/">containerId</a></td>
+<td><a href="../containerGlobalId/">containerGlobalId</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
-<td>Identifier for specific container/aliquot of sample, if applicable</td>
+<td>INCLUDE global identifier for specific container/aliquot of sample, assigned ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../containerExternalId/">containerExternalId</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>Identifier for specific container/aliquot of sample, assigned by data contrib...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -332,6 +362,18 @@
 <td><a href="../volumeUnit/">volumeUnit</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>Unit of sample volume</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../concentration/">concentration</a></td>
+<td>0..1 <br/> <a href="xsd:float">xsd:float</a></td>
+<td>Concentration of sample in container</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../concentrationUnit/">concentrationUnit</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>Unit of sample concentration</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -433,16 +475,22 @@ is_a: Thing
 slots:
 - hasStudy
 - hasParticipant
-- sampleId
+- sampleGlobalId
+- sampleExternalId
 - sampleType
 - ageAtBiospecimenCollection
-- parentSampleId
+- parentSampleGlobalId
+- parentSampleExternalId
 - parentSampleType
-- collectionId
+- collectionGlobalId
+- collectionExternalId
 - collectionSampleType
-- containerId
+- containerGlobalId
+- containerExternalId
 - volume
 - volumeUnit
+- concentration
+- concentrationUnit
 - laboratoryProcedure
 - biospecimenStorage
 - sampleAvailability
@@ -494,15 +542,29 @@ attributes:
     - Biospecimen
     - DataFile
     range: Participant
-  sampleId:
-    name: sampleId
-    definition_uri: include:sampleId
-    description: Identifier for sample. A sample is a unique biological material;
-      two samples with two different IDs are biologically distinct.
-    title: Sample ID
+  sampleGlobalId:
+    name: sampleGlobalId
+    definition_uri: include:sampleGlobalId
+    description: INCLUDE global identifier for sample, assigned by DCC
+    title: Sample Global ID
     from_schema: https://w3id.org/include/assay
     rank: 1000
-    alias: sampleId
+    alias: sampleGlobalId
+    owner: Biospecimen
+    domain_of:
+    - Biospecimen
+    range: string
+    required: false
+  sampleExternalId:
+    name: sampleExternalId
+    definition_uri: include:sampleExternalId
+    description: Unique identifier for sample, assigned by data contributor. A sample
+      is a unique biological material; two samples with two different IDs are biologically
+      distinct.
+    title: Sample External ID
+    from_schema: https://w3id.org/include/assay
+    rank: 1000
+    alias: sampleExternalId
     owner: Biospecimen
     domain_of:
     - Biospecimen
@@ -536,15 +598,28 @@ attributes:
     domain_of:
     - Biospecimen
     range: integer
-  parentSampleId:
-    name: parentSampleId
-    definition_uri: include:parentSampleId
-    description: Identifier for the direct parent from which Sample was derived, processed,
-      pooled, etc. (if applicable)
-    title: Parent Sample Id
+  parentSampleGlobalId:
+    name: parentSampleGlobalId
+    definition_uri: include:parentSampleGlobalId
+    description: INCLUDE global identifier for the direct parent from which Sample
+      was derived, assigned by DCC
+    title: Parent Sample Global ID
     from_schema: https://w3id.org/include/assay
     rank: 1000
-    alias: parentSampleId
+    alias: parentSampleGlobalId
+    owner: Biospecimen
+    domain_of:
+    - Biospecimen
+    range: string
+  parentSampleExternalId:
+    name: parentSampleExternalId
+    definition_uri: include:parentSampleExternalId
+    description: Identifier for the direct parent from which Sample was derived, processed,
+      pooled, etc. (if applicable); assigned by data contributor
+    title: Parent Sample External ID
+    from_schema: https://w3id.org/include/assay
+    rank: 1000
+    alias: parentSampleExternalId
     owner: Biospecimen
     domain_of:
     - Biospecimen
@@ -562,17 +637,30 @@ attributes:
     domain_of:
     - Biospecimen
     range: string
-  collectionId:
-    name: collectionId
-    definition_uri: include:collectionId
+  collectionGlobalId:
+    name: collectionGlobalId
+    definition_uri: include:collectionGlobalId
+    description: INCLUDE global identifier for the eldest sample in a lineage, assigned
+      by DCC
+    title: Collection Global ID
+    from_schema: https://w3id.org/include/assay
+    rank: 1000
+    alias: collectionGlobalId
+    owner: Biospecimen
+    domain_of:
+    - Biospecimen
+    range: string
+  collectionExternalId:
+    name: collectionExternalId
+    definition_uri: include:collectionExternalId
     description: Identifier for the eldest sample in a lineage of processed, pooled,
       or aliquoted samples - typically the material actually collected from the Participant.
       This may be the same as Parent Sample ID or Sample ID (if no processing was
-      performed).
-    title: Collection ID
+      performed). Assigned by data contributor.
+    title: Collection External ID
     from_schema: https://w3id.org/include/assay
     rank: 1000
-    alias: collectionId
+    alias: collectionExternalId
     owner: Biospecimen
     domain_of:
     - Biospecimen
@@ -590,16 +678,29 @@ attributes:
     domain_of:
     - Biospecimen
     range: string
-  containerId:
-    name: containerId
-    definition_uri: include:containerId
-    description: Identifier for specific container/aliquot of sample, if applicable.
-      For example, distinct aliquots of a sample will have the same Sample ID but
-      different Container IDs.
-    title: Container ID
+  containerGlobalId:
+    name: containerGlobalId
+    definition_uri: include:containerGlobalId
+    description: INCLUDE global identifier for specific container/aliquot of sample,
+      assigned by DCC
+    title: Container Global ID
     from_schema: https://w3id.org/include/assay
     rank: 1000
-    alias: containerId
+    alias: containerGlobalId
+    owner: Biospecimen
+    domain_of:
+    - Biospecimen
+    range: string
+  containerExternalId:
+    name: containerExternalId
+    definition_uri: include:containerExternalId
+    description: Identifier for specific container/aliquot of sample, assigned by
+      data contributor. For example, distinct aliquots of a sample will have the same
+      Sample ID but different Container IDs.
+    title: Container External ID
+    from_schema: https://w3id.org/include/assay
+    rank: 1000
+    alias: containerExternalId
     owner: Biospecimen
     domain_of:
     - Biospecimen
@@ -624,6 +725,30 @@ attributes:
     from_schema: https://w3id.org/include/assay
     rank: 1000
     alias: volumeUnit
+    owner: Biospecimen
+    domain_of:
+    - Biospecimen
+    range: string
+  concentration:
+    name: concentration
+    definition_uri: include:concentration
+    description: Concentration of sample in container
+    title: Concentration
+    from_schema: https://w3id.org/include/assay
+    rank: 1000
+    alias: concentration
+    owner: Biospecimen
+    domain_of:
+    - Biospecimen
+    range: float
+  concentrationUnit:
+    name: concentrationUnit
+    definition_uri: include:concentrationUnit
+    description: Unit of sample concentration
+    title: Concentration Unit
+    from_schema: https://w3id.org/include/assay
+    rank: 1000
+    alias: concentrationUnit
     owner: Biospecimen
     domain_of:
     - Biospecimen

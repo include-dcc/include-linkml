@@ -231,6 +231,7 @@
       Study : program
       Study : studyCode
       Study : studyName
+      Study : vbrContact
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -273,6 +274,12 @@
 <td><a href="../dbgap/">dbgap</a></td>
 <td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
 <td>dbGaP study accession code</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../vbrContact/">vbrContact</a></td>
+<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>Contact information for Virtual Biorepository inquiries to this Study (email ...</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -367,6 +374,7 @@ slots:
 - studyName
 - program
 - dbgap
+- vbrContact
 
 </code></pre>
 </details>
@@ -431,6 +439,19 @@ attributes:
     from_schema: https://w3id.org/include/study
     rank: 1000
     alias: dbgap
+    owner: Study
+    domain_of:
+    - Study
+    range: string
+  vbrContact:
+    name: vbrContact
+    definition_uri: include:vbrContact
+    description: Contact information for Virtual Biorepository inquiries to this Study
+      (email or form)
+    title: Virtual Biorepository Contact
+    from_schema: https://w3id.org/include/study
+    rank: 1000
+    alias: vbrContact
     owner: Study
     domain_of:
     - Study
