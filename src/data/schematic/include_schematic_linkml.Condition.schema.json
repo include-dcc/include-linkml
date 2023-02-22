@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/INCLUDE.Condition.manifest",
+  "title": "INCLUDE.Condition.manifest",
+  "type": "object",
+  "properties": {
+    "Condition Data Source": {
+      "enum": [
+        "Clinical",
+        "Self-reported",
+        ""
+      ]
+    },
+    "Condition or Measure Source Text": {},
+    "Other Code": {},
+    "HPO Code": {},
+    "MONDO Label": {},
+    "MONDO Code": {},
+    "Event Type": {},
+    "MAXO Code": {},
+    "MAXO Label": {},
+    "Event ID": {},
+    "Condition Interpretation": {
+      "enum": [
+        "Observed",
+        "Not Observed",
+        ""
+      ]
+    },
+    "Other Label": {},
+    "Measure Value": {},
+    "Measure Unit": {},
+    "HPO Label": {},
+    "Age At Condition or Measure Observation": {},
+    "Condition Status": {
+      "enum": [
+        "Resolved",
+        "Current",
+        "History Of",
+        ""
+      ]
+    },
+    "Participant External ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    }
+  },
+  "required": [
+    "Participant External ID"
+  ]
+}

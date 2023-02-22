@@ -2,9 +2,10 @@
 
 This repository includes the LinkML model and tooling for the v2 Data Model
 
+# Where to find the data model:
 
-
-
+* The YAML files are in `src > linkml`
+* The JSON-LD schema is in `src > data > schematic`
 
 
 

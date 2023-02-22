@@ -60,16 +60,22 @@ classes:
     slots:
     - hasStudy
     - hasParticipant    
-    - sampleId
+    - sampleGlobalId
+    - sampleExternalId
     - sampleType
     - ageAtBiospecimenCollection
-    - parentSampleId
+    - parentSampleGlobalId
+    - parentSampleExternalId
     - parentSampleType
-    - collectionId
+    - collectionGlobalId
+    - collectionExternalId
     - collectionSampleType
-    - containerId
+    - containerGlobalId
+    - containerExternalId
     - volume
     - volumeUnit
+    - concentration
+    - concentrationUnit
     - laboratoryProcedure
     - biospecimenStorage
     - sampleAvailability
@@ -93,7 +99,8 @@ classes:
     - hasStudy
     - hasParticipant    
     - hasBiospecimen    
-    - fileId
+    - fileGlobalId
+    - fileExternalId
     - fileName
     - fileHash
     - dataAccess
@@ -108,11 +115,17 @@ classes:
     - publicationDoi
 
 slots:
-  sampleId:
-    definition_uri: include:sampleId
-    description: Identifier for sample. A sample is a unique biological material;
+  sampleGlobalId:
+    definition_uri: include:sampleGlobalId
+    description: INCLUDE global identifier for sample, assigned by DCC
+    title: Sample Global ID
+    required: false
+    range: string
+  sampleExternalId:
+    definition_uri: include:sampleExternalId
+    description: Unique identifier for sample, assigned by data contributor. A sample is a unique biological material;
       two samples with two different IDs are biologically distinct.
-    title: Sample ID
+    title: Sample External ID
     required: true
     range: string
   sampleType:
@@ -126,35 +139,50 @@ slots:
     description: Age in days of participant at time of biospecimen collection
     title: Age At Biospecimen Collection
     range: integer
-  parentSampleId:
-    definition_uri: include:parentSampleId
+  parentSampleGlobalId:
+    definition_uri: include:parentSampleGlobalId
+    description: INCLUDE global identifier for the direct parent from which Sample was derived, assigned by DCC
+    title: Parent Sample Global ID
+    range: string
+  parentSampleExternalId:
+    definition_uri: include:parentSampleExternalId
     description: Identifier for the direct parent from which Sample was derived, processed,
-      pooled, etc. (if applicable)
-    title: Parent Sample Id
+      pooled, etc. (if applicable); assigned by data contributor
+    title: Parent Sample External ID
     range: string
   parentSampleType:
     definition_uri: include:parentSampleType
     description: Type of biological material comprising the Parent Sample (e.g. Peripheral Whole Blood, Derived Cell Line, Saliva, Whole blood, WBCs) 
     title: Parent Sample Type
     range: string
-  collectionId:
-    definition_uri: include:collectionId
+  collectionGlobalId:
+    definition_uri: include:collectionGlobalId
+    description: INCLUDE global identifier for the eldest sample in a lineage, assigned by DCC
+    title: Collection Global ID
+    range: string
+  collectionExternalId:
+    definition_uri: include:collectionExternalId
     description: Identifier for the eldest sample in a lineage of processed, pooled,
       or aliquoted samples - typically the material actually collected from the Participant. This may be the same as Parent Sample ID or Sample ID
-      (if no processing was performed).
-    title: Collection ID
+      (if no processing was performed). Assigned by data contributor.
+    title: Collection External ID
     range: string
   collectionSampleType:
     definition_uri: include:collectionSampleType
     description: Type of biological material comprising the Collected Sample (e.g. Whole blood, Not reported, Saliva, Derived cell line)
     title: Collection Sample Type
     range: string
-  containerId:
-    definition_uri: include:containerId
-    description: Identifier for specific container/aliquot of sample, if applicable.
+  containerGlobalId:
+    definition_uri: include:containerGlobalId
+    description: INCLUDE global identifier for specific container/aliquot of sample, assigned by DCC
+    title: Container Global ID
+    range: string
+  containerExternalId:
+    definition_uri: include:containerExternalId
+    description: Identifier for specific container/aliquot of sample, assigned by data contributor.
       For example, distinct aliquots of a sample will have the same Sample ID but
       different Container IDs.
-    title: Container ID
+    title: Container External ID
     range: string
   volume:
     definition_uri: include:volume
@@ -165,6 +193,16 @@ slots:
     definition_uri: include:volumeUnit
     description: Unit of sample volume
     title: Volume Unit
+    range: string
+  concentration:
+    definition_uri: include:concentration
+    description: Concentration of sample in container
+    title: Concentration
+    range: float
+  concentrationUnit:
+    definition_uri: include:concentrationUnit
+    description: Unit of sample concentration
+    title: Concentration Unit
     range: string
   laboratoryProcedure:
     definition_uri: include:laboratoryProcedure
@@ -187,10 +225,16 @@ slots:
     description: Link to a Participant 
     title: Has Participant
     range: Participant # this should link to Participant External ID for now, then INCLUDE ID when we have them
-  fileId:
-    definition_uri: include:fileId
-    description: File identifier, assigned by DCC
-    title: File ID
+  fileGlobalId:
+    definition_uri: include:fileGlobalId
+    description: INCLUDE global file identifier, assigned by DCC
+    title: File Global ID
+    range: string
+  fileExternalId:
+    definition_uri: include:fileExternalId
+    description: Unique identifier for data file, assigned by data contributor
+    title: File External ID
+    required: true
     range: string
   fileName:
     definition_uri: include:fileName
@@ -302,6 +346,8 @@ enums:
       available:
         text: available
         title: Available
+        description: Sample is potentially available to be requested through the Virtual Biorepository (see VBR contact info in Study page)
       unavailable:
         text: unavailable
         title: Unavailable
+        description: Sample either was available through Virtual Biorepository but has been used up, or is part of a study that is not participating in the VBR

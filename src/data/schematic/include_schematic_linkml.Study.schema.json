@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/INCLUDE.Study.manifest",
+  "title": "INCLUDE.Study.manifest",
+  "type": "object",
+  "properties": {
+    "dbGaP": {},
+    "Program": {
+      "enum": [
+        "KF",
+        "INCLUDE"
+      ]
+    },
+    "Study Name": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Virtual Biorepository Contact": {},
+    "Study Code": {
+      "enum": [
+        "DS-ISP",
+        "DS-Sleep",
+        "DSC",
+        "ADS",
+        "ECODS",
+        "BRI-DSR",
+        "TRC-DS",
+        "CHARGE-DS",
+        "DS-COG-ALL",
+        "DS-PCGC",
+        "DS360-CHD",
+        "HTP",
+        "DS-COG-AML",
+        "DS-Nexus",
+        "BrainPower",
+        "DS-HSAT",
+        "DS-Brain",
+        "X01-Hakon",
+        "DS-PALS",
+        "AECOM-DS",
+        "ExCEEDS",
+        "ABC-DS",
+        "X01-deSmith",
+        "DS-DETERMINED"
+      ]
+    }
+  },
+  "required": [
+    "Program",
+    "Study Name",
+    "Study Code"
+  ]
+}
