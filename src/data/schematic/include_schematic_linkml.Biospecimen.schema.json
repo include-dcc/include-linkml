@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/INCLUDE.Biospecimen.manifest",
+  "title": "INCLUDE.Biospecimen.manifest",
+  "type": "object",
+  "properties": {
+    "Study Code": {
+      "enum": [
+        "DS-HSAT",
+        "AECOM-DS",
+        "DS-DETERMINED",
+        "DS-COG-ALL",
+        "DS-COG-AML",
+        "TRC-DS",
+        "DSC",
+        "DS-ISP",
+        "HTP",
+        "DS-Nexus",
+        "CHARGE-DS",
+        "DS-Brain",
+        "ExCEEDS",
+        "ECODS",
+        "BrainPower",
+        "DS360-CHD",
+        "ABC-DS",
+        "X01-deSmith",
+        "DS-PALS",
+        "X01-Hakon",
+        "DS-PCGC",
+        "ADS",
+        "BRI-DSR",
+        "DS-Sleep"
+      ]
+    },
+    "Parent Sample Type": {},
+    "Container ID": {},
+    "Sample Availability": {
+      "enum": [
+        "Unavailable",
+        "Available",
+        ""
+      ]
+    },
+    "Volume Unit": {},
+    "Parent Sample Id": {},
+    "Participant ID": {},
+    "Collection ID": {},
+    "Age At Biospecimen Collection": {},
+    "Laboratory Procedure": {},
+    "Sample Type": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Collection Sample Type": {},
+    "Biospecimen Storage": {},
+    "Volume": {},
+    "Sample ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    }
+  },
+  "required": [
+    "Study Code",
+    "Sample Type",
+    "Sample ID"
+  ]
+}

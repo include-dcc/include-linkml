@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/INCLUDE.DataFile.manifest",
+  "title": "INCLUDE.DataFile.manifest",
+  "type": "object",
+  "properties": {
+    "Study Code": {
+      "enum": [
+        "DS-HSAT",
+        "AECOM-DS",
+        "DS-DETERMINED",
+        "DS-COG-ALL",
+        "DS-COG-AML",
+        "TRC-DS",
+        "DSC",
+        "DS-ISP",
+        "HTP",
+        "DS-Nexus",
+        "CHARGE-DS",
+        "DS-Brain",
+        "ExCEEDS",
+        "ECODS",
+        "BrainPower",
+        "DS360-CHD",
+        "ABC-DS",
+        "X01-deSmith",
+        "DS-PALS",
+        "X01-Hakon",
+        "DS-PCGC",
+        "ADS",
+        "BRI-DSR",
+        "DS-Sleep"
+      ]
+    },
+    "Data Category": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Participant ID": {},
+    "File Hash": {},
+    "Publication DOI": {},
+    "File Format": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "File Name": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Access URL": {},
+    "Data Type": {},
+    "File Size Unit": {},
+    "File ID": {},
+    "Experimental Platform": {},
+    "File Size": {},
+    "Experimental Strategy": {},
+    "Data Access": {
+      "enum": [
+        "Open",
+        "Controlled",
+        "Registered",
+        ""
+      ]
+    },
+    "Sample ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    }
+  },
+  "required": [
+    "Study Code",
+    "Data Category",
+    "File Format",
+    "File Name",
+    "Sample ID"
+  ]
+}

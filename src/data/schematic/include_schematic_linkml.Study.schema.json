@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/INCLUDE.Study.manifest",
+  "title": "INCLUDE.Study.manifest",
+  "type": "object",
+  "properties": {
+    "Study Code": {
+      "enum": [
+        "DS-HSAT",
+        "AECOM-DS",
+        "DS-DETERMINED",
+        "DS-COG-ALL",
+        "DS-COG-AML",
+        "TRC-DS",
+        "DSC",
+        "DS-ISP",
+        "HTP",
+        "DS-Nexus",
+        "CHARGE-DS",
+        "DS-Brain",
+        "ExCEEDS",
+        "ECODS",
+        "BrainPower",
+        "DS360-CHD",
+        "ABC-DS",
+        "X01-deSmith",
+        "DS-PALS",
+        "X01-Hakon",
+        "DS-PCGC",
+        "ADS",
+        "BRI-DSR",
+        "DS-Sleep"
+      ]
+    },
+    "Program": {
+      "enum": [
+        "KF",
+        "INCLUDE"
+      ]
+    },
+    "Study Name": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "dbGaP": {}
+  },
+  "required": [
+    "Study Code",
+    "Program",
+    "Study Name"
+  ]
+}

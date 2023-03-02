@@ -158,6 +158,9 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
+                    "@id": "include:studyCode"
+                },
+                {
                     "@id": "include:participantId"
                 },
                 {
@@ -2086,6 +2089,9 @@
                     "@id": "include:Participant"
                 },
                 {
+                    "@id": "include:Condition"
+                },
+                {
                     "@id": "include:Biospecimen"
                 },
                 {
@@ -2423,7 +2429,7 @@
         {
             "@id": "include:measureUnit",
             "@type": "rdf:Property",
-            "rdfs:comment": "Unit associated with Measure Value (e.g. kg, cm, %, x10^9/L, etc.)",
+            "rdfs:comment": "Unit that is associated with Measure Value (e.g. kg, cm, %, x10^9/L, etc.)",
             "rdfs:label": "measureUnit",
             "schema:domainIncludes": [
                 {

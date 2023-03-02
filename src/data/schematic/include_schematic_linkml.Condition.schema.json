@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/INCLUDE.Condition.manifest",
+  "title": "INCLUDE.Condition.manifest",
+  "type": "object",
+  "properties": {
+    "Condition Data Source": {
+      "enum": [
+        "Self-reported",
+        "Clinical",
+        ""
+      ]
+    },
+    "Age At Condition Observation": {},
+    "Mondo Code": {},
+    "Hpo Code": {},
+    "Event Type": {},
+    "Condition Source Text": {},
+    "Maxo Label": {},
+    "Study Code": {
+      "enum": [
+        "DS-HSAT",
+        "AECOM-DS",
+        "DS-DETERMINED",
+        "DS-COG-ALL",
+        "DS-COG-AML",
+        "TRC-DS",
+        "DSC",
+        "DS-ISP",
+        "HTP",
+        "DS-Nexus",
+        "CHARGE-DS",
+        "DS-Brain",
+        "ExCEEDS",
+        "ECODS",
+        "BrainPower",
+        "DS360-CHD",
+        "ABC-DS",
+        "X01-deSmith",
+        "DS-PALS",
+        "X01-Hakon",
+        "DS-PCGC",
+        "ADS",
+        "BRI-DSR",
+        "DS-Sleep"
+      ]
+    },
+    "Other Label": {},
+    "Event Id": {},
+    "Age At Measurement": {},
+    "Hpo Label": {},
+    "Measure Type": {},
+    "Condition Interpretation": {
+      "enum": [
+        "Not Observed",
+        "Observed",
+        ""
+      ]
+    },
+    "Participant ID": {},
+    "Other Code": {},
+    "Measure Value": {},
+    "Maxo Code": {},
+    "Measure Unit": {},
+    "Condition Status": {
+      "enum": [
+        "Resolved",
+        "History Of",
+        "Current",
+        ""
+      ]
+    },
+    "Mondo Label": {}
+  },
+  "required": [
+    "Study Code"
+  ]
+}
