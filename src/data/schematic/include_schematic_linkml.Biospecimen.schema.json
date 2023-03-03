@@ -4,80 +4,68 @@
   "title": "INCLUDE.Biospecimen.manifest",
   "type": "object",
   "properties": {
-    "Concentration Unit": {},
-    "Parent Sample Type": {},
-    "Sample External ID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "Age At Biospecimen Collection": {},
-    "Laboratory Procedure": {},
-    "Sample Global ID": {},
-    "Participant External ID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "Concentration": {},
-    "Collection Sample Type": {},
-    "Biospecimen Storage": {},
-    "Parent Sample Global ID": {},
-    "Container Global ID": {},
-    "Parent Sample External ID": {},
-    "Container External ID": {},
     "Study Code": {
       "enum": [
-        "DS-ISP",
-        "DS-Sleep",
-        "DSC",
-        "ADS",
-        "ECODS",
-        "BRI-DSR",
-        "TRC-DS",
-        "CHARGE-DS",
-        "DS-COG-ALL",
-        "DS-PCGC",
-        "DS360-CHD",
-        "HTP",
-        "DS-COG-AML",
-        "DS-Nexus",
-        "BrainPower",
         "DS-HSAT",
-        "DS-Brain",
-        "X01-Hakon",
-        "DS-PALS",
         "AECOM-DS",
+        "DS-DETERMINED",
+        "DS-COG-ALL",
+        "DS-COG-AML",
+        "TRC-DS",
+        "DSC",
+        "DS-ISP",
+        "HTP",
+        "DS-Nexus",
+        "CHARGE-DS",
+        "DS-Brain",
         "ExCEEDS",
+        "ECODS",
+        "BrainPower",
+        "DS360-CHD",
         "ABC-DS",
         "X01-deSmith",
-        "DS-DETERMINED"
+        "DS-PALS",
+        "X01-Hakon",
+        "DS-PCGC",
+        "ADS",
+        "BRI-DSR",
+        "DS-Sleep"
       ]
     },
-    "Collection Global ID": {},
+    "Parent Sample Type": {},
+    "Container ID": {},
     "Sample Availability": {
       "enum": [
-        "Available",
         "Unavailable",
+        "Available",
         ""
       ]
     },
-    "Volume": {},
+    "Volume Unit": {},
+    "Parent Sample Id": {},
+    "Participant ID": {},
+    "Collection ID": {},
+    "Age At Biospecimen Collection": {},
+    "Laboratory Procedure": {},
     "Sample Type": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "Volume Unit": {},
-    "Collection External ID": {}
+    "Collection Sample Type": {},
+    "Biospecimen Storage": {},
+    "Volume": {},
+    "Sample ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    }
   },
   "required": [
-    "Sample External ID",
-    "Participant External ID",
     "Study Code",
-    "Sample Type"
+    "Sample Type",
+    "Sample ID"
   ]
 }

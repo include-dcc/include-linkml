@@ -140,7 +140,6 @@ dmypy.json
 #cogs
 .cogs/
 
-#pierrette's stuff
 config.yml
 great_expectations/
 harmonized_data/

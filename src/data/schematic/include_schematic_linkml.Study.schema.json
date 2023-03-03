@@ -4,7 +4,34 @@
   "title": "INCLUDE.Study.manifest",
   "type": "object",
   "properties": {
-    "dbGaP": {},
+    "Study Code": {
+      "enum": [
+        "DS-HSAT",
+        "AECOM-DS",
+        "DS-DETERMINED",
+        "DS-COG-ALL",
+        "DS-COG-AML",
+        "TRC-DS",
+        "DSC",
+        "DS-ISP",
+        "HTP",
+        "DS-Nexus",
+        "CHARGE-DS",
+        "DS-Brain",
+        "ExCEEDS",
+        "ECODS",
+        "BrainPower",
+        "DS360-CHD",
+        "ABC-DS",
+        "X01-deSmith",
+        "DS-PALS",
+        "X01-Hakon",
+        "DS-PCGC",
+        "ADS",
+        "BRI-DSR",
+        "DS-Sleep"
+      ]
+    },
     "Program": {
       "enum": [
         "KF",
@@ -17,39 +44,11 @@
       },
       "minLength": 1
     },
-    "Virtual Biorepository Contact": {},
-    "Study Code": {
-      "enum": [
-        "DS-ISP",
-        "DS-Sleep",
-        "DSC",
-        "ADS",
-        "ECODS",
-        "BRI-DSR",
-        "TRC-DS",
-        "CHARGE-DS",
-        "DS-COG-ALL",
-        "DS-PCGC",
-        "DS360-CHD",
-        "HTP",
-        "DS-COG-AML",
-        "DS-Nexus",
-        "BrainPower",
-        "DS-HSAT",
-        "DS-Brain",
-        "X01-Hakon",
-        "DS-PALS",
-        "AECOM-DS",
-        "ExCEEDS",
-        "ABC-DS",
-        "X01-deSmith",
-        "DS-DETERMINED"
-      ]
-    }
+    "dbGaP": {}
   },
   "required": [
+    "Study Code",
     "Program",
-    "Study Name",
-    "Study Code"
+    "Study Name"
   ]
 }

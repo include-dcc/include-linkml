@@ -4,74 +4,48 @@
   "title": "INCLUDE.DataFile.manifest",
   "type": "object",
   "properties": {
-    "File Hash": {},
-    "Publication DOI": {},
-    "Data Type": {},
-    "File External ID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "File Global ID": {},
-    "Data Access": {
+    "Study Code": {
       "enum": [
-        "Controlled",
-        "Registered",
-        "Open",
-        ""
+        "DS-HSAT",
+        "AECOM-DS",
+        "DS-DETERMINED",
+        "DS-COG-ALL",
+        "DS-COG-AML",
+        "TRC-DS",
+        "DSC",
+        "DS-ISP",
+        "HTP",
+        "DS-Nexus",
+        "CHARGE-DS",
+        "DS-Brain",
+        "ExCEEDS",
+        "ECODS",
+        "BrainPower",
+        "DS360-CHD",
+        "ABC-DS",
+        "X01-deSmith",
+        "DS-PALS",
+        "X01-Hakon",
+        "DS-PCGC",
+        "ADS",
+        "BRI-DSR",
+        "DS-Sleep"
       ]
     },
-    "File Size Unit": {},
-    "Access URL": {},
     "Data Category": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "File Size": {},
+    "Participant ID": {},
+    "File Hash": {},
+    "Publication DOI": {},
     "File Format": {
       "not": {
         "type": "null"
       },
       "minLength": 1
-    },
-    "Experimental Strategy": {},
-    "Experimental Platform": {},
-    "Sample External ID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "Study Code": {
-      "enum": [
-        "DS-ISP",
-        "DS-Sleep",
-        "DSC",
-        "ADS",
-        "ECODS",
-        "BRI-DSR",
-        "TRC-DS",
-        "CHARGE-DS",
-        "DS-COG-ALL",
-        "DS-PCGC",
-        "DS360-CHD",
-        "HTP",
-        "DS-COG-AML",
-        "DS-Nexus",
-        "BrainPower",
-        "DS-HSAT",
-        "DS-Brain",
-        "X01-Hakon",
-        "DS-PALS",
-        "AECOM-DS",
-        "ExCEEDS",
-        "ABC-DS",
-        "X01-deSmith",
-        "DS-DETERMINED"
-      ]
     },
     "File Name": {
       "not": {
@@ -79,7 +53,22 @@
       },
       "minLength": 1
     },
-    "Participant External ID": {
+    "Access URL": {},
+    "Data Type": {},
+    "File Size Unit": {},
+    "File ID": {},
+    "Experimental Platform": {},
+    "File Size": {},
+    "Experimental Strategy": {},
+    "Data Access": {
+      "enum": [
+        "Open",
+        "Controlled",
+        "Registered",
+        ""
+      ]
+    },
+    "Sample ID": {
       "not": {
         "type": "null"
       },
@@ -87,12 +76,10 @@
     }
   },
   "required": [
-    "File External ID",
+    "Study Code",
     "Data Category",
     "File Format",
-    "Sample External ID",
-    "Study Code",
     "File Name",
-    "Participant External ID"
+    "Sample ID"
   ]
 }

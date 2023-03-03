@@ -6,48 +6,73 @@
   "properties": {
     "Condition Data Source": {
       "enum": [
-        "Clinical",
         "Self-reported",
+        "Clinical",
         ""
       ]
     },
-    "Condition or Measure Source Text": {},
-    "Other Code": {},
-    "HPO Code": {},
-    "MONDO Label": {},
-    "MONDO Code": {},
+    "Age At Condition Observation": {},
+    "Mondo Code": {},
+    "Hpo Code": {},
     "Event Type": {},
-    "MAXO Code": {},
-    "MAXO Label": {},
-    "Event ID": {},
-    "Condition Interpretation": {
+    "Condition Source Text": {},
+    "Maxo Label": {},
+    "Study Code": {
       "enum": [
-        "Observed",
-        "Not Observed",
-        ""
+        "DS-HSAT",
+        "AECOM-DS",
+        "DS-DETERMINED",
+        "DS-COG-ALL",
+        "DS-COG-AML",
+        "TRC-DS",
+        "DSC",
+        "DS-ISP",
+        "HTP",
+        "DS-Nexus",
+        "CHARGE-DS",
+        "DS-Brain",
+        "ExCEEDS",
+        "ECODS",
+        "BrainPower",
+        "DS360-CHD",
+        "ABC-DS",
+        "X01-deSmith",
+        "DS-PALS",
+        "X01-Hakon",
+        "DS-PCGC",
+        "ADS",
+        "BRI-DSR",
+        "DS-Sleep"
       ]
     },
     "Other Label": {},
-    "Measure Value": {},
-    "Measure Unit": {},
-    "HPO Label": {},
-    "Age At Condition or Measure Observation": {},
-    "Condition Status": {
+    "Event Id": {},
+    "Age At Measurement": {},
+    "Hpo Label": {},
+    "Measure Type": {},
+    "Condition Interpretation": {
       "enum": [
-        "Resolved",
-        "Current",
-        "History Of",
+        "Not Observed",
+        "Observed",
         ""
       ]
     },
-    "Participant External ID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    }
+    "Participant ID": {},
+    "Other Code": {},
+    "Measure Value": {},
+    "Maxo Code": {},
+    "Measure Unit": {},
+    "Condition Status": {
+      "enum": [
+        "Resolved",
+        "History Of",
+        "Current",
+        ""
+      ]
+    },
+    "Mondo Label": {}
   },
   "required": [
-    "Participant External ID"
+    "Study Code"
   ]
 }

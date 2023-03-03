@@ -80,6 +80,7 @@ classes:
     is_a: Thing
     description: Co-occurring conditions and other observations for the participant
     slots:
+    - hasStudy     
     - hasParticipant
     - eventId
     - eventType

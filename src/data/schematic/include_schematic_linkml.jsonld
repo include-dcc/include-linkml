@@ -161,7 +161,10 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
-                    "@id": "include:participantExternalId"
+                    "@id": "include:studyCode"
+                },
+                {
+                    "@id": "include:participantId"
                 },
                 {
                     "@id": "include:eventId"
@@ -2119,6 +2122,9 @@
             "schema:domainIncludes": [
                 {
                     "@id": "include:Participant"
+                },
+                {
+                    "@id": "include:Condition"
                 },
                 {
                     "@id": "include:Biospecimen"
