@@ -1,99 +1,95 @@
-type Aliquot
-  {
-  }
-
-type Assay
-  {
-    usesBiospecimen: Biospecimen
-    hasOutput: DataFile
-  }
-
 type Biospecimen
   {
+    hasStudy: Study
+    hasParticipant: Participant
+    sampleId: String!
+    sampleType: String!
     ageAtBiospecimenCollection: Integer
-    biospecimenStorage: String
+    parentSampleId: String
+    parentSampleType: String
     collectionId: String
     collectionSampleType: String
     containerId: String
-    hasDatafile: DataFile
-    hasParticipant: Participant
-    hasStudy: Study
-    laboratoryProcedure: String
-    parentSampleId: String
-    parentSampleType: String
-    sampleAvailability: EnumSampleAvailability
-    sampleId: String!
-    sampleType: String!
     volume: Float
     volumeUnit: String
-    hasAliquot: Aliquot
+    laboratoryProcedure: String
+    biospecimenStorage: String
+    sampleAvailability: EnumSampleAvailability
   }
 
 type Condition
   {
+    hasStudy: Study
     hasParticipant: Participant
+    eventId: String
+    eventType: String
+    conditionSourceText: String
     ageAtConditionObservation: Integer
-    mondoLabel: String
-    mondoCode: String
     conditionInterpretation: EnumConditionInterpretation
+    conditionStatus: EnumConditionStatus
     conditionDataSource: EnumConditionDataSource
     hpoLabel: String
     hpoCode: String
+    mondoLabel: String
+    mondoCode: String
     maxoLabel: String
     maxoCode: String
     otherLabel: String
     otherCode: String
+    measureType: String
+    measureValue: Integer
+    measureUnit: String
+    ageAtMeasurement: Integer
   }
 
 type DataFile
   {
-    accessUrl: Uriorcurie
-    collectionId: String
+    hasStudy: Study
+    hasParticipant: Participant
+    hasBiospecimen: Biospecimen
+    fileId: String
+    fileName: String!
+    fileHash: String
     dataAccess: EnumDataAccess
     dataCategory: String!
     dataType: String
     experimentalStrategy: String
-    fileId: String
-    fileName: String!
-    format: String!
-    hasBiospecimen: Biospecimen
-    hasParticipant: Participant
-    hasStudy: Study
-    participantId: String!
-    size: String
-    originalFileName: String!
-  }
-
-type FamilyGroup
-  {
-    hasParticipant: Participant
+    experimentalPlatform: String
+    fileFormat: String!
+    fileSize: Integer
+    fileSizeUnit: String
+    accessUrl: Uriorcurie
+    publicationDoi: String
   }
 
 type Participant
   {
-    ageAtLastVitalStatus: Integer
-    downSyndromeStatus: EnumDownSyndromeStatus!
-    ethnicity: EnumEthnicity!
-    externalId: String!
+    hasStudy: Study
+    participantId: String
+    participantExternalId: String!
     familyId: String
-    familyRelationship: Participant
     familyType: EnumFamilyType!
     fatherId: String
-    hasDatafile: DataFile
-    hasStudy: Study
     motherId: String
-    outcomesVitalStatus: EnumVitalStatus
-    participantId: String!
-    race: EnumRace!
+    siblingId: String
+    otherFamilyMemberId: String
+    familyRelationship: EnumFamilyRelationship
     sex: EnumSex!
+    race: EnumRace!
+    ethnicity: EnumEthnicity!
+    downSyndromeStatus: EnumDownSyndromeStatus!
+    ageAtFirstPatientEngagement: Integer!
+    firstPatientEngagementEvent: String!
+    outcomesVitalStatus: EnumVitalStatus
+    ageAtLastVitalStatus: Integer
   }
 
 type Study
   {
-    dbgap: String
-    program: EnumProgram!
     studyCode: EnumStudyCode!
     studyName: String!
+    program: EnumProgram!
+    dbgap: String
   }
 
 type Thing
