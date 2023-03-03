@@ -222,7 +222,7 @@
 </a>
 <h1 id="class-study">Class: Study</h1>
 <p><em>General information about the study</em></p>
-<p>URI: <a href="https://w3id.org/include/study/:Study">https://w3id.org/include/study/:Study</a></p>
+<p>URI: <a href="https://w3id.org/include/Study">include:Study</a></p>
 <div class="mermaid"> classDiagram
     class Study
       Thing &lt;|-- Study
@@ -260,7 +260,7 @@
 </tr>
 <tr>
 <td><a href="../studyName/">studyName</a></td>
-<td>1..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>Full name of the study, chosen by data contributor</td>
 <td>direct</td>
 </tr>
@@ -272,13 +272,13 @@
 </tr>
 <tr>
 <td><a href="../dbgap/">dbgap</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>dbGaP study accession code</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../vbrContact/">vbrContact</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Contact information for Virtual Biorepository inquiries to this Study (email ...</td>
 <td>direct</td>
 </tr>
@@ -297,6 +297,12 @@
 <tbody>
 <tr>
 <td><a href="../Participant/">Participant</a></td>
+<td><a href="../hasStudy/">hasStudy</a></td>
+<td>range</td>
+<td><a href="./">Study</a></td>
+</tr>
+<tr>
+<td><a href="../Condition/">Condition</a></td>
 <td><a href="../hasStudy/">hasStudy</a></td>
 <td>range</td>
 <td><a href="./">Study</a></td>
@@ -333,7 +339,7 @@
 </table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/include/study</li>
+<li>from schema: https://w3id.org/include</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -346,11 +352,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>https://w3id.org/include/study/:Study</td>
+<td>include:Study</td>
 </tr>
 <tr>
 <td>native</td>
-<td>https://w3id.org/include/study/:Study</td>
+<td>include:Study</td>
 </tr>
 </tbody>
 </table>
@@ -366,7 +372,7 @@ annotations:
     value: 'True'
 description: General information about the study
 title: Study
-from_schema: https://w3id.org/include/study
+from_schema: https://w3id.org/include
 rank: 1000
 is_a: Thing
 slots:
@@ -388,7 +394,7 @@ annotations:
     value: 'True'
 description: General information about the study
 title: Study
-from_schema: https://w3id.org/include/study
+from_schema: https://w3id.org/include
 rank: 1000
 is_a: Thing
 attributes:
@@ -397,7 +403,7 @@ attributes:
     definition_uri: include:studyCode
     description: Unique identifer for the study, assigned by DCC
     title: Study Code
-    from_schema: https://w3id.org/include/study
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: studyCode
     owner: Study
@@ -410,7 +416,7 @@ attributes:
     definition_uri: include:studyName
     description: Full name of the study, chosen by data contributor
     title: Study Name
-    from_schema: https://w3id.org/include/study
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: studyName
     owner: Study
@@ -423,7 +429,7 @@ attributes:
     definition_uri: include:program
     description: Funding source for the study
     title: Program
-    from_schema: https://w3id.org/include/study
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: program
     owner: Study
@@ -436,7 +442,7 @@ attributes:
     definition_uri: include:dbgap
     description: dbGaP study accession code
     title: dbGaP
-    from_schema: https://w3id.org/include/study
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: dbgap
     owner: Study
@@ -449,7 +455,7 @@ attributes:
     description: Contact information for Virtual Biorepository inquiries to this Study
       (email or form)
     title: Virtual Biorepository Contact
-    from_schema: https://w3id.org/include/study
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: vbrContact
     owner: Study

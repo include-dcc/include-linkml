@@ -222,7 +222,7 @@
 </a>
 <h1 id="class-participant">Class: Participant</h1>
 <p><em>Demographic and clinical information about the participant</em></p>
-<p>URI: <a href="https://w3id.org/include/participant/:Participant">https://w3id.org/include/participant/:Participant</a></p>
+<p>URI: <a href="https://w3id.org/include/Participant">include:Participant</a></p>
 <div class="mermaid"> classDiagram
     class Participant
       Thing &lt;|-- Participant
@@ -273,19 +273,19 @@
 </tr>
 <tr>
 <td><a href="../participantGlobalId/">participantGlobalId</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unique INCLUDE global identifier for the participant, assigned by DCC</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../participantExternalId/">participantExternalId</a></td>
-<td>1..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>Unique, de-identified identifier for the participant, assigned by data contri...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../familyId/">familyId</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifer for family to which Participant belongs, assigned by data co...</td>
 <td>direct</td>
 </tr>
@@ -297,25 +297,25 @@
 </tr>
 <tr>
 <td><a href="../fatherId/">fatherId</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Participant External ID for Participant's father (NA if Participant is not th...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../motherId/">motherId</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Participant External ID for Participant's mother (NA if Participant is not th...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../siblingId/">siblingId</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Participant External ID for Participant's sibling(s) (NA if Participant is no...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../otherFamilyMemberId/">otherFamilyMemberId</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Participant External ID for Participant's other family members (NA if Partici...</td>
 <td>direct</td>
 </tr>
@@ -351,13 +351,13 @@
 </tr>
 <tr>
 <td><a href="../ageAtFirstPatientEngagement/">ageAtFirstPatientEngagement</a></td>
-<td>1..1 <br/> <a href="xsd:integer">xsd:integer</a></td>
+<td>1..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Age in days of Participant at first recorded study event (enrollment, visit, ...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../firstPatientEngagementEvent/">firstPatientEngagementEvent</a></td>
-<td>1..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>Event for which Age at First Patient Engagement is given (e</td>
 <td>direct</td>
 </tr>
@@ -369,7 +369,7 @@
 </tr>
 <tr>
 <td><a href="../ageAtLastVitalStatus/">ageAtLastVitalStatus</a></td>
-<td>0..1 <br/> <a href="xsd:integer">xsd:integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Age in days when participant's vital status was last recorded</td>
 <td>direct</td>
 </tr>
@@ -424,7 +424,7 @@
 </table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/include/participant</li>
+<li>from schema: https://w3id.org/include</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -437,11 +437,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>https://w3id.org/include/participant/:Participant</td>
+<td>include:Participant</td>
 </tr>
 <tr>
 <td>native</td>
-<td>https://w3id.org/include/participant/:Participant</td>
+<td>include:Participant</td>
 </tr>
 </tbody>
 </table>
@@ -460,7 +460,7 @@ annotations:
     value: Study,DataFile
 description: Demographic and clinical information about the participant
 title: Participant
-from_schema: https://w3id.org/include/participant
+from_schema: https://w3id.org/include
 rank: 1000
 is_a: Thing
 slots:
@@ -498,7 +498,7 @@ annotations:
     value: Study,DataFile
 description: Demographic and clinical information about the participant
 title: Participant
-from_schema: https://w3id.org/include/participant
+from_schema: https://w3id.org/include
 rank: 1000
 is_a: Thing
 attributes:
@@ -507,12 +507,13 @@ attributes:
     definition_uri: include:hasStudy
     description: Link to a Study
     title: Has Study
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: hasStudy
     owner: Participant
     domain_of:
     - Participant
+    - Condition
     - Biospecimen
     - DataFile
     range: Study
@@ -522,7 +523,7 @@ attributes:
     description: Unique INCLUDE global identifier for the participant, assigned by
       DCC
     title: Participant Global ID
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: participantGlobalId
     owner: Participant
@@ -537,7 +538,7 @@ attributes:
       data contributor. External IDs must be two steps removed from personal information
       in the study records.
     title: Participant External ID
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: participantExternalId
     owner: Participant
@@ -551,7 +552,7 @@ attributes:
     description: Unique identifer for family to which Participant belongs, assigned
       by data contributor
     title: Family ID
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: familyId
     owner: Participant
@@ -563,7 +564,7 @@ attributes:
     definition_uri: include:familyType
     description: Structure of family members participating in the study
     title: Family Type
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: familyType
     owner: Participant
@@ -577,7 +578,7 @@ attributes:
     description: Participant External ID for Participant's father (NA if Participant
       is not the proband)
     title: Father ID
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: fatherId
     owner: Participant
@@ -590,7 +591,7 @@ attributes:
     description: Participant External ID for Participant's mother (NA if Participant
       is not the proband)
     title: Mother ID
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: motherId
     owner: Participant
@@ -603,7 +604,7 @@ attributes:
     description: Participant External ID for Participant's sibling(s) (NA if Participant
       is not the proband)
     title: Sibling ID
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: siblingId
     owner: Participant
@@ -616,7 +617,7 @@ attributes:
     description: Participant External ID for Participant's other family members (NA
       if Participant is not the proband)
     title: Other Family Member ID
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: otherFamilyMemberId
     owner: Participant
@@ -628,7 +629,7 @@ attributes:
     definition_uri: include:familyRelationship
     description: Relationship of Participant to proband
     title: Family Relationship
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: familyRelationship
     owner: Participant
@@ -640,7 +641,7 @@ attributes:
     definition_uri: include:sex
     description: Sex of Participant
     title: Sex
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: sex
     owner: Participant
@@ -653,7 +654,7 @@ attributes:
     definition_uri: include:race
     description: Race of Participant
     title: Race
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: race
     owner: Participant
@@ -666,7 +667,7 @@ attributes:
     definition_uri: include:ethnicity
     description: Ethnicity of Participant
     title: Ethnicity
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: ethnicity
     owner: Participant
@@ -679,7 +680,7 @@ attributes:
     definition_uri: include:downSyndromeStatus
     description: Down Syndrome status of participant
     title: Down Syndrome Status
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: downSyndromeStatus
     owner: Participant
@@ -694,7 +695,7 @@ attributes:
       visit, observation, sample collection, survey completion, etc.). Age at enrollment
       is preferred, if available.
     title: Age at First Patient Engagement
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: ageAtFirstPatientEngagement
     owner: Participant
@@ -709,7 +710,7 @@ attributes:
       visit, observation, sample collection, survey completion, etc.). Age at enrollment
       is preferred, if available.
     title: First Patient Engagement Event
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: firstPatientEngagementEvent
     owner: Participant
@@ -721,7 +722,7 @@ attributes:
     definition_uri: include:outcomesVitalStatus
     description: Whether participant is alive or dead
     title: Outcomes Vital Status
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: outcomesVitalStatus
     owner: Participant
@@ -733,7 +734,7 @@ attributes:
     definition_uri: include:ageAtLastVitalStatus
     description: Age in days when participant's vital status was last recorded
     title: Age at Last Vital Status
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: ageAtLastVitalStatus
     owner: Participant

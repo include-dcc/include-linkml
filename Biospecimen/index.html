@@ -222,7 +222,7 @@
 </a>
 <h1 id="class-biospecimen">Class: Biospecimen</h1>
 <p><em>A Biospecimen Collected from A Participant</em></p>
-<p>URI: <a href="https://w3id.org/include/assay/:Biospecimen">https://w3id.org/include/assay/:Biospecimen</a></p>
+<p>URI: <a href="https://w3id.org/include/Biospecimen">include:Biospecimen</a></p>
 <div class="mermaid"> classDiagram
     class Biospecimen
       Thing &lt;|-- Biospecimen
@@ -282,109 +282,109 @@
 </tr>
 <tr>
 <td><a href="../sampleGlobalId/">sampleGlobalId</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>INCLUDE global identifier for sample, assigned by DCC</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sampleExternalId/">sampleExternalId</a></td>
-<td>1..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier for sample, assigned by data contributor</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sampleType/">sampleType</a></td>
-<td>1..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>Type of biological material comprising the Sample (e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../ageAtBiospecimenCollection/">ageAtBiospecimenCollection</a></td>
-<td>0..1 <br/> <a href="xsd:integer">xsd:integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Age in days of participant at time of biospecimen collection</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../parentSampleGlobalId/">parentSampleGlobalId</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>INCLUDE global identifier for the direct parent from which Sample was derived...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../parentSampleExternalId/">parentSampleExternalId</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for the direct parent from which Sample was derived, processed, po...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../parentSampleType/">parentSampleType</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Type of biological material comprising the Parent Sample (e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../collectionGlobalId/">collectionGlobalId</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>INCLUDE global identifier for the eldest sample in a lineage, assigned by DCC</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../collectionExternalId/">collectionExternalId</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for the eldest sample in a lineage of processed, pooled, or aliquo...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../collectionSampleType/">collectionSampleType</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Type of biological material comprising the Collected Sample (e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../containerGlobalId/">containerGlobalId</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>INCLUDE global identifier for specific container/aliquot of sample, assigned ...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../containerExternalId/">containerExternalId</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for specific container/aliquot of sample, assigned by data contrib...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../volume/">volume</a></td>
-<td>0..1 <br/> <a href="xsd:float">xsd:float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Amount of sample in container</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../volumeUnit/">volumeUnit</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unit of sample volume</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../concentration/">concentration</a></td>
-<td>0..1 <br/> <a href="xsd:float">xsd:float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Concentration of sample in container</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../concentrationUnit/">concentrationUnit</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unit of sample concentration</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../laboratoryProcedure/">laboratoryProcedure</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Procedure by which Sample was derived from Parent Sample (e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../biospecimenStorage/">biospecimenStorage</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Method by which Container is stored (e</td>
 <td>direct</td>
 </tr>
@@ -433,7 +433,7 @@
 </table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/include/assay</li>
+<li>from schema: https://w3id.org/include</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -446,11 +446,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>https://w3id.org/include/assay/:Biospecimen</td>
+<td>include:Biospecimen</td>
 </tr>
 <tr>
 <td>native</td>
-<td>https://w3id.org/include/assay/:Biospecimen</td>
+<td>include:Biospecimen</td>
 </tr>
 </tbody>
 </table>
@@ -469,7 +469,7 @@ annotations:
     value: Study,Participant,DataFile
 description: A Biospecimen Collected from A Participant
 title: Biospecimen
-from_schema: https://w3id.org/include/assay
+from_schema: https://w3id.org/include
 rank: 1000
 is_a: Thing
 slots:
@@ -510,7 +510,7 @@ annotations:
     value: Study,Participant,DataFile
 description: A Biospecimen Collected from A Participant
 title: Biospecimen
-from_schema: https://w3id.org/include/assay
+from_schema: https://w3id.org/include
 rank: 1000
 is_a: Thing
 attributes:
@@ -519,12 +519,13 @@ attributes:
     definition_uri: include:hasStudy
     description: Link to a Study
     title: Has Study
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: hasStudy
     owner: Biospecimen
     domain_of:
     - Participant
+    - Condition
     - Biospecimen
     - DataFile
     range: Study
@@ -533,7 +534,7 @@ attributes:
     definition_uri: include:hasParticipant
     description: Link to a Participant
     title: Has Participant
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: hasParticipant
     owner: Biospecimen
@@ -547,7 +548,7 @@ attributes:
     definition_uri: include:sampleGlobalId
     description: INCLUDE global identifier for sample, assigned by DCC
     title: Sample Global ID
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: sampleGlobalId
     owner: Biospecimen
@@ -562,7 +563,7 @@ attributes:
       is a unique biological material; two samples with two different IDs are biologically
       distinct.
     title: Sample External ID
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: sampleExternalId
     owner: Biospecimen
@@ -578,7 +579,7 @@ attributes:
       CD4+ Tconv cells, NK cells, Monocytes, CD8+ T cells, B cells, Granulocytes,
       Treg cells)
     title: Sample Type
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: sampleType
     owner: Biospecimen
@@ -591,7 +592,7 @@ attributes:
     definition_uri: include:ageAtBiospecimenCollection
     description: Age in days of participant at time of biospecimen collection
     title: Age At Biospecimen Collection
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: ageAtBiospecimenCollection
     owner: Biospecimen
@@ -604,7 +605,7 @@ attributes:
     description: INCLUDE global identifier for the direct parent from which Sample
       was derived, assigned by DCC
     title: Parent Sample Global ID
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: parentSampleGlobalId
     owner: Biospecimen
@@ -617,7 +618,7 @@ attributes:
     description: Identifier for the direct parent from which Sample was derived, processed,
       pooled, etc. (if applicable); assigned by data contributor
     title: Parent Sample External ID
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: parentSampleExternalId
     owner: Biospecimen
@@ -630,7 +631,7 @@ attributes:
     description: Type of biological material comprising the Parent Sample (e.g. Peripheral
       Whole Blood, Derived Cell Line, Saliva, Whole blood, WBCs)
     title: Parent Sample Type
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: parentSampleType
     owner: Biospecimen
@@ -643,7 +644,7 @@ attributes:
     description: INCLUDE global identifier for the eldest sample in a lineage, assigned
       by DCC
     title: Collection Global ID
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: collectionGlobalId
     owner: Biospecimen
@@ -658,7 +659,7 @@ attributes:
       This may be the same as Parent Sample ID or Sample ID (if no processing was
       performed). Assigned by data contributor.
     title: Collection External ID
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: collectionExternalId
     owner: Biospecimen
@@ -671,7 +672,7 @@ attributes:
     description: Type of biological material comprising the Collected Sample (e.g.
       Whole blood, Not reported, Saliva, Derived cell line)
     title: Collection Sample Type
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: collectionSampleType
     owner: Biospecimen
@@ -684,7 +685,7 @@ attributes:
     description: INCLUDE global identifier for specific container/aliquot of sample,
       assigned by DCC
     title: Container Global ID
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: containerGlobalId
     owner: Biospecimen
@@ -698,7 +699,7 @@ attributes:
       data contributor. For example, distinct aliquots of a sample will have the same
       Sample ID but different Container IDs.
     title: Container External ID
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: containerExternalId
     owner: Biospecimen
@@ -710,7 +711,7 @@ attributes:
     definition_uri: include:volume
     description: Amount of sample in container
     title: Volume
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: volume
     owner: Biospecimen
@@ -722,7 +723,7 @@ attributes:
     definition_uri: include:volumeUnit
     description: Unit of sample volume
     title: Volume Unit
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: volumeUnit
     owner: Biospecimen
@@ -734,7 +735,7 @@ attributes:
     definition_uri: include:concentration
     description: Concentration of sample in container
     title: Concentration
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: concentration
     owner: Biospecimen
@@ -746,7 +747,7 @@ attributes:
     definition_uri: include:concentrationUnit
     description: Unit of sample concentration
     title: Concentration Unit
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: concentrationUnit
     owner: Biospecimen
@@ -760,7 +761,7 @@ attributes:
       RBC lysis, Lyse/fix buffer, FACS, PAXgene DNA, PAXgene RNA, Qiagen Allprep,
       Ficoll)
     title: Laboratory Procedure
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: laboratoryProcedure
     owner: Biospecimen
@@ -773,7 +774,7 @@ attributes:
     description: Method by which Container is stored (e.g. Minus 80 degrees Celsius,
       Liquid nitrogen storage)
     title: Biospecimen Storage
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: biospecimenStorage
     owner: Biospecimen
@@ -786,7 +787,7 @@ attributes:
     description: Whether or not the sample is potentially available for sharing through
       the Virtual Biorepository
     title: Sample Availability
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: sampleAvailability
     owner: Biospecimen

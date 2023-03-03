@@ -217,7 +217,7 @@
 </a>
 <h1 id="class-datafile">Class: DataFile</h1>
 <p><em>A DataFile Associated with a Participant or Study or Biospecimen</em></p>
-<p>URI: <a href="https://w3id.org/include/assay/:DataFile">https://w3id.org/include/assay/:DataFile</a></p>
+<p>URI: <a href="https://w3id.org/include/DataFile">include:DataFile</a></p>
 <div class="mermaid"> classDiagram
     class DataFile
       Thing &lt;|-- DataFile
@@ -279,25 +279,25 @@
 </tr>
 <tr>
 <td><a href="../fileGlobalId/">fileGlobalId</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>INCLUDE global file identifier, assigned by DCC</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../fileExternalId/">fileExternalId</a></td>
-<td>1..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier for data file, assigned by data contributor</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../fileName/">fileName</a></td>
-<td>1..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>Name of file, assigned by data contributor</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../fileHash/">fileHash</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>md5 hash of this file for validation (if known)</td>
 <td>direct</td>
 </tr>
@@ -309,55 +309,55 @@
 </tr>
 <tr>
 <td><a href="../dataCategory/">dataCategory</a></td>
-<td>1..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>General category of data in file (e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../dataType/">dataType</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Specific type of data contained in file (e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../experimentalStrategy/">experimentalStrategy</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Experimental method used to obtain data in file (e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../experimentalPlatform/">experimentalPlatform</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Specific platform used to perform experiment (e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../fileFormat/">fileFormat</a></td>
-<td>1..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>Format of file (e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../fileSize/">fileSize</a></td>
-<td>0..1 <br/> <a href="xsd:integer">xsd:integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Size of file, if known (mainly important if large)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../fileSizeUnit/">fileSizeUnit</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unit of file size</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../accessUrl/">accessUrl</a></td>
-<td>0..1 <br/> <a href="xsd:anyURI">xsd:anyURI</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>URL/URI to file repository location</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../publicationDoi/">publicationDoi</a></td>
-<td>0..1 <br/> <a href="xsd:string">xsd:string</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>DOI of publication associated with this file, if published</td>
 <td>direct</td>
 </tr>
@@ -381,7 +381,7 @@
 </table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/include/assay</li>
+<li>from schema: https://w3id.org/include</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -394,11 +394,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>https://w3id.org/include/assay/:DataFile</td>
+<td>include:DataFile</td>
 </tr>
 <tr>
 <td>native</td>
-<td>https://w3id.org/include/assay/:DataFile</td>
+<td>include:DataFile</td>
 </tr>
 </tbody>
 </table>
@@ -417,7 +417,7 @@ annotations:
     value: Study,Participant,Biospecimen
 description: A DataFile Associated with a Participant or Study or Biospecimen
 title: Data File
-from_schema: https://w3id.org/include/assay
+from_schema: https://w3id.org/include
 rank: 1000
 is_a: Thing
 slots:
@@ -454,7 +454,7 @@ annotations:
     value: Study,Participant,Biospecimen
 description: A DataFile Associated with a Participant or Study or Biospecimen
 title: Data File
-from_schema: https://w3id.org/include/assay
+from_schema: https://w3id.org/include
 rank: 1000
 is_a: Thing
 attributes:
@@ -463,12 +463,13 @@ attributes:
     definition_uri: include:hasStudy
     description: Link to a Study
     title: Has Study
-    from_schema: https://w3id.org/include/participant
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: hasStudy
     owner: DataFile
     domain_of:
     - Participant
+    - Condition
     - Biospecimen
     - DataFile
     range: Study
@@ -477,7 +478,7 @@ attributes:
     definition_uri: include:hasParticipant
     description: Link to a Participant
     title: Has Participant
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: hasParticipant
     owner: DataFile
@@ -491,7 +492,7 @@ attributes:
     definition_uri: include:hasBiospecimen
     description: Link to a Biospecimen
     title: Has Biospecimen
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: hasBiospecimen
     owner: DataFile
@@ -503,7 +504,7 @@ attributes:
     definition_uri: include:fileGlobalId
     description: INCLUDE global file identifier, assigned by DCC
     title: File Global ID
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: fileGlobalId
     owner: DataFile
@@ -515,7 +516,7 @@ attributes:
     definition_uri: include:fileExternalId
     description: Unique identifier for data file, assigned by data contributor
     title: File External ID
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: fileExternalId
     owner: DataFile
@@ -528,7 +529,7 @@ attributes:
     definition_uri: include:fileName
     description: Name of file, assigned by data contributor
     title: File Name
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: fileName
     owner: DataFile
@@ -541,7 +542,7 @@ attributes:
     definition_uri: include:fileHash
     description: md5 hash of this file for validation (if known)
     title: File Hash
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: fileHash
     owner: DataFile
@@ -553,7 +554,7 @@ attributes:
     definition_uri: include:dataAccess
     description: Type of access control on this file, determined by DCC
     title: Data Access
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: dataAccess
     owner: DataFile
@@ -566,7 +567,7 @@ attributes:
     description: General category of data in file (e.g. Clinical, Genomics, Proteomics,
       Metabolomics, Immune profiling, Transcriptomics)
     title: Data Category
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: dataCategory
     owner: DataFile
@@ -582,7 +583,7 @@ attributes:
       variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy
       number variations, Somatic structural variations)
     title: Data Type
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: dataType
     owner: DataFile
@@ -595,7 +596,7 @@ attributes:
     description: Experimental method used to obtain data in file (e.g. Whole genome
       sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
     title: Experimental Strategy
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: experimentalStrategy
     owner: DataFile
@@ -608,7 +609,7 @@ attributes:
     description: Specific platform used to perform experiment (e.g. SOMAscan, MSD,
       Luminex, Illumina)
     title: Experimental Platform
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: experimentalPlatform
     owner: DataFile
@@ -620,7 +621,7 @@ attributes:
     definition_uri: include:fileFormat
     description: Format of file (e.g. tsv, cram, gvcf, vcf, maf, txt, pdf, html, png)
     title: File Format
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: fileFormat
     owner: DataFile
@@ -633,7 +634,7 @@ attributes:
     definition_uri: include:fileSize
     description: Size of file, if known (mainly important if large)
     title: File Size
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: fileSize
     owner: DataFile
@@ -645,7 +646,7 @@ attributes:
     definition_uri: include:fileSizeUnit
     description: Unit of file size
     title: File Size Unit
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: fileSizeUnit
     owner: DataFile
@@ -657,7 +658,7 @@ attributes:
     definition_uri: include:accessUrl
     description: URL/URI to file repository location
     title: Access URL
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: accessUrl
     owner: DataFile
@@ -669,7 +670,7 @@ attributes:
     definition_uri: include:publicationDoi
     description: DOI of publication associated with this file, if published
     title: Publication DOI
-    from_schema: https://w3id.org/include/assay
+    from_schema: https://w3id.org/include
     rank: 1000
     alias: publicationDoi
     owner: DataFile
