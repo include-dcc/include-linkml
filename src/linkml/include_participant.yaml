@@ -36,7 +36,7 @@ classes:
     is_a: Thing
     slots:
     - hasStudy     
-    - participantId 
+    - participantGlobalId 
     - participantExternalId
     - familyId
     - familyType
@@ -84,8 +84,8 @@ classes:
     - hasParticipant
     - eventId
     - eventType
-    - conditionSourceText # will include DS Genetic Diagnosis
-    - ageAtConditionObservation
+    - conditionMeasureSourceText # will include DS Genetic Diagnosis
+    - ageAtConditionMeasureObservation
     - conditionInterpretation
     - conditionStatus
     - conditionDataSource
@@ -97,15 +97,13 @@ classes:
     - maxoCode
     - otherLabel
     - otherCode
-    - measureType
     - measureValue
     - measureUnit
-    - ageAtMeasurement
 slots:
-  participantId:
-    definition_uri: include:participantId
-    description: Unique identifier for the participant, assigned by DCC
-    title: Participant ID
+  participantGlobalId:
+    definition_uri: include:participantGlobalId
+    description: Unique INCLUDE global identifier for the participant, assigned by DCC
+    title: Participant Global ID
     required: false # change to true when we have INCLUDE IDs
     range: string
   participantExternalId:
@@ -153,7 +151,7 @@ slots:
   sex:
     definition_uri: include:sex
     description: Sex of Participant
-    title: sex
+    title: Sex
     range: enum_sex
     required: true
   race:
@@ -176,13 +174,13 @@ slots:
     required: true
   ageAtFirstPatientEngagement:
     definition_uri: include:ageAtFirstPatientEngagement
-    description: Age in days of Participant at first recorded study event (registration/enrollment, visit, observation, sample collection, survey completion, etc.). Age at registration/enrollment is preferred, if available.
+    description: Age in days of Participant at first recorded study event (enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.
     title: Age at First Patient Engagement
     range: integer
     required: true
   firstPatientEngagementEvent:
     definition_uri: include:firstPatientEngagementEvent
-    description: Event for which Age at First Patient Engagement is given (registration/enrollment, visit, observation, sample collection, survey completion, etc.). Age at registration/enrollment is preferred, if available.
+    description: Event for which Age at First Patient Engagement is given (e.g. enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.
     title: First Patient Engagement Event
     required: true
   outcomesVitalStatus:
@@ -208,23 +206,23 @@ slots:
   eventId:
     definition_uri: include:eventId
     description: Identifier for event (Visit, Survey completion, Sample collection, etc.) to which the Condition data are linked, if applicable. There may be multiple events linked to a Participant.
-    title: Event Id
+    title: Event ID
   eventType:
     definition_uri: include:eventType
     description: Type of event for which Event ID is given (Visit, Survey completion, Sample collection, etc.)
     title: Event Type
-  conditionSourceText:
-    definition_uri: include:conditionSourceText
-    description: Phenotype or diagnosis, as described by data contributor. The Down Syndrome Genetic Diagnosis will be rolled into this field.
-    title: Condition Source Text
-  ageAtConditionObservation:
-    definition_uri: include:ageAtConditionObservation
-    description: Age in days at which condition was observed, recorded, or diagnosed
-    title: Age At Condition Observation
+  conditionMeasureSourceText:
+    definition_uri: include:conditionMeasureSourceText
+    description: Co-occurring Condition (phenotype or diagnosis) or Measure (observation with numeric value), as described by data contributor. The Down Syndrome Genetic Diagnosis will be rolled into this field.
+    title: Condition or Measure Source Text
+  ageAtConditionMeasureObservation:
+    definition_uri: include:ageAtConditionMeasureObservation
+    description: Age in days at which Condition or Measure was observed, recorded, or diagnosed
+    title: Age At Condition or Measure Observation
     range: integer
   conditionInterpretation:
     definition_uri: include:conditionInterpretation
-    description: Whether condition was observed or not
+    description: Whether Condition was observed or not
     title: Condition Interpretation
     range: enum_conditionInterpretation
   conditionStatus:
@@ -234,54 +232,49 @@ slots:
     range: enum_conditionStatus
   conditionDataSource:
     definition_uri: include:conditionDataSource
-    description: Whether condition information was obtained from medical records or reported by participant/family member
+    description: Whether Condition information was obtained by the investigator or reported by participant/family member
     title: Condition Data Source
     range: enum_conditionDataSource
   hpoLabel:
     definition_uri: include:hpoLabel
-    description: Label for condition in the Human Phenotype Ontology (HPO)
-    title: Hpo Label
+    description: Label for Condition in the Human Phenotype Ontology (HPO)
+    title: HPO Label
     range: string
   hpoCode:
     definition_uri: include:hpoCode
-    description: Code for condition in the Human Phenotype Ontology (HPO)
-    title: Hpo Code
+    description: Code for Condition in the Human Phenotype Ontology (HPO)
+    title: HPO Code
     range: string
   mondoLabel:
     definition_uri: include:mondoLabel
-    description: Label for condition in the Mondo Disease Ontology (MONDO)
-    title: Mondo Label
+    description: Label for Condition in the Mondo Disease Ontology (MONDO)
+    title: MONDO Label
     range: string
   mondoCode:
     definition_uri: include:mondoCode
-    description: Code for condition in the Mondo Disease Ontology (Mondo)
-    title: Mondo Code
+    description: Code for Condition in the Mondo Disease Ontology (Mondo)
+    title: MONDO Code
     range: string
   maxoLabel:
     definition_uri: include:maxoLabel
-    description: Label for condition in the Medical Action Ontology (MAXO)
-    title: Maxo Label
+    description: Label for Condition in the Medical Action Ontology (MAXO)
+    title: MAXO Label
     range: string
   maxoCode:
     definition_uri: include:maxoCode
     description: Code for condition in the Medical Action Ontology (MAXO)
-    title: Maxo Code
+    title: MAXO Code
     range: string
   otherLabel:
     definition_uri: include:otherLabel
-    description: Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)
+    description: Label for Condition in another ontology (if no match in HPO, MONDO, or MAXO)
     title: Other Label
     range: string
   otherCode:
     definition_uri: include:otherCode
-    description: Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)
+    description: Code for Condition in another ontology (if no match in HPO, MONDO, or MAXO)
     title: Other Code
     range: string
-  measureType:
-    definition_uri: include:measureType
-    description: Type of measure. A Measure is an observation with a numeric value, e.g. Weight, Height, BMI, Blood glucose, Bone density, Blast percentage, etc.
-    title: Measure Type
-    range: string # eventually want ontology terms here
   measureValue:
     definition_uri: include:measureValue
     description: Numeric value of Measure
@@ -292,11 +285,6 @@ slots:
     description: Unit that is associated with Measure Value (e.g. kg, cm, %, x10^9/L, etc.)
     title: Measure Unit
     range: string # eventually want ontology terms here
-  ageAtMeasurement:  
-    definition_uri: include:ageAtMeasurement
-    description: Age in days at which measurement was performed
-    title: Age At Measurement
-    range: integer
     
 enums:
   enum_conditionInterpretation:

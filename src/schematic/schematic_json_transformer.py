@@ -45,10 +45,10 @@ logging.info("running transformer")
 
 
 OBJECT_RANGE_MAP = {
-    "hasParticipant": "participantId",
-    "hasBiospecimen": "sampleId",
+    "hasParticipant": "participantExternalId",
+    "hasBiospecimen": "sampleExternalId",
     "hasStudy": "studyCode",
-    "hasDatafile": "fileId"
+    "hasDatafile": "fileExternalId"
 }
 
 class SchematicJSONTransformer(object):

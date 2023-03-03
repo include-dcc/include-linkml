@@ -44,6 +44,9 @@
                 },
                 {
                     "@id": "include:dbgap"
+                },
+                {
+                    "@id": "include:vbrContact"
                 }
             ],
             "sms:validationRules": []
@@ -88,7 +91,7 @@
                     "@id": "include:studyCode"
                 },
                 {
-                    "@id": "include:participantId"
+                    "@id": "include:participantGlobalId"
                 },
                 {
                     "@id": "include:participantExternalId"
@@ -170,10 +173,10 @@
                     "@id": "include:eventType"
                 },
                 {
-                    "@id": "include:conditionSourceText"
+                    "@id": "include:conditionMeasureSourceText"
                 },
                 {
-                    "@id": "include:ageAtConditionObservation"
+                    "@id": "include:ageAtConditionMeasureObservation"
                 },
                 {
                     "@id": "include:conditionInterpretation"
@@ -209,16 +212,10 @@
                     "@id": "include:otherCode"
                 },
                 {
-                    "@id": "include:measureType"
-                },
-                {
                     "@id": "include:measureValue"
                 },
                 {
                     "@id": "include:measureUnit"
-                },
-                {
-                    "@id": "include:ageAtMeasurement"
                 }
             ],
             "sms:validationRules": []
@@ -254,10 +251,13 @@
                     "@id": "include:studyCode"
                 },
                 {
-                    "@id": "include:participantId"
+                    "@id": "include:participantExternalId"
                 },
                 {
-                    "@id": "include:sampleId"
+                    "@id": "include:sampleGlobalId"
+                },
+                {
+                    "@id": "include:sampleExternalId"
                 },
                 {
                     "@id": "include:sampleType"
@@ -266,25 +266,40 @@
                     "@id": "include:ageAtBiospecimenCollection"
                 },
                 {
-                    "@id": "include:parentSampleId"
+                    "@id": "include:parentSampleGlobalId"
+                },
+                {
+                    "@id": "include:parentSampleExternalId"
                 },
                 {
                     "@id": "include:parentSampleType"
                 },
                 {
-                    "@id": "include:collectionId"
+                    "@id": "include:collectionGlobalId"
+                },
+                {
+                    "@id": "include:collectionExternalId"
                 },
                 {
                     "@id": "include:collectionSampleType"
                 },
                 {
-                    "@id": "include:containerId"
+                    "@id": "include:containerGlobalId"
+                },
+                {
+                    "@id": "include:containerExternalId"
                 },
                 {
                     "@id": "include:volume"
                 },
                 {
                     "@id": "include:volumeUnit"
+                },
+                {
+                    "@id": "include:concentration"
+                },
+                {
+                    "@id": "include:concentrationUnit"
                 },
                 {
                     "@id": "include:laboratoryProcedure"
@@ -329,13 +344,16 @@
                     "@id": "include:studyCode"
                 },
                 {
-                    "@id": "include:participantId"
+                    "@id": "include:participantExternalId"
                 },
                 {
-                    "@id": "include:sampleId"
+                    "@id": "include:sampleExternalId"
                 },
                 {
-                    "@id": "include:fileId"
+                    "@id": "include:fileGlobalId"
+                },
+                {
+                    "@id": "include:fileExternalId"
                 },
                 {
                     "@id": "include:fileName"
@@ -1663,10 +1681,27 @@
             "sms:validationRules": []
         },
         {
-            "@id": "include:participantId",
+            "@id": "include:vbrContact",
             "@type": "rdf:Property",
-            "rdfs:comment": "Unique identifier for the participant, assigned by DCC",
-            "rdfs:label": "participantId",
+            "rdfs:comment": "Contact information for Virtual Biorepository inquiries to this Study (email or form)",
+            "rdfs:label": "vbrContact",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Virtual Biorepository Contact",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:participantGlobalId",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Unique INCLUDE global identifier for the participant, assigned by DCC",
+            "rdfs:label": "participantGlobalId",
             "schema:domainIncludes": [
                 {
                     "@id": "include:Participant"
@@ -1675,7 +1710,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Participant ID",
+            "sms:displayName": "Participant Global ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -1882,7 +1917,7 @@
                     "@id": "include:unknown"
                 }
             ],
-            "sms:displayName": "sex",
+            "sms:displayName": "Sex",
             "sms:required": "sms:true",
             "sms:validationRules": []
         },
@@ -2003,7 +2038,7 @@
         {
             "@id": "include:ageAtFirstPatientEngagement",
             "@type": "rdf:Property",
-            "rdfs:comment": "Age in days of Participant at first recorded study event (registration/enrollment, visit, observation, sample collection, survey completion, etc.). Age at registration/enrollment is preferred, if available.",
+            "rdfs:comment": "Age in days of Participant at first recorded study event (enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.",
             "rdfs:label": "ageAtFirstPatientEngagement",
             "schema:domainIncludes": [
                 {
@@ -2020,7 +2055,7 @@
         {
             "@id": "include:firstPatientEngagementEvent",
             "@type": "rdf:Property",
-            "rdfs:comment": "Event for which Age at First Patient Engagement is given (registration/enrollment, visit, observation, sample collection, survey completion, etc.). Age at registration/enrollment is preferred, if available.",
+            "rdfs:comment": "Event for which Age at First Patient Engagement is given (e.g. enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.",
             "rdfs:label": "firstPatientEngagementEvent",
             "schema:domainIncludes": [
                 {
@@ -2123,7 +2158,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Event Id",
+            "sms:displayName": "Event ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2145,10 +2180,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "include:conditionSourceText",
+            "@id": "include:conditionMeasureSourceText",
             "@type": "rdf:Property",
-            "rdfs:comment": "Phenotype or diagnosis, as described by data contributor. The Down Syndrome Genetic Diagnosis will be rolled into this field.",
-            "rdfs:label": "conditionSourceText",
+            "rdfs:comment": "Co-occurring Condition (phenotype or diagnosis) or Measure (observation with numeric value), as described by data contributor. The Down Syndrome Genetic Diagnosis will be rolled into this field.",
+            "rdfs:label": "conditionMeasureSourceText",
             "schema:domainIncludes": [
                 {
                     "@id": "include:Condition"
@@ -2157,15 +2192,15 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Condition Source Text",
+            "sms:displayName": "Condition or Measure Source Text",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
-            "@id": "include:ageAtConditionObservation",
+            "@id": "include:ageAtConditionMeasureObservation",
             "@type": "rdf:Property",
-            "rdfs:comment": "Age in days at which condition was observed, recorded, or diagnosed",
-            "rdfs:label": "ageAtConditionObservation",
+            "rdfs:comment": "Age in days at which Condition or Measure was observed, recorded, or diagnosed",
+            "rdfs:label": "ageAtConditionMeasureObservation",
             "schema:domainIncludes": [
                 {
                     "@id": "include:Condition"
@@ -2174,14 +2209,14 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Age At Condition Observation",
+            "sms:displayName": "Age At Condition or Measure Observation",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "include:conditionInterpretation",
             "@type": "rdf:Property",
-            "rdfs:comment": "Whether condition was observed or not",
+            "rdfs:comment": "Whether Condition was observed or not",
             "rdfs:label": "conditionInterpretation",
             "schema:domainIncludes": [
                 {
@@ -2234,7 +2269,7 @@
         {
             "@id": "include:conditionDataSource",
             "@type": "rdf:Property",
-            "rdfs:comment": "Whether condition information was obtained from medical records or reported by participant/family member",
+            "rdfs:comment": "Whether Condition information was obtained by the investigator or reported by participant/family member",
             "rdfs:label": "conditionDataSource",
             "schema:domainIncludes": [
                 {
@@ -2259,7 +2294,7 @@
         {
             "@id": "include:hpoLabel",
             "@type": "rdf:Property",
-            "rdfs:comment": "Label for condition in the Human Phenotype Ontology (HPO)",
+            "rdfs:comment": "Label for Condition in the Human Phenotype Ontology (HPO)",
             "rdfs:label": "hpoLabel",
             "schema:domainIncludes": [
                 {
@@ -2269,14 +2304,14 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Hpo Label",
+            "sms:displayName": "HPO Label",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "include:hpoCode",
             "@type": "rdf:Property",
-            "rdfs:comment": "Code for condition in the Human Phenotype Ontology (HPO)",
+            "rdfs:comment": "Code for Condition in the Human Phenotype Ontology (HPO)",
             "rdfs:label": "hpoCode",
             "schema:domainIncludes": [
                 {
@@ -2286,14 +2321,14 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Hpo Code",
+            "sms:displayName": "HPO Code",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "include:mondoLabel",
             "@type": "rdf:Property",
-            "rdfs:comment": "Label for condition in the Mondo Disease Ontology (MONDO)",
+            "rdfs:comment": "Label for Condition in the Mondo Disease Ontology (MONDO)",
             "rdfs:label": "mondoLabel",
             "schema:domainIncludes": [
                 {
@@ -2303,14 +2338,14 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Mondo Label",
+            "sms:displayName": "MONDO Label",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "include:mondoCode",
             "@type": "rdf:Property",
-            "rdfs:comment": "Code for condition in the Mondo Disease Ontology (Mondo)",
+            "rdfs:comment": "Code for Condition in the Mondo Disease Ontology (Mondo)",
             "rdfs:label": "mondoCode",
             "schema:domainIncludes": [
                 {
@@ -2320,14 +2355,14 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Mondo Code",
+            "sms:displayName": "MONDO Code",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "include:maxoLabel",
             "@type": "rdf:Property",
-            "rdfs:comment": "Label for condition in the Medical Action Ontology (MAXO)",
+            "rdfs:comment": "Label for Condition in the Medical Action Ontology (MAXO)",
             "rdfs:label": "maxoLabel",
             "schema:domainIncludes": [
                 {
@@ -2337,7 +2372,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Maxo Label",
+            "sms:displayName": "MAXO Label",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2354,14 +2389,14 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Maxo Code",
+            "sms:displayName": "MAXO Code",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "include:otherLabel",
             "@type": "rdf:Property",
-            "rdfs:comment": "Label for condition in another ontology (if no match in HPO, MONDO, or MAXO)",
+            "rdfs:comment": "Label for Condition in another ontology (if no match in HPO, MONDO, or MAXO)",
             "rdfs:label": "otherLabel",
             "schema:domainIncludes": [
                 {
@@ -2378,7 +2413,7 @@
         {
             "@id": "include:otherCode",
             "@type": "rdf:Property",
-            "rdfs:comment": "Code for condition in another ontology (if no match in HPO, MONDO, or MAXO)",
+            "rdfs:comment": "Code for Condition in another ontology (if no match in HPO, MONDO, or MAXO)",
             "rdfs:label": "otherCode",
             "schema:domainIncludes": [
                 {
@@ -2389,23 +2424,6 @@
                 "@id": "https://w3id.org/include"
             },
             "sms:displayName": "Other Code",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "include:measureType",
-            "@type": "rdf:Property",
-            "rdfs:comment": "Type of measure. A Measure is an observation with a numeric value, e.g. Weight, Height, BMI, Blood glucose, Bone density, Blast percentage, etc.",
-            "rdfs:label": "measureType",
-            "schema:domainIncludes": [
-                {
-                    "@id": "include:Condition"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "https://w3id.org/include"
-            },
-            "sms:displayName": "Measure Type",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2444,27 +2462,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "include:ageAtMeasurement",
+            "@id": "include:sampleGlobalId",
             "@type": "rdf:Property",
-            "rdfs:comment": "Age in days at which measurement was performed",
-            "rdfs:label": "ageAtMeasurement",
-            "schema:domainIncludes": [
-                {
-                    "@id": "include:Condition"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "https://w3id.org/include"
-            },
-            "sms:displayName": "Age At Measurement",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "include:sampleId",
-            "@type": "rdf:Property",
-            "rdfs:comment": "Identifier for sample. A sample is a unique biological material; two samples with two different IDs are biologically distinct.",
-            "rdfs:label": "sampleId",
+            "rdfs:comment": "INCLUDE global identifier for sample, assigned by DCC",
+            "rdfs:label": "sampleGlobalId",
             "schema:domainIncludes": [
                 {
                     "@id": "include:Biospecimen"
@@ -2473,7 +2474,24 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Sample ID",
+            "sms:displayName": "Sample Global ID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:sampleExternalId",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Unique identifier for sample, assigned by data contributor. A sample is a unique biological material; two samples with two different IDs are biologically distinct.",
+            "rdfs:label": "sampleExternalId",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Sample External ID",
             "sms:required": "sms:true",
             "sms:validationRules": []
         },
@@ -2512,10 +2530,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "include:parentSampleId",
+            "@id": "include:parentSampleGlobalId",
             "@type": "rdf:Property",
-            "rdfs:comment": "Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable)",
-            "rdfs:label": "parentSampleId",
+            "rdfs:comment": "INCLUDE global identifier for the direct parent from which Sample was derived, assigned by DCC",
+            "rdfs:label": "parentSampleGlobalId",
             "schema:domainIncludes": [
                 {
                     "@id": "include:Biospecimen"
@@ -2524,7 +2542,24 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Parent Sample Id",
+            "sms:displayName": "Parent Sample Global ID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:parentSampleExternalId",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Identifier for the direct parent from which Sample was derived, processed, pooled, etc. (if applicable); assigned by data contributor",
+            "rdfs:label": "parentSampleExternalId",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Parent Sample External ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2546,10 +2581,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "include:collectionId",
+            "@id": "include:collectionGlobalId",
             "@type": "rdf:Property",
-            "rdfs:comment": "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples - typically the material actually collected from the Participant. This may be the same as Parent Sample ID or Sample ID (if no processing was performed).",
-            "rdfs:label": "collectionId",
+            "rdfs:comment": "INCLUDE global identifier for the eldest sample in a lineage, assigned by DCC",
+            "rdfs:label": "collectionGlobalId",
             "schema:domainIncludes": [
                 {
                     "@id": "include:Biospecimen"
@@ -2558,7 +2593,24 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Collection ID",
+            "sms:displayName": "Collection Global ID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:collectionExternalId",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples - typically the material actually collected from the Participant. This may be the same as Parent Sample ID or Sample ID (if no processing was performed). Assigned by data contributor.",
+            "rdfs:label": "collectionExternalId",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Collection External ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2580,10 +2632,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "include:containerId",
+            "@id": "include:containerGlobalId",
             "@type": "rdf:Property",
-            "rdfs:comment": "Identifier for specific container/aliquot of sample, if applicable. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.",
-            "rdfs:label": "containerId",
+            "rdfs:comment": "INCLUDE global identifier for specific container/aliquot of sample, assigned by DCC",
+            "rdfs:label": "containerGlobalId",
             "schema:domainIncludes": [
                 {
                     "@id": "include:Biospecimen"
@@ -2592,7 +2644,24 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Container ID",
+            "sms:displayName": "Container Global ID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:containerExternalId",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Identifier for specific container/aliquot of sample, assigned by data contributor. For example, distinct aliquots of a sample will have the same Sample ID but different Container IDs.",
+            "rdfs:label": "containerExternalId",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Container External ID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2627,6 +2696,40 @@
                 "@id": "https://w3id.org/include"
             },
             "sms:displayName": "Volume Unit",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:concentration",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Concentration of sample in container",
+            "rdfs:label": "concentration",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Concentration",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:concentrationUnit",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Unit of sample concentration",
+            "rdfs:label": "concentrationUnit",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Concentration Unit",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2718,10 +2821,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "include:fileId",
+            "@id": "include:fileGlobalId",
             "@type": "rdf:Property",
-            "rdfs:comment": "File identifier, assigned by DCC",
-            "rdfs:label": "fileId",
+            "rdfs:comment": "INCLUDE global file identifier, assigned by DCC",
+            "rdfs:label": "fileGlobalId",
             "schema:domainIncludes": [
                 {
                     "@id": "include:DataFile"
@@ -2730,8 +2833,25 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "File ID",
+            "sms:displayName": "File Global ID",
             "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:fileExternalId",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Unique identifier for data file, assigned by data contributor",
+            "rdfs:label": "fileExternalId",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:DataFile"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "File External ID",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
