@@ -4,36 +4,15 @@
   "title": "INCLUDE.Biospecimen.manifest",
   "type": "object",
   "properties": {
-    "Study Code": {
-      "enum": [
-        "DS-HSAT",
-        "AECOM-DS",
-        "DS-DETERMINED",
-        "DS-COG-ALL",
-        "DS-COG-AML",
-        "TRC-DS",
-        "DSC",
-        "DS-ISP",
-        "HTP",
-        "DS-Nexus",
-        "CHARGE-DS",
-        "DS-Brain",
-        "ExCEEDS",
-        "ECODS",
-        "BrainPower",
-        "DS360-CHD",
-        "ABC-DS",
-        "X01-deSmith",
-        "DS-PALS",
-        "X01-Hakon",
-        "DS-PCGC",
-        "ADS",
-        "BRI-DSR",
-        "DS-Sleep"
-      ]
+    "Volume": {},
+    "Sample External ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
     },
-    "Parent Sample Type": {},
-    "Container ID": {},
+    "Volume Unit": {},
+    "Parent Sample External ID": {},
     "Sample Availability": {
       "enum": [
         "Unavailable",
@@ -41,11 +20,20 @@
         ""
       ]
     },
-    "Volume Unit": {},
-    "Parent Sample Id": {},
-    "Participant ID": {},
-    "Collection ID": {},
-    "Age At Biospecimen Collection": {},
+    "Concentration Unit": {},
+    "Container External ID": {},
+    "Participant External ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Parent Sample Global ID": {},
+    "Collection Sample Type": {},
+    "Sample Global ID": {},
+    "Collection Global ID": {},
+    "Collection External ID": {},
+    "Biospecimen Storage": {},
     "Laboratory Procedure": {},
     "Sample Type": {
       "not": {
@@ -53,19 +41,43 @@
       },
       "minLength": 1
     },
-    "Collection Sample Type": {},
-    "Biospecimen Storage": {},
-    "Volume": {},
-    "Sample ID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    }
+    "Container Global ID": {},
+    "Study Code": {
+      "enum": [
+        "DS-COG-AML",
+        "DS-Sleep",
+        "ExCEEDS",
+        "DS-Nexus",
+        "BrainPower",
+        "DS-PCGC",
+        "DS-COG-ALL",
+        "X01-deSmith",
+        "ADS",
+        "DS-HSAT",
+        "CHARGE-DS",
+        "DS-PALS",
+        "DS-DETERMINED",
+        "ABC-DS",
+        "DS360-CHD",
+        "HTP",
+        "DS-Brain",
+        "TRC-DS",
+        "BRI-DSR",
+        "DSC",
+        "DS-ISP",
+        "AECOM-DS",
+        "ECODS",
+        "X01-Hakon"
+      ]
+    },
+    "Concentration": {},
+    "Parent Sample Type": {},
+    "Age At Biospecimen Collection": {}
   },
   "required": [
-    "Study Code",
+    "Sample External ID",
+    "Participant External ID",
     "Sample Type",
-    "Sample ID"
+    "Study Code"
   ]
 }

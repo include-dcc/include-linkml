@@ -164,7 +164,7 @@
                     "@id": "include:studyCode"
                 },
                 {
-                    "@id": "include:participantId"
+                    "@id": "include:participantExternalId"
                 },
                 {
                     "@id": "include:eventId"

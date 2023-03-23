@@ -6,73 +6,77 @@
   "properties": {
     "Condition Data Source": {
       "enum": [
-        "Self-reported",
         "Clinical",
+        "Self-reported",
         ""
-      ]
-    },
-    "Age At Condition Observation": {},
-    "Mondo Code": {},
-    "Hpo Code": {},
-    "Event Type": {},
-    "Condition Source Text": {},
-    "Maxo Label": {},
-    "Study Code": {
-      "enum": [
-        "DS-HSAT",
-        "AECOM-DS",
-        "DS-DETERMINED",
-        "DS-COG-ALL",
-        "DS-COG-AML",
-        "TRC-DS",
-        "DSC",
-        "DS-ISP",
-        "HTP",
-        "DS-Nexus",
-        "CHARGE-DS",
-        "DS-Brain",
-        "ExCEEDS",
-        "ECODS",
-        "BrainPower",
-        "DS360-CHD",
-        "ABC-DS",
-        "X01-deSmith",
-        "DS-PALS",
-        "X01-Hakon",
-        "DS-PCGC",
-        "ADS",
-        "BRI-DSR",
-        "DS-Sleep"
       ]
     },
     "Other Label": {},
-    "Event Id": {},
-    "Age At Measurement": {},
-    "Hpo Label": {},
-    "Measure Type": {},
-    "Condition Interpretation": {
-      "enum": [
-        "Not Observed",
-        "Observed",
-        ""
-      ]
-    },
-    "Participant ID": {},
+    "Condition or Measure Source Text": {},
+    "MONDO Label": {},
     "Other Code": {},
     "Measure Value": {},
-    "Maxo Code": {},
     "Measure Unit": {},
+    "Participant External ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
     "Condition Status": {
       "enum": [
         "Resolved",
-        "History Of",
         "Current",
+        "History Of",
         ""
       ]
     },
-    "Mondo Label": {}
+    "MAXO Label": {},
+    "Condition Interpretation": {
+      "enum": [
+        "Observed",
+        "Not Observed",
+        ""
+      ]
+    },
+    "HPO Code": {},
+    "HPO Label": {},
+    "MAXO Code": {},
+    "Event ID": {},
+    "Study Code": {
+      "enum": [
+        "DS-COG-AML",
+        "DS-Sleep",
+        "ExCEEDS",
+        "DS-Nexus",
+        "BrainPower",
+        "DS-PCGC",
+        "DS-COG-ALL",
+        "X01-deSmith",
+        "ADS",
+        "DS-HSAT",
+        "CHARGE-DS",
+        "DS-PALS",
+        "DS-DETERMINED",
+        "ABC-DS",
+        "DS360-CHD",
+        "HTP",
+        "DS-Brain",
+        "TRC-DS",
+        "BRI-DSR",
+        "DSC",
+        "DS-ISP",
+        "AECOM-DS",
+        "ECODS",
+        "X01-Hakon"
+      ]
+    },
+    "MONDO Code": {},
+    "Event Type": {},
+    "Age At Condition or Measure Observation": {}
   },
   "required": [
+    "Participant External ID",
     "Study Code"
   ]
 }
