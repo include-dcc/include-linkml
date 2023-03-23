@@ -228,10 +228,19 @@
       Thing &lt;|-- Study
 
       Study : dbgap
+
       Study : program
+
+          Study ..&gt; enum_program : program
+
       Study : studyCode
+
+          Study ..&gt; enum_studyCode : studyCode
+
       Study : studyName
+
       Study : vbrContact
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>

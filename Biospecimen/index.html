@@ -228,26 +228,53 @@
       Thing &lt;|-- Biospecimen
 
       Biospecimen : ageAtBiospecimenCollection
+
       Biospecimen : biospecimenStorage
+
       Biospecimen : collectionExternalId
+
       Biospecimen : collectionGlobalId
+
       Biospecimen : collectionSampleType
+
       Biospecimen : concentration
+
       Biospecimen : concentrationUnit
+
       Biospecimen : containerExternalId
+
       Biospecimen : containerGlobalId
+
       Biospecimen : hasParticipant
+
+          Biospecimen ..&gt; Participant : hasParticipant
+
       Biospecimen : hasStudy
+
+          Biospecimen ..&gt; Study : hasStudy
+
       Biospecimen : laboratoryProcedure
+
       Biospecimen : parentSampleExternalId
+
       Biospecimen : parentSampleGlobalId
+
       Biospecimen : parentSampleType
+
       Biospecimen : sampleAvailability
+
+          Biospecimen ..&gt; enum_sampleAvailability : sampleAvailability
+
       Biospecimen : sampleExternalId
+
       Biospecimen : sampleGlobalId
+
       Biospecimen : sampleType
+
       Biospecimen : volume
+
       Biospecimen : volumeUnit
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>

@@ -228,23 +228,59 @@
       Thing &lt;|-- Participant
 
       Participant : ageAtFirstPatientEngagement
+
       Participant : ageAtLastVitalStatus
+
       Participant : downSyndromeStatus
+
+          Participant ..&gt; enum_downSyndromeStatus : downSyndromeStatus
+
       Participant : ethnicity
+
+          Participant ..&gt; enum_ethnicity : ethnicity
+
       Participant : familyId
+
       Participant : familyRelationship
+
+          Participant ..&gt; enum_familyRelationship : familyRelationship
+
       Participant : familyType
+
+          Participant ..&gt; enum_familyType : familyType
+
       Participant : fatherId
+
       Participant : firstPatientEngagementEvent
+
+          Participant ..&gt; None : firstPatientEngagementEvent
+
       Participant : hasStudy
+
+          Participant ..&gt; Study : hasStudy
+
       Participant : motherId
+
       Participant : otherFamilyMemberId
+
       Participant : outcomesVitalStatus
+
+          Participant ..&gt; enum_vital_status : outcomesVitalStatus
+
       Participant : participantExternalId
+
       Participant : participantGlobalId
+
       Participant : race
+
+          Participant ..&gt; enum_race : race
+
       Participant : sex
+
+          Participant ..&gt; enum_sex : sex
+
       Participant : siblingId
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>

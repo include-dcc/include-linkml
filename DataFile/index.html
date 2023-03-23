@@ -223,22 +223,47 @@
       Thing &lt;|-- DataFile
 
       DataFile : accessUrl
+
       DataFile : dataAccess
+
+          DataFile ..&gt; enum_dataAccess : dataAccess
+
       DataFile : dataCategory
+
       DataFile : dataType
+
       DataFile : experimentalPlatform
+
       DataFile : experimentalStrategy
+
       DataFile : fileExternalId
+
       DataFile : fileFormat
+
       DataFile : fileGlobalId
+
       DataFile : fileHash
+
       DataFile : fileName
+
       DataFile : fileSize
+
       DataFile : fileSizeUnit
+
       DataFile : hasBiospecimen
+
+          DataFile ..&gt; Biospecimen : hasBiospecimen
+
       DataFile : hasParticipant
+
+          DataFile ..&gt; Participant : hasParticipant
+
       DataFile : hasStudy
+
+          DataFile ..&gt; Study : hasStudy
+
       DataFile : publicationDoi
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>

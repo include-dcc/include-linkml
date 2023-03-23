@@ -223,24 +223,59 @@
       Thing &lt;|-- Condition
 
       Condition : ageAtConditionMeasureObservation
+
       Condition : conditionDataSource
+
+          Condition ..&gt; enum_conditionDataSource : conditionDataSource
+
       Condition : conditionInterpretation
+
+          Condition ..&gt; enum_conditionInterpretation : conditionInterpretation
+
       Condition : conditionMeasureSourceText
+
+          Condition ..&gt; None : conditionMeasureSourceText
+
       Condition : conditionStatus
+
+          Condition ..&gt; enum_conditionStatus : conditionStatus
+
       Condition : eventId
+
+          Condition ..&gt; None : eventId
+
       Condition : eventType
+
+          Condition ..&gt; None : eventType
+
       Condition : hasParticipant
+
+          Condition ..&gt; Participant : hasParticipant
+
       Condition : hasStudy
+
+          Condition ..&gt; Study : hasStudy
+
       Condition : hpoCode
+
       Condition : hpoLabel
+
       Condition : maxoCode
+
       Condition : maxoLabel
+
       Condition : measureUnit
+
       Condition : measureValue
+
       Condition : mondoCode
+
       Condition : mondoLabel
+
       Condition : otherCode
+
       Condition : otherLabel
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
