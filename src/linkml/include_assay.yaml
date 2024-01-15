@@ -220,6 +220,12 @@ slots:
       the Virtual Biorepository
     title: Sample Availability
     range: enum_sampleAvailability
+  containerAvailability:
+    definition_uri: include:containerAvailability
+    description: Whether or not the container is potentially available for sharing through
+      the Virtual Biorepository
+    title: Container Availability
+    range: enum_containerAvailability
   hasParticipant:
     definition_uri: include:hasParticipant
     description: Link to a Participant 
