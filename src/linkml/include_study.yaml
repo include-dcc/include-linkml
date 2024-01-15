@@ -143,6 +143,6 @@ enums:
       x01_desmith:
         text: x01_desmith
         title: X01-deSmith
-      x01_hakon:
-        text: x01_hakon
-        title: X01-Hakon
+      x01_hakonarson:
+        text: x01_hakonarson
+        title: X01-Hakonarson
