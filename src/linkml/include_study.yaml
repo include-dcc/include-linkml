@@ -28,7 +28,9 @@ classes:
     - studyName
     - program
     - dbgap
-    - vbrContact
+    - vbrEmail
+    - vbrUrl
+    - vbrReadme
 slots:
   studyCode:
     definition_uri: include:studyCode
@@ -53,12 +55,21 @@ slots:
     description: dbGaP study accession code
     title: dbGaP
     range: string
-  vbrContact:
-    definition_uri: include:vbrContact
-    description: Contact information for Virtual Biorepository inquiries to this Study (email or form)
-    title: Virtual Biorepository Contact
+  vbrEmail:
+    definition_uri: include:vbrEmail
+    description: Email address for Virtual Biorepository requests/inquiries
+    title: Virtual Biorepository Email
     range: string
-     
+  vbrUrl:
+    definition_uri: include:vbrUrl
+    description: Link to Virtual Biorepository request form
+    title: Virtual Biorepository URL
+    range: string
+  vbrReadme:
+    definition_uri: include:vbrReadme
+    description: Instructions for contacting or requesting samples from Virtual Biorepository
+    title: Virtual Biorepository Readme
+    range: string     
 enums:
   enum_program:
     name: enum_program
@@ -137,6 +148,9 @@ enums:
       htp:
         text: htp
         title: HTP
+      team_ds:
+        text: team_ds
+        title: TEAM-DS
       trc_ds:
         text: trc_ds
         title: TRC-DS

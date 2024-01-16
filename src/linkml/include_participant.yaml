@@ -104,7 +104,7 @@ slots:
     definition_uri: include:participantGlobalId
     description: Unique INCLUDE global identifier for the participant, assigned by DCC
     title: Participant Global ID
-    required: false # change to true when we have INCLUDE IDs
+    required: true
     range: string
   participantExternalId:
     definition_uri: include:participantExternalId
@@ -147,6 +147,7 @@ slots:
     definition_uri: include:familyRelationship
     description: Relationship of Participant to proband
     title: Family Relationship
+    required: true
     range: enum_familyRelationship
   sex:
     definition_uri: include:sex
