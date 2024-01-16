@@ -15,19 +15,6 @@ prefixes:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
 classes:
-  # Aliquot:
-  #   annotations:
-  #     required:
-  #       tag: required
-  #       value: 'True'
-  #     requires_component:
-  #       tag: requires_component
-  #       value: Biospecimen
-  #   definition_uri: include:Aliquot
-  #   description: An aliquot of a sample
-  #   is_a: Thing
-  #   name: Aliquot
-  #   title: Aliquot
   # Assay:
   #   annotations:
   #     required:
@@ -79,6 +66,7 @@ classes:
     - laboratoryProcedure
     - biospecimenStorage
     - sampleAvailability
+    - containerAvailability
     # - hasDataFile
 
     # - hasAliquot
@@ -119,7 +107,7 @@ slots:
     definition_uri: include:sampleGlobalId
     description: INCLUDE global identifier for sample, assigned by DCC
     title: Sample Global ID
-    required: false
+    required: true
     range: string
   sampleExternalId:
     definition_uri: include:sampleExternalId
@@ -219,6 +207,7 @@ slots:
     description: Whether or not the sample is potentially available for sharing through
       the Virtual Biorepository
     title: Sample Availability
+    required: true
     range: enum_sampleAvailability
   containerAvailability:
     definition_uri: include:containerAvailability
@@ -235,6 +224,7 @@ slots:
     definition_uri: include:fileGlobalId
     description: INCLUDE global file identifier, assigned by DCC
     title: File Global ID
+    required: true
     range: string
   fileExternalId:
     definition_uri: include:fileExternalId
@@ -352,8 +342,20 @@ enums:
       available:
         text: available
         title: Available
-        description: Sample is potentially available to be requested through the Virtual Biorepository (see VBR contact info in Study page)
+        description: Sample (any Container) is potentially available to be requested through the Virtual Biorepository (see VBR contact info in Study page)
       unavailable:
         text: unavailable
         title: Unavailable
         description: Sample either was available through Virtual Biorepository but has been used up, or is part of a study that is not participating in the VBR
+  enum_containerAvailability:
+    definition_uri: include:enum_containerAvailability
+    name: enum_containerAvailability
+    permissible_values:
+      available:
+        text: available
+        title: Available
+        description: Container is potentially available to be requested through the Virtual Biorepository (see VBR contact info in Study page)
+      unavailable:
+        text: unavailable
+        title: Unavailable
+        description: Container either was available through Virtual Biorepository but has been used up, or is part of a study that is not participating in the VBR

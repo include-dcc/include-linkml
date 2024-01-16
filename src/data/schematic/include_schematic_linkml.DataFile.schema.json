@@ -4,54 +4,34 @@
   "title": "INCLUDE.DataFile.manifest",
   "type": "object",
   "properties": {
-    "Access URL": {},
-    "File Name": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "File Size": {},
-    "Sample External ID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
     "Study Code": {
       "enum": [
-        "DS-COG-AML",
-        "DS-Sleep",
-        "ExCEEDS",
-        "DS-Nexus",
-        "BrainPower",
-        "DS-PCGC",
-        "DS-COG-ALL",
-        "X01-deSmith",
-        "ADS",
-        "DS-HSAT",
-        "CHARGE-DS",
-        "DS-PALS",
-        "DS-DETERMINED",
-        "ABC-DS",
-        "DS360-CHD",
-        "HTP",
-        "DS-Brain",
+        "X01-Hakonarson",
         "TRC-DS",
-        "BRI-DSR",
+        "DS-HSAT",
+        "DS-Nexus",
+        "DS-COG-AML",
+        "DS-DETERMINED",
+        "DS-Sleep",
+        "DS-PCGC",
+        "ExCEEDS",
+        "ECODS",
+        "X01-deSmith",
+        "CHARGE-DS",
+        "ABC-DS",
         "DSC",
+        "ADS",
+        "DS-PALS",
+        "DS-COG-ALL",
+        "BRI-DSR",
+        "BrainPower",
         "DS-ISP",
         "AECOM-DS",
-        "ECODS",
-        "X01-Hakon"
+        "HTP",
+        "DS360-CHD",
+        "TEAM-DS",
+        "DS-Brain"
       ]
-    },
-    "File Size Unit": {},
-    "File External ID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
     },
     "Data Category": {
       "not": {
@@ -59,40 +39,67 @@
       },
       "minLength": 1
     },
-    "Experimental Platform": {},
-    "Publication DOI": {},
-    "File Hash": {},
+    "Data Access": {
+      "enum": [
+        "Registered",
+        "Controlled",
+        "Open",
+        ""
+      ]
+    },
+    "Experimental Strategy": {},
     "File Format": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "Data Type": {},
-    "Experimental Strategy": {},
-    "Data Access": {
-      "enum": [
-        "Controlled",
-        "Open",
-        "Registered",
-        ""
-      ]
+    "Experimental Platform": {},
+    "File Global ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
     },
+    "Data Type": {},
+    "Access URL": {},
+    "Publication DOI": {},
+    "File External ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "File Hash": {},
+    "File Size Unit": {},
+    "Sample External ID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "File Size": {},
     "Participant External ID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "File Global ID": {}
+    "File Name": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    }
   },
   "required": [
-    "File Name",
-    "Sample External ID",
     "Study Code",
-    "File External ID",
     "Data Category",
     "File Format",
-    "Participant External ID"
+    "File Global ID",
+    "File External ID",
+    "Sample External ID",
+    "Participant External ID",
+    "File Name"
   ]
 }
