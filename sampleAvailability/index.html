@@ -11,11 +11,11 @@
         <link rel="canonical" href="https://include-dcc.github.io/include_linkml/sampleAvailability/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: sampleAvailability - INCLUDE V2 Data Model</title>
+        <title>Slot: Sample Availability (sampleAvailability) - INCLUDE V2 Data Model</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-sampleavailability" class="md-skip">
+        <a href="#slot-sample-availability-sampleavailability" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: sampleAvailability
+              Slot: Sample Availability (sampleAvailability)
             
           </span>
         </div>
@@ -344,7 +344,7 @@
   </a>
 
 
-<h1 id="slot-sampleavailability">Slot: sampleAvailability</h1>
+<h1 id="slot-sample-availability-sampleavailability">Slot: Sample Availability (sampleAvailability)</h1>
 <p><em>Whether or not the sample is potentially available for sharing through the Virtual Biorepository</em></p>
 <p>URI: <a href="https://w3id.org/include/sampleAvailability">include:sampleAvailability</a></p>
 <!-- no inheritance hierarchy -->
@@ -355,18 +355,25 @@
 <tr>
 <th>Name</th>
 <th>Description</th>
+<th>Modifies Slot</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><a href="../Biospecimen/">Biospecimen</a></td>
 <td>A Biospecimen Collected from A Participant</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../EnumSampleAvailability/">EnumSampleAvailability</a></li>
+<li>
+<p>Range: <a href="../EnumSampleAvailability/">EnumSampleAvailability</a></p>
+</li>
+<li>
+<p>Required: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -387,6 +394,7 @@ alias: sampleAvailability
 domain_of:
 - Biospecimen
 range: enum_sampleAvailability
+required: true
 
 </code></pre>
 

@@ -7,8 +7,8 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://include-dcc.github.io/include_linkml/Study/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Class: Study - INCLUDE V2 Data Model</title>
+<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<title>Class: Study (Study) - INCLUDE V2 Data Model</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-study">
+<a class="md-skip" href="#class-study-study">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: Study
+              Class: Study (Study)
             
           </span>
 </div>
@@ -220,7 +220,7 @@
 <a class="md-content__button md-icon" href="https://github.com/include-dcc/include_linkml/edit/master/docs/Study.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="class-study">Class: Study</h1>
+<h1 id="class-study-study">Class: Study (Study)</h1>
 <p><em>General information about the study</em></p>
 <p>URI: <a href="https://w3id.org/include/Study">include:Study</a></p>
 <div class="mermaid"> classDiagram
@@ -231,15 +231,19 @@
 
       Study : program
 
-          Study ..&gt; enum_program : program
+          Study --|&gt; enum_program : program
 
       Study : studyCode
 
-          Study ..&gt; enum_studyCode : studyCode
+          Study --|&gt; enum_studyCode : studyCode
 
       Study : studyName
 
-      Study : vbrContact
+      Study : vbrEmail
+
+      Study : vbrReadme
+
+      Study : vbrUrl
 
 
 </div>
@@ -286,9 +290,21 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../vbrContact/">vbrContact</a></td>
+<td><a href="../vbrEmail/">vbrEmail</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Contact information for Virtual Biorepository inquiries to this Study (email ...</td>
+<td>Email address for Virtual Biorepository requests/inquiries</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../vbrUrl/">vbrUrl</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Link to Virtual Biorepository request form</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../vbrReadme/">vbrReadme</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Instructions for contacting or requesting samples from Virtual Biorepository</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -382,14 +398,15 @@ annotations:
 description: General information about the study
 title: Study
 from_schema: https://w3id.org/include
-rank: 1000
 is_a: Thing
 slots:
 - studyCode
 - studyName
 - program
 - dbgap
-- vbrContact
+- vbrEmail
+- vbrUrl
+- vbrReadme
 
 </code></pre>
 </details>
@@ -404,7 +421,6 @@ annotations:
 description: General information about the study
 title: Study
 from_schema: https://w3id.org/include
-rank: 1000
 is_a: Thing
 attributes:
   studyCode:
@@ -458,15 +474,38 @@ attributes:
     domain_of:
     - Study
     range: string
-  vbrContact:
-    name: vbrContact
-    definition_uri: include:vbrContact
-    description: Contact information for Virtual Biorepository inquiries to this Study
-      (email or form)
-    title: Virtual Biorepository Contact
+  vbrEmail:
+    name: vbrEmail
+    definition_uri: include:vbrEmail
+    description: Email address for Virtual Biorepository requests/inquiries
+    title: Virtual Biorepository Email
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: vbrContact
+    alias: vbrEmail
+    owner: Study
+    domain_of:
+    - Study
+    range: string
+  vbrUrl:
+    name: vbrUrl
+    definition_uri: include:vbrUrl
+    description: Link to Virtual Biorepository request form
+    title: Virtual Biorepository URL
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: vbrUrl
+    owner: Study
+    domain_of:
+    - Study
+    range: string
+  vbrReadme:
+    name: vbrReadme
+    definition_uri: include:vbrReadme
+    description: Instructions for contacting or requesting samples from Virtual Biorepository
+    title: Virtual Biorepository Readme
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: vbrReadme
     owner: Study
     domain_of:
     - Study

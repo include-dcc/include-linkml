@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://include-dcc.github.io/include_linkml/">
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
@@ -408,9 +408,8 @@
 
 
 <h1 id="include-schema">include-schema</h1>
-<p>None</p>
-<p>URI: https://w3id.org/include
-Name: include-schema</p>
+<p>URI: https://w3id.org/include</p>
+<p>Name: include-schema</p>
 <h2 id="classes">Classes</h2>
 <table>
 <thead>
@@ -421,28 +420,28 @@ Name: include-schema</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="Biospecimen/">Biospecimen</a></td>
+<td><a href="Thing/">Thing</a></td>
+<td>Highest Level Class</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Biospecimen/">Biospecimen</a></td>
 <td>A Biospecimen Collected from A Participant</td>
 </tr>
 <tr>
-<td><a href="Condition/">Condition</a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Condition/">Condition</a></td>
 <td>Co-occurring conditions and other observations for the participant</td>
 </tr>
 <tr>
-<td><a href="DataFile/">DataFile</a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="DataFile/">DataFile</a></td>
 <td>A DataFile Associated with a Participant or Study or Biospecimen</td>
 </tr>
 <tr>
-<td><a href="Participant/">Participant</a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Participant/">Participant</a></td>
 <td>Demographic and clinical information about the participant</td>
 </tr>
 <tr>
-<td><a href="Study/">Study</a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Study/">Study</a></td>
 <td>General information about the study</td>
-</tr>
-<tr>
-<td><a href="Thing/">Thing</a></td>
-<td>Highest Level Class</td>
 </tr>
 </tbody>
 </table>
@@ -514,6 +513,10 @@ Name: include-schema</p>
 <tr>
 <td><a href="conditionStatus/">conditionStatus</a></td>
 <td>Whether the Condition is ongoing, has been resolved, or this is a general his...</td>
+</tr>
+<tr>
+<td><a href="containerAvailability/">containerAvailability</a></td>
+<td>Whether or not the container is potentially available for sharing through the...</td>
 </tr>
 <tr>
 <td><a href="containerExternalId/">containerExternalId</a></td>
@@ -744,8 +747,16 @@ Name: include-schema</p>
 <td>Full name of the study, chosen by data contributor</td>
 </tr>
 <tr>
-<td><a href="vbrContact/">vbrContact</a></td>
-<td>Contact information for Virtual Biorepository inquiries to this Study (email ...</td>
+<td><a href="vbrEmail/">vbrEmail</a></td>
+<td>Email address for Virtual Biorepository requests/inquiries</td>
+</tr>
+<tr>
+<td><a href="vbrReadme/">vbrReadme</a></td>
+<td>Instructions for contacting or requesting samples from Virtual Biorepository</td>
+</tr>
+<tr>
+<td><a href="vbrUrl/">vbrUrl</a></td>
+<td>Link to Virtual Biorepository request form</td>
 </tr>
 <tr>
 <td><a href="volume/">volume</a></td>
@@ -776,6 +787,10 @@ Name: include-schema</p>
 </tr>
 <tr>
 <td><a href="EnumConditionStatus/">EnumConditionStatus</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="EnumContainerAvailability/">EnumContainerAvailability</a></td>
 <td></td>
 </tr>
 <tr>
@@ -838,6 +853,10 @@ Name: include-schema</p>
 <td>A binary (true or false) value</td>
 </tr>
 <tr>
+<td><a href="Curie/">Curie</a></td>
+<td>a compact URI</td>
+</tr>
+<tr>
 <td><a href="Date/">Date</a></td>
 <td>a date (year, month and day) in an idealized calendar</td>
 </tr>
@@ -866,6 +885,14 @@ Name: include-schema</p>
 <td>An integer</td>
 </tr>
 <tr>
+<td><a href="Jsonpath/">Jsonpath</a></td>
+<td>A string encoding a JSON Path</td>
+</tr>
+<tr>
+<td><a href="Jsonpointer/">Jsonpointer</a></td>
+<td>A string encoding a JSON Pointer</td>
+</tr>
+<tr>
 <td><a href="Ncname/">Ncname</a></td>
 <td>Prefix part of CURIE</td>
 </tr>
@@ -876,6 +903,10 @@ Name: include-schema</p>
 <tr>
 <td><a href="Objectidentifier/">Objectidentifier</a></td>
 <td>A URI or CURIE that represents an object in the model</td>
+</tr>
+<tr>
+<td><a href="Sparqlpath/">Sparqlpath</a></td>
+<td>A string encoding a SPARQL Property Path</td>
 </tr>
 <tr>
 <td><a href="String/">String</a></td>

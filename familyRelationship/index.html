@@ -11,11 +11,11 @@
         <link rel="canonical" href="https://include-dcc.github.io/include_linkml/familyRelationship/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: familyRelationship - INCLUDE V2 Data Model</title>
+        <title>Slot: Family Relationship (familyRelationship) - INCLUDE V2 Data Model</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-familyrelationship" class="md-skip">
+        <a href="#slot-family-relationship-familyrelationship" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: familyRelationship
+              Slot: Family Relationship (familyRelationship)
             
           </span>
         </div>
@@ -344,7 +344,7 @@
   </a>
 
 
-<h1 id="slot-familyrelationship">Slot: familyRelationship</h1>
+<h1 id="slot-family-relationship-familyrelationship">Slot: Family Relationship (familyRelationship)</h1>
 <p><em>Relationship of Participant to proband</em></p>
 <p>URI: <a href="https://w3id.org/include/familyRelationship">include:familyRelationship</a></p>
 <!-- no inheritance hierarchy -->
@@ -355,18 +355,25 @@
 <tr>
 <th>Name</th>
 <th>Description</th>
+<th>Modifies Slot</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><a href="../Participant/">Participant</a></td>
 <td>Demographic and clinical information about the participant</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../EnumFamilyRelationship/">EnumFamilyRelationship</a></li>
+<li>
+<p>Range: <a href="../EnumFamilyRelationship/">EnumFamilyRelationship</a></p>
+</li>
+<li>
+<p>Required: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -386,6 +393,7 @@ alias: familyRelationship
 domain_of:
 - Participant
 range: enum_familyRelationship
+required: true
 
 </code></pre>
 

@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://include-dcc.github.io/include_linkml/vbrContact/">
+        <link rel="canonical" href="https://include-dcc.github.io/include_linkml/vbrUrl/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: vbrContact - INCLUDE V2 Data Model</title>
+        <title>Slot: Virtual Biorepository URL (vbrUrl) - INCLUDE V2 Data Model</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-vbrcontact" class="md-skip">
+        <a href="#slot-virtual-biorepository-url-vbrurl" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: vbrContact
+              Slot: Virtual Biorepository URL (vbrUrl)
             
           </span>
         </div>
@@ -338,15 +338,15 @@
                 
                   
 
-  <a href="https://github.com/include-dcc/include_linkml/edit/master/docs/vbrContact.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/include-dcc/include_linkml/edit/master/docs/vbrUrl.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-vbrcontact">Slot: vbrContact</h1>
-<p><em>Contact information for Virtual Biorepository inquiries to this Study (email or form)</em></p>
-<p>URI: <a href="https://w3id.org/include/vbrContact">include:vbrContact</a></p>
+<h1 id="slot-virtual-biorepository-url-vbrurl">Slot: Virtual Biorepository URL (vbrUrl)</h1>
+<p><em>Link to Virtual Biorepository request form</em></p>
+<p>URI: <a href="https://w3id.org/include/vbrUrl">include:vbrUrl</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -355,12 +355,14 @@
 <tr>
 <th>Name</th>
 <th>Description</th>
+<th>Modifies Slot</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><a href="../Study/">Study</a></td>
 <td>General information about the study</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -376,14 +378,13 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: vbrContact
-definition_uri: include:vbrContact
-description: Contact information for Virtual Biorepository inquiries to this Study
-  (email or form)
-title: Virtual Biorepository Contact
+<pre><code class="language-yaml">name: vbrUrl
+definition_uri: include:vbrUrl
+description: Link to Virtual Biorepository request form
+title: Virtual Biorepository URL
 from_schema: https://w3id.org/include
 rank: 1000
-alias: vbrContact
+alias: vbrUrl
 domain_of:
 - Study
 range: string

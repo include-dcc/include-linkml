@@ -7,8 +7,8 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://include-dcc.github.io/include_linkml/Participant/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Class: Participant - INCLUDE V2 Data Model</title>
+<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<title>Class: Participant (Participant) - INCLUDE V2 Data Model</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-participant">
+<a class="md-skip" href="#class-participant-participant">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: Participant
+              Class: Participant (Participant)
             
           </span>
 </div>
@@ -220,7 +220,7 @@
 <a class="md-content__button md-icon" href="https://github.com/include-dcc/include_linkml/edit/master/docs/Participant.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="class-participant">Class: Participant</h1>
+<h1 id="class-participant-participant">Class: Participant (Participant)</h1>
 <p><em>Demographic and clinical information about the participant</em></p>
 <p>URI: <a href="https://w3id.org/include/Participant">include:Participant</a></p>
 <div class="mermaid"> classDiagram
@@ -233,31 +233,31 @@
 
       Participant : downSyndromeStatus
 
-          Participant ..&gt; enum_downSyndromeStatus : downSyndromeStatus
+          Participant --|&gt; enum_downSyndromeStatus : downSyndromeStatus
 
       Participant : ethnicity
 
-          Participant ..&gt; enum_ethnicity : ethnicity
+          Participant --|&gt; enum_ethnicity : ethnicity
 
       Participant : familyId
 
       Participant : familyRelationship
 
-          Participant ..&gt; enum_familyRelationship : familyRelationship
+          Participant --|&gt; enum_familyRelationship : familyRelationship
 
       Participant : familyType
 
-          Participant ..&gt; enum_familyType : familyType
+          Participant --|&gt; enum_familyType : familyType
 
       Participant : fatherId
 
       Participant : firstPatientEngagementEvent
 
-          Participant ..&gt; None : firstPatientEngagementEvent
+          Participant --|&gt; None : firstPatientEngagementEvent
 
       Participant : hasStudy
 
-          Participant ..&gt; Study : hasStudy
+          Participant --|&gt; Study : hasStudy
 
       Participant : motherId
 
@@ -265,7 +265,7 @@
 
       Participant : outcomesVitalStatus
 
-          Participant ..&gt; enum_vital_status : outcomesVitalStatus
+          Participant --|&gt; enum_vital_status : outcomesVitalStatus
 
       Participant : participantExternalId
 
@@ -273,11 +273,11 @@
 
       Participant : race
 
-          Participant ..&gt; enum_race : race
+          Participant --|&gt; enum_race : race
 
       Participant : sex
 
-          Participant ..&gt; enum_sex : sex
+          Participant --|&gt; enum_sex : sex
 
       Participant : siblingId
 
@@ -309,7 +309,7 @@
 </tr>
 <tr>
 <td><a href="../participantGlobalId/">participantGlobalId</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>Unique INCLUDE global identifier for the participant, assigned by DCC</td>
 <td>direct</td>
 </tr>
@@ -357,7 +357,7 @@
 </tr>
 <tr>
 <td><a href="../familyRelationship/">familyRelationship</a></td>
-<td>0..1 <br/> <a href="../EnumFamilyRelationship/">EnumFamilyRelationship</a></td>
+<td>1..1 <br/> <a href="../EnumFamilyRelationship/">EnumFamilyRelationship</a></td>
 <td>Relationship of Participant to proband</td>
 <td>direct</td>
 </tr>
@@ -497,7 +497,6 @@ annotations:
 description: Demographic and clinical information about the participant
 title: Participant
 from_schema: https://w3id.org/include
-rank: 1000
 is_a: Thing
 slots:
 - hasStudy
@@ -535,7 +534,6 @@ annotations:
 description: Demographic and clinical information about the participant
 title: Participant
 from_schema: https://w3id.org/include
-rank: 1000
 is_a: Thing
 attributes:
   hasStudy:
@@ -566,7 +564,7 @@ attributes:
     domain_of:
     - Participant
     range: string
-    required: false
+    required: true
   participantExternalId:
     name: participantExternalId
     definition_uri: include:participantExternalId
@@ -672,6 +670,7 @@ attributes:
     domain_of:
     - Participant
     range: enum_familyRelationship
+    required: true
   sex:
     name: sex
     definition_uri: include:sex

@@ -7,8 +7,8 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://include-dcc.github.io/include_linkml/Condition/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Class: Condition - INCLUDE V2 Data Model</title>
+<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<title>Class: Condition (Condition) - INCLUDE V2 Data Model</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-condition">
+<a class="md-skip" href="#class-condition-condition">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: Condition
+              Class: Condition (Condition)
             
           </span>
 </div>
@@ -215,7 +215,7 @@
 <a class="md-content__button md-icon" href="https://github.com/include-dcc/include_linkml/edit/master/docs/Condition.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="class-condition">Class: Condition</h1>
+<h1 id="class-condition-condition">Class: Condition (Condition)</h1>
 <p><em>Co-occurring conditions and other observations for the participant</em></p>
 <p>URI: <a href="https://w3id.org/include/Condition">include:Condition</a></p>
 <div class="mermaid"> classDiagram
@@ -226,35 +226,35 @@
 
       Condition : conditionDataSource
 
-          Condition ..&gt; enum_conditionDataSource : conditionDataSource
+          Condition --|&gt; enum_conditionDataSource : conditionDataSource
 
       Condition : conditionInterpretation
 
-          Condition ..&gt; enum_conditionInterpretation : conditionInterpretation
+          Condition --|&gt; enum_conditionInterpretation : conditionInterpretation
 
       Condition : conditionMeasureSourceText
 
-          Condition ..&gt; None : conditionMeasureSourceText
+          Condition --|&gt; None : conditionMeasureSourceText
 
       Condition : conditionStatus
 
-          Condition ..&gt; enum_conditionStatus : conditionStatus
+          Condition --|&gt; enum_conditionStatus : conditionStatus
 
       Condition : eventId
 
-          Condition ..&gt; None : eventId
+          Condition --|&gt; None : eventId
 
       Condition : eventType
 
-          Condition ..&gt; None : eventType
+          Condition --|&gt; None : eventType
 
       Condition : hasParticipant
 
-          Condition ..&gt; Participant : hasParticipant
+          Condition --|&gt; Participant : hasParticipant
 
       Condition : hasStudy
 
-          Condition ..&gt; Study : hasStudy
+          Condition --|&gt; Study : hasStudy
 
       Condition : hpoCode
 
@@ -464,7 +464,6 @@ annotations:
 description: Co-occurring conditions and other observations for the participant
 title: Condition
 from_schema: https://w3id.org/include
-rank: 1000
 is_a: Thing
 slots:
 - hasStudy
@@ -500,7 +499,6 @@ annotations:
 description: Co-occurring conditions and other observations for the participant
 title: Condition
 from_schema: https://w3id.org/include
-rank: 1000
 is_a: Thing
 attributes:
   hasStudy:

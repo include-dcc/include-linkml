@@ -7,8 +7,8 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://include-dcc.github.io/include_linkml/Biospecimen/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Class: Biospecimen - INCLUDE V2 Data Model</title>
+<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<title>Class: Biospecimen (Biospecimen) - INCLUDE V2 Data Model</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-biospecimen">
+<a class="md-skip" href="#class-biospecimen-biospecimen">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: Biospecimen
+              Class: Biospecimen (Biospecimen)
             
           </span>
 </div>
@@ -220,7 +220,7 @@
 <a class="md-content__button md-icon" href="https://github.com/include-dcc/include_linkml/edit/master/docs/Biospecimen.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="class-biospecimen">Class: Biospecimen</h1>
+<h1 id="class-biospecimen-biospecimen">Class: Biospecimen (Biospecimen)</h1>
 <p><em>A Biospecimen Collected from A Participant</em></p>
 <p>URI: <a href="https://w3id.org/include/Biospecimen">include:Biospecimen</a></p>
 <div class="mermaid"> classDiagram
@@ -241,17 +241,21 @@
 
       Biospecimen : concentrationUnit
 
+      Biospecimen : containerAvailability
+
+          Biospecimen --|&gt; enum_containerAvailability : containerAvailability
+
       Biospecimen : containerExternalId
 
       Biospecimen : containerGlobalId
 
       Biospecimen : hasParticipant
 
-          Biospecimen ..&gt; Participant : hasParticipant
+          Biospecimen --|&gt; Participant : hasParticipant
 
       Biospecimen : hasStudy
 
-          Biospecimen ..&gt; Study : hasStudy
+          Biospecimen --|&gt; Study : hasStudy
 
       Biospecimen : laboratoryProcedure
 
@@ -263,7 +267,7 @@
 
       Biospecimen : sampleAvailability
 
-          Biospecimen ..&gt; enum_sampleAvailability : sampleAvailability
+          Biospecimen --|&gt; enum_sampleAvailability : sampleAvailability
 
       Biospecimen : sampleExternalId
 
@@ -309,7 +313,7 @@
 </tr>
 <tr>
 <td><a href="../sampleGlobalId/">sampleGlobalId</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
 <td>INCLUDE global identifier for sample, assigned by DCC</td>
 <td>direct</td>
 </tr>
@@ -417,8 +421,14 @@
 </tr>
 <tr>
 <td><a href="../sampleAvailability/">sampleAvailability</a></td>
-<td>0..1 <br/> <a href="../EnumSampleAvailability/">EnumSampleAvailability</a></td>
+<td>1..1 <br/> <a href="../EnumSampleAvailability/">EnumSampleAvailability</a></td>
 <td>Whether or not the sample is potentially available for sharing through the Vi...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../containerAvailability/">containerAvailability</a></td>
+<td>0..1 <br/> <a href="../EnumContainerAvailability/">EnumContainerAvailability</a></td>
+<td>Whether or not the container is potentially available for sharing through the...</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -497,7 +507,6 @@ annotations:
 description: A Biospecimen Collected from A Participant
 title: Biospecimen
 from_schema: https://w3id.org/include
-rank: 1000
 is_a: Thing
 slots:
 - hasStudy
@@ -521,6 +530,7 @@ slots:
 - laboratoryProcedure
 - biospecimenStorage
 - sampleAvailability
+- containerAvailability
 
 </code></pre>
 </details>
@@ -538,7 +548,6 @@ annotations:
 description: A Biospecimen Collected from A Participant
 title: Biospecimen
 from_schema: https://w3id.org/include
-rank: 1000
 is_a: Thing
 attributes:
   hasStudy:
@@ -582,7 +591,7 @@ attributes:
     domain_of:
     - Biospecimen
     range: string
-    required: false
+    required: true
   sampleExternalId:
     name: sampleExternalId
     definition_uri: include:sampleExternalId
@@ -821,6 +830,20 @@ attributes:
     domain_of:
     - Biospecimen
     range: enum_sampleAvailability
+    required: true
+  containerAvailability:
+    name: containerAvailability
+    definition_uri: include:containerAvailability
+    description: Whether or not the container is potentially available for sharing
+      through the Virtual Biorepository
+    title: Container Availability
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: containerAvailability
+    owner: Biospecimen
+    domain_of:
+    - Biospecimen
+    range: enum_containerAvailability
 
 </code></pre>
 </details>
