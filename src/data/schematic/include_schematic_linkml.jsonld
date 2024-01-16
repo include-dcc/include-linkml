@@ -46,7 +46,13 @@
                     "@id": "include:dbgap"
                 },
                 {
-                    "@id": "include:vbrContact"
+                    "@id": "include:vbrEmail"
+                },
+                {
+                    "@id": "include:vbrUrl"
+                },
+                {
+                    "@id": "include:vbrReadme"
                 }
             ],
             "sms:validationRules": []
@@ -309,6 +315,9 @@
                 },
                 {
                     "@id": "include:sampleAvailability"
+                },
+                {
+                    "@id": "include:containerAvailability"
                 }
             ],
             "sms:validationRules": []
@@ -731,6 +740,22 @@
             "sms:required": "sms:false"
         },
         {
+            "@id": "include:team_ds",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "team_ds",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "include:studyCode"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "TEAM-DS",
+            "sms:required": "sms:false"
+        },
+        {
             "@id": "include:trc_ds",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -763,10 +788,10 @@
             "sms:required": "sms:false"
         },
         {
-            "@id": "include:x01_hakon",
+            "@id": "include:x01_hakonarson",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "x01_hakon",
+            "rdfs:label": "x01_hakonarson",
             "rdfs:subClassOf": [
                 {
                     "@id": "include:studyCode"
@@ -775,7 +800,7 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "X01-Hakon",
+            "sms:displayName": "X01-Hakonarson",
             "sms:required": "sms:false"
         },
         {
@@ -1608,13 +1633,16 @@
                     "@id": "include:htp"
                 },
                 {
+                    "@id": "include:team_ds"
+                },
+                {
                     "@id": "include:trc_ds"
                 },
                 {
                     "@id": "include:x01_desmith"
                 },
                 {
-                    "@id": "include:x01_hakon"
+                    "@id": "include:x01_hakonarson"
                 }
             ],
             "sms:displayName": "Study Code",
@@ -1681,10 +1709,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "include:vbrContact",
+            "@id": "include:vbrEmail",
             "@type": "rdf:Property",
-            "rdfs:comment": "Contact information for Virtual Biorepository inquiries to this Study (email or form)",
-            "rdfs:label": "vbrContact",
+            "rdfs:comment": "Email address for Virtual Biorepository requests/inquiries",
+            "rdfs:label": "vbrEmail",
             "schema:domainIncludes": [
                 {
                     "@id": "include:Study"
@@ -1693,7 +1721,41 @@
             "schema:isPartOf": {
                 "@id": "https://w3id.org/include"
             },
-            "sms:displayName": "Virtual Biorepository Contact",
+            "sms:displayName": "Virtual Biorepository Email",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:vbrUrl",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Link to Virtual Biorepository request form",
+            "rdfs:label": "vbrUrl",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Virtual Biorepository URL",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:vbrReadme",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Instructions for contacting or requesting samples from Virtual Biorepository",
+            "rdfs:label": "vbrReadme",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "sms:displayName": "Virtual Biorepository Readme",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -1711,7 +1773,7 @@
                 "@id": "https://w3id.org/include"
             },
             "sms:displayName": "Participant Global ID",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -1887,7 +1949,7 @@
                 }
             ],
             "sms:displayName": "Family Relationship",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -2475,7 +2537,7 @@
                 "@id": "https://w3id.org/include"
             },
             "sms:displayName": "Sample Global ID",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -2789,6 +2851,31 @@
                 }
             ],
             "sms:displayName": "Sample Availability",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "include:containerAvailability",
+            "@type": "rdf:Property",
+            "rdfs:comment": "Whether or not the container is potentially available for sharing through the Virtual Biorepository",
+            "rdfs:label": "containerAvailability",
+            "schema:domainIncludes": [
+                {
+                    "@id": "include:Biospecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "https://w3id.org/include"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "include:available"
+                },
+                {
+                    "@id": "include:unavailable"
+                }
+            ],
+            "sms:displayName": "Container Availability",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -2834,7 +2921,7 @@
                 "@id": "https://w3id.org/include"
             },
             "sms:displayName": "File Global ID",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
