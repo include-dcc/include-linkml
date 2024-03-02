@@ -34,14 +34,14 @@ classes:
 slots:
   studyCode:
     definition_uri: include:studyCode
-    description: Unique identifer for the study, assigned by DCC
+    description: Unique identifer for the study (generally a short acronym)
     title: Study Code
     range: enum_studyCode
     required: true
-  studyName:
-    definition_uri: include:studyName
-    description: Full name of the study, chosen by data contributor
-    title: Study Name
+  studyTitle:
+    definition_uri: include:studyTitle
+    description: Full title of the study
+    title: Study Title
     required: true
     range: string
   program:
@@ -50,10 +50,35 @@ slots:
     title: Program
     range: enum_program
     required: true
-  dbgap:
-    definition_uri: include:dbgap
-    description: dbGaP study accession code
-    title: dbGaP
+  studyDescription:
+    definition_uri: include:studyDescription
+    description: Brief description of the study (2-4 sentences). Should match description in https://includedcc.org/studies.
+    title: Study Description
+    required: true
+    range: string
+  principalInvestigatorName: #should this be multivalued? inlined as list?
+    definition_uri: include:principalInvestigatorName
+    description: Name(s) of Principal Investigator(s) of this study
+    title: Principal Investigator Name
+    required: true
+    range: string
+  studyContactName:
+    definition_uri: include:studyContactName
+    description: Name of contact person for this study (may be different from PI)
+    title: Study Contact Name
+    required: true
+    range: string
+  studyContactInstitution:
+    definition_uri: include:studyContactInstitution
+    description: Institution of contact person for this study
+    title: Study Contact Institution
+    required: true
+    range: string
+  studyContactEmail:
+    definition_uri: include:studyContactEmail
+    description: Email address of contact person for this study
+    title: Study Contact Email
+    required: true
     range: string
   vbrEmail:
     definition_uri: include:vbrEmail
@@ -64,12 +89,75 @@ slots:
     definition_uri: include:vbrUrl
     description: Link to Virtual Biorepository request form
     title: Virtual Biorepository URL
-    range: string
+    range: string #url
   vbrReadme:
     definition_uri: include:vbrReadme
     description: Instructions for contacting or requesting samples from Virtual Biorepository
     title: Virtual Biorepository Readme
     range: string     
+  researchDomain:
+    definition_uri: include:researchDomain
+    description: Main research domain(s) of your study, other than Down syndrome
+    title: Research Domain
+    range: enum_researchDomain
+    required: true
+  participantLifespanStage: #how to allow multiple choices?
+    definition_uri: include:participantLifespanStage
+    description: Focus age group(s) of your study population
+    title: Participant Lifespan Stage
+    range: enum_participantLifespanStage
+    required: true
+  selectionCriteria:
+    definition_uri: include:selectionCriteria
+    description: Brief description of inclusion and/or exclusion criteria for the study
+    title: Selection Criteria
+    range: string
+  studyDesign:
+    definition_uri: include:studyDesign
+    description: Overall design of study
+    title: Study Design
+    range: string 
+    required: true
+  clinicalDataSourceType: #how to allow multiple choices?
+    definition_uri: include:clinicalDataSourceType
+    description: Source(s) of data collected from study participants
+    title: Clinical Data Source Type
+    range: enum_clinicalDataSourceType
+    required: true
+  expectedDataCategories:
+    definition_uri: include:expectedDataCategories
+    description: Funding source for the study
+    title: Expected categories of data collected in this study
+    range: enum_expectedDataCategories #these enums should also be added to dataCategory in DataFile
+    required: true
+  studyWebsite:
+    definition_uri: include:studyWebsite
+    description: Website for the study
+    title: Study Website
+    range: string #url
+  dbgap:
+    definition_uri: include:dbgap
+    description: dbGaP study accession code
+    title: dbGaP
+    range: string
+  publication: #should this be multivalued? inlined as list?
+    definition_uri: include:publication
+    description: URL or DOI for publication(s) describing the study's rationale and methodology (PMID preferred)
+    title: Publication
+    range: string 
+    required: true
+  expectedNumberOfParticipants: 
+    definition_uri: include:expectedNumberOfParticipants
+    description: Expected number of participants in this study
+    title: Expected Number of Participants
+    range: integer 
+    required: true
+  guidType:
+    definition_uri: include:guidType
+    description: System used to generate globally unique identifiers (GUIDs)
+    title: GUID Type
+    range: enum_guidType 
+    required: true
 enums:
   enum_program:
     name: enum_program
