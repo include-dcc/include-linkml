@@ -121,7 +121,7 @@ slots:
     description: Type of biological material comprising the Sample (e.g. Plasma, White blood cells, Red blood cells, DNA, RNA, Peripheral blood mononuclear cells, CD4+ Tconv cells, NK cells, Monocytes, CD8+ T cells, B cells, Granulocytes, Treg cells)
     title: Sample Type
     required: true
-    range: string
+    range: enum_sampleType
   ageAtBiospecimenCollection:
     definition_uri: include:ageAtBiospecimenCollection
     description: Age in days of participant at time of biospecimen collection
@@ -359,3 +359,14 @@ enums:
         text: unavailable
         title: Unavailable
         description: Container either was available through Virtual Biorepository but has been used up, or is part of a study that is not participating in the VBR
+  enum_sampleType:
+    permissible_values:
+      B cell:
+        description: A lymphocyte of B lineage that is capable of B cell mediated immunity.
+        meaning: CL:0000236
+      blood:
+        decription: A fluid that is composed of blood plasma and erythrocytes.
+        meaning: UBERON:0000178
+      bone marrow:
+        description: The soft tissue that fills the cavities of bones.
+        meaning: UBERON:0002371
