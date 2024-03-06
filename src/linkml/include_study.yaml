@@ -27,10 +27,25 @@ classes:
     - studyCode
     - studyName
     - program
-    - dbgap
+    - studyDescription
+    - principalInvestigatorName
+    - studyContactName
+    - studyContactInstitution
+    - studyContactEmail
     - vbrEmail
     - vbrUrl
     - vbrReadme
+    - researchDomain
+    - participantLifespanStage
+    - selectionCriteria
+    - studyDesign
+    - clinicalDataSourceType
+    - expectedDataCategory
+    - studyWebsite
+    - dbgap
+    - publication
+    - expectedNumberOfParticipants
+    - guidType
 slots:
   studyCode:
     definition_uri: include:studyCode
@@ -58,28 +73,28 @@ slots:
     range: string
   principalInvestigatorName: 
     definition_uri: include:principalInvestigatorName
-    description: Name(s) of Principal Investigator(s) of this study; #separate with pipes - add to other multivalued
+    description: Name(s) of Principal Investigator(s) of this study; pipe-separated if multiple
     title: Principal Investigator Name
     required: true
     range: string
     multivalued: true
   studyContactName:
     definition_uri: include:studyContactName
-    description: Name of contact person for this study (only one; may be different from PI)
+    description: Name of contact person for this study; pipe-separated if multiple
     title: Study Contact Name
     required: true
     range: string
     multivalued: true
   studyContactInstitution:
     definition_uri: include:studyContactInstitution
-    description: Institution of contact person for this study
+    description: Institution of contact person for this study; pipe-separated if multiple
     title: Study Contact Institution
     required: true
     range: string
     multivalued: true
   studyContactEmail:
     definition_uri: include:studyContactEmail
-    description: Email address of contact person for this study
+    description: Email address of contact person for this study; pipe-separated if multiple
     title: Study Contact Email
     required: true
     range: string
@@ -101,13 +116,14 @@ slots:
     range: string     
   researchDomain:
     definition_uri: include:researchDomain
-    description: Main research domain(s) of your study, other than Down syndrome
+    description: Main research domain(s) of your study, other than Down syndrome; pipe-separated if multiple
     title: Research Domain
     range: enum_researchDomain
     required: true
+    multivalued: true
   participantLifespanStage: 
     definition_uri: include:participantLifespanStage
-    description: Focus age group(s) of your study population #comma separated list of enums for now
+    description: Focus age group(s) of your study population; pipe-separated if multiple
     title: Participant Lifespan Stage
     range: enum_participantLifespanStage
     required: true
@@ -127,14 +143,15 @@ slots:
     definition_uri: include:clinicalDataSourceType
     description: Source(s) of data collected from study participants
     title: Clinical Data Source Type
-    range: enum_clinicalDataSourceType #should be the same as in Condition
+    range: enum_clinicalDataSourceType 
+    #TODO: replace enum_conditionDataSource with this - or consider deleting slot conditionDataSource
     required: true
     multivalued: true
   expectedDataCategory:
     definition_uri: include:expectedDataCategory
     description: Funding source for the study
     title: Expected category/categories of data collected in this study
-    range: enum_expectedDataCategory #reuse enum for dataCategory in DataFile
+    range: enum_DataCategory #reuse enum for dataCategory in DataFile
     required: true
   studyWebsite:
     definition_uri: include:studyWebsite
@@ -148,9 +165,9 @@ slots:
     range: string
   publication: 
     definition_uri: include:publication
-    description: URL or DOI for publication(s) describing the study's rationale and methodology (PubMed Central IDs preferred but not required)
+    description: URL for publication(s) describing the study's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
     title: Publication
-    range: string 
+    range: uri 
     multivalued: true
   expectedNumberOfParticipants: 
     definition_uri: include:expectedNumberOfParticipants
@@ -257,3 +274,126 @@ enums:
       x01_hakonarson:
         text: x01_hakonarson
         title: X01-Hakonarson
+  enum_researchDomain:
+    name: enum_researchDomain
+    definition_uri: include:enum_researchDomain
+    permissible_values:
+      behavior_and_mechanisms:
+        text: behavior_and_mechanisms
+        title: Behavior and Behavior Mechanisms
+        meaning: mesh:D001520 #is this how to format MeSH term?
+      congenital_heart_defects:
+        text: congenital_heart_defects
+        title: Congenital Heart Defects
+        meaning: mesh:D006330
+      immune_system_diseases:
+        text: immune_system_diseases
+        title: Immune System Diseases
+        meaning: mesh:D007154
+      hematologic_diseases:
+        text: hematologic_diseases
+        title: Hematologic Diseases
+        meaning: mesh:D006402
+      sleep_wake_disorders:
+        text: sleep_wake_disorders
+        title: Sleep Wake Disorders
+        meaning: mesh:D012893
+      all_coocurring_conditions:
+        text: all_cooccurring_conditions
+        title: All Co-occurring Conditions
+        meaning: mesh:D013568
+      other:
+        text: other
+        title: Other
+  enum_participantLifespanStage:
+    name: enum_participantLifespanStage
+    definition_uri: include:enum_participantLifespanStage
+    permissible_values:
+      fetal:
+        text: fetal
+        title: Fetal
+      neonatal:
+        text: neonatal
+        title: Neonatal
+        description: 0-28 days old
+      pediatric:
+        text: pediatric
+        title: Pediatric
+        description: Birth-17 years old
+      adult:
+        text: adult
+        title: Adult
+        description: 18+ years old
+  enum_clinicalDataSourceType:
+    #TODO: replace enum_conditionDataSource with this - or consider deleting slot conditionDataSource
+    name: enum_clinicalDataSourceType
+    definition_uri: include:enum_clinicalDataSourceType
+    permissible_values:
+      medical_record:
+        text: medical_record
+        title: Medical Record
+        description: Data obtained directly from medical record
+      investigator_assessment:
+        text: investigator_assessment
+        title: Investigator Assessment
+        description: Data obtained by examination, interview, etc. with investigator
+      participant_or_caregiver_report:
+        text: participant_or_caregiver_report
+        title: Participant or Caregiver Report
+        description: Data obtained from survey, questionnaire, etc.
+      other:
+        text: other
+        title: Other
+      unknown: 
+        text: unknown
+        title: Unknown
+  enum_DataCategory: #added to DataFile:DataCategory
+    name: enum_DataCategory
+    definition_uri: include:enum_DataCategory
+    permissible_values:
+      unharmonized_clinical:
+        text: unharmonized_clinical
+        title: Unharmonized Demographic/Clinical Data
+      harmonized_clinical:
+        text: harmonized_clinical
+        title: Harmonized Demographic/Clinical Data
+      genomics:
+        text: genomics
+        title: Genomics
+      transcriptomics:
+        text: transcriptomics
+        title: Transcriptomics
+      proteomics:
+        text: proteomics
+        title: Proteomics
+      metabolomics:
+        text: metabolomics
+        title: Metabolomics
+      cognitive_behavioral:
+        text: cognitive_behavioral
+        title: Cognitive/Behavioral
+      immune_maps:
+        text: immune_maps
+        title: Immune Maps
+      imaging:
+        text: imaging
+        title: Imaging
+      microbiome:
+        text: microbiome
+        title: Microbiome
+  enum_guidType:
+    name: enum_guidType
+    definition_uri: include:enum_guidType
+    permissible_values:
+      ndar:
+        text: NDAR
+        title: NDAR
+        description: GUID generated by NIMH Data Archive (NDA) GUID tool
+      other:
+        text: other
+        title: Other
+        description: GUID generated by other system
+      none:
+        text: none
+        title: none
+        description: No GUIDs used in this study
