@@ -23,7 +23,7 @@ classes:
     description: General information about the study
     title: Study
     is_a: Thing
-    slots:
+    slots: #update with new slots
     - studyCode
     - studyName
     - program
@@ -56,30 +56,34 @@ slots:
     title: Study Description
     required: true
     range: string
-  principalInvestigatorName: #should this be multivalued? inlined as list?
+  principalInvestigatorName: 
     definition_uri: include:principalInvestigatorName
-    description: Name(s) of Principal Investigator(s) of this study
+    description: Name(s) of Principal Investigator(s) of this study; #separate with pipes - add to other multivalued
     title: Principal Investigator Name
     required: true
     range: string
+    multivalued: true
   studyContactName:
     definition_uri: include:studyContactName
-    description: Name of contact person for this study (may be different from PI)
+    description: Name of contact person for this study (only one; may be different from PI)
     title: Study Contact Name
     required: true
     range: string
+    multivalued: true
   studyContactInstitution:
     definition_uri: include:studyContactInstitution
     description: Institution of contact person for this study
     title: Study Contact Institution
     required: true
     range: string
+    multivalued: true
   studyContactEmail:
     definition_uri: include:studyContactEmail
     description: Email address of contact person for this study
     title: Study Contact Email
     required: true
     range: string
+    multivalued: true
   vbrEmail:
     definition_uri: include:vbrEmail
     description: Email address for Virtual Biorepository requests/inquiries
@@ -89,7 +93,7 @@ slots:
     definition_uri: include:vbrUrl
     description: Link to Virtual Biorepository request form
     title: Virtual Biorepository URL
-    range: string #url
+    range: uri
   vbrReadme:
     definition_uri: include:vbrReadme
     description: Instructions for contacting or requesting samples from Virtual Biorepository
@@ -101,12 +105,13 @@ slots:
     title: Research Domain
     range: enum_researchDomain
     required: true
-  participantLifespanStage: #how to allow multiple choices?
+  participantLifespanStage: 
     definition_uri: include:participantLifespanStage
-    description: Focus age group(s) of your study population
+    description: Focus age group(s) of your study population #comma separated list of enums for now
     title: Participant Lifespan Stage
     range: enum_participantLifespanStage
     required: true
+    multivalued: true
   selectionCriteria:
     definition_uri: include:selectionCriteria
     description: Brief description of inclusion and/or exclusion criteria for the study
@@ -118,34 +123,35 @@ slots:
     title: Study Design
     range: string 
     required: true
-  clinicalDataSourceType: #how to allow multiple choices?
+  clinicalDataSourceType: 
     definition_uri: include:clinicalDataSourceType
     description: Source(s) of data collected from study participants
     title: Clinical Data Source Type
-    range: enum_clinicalDataSourceType
+    range: enum_clinicalDataSourceType #should be the same as in Condition
     required: true
-  expectedDataCategories:
-    definition_uri: include:expectedDataCategories
+    multivalued: true
+  expectedDataCategory:
+    definition_uri: include:expectedDataCategory
     description: Funding source for the study
-    title: Expected categories of data collected in this study
-    range: enum_expectedDataCategories #these enums should also be added to dataCategory in DataFile
+    title: Expected category/categories of data collected in this study
+    range: enum_expectedDataCategory #reuse enum for dataCategory in DataFile
     required: true
   studyWebsite:
     definition_uri: include:studyWebsite
     description: Website for the study
     title: Study Website
-    range: string #url
+    range: uri
   dbgap:
     definition_uri: include:dbgap
     description: dbGaP study accession code
     title: dbGaP
     range: string
-  publication: #should this be multivalued? inlined as list?
+  publication: 
     definition_uri: include:publication
-    description: URL or DOI for publication(s) describing the study's rationale and methodology (PMID preferred)
+    description: URL or DOI for publication(s) describing the study's rationale and methodology (PubMed Central IDs preferred but not required)
     title: Publication
     range: string 
-    required: true
+    multivalued: true
   expectedNumberOfParticipants: 
     definition_uri: include:expectedNumberOfParticipants
     description: Expected number of participants in this study
@@ -188,6 +194,9 @@ enums:
       bri_dsr:
         text: bri_dsr
         title: BRI-DSR
+      child_ds:
+        text: child_ds
+        title: CHILD-DS
       charge_ds:
         text: charge_ds
         title: CHARGE-DS
@@ -232,7 +241,7 @@ enums:
         title: ECODS
       exceeds:
         text: exceeds
-        title: ExCEEDS
+        title: EXcEEDS
       htp:
         text: htp
         title: HTP
