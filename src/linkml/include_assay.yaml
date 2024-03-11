@@ -361,12 +361,18 @@ enums:
         description: Container either was available through Virtual Biorepository but has been used up, or is part of a study that is not participating in the VBR
   enum_sampleType:
     permissible_values:
-      B cell:
+      b_cell:
+        text: b_cell
+        title: B cell
         description: A lymphocyte of B lineage that is capable of B cell mediated immunity.
         meaning: CL:0000236
       blood:
+        text: blood
+        title: blood
         decription: A fluid that is composed of blood plasma and erythrocytes.
         meaning: UBERON:0000178
-      bone marrow:
+      bone_marrow:
+        text: bone_marrow
+        title: bone marrow
         description: The soft tissue that fills the cavities of bones.
         meaning: UBERON:0002371
