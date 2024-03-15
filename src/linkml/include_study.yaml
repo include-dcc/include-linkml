@@ -62,10 +62,10 @@ classes:
     - datasetName
     - datasetGlobalId
     - datasetExternalId
-    - expectedNumberOfFiles
-#    - fileIdList #not sure if this should be in the model - might be derived in portal or listed in separate manifest
     - datasetExpectedNumberOfParticipants
 #    - participantIdList #not sure if this should be in the model - might be derived in portal or listed in separate manifest
+    - expectedNumberOfFiles
+#    - fileIdList #not sure if this should be in the model - might be derived in portal or listed in separate manifest
     - dataCollectionStartYear
     - dataCollectionEndYear
     - datasetDataCategory
@@ -136,17 +136,17 @@ slots:
   vbrEmail:
     definition_uri: include:vbrEmail
     description: Email address for Virtual Biorepository requests/inquiries
-    title: Virtual Biorepository Email
+    title: VBR Email
     range: string
   vbrUrl:
     definition_uri: include:vbrUrl
     description: Link to Virtual Biorepository request form
-    title: Virtual Biorepository URL
+    title: VBR URL
     range: uri
   vbrReadme:
     definition_uri: include:vbrReadme
     description: Instructions for contacting or requesting samples from Virtual Biorepository
-    title: Virtual Biorepository Readme
+    title: VBR Readme
     range: string     
   researchDomain:
     definition_uri: include:researchDomain
@@ -233,12 +233,6 @@ slots:
     description: Unique identifier or code for dataset, if provided by contributor
     title: Dataset External ID
     range: string 
-  expectedNumberOfFiles: 
-    definition_uri: include:expectedNumberOfFiles
-    description: Expected number of files associated with this dataset
-    title: Expected Number of Files
-    range: integer 
-    required: false #update to true when this is figured out
   # fileIdList: 
   #   definition_uri: include:fileIdList
   #   description: Global IDs for files associated with this dataset. Should include one or more dictionary files that provide definitions for every field in every file
@@ -252,6 +246,12 @@ slots:
     title: Dataset Expected Number of Participants
     range: integer 
     required: true
+  expectedNumberOfFiles: 
+    definition_uri: include:expectedNumberOfFiles
+    description: Expected number of files associated with this dataset
+    title: Expected Number of Files
+    range: integer 
+    required: false #update to true when this is figured out
   # participantIdList: 
   #   definition_uri: include:participantIdList
   #   description: Global IDs for Participants associated with this dataset
