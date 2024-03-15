@@ -10,7 +10,6 @@ prefixes:
 imports:
 - linkml:types
 - include_core
-- include_assay
 default_curi_maps:
 - semweb_context
 classes:
@@ -18,7 +17,7 @@ classes:
     name: Study
     definition_uri: include:Study
     annotations:
-      required: #can this just be required:true? was this for schematic?
+      required: 
         tag: required
         value: 'True'
     description: General information about the study
@@ -41,11 +40,11 @@ classes:
     - selectionCriteria
     - studyDesign
     - clinicalDataSourceType
-    - expectedDataCategory #update below
+    - expectedDataCategory
     - studyWebsite
-#    - dbgap #delete?
+#   - dbgap
     - studyPublication
-    - studyExpectedNumberOfParticipants #update below
+    - studyExpectedNumberOfParticipants
     - guidType
   Dataset:
     name: Dataset
@@ -59,25 +58,24 @@ classes:
     is_a: Thing
     slots: 
     - hasStudy
-#    - hasParticipant
     #add hasDataset to Assay>DataFile?
     - datasetName
     - datasetGlobalId
     - datasetExternalId
     - expectedNumberOfFiles
-    - fileIdList #not sure if this should be in the model - might be derived in portal or listed in separate manifest
-    - datasetExpectedNumberOfParticipants #update below
-    - participantIdList #not sure if this should be in the model - might be derived in portal or listed in separate manifest
+#    - fileIdList #not sure if this should be in the model - might be derived in portal or listed in separate manifest
+    - datasetExpectedNumberOfParticipants
+#    - participantIdList #not sure if this should be in the model - might be derived in portal or listed in separate manifest
     - dataCollectionStartYear
     - dataCollectionEndYear
-    - datasetDataCategory #update below
-    - datasetDataType  #can't reuse because validation will look for Assay data and we won't usually have it
-    - datasetExperimentalStrategy  #update below
-    - datasetExperimentalPlatform  #update below
+    - datasetDataCategory
+    - datasetDataType
+    - datasetExperimentalStrategy
+    - datasetExperimentalPlatform
     - datasetPublication
     - accessLimitations
     - accessRequirements
-    - dbgap #update spelling below; delete from Study and only in Dataset - portal should aggregate in Study - ask JP
+    - dbgap
     - otherRepository
     - otherAccessAuthority
 
@@ -195,7 +193,7 @@ slots:
     description: Website for the study
     title: Study Website
     range: uri
-#  dbgap: #not sure if we need this - should be derived from Dataset dbGaP
+#  dbgap: #should be derived from Dataset dbGaP
 #    definition_uri: include:dbgap
 #    description: dbGaP study accession code
 #    title: dbGaP
@@ -241,59 +239,59 @@ slots:
     title: Expected Number of Files
     range: integer 
     required: false #update to true when this is figured out
-  fileIdList: 
-    definition_uri: include:fileIdList
-    description: Global IDs for files associated with this dataset. Should include one or more dictionary files that provide definitions for every field in every file
-    title: File ID List
-    range: string 
-    multivalued: true
-    required: false #should be derived from dataFile if omics
+  # fileIdList: 
+  #   definition_uri: include:fileIdList
+  #   description: Global IDs for files associated with this dataset. Should include one or more dictionary files that provide definitions for every field in every file
+  #   title: File ID List
+  #   range: string 
+  #   multivalued: true
+  #   required: false #should be derived from dataFile if omics
   datasetExpectedNumberOfParticipants: 
     definition_uri: include:datasetExpectedNumberOfParticipants
     description: Expected number of participants in this dataset
-    title: Expected Number of Participants
+    title: Dataset Expected Number of Participants
     range: integer 
     required: true
-  participantIdList: 
-    definition_uri: include:participantIdList
-    description: Global IDs for Participants associated with this dataset
-    title: Participant ID List
-    range: string 
-    multivalued: true
-    required: false #not sure if we need this - update to true when this is figured out
+  # participantIdList: 
+  #   definition_uri: include:participantIdList
+  #   description: Global IDs for Participants associated with this dataset
+  #   title: Participant ID List
+  #   range: string 
+  #   multivalued: true
+  #   required: false #not sure if we need this - update to true when this is figured out
   dataCollectionStartYear: 
     definition_uri: include:dataCollectionStartYear
     description: Year that data collection started
     title: Data Collection Start Year
     range: integer
-    required: true
+    required: false #change to true when we have for all studies
   dataCollectionEndYear: 
     definition_uri: include:dataCollectionEndYear
     description: Year that data collection ended
     title: Data Collection End Year
     range: integer 
     required: false
-  datasetDataCategory: #reused from DataFile with slightly different description
+  datasetDataCategory:
     definition_uri: include:dataCategory
     description: General category of data in dataset
     title: Dataset Data Category
     required: true
     range: enum_DataCategory
-  datasetDataType: #do I need to define again if I want a different description?
+  datasetDataType: 
     definition_uri: include:dataType
-    description: Specific type of data contained in file (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
+    description: Specific type of data contained in dataset (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
     title: Dataset Data Type
-    range: string
-  datasetExperimentalStrategy: #do I need to define again if I want a different description?
+    range: string #eventually share enum with dataFile
+  datasetExperimentalStrategy: 
     definition_uri: include:experimentalStrategy
-    description: Experimental method used to obtain data in file (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
+    description: Experimental method used to obtain data in dataset (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
     title: Dataset Experimental Strategy
-    range: string
-  datasetExperimentalPlatform: #do I need to define again if I want a different description?
+    range: string #eventually share enum with dataFile
+  datasetExperimentalPlatform: 
     definition_uri: include:experimentalPlatform
     description: Specific platform used to perform experiment (e.g. SOMAscan, MSD, Luminex, Illumina)
     title: Dataset Experimental Platform
-    range: string
+    range: string #eventually share enum with dataFile
   datasetPublication: 
     definition_uri: include:datasetPublication
     description: URL for publication(s) describing the dataset's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
@@ -319,7 +317,7 @@ slots:
     range: string
   otherRepository: 
     definition_uri: include:otherRepository
-    description: URL if Study data is already deposited in a public repository other than dbGaP (e.g. LONI, Metabolomics Workbench, etc.)
+    description: URL if dataset is already deposited in a public repository other than dbGaP (e.g. LONI, Metabolomics Workbench, etc.)
     title: Other Repository
     range: uri 
   otherAccessAuthority: 
