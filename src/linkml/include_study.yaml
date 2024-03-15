@@ -59,7 +59,7 @@ classes:
     is_a: Thing
     slots: 
     - hasStudy
-    - hasParticipant
+#    - hasParticipant
     #add hasDataset to Assay>DataFile?
     - datasetName
     - datasetGlobalId
@@ -71,7 +71,7 @@ classes:
     - dataCollectionStartYear
     - dataCollectionEndYear
     - datasetDataCategory #update below
-    - include_assay:dataType  #can't reuse because validation will look for Assay data and we won't usually have it
+    - datasetDataType  #can't reuse because validation will look for Assay data and we won't usually have it
     - datasetExperimentalStrategy  #update below
     - datasetExperimentalPlatform  #update below
     - accessLimitations
@@ -272,23 +272,23 @@ slots:
     title: Data Collection End Year
     range: integer 
     required: false
-  dataCategory: #reused from DataFile with slightly different description
+  datasetDataCategory: #reused from DataFile with slightly different description
     definition_uri: include:dataCategory
     description: General category of data in dataset
     title: Data Category
     required: true
     range: enum_DataCategory
-  dataType: #do I need to define again if I want a different description?
+  datasetDataType: #do I need to define again if I want a different description?
     definition_uri: include:dataType
     description: Specific type of data contained in file (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
     title: Data Type
     range: string
-  experimentalStrategy: #do I need to define again if I want a different description?
+  datasetExperimentalStrategy: #do I need to define again if I want a different description?
     definition_uri: include:experimentalStrategy
     description: Experimental method used to obtain data in file (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
     title: Experimental Strategy
     range: string
-  experimentalPlatform: #do I need to define again if I want a different description?
+  datasetExperimentalPlatform: #do I need to define again if I want a different description?
     definition_uri: include:experimentalPlatform
     description: Specific platform used to perform experiment (e.g. SOMAscan, MSD, Luminex, Illumina)
     title: Experimental Platform
