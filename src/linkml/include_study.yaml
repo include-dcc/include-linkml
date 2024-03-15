@@ -10,6 +10,7 @@ prefixes:
 imports:
 - linkml:types
 - include_core
+- include_assay
 default_curi_maps:
 - semweb_context
 classes:
@@ -25,7 +26,7 @@ classes:
     is_a: Thing
     slots: 
     - studyCode
-    - studyName
+    - studyTitle
     - program
     - studyDescription
     - principalInvestigatorName
@@ -40,11 +41,11 @@ classes:
     - selectionCriteria
     - studyDesign
     - clinicalDataSourceType
-    - expectedDataCategory
+    - expectedDataCategory #update below
     - studyWebsite
-    - dbgap
+    - dbgap #delete?
     - publication
-    - expectedNumberOfParticipants
+    - studyExpectedNumberOfParticipants #update below
     - guidType
   Dataset:
     name: Dataset
@@ -52,11 +53,11 @@ classes:
     annotations:
       required:
         tag: required
-        value: 'True' #should this be False for now?
+        value: 'False' #change to True if needed later
     description: Information about a specific grouping of data files
     title: Dataset
     is_a: Thing
-    slots: #update with new slots
+    slots: 
     - hasStudy
     - hasParticipant
     #add hasDataset to Assay>DataFile?
@@ -65,17 +66,17 @@ classes:
     - datasetExternalId
     - expectedNumberOfFiles
     - fileIdList #not sure if this should be in the model - might be derived in portal or listed in separate manifest
-    - expectedNumberOfParticipants #can you reuse slots?
+    - datasetExpectedNumberOfParticipants #update below
     - participantIdList #not sure if this should be in the model - might be derived in portal or listed in separate manifest
     - dataCollectionStartYear
     - dataCollectionEndYear
-    - dataCategory #can you reuse slots?
-    - dataType  #can you reuse slots?
-    - experimentalStrategy  #can you reuse slots?
-    - experimentalPlatform  #can you reuse slots?
+    - datasetDataCategory #update below
+    - include_assay:dataType  #can't reuse because validation will look for Assay data and we won't usually have it
+    - datasetExperimentalStrategy  #update below
+    - datasetExperimentalPlatform  #update below
     - accessLimitations
     - accessRequirements
-    - dbGaP
+    - dbgap #update spelling below; delete from Study and only in Dataset - portal should aggregate in Study - ask JP
     - otherRepository
     - otherAccessAuthority
 
@@ -98,6 +99,7 @@ slots:
     title: Program
     range: enum_program
     required: true
+    multivalued: true
   studyDescription:
     definition_uri: include:studyDescription
     description: Brief description of the study (2-4 sentences). Should match description in https://includedcc.org/studies.
@@ -244,7 +246,7 @@ slots:
     title: File ID List
     range: string 
     multivalued: true
-    required: false #not sure if we need this - update to true when this is figured out
+    required: false #should be derived from dataFile if omics
   expectedNumberOfParticipants: 
     definition_uri: include:expectedNumberOfParticipants
     description: Expected number of participants in this dataset
@@ -262,18 +264,17 @@ slots:
     definition_uri: include:dataCollectionStartYear
     description: Year that data collection started
     title: Data Collection Start Year
-    range: integer #is there a range for "year"? 
+    range: integer
     required: true
   dataCollectionEndYear: 
     definition_uri: include:dataCollectionEndYear
     description: Year that data collection ended
     title: Data Collection End Year
-    range: integer #is there a range for "year"? 
+    range: integer 
     required: false
-  dataCategory: #do I need to define again if I want a different description?
+  dataCategory: #reused from DataFile with slightly different description
     definition_uri: include:dataCategory
-    description: General category of data in file (e.g. Clinical, Genomics, Proteomics,
-      Metabolomics, Immune profiling, Transcriptomics)
+    description: General category of data in dataset
     title: Data Category
     required: true
     range: enum_DataCategory
@@ -335,8 +336,8 @@ enums:
     name: enum_studyCode
     definition_uri: include:enum_studyCode
     permissible_values:
-      abcds:
-        text: abcds
+      abc_ds:
+        text: abc_ds
         title: ABC-DS
       ads:
         text: ads
@@ -417,10 +418,10 @@ enums:
     name: enum_researchDomain
     definition_uri: include:enum_researchDomain
     permissible_values:
-      behavior_and_mechanisms:
-        text: behavior_and_mechanisms
+      behavior_and_behavior_mechanisms:
+        text: behavior_and_behavior_mechanisms
         title: Behavior and Behavior Mechanisms
-        meaning: mesh:D001520 #is this how to format MeSH term?
+        meaning: mesh:D001520
       congenital_heart_defects:
         text: congenital_heart_defects
         title: Congenital Heart Defects
@@ -437,8 +438,8 @@ enums:
         text: sleep_wake_disorders
         title: Sleep Wake Disorders
         meaning: mesh:D012893
-      all_coocurring_conditions:
-        text: all_cooccurring_conditions
+      all_co_occurring_conditions:
+        text: all_co_occurring_conditions
         title: All Co-occurring Conditions
         meaning: mesh:D013568
       other:
@@ -490,11 +491,11 @@ enums:
     name: enum_DataCategory
     definition_uri: include:enum_DataCategory
     permissible_values:
-      unharmonized_clinical:
-        text: unharmonized_clinical
+      unharmonized_demographic_clinical_data:
+        text: unharmonized_demographic_clinical_data
         title: Unharmonized Demographic/Clinical Data
-      harmonized_clinical:
-        text: harmonized_clinical
+      harmonized_demographic_clinical_data:
+        text: harmonized_demographic_clinical_data
         title: Harmonized Demographic/Clinical Data
       genomics:
         text: genomics
@@ -525,7 +526,7 @@ enums:
     definition_uri: include:enum_guidType
     permissible_values:
       ndar:
-        text: NDAR
+        text: ndar
         title: NDAR
         description: GUID generated by NIMH Data Archive (NDA) GUID tool
       other:
@@ -534,5 +535,5 @@ enums:
         description: GUID generated by other system
       none:
         text: none
-        title: none
+        title: None
         description: No GUIDs used in this study
