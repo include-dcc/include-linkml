@@ -194,19 +194,19 @@ slots:
     description: Website for the study
     title: Study Website
     range: uri
-  dbgap: #not sure if we need this - should be derived from Dataset dbGaP
-    definition_uri: include:dbgap
-    description: dbGaP study accession code
-    title: dbGaP
-    range: string
+#  dbgap: #not sure if we need this - should be derived from Dataset dbGaP
+#    definition_uri: include:dbgap
+#    description: dbGaP study accession code
+#    title: dbGaP
+#    range: string
   publication: 
     definition_uri: include:publication
     description: URL for publication(s) describing the study's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
     title: Publication
     range: uri 
     multivalued: true
-  expectedNumberOfParticipants: 
-    definition_uri: include:expectedNumberOfParticipants
+  studyExpectedNumberOfParticipants: 
+    definition_uri: include:studyExpectedNumberOfParticipants
     description: Expected number of participants in this study
     title: Expected Number of Participants
     range: integer 
@@ -247,8 +247,8 @@ slots:
     range: string 
     multivalued: true
     required: false #should be derived from dataFile if omics
-  expectedNumberOfParticipants: 
-    definition_uri: include:expectedNumberOfParticipants
+  datasetExpectedNumberOfParticipants: 
+    definition_uri: include:datasetExpectedNumberOfParticipants
     description: Expected number of participants in this dataset
     title: Expected Number of Participants
     range: integer 
