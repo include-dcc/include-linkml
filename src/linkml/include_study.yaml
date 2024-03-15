@@ -43,8 +43,8 @@ classes:
     - clinicalDataSourceType
     - expectedDataCategory #update below
     - studyWebsite
-    - dbgap #delete?
-    - publication
+#    - dbgap #delete?
+    - studyPublication
     - studyExpectedNumberOfParticipants #update below
     - guidType
   Dataset:
@@ -74,6 +74,7 @@ classes:
     - datasetDataType  #can't reuse because validation will look for Assay data and we won't usually have it
     - datasetExperimentalStrategy  #update below
     - datasetExperimentalPlatform  #update below
+    - datasetPublication
     - accessLimitations
     - accessRequirements
     - dbgap #update spelling below; delete from Study and only in Dataset - portal should aggregate in Study - ask JP
@@ -199,16 +200,16 @@ slots:
 #    description: dbGaP study accession code
 #    title: dbGaP
 #    range: string
-  publication: 
-    definition_uri: include:publication
+  studyPublication: 
+    definition_uri: include:studyPublication
     description: URL for publication(s) describing the study's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
-    title: Publication
+    title: Study Publication
     range: uri 
     multivalued: true
   studyExpectedNumberOfParticipants: 
     definition_uri: include:studyExpectedNumberOfParticipants
     description: Expected number of participants in this study
-    title: Expected Number of Participants
+    title: Study Expected Number of Participants
     range: integer 
     required: true
   guidType:
@@ -275,24 +276,30 @@ slots:
   datasetDataCategory: #reused from DataFile with slightly different description
     definition_uri: include:dataCategory
     description: General category of data in dataset
-    title: Data Category
+    title: Dataset Data Category
     required: true
     range: enum_DataCategory
   datasetDataType: #do I need to define again if I want a different description?
     definition_uri: include:dataType
     description: Specific type of data contained in file (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
-    title: Data Type
+    title: Dataset Data Type
     range: string
   datasetExperimentalStrategy: #do I need to define again if I want a different description?
     definition_uri: include:experimentalStrategy
     description: Experimental method used to obtain data in file (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
-    title: Experimental Strategy
+    title: Dataset Experimental Strategy
     range: string
   datasetExperimentalPlatform: #do I need to define again if I want a different description?
     definition_uri: include:experimentalPlatform
     description: Specific platform used to perform experiment (e.g. SOMAscan, MSD, Luminex, Illumina)
-    title: Experimental Platform
+    title: Dataset Experimental Platform
     range: string
+  datasetPublication: 
+    definition_uri: include:datasetPublication
+    description: URL for publication(s) describing the dataset's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
+    title: Dataset Publication
+    range: uri 
+    multivalued: true
   accessLimitations: 
     definition_uri: include:accessLimitations
     description: Data access limitations, as defined in the GA4GH Data Use Ontology (DUO; can list more than one, pipe separated)
