@@ -263,13 +263,13 @@ slots:
     definition_uri: include:dataCollectionStartYear
     description: Year that data collection started
     title: Data Collection Start Year
-    pattern: "^1|2\d\d\d$|nan"
+    pattern: "^1|2\\d(3)$|nan"
     required: false #change to true when we have for all studies
   dataCollectionEndYear: 
     definition_uri: include:dataCollectionEndYear
     description: Year that data collection ended
     title: Data Collection End Year
-    pattern: "^1|2\d\d\d$|nan"
+    pattern: "^1|2\\d(3)$|nan"
     required: false
   datasetDataCategory:
     definition_uri: include:dataCategory
