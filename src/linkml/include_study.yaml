@@ -93,7 +93,7 @@ slots:
     range: string
   program:
     definition_uri: include:program
-    description: Funding source for the study
+    description: Funding source(s) for the study (pipe-separated if multiple)
     title: Program
     range: enum_program
     required: true
@@ -343,6 +343,9 @@ enums:
       kf:
         text: kf
         title: KF
+      other:
+        text: other
+        title: Other 
   enum_studyCode:
     name: enum_studyCode
     definition_uri: include:enum_studyCode
