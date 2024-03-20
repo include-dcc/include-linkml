@@ -42,7 +42,7 @@ classes:
     - clinicalDataSourceType
     - expectedDataCategory
     - studyWebsite
-#   - dbgap
+    - studyDbgap
     - studyPublication
     - studyExpectedNumberOfParticipants
     - guidType
@@ -52,7 +52,7 @@ classes:
     annotations:
       required:
         tag: required
-        value: 'False' #change to True if needed later
+        value: 'False' #may change to True later
     description: Information about a specific grouping of data files
     title: Dataset
     is_a: Thing
@@ -63,9 +63,8 @@ classes:
     - datasetGlobalId
     - datasetExternalId
     - datasetExpectedNumberOfParticipants
-#    - participantIdList #not sure if this should be in the model - might be derived in portal or listed in separate manifest
     - expectedNumberOfFiles
-#    - fileIdList #not sure if this should be in the model - might be derived in portal or listed in separate manifest
+#   - fileIdList #TBD - may make this into a separate manifest
     - dataCollectionStartYear
     - dataCollectionEndYear
     - datasetDataCategory
@@ -75,7 +74,7 @@ classes:
     - datasetPublication
     - accessLimitations
     - accessRequirements
-    - dbgap
+    - datasetDbgap
     - otherRepository
     - otherAccessAuthority
 
@@ -216,6 +215,12 @@ slots:
     title: GUID Type
     range: enum_guidType 
     required: true
+  studyDbgap: 
+    definition_uri: include:studyDbgap
+    description: dbGaP code(s) associated with this Study, either for access or informational purposes (pipe-separated if multiple)
+    title: Study dbGaP
+    range: string
+    multivalued: true
   datasetName: 
     definition_uri: include:datasetName
     description: Full name of the dataset, provided by contributor
@@ -310,11 +315,12 @@ slots:
     title: Access Requirements
     range: string 
     required: false #make true when we have enums
-  dbgap: #do i need to define again if changing description?
-    definition_uri: include:dbgap
-    description: dbGaP study accession code, if applicable
-    title: dbGaP
+  datasetDbgap: 
+    definition_uri: include:datasetDbgap
+    description: dbGaP code(s) required to access the files in this Dataset, if applicable (pipe-separated if multiple)
+    title: Dataset dbGaP
     range: string
+    multivalued: true
   otherRepository: 
     definition_uri: include:otherRepository
     description: URL if dataset is already deposited in a public repository other than dbGaP (e.g. LONI, Metabolomics Workbench, etc.)
