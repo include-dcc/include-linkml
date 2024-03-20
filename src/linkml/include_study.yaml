@@ -149,14 +149,14 @@ slots:
     range: string     
   researchDomain:
     definition_uri: include:researchDomain
-    description: Main research domain(s) of your study, other than Down syndrome; pipe-separated if multiple
+    description: Main research domain(s) of the study, other than Down syndrome; pipe-separated if multiple
     title: Research Domain
     range: enum_researchDomain
     required: true
     multivalued: true
   participantLifespanStage: 
     definition_uri: include:participantLifespanStage
-    description: Focus age group(s) of your study population; pipe-separated if multiple
+    description: Focus age group(s) of the study population; pipe-separated if multiple
     title: Participant Lifespan Stage
     range: enum_participantLifespanStage
     required: true
@@ -168,13 +168,13 @@ slots:
     range: string
   studyDesign:
     definition_uri: include:studyDesign
-    description: Overall design of study
+    description: Overall design of study, including whether it is longitudinal and whether family members/unrelated controls are also enrolled
     title: Study Design
     range: string 
     required: true
   clinicalDataSourceType: 
     definition_uri: include:clinicalDataSourceType
-    description: Source(s) of data collected from study participants
+    description: Source(s) of data collected from study participants; pipe-separated if multiple
     title: Clinical Data Source Type
     range: enum_clinicalDataSourceType 
     #TODO: replace enum_conditionDataSource with this - or consider deleting slot conditionDataSource
@@ -182,7 +182,7 @@ slots:
     multivalued: true
   expectedDataCategory:
     definition_uri: include:expectedDataCategory
-    description: Categories of data expected to be collected in this Study
+    description: Categories of data expected to be collected in this study
     title: Expected Data Category
     range: enum_DataCategory 
     required: true
@@ -192,11 +192,6 @@ slots:
     description: Website for the study
     title: Study Website
     range: uri
-#  dbgap: #should be derived from Dataset dbGaP
-#    definition_uri: include:dbgap
-#    description: dbGaP study accession code
-#    title: dbGaP
-#    range: string
   studyPublication: 
     definition_uri: include:studyPublication
     description: URL for publication(s) describing the study's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
@@ -217,7 +212,7 @@ slots:
     required: true
   studyDbgap: 
     definition_uri: include:studyDbgap
-    description: dbGaP code(s) associated with this Study, either for access or informational purposes (pipe-separated if multiple)
+    description: dbGaP "phs" accession code(s) associated with this Study, either for access or informational purposes (pipe-separated if multiple)
     title: Study dbGaP
     range: string
     multivalued: true
@@ -278,23 +273,23 @@ slots:
     required: false
   datasetDataCategory:
     definition_uri: include:dataCategory
-    description: General category of data in dataset
+    description: General category of data in dataset; pipe-separated if multiple
     title: Dataset Data Category
     required: true
     range: enum_DataCategory
   datasetDataType: 
     definition_uri: include:dataType
-    description: Specific type of data contained in dataset (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
+    description: Specific type of data contained in dataset; pipe-separated if multiple (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
     title: Dataset Data Type
     range: string #eventually share enum with dataFile
   datasetExperimentalStrategy: 
     definition_uri: include:experimentalStrategy
-    description: Experimental method used to obtain data in dataset (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
+    description: Experimental method used to obtain data in dataset; pipe-separated if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
     title: Dataset Experimental Strategy
     range: string #eventually share enum with dataFile
   datasetExperimentalPlatform: 
     definition_uri: include:experimentalPlatform
-    description: Specific platform used to perform experiment (e.g. SOMAscan, MSD, Luminex, Illumina)
+    description: Specific platform used to perform experiment; pipe-separated if multiple (e.g. SOMAscan, MSD, Luminex, Illumina)
     title: Dataset Experimental Platform
     range: string #eventually share enum with dataFile
   datasetPublication: 
@@ -317,7 +312,7 @@ slots:
     required: false #make true when we have enums
   datasetDbgap: 
     definition_uri: include:datasetDbgap
-    description: dbGaP code(s) required to access the files in this Dataset, if applicable (pipe-separated if multiple)
+    description: dbGaP "phs" accession code(s) required to access the files in this Dataset, if applicable (pipe-separated if multiple)
     title: Dataset dbGaP
     range: string
     multivalued: true
@@ -535,6 +530,9 @@ enums:
       microbiome:
         text: microbiome
         title: Microbiome
+      other:
+        text: other
+        title: Other
   enum_guidType:
     name: enum_guidType
     definition_uri: include:enum_guidType
