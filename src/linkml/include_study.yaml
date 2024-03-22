@@ -7,6 +7,9 @@ prefixes:
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
+  mesh:
+    prefix_prefix: mesh
+    prefix_reference: http://id.nlm.nih.gov/mesh/
 imports:
 - linkml:types
 - include_core
