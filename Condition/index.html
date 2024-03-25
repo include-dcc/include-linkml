@@ -226,35 +226,35 @@
 
       Condition : conditionDataSource
 
-          Condition --|&gt; enum_conditionDataSource : conditionDataSource
+          Condition --&gt; enum_conditionDataSource : conditionDataSource
 
       Condition : conditionInterpretation
 
-          Condition --|&gt; enum_conditionInterpretation : conditionInterpretation
+          Condition --&gt; enum_conditionInterpretation : conditionInterpretation
 
       Condition : conditionMeasureSourceText
 
-          Condition --|&gt; None : conditionMeasureSourceText
+          Condition --&gt; None : conditionMeasureSourceText
 
       Condition : conditionStatus
 
-          Condition --|&gt; enum_conditionStatus : conditionStatus
+          Condition --&gt; enum_conditionStatus : conditionStatus
 
       Condition : eventId
 
-          Condition --|&gt; None : eventId
+          Condition --&gt; None : eventId
 
       Condition : eventType
 
-          Condition --|&gt; None : eventType
+          Condition --&gt; None : eventType
 
       Condition : hasParticipant
 
-          Condition --|&gt; Participant : hasParticipant
+          Condition --&gt; Participant : hasParticipant
 
       Condition : hasStudy
 
-          Condition --|&gt; Study : hasStudy
+          Condition --&gt; Study : hasStudy
 
       Condition : hpoCode
 
@@ -511,10 +511,11 @@ attributes:
     alias: hasStudy
     owner: Condition
     domain_of:
-    - Participant
-    - Condition
     - Biospecimen
     - DataFile
+    - Dataset
+    - Participant
+    - Condition
     range: Study
   hasParticipant:
     name: hasParticipant
@@ -526,9 +527,9 @@ attributes:
     alias: hasParticipant
     owner: Condition
     domain_of:
-    - Condition
     - Biospecimen
     - DataFile
+    - Condition
     range: Participant
   eventId:
     name: eventId

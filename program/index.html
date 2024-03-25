@@ -345,7 +345,7 @@
 
 
 <h1 id="slot-program-program">Slot: Program (program)</h1>
-<p><em>Funding source for the study</em></p>
+<p><em>Funding source(s) for the study (pipe-separated if multiple)</em></p>
 <p>URI: <a href="https://w3id.org/include/program">include:program</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -372,6 +372,9 @@
 <p>Range: <a href="../EnumProgram/">EnumProgram</a></p>
 </li>
 <li>
+<p>Multivalued: True</p>
+</li>
+<li>
 <p>Required: True</p>
 </li>
 </ul>
@@ -385,10 +388,11 @@
 
 <pre><code class="language-yaml">name: program
 definition_uri: include:program
-description: Funding source for the study
+description: Funding source(s) for the study (pipe-separated if multiple)
 title: Program
 from_schema: https://w3id.org/include
 rank: 1000
+multivalued: true
 alias: program
 domain_of:
 - Study

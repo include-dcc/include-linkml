@@ -227,17 +227,57 @@
     class Study
       Thing &lt;|-- Study
 
-      Study : dbgap
+      Study : clinicalDataSourceType
+
+          Study --&gt; enum_clinicalDataSourceType : clinicalDataSourceType
+
+      Study : expectedDataCategory
+
+          Study --&gt; enum_DataCategory : expectedDataCategory
+
+      Study : guidType
+
+          Study --&gt; enum_guidType : guidType
+
+      Study : participantLifespanStage
+
+          Study --&gt; enum_participantLifespanStage : participantLifespanStage
+
+      Study : principalInvestigatorName
 
       Study : program
 
-          Study --|&gt; enum_program : program
+          Study --&gt; enum_program : program
+
+      Study : researchDomain
+
+          Study --&gt; enum_researchDomain : researchDomain
+
+      Study : selectionCriteria
 
       Study : studyCode
 
-          Study --|&gt; enum_studyCode : studyCode
+          Study --&gt; enum_studyCode : studyCode
 
-      Study : studyName
+      Study : studyContactEmail
+
+      Study : studyContactInstitution
+
+      Study : studyContactName
+
+      Study : studyDbgap
+
+      Study : studyDescription
+
+      Study : studyDesign
+
+      Study : studyExpectedNumberOfParticipants
+
+      Study : studyPublication
+
+      Study : studyTitle
+
+      Study : studyWebsite
 
       Study : vbrEmail
 
@@ -268,25 +308,49 @@
 <tr>
 <td><a href="../studyCode/">studyCode</a></td>
 <td>1..1 <br/> <a href="../EnumStudyCode/">EnumStudyCode</a></td>
-<td>Unique identifer for the study, assigned by DCC</td>
+<td>Unique identifer for the study (generally a short acronym)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../studyName/">studyName</a></td>
+<td><a href="../studyTitle/">studyTitle</a></td>
 <td>1..1 <br/> <a href="../String/">String</a></td>
-<td>Full name of the study, chosen by data contributor</td>
+<td>Full title of the study</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../program/">program</a></td>
-<td>1..1 <br/> <a href="../EnumProgram/">EnumProgram</a></td>
-<td>Funding source for the study</td>
+<td>1..* <br/> <a href="../EnumProgram/">EnumProgram</a></td>
+<td>Funding source(s) for the study (pipe-separated if multiple)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../dbgap/">dbgap</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>dbGaP study accession code</td>
+<td><a href="../studyDescription/">studyDescription</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>Brief description of the study (2-4 sentences)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../principalInvestigatorName/">principalInvestigatorName</a></td>
+<td>1..* <br/> <a href="../String/">String</a></td>
+<td>Name(s) of Principal Investigator(s) of this study; pipe-separated if multipl...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../studyContactName/">studyContactName</a></td>
+<td>1..* <br/> <a href="../String/">String</a></td>
+<td>Name of contact person for this study; pipe-separated if multiple</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../studyContactInstitution/">studyContactInstitution</a></td>
+<td>1..* <br/> <a href="../String/">String</a></td>
+<td>Institution of contact person for this study; pipe-separated if multiple</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../studyContactEmail/">studyContactEmail</a></td>
+<td>1..* <br/> <a href="../String/">String</a></td>
+<td>Email address of contact person for this study; pipe-separated if multiple</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -297,7 +361,7 @@
 </tr>
 <tr>
 <td><a href="../vbrUrl/">vbrUrl</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../Uri/">Uri</a></td>
 <td>Link to Virtual Biorepository request form</td>
 <td>direct</td>
 </tr>
@@ -305,6 +369,72 @@
 <td><a href="../vbrReadme/">vbrReadme</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Instructions for contacting or requesting samples from Virtual Biorepository</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../researchDomain/">researchDomain</a></td>
+<td>1..* <br/> <a href="../EnumResearchDomain/">EnumResearchDomain</a></td>
+<td>Main research domain(s) of the study, other than Down syndrome; pipe-separate...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../participantLifespanStage/">participantLifespanStage</a></td>
+<td>1..* <br/> <a href="../EnumParticipantLifespanStage/">EnumParticipantLifespanStage</a></td>
+<td>Focus age group(s) of the study population; pipe-separated if multiple</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../selectionCriteria/">selectionCriteria</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Brief description of inclusion and/or exclusion criteria for the study</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../studyDesign/">studyDesign</a></td>
+<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>Overall design of study, including whether it is longitudinal and whether fam...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../clinicalDataSourceType/">clinicalDataSourceType</a></td>
+<td>1..* <br/> <a href="../EnumClinicalDataSourceType/">EnumClinicalDataSourceType</a></td>
+<td>Source(s) of data collected from study participants; pipe-separated if multip...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../expectedDataCategory/">expectedDataCategory</a></td>
+<td>1..* <br/> <a href="../EnumDataCategory/">EnumDataCategory</a></td>
+<td>Categories of data expected to be collected in this study</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../studyWebsite/">studyWebsite</a></td>
+<td>0..1 <br/> <a href="../Uri/">Uri</a></td>
+<td>Website for the study</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../studyDbgap/">studyDbgap</a></td>
+<td>0..* <br/> <a href="../String/">String</a></td>
+<td>dbGaP "phs" accession code(s) associated with this Study, either for access o...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../studyPublication/">studyPublication</a></td>
+<td>0..* <br/> <a href="../Uri/">Uri</a></td>
+<td>URL for publication(s) describing the study's rationale and methodology (PubM...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../studyExpectedNumberOfParticipants/">studyExpectedNumberOfParticipants</a></td>
+<td>1..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Expected number of participants in this study</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../guidType/">guidType</a></td>
+<td>1..1 <br/> <a href="../EnumGuidType/">EnumGuidType</a></td>
+<td>System used to generate globally unique identifiers (GUIDs)</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -321,18 +451,6 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Participant/">Participant</a></td>
-<td><a href="../hasStudy/">hasStudy</a></td>
-<td>range</td>
-<td><a href="./">Study</a></td>
-</tr>
-<tr>
-<td><a href="../Condition/">Condition</a></td>
-<td><a href="../hasStudy/">hasStudy</a></td>
-<td>range</td>
-<td><a href="./">Study</a></td>
-</tr>
-<tr>
 <td><a href="../Biospecimen/">Biospecimen</a></td>
 <td><a href="../hasStudy/">hasStudy</a></td>
 <td>range</td>
@@ -340,6 +458,24 @@
 </tr>
 <tr>
 <td><a href="../DataFile/">DataFile</a></td>
+<td><a href="../hasStudy/">hasStudy</a></td>
+<td>range</td>
+<td><a href="./">Study</a></td>
+</tr>
+<tr>
+<td><a href="../Dataset/">Dataset</a></td>
+<td><a href="../hasStudy/">hasStudy</a></td>
+<td>range</td>
+<td><a href="./">Study</a></td>
+</tr>
+<tr>
+<td><a href="../Participant/">Participant</a></td>
+<td><a href="../hasStudy/">hasStudy</a></td>
+<td>range</td>
+<td><a href="./">Study</a></td>
+</tr>
+<tr>
+<td><a href="../Condition/">Condition</a></td>
 <td><a href="../hasStudy/">hasStudy</a></td>
 <td>range</td>
 <td><a href="./">Study</a></td>
@@ -401,12 +537,27 @@ from_schema: https://w3id.org/include
 is_a: Thing
 slots:
 - studyCode
-- studyName
+- studyTitle
 - program
-- dbgap
+- studyDescription
+- principalInvestigatorName
+- studyContactName
+- studyContactInstitution
+- studyContactEmail
 - vbrEmail
 - vbrUrl
 - vbrReadme
+- researchDomain
+- participantLifespanStage
+- selectionCriteria
+- studyDesign
+- clinicalDataSourceType
+- expectedDataCategory
+- studyWebsite
+- studyDbgap
+- studyPublication
+- studyExpectedNumberOfParticipants
+- guidType
 
 </code></pre>
 </details>
@@ -426,7 +577,7 @@ attributes:
   studyCode:
     name: studyCode
     definition_uri: include:studyCode
-    description: Unique identifer for the study, assigned by DCC
+    description: Unique identifer for the study (generally a short acronym)
     title: Study Code
     from_schema: https://w3id.org/include
     rank: 1000
@@ -436,14 +587,14 @@ attributes:
     - Study
     range: enum_studyCode
     required: true
-  studyName:
-    name: studyName
-    definition_uri: include:studyName
-    description: Full name of the study, chosen by data contributor
-    title: Study Name
+  studyTitle:
+    name: studyTitle
+    definition_uri: include:studyTitle
+    description: Full title of the study
+    title: Study Title
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: studyName
+    alias: studyTitle
     owner: Study
     domain_of:
     - Study
@@ -452,33 +603,94 @@ attributes:
   program:
     name: program
     definition_uri: include:program
-    description: Funding source for the study
+    description: Funding source(s) for the study (pipe-separated if multiple)
     title: Program
     from_schema: https://w3id.org/include
     rank: 1000
+    multivalued: true
     alias: program
     owner: Study
     domain_of:
     - Study
     range: enum_program
     required: true
-  dbgap:
-    name: dbgap
-    definition_uri: include:dbgap
-    description: dbGaP study accession code
-    title: dbGaP
+  studyDescription:
+    name: studyDescription
+    definition_uri: include:studyDescription
+    description: Brief description of the study (2-4 sentences). Should match description
+      in https://includedcc.org/studies.
+    title: Study Description
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: dbgap
+    alias: studyDescription
     owner: Study
     domain_of:
     - Study
     range: string
+    required: true
+  principalInvestigatorName:
+    name: principalInvestigatorName
+    definition_uri: include:principalInvestigatorName
+    description: Name(s) of Principal Investigator(s) of this study; pipe-separated
+      if multiple
+    title: Principal Investigator Name
+    from_schema: https://w3id.org/include
+    rank: 1000
+    multivalued: true
+    alias: principalInvestigatorName
+    owner: Study
+    domain_of:
+    - Study
+    range: string
+    required: true
+  studyContactName:
+    name: studyContactName
+    definition_uri: include:studyContactName
+    description: Name of contact person for this study; pipe-separated if multiple
+    title: Study Contact Name
+    from_schema: https://w3id.org/include
+    rank: 1000
+    multivalued: true
+    alias: studyContactName
+    owner: Study
+    domain_of:
+    - Study
+    range: string
+    required: true
+  studyContactInstitution:
+    name: studyContactInstitution
+    definition_uri: include:studyContactInstitution
+    description: Institution of contact person for this study; pipe-separated if multiple
+    title: Study Contact Institution
+    from_schema: https://w3id.org/include
+    rank: 1000
+    multivalued: true
+    alias: studyContactInstitution
+    owner: Study
+    domain_of:
+    - Study
+    range: string
+    required: true
+  studyContactEmail:
+    name: studyContactEmail
+    definition_uri: include:studyContactEmail
+    description: Email address of contact person for this study; pipe-separated if
+      multiple
+    title: Study Contact Email
+    from_schema: https://w3id.org/include
+    rank: 1000
+    multivalued: true
+    alias: studyContactEmail
+    owner: Study
+    domain_of:
+    - Study
+    range: string
+    required: true
   vbrEmail:
     name: vbrEmail
     definition_uri: include:vbrEmail
     description: Email address for Virtual Biorepository requests/inquiries
-    title: Virtual Biorepository Email
+    title: VBR Email
     from_schema: https://w3id.org/include
     rank: 1000
     alias: vbrEmail
@@ -490,19 +702,19 @@ attributes:
     name: vbrUrl
     definition_uri: include:vbrUrl
     description: Link to Virtual Biorepository request form
-    title: Virtual Biorepository URL
+    title: VBR URL
     from_schema: https://w3id.org/include
     rank: 1000
     alias: vbrUrl
     owner: Study
     domain_of:
     - Study
-    range: string
+    range: uri
   vbrReadme:
     name: vbrReadme
     definition_uri: include:vbrReadme
     description: Instructions for contacting or requesting samples from Virtual Biorepository
-    title: Virtual Biorepository Readme
+    title: VBR Readme
     from_schema: https://w3id.org/include
     rank: 1000
     alias: vbrReadme
@@ -510,6 +722,157 @@ attributes:
     domain_of:
     - Study
     range: string
+  researchDomain:
+    name: researchDomain
+    definition_uri: include:researchDomain
+    description: Main research domain(s) of the study, other than Down syndrome; pipe-separated
+      if multiple
+    title: Research Domain
+    from_schema: https://w3id.org/include
+    rank: 1000
+    multivalued: true
+    alias: researchDomain
+    owner: Study
+    domain_of:
+    - Study
+    range: enum_researchDomain
+    required: true
+  participantLifespanStage:
+    name: participantLifespanStage
+    definition_uri: include:participantLifespanStage
+    description: Focus age group(s) of the study population; pipe-separated if multiple
+    title: Participant Lifespan Stage
+    from_schema: https://w3id.org/include
+    rank: 1000
+    multivalued: true
+    alias: participantLifespanStage
+    owner: Study
+    domain_of:
+    - Study
+    range: enum_participantLifespanStage
+    required: true
+  selectionCriteria:
+    name: selectionCriteria
+    definition_uri: include:selectionCriteria
+    description: Brief description of inclusion and/or exclusion criteria for the
+      study
+    title: Selection Criteria
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: selectionCriteria
+    owner: Study
+    domain_of:
+    - Study
+    range: string
+  studyDesign:
+    name: studyDesign
+    definition_uri: include:studyDesign
+    description: Overall design of study, including whether it is longitudinal and
+      whether family members/unrelated controls are also enrolled
+    title: Study Design
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: studyDesign
+    owner: Study
+    domain_of:
+    - Study
+    range: string
+    required: true
+  clinicalDataSourceType:
+    name: clinicalDataSourceType
+    definition_uri: include:clinicalDataSourceType
+    description: Source(s) of data collected from study participants; pipe-separated
+      if multiple
+    title: Clinical Data Source Type
+    from_schema: https://w3id.org/include
+    rank: 1000
+    multivalued: true
+    alias: clinicalDataSourceType
+    owner: Study
+    domain_of:
+    - Study
+    range: enum_clinicalDataSourceType
+    required: true
+  expectedDataCategory:
+    name: expectedDataCategory
+    definition_uri: include:expectedDataCategory
+    description: Categories of data expected to be collected in this study
+    title: Expected Data Category
+    from_schema: https://w3id.org/include
+    rank: 1000
+    multivalued: true
+    alias: expectedDataCategory
+    owner: Study
+    domain_of:
+    - Study
+    range: enum_DataCategory
+    required: true
+  studyWebsite:
+    name: studyWebsite
+    definition_uri: include:studyWebsite
+    description: Website for the study
+    title: Study Website
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: studyWebsite
+    owner: Study
+    domain_of:
+    - Study
+    range: uri
+  studyDbgap:
+    name: studyDbgap
+    definition_uri: include:studyDbgap
+    description: dbGaP "phs" accession code(s) associated with this Study, either
+      for access or informational purposes (pipe-separated if multiple)
+    title: Study dbGaP
+    from_schema: https://w3id.org/include
+    rank: 1000
+    multivalued: true
+    alias: studyDbgap
+    owner: Study
+    domain_of:
+    - Study
+    range: string
+  studyPublication:
+    name: studyPublication
+    definition_uri: include:studyPublication
+    description: URL for publication(s) describing the study's rationale and methodology
+      (PubMed Central preferred but not required; pipe-separated if multiple)
+    title: Study Publication
+    from_schema: https://w3id.org/include
+    rank: 1000
+    multivalued: true
+    alias: studyPublication
+    owner: Study
+    domain_of:
+    - Study
+    range: uri
+  studyExpectedNumberOfParticipants:
+    name: studyExpectedNumberOfParticipants
+    definition_uri: include:studyExpectedNumberOfParticipants
+    description: Expected number of participants in this study
+    title: Study Expected Number of Participants
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: studyExpectedNumberOfParticipants
+    owner: Study
+    domain_of:
+    - Study
+    range: integer
+    required: true
+  guidType:
+    name: guidType
+    definition_uri: include:guidType
+    description: System used to generate globally unique identifiers (GUIDs)
+    title: GUID Type
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: guidType
+    owner: Study
+    domain_of:
+    - Study
+    range: enum_guidType
+    required: true
 
 </code></pre>
 </details>

@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://include-dcc.github.io/include_linkml/dbgap/">
+        <link rel="canonical" href="https://include-dcc.github.io/include_linkml/datasetExperimentalStrategy/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: dbGaP (dbgap) - INCLUDE V2 Data Model</title>
+        <title>Slot: Dataset Experimental Strategy (datasetExperimentalStrategy) - INCLUDE V2 Data Model</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-dbgap-dbgap" class="md-skip">
+        <a href="#slot-dataset-experimental-strategy-datasetexperimentalstrategy" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: dbGaP (dbgap)
+              Slot: Dataset Experimental Strategy (datasetExperimentalStrategy)
             
           </span>
         </div>
@@ -338,15 +338,15 @@
                 
                   
 
-  <a href="https://github.com/include-dcc/include_linkml/edit/master/docs/dbgap.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/include-dcc/include_linkml/edit/master/docs/datasetExperimentalStrategy.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-dbgap-dbgap">Slot: dbGaP (dbgap)</h1>
-<p><em>dbGaP study accession code</em></p>
-<p>URI: <a href="https://w3id.org/include/dbgap">include:dbgap</a></p>
+<h1 id="slot-dataset-experimental-strategy-datasetexperimentalstrategy">Slot: Dataset Experimental Strategy (datasetExperimentalStrategy)</h1>
+<p><em>Experimental method used to obtain data in dataset; pipe-separated if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)</em></p>
+<p>URI: <a href="https://w3id.org/include/datasetExperimentalStrategy">include:datasetExperimentalStrategy</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -360,8 +360,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Study/">Study</a></td>
-<td>General information about the study</td>
+<td><a href="../Dataset/">Dataset</a></td>
+<td>Information about a specific grouping of data files</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -378,15 +378,17 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: dbgap
-definition_uri: include:dbgap
-description: dbGaP study accession code
-title: dbGaP
+<pre><code class="language-yaml">name: datasetExperimentalStrategy
+definition_uri: include:experimentalStrategy
+description: Experimental method used to obtain data in dataset; pipe-separated if
+  multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec
+  metabolomics)
+title: Dataset Experimental Strategy
 from_schema: https://w3id.org/include
 rank: 1000
-alias: dbgap
+alias: datasetExperimentalStrategy
 domain_of:
-- Study
+- Dataset
 range: string
 
 </code></pre>

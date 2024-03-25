@@ -226,9 +226,11 @@
 
       DataFile : dataAccess
 
-          DataFile --|&gt; enum_dataAccess : dataAccess
+          DataFile --&gt; enum_dataAccess : dataAccess
 
       DataFile : dataCategory
+
+          DataFile --&gt; enum_DataCategory : dataCategory
 
       DataFile : dataType
 
@@ -252,15 +254,15 @@
 
       DataFile : hasBiospecimen
 
-          DataFile --|&gt; Biospecimen : hasBiospecimen
+          DataFile --&gt; Biospecimen : hasBiospecimen
 
       DataFile : hasParticipant
 
-          DataFile --|&gt; Participant : hasParticipant
+          DataFile --&gt; Participant : hasParticipant
 
       DataFile : hasStudy
 
-          DataFile --|&gt; Study : hasStudy
+          DataFile --&gt; Study : hasStudy
 
       DataFile : publicationDoi
 
@@ -334,7 +336,7 @@
 </tr>
 <tr>
 <td><a href="../dataCategory/">dataCategory</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1..1 <br/> <a href="../EnumDataCategory/">EnumDataCategory</a></td>
 <td>General category of data in file (e</td>
 <td>direct</td>
 </tr>
@@ -491,10 +493,11 @@ attributes:
     alias: hasStudy
     owner: DataFile
     domain_of:
-    - Participant
-    - Condition
     - Biospecimen
     - DataFile
+    - Dataset
+    - Participant
+    - Condition
     range: Study
   hasParticipant:
     name: hasParticipant
@@ -506,9 +509,9 @@ attributes:
     alias: hasParticipant
     owner: DataFile
     domain_of:
-    - Condition
     - Biospecimen
     - DataFile
+    - Condition
     range: Participant
   hasBiospecimen:
     name: hasBiospecimen
@@ -597,7 +600,7 @@ attributes:
     owner: DataFile
     domain_of:
     - DataFile
-    range: string
+    range: enum_DataCategory
     required: true
   dataType:
     name: dataType

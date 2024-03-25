@@ -233,31 +233,31 @@
 
       Participant : downSyndromeStatus
 
-          Participant --|&gt; enum_downSyndromeStatus : downSyndromeStatus
+          Participant --&gt; enum_downSyndromeStatus : downSyndromeStatus
 
       Participant : ethnicity
 
-          Participant --|&gt; enum_ethnicity : ethnicity
+          Participant --&gt; enum_ethnicity : ethnicity
 
       Participant : familyId
 
       Participant : familyRelationship
 
-          Participant --|&gt; enum_familyRelationship : familyRelationship
+          Participant --&gt; enum_familyRelationship : familyRelationship
 
       Participant : familyType
 
-          Participant --|&gt; enum_familyType : familyType
+          Participant --&gt; enum_familyType : familyType
 
       Participant : fatherId
 
       Participant : firstPatientEngagementEvent
 
-          Participant --|&gt; None : firstPatientEngagementEvent
+          Participant --&gt; None : firstPatientEngagementEvent
 
       Participant : hasStudy
 
-          Participant --|&gt; Study : hasStudy
+          Participant --&gt; Study : hasStudy
 
       Participant : motherId
 
@@ -265,7 +265,7 @@
 
       Participant : outcomesVitalStatus
 
-          Participant --|&gt; enum_vital_status : outcomesVitalStatus
+          Participant --&gt; enum_vital_status : outcomesVitalStatus
 
       Participant : participantExternalId
 
@@ -273,11 +273,11 @@
 
       Participant : race
 
-          Participant --|&gt; enum_race : race
+          Participant --&gt; enum_race : race
 
       Participant : sex
 
-          Participant --|&gt; enum_sex : sex
+          Participant --&gt; enum_sex : sex
 
       Participant : siblingId
 
@@ -423,12 +423,6 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Condition/">Condition</a></td>
-<td><a href="../hasParticipant/">hasParticipant</a></td>
-<td>range</td>
-<td><a href="./">Participant</a></td>
-</tr>
-<tr>
 <td><a href="../Biospecimen/">Biospecimen</a></td>
 <td><a href="../hasParticipant/">hasParticipant</a></td>
 <td>range</td>
@@ -436,6 +430,12 @@
 </tr>
 <tr>
 <td><a href="../DataFile/">DataFile</a></td>
+<td><a href="../hasParticipant/">hasParticipant</a></td>
+<td>range</td>
+<td><a href="./">Participant</a></td>
+</tr>
+<tr>
+<td><a href="../Condition/">Condition</a></td>
 <td><a href="../hasParticipant/">hasParticipant</a></td>
 <td>range</td>
 <td><a href="./">Participant</a></td>
@@ -546,10 +546,11 @@ attributes:
     alias: hasStudy
     owner: Participant
     domain_of:
-    - Participant
-    - Condition
     - Biospecimen
     - DataFile
+    - Dataset
+    - Participant
+    - Condition
     range: Study
   participantGlobalId:
     name: participantGlobalId

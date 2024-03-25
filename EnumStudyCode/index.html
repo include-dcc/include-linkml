@@ -357,7 +357,7 @@
 </thead>
 <tbody>
 <tr>
-<td>abcds</td>
+<td>abc_ds</td>
 <td>None</td>
 <td></td>
 </tr>
@@ -378,6 +378,11 @@
 </tr>
 <tr>
 <td>bri_dsr</td>
+<td>None</td>
+<td></td>
+</tr>
+<tr>
+<td>child_ds</td>
 <td>None</td>
 <td></td>
 </tr>
@@ -494,7 +499,7 @@
 <tbody>
 <tr>
 <td><a href="../studyCode/">studyCode</a></td>
-<td>Unique identifer for the study, assigned by DCC</td>
+<td>Unique identifer for the study (generally a short acronym)</td>
 </tr>
 </tbody>
 </table>
@@ -511,8 +516,8 @@ definition_uri: include:enum_studyCode
 from_schema: https://w3id.org/include
 rank: 1000
 permissible_values:
-  abcds:
-    text: abcds
+  abc_ds:
+    text: abc_ds
     title: ABC-DS
   ads:
     text: ads
@@ -526,6 +531,9 @@ permissible_values:
   bri_dsr:
     text: bri_dsr
     title: BRI-DSR
+  child_ds:
+    text: child_ds
+    title: CHILD-DS
   charge_ds:
     text: charge_ds
     title: CHARGE-DS
@@ -570,7 +578,7 @@ permissible_values:
     title: ECODS
   exceeds:
     text: exceeds
-    title: ExCEEDS
+    title: EXcEEDS
   htp:
     text: htp
     title: HTP

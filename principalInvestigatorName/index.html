@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://include-dcc.github.io/include_linkml/studyName/">
+        <link rel="canonical" href="https://include-dcc.github.io/include_linkml/principalInvestigatorName/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: Study Name (studyName) - INCLUDE V2 Data Model</title>
+        <title>Slot: Principal Investigator Name (principalInvestigatorName) - INCLUDE V2 Data Model</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-study-name-studyname" class="md-skip">
+        <a href="#slot-principal-investigator-name-principalinvestigatorname" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: Study Name (studyName)
+              Slot: Principal Investigator Name (principalInvestigatorName)
             
           </span>
         </div>
@@ -338,15 +338,15 @@
                 
                   
 
-  <a href="https://github.com/include-dcc/include_linkml/edit/master/docs/studyName.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/include-dcc/include_linkml/edit/master/docs/principalInvestigatorName.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-study-name-studyname">Slot: Study Name (studyName)</h1>
-<p><em>Full name of the study, chosen by data contributor</em></p>
-<p>URI: <a href="https://w3id.org/include/studyName">include:studyName</a></p>
+<h1 id="slot-principal-investigator-name-principalinvestigatorname">Slot: Principal Investigator Name (principalInvestigatorName)</h1>
+<p><em>Name(s) of Principal Investigator(s) of this study; pipe-separated if multiple</em></p>
+<p>URI: <a href="https://w3id.org/include/principalInvestigatorName">include:principalInvestigatorName</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -372,6 +372,9 @@
 <p>Range: <a href="../String/">String</a></p>
 </li>
 <li>
+<p>Multivalued: True</p>
+</li>
+<li>
 <p>Required: True</p>
 </li>
 </ul>
@@ -383,13 +386,15 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: studyName
-definition_uri: include:studyName
-description: Full name of the study, chosen by data contributor
-title: Study Name
+<pre><code class="language-yaml">name: principalInvestigatorName
+definition_uri: include:principalInvestigatorName
+description: Name(s) of Principal Investigator(s) of this study; pipe-separated if
+  multiple
+title: Principal Investigator Name
 from_schema: https://w3id.org/include
 rank: 1000
-alias: studyName
+multivalued: true
+alias: principalInvestigatorName
 domain_of:
 - Study
 range: string
