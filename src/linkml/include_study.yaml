@@ -7,6 +7,9 @@ prefixes:
   linkml:
     prefix_prefix: linkml
     prefix_reference: https://w3id.org/linkml/
+  mesh:
+    prefix_prefix: mesh
+    prefix_reference: http://id.nlm.nih.gov/mesh/
 imports:
 - linkml:types
 - include_core
@@ -17,59 +20,316 @@ classes:
     name: Study
     definition_uri: include:Study
     annotations:
-      required:
+      required: 
         tag: required
         value: 'True'
     description: General information about the study
     title: Study
     is_a: Thing
-    slots:
+    slots: 
     - studyCode
-    - studyName
+    - studyTitle
     - program
-    - dbgap
+    - studyDescription
+    - principalInvestigatorName
+    - studyContactName
+    - studyContactInstitution
+    - studyContactEmail
     - vbrEmail
     - vbrUrl
     - vbrReadme
+    - researchDomain
+    - participantLifespanStage
+    - selectionCriteria
+    - studyDesign
+    - clinicalDataSourceType
+    - expectedDataCategory
+    - studyWebsite
+    - studyDbgap
+    - studyPublication
+    - studyExpectedNumberOfParticipants
+    - guidType
+  Dataset:
+    name: Dataset
+    definition_uri: include:Dataset
+    annotations:
+      required:
+        tag: required
+        value: 'False' #may change to True later
+    description: Information about a specific grouping of data files
+    title: Dataset
+    is_a: Thing
+    slots: 
+    - hasStudy
+    #add hasDataset to Assay>DataFile?
+    - datasetName
+    - datasetGlobalId
+    - datasetExternalId
+    - datasetExpectedNumberOfParticipants
+    - expectedNumberOfFiles
+#   - fileIdList #TBD - may make this into a separate manifest
+    - dataCollectionStartYear
+    - dataCollectionEndYear
+    - datasetDataCategory
+    - datasetDataType
+    - datasetExperimentalStrategy
+    - datasetExperimentalPlatform
+    - datasetPublication
+    - accessLimitations
+    - accessRequirements
+    - datasetDbgap
+    - otherRepository
+    - otherAccessAuthority
+
 slots:
   studyCode:
     definition_uri: include:studyCode
-    description: Unique identifer for the study, assigned by DCC
+    description: Unique identifer for the study (generally a short acronym)
     title: Study Code
     range: enum_studyCode
     required: true
-  studyName:
-    definition_uri: include:studyName
-    description: Full name of the study, chosen by data contributor
-    title: Study Name
+  studyTitle:
+    definition_uri: include:studyTitle
+    description: Full title of the study
+    title: Study Title
     required: true
     range: string
   program:
     definition_uri: include:program
-    description: Funding source for the study
+    description: Funding source(s) for the study (pipe-separated if multiple)
     title: Program
     range: enum_program
     required: true
-  dbgap:
-    definition_uri: include:dbgap
-    description: dbGaP study accession code
-    title: dbGaP
+    multivalued: true
+  studyDescription:
+    definition_uri: include:studyDescription
+    description: Brief description of the study (2-4 sentences). Should match description in https://includedcc.org/studies.
+    title: Study Description
+    required: true
     range: string
+  principalInvestigatorName: 
+    definition_uri: include:principalInvestigatorName
+    description: Name(s) of Principal Investigator(s) of this study; pipe-separated if multiple
+    title: Principal Investigator Name
+    required: true
+    range: string
+    multivalued: true
+  studyContactName:
+    definition_uri: include:studyContactName
+    description: Name of contact person for this study; pipe-separated if multiple
+    title: Study Contact Name
+    required: true
+    range: string
+    multivalued: true
+  studyContactInstitution:
+    definition_uri: include:studyContactInstitution
+    description: Institution of contact person for this study; pipe-separated if multiple
+    title: Study Contact Institution
+    required: true
+    range: string
+    multivalued: true
+  studyContactEmail:
+    definition_uri: include:studyContactEmail
+    description: Email address of contact person for this study; pipe-separated if multiple
+    title: Study Contact Email
+    required: true
+    range: string
+    multivalued: true
   vbrEmail:
     definition_uri: include:vbrEmail
     description: Email address for Virtual Biorepository requests/inquiries
-    title: Virtual Biorepository Email
+    title: VBR Email
     range: string
   vbrUrl:
     definition_uri: include:vbrUrl
     description: Link to Virtual Biorepository request form
-    title: Virtual Biorepository URL
-    range: string
+    title: VBR URL
+    range: uri
   vbrReadme:
     definition_uri: include:vbrReadme
     description: Instructions for contacting or requesting samples from Virtual Biorepository
-    title: Virtual Biorepository Readme
+    title: VBR Readme
     range: string     
+  researchDomain:
+    definition_uri: include:researchDomain
+    description: Main research domain(s) of the study, other than Down syndrome; pipe-separated if multiple
+    title: Research Domain
+    range: enum_researchDomain
+    required: true
+    multivalued: true
+  participantLifespanStage: 
+    definition_uri: include:participantLifespanStage
+    description: Focus age group(s) of the study population; pipe-separated if multiple
+    title: Participant Lifespan Stage
+    range: enum_participantLifespanStage
+    required: true
+    multivalued: true
+  selectionCriteria:
+    definition_uri: include:selectionCriteria
+    description: Brief description of inclusion and/or exclusion criteria for the study
+    title: Selection Criteria
+    range: string
+  studyDesign:
+    definition_uri: include:studyDesign
+    description: Overall design of study, including whether it is longitudinal and whether family members/unrelated controls are also enrolled
+    title: Study Design
+    range: string 
+    required: true
+  clinicalDataSourceType: 
+    definition_uri: include:clinicalDataSourceType
+    description: Source(s) of data collected from study participants; pipe-separated if multiple
+    title: Clinical Data Source Type
+    range: enum_clinicalDataSourceType 
+    #TODO: replace enum_conditionDataSource with this - or consider deleting slot conditionDataSource
+    required: true
+    multivalued: true
+  expectedDataCategory:
+    definition_uri: include:expectedDataCategory
+    description: Categories of data expected to be collected in this study
+    title: Expected Data Category
+    range: enum_DataCategory 
+    required: true
+    multivalued: true
+  studyWebsite:
+    definition_uri: include:studyWebsite
+    description: Website for the study
+    title: Study Website
+    range: uri
+  studyPublication: 
+    definition_uri: include:studyPublication
+    description: URL for publication(s) describing the study's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
+    title: Study Publication
+    range: uri 
+    multivalued: true
+  studyExpectedNumberOfParticipants: 
+    definition_uri: include:studyExpectedNumberOfParticipants
+    description: Expected number of participants in this study
+    title: Study Expected Number of Participants
+    range: integer 
+    required: true
+  guidType:
+    definition_uri: include:guidType
+    description: System used to generate globally unique identifiers (GUIDs)
+    title: GUID Type
+    range: enum_guidType 
+    required: true
+  studyDbgap: 
+    definition_uri: include:studyDbgap
+    description: dbGaP "phs" accession code(s) associated with this Study, either for access or informational purposes (pipe-separated if multiple)
+    title: Study dbGaP
+    range: string
+    multivalued: true
+  datasetName: 
+    definition_uri: include:datasetName
+    description: Full name of the dataset, provided by contributor
+    title: Dataset Name
+    range: string 
+    required: true
+  datasetGlobalId: 
+    definition_uri: include:datasetGlobalId
+    description: Unique Global ID for dataset, generated by DCC
+    title: Dataset Global ID
+    range: string 
+    required: false #update to true when this is figured out
+  datasetExternalId: 
+    definition_uri: include:datasetExternalId
+    description: Unique identifier or code for dataset, if provided by contributor
+    title: Dataset External ID
+    range: string 
+  # fileIdList: 
+  #   definition_uri: include:fileIdList
+  #   description: Global IDs for files associated with this dataset. Should include one or more dictionary files that provide definitions for every field in every file
+  #   title: File ID List
+  #   range: string 
+  #   multivalued: true
+  #   required: false #should be derived from dataFile if omics
+  datasetExpectedNumberOfParticipants: 
+    definition_uri: include:datasetExpectedNumberOfParticipants
+    description: Expected number of participants in this dataset
+    title: Dataset Expected Number of Participants
+    range: integer 
+    required: true
+  expectedNumberOfFiles: 
+    definition_uri: include:expectedNumberOfFiles
+    description: Expected number of files associated with this dataset
+    title: Expected Number of Files
+    range: integer 
+    required: false #update to true when this is figured out
+  # participantIdList: 
+  #   definition_uri: include:participantIdList
+  #   description: Global IDs for Participants associated with this dataset
+  #   title: Participant ID List
+  #   range: string 
+  #   multivalued: true
+  #   required: false #not sure if we need this - update to true when this is figured out
+  dataCollectionStartYear: 
+    definition_uri: include:dataCollectionStartYear
+    description: Year that data collection started
+    title: Data Collection Start Year
+    pattern: "^1|2\\d(3)$|nan"
+    required: false #change to true when we have for all studies
+  dataCollectionEndYear: 
+    definition_uri: include:dataCollectionEndYear
+    description: Year that data collection ended
+    title: Data Collection End Year
+    pattern: "^1|2\\d(3)$|nan"
+    required: false
+  datasetDataCategory:
+    definition_uri: include:dataCategory
+    description: General category of data in dataset; pipe-separated if multiple
+    title: Dataset Data Category
+    required: true
+    range: enum_DataCategory
+  datasetDataType: 
+    definition_uri: include:dataType
+    description: Specific type of data contained in dataset; pipe-separated if multiple (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
+    title: Dataset Data Type
+    range: string #eventually share enum with dataFile
+  datasetExperimentalStrategy: 
+    definition_uri: include:experimentalStrategy
+    description: Experimental method used to obtain data in dataset; pipe-separated if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
+    title: Dataset Experimental Strategy
+    range: string #eventually share enum with dataFile
+  datasetExperimentalPlatform: 
+    definition_uri: include:experimentalPlatform
+    description: Specific platform used to perform experiment; pipe-separated if multiple (e.g. SOMAscan, MSD, Luminex, Illumina)
+    title: Dataset Experimental Platform
+    range: string #eventually share enum with dataFile
+  datasetPublication: 
+    definition_uri: include:datasetPublication
+    description: URL for publication(s) describing the dataset's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
+    title: Dataset Publication
+    range: uri 
+    multivalued: true
+  accessLimitations: 
+    definition_uri: include:accessLimitations
+    description: Data access limitations, as defined in the GA4GH Data Use Ontology (DUO; can list more than one, pipe separated)
+    title: Access Limitations
+    range: string 
+    required: false #make true when we have enums
+  accessRequirements: 
+    definition_uri: include:accessRequirements
+    description: Data access requirements, as defined in the GA4GH Data Use Ontology (DUO; can list more than one, pipe separated)
+    title: Access Requirements
+    range: string 
+    required: false #make true when we have enums
+  datasetDbgap: 
+    definition_uri: include:datasetDbgap
+    description: dbGaP "phs" accession code(s) required to access the files in this Dataset, if applicable (pipe-separated if multiple)
+    title: Dataset dbGaP
+    range: string
+    multivalued: true
+  otherRepository: 
+    definition_uri: include:otherRepository
+    description: URL if dataset is already deposited in a public repository other than dbGaP (e.g. LONI, Metabolomics Workbench, etc.)
+    title: Other Repository
+    range: uri 
+  otherAccessAuthority: 
+    definition_uri: include:otherAccessAuthority
+    description: Email or URL for dataset's Access Authority, if not dbGaP
+    title: Other Access Authority
+    range: string
+
 enums:
   enum_program:
     name: enum_program
@@ -81,12 +341,15 @@ enums:
       kf:
         text: kf
         title: KF
+      other:
+        text: other
+        title: Other 
   enum_studyCode:
     name: enum_studyCode
     definition_uri: include:enum_studyCode
     permissible_values:
-      abcds:
-        text: abcds
+      abc_ds:
+        text: abc_ds
         title: ABC-DS
       ads:
         text: ads
@@ -100,6 +363,9 @@ enums:
       bri_dsr:
         text: bri_dsr
         title: BRI-DSR
+      child_ds:
+        text: child_ds
+        title: CHILD-DS
       charge_ds:
         text: charge_ds
         title: CHARGE-DS
@@ -144,7 +410,7 @@ enums:
         title: ECODS
       exceeds:
         text: exceeds
-        title: ExCEEDS
+        title: EXcEEDS
       htp:
         text: htp
         title: HTP
@@ -160,3 +426,129 @@ enums:
       x01_hakonarson:
         text: x01_hakonarson
         title: X01-Hakonarson
+  enum_researchDomain:
+    name: enum_researchDomain
+    definition_uri: include:enum_researchDomain
+    permissible_values:
+      behavior_and_behavior_mechanisms:
+        text: behavior_and_behavior_mechanisms
+        title: Behavior and Behavior Mechanisms
+        meaning: mesh:D001520
+      congenital_heart_defects:
+        text: congenital_heart_defects
+        title: Congenital Heart Defects
+        meaning: mesh:D006330
+      immune_system_diseases:
+        text: immune_system_diseases
+        title: Immune System Diseases
+        meaning: mesh:D007154
+      hematologic_diseases:
+        text: hematologic_diseases
+        title: Hematologic Diseases
+        meaning: mesh:D006402
+      sleep_wake_disorders:
+        text: sleep_wake_disorders
+        title: Sleep Wake Disorders
+        meaning: mesh:D012893
+      all_co_occurring_conditions:
+        text: all_co_occurring_conditions
+        title: All Co-occurring Conditions
+        meaning: mesh:D013568
+      other:
+        text: other
+        title: Other
+  enum_participantLifespanStage:
+    name: enum_participantLifespanStage
+    definition_uri: include:enum_participantLifespanStage
+    permissible_values:
+      fetal:
+        text: fetal
+        title: Fetal
+      neonatal:
+        text: neonatal
+        title: Neonatal
+        description: 0-28 days old
+      pediatric:
+        text: pediatric
+        title: Pediatric
+        description: Birth-17 years old
+      adult:
+        text: adult
+        title: Adult
+        description: 18+ years old
+  enum_clinicalDataSourceType:
+    #TODO: replace enum_conditionDataSource with this - or consider deleting slot conditionDataSource
+    name: enum_clinicalDataSourceType
+    definition_uri: include:enum_clinicalDataSourceType
+    permissible_values:
+      medical_record:
+        text: medical_record
+        title: Medical Record
+        description: Data obtained directly from medical record
+      investigator_assessment:
+        text: investigator_assessment
+        title: Investigator Assessment
+        description: Data obtained by examination, interview, etc. with investigator
+      participant_or_caregiver_report:
+        text: participant_or_caregiver_report
+        title: Participant or Caregiver Report
+        description: Data obtained from survey, questionnaire, etc.
+      other:
+        text: other
+        title: Other
+      unknown: 
+        text: unknown
+        title: Unknown
+  enum_DataCategory: 
+    name: enum_DataCategory
+    definition_uri: include:enum_DataCategory
+    permissible_values:
+      unharmonized_demographic_clinical_data:
+        text: unharmonized_demographic_clinical_data
+        title: Unharmonized Demographic/Clinical Data
+      harmonized_demographic_clinical_data:
+        text: harmonized_demographic_clinical_data
+        title: Harmonized Demographic/Clinical Data
+      genomics:
+        text: genomics
+        title: Genomics
+      transcriptomics:
+        text: transcriptomics
+        title: Transcriptomics
+      proteomics:
+        text: proteomics
+        title: Proteomics
+      metabolomics:
+        text: metabolomics
+        title: Metabolomics
+      cognitive_behavioral:
+        text: cognitive_behavioral
+        title: Cognitive/Behavioral
+      immune_maps:
+        text: immune_maps
+        title: Immune Maps
+      imaging:
+        text: imaging
+        title: Imaging
+      microbiome:
+        text: microbiome
+        title: Microbiome
+      other:
+        text: other
+        title: Other
+  enum_guidType:
+    name: enum_guidType
+    definition_uri: include:enum_guidType
+    permissible_values:
+      ndar:
+        text: ndar
+        title: NDAR
+        description: GUID generated by NIMH Data Archive (NDA) GUID tool
+      other:
+        text: other
+        title: Other
+        description: GUID generated by other system
+      no_guid:
+        text: no_guid
+        title: No GUID
+        description: No GUIDs used in this study
