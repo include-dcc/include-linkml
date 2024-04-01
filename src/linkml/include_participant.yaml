@@ -422,8 +422,8 @@ enums:
     name: enum_race
     definition_uri: include:enum_race
     permissible_values:
-      american_indian_or_alaskan_native:
-        text: american_indian_or_alaskan_native
+      american_indian_or_alaska_native:
+        text: american_indian_or_alaska_native
         title: American Indian or Alaska Native
         meaning: NCIT:C41259
       asian:
