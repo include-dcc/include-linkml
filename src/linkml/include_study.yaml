@@ -251,7 +251,7 @@ slots:
     required: true
   expectedNumberOfFiles: 
     definition_uri: include:expectedNumberOfFiles
-    description: Expected number of files associated with this dataset
+    description: Expected number of files associated with this dataset, including dictionaries
     title: Expected Number of Files
     range: integer 
     required: false #update to true when this is figured out
