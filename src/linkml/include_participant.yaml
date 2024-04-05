@@ -416,7 +416,7 @@ enums:
         description: Proband + two parents
       trio_plus:
         text: trio_plus
-        title: Trio+
+        title: Trio Plus
         description: Proband + two parents + other relatives
   enum_race:
     name: enum_race
