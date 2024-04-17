@@ -206,7 +206,7 @@ slots:
     definition_uri: include:studyExpectedNumberOfParticipants
     description: Expected number of participants in this study
     title: Study Expected Number of Participants
-    range: integer 
+    range: string 
     required: true
   guidType:
     definition_uri: include:guidType
@@ -253,13 +253,13 @@ slots:
     definition_uri: include:datasetExpectedNumberOfParticipants
     description: Expected number of participants in this dataset
     title: Dataset Expected Number of Participants
-    range: integer 
+    range: string 
     required: true
   expectedNumberOfFiles: 
     definition_uri: include:expectedNumberOfFiles
     description: Expected number of files associated with this dataset, including dictionaries
     title: Expected Number of Files
-    range: integer 
+    range: string 
     required: false #update to true when this is figured out
   # participantIdList: 
   #   definition_uri: include:participantIdList
@@ -272,13 +272,15 @@ slots:
     definition_uri: include:dataCollectionStartYear
     description: Year that data collection started
     title: Data Collection Start Year
-    pattern: "^1|2\\d(3)$|nan"
+    range: string 
+    #pattern: "^1|2\\d(3)$|nan"
     required: false #change to true when we have for all studies
   dataCollectionEndYear: 
     definition_uri: include:dataCollectionEndYear
     description: Year that data collection ended
     title: Data Collection End Year
-    pattern: "^1|2\\d(3)$|nan"
+    range: string 
+    #pattern: "^1|2\\d(3)$|nan"
     required: false
   datasetDataCategory:
     definition_uri: include:dataCategory
