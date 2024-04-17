@@ -178,6 +178,8 @@ slots:
     description: Age in days of Participant at first recorded study event (enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.
     title: Age at First Patient Engagement
     range: integer
+    minimum_value: 0
+    maximum_value: 33000
     required: true
   firstPatientEngagementEvent:
     definition_uri: include:firstPatientEngagementEvent
@@ -194,6 +196,8 @@ slots:
     description: Age in days when participant's vital status was last recorded
     title: Age at Last Vital Status
     range: integer
+    minimum_value: 0
+    maximum_value: 33000
 #  hasCondition:
 #    definition_uri: include:hasCondition
 #    description: Link to a Condition
@@ -221,6 +225,8 @@ slots:
     description: Age in days at which Condition or Measure was observed, recorded, or diagnosed
     title: Age At Condition or Measure Observation
     range: integer
+    minimum_value: 0
+    maximum_value: 33000
   conditionInterpretation:
     definition_uri: include:conditionInterpretation
     description: Whether Condition was observed or not
