@@ -35,7 +35,7 @@ classes:
     title: Participant
     is_a: Thing
     slots:
-    - hasStudy     
+    - studyCode     
     - participantGlobalId 
     - participantExternalId
     - familyId
@@ -53,7 +53,6 @@ classes:
     - firstPatientEngagementEvent
     - outcomesVitalStatus
     - ageAtLastVitalStatus
-#    - hasCondition
   # FamilyGroup:
   #   name: FamilyGroup
   #   definition_uri: include:FamilyGroup
@@ -80,8 +79,8 @@ classes:
     is_a: Thing
     description: Co-occurring conditions and other observations for the participant
     slots:
-    - hasStudy     
-    - hasParticipant
+    - studyCode     
+    - participantExternalId
     - eventId
     - eventType
     - conditionMeasureSourceText # will include DS Genetic Diagnosis
@@ -199,16 +198,6 @@ slots:
     range: integer
     minimum_value: 0
     maximum_value: 33000
-#  hasCondition:
-#    definition_uri: include:hasCondition
-#    description: Link to a Condition
-#    title: Has Condition
-#    range: Condition
-  hasStudy:
-    definition_uri: include:hasStudy
-    description: Link to a Study
-    title: Has Study
-    range: Study
   eventId:
     definition_uri: include:eventId
     description: Identifier for event (Visit, Survey completion, Sample collection, etc.) to which the Condition data are linked, if applicable. There may be multiple events linked to a Participant.

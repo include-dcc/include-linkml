@@ -45,8 +45,9 @@ classes:
     name: Biospecimen
     title: Biospecimen
     slots:
-    - hasStudy
-    - hasParticipant    
+    - studyCode
+    - participantGlobalId
+    - participantExternalId    
     - sampleGlobalId
     - sampleExternalId
     - sampleType
@@ -67,9 +68,7 @@ classes:
     - biospecimenStorage
     - sampleAvailability
     - containerAvailability
-    # - hasDataFile
 
-    # - hasAliquot
   DataFile:
     annotations:
       required:
@@ -84,9 +83,11 @@ classes:
     name: DataFile
     title: Data File
     slots:
-    - hasStudy
-    - hasParticipant    
-    - hasBiospecimen    
+    - studyCode
+    - participantGlobalId
+    - participantExternalId    
+    - sampleGlobalId
+    - sampleExternalId
     - fileGlobalId
     - fileExternalId
     - fileName
@@ -215,11 +216,6 @@ slots:
       the Virtual Biorepository
     title: Container Availability
     range: enum_containerAvailability
-  hasParticipant:
-    definition_uri: include:hasParticipant
-    description: Link to a Participant 
-    title: Has Participant
-    range: Participant # this should link to Participant External ID for now, then INCLUDE ID when we have them
   fileGlobalId:
     definition_uri: include:fileGlobalId
     description: INCLUDE global file identifier, assigned by DCC
@@ -276,11 +272,6 @@ slots:
     title: File Format
     required: true
     range: string
-  # has_aliquot:
-  #   definition_uri: include:has_aliquot
-  #   description: An aliquot of a sample
-  #   title: Has Aliquot
-  #   range: Aliquot
   fileSize:
     definition_uri: include:fileSize
     description: Size of file, if known (mainly important if large)
@@ -301,26 +292,6 @@ slots:
     description: DOI of publication associated with this file, if published
     title: Publication DOI
     range: string # is there a doi range?
-  hasBiospecimen:
-    definition_uri: include:hasBiospecimen
-    description: Link to a Biospecimen
-    title: Has Biospecimen
-    range: Biospecimen
-  # hasDataFile:
-  #   definition_uri: include:hasDataFile
-  #   description: Link to a Data File
-  #   title: Has Data File
-  #   range: DataFile
-  # has_output:
-  #   definition_uri: include:has_output
-  #   description: The DataFile Output of an Assay
-  #   title: Has Output
-  #   range: DataFile
-  # uses_biospecimen:
-  #   definition_uri: include:uses_biospecimen
-  #   description: The Biospecimen an Assay is performed on
-  #   title: Uses Biospecimen
-  #   range: Biospecimen
 enums:
   enum_dataAccess:
     definition_uri: include:enum_dataAccess
