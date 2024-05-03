@@ -188,7 +188,7 @@ slots:
     definition_uri: include:expectedDataCategory
     description: Categories of data expected to be collected in this study
     title: Expected Data Category
-    range: enum_DataCategory 
+    range: enum_dataCategory 
     required: true
     multivalued: true
   studyWebsite:
@@ -204,7 +204,7 @@ slots:
     multivalued: true
   studyExpectedNumberOfParticipants: 
     definition_uri: include:studyExpectedNumberOfParticipants
-    description: Expected number of participants in this study
+    description: Expected number of participants in this study. If additional explanation is needed, please add to Study Description field.
     title: Study Expected Number of Participants
     range: string 
     required: true
@@ -251,15 +251,15 @@ slots:
   #   required: false #should be derived from dataFile if omics
   datasetExpectedNumberOfParticipants: 
     definition_uri: include:datasetExpectedNumberOfParticipants
-    description: Expected number of participants in this dataset
+    description: Expected number of participants in this dataset. If additional explanation is needed, please add to Dataset Description field.
     title: Dataset Expected Number of Participants
-    range: string 
+    range: integer 
     required: true
   expectedNumberOfFiles: 
     definition_uri: include:expectedNumberOfFiles
-    description: Expected number of files associated with this dataset, including dictionaries
+    description: Expected number of files associated with this dataset, including dictionaries. If additional explanation is needed, please add to Dataset Description field.
     title: Expected Number of Files
-    range: string 
+    range: integer 
     required: false #update to true when this is figured out
   # participantIdList: 
   #   definition_uri: include:participantIdList
@@ -287,7 +287,7 @@ slots:
     description: General category of data in dataset; pipe-separated if multiple
     title: Dataset Data Category
     required: true
-    range: enum_DataCategory
+    range: enum_dataCategory
   datasetDataType: 
     definition_uri: include:dataType
     description: Specific type of data contained in dataset; pipe-separated if multiple (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
@@ -511,9 +511,9 @@ enums:
       unknown: 
         text: unknown
         title: Unknown
-  enum_DataCategory: 
-    name: enum_DataCategory
-    definition_uri: include:enum_DataCategory
+  enum_dataCategory: 
+    name: enum_dataCategory
+    definition_uri: include:enum_dataCategory
     permissible_values:
       unharmonized_demographic_clinical_data:
         text: unharmonized_demographic_clinical_data
