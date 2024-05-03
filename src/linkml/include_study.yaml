@@ -49,6 +49,8 @@ classes:
     - studyPublication
     - studyExpectedNumberOfParticipants
     - guidType
+    - acknowledgments
+    - citationStatement
   Dataset:
     name: Dataset
     definition_uri: include:Dataset
@@ -220,6 +222,19 @@ slots:
     title: Study dbGaP
     range: string
     multivalued: true
+  acknowledgments: 
+    definition_uri: include:acknowledgments
+    description: Funding statement and acknowledgments for this study
+    title: Acknowledgments
+    range: string
+    multivalued: true
+  studyDbgap: 
+    definition_uri: include:studyDbgap
+    description: dbGaP "phs" accession code(s) associated with this Study, either for access or informational purposes (pipe-separated if multiple)
+    title: Study dbGaP
+    range: string
+    multivalued: true
+    - citationStatement
   datasetName: 
     definition_uri: include:datasetName
     description: Full name of the dataset, provided by contributor
