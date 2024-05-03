@@ -462,6 +462,10 @@ enums:
         text: all_co_occurring_conditions
         title: All Co-occurring Conditions
         meaning: mesh:D013568
+      physical_fitness:
+        text: physical_fitness
+        title: Physical Fitness
+        meaning: mesh:D010809
       other:
         text: other
         title: Other
@@ -541,6 +545,12 @@ enums:
       microbiome:
         text: microbiome
         title: Microbiome
+      fitness:
+        text: fitness
+        title: Fitness
+      physical_activity:
+        text: physical_activity
+        title: Physical Activity
       other:
         text: other
         title: Other
