@@ -106,7 +106,7 @@ slots:
     multivalued: true
   studyDescription:
     definition_uri: include:studyDescription
-    description: Brief description of the study (2-4 sentences). Should match description in https://includedcc.org/studies.
+    description: Brief description of the study (2-4 sentences)
     title: Study Description
     required: true
     range: string
