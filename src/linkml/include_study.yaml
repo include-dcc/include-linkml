@@ -208,7 +208,7 @@ slots:
     definition_uri: include:studyExpectedNumberOfParticipants
     description: Expected number of participants in this study. If additional explanation is needed, please add to Study Description field.
     title: Study Expected Number of Participants
-    range: string 
+    range: integer 
     required: true
   guidType:
     definition_uri: include:guidType
