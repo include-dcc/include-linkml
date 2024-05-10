@@ -80,6 +80,7 @@ classes:
     description: Co-occurring conditions and other observations for the participant
     slots:
     - studyCode     
+    - participantGlobalId 
     - participantExternalId
     - eventId
     - eventType
