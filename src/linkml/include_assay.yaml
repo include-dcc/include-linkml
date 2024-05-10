@@ -250,7 +250,7 @@ slots:
       Metabolomics, Immune profiling, Transcriptomics)
     title: Data Category
     required: true
-    range: enum_DataCategory
+    range: include:enum_DataCategory
   dataType:
     definition_uri: include:dataType
     description: Specific type of data contained in file (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
