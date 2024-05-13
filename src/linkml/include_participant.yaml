@@ -35,7 +35,7 @@ classes:
     title: Participant
     is_a: Thing
     slots:
-    - hasStudy     
+    - studyCode     
     - participantGlobalId 
     - participantExternalId
     - familyId
@@ -53,7 +53,6 @@ classes:
     - firstPatientEngagementEvent
     - outcomesVitalStatus
     - ageAtLastVitalStatus
-#    - hasCondition
   # FamilyGroup:
   #   name: FamilyGroup
   #   definition_uri: include:FamilyGroup
@@ -80,8 +79,9 @@ classes:
     is_a: Thing
     description: Co-occurring conditions and other observations for the participant
     slots:
-    - hasStudy     
-    - hasParticipant
+    - studyCode     
+    - participantGlobalId 
+    - participantExternalId
     - eventId
     - eventType
     - conditionMeasureSourceText # will include DS Genetic Diagnosis
@@ -178,12 +178,15 @@ slots:
     description: Age in days of Participant at first recorded study event (enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.
     title: Age at First Patient Engagement
     range: integer
+    minimum_value: 0
+    maximum_value: 33000
     required: true
   firstPatientEngagementEvent:
     definition_uri: include:firstPatientEngagementEvent
     description: Event for which Age at First Patient Engagement is given (e.g. enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.
     title: First Patient Engagement Event
     required: true
+    range: string
   outcomesVitalStatus:
     definition_uri: include:outcomesVitalStatus
     description: Whether participant is alive or dead
@@ -194,33 +197,30 @@ slots:
     description: Age in days when participant's vital status was last recorded
     title: Age at Last Vital Status
     range: integer
-#  hasCondition:
-#    definition_uri: include:hasCondition
-#    description: Link to a Condition
-#    title: Has Condition
-#    range: Condition
-  hasStudy:
-    definition_uri: include:hasStudy
-    description: Link to a Study
-    title: Has Study
-    range: Study
+    minimum_value: 0
+    maximum_value: 33000
   eventId:
     definition_uri: include:eventId
     description: Identifier for event (Visit, Survey completion, Sample collection, etc.) to which the Condition data are linked, if applicable. There may be multiple events linked to a Participant.
     title: Event ID
+    range: string
   eventType:
     definition_uri: include:eventType
     description: Type of event for which Event ID is given (Visit, Survey completion, Sample collection, etc.)
     title: Event Type
+    range: string
   conditionMeasureSourceText:
     definition_uri: include:conditionMeasureSourceText
     description: Co-occurring Condition (phenotype or diagnosis) or Measure (observation with numeric value), as described by data contributor. The Down Syndrome Genetic Diagnosis will be rolled into this field.
     title: Condition or Measure Source Text
+    range: string
   ageAtConditionMeasureObservation:
     definition_uri: include:ageAtConditionMeasureObservation
     description: Age in days at which Condition or Measure was observed, recorded, or diagnosed
     title: Age At Condition or Measure Observation
     range: integer
+    minimum_value: 0
+    maximum_value: 33000
   conditionInterpretation:
     definition_uri: include:conditionInterpretation
     description: Whether Condition was observed or not
@@ -299,7 +299,7 @@ enums:
         text: not_observed
         title: Not Observed
         description: Participant was specifically examined or medical record queried for condition and found to be negative
-  enum_conditionDataSource:
+  enum_conditionDataSource: #replace with enum_clinicalDataSourceType & re-harmonize data
     name: enum_conditionDataSource
     permissible_values:
       clinical:
@@ -416,7 +416,7 @@ enums:
         description: Proband + two parents
       trio_plus:
         text: trio_plus
-        title: Trio+
+        title: Trio Plus #need to reharmonize data
         description: Proband + two parents + other relatives
   enum_race:
     name: enum_race
