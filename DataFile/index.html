@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://include-dcc.github.io/include_linkml/DataFile/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.0, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Data File (DataFile) - INCLUDE V2 Data Model</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -220,17 +220,29 @@
 <p>URI: <a href="https://w3id.org/include/DataFile">include:DataFile</a></p>
 <div class="mermaid"> classDiagram
     class DataFile
+    click DataFile href "../DataFile"
       Thing &lt;|-- DataFile
+        click Thing href "../Thing"
 
       DataFile : accessUrl
 
       DataFile : dataAccess
 
-          DataFile --&gt; enum_dataAccess : dataAccess
+
+
+
+    DataFile --&gt; "0..1" EnumDataAccess : dataAccess
+    click EnumDataAccess href "../EnumDataAccess"
+
 
       DataFile : dataCategory
 
-          DataFile --&gt; enum_DataCategory : dataCategory
+
+
+
+    DataFile --&gt; "1" EnumDataCategory : dataCategory
+    click EnumDataCategory href "../EnumDataCategory"
+
 
       DataFile : dataType
 
@@ -252,19 +264,24 @@
 
       DataFile : fileSizeUnit
 
-      DataFile : hasBiospecimen
+      DataFile : participantExternalId
 
-          DataFile --&gt; Biospecimen : hasBiospecimen
-
-      DataFile : hasParticipant
-
-          DataFile --&gt; Participant : hasParticipant
-
-      DataFile : hasStudy
-
-          DataFile --&gt; Study : hasStudy
+      DataFile : participantGlobalId
 
       DataFile : publicationDoi
+
+      DataFile : sampleExternalId
+
+      DataFile : sampleGlobalId
+
+      DataFile : studyCode
+
+
+
+
+    DataFile --&gt; "1" EnumStudyCode : studyCode
+    click EnumStudyCode href "../EnumStudyCode"
+
 
 
 </div>
@@ -287,38 +304,50 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../hasStudy/">hasStudy</a></td>
-<td>0..1 <br/> <a href="../Study/">Study</a></td>
-<td>Link to a Study</td>
+<td><a href="../studyCode/">studyCode</a></td>
+<td>1 <br/> <a href="../EnumStudyCode/">EnumStudyCode</a></td>
+<td>Unique identifer for the study (generally a short acronym)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../hasParticipant/">hasParticipant</a></td>
-<td>0..1 <br/> <a href="../Participant/">Participant</a></td>
-<td>Link to a Participant</td>
+<td><a href="../participantGlobalId/">participantGlobalId</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Unique INCLUDE global identifier for the participant, assigned by DCC</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../hasBiospecimen/">hasBiospecimen</a></td>
-<td>0..1 <br/> <a href="../Biospecimen/">Biospecimen</a></td>
-<td>Link to a Biospecimen</td>
+<td><a href="../participantExternalId/">participantExternalId</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Unique, de-identified identifier for the participant, assigned by data contri...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sampleGlobalId/">sampleGlobalId</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>INCLUDE global identifier for sample, assigned by DCC</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sampleExternalId/">sampleExternalId</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Unique identifier for sample, assigned by data contributor</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../fileGlobalId/">fileGlobalId</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>INCLUDE global file identifier, assigned by DCC</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../fileExternalId/">fileExternalId</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier for data file, assigned by data contributor</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../fileName/">fileName</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>Name of file, assigned by data contributor</td>
 <td>direct</td>
 </tr>
@@ -336,7 +365,7 @@
 </tr>
 <tr>
 <td><a href="../dataCategory/">dataCategory</a></td>
-<td>1..1 <br/> <a href="../EnumDataCategory/">EnumDataCategory</a></td>
+<td>1 <br/> <a href="../EnumDataCategory/">EnumDataCategory</a></td>
 <td>General category of data in file (e</td>
 <td>direct</td>
 </tr>
@@ -360,7 +389,7 @@
 </tr>
 <tr>
 <td><a href="../fileFormat/">fileFormat</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>Format of file (e</td>
 <td>direct</td>
 </tr>
@@ -447,9 +476,11 @@ title: Data File
 from_schema: https://w3id.org/include
 is_a: Thing
 slots:
-- hasStudy
-- hasParticipant
-- hasBiospecimen
+- studyCode
+- participantGlobalId
+- participantExternalId
+- sampleGlobalId
+- sampleExternalId
 - fileGlobalId
 - fileExternalId
 - fileName
@@ -483,48 +514,89 @@ title: Data File
 from_schema: https://w3id.org/include
 is_a: Thing
 attributes:
-  hasStudy:
-    name: hasStudy
-    definition_uri: include:hasStudy
-    description: Link to a Study
-    title: Has Study
+  studyCode:
+    name: studyCode
+    definition_uri: include:studyCode
+    description: Unique identifer for the study (generally a short acronym)
+    title: Study Code
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: hasStudy
+    alias: studyCode
     owner: DataFile
     domain_of:
     - Biospecimen
     - DataFile
+    - Study
     - Dataset
     - Participant
     - Condition
-    range: Study
-  hasParticipant:
-    name: hasParticipant
-    definition_uri: include:hasParticipant
-    description: Link to a Participant
-    title: Has Participant
+    range: enum_studyCode
+    required: true
+  participantGlobalId:
+    name: participantGlobalId
+    definition_uri: include:participantGlobalId
+    description: Unique INCLUDE global identifier for the participant, assigned by
+      DCC
+    title: Participant Global ID
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: hasParticipant
+    alias: participantGlobalId
     owner: DataFile
     domain_of:
     - Biospecimen
     - DataFile
+    - Participant
     - Condition
-    range: Participant
-  hasBiospecimen:
-    name: hasBiospecimen
-    definition_uri: include:hasBiospecimen
-    description: Link to a Biospecimen
-    title: Has Biospecimen
+    range: string
+    required: true
+  participantExternalId:
+    name: participantExternalId
+    definition_uri: include:participantExternalId
+    description: Unique, de-identified identifier for the participant, assigned by
+      data contributor. External IDs must be two steps removed from personal information
+      in the study records.
+    title: Participant External ID
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: hasBiospecimen
+    alias: participantExternalId
     owner: DataFile
     domain_of:
+    - Biospecimen
     - DataFile
-    range: Biospecimen
+    - Participant
+    - Condition
+    range: string
+    required: true
+  sampleGlobalId:
+    name: sampleGlobalId
+    definition_uri: include:sampleGlobalId
+    description: INCLUDE global identifier for sample, assigned by DCC
+    title: Sample Global ID
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: sampleGlobalId
+    owner: DataFile
+    domain_of:
+    - Biospecimen
+    - DataFile
+    range: string
+    required: true
+  sampleExternalId:
+    name: sampleExternalId
+    definition_uri: include:sampleExternalId
+    description: Unique identifier for sample, assigned by data contributor. A sample
+      is a unique biological material; two samples with two different IDs are biologically
+      distinct.
+    title: Sample External ID
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: sampleExternalId
+    owner: DataFile
+    domain_of:
+    - Biospecimen
+    - DataFile
+    range: string
+    required: true
   fileGlobalId:
     name: fileGlobalId
     definition_uri: include:fileGlobalId
@@ -600,7 +672,7 @@ attributes:
     owner: DataFile
     domain_of:
     - DataFile
-    range: enum_DataCategory
+    range: enum_dataCategory
     required: true
   dataType:
     name: dataType

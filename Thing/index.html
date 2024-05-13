@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://include-dcc.github.io/include_linkml/Thing/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.0, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Thing (Thing) - INCLUDE V2 Data Model</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -220,12 +220,19 @@
 <p>URI: <a href="https://w3id.org/include/Thing">include:Thing</a></p>
 <div class="mermaid"> classDiagram
     class Thing
+    click Thing href "../Thing"
       Thing &lt;|-- Biospecimen
+        click Biospecimen href "../Biospecimen"
       Thing &lt;|-- DataFile
+        click DataFile href "../DataFile"
       Thing &lt;|-- Study
+        click Study href "../Study"
       Thing &lt;|-- Dataset
+        click Dataset href "../Dataset"
       Thing &lt;|-- Participant
+        click Participant href "../Participant"
       Thing &lt;|-- Condition
+        click Condition href "../Condition"
 
 
 </div>

@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://include-dcc.github.io/include_linkml/Dataset/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.0, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Dataset (Dataset) - INCLUDE V2 Data Model</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -220,7 +220,9 @@
 <p>URI: <a href="https://w3id.org/include/Dataset">include:Dataset</a></p>
 <div class="mermaid"> classDiagram
     class Dataset
+    click Dataset href "../Dataset"
       Thing &lt;|-- Dataset
+        click Thing href "../Thing"
 
       Dataset : accessLimitations
 
@@ -228,19 +230,22 @@
 
       Dataset : dataCollectionEndYear
 
-          Dataset --&gt; None : dataCollectionEndYear
-
       Dataset : dataCollectionStartYear
-
-          Dataset --&gt; None : dataCollectionStartYear
 
       Dataset : datasetDataCategory
 
-          Dataset --&gt; enum_DataCategory : datasetDataCategory
+
+
+
+    Dataset --&gt; "1" EnumDataCategory : datasetDataCategory
+    click EnumDataCategory href "../EnumDataCategory"
+
 
       Dataset : datasetDataType
 
       Dataset : datasetDbgap
+
+      Dataset : datasetDescription
 
       Dataset : datasetExpectedNumberOfParticipants
 
@@ -258,13 +263,18 @@
 
       Dataset : expectedNumberOfFiles
 
-      Dataset : hasStudy
-
-          Dataset --&gt; Study : hasStudy
-
       Dataset : otherAccessAuthority
 
       Dataset : otherRepository
+
+      Dataset : studyCode
+
+
+
+
+    Dataset --&gt; "1" EnumStudyCode : studyCode
+    click EnumStudyCode href "../EnumStudyCode"
+
 
 
 </div>
@@ -287,15 +297,21 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../hasStudy/">hasStudy</a></td>
-<td>0..1 <br/> <a href="../Study/">Study</a></td>
-<td>Link to a Study</td>
+<td><a href="../studyCode/">studyCode</a></td>
+<td>1 <br/> <a href="../EnumStudyCode/">EnumStudyCode</a></td>
+<td>Unique identifer for the study (generally a short acronym)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../datasetName/">datasetName</a></td>
-<td>1..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>Full name of the dataset, provided by contributor</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../datasetDescription/">datasetDescription</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Brief additional notes about the dataset (1-3 sentences) that are not already...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -312,14 +328,14 @@
 </tr>
 <tr>
 <td><a href="../datasetExpectedNumberOfParticipants/">datasetExpectedNumberOfParticipants</a></td>
-<td>1..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Expected number of participants in this dataset</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../expectedNumberOfFiles/">expectedNumberOfFiles</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>Expected number of files associated with this dataset</td>
+<td>Expected number of files associated with this dataset, including dictionaries</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -336,7 +352,7 @@
 </tr>
 <tr>
 <td><a href="../datasetDataCategory/">datasetDataCategory</a></td>
-<td>1..1 <br/> <a href="../EnumDataCategory/">EnumDataCategory</a></td>
+<td>1 <br/> <a href="../EnumDataCategory/">EnumDataCategory</a></td>
 <td>General category of data in dataset; pipe-separated if multiple</td>
 <td>direct</td>
 </tr>
@@ -360,7 +376,7 @@
 </tr>
 <tr>
 <td><a href="../datasetPublication/">datasetPublication</a></td>
-<td>0..* <br/> <a href="../Uri/">Uri</a></td>
+<td>* <br/> <a href="../Uri/">Uri</a></td>
 <td>URL for publication(s) describing the dataset's rationale and methodology (Pu...</td>
 <td>direct</td>
 </tr>
@@ -378,7 +394,7 @@
 </tr>
 <tr>
 <td><a href="../datasetDbgap/">datasetDbgap</a></td>
-<td>0..* <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td>dbGaP "phs" accession code(s) required to access the files in this Dataset, i...</td>
 <td>direct</td>
 </tr>
@@ -450,8 +466,9 @@ title: Dataset
 from_schema: https://w3id.org/include
 is_a: Thing
 slots:
-- hasStudy
+- studyCode
 - datasetName
+- datasetDescription
 - datasetGlobalId
 - datasetExternalId
 - datasetExpectedNumberOfParticipants
@@ -484,22 +501,24 @@ title: Dataset
 from_schema: https://w3id.org/include
 is_a: Thing
 attributes:
-  hasStudy:
-    name: hasStudy
-    definition_uri: include:hasStudy
-    description: Link to a Study
-    title: Has Study
+  studyCode:
+    name: studyCode
+    definition_uri: include:studyCode
+    description: Unique identifer for the study (generally a short acronym)
+    title: Study Code
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: hasStudy
+    alias: studyCode
     owner: Dataset
     domain_of:
     - Biospecimen
     - DataFile
+    - Study
     - Dataset
     - Participant
     - Condition
-    range: Study
+    range: enum_studyCode
+    required: true
   datasetName:
     name: datasetName
     definition_uri: include:datasetName
@@ -513,6 +532,19 @@ attributes:
     - Dataset
     range: string
     required: true
+  datasetDescription:
+    name: datasetDescription
+    definition_uri: include:datasetDescription
+    description: Brief additional notes about the dataset (1-3 sentences) that are
+      not already captured in the other fields
+    title: Dataset Description
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: datasetDescription
+    owner: Dataset
+    domain_of:
+    - Dataset
+    range: string
   datasetGlobalId:
     name: datasetGlobalId
     definition_uri: include:datasetGlobalId
@@ -541,7 +573,8 @@ attributes:
   datasetExpectedNumberOfParticipants:
     name: datasetExpectedNumberOfParticipants
     definition_uri: include:datasetExpectedNumberOfParticipants
-    description: Expected number of participants in this dataset
+    description: Expected number of participants in this dataset. If additional explanation
+      is needed, please add to Dataset Description field.
     title: Dataset Expected Number of Participants
     from_schema: https://w3id.org/include
     rank: 1000
@@ -554,7 +587,9 @@ attributes:
   expectedNumberOfFiles:
     name: expectedNumberOfFiles
     definition_uri: include:expectedNumberOfFiles
-    description: Expected number of files associated with this dataset
+    description: Expected number of files associated with this dataset, including
+      dictionaries. If additional explanation is needed, please add to Dataset Description
+      field.
     title: Expected Number of Files
     from_schema: https://w3id.org/include
     rank: 1000
@@ -575,8 +610,8 @@ attributes:
     owner: Dataset
     domain_of:
     - Dataset
+    range: string
     required: false
-    pattern: ^1|2\d(3)$|nan
   dataCollectionEndYear:
     name: dataCollectionEndYear
     definition_uri: include:dataCollectionEndYear
@@ -588,8 +623,8 @@ attributes:
     owner: Dataset
     domain_of:
     - Dataset
+    range: string
     required: false
-    pattern: ^1|2\d(3)$|nan
   datasetDataCategory:
     name: datasetDataCategory
     definition_uri: include:dataCategory
@@ -601,7 +636,7 @@ attributes:
     owner: Dataset
     domain_of:
     - Dataset
-    range: enum_DataCategory
+    range: enum_dataCategory
     required: true
   datasetDataType:
     name: datasetDataType

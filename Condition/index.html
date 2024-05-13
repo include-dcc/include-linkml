@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://include-dcc.github.io/include_linkml/Condition/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.0, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Condition (Condition) - INCLUDE V2 Data Model</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -220,41 +220,44 @@
 <p>URI: <a href="https://w3id.org/include/Condition">include:Condition</a></p>
 <div class="mermaid"> classDiagram
     class Condition
+    click Condition href "../Condition"
       Thing &lt;|-- Condition
+        click Thing href "../Thing"
 
       Condition : ageAtConditionMeasureObservation
 
       Condition : conditionDataSource
 
-          Condition --&gt; enum_conditionDataSource : conditionDataSource
+
+
+
+    Condition --&gt; "0..1" EnumConditionDataSource : conditionDataSource
+    click EnumConditionDataSource href "../EnumConditionDataSource"
+
 
       Condition : conditionInterpretation
 
-          Condition --&gt; enum_conditionInterpretation : conditionInterpretation
+
+
+
+    Condition --&gt; "0..1" EnumConditionInterpretation : conditionInterpretation
+    click EnumConditionInterpretation href "../EnumConditionInterpretation"
+
 
       Condition : conditionMeasureSourceText
 
-          Condition --&gt; None : conditionMeasureSourceText
-
       Condition : conditionStatus
 
-          Condition --&gt; enum_conditionStatus : conditionStatus
+
+
+
+    Condition --&gt; "0..1" EnumConditionStatus : conditionStatus
+    click EnumConditionStatus href "../EnumConditionStatus"
+
 
       Condition : eventId
 
-          Condition --&gt; None : eventId
-
       Condition : eventType
-
-          Condition --&gt; None : eventType
-
-      Condition : hasParticipant
-
-          Condition --&gt; Participant : hasParticipant
-
-      Condition : hasStudy
-
-          Condition --&gt; Study : hasStudy
 
       Condition : hpoCode
 
@@ -275,6 +278,19 @@
       Condition : otherCode
 
       Condition : otherLabel
+
+      Condition : participantExternalId
+
+      Condition : participantGlobalId
+
+      Condition : studyCode
+
+
+
+
+    Condition --&gt; "1" EnumStudyCode : studyCode
+    click EnumStudyCode href "../EnumStudyCode"
+
 
 
 </div>
@@ -297,15 +313,21 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../hasStudy/">hasStudy</a></td>
-<td>0..1 <br/> <a href="../Study/">Study</a></td>
-<td>Link to a Study</td>
+<td><a href="../studyCode/">studyCode</a></td>
+<td>1 <br/> <a href="../EnumStudyCode/">EnumStudyCode</a></td>
+<td>Unique identifer for the study (generally a short acronym)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../hasParticipant/">hasParticipant</a></td>
-<td>0..1 <br/> <a href="../Participant/">Participant</a></td>
-<td>Link to a Participant</td>
+<td><a href="../participantGlobalId/">participantGlobalId</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Unique INCLUDE global identifier for the participant, assigned by DCC</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../participantExternalId/">participantExternalId</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Unique, de-identified identifier for the participant, assigned by data contri...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -466,8 +488,9 @@ title: Condition
 from_schema: https://w3id.org/include
 is_a: Thing
 slots:
-- hasStudy
-- hasParticipant
+- studyCode
+- participantGlobalId
+- participantExternalId
 - eventId
 - eventType
 - conditionMeasureSourceText
@@ -501,36 +524,59 @@ title: Condition
 from_schema: https://w3id.org/include
 is_a: Thing
 attributes:
-  hasStudy:
-    name: hasStudy
-    definition_uri: include:hasStudy
-    description: Link to a Study
-    title: Has Study
+  studyCode:
+    name: studyCode
+    definition_uri: include:studyCode
+    description: Unique identifer for the study (generally a short acronym)
+    title: Study Code
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: hasStudy
+    alias: studyCode
     owner: Condition
     domain_of:
     - Biospecimen
     - DataFile
+    - Study
     - Dataset
     - Participant
     - Condition
-    range: Study
-  hasParticipant:
-    name: hasParticipant
-    definition_uri: include:hasParticipant
-    description: Link to a Participant
-    title: Has Participant
+    range: enum_studyCode
+    required: true
+  participantGlobalId:
+    name: participantGlobalId
+    definition_uri: include:participantGlobalId
+    description: Unique INCLUDE global identifier for the participant, assigned by
+      DCC
+    title: Participant Global ID
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: hasParticipant
+    alias: participantGlobalId
     owner: Condition
     domain_of:
     - Biospecimen
     - DataFile
+    - Participant
     - Condition
-    range: Participant
+    range: string
+    required: true
+  participantExternalId:
+    name: participantExternalId
+    definition_uri: include:participantExternalId
+    description: Unique, de-identified identifier for the participant, assigned by
+      data contributor. External IDs must be two steps removed from personal information
+      in the study records.
+    title: Participant External ID
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: participantExternalId
+    owner: Condition
+    domain_of:
+    - Biospecimen
+    - DataFile
+    - Participant
+    - Condition
+    range: string
+    required: true
   eventId:
     name: eventId
     definition_uri: include:eventId
@@ -544,6 +590,7 @@ attributes:
     owner: Condition
     domain_of:
     - Condition
+    range: string
   eventType:
     name: eventType
     definition_uri: include:eventType
@@ -556,6 +603,7 @@ attributes:
     owner: Condition
     domain_of:
     - Condition
+    range: string
   conditionMeasureSourceText:
     name: conditionMeasureSourceText
     definition_uri: include:conditionMeasureSourceText
@@ -569,6 +617,7 @@ attributes:
     owner: Condition
     domain_of:
     - Condition
+    range: string
   ageAtConditionMeasureObservation:
     name: ageAtConditionMeasureObservation
     definition_uri: include:ageAtConditionMeasureObservation
@@ -582,6 +631,8 @@ attributes:
     domain_of:
     - Condition
     range: integer
+    minimum_value: 0
+    maximum_value: 33000
   conditionInterpretation:
     name: conditionInterpretation
     definition_uri: include:conditionInterpretation
