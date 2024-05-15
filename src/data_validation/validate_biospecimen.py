@@ -5,8 +5,9 @@ from pydantic import ValidationError
 def validate_biospecimen_entry(row):
     try:
         instance = Biospecimen(
-            # hasStudy=Study(studyCode=row['Study Code'], studyTitle="HTP", program="include"),
-            # hasParticipant=Participant(participantExternalId=row['Participant External ID'], familyType="proband_only"),
+            studyCode=row['Study Code'],
+            participantGlobalId=row['Participant Global ID'],
+            participantExternalId=row['Participant External ID'],
             sampleGlobalId=row['Sample Global ID'],
             sampleExternalId=row['Sample External ID'],
             sampleType=row['Sample Type'],

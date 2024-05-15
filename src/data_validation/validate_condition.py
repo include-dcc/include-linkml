@@ -5,8 +5,9 @@ from pydantic import ValidationError
 def validate_condition_entry(row):
     try:
         instance = Condition(
-            # hasStudy=Study(studyCode=row['Study Code'], studyTitle="HTP", program="include"),
-            # hasParticipant=Participant(participantExternalId=row['Participant External ID'], familyType="proband_only"),
+            studyCode=row['Study Code'],
+            participantGlobalId=row['Participant Global ID'],
+            participantExternalId=row['Participant External ID'],
             eventId=row['Event ID'],
             eventType=row['Event Type'],
             conditionMeasureSourceText=row['Condition or Measure Source Text'],

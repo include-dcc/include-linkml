@@ -5,7 +5,7 @@ from pydantic import ValidationError
 def validate_participant_entry(row):
     try:
         instance = Participant(
-            # hasStudy=Study(studyCode=row['Study Code'], studyTitle="HTP", program="include"),
+            studyCode=row['Study Code'],
             participantGlobalId=row['Participant Global ID'],
             participantExternalId=row['Participant External ID'],
             familyId=row['Family ID'],

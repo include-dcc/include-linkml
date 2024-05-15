@@ -5,8 +5,9 @@ from pydantic import ValidationError
 def validate_dataset_entry(row):
     try:
         instance = Dataset(
-            # hasStudy=Study(studyCode=row['Study Code'], studyTitle="HTP", program="include"),
+            studyCode=row['Study Code'],
             datasetName=row['Dataset Name'],
+            datasetDescription=row['Dataset Description'],
             datasetGlobalId=row['Dataset Global ID'],
             datasetExternalId=row['Dataset External ID'],
             datasetExpectedNumberOfParticipants=row['Dataset Expected Number of Participants'],

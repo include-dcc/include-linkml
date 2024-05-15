@@ -26,7 +26,9 @@ def validate_study_entry(row):
             studyDbgap=str(row['Study Dbgap']).split('|'),
             studyPublication=str(row['Study Publication']).split('|'),
             studyExpectedNumberOfParticipants=int(row['Study Expected Number of Participants']),
-            guidType=row['GUID Type']
+            guidType=row['GUID Type'],
+            acknowledgments=row['Acknowledgements'].split('|'),
+            citationStatement=row['Citation Statement'].split('|')
         )
         # Validation successful
         return True, None

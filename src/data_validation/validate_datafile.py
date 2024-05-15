@@ -5,9 +5,11 @@ from pydantic import ValidationError
 def validate_datafile_entry(row):
     try:
         instance = DataFile(
-            # hasStudy=Study(studyCode=row['Study Code'], studyTitle="HTP", program="include"),
-            # hasParticipant=Participant(participantExternalId=row['Participant External ID'], familyType="proband_only"),
-            # hasBiospecimen=Biospecimen(sampleExternalId=row['Sample External ID'], sampleAvailability="available"),
+            studyCode=row['Study Code'],
+            participantGlobalId=row['Participant Global ID'],
+            participantExternalId=row['Participant External ID'],
+            sampleGlobalId=row['Sample Global ID'],
+            sampleExternalId=row['Sample External ID'],
             fileGlobalId=row['File Global ID'],
             fileExternalId=row['File External ID'],
             fileName=row['File Name'],

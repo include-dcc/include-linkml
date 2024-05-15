@@ -35,5 +35,5 @@ def validate_datafile(file_path, output_path='.'):
 
 
 def validate_dataset(file_path, output_path='.'):
-    string_columns = ['Dataset Data Category']
+    string_columns = ['Study Code', 'Dataset Data Category']
     return validate_data(file_path, string_columns, validate_dataset_entry, output_path)
