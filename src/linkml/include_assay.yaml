@@ -78,7 +78,7 @@ classes:
         tag: requires_component
         value: Study,Participant,Biospecimen
     definition_uri: include:DataFile
-    description: A DataFile Associated with a Participant or Study or Biospecimen
+    description: Metadata about Data Files
     is_a: Thing
     name: DataFile
     title: Data File

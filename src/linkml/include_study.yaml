@@ -63,14 +63,12 @@ classes:
     is_a: Thing
     slots: 
     - studyCode
-    #add hasDataset to Assay>DataFile?
     - datasetName
     - datasetDescription
     - datasetGlobalId
     - datasetExternalId
     - datasetExpectedNumberOfParticipants
     - expectedNumberOfFiles
-#   - fileIdList #TBD - may make this into a separate manifest
     - dataCollectionStartYear
     - dataCollectionEndYear
     - datasetDataCategory
@@ -83,6 +81,23 @@ classes:
     - datasetDbgap
     - otherRepository
     - otherAccessAuthority
+  DatasetManifest:
+    name: Dataset Manifest
+    definition_uri: include:DatasetManifest
+    annotations:
+      required:
+        tag: required
+        value: 'False' #may change to True later
+    description: Mapping information for files in Dataset 
+    title: Dataset Manifest
+    is_a: Thing
+    slots: 
+    - studyCode
+    - datasetName
+    - datasetGlobalId
+    - datasetExternalId
+    - fileName
+    - fileGlobalId
 
 slots:
   studyCode:
