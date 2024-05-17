@@ -88,9 +88,11 @@ classes:
     - participantExternalId    
     - sampleGlobalId
     - sampleExternalId
-    - fileGlobalId
-    - fileExternalId
     - fileName
+    - fileGlobalId
+    - fileS3Location
+    - fileUploadLocation
+    - drsUri
     - fileHash
     - dataAccess
     - dataCategory
@@ -100,8 +102,6 @@ classes:
     - fileFormat
     - fileSize
     - fileSizeUnit
-    - accessUrl
-    - publicationDoi
 
 slots:
   sampleGlobalId:
@@ -216,24 +216,35 @@ slots:
       the Virtual Biorepository
     title: Container Availability
     range: enum_containerAvailability
-  fileGlobalId:
-    definition_uri: include:fileGlobalId
-    description: INCLUDE global file identifier, assigned by DCC
-    title: File Global ID
-    required: true
-    range: string
-  fileExternalId:
-    definition_uri: include:fileExternalId
-    description: Unique identifier for data file, assigned by data contributor
-    title: File External ID
-    required: true
-    range: string
   fileName:
     definition_uri: include:fileName
     description: Name of file, assigned by data contributor
     title: File Name
     required: true
     range: string
+  fileGlobalId:
+    definition_uri: include:fileGlobalId
+    description: INCLUDE global file identifier, assigned by DCC
+    title: File Global ID
+    required: true
+    range: string
+  fileUploadLocation:
+    definition_uri: include:fileUploadLocation
+    description: Where source file was uploaded, if not directly to an S3 bucket (e.g. Synapse)
+    title: File Upload Location
+    range: string
+  fileS3Location:
+    definition_uri: include:fileS3Location
+    description: S3 bucket location of file; also serves as dewrangle descriptor
+    title: File S3 Location
+    required: true
+    range: string
+  drsUri:
+    definition_uri: include:drsUri
+    description: Data Repository Services API Uniform Resource Identifier
+    title: DRS URI
+    required: true
+    range: uriorcurie
   fileHash:
     definition_uri: include:fileHash
     description: md5 hash of this file for validation (if known)
@@ -244,6 +255,7 @@ slots:
     description: Type of access control on this file, determined by DCC
     title: Data Access
     range: enum_dataAccess
+    required: true
   dataCategory:
     definition_uri: include:dataCategory
     description: General category of data in file (e.g. Clinical, Genomics, Proteomics,
@@ -282,16 +294,6 @@ slots:
     description: Unit of file size
     title: File Size Unit
     range: string # eventually want ontology terms here
-  accessUrl:
-    definition_uri: include:accessUrl
-    description: URL/URI to file repository location
-    title: Access URL
-    range: uriorcurie
-  publicationDoi:
-    definition_uri: include:publicationDoi
-    description: DOI of publication associated with this file, if published
-    title: Publication DOI
-    range: string # is there a doi range?
 enums:
   enum_dataAccess:
     definition_uri: include:enum_dataAccess
