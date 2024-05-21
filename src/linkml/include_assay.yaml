@@ -32,6 +32,7 @@ classes:
   #   - hasOutput
   #   title: Assay
   Biospecimen:
+    title: Biospecimen
     annotations:
       required:
         tag: required
@@ -42,8 +43,6 @@ classes:
     definition_uri: include:Biospecimen
     description: A Biospecimen Collected from A Participant
     is_a: Thing
-    name: Biospecimen
-    title: Biospecimen
     slots:
     - studyCode
     - participantGlobalId
@@ -70,6 +69,7 @@ classes:
     - containerAvailability
 
   DataFile:
+    title: Data File
     annotations:
       required:
         tag: required
@@ -80,8 +80,6 @@ classes:
     definition_uri: include:DataFile
     description: Metadata about Data Files
     is_a: Thing
-    name: DataFile
-    title: Data File
     slots:
     - studyCode
     - participantGlobalId

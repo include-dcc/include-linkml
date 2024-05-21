@@ -17,14 +17,13 @@ default_curi_maps:
 - semweb_context
 classes:
   Study:
-    name: Study
+    title: Study
     definition_uri: include:Study
     annotations:
       required: 
         tag: required
         value: 'True'
     description: General information about the study
-    title: Study
     is_a: Thing
     slots: 
     - studyCode
@@ -52,14 +51,13 @@ classes:
     - acknowledgments
     - citationStatement
   Dataset:
-    name: Dataset
+    title: Dataset
     definition_uri: include:Dataset
     annotations:
       required:
         tag: required
         value: 'False' #may change to True later
     description: Information about a specific grouping of data files
-    title: Dataset
     is_a: Thing
     slots: 
     - studyCode
@@ -82,14 +80,13 @@ classes:
     - otherRepository
     - otherAccessAuthority
   DatasetManifest:
-    name: Dataset Manifest
+    title: Dataset Manifest
     definition_uri: include:DatasetManifest
     annotations:
       required:
         tag: required
         value: 'False' #may change to True later
     description: Mapping information for files in Dataset 
-    title: Dataset Manifest
     is_a: Thing
     slots: 
     - studyCode
