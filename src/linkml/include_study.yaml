@@ -13,6 +13,7 @@ prefixes:
 imports:
 - linkml:types
 - include_core
+- include_assay
 default_curi_maps:
 - semweb_context
 classes:
@@ -25,6 +26,9 @@ classes:
         value: 'True'
     description: General information about the study
     is_a: Thing
+    slot_usage:
+      dataCategory:
+        description: Categories of data expected to be collected in this study.
     slots: 
     - studyCode
     - studyTitle
@@ -42,7 +46,7 @@ classes:
     - selectionCriteria
     - studyDesign
     - clinicalDataSourceType
-    - expectedDataCategory
+    - dataCategory
     - studyWebsite
     - studyDbgap
     - studyPublication
@@ -50,6 +54,8 @@ classes:
     - guidType
     - acknowledgments
     - citationStatement
+
+
   Dataset:
     title: Dataset
     definition_uri: include:Dataset
@@ -59,6 +65,9 @@ classes:
         value: 'False' #may change to True later
     description: Information about a specific grouping of data files
     is_a: Thing
+    slot_usage:
+      dataCategory:
+        description: General category of data in dataset; pipe-separated if multiple.
     slots: 
     - studyCode
     - datasetName
@@ -69,7 +78,7 @@ classes:
     - expectedNumberOfFiles
     - dataCollectionStartYear
     - dataCollectionEndYear
-    - datasetDataCategory
+    - dataCategory
     - datasetDataType
     - datasetExperimentalStrategy
     - datasetExperimentalPlatform
@@ -79,6 +88,8 @@ classes:
     - datasetDbgap
     - otherRepository
     - otherAccessAuthority
+
+
   DatasetManifest:
     title: Dataset Manifest
     definition_uri: include:DatasetManifest
@@ -198,13 +209,6 @@ slots:
     #TODO: replace enum_conditionDataSource with this - or consider deleting slot conditionDataSource
     required: true
     multivalued: true
-  expectedDataCategory:
-    definition_uri: include:expectedDataCategory
-    description: Categories of data expected to be collected in this study
-    title: Expected Data Category
-    range: enum_dataCategory 
-    required: true
-    multivalued: true
   studyWebsite:
     definition_uri: include:studyWebsite
     description: Website for the study
@@ -308,13 +312,7 @@ slots:
     range: string 
     #pattern: "^1|2\\d(3)$|nan"
     required: false
-  datasetDataCategory:
-    definition_uri: include:dataCategory
-    description: General category of data in dataset; pipe-separated if multiple
-    title: Dataset Data Category
-    required: true
-    range: enum_dataCategory
-  datasetDataType: 
+  datasetDataType:
     definition_uri: include:dataType
     description: Specific type of data contained in dataset; pipe-separated if multiple (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
     title: Dataset Data Type
