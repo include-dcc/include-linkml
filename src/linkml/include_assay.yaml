@@ -82,10 +82,10 @@ classes:
     is_a: Thing
     slots:
     - studyCode
-    - participantGlobalId
-    - participantExternalId    
-    - sampleGlobalId
-    - sampleExternalId
+    - participantGlobalId #usage of this field in multi-participant files is TBD
+    - participantExternalId #usage of this field in multi-participant files is TBD   
+    - sampleGlobalId #usage of this field in multi-sample files is TBD
+    - sampleExternalId #usage of this field in multi-sample files is TBD
     - fileName
     - fileGlobalId
     - fileS3Location
