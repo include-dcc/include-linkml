@@ -78,9 +78,10 @@ $(PYMODEL):
 $(DOCDIR):
 	mkdir -p $@
 
+TEMPLATEDIR=doc_templates
 gendoc: $(DOCDIR)
 	cp $(SRC)/docs/*md $(DOCDIR) ; \
-	$(RUN) gen-doc -d $(DOCDIR) $(SOURCE_SCHEMA_PATH)
+	$(RUN) gen-doc -d $(DOCDIR) --template-directory $(SRC)/$(TEMPLATEDIR) $(SOURCE_SCHEMA_PATH)
 
 testdoc: gendoc serve
 
