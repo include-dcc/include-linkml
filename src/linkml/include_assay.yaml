@@ -206,17 +206,15 @@ slots:
     range: string
   sampleAvailability:
     definition_uri: include:sampleAvailability
-    description: Whether or not the sample is potentially available for sharing through
-      the Virtual Biorepository
+    description: Whether or not the Sample (any Container thereof) is potentially available for sharing through the Virtual Biorepository
     title: Sample Availability
     required: true
-    range: enum_sampleAvailability
+    range: enum_Availability
   containerAvailability:
     definition_uri: include:containerAvailability
-    description: Whether or not the container is potentially available for sharing through
-      the Virtual Biorepository
+    description: Whether or not the specific Container is potentially available for sharing through the Virtual Biorepository
     title: Container Availability
-    range: enum_containerAvailability
+    range: enum_Availability
   fileName:
     definition_uri: include:fileName
     description: Name of file, assigned by data contributor
@@ -308,27 +306,15 @@ enums:
       registered:
         text: registered
         title: Registered
-  enum_sampleAvailability:
-    definition_uri: include:enum_sampleAvailability
-    name: enum_sampleAvailability
+  enum_Availability:
+    definition_uri: include:enum_Availability
+    name: enum_Availability
     permissible_values:
       available:
         text: available
         title: Available
-        description: Sample (any Container) is potentially available to be requested through the Virtual Biorepository (see VBR contact info in Study page)
+        description: Sample or Container is potentially available to be requested through the Virtual Biorepository (see VBR contact info in Study page)
       unavailable:
         text: unavailable
         title: Unavailable
-        description: Sample either was available through Virtual Biorepository but has been used up, or is part of a study that is not participating in the VBR
-  enum_containerAvailability:
-    definition_uri: include:enum_containerAvailability
-    name: enum_containerAvailability
-    permissible_values:
-      available:
-        text: available
-        title: Available
-        description: Container is potentially available to be requested through the Virtual Biorepository (see VBR contact info in Study page)
-      unavailable:
-        text: unavailable
-        title: Unavailable
-        description: Container either was available through Virtual Biorepository but has been used up, or is part of a study that is not participating in the VBR
+        description: Sample or Container either was available through Virtual Biorepository but has been used up, or is part of a study that is not participating in the VBR
