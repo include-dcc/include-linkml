@@ -80,6 +80,9 @@ classes:
     definition_uri: include:DataFile
     description: Metadata about Data Files
     is_a: Thing
+    slot_usage:
+      dataCategory:
+        description: General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune profiling, Transcriptomics)
     slots:
     - studyCode
     - participantGlobalId #usage of this field in multi-participant files is TBD
@@ -256,8 +259,7 @@ slots:
     required: true
   dataCategory:
     definition_uri: include:dataCategory
-    description: General category of data in file (e.g. Clinical, Genomics, Proteomics,
-      Metabolomics, Immune profiling, Transcriptomics)
+    #description: General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune profiling, Transcriptomics)
     title: Data Category
     required: true
     range: enum_dataCategory

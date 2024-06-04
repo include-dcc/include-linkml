@@ -27,6 +27,9 @@ classes:
         value: 'True'
     description: General information about the study
     is_a: Thing
+    slot_usage:
+      dataCategory:
+        description: Categories of data expected to be collected in this study.
     slots: 
     - studyCode
     - studyTitle
@@ -65,6 +68,9 @@ classes:
         value: 'False' #may change to True later
     description: Information about a specific grouping of data files
     is_a: Thing
+    slot_usage:
+      dataCategory:
+        description: General category of data in dataset; pipe-separated if multiple.
     slots: 
     - studyCode
     - datasetName
