@@ -27,9 +27,6 @@ classes:
         value: 'True'
     description: General information about the study
     is_a: Thing
-    slot_usage:
-      dataCategory:
-        description: Categories of data expected to be collected in this study.
     slots: 
     - studyCode
     - studyTitle
@@ -58,7 +55,13 @@ classes:
     slot_usage:
       dataCategory:
         description: Categories of data expected to be collected in this study
-        multivalued: true
+      dbgap:
+        description: dbGaP "phs" accession code(s) associated with this Study, either for access or informational purposes (pipe-separated if multiple)
+      publication:
+        description: URL for publication(s) describing the study's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
+      expectedNumberOfParticipants:
+        description: Expected number of participants in this study. If additional explanation is needed, please add to Study Description field.
+
   Dataset:
     title: Dataset
     definition_uri: include:Dataset
@@ -68,9 +71,6 @@ classes:
         value: 'False' #may change to True later
     description: Information about a specific grouping of data files
     is_a: Thing
-    slot_usage:
-      dataCategory:
-        description: General category of data in dataset; pipe-separated if multiple.
     slots: 
     - studyCode
     - datasetName
@@ -93,20 +93,19 @@ classes:
     - otherAccessAuthority
     - isHarmonized
     slot_usage:
-      expectedNumberOfParticipants:
-        description: Expected number of participants in this Dataset. If additional explanation is needed, please add to Dataset Description field.
       dataCategory:
         description: General category of data in Dataset; pipe-separated if multiple
-      dataType: 
+      dbgap:
+        description: dbGaP "phs" accession code(s) required to access the files in this Dataset, if applicable (pipe-separated if multiple)
+      publication:
+        description: URL for publication(s) describing the Dataset's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
+      expectedNumberOfParticipants:
+        description: Expected number of participants in this Dataset. If additional explanation is needed, please add to Dataset Description field.
+      dataType:
         description: Specific type of data contained in Dataset; pipe-separated if multiple (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
       experimentalStrategy: 
         description: Experimental method used to obtain data in Dataset; pipe-separated if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
-      experimentalPlatform: 
-        description: Specific platform used to perform experiment; pipe-separated if multiple (e.g. SOMAscan, MSD, Luminex, Illumina)
-      dbgap: 
-        description: dbGaP "phs" accession code(s) required to access the files in this Dataset, if applicable (pipe-separated if multiple)
-      publication: 
-        description: URL for publication(s) describing the Dataset's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
+
   DatasetManifest:
     title: Dataset Manifest
     definition_uri: include:DatasetManifest
@@ -234,13 +233,11 @@ slots:
     range: uri
   publication: 
     definition_uri: include:publication
-    description: URL for publication(s) describing the study's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
     title: Publication
     range: uri 
     multivalued: true
   expectedNumberOfParticipants: 
     definition_uri: include:expectedNumberOfParticipants
-    description: Expected number of participants in this study. If additional explanation is needed, please add to Study Description field.
     title: Expected Number of Participants
     range: integer 
     required: true
@@ -252,7 +249,6 @@ slots:
     required: true
   dbgap: 
     definition_uri: include:dbgap
-    description: dbGaP "phs" accession code(s) associated with this Study, either for access or informational purposes (pipe-separated if multiple)
     title: dbGaP
     range: string
     multivalued: true
