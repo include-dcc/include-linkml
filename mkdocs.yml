@@ -23,13 +23,11 @@ plugins:
   - mermaid2:
       version: 10.9.0
 
-#http://127.0.0.1:8000/include-linkml/
 nav:
   - Index: index.md
   - About: about.md
   - Previous Releases:
       - Version 2.2.0: https://include-dcc.github.io/include-linkml/v2.2.0/index.html
       - Version 2.1.0: https://include-dcc.github.io/include-linkml/v2.1.0/index.html
-      - Version 2.0.0: https://include-dcc.github.io/include-linkml/v2.0.0/index.html
 site_url: https://include-dcc.github.io/include-linkml/
 repo_url: https://github.com/include-dcc/include-linkml/
