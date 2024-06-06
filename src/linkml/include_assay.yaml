@@ -32,6 +32,7 @@ classes:
   #   - hasOutput
   #   title: Assay
   Biospecimen:
+    title: Biospecimen
     annotations:
       required:
         tag: required
@@ -42,8 +43,6 @@ classes:
     definition_uri: include:Biospecimen
     description: A Biospecimen Collected from A Participant
     is_a: Thing
-    name: Biospecimen
-    title: Biospecimen
     slots:
     - studyCode
     - participantGlobalId
@@ -70,6 +69,7 @@ classes:
     - containerAvailability
 
   DataFile:
+    title: Data File
     annotations:
       required:
         tag: required
@@ -78,19 +78,19 @@ classes:
         tag: requires_component
         value: Study,Participant,Biospecimen
     definition_uri: include:DataFile
-    description: A DataFile Associated with a Participant or Study or Biospecimen
+    description: Metadata about Data Files
     is_a: Thing
-    name: DataFile
-    title: Data File
     slots:
     - studyCode
-    - participantGlobalId
-    - participantExternalId    
-    - sampleGlobalId
-    - sampleExternalId
-    - fileGlobalId
-    - fileExternalId
+    - participantGlobalId #usage of this field in multi-participant files is TBD
+    - participantExternalId #usage of this field in multi-participant files is TBD   
+    - sampleGlobalId #usage of this field in multi-sample files is TBD
+    - sampleExternalId #usage of this field in multi-sample files is TBD
     - fileName
+    - fileGlobalId
+    - fileS3Location
+    - fileUploadLocation
+    - drsUri
     - fileHash
     - dataAccess
     - dataCategory
@@ -100,8 +100,14 @@ classes:
     - fileFormat
     - fileSize
     - fileSizeUnit
-    - accessUrl
-    - publicationDoi
+    slot_usage:
+      dataCategory:
+        description: General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune profiling, Transcriptomics)
+      dataType:
+        description: Specific type of data contained in file (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
+      experimentalStrategy:
+        description: Experimental method used to obtain data in file (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
+
 
 slots:
   sampleGlobalId:
@@ -205,35 +211,44 @@ slots:
     range: string
   sampleAvailability:
     definition_uri: include:sampleAvailability
-    description: Whether or not the sample is potentially available for sharing through
-      the Virtual Biorepository
+    description: Whether or not the Sample (any Container thereof) is potentially available for sharing through the Virtual Biorepository
     title: Sample Availability
     required: true
-    range: enum_sampleAvailability
+    range: enum_Availability
   containerAvailability:
     definition_uri: include:containerAvailability
-    description: Whether or not the container is potentially available for sharing through
-      the Virtual Biorepository
+    description: Whether or not the specific Container is potentially available for sharing through the Virtual Biorepository
     title: Container Availability
-    range: enum_containerAvailability
-  fileGlobalId:
-    definition_uri: include:fileGlobalId
-    description: INCLUDE global file identifier, assigned by DCC
-    title: File Global ID
-    required: true
-    range: string
-  fileExternalId:
-    definition_uri: include:fileExternalId
-    description: Unique identifier for data file, assigned by data contributor
-    title: File External ID
-    required: true
-    range: string
+    range: enum_Availability
   fileName:
     definition_uri: include:fileName
     description: Name of file, assigned by data contributor
     title: File Name
     required: true
     range: string
+  fileGlobalId:
+    definition_uri: include:fileGlobalId
+    description: INCLUDE global file identifier, assigned by DCC
+    title: File Global ID
+    required: true
+    range: string
+  fileUploadLocation:
+    definition_uri: include:fileUploadLocation
+    description: Where source file was uploaded, if not directly to an S3 bucket (e.g. Synapse)
+    title: File Upload Location
+    range: string
+  fileS3Location:
+    definition_uri: include:fileS3Location
+    description: S3 bucket location of file; also serves as dewrangle descriptor
+    title: File S3 Location
+    required: true
+    range: string
+  drsUri:
+    definition_uri: include:drsUri
+    description: Data Repository Services API Uniform Resource Identifier
+    title: DRS URI
+    required: true
+    range: uriorcurie
   fileHash:
     definition_uri: include:fileHash
     description: md5 hash of this file for validation (if known)
@@ -244,28 +259,27 @@ slots:
     description: Type of access control on this file, determined by DCC
     title: Data Access
     range: enum_dataAccess
+    required: true
   dataCategory:
     definition_uri: include:dataCategory
-    description: General category of data in file (e.g. Clinical, Genomics, Proteomics,
-      Metabolomics, Immune profiling, Transcriptomics)
     title: Data Category
     required: true
     range: enum_dataCategory
   dataType:
     definition_uri: include:dataType
-    description: Specific type of data contained in file (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
     title: Data Type
     range: string
   experimentalStrategy:
     definition_uri: include:experimentalStrategy
-    description: Experimental method used to obtain data in file (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
     title: Experimental Strategy
     range: string
+    multivalued: true
   experimentalPlatform:
     definition_uri: include:experimentalPlatform
-    description: Specific platform used to perform experiment (e.g. SOMAscan, MSD, Luminex, Illumina)
+    description: Specific platform used to perform experiment; pipe-separated if multiple (e.g. SOMAscan, MSD, Luminex, Illumina)
     title: Experimental Platform
     range: string
+    multivalued: true
   fileFormat:
     definition_uri: include:fileFormat
     description: Format of file (e.g. tsv, cram, gvcf, vcf, maf, txt, pdf, html, png)
@@ -282,16 +296,6 @@ slots:
     description: Unit of file size
     title: File Size Unit
     range: string # eventually want ontology terms here
-  accessUrl:
-    definition_uri: include:accessUrl
-    description: URL/URI to file repository location
-    title: Access URL
-    range: uriorcurie
-  publicationDoi:
-    definition_uri: include:publicationDoi
-    description: DOI of publication associated with this file, if published
-    title: Publication DOI
-    range: string # is there a doi range?
 enums:
   enum_dataAccess:
     definition_uri: include:enum_dataAccess
@@ -306,27 +310,15 @@ enums:
       registered:
         text: registered
         title: Registered
-  enum_sampleAvailability:
-    definition_uri: include:enum_sampleAvailability
-    name: enum_sampleAvailability
+  enum_Availability:
+    definition_uri: include:enum_Availability
+    name: enum_Availability
     permissible_values:
       available:
         text: available
         title: Available
-        description: Sample (any Container) is potentially available to be requested through the Virtual Biorepository (see VBR contact info in Study page)
+        description: Sample or Container is potentially available to be requested through the Virtual Biorepository (see VBR contact info in Study page)
       unavailable:
         text: unavailable
         title: Unavailable
-        description: Sample either was available through Virtual Biorepository but has been used up, or is part of a study that is not participating in the VBR
-  enum_containerAvailability:
-    definition_uri: include:enum_containerAvailability
-    name: enum_containerAvailability
-    permissible_values:
-      available:
-        text: available
-        title: Available
-        description: Container is potentially available to be requested through the Virtual Biorepository (see VBR contact info in Study page)
-      unavailable:
-        text: unavailable
-        title: Unavailable
-        description: Container either was available through Virtual Biorepository but has been used up, or is part of a study that is not participating in the VBR
+        description: Sample or Container either was available through Virtual Biorepository but has been used up, or is part of a study that is not participating in the VBR

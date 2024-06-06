@@ -22,7 +22,7 @@ default_curi_maps:
 - semweb_context
 classes:
   Participant:
-    name: Participant
+    title: Participant
     definition_uri: include:Participant
     annotations:
       required:
@@ -32,7 +32,6 @@ classes:
         tag: requires_component
         value: Study,DataFile
     description: Demographic and clinical information about the participant
-    title: Participant
     is_a: Thing
     slots:
     - studyCode     
@@ -69,7 +68,6 @@ classes:
   #   slots:
   #   - has_member # add this slot later
   Condition:
-    name: Condition
     title: Condition
     annotations:
       required:

@@ -13,18 +13,19 @@ prefixes:
 imports:
 - linkml:types
 - include_core
+- include_participant
+- include_assay
 default_curi_maps:
 - semweb_context
 classes:
   Study:
-    name: Study
+    title: Study
     definition_uri: include:Study
     annotations:
       required: 
         tag: required
         value: 'True'
     description: General information about the study
-    title: Study
     is_a: Thing
     slots: 
     - studyCode
@@ -43,46 +44,85 @@ classes:
     - selectionCriteria
     - studyDesign
     - clinicalDataSourceType
-    - expectedDataCategory
+    - dataCategory
     - studyWebsite
-    - studyDbgap
-    - studyPublication
-    - studyExpectedNumberOfParticipants
+    - dbgap
+    - publication
+    - expectedNumberOfParticipants
     - guidType
     - acknowledgments
     - citationStatement
+    slot_usage:
+      dataCategory:
+        description: Categories of data expected to be collected in this study
+      dbgap:
+        description: dbGaP "phs" accession code(s) associated with this Study, either for access or informational purposes (pipe-separated if multiple)
+      publication:
+        description: URL for publication(s) describing the study's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
+      expectedNumberOfParticipants:
+        description: Expected number of participants in this study. If additional explanation is needed, please add to Study Description field.
+
   Dataset:
-    name: Dataset
+    title: Dataset
     definition_uri: include:Dataset
     annotations:
       required:
         tag: required
         value: 'False' #may change to True later
     description: Information about a specific grouping of data files
-    title: Dataset
     is_a: Thing
     slots: 
     - studyCode
-    #add hasDataset to Assay>DataFile?
     - datasetName
     - datasetDescription
     - datasetGlobalId
     - datasetExternalId
-    - datasetExpectedNumberOfParticipants
+    - expectedNumberOfParticipants
     - expectedNumberOfFiles
-#   - fileIdList #TBD - may make this into a separate manifest
     - dataCollectionStartYear
     - dataCollectionEndYear
-    - datasetDataCategory
-    - datasetDataType
-    - datasetExperimentalStrategy
-    - datasetExperimentalPlatform
-    - datasetPublication
+    - dataCategory
+    - dataType
+    - experimentalStrategy
+    - experimentalPlatform
+    - publication
     - accessLimitations
     - accessRequirements
-    - datasetDbgap
+    - dbgap
     - otherRepository
     - otherAccessAuthority
+    - isHarmonized
+    slot_usage:
+      dataCategory:
+        description: General category of data in Dataset; pipe-separated if multiple
+      dbgap:
+        description: dbGaP "phs" accession code(s) required to access the files in this Dataset, if applicable (pipe-separated if multiple)
+      publication:
+        description: URL for publication(s) describing the Dataset's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
+      expectedNumberOfParticipants:
+        description: Expected number of participants in this Dataset. If additional explanation is needed, please add to Dataset Description field.
+      dataType:
+        description: Specific type of data contained in Dataset; pipe-separated if multiple (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
+      experimentalStrategy: 
+        description: Experimental method used to obtain data in Dataset; pipe-separated if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
+
+  DatasetManifest:
+    title: Dataset Manifest
+    definition_uri: include:DatasetManifest
+    annotations:
+      required:
+        tag: required
+        value: 'False' #may change to True later
+    description: Mapping information for files in Dataset 
+    is_a: Thing
+    slots: 
+    - studyCode
+    - datasetName
+    - datasetGlobalId
+    - datasetExternalId
+    - fileName
+    - fileGlobalId
+    #TODO: add Dictonary File Name & Global ID 
 
 slots:
   studyCode:
@@ -186,28 +226,19 @@ slots:
     #TODO: replace enum_conditionDataSource with this - or consider deleting slot conditionDataSource
     required: true
     multivalued: true
-  expectedDataCategory:
-    definition_uri: include:expectedDataCategory
-    description: Categories of data expected to be collected in this study
-    title: Expected Data Category
-    range: enum_dataCategory 
-    required: true
-    multivalued: true
   studyWebsite:
     definition_uri: include:studyWebsite
     description: Website for the study
     title: Study Website
     range: uri
-  studyPublication: 
-    definition_uri: include:studyPublication
-    description: URL for publication(s) describing the study's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
-    title: Study Publication
+  publication: 
+    definition_uri: include:publication
+    title: Publication
     range: uri 
     multivalued: true
-  studyExpectedNumberOfParticipants: 
-    definition_uri: include:studyExpectedNumberOfParticipants
-    description: Expected number of participants in this study. If additional explanation is needed, please add to Study Description field.
-    title: Study Expected Number of Participants
+  expectedNumberOfParticipants: 
+    definition_uri: include:expectedNumberOfParticipants
+    title: Expected Number of Participants
     range: integer 
     required: true
   guidType:
@@ -216,10 +247,9 @@ slots:
     title: GUID Type
     range: enum_guidType 
     required: true
-  studyDbgap: 
-    definition_uri: include:studyDbgap
-    description: dbGaP "phs" accession code(s) associated with this Study, either for access or informational purposes (pipe-separated if multiple)
-    title: Study dbGaP
+  dbgap: 
+    definition_uri: include:dbgap
+    title: dbGaP
     range: string
     multivalued: true
   acknowledgments: 
@@ -256,32 +286,12 @@ slots:
     description: Unique identifier or code for dataset, if provided by contributor
     title: Dataset External ID
     range: string 
-  # fileIdList: 
-  #   definition_uri: include:fileIdList
-  #   description: Global IDs for files associated with this dataset. Should include one or more dictionary files that provide definitions for every field in every file
-  #   title: File ID List
-  #   range: string 
-  #   multivalued: true
-  #   required: false #should be derived from dataFile if omics
-  datasetExpectedNumberOfParticipants: 
-    definition_uri: include:datasetExpectedNumberOfParticipants
-    description: Expected number of participants in this dataset. If additional explanation is needed, please add to Dataset Description field.
-    title: Dataset Expected Number of Participants
-    range: integer 
-    required: true
   expectedNumberOfFiles: 
     definition_uri: include:expectedNumberOfFiles
     description: Expected number of files associated with this dataset, including dictionaries. If additional explanation is needed, please add to Dataset Description field.
     title: Expected Number of Files
     range: integer 
     required: false #update to true when this is figured out
-  # participantIdList: 
-  #   definition_uri: include:participantIdList
-  #   description: Global IDs for Participants associated with this dataset
-  #   title: Participant ID List
-  #   range: string 
-  #   multivalued: true
-  #   required: false #not sure if we need this - update to true when this is figured out
   dataCollectionStartYear: 
     definition_uri: include:dataCollectionStartYear
     description: Year that data collection started
@@ -296,33 +306,6 @@ slots:
     range: string 
     #pattern: "^1|2\\d(3)$|nan"
     required: false
-  datasetDataCategory:
-    definition_uri: include:dataCategory
-    description: General category of data in dataset; pipe-separated if multiple
-    title: Dataset Data Category
-    required: true
-    range: enum_dataCategory
-  datasetDataType: 
-    definition_uri: include:dataType
-    description: Specific type of data contained in dataset; pipe-separated if multiple (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
-    title: Dataset Data Type
-    range: string #eventually share enum with dataFile
-  datasetExperimentalStrategy: 
-    definition_uri: include:experimentalStrategy
-    description: Experimental method used to obtain data in dataset; pipe-separated if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
-    title: Dataset Experimental Strategy
-    range: string #eventually share enum with dataFile
-  datasetExperimentalPlatform: 
-    definition_uri: include:experimentalPlatform
-    description: Specific platform used to perform experiment; pipe-separated if multiple (e.g. SOMAscan, MSD, Luminex, Illumina)
-    title: Dataset Experimental Platform
-    range: string #eventually share enum with dataFile
-  datasetPublication: 
-    definition_uri: include:datasetPublication
-    description: URL for publication(s) describing the dataset's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
-    title: Dataset Publication
-    range: uri 
-    multivalued: true
   accessLimitations: 
     definition_uri: include:accessLimitations
     description: Data access limitations, as defined in the GA4GH Data Use Ontology (DUO; can list more than one, pipe separated)
@@ -335,12 +318,6 @@ slots:
     title: Access Requirements
     range: string 
     required: false #make true when we have enums
-  datasetDbgap: 
-    definition_uri: include:datasetDbgap
-    description: dbGaP "phs" accession code(s) required to access the files in this Dataset, if applicable (pipe-separated if multiple)
-    title: Dataset dbGaP
-    range: string
-    multivalued: true
   otherRepository: 
     definition_uri: include:otherRepository
     description: URL if dataset is already deposited in a public repository other than dbGaP (e.g. LONI, Metabolomics Workbench, etc.)
@@ -351,6 +328,11 @@ slots:
     description: Email or URL for dataset's Access Authority, if not dbGaP
     title: Other Access Authority
     range: string
+  isHarmonized: 
+    definition_uri: include:isHarmonized
+    description: For omics datasets, is this Dataset already harmonized and available in the INCLUDE Data Hub?
+    title: Is Harmonized?
+    range: boolean
 
 enums:
   enum_program:
