@@ -228,30 +228,20 @@
 
       Dataset : accessRequirements
 
+      Dataset : dataCategory
+
+
+
+
+    Dataset --&gt; "1" EnumDataCategory : dataCategory
+    click EnumDataCategory href "../EnumDataCategory"
+
+
       Dataset : dataCollectionEndYear
 
       Dataset : dataCollectionStartYear
 
-      Dataset : datasetDataCategory
-
-
-
-
-    Dataset --&gt; "1" EnumDataCategory : datasetDataCategory
-    click EnumDataCategory href "../EnumDataCategory"
-
-
-      Dataset : datasetDataType
-
-      Dataset : datasetDbgap
-
       Dataset : datasetDescription
-
-      Dataset : datasetExpectedNumberOfParticipants
-
-      Dataset : datasetExperimentalPlatform
-
-      Dataset : datasetExperimentalStrategy
 
       Dataset : datasetExternalId
 
@@ -259,13 +249,25 @@
 
       Dataset : datasetName
 
-      Dataset : datasetPublication
+      Dataset : dataType
+
+      Dataset : dbgap
 
       Dataset : expectedNumberOfFiles
+
+      Dataset : expectedNumberOfParticipants
+
+      Dataset : experimentalPlatform
+
+      Dataset : experimentalStrategy
+
+      Dataset : isHarmonized
 
       Dataset : otherAccessAuthority
 
       Dataset : otherRepository
+
+      Dataset : publication
 
       Dataset : studyCode
 
@@ -327,9 +329,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../datasetExpectedNumberOfParticipants/">datasetExpectedNumberOfParticipants</a></td>
+<td><a href="../expectedNumberOfParticipants/">expectedNumberOfParticipants</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>Expected number of participants in this dataset</td>
+<td>Expected number of participants in this Dataset</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -351,33 +353,33 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../datasetDataCategory/">datasetDataCategory</a></td>
+<td><a href="../dataCategory/">dataCategory</a></td>
 <td>1 <br/> <a href="../EnumDataCategory/">EnumDataCategory</a></td>
-<td>General category of data in dataset; pipe-separated if multiple</td>
+<td>General category of data in Dataset; pipe-separated if multiple</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../datasetDataType/">datasetDataType</a></td>
+<td><a href="../dataType/">dataType</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Specific type of data contained in dataset; pipe-separated if multiple (e</td>
+<td>Specific type of data contained in Dataset; pipe-separated if multiple (e</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../datasetExperimentalStrategy/">datasetExperimentalStrategy</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Experimental method used to obtain data in dataset; pipe-separated if multipl...</td>
+<td><a href="../experimentalStrategy/">experimentalStrategy</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Experimental method used to obtain data in Dataset; pipe-separated if multipl...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../datasetExperimentalPlatform/">datasetExperimentalPlatform</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../experimentalPlatform/">experimentalPlatform</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td>Specific platform used to perform experiment; pipe-separated if multiple (e</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../datasetPublication/">datasetPublication</a></td>
+<td><a href="../publication/">publication</a></td>
 <td>* <br/> <a href="../Uri/">Uri</a></td>
-<td>URL for publication(s) describing the dataset's rationale and methodology (Pu...</td>
+<td>URL for publication(s) describing the Dataset's rationale and methodology (Pu...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -393,7 +395,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../datasetDbgap/">datasetDbgap</a></td>
+<td><a href="../dbgap/">dbgap</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>dbGaP "phs" accession code(s) required to access the files in this Dataset, i...</td>
 <td>direct</td>
@@ -408,6 +410,12 @@
 <td><a href="../otherAccessAuthority/">otherAccessAuthority</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Email or URL for dataset's Access Authority, if not dbGaP</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../isHarmonized/">isHarmonized</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>For omics datasets, is this Dataset already harmonized and available in the I...</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -471,20 +479,67 @@ slots:
 - datasetDescription
 - datasetGlobalId
 - datasetExternalId
-- datasetExpectedNumberOfParticipants
+- expectedNumberOfParticipants
 - expectedNumberOfFiles
 - dataCollectionStartYear
 - dataCollectionEndYear
-- datasetDataCategory
-- datasetDataType
-- datasetExperimentalStrategy
-- datasetExperimentalPlatform
-- datasetPublication
+- dataCategory
+- dataType
+- experimentalStrategy
+- experimentalPlatform
+- publication
 - accessLimitations
 - accessRequirements
-- datasetDbgap
+- dbgap
 - otherRepository
 - otherAccessAuthority
+- isHarmonized
+slot_usage:
+  dataCategory:
+    name: dataCategory
+    description: General category of data in Dataset; pipe-separated if multiple
+    domain_of:
+    - DataFile
+    - Study
+    - Dataset
+  dbgap:
+    name: dbgap
+    description: dbGaP "phs" accession code(s) required to access the files in this
+      Dataset, if applicable (pipe-separated if multiple)
+    domain_of:
+    - Study
+    - Dataset
+  publication:
+    name: publication
+    description: URL for publication(s) describing the Dataset's rationale and methodology
+      (PubMed Central preferred but not required; pipe-separated if multiple)
+    domain_of:
+    - Study
+    - Dataset
+  expectedNumberOfParticipants:
+    name: expectedNumberOfParticipants
+    description: Expected number of participants in this Dataset. If additional explanation
+      is needed, please add to Dataset Description field.
+    domain_of:
+    - Study
+    - Dataset
+  dataType:
+    name: dataType
+    description: Specific type of data contained in Dataset; pipe-separated if multiple
+      (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration,
+      Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications,
+      Gene fusions, Somatic copy number variations, Somatic structural variations)
+    domain_of:
+    - DataFile
+    - Dataset
+  experimentalStrategy:
+    name: experimentalStrategy
+    description: Experimental method used to obtain data in Dataset; pipe-separated
+      if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass
+      spec metabolomics)
+    domain_of:
+    - DataFile
+    - Dataset
 
 </code></pre>
 </details>
@@ -500,6 +555,52 @@ description: Information about a specific grouping of data files
 title: Dataset
 from_schema: https://w3id.org/include
 is_a: Thing
+slot_usage:
+  dataCategory:
+    name: dataCategory
+    description: General category of data in Dataset; pipe-separated if multiple
+    domain_of:
+    - DataFile
+    - Study
+    - Dataset
+  dbgap:
+    name: dbgap
+    description: dbGaP "phs" accession code(s) required to access the files in this
+      Dataset, if applicable (pipe-separated if multiple)
+    domain_of:
+    - Study
+    - Dataset
+  publication:
+    name: publication
+    description: URL for publication(s) describing the Dataset's rationale and methodology
+      (PubMed Central preferred but not required; pipe-separated if multiple)
+    domain_of:
+    - Study
+    - Dataset
+  expectedNumberOfParticipants:
+    name: expectedNumberOfParticipants
+    description: Expected number of participants in this Dataset. If additional explanation
+      is needed, please add to Dataset Description field.
+    domain_of:
+    - Study
+    - Dataset
+  dataType:
+    name: dataType
+    description: Specific type of data contained in Dataset; pipe-separated if multiple
+      (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration,
+      Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications,
+      Gene fusions, Somatic copy number variations, Somatic structural variations)
+    domain_of:
+    - DataFile
+    - Dataset
+  experimentalStrategy:
+    name: experimentalStrategy
+    description: Experimental method used to obtain data in Dataset; pipe-separated
+      if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass
+      spec metabolomics)
+    domain_of:
+    - DataFile
+    - Dataset
 attributes:
   studyCode:
     name: studyCode
@@ -513,10 +614,11 @@ attributes:
     domain_of:
     - Biospecimen
     - DataFile
-    - Study
-    - Dataset
     - Participant
     - Condition
+    - Study
+    - Dataset
+    - DatasetManifest
     range: enum_studyCode
     required: true
   datasetName:
@@ -530,6 +632,7 @@ attributes:
     owner: Dataset
     domain_of:
     - Dataset
+    - DatasetManifest
     range: string
     required: true
   datasetDescription:
@@ -556,6 +659,7 @@ attributes:
     owner: Dataset
     domain_of:
     - Dataset
+    - DatasetManifest
     range: string
     required: false
   datasetExternalId:
@@ -569,18 +673,20 @@ attributes:
     owner: Dataset
     domain_of:
     - Dataset
+    - DatasetManifest
     range: string
-  datasetExpectedNumberOfParticipants:
-    name: datasetExpectedNumberOfParticipants
-    definition_uri: include:datasetExpectedNumberOfParticipants
-    description: Expected number of participants in this dataset. If additional explanation
+  expectedNumberOfParticipants:
+    name: expectedNumberOfParticipants
+    definition_uri: include:expectedNumberOfParticipants
+    description: Expected number of participants in this Dataset. If additional explanation
       is needed, please add to Dataset Description field.
-    title: Dataset Expected Number of Participants
+    title: Expected Number of Participants
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: datasetExpectedNumberOfParticipants
+    alias: expectedNumberOfParticipants
     owner: Dataset
     domain_of:
+    - Study
     - Dataset
     range: integer
     required: true
@@ -625,73 +731,81 @@ attributes:
     - Dataset
     range: string
     required: false
-  datasetDataCategory:
-    name: datasetDataCategory
+  dataCategory:
+    name: dataCategory
     definition_uri: include:dataCategory
-    description: General category of data in dataset; pipe-separated if multiple
-    title: Dataset Data Category
+    description: General category of data in Dataset; pipe-separated if multiple
+    title: Data Category
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: datasetDataCategory
+    alias: dataCategory
     owner: Dataset
     domain_of:
+    - DataFile
+    - Study
     - Dataset
     range: enum_dataCategory
     required: true
-  datasetDataType:
-    name: datasetDataType
+  dataType:
+    name: dataType
     definition_uri: include:dataType
-    description: Specific type of data contained in dataset; pipe-separated if multiple
+    description: Specific type of data contained in Dataset; pipe-separated if multiple
       (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration,
       Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications,
       Gene fusions, Somatic copy number variations, Somatic structural variations)
-    title: Dataset Data Type
+    title: Data Type
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: datasetDataType
+    alias: dataType
     owner: Dataset
     domain_of:
+    - DataFile
     - Dataset
     range: string
-  datasetExperimentalStrategy:
-    name: datasetExperimentalStrategy
+  experimentalStrategy:
+    name: experimentalStrategy
     definition_uri: include:experimentalStrategy
-    description: Experimental method used to obtain data in dataset; pipe-separated
+    description: Experimental method used to obtain data in Dataset; pipe-separated
       if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass
       spec metabolomics)
-    title: Dataset Experimental Strategy
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: datasetExperimentalStrategy
-    owner: Dataset
-    domain_of:
-    - Dataset
-    range: string
-  datasetExperimentalPlatform:
-    name: datasetExperimentalPlatform
-    definition_uri: include:experimentalPlatform
-    description: Specific platform used to perform experiment; pipe-separated if multiple
-      (e.g. SOMAscan, MSD, Luminex, Illumina)
-    title: Dataset Experimental Platform
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: datasetExperimentalPlatform
-    owner: Dataset
-    domain_of:
-    - Dataset
-    range: string
-  datasetPublication:
-    name: datasetPublication
-    definition_uri: include:datasetPublication
-    description: URL for publication(s) describing the dataset's rationale and methodology
-      (PubMed Central preferred but not required; pipe-separated if multiple)
-    title: Dataset Publication
+    title: Experimental Strategy
     from_schema: https://w3id.org/include
     rank: 1000
     multivalued: true
-    alias: datasetPublication
+    alias: experimentalStrategy
     owner: Dataset
     domain_of:
+    - DataFile
+    - Dataset
+    range: string
+  experimentalPlatform:
+    name: experimentalPlatform
+    definition_uri: include:experimentalPlatform
+    description: Specific platform used to perform experiment; pipe-separated if multiple
+      (e.g. SOMAscan, MSD, Luminex, Illumina)
+    title: Experimental Platform
+    from_schema: https://w3id.org/include
+    rank: 1000
+    multivalued: true
+    alias: experimentalPlatform
+    owner: Dataset
+    domain_of:
+    - DataFile
+    - Dataset
+    range: string
+  publication:
+    name: publication
+    definition_uri: include:publication
+    description: URL for publication(s) describing the Dataset's rationale and methodology
+      (PubMed Central preferred but not required; pipe-separated if multiple)
+    title: Publication
+    from_schema: https://w3id.org/include
+    rank: 1000
+    multivalued: true
+    alias: publication
+    owner: Dataset
+    domain_of:
+    - Study
     - Dataset
     range: uri
   accessLimitations:
@@ -722,18 +836,19 @@ attributes:
     - Dataset
     range: string
     required: false
-  datasetDbgap:
-    name: datasetDbgap
-    definition_uri: include:datasetDbgap
+  dbgap:
+    name: dbgap
+    definition_uri: include:dbgap
     description: dbGaP "phs" accession code(s) required to access the files in this
       Dataset, if applicable (pipe-separated if multiple)
-    title: Dataset dbGaP
+    title: dbGaP
     from_schema: https://w3id.org/include
     rank: 1000
     multivalued: true
-    alias: datasetDbgap
+    alias: dbgap
     owner: Dataset
     domain_of:
+    - Study
     - Dataset
     range: string
   otherRepository:
@@ -761,6 +876,19 @@ attributes:
     domain_of:
     - Dataset
     range: string
+  isHarmonized:
+    name: isHarmonized
+    definition_uri: include:isHarmonized
+    description: For omics datasets, is this Dataset already harmonized and available
+      in the INCLUDE Data Hub?
+    title: Is Harmonized?
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: isHarmonized
+    owner: Dataset
+    domain_of:
+    - Dataset
+    range: boolean
 
 </code></pre>
 </details>

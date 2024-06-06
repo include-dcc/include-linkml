@@ -345,7 +345,7 @@
 
 
 <h1 id="slot-sample-availability-sampleavailability">Slot: Sample Availability (sampleAvailability)</h1>
-<p><em>Whether or not the sample is potentially available for sharing through the Virtual Biorepository</em></p>
+<p><em>Whether or not the Sample (any Container thereof) is potentially available for sharing through the Virtual Biorepository</em></p>
 <p>URI: <a href="https://w3id.org/include/sampleAvailability">include:sampleAvailability</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -369,7 +369,7 @@
 <h2 id="properties">Properties</h2>
 <ul>
 <li>
-<p>Range: <a href="../EnumSampleAvailability/">EnumSampleAvailability</a></p>
+<p>Range: <a href="../EnumAvailability/">EnumAvailability</a></p>
 </li>
 <li>
 <p>Required: True</p>
@@ -385,15 +385,15 @@
 
 <pre><code class="language-yaml">name: sampleAvailability
 definition_uri: include:sampleAvailability
-description: Whether or not the sample is potentially available for sharing through
-  the Virtual Biorepository
+description: Whether or not the Sample (any Container thereof) is potentially available
+  for sharing through the Virtual Biorepository
 title: Sample Availability
 from_schema: https://w3id.org/include
 rank: 1000
 alias: sampleAvailability
 domain_of:
 - Biospecimen
-range: enum_sampleAvailability
+range: enum_Availability
 required: true
 
 </code></pre>

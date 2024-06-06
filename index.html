@@ -433,11 +433,15 @@
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="DataFile/">DataFile</a></td>
-<td>A DataFile Associated with a Participant or Study or Biospecimen</td>
+<td>Metadata about Data Files</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Dataset/">Dataset</a></td>
 <td>Information about a specific grouping of data files</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="DatasetManifest/">DatasetManifest</a></td>
+<td>Mapping information for files in Dataset</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Participant/">Participant</a></td>
@@ -465,10 +469,6 @@
 <tr>
 <td><a href="accessRequirements/">accessRequirements</a></td>
 <td>Data access requirements, as defined in the GA4GH Data Use Ontology (DUO; can...</td>
-</tr>
-<tr>
-<td><a href="accessUrl/">accessUrl</a></td>
-<td>URL/URI to file repository location</td>
 </tr>
 <tr>
 <td><a href="acknowledgments/">acknowledgments</a></td>
@@ -540,7 +540,7 @@
 </tr>
 <tr>
 <td><a href="containerAvailability/">containerAvailability</a></td>
-<td>Whether or not the container is potentially available for sharing through the...</td>
+<td>Whether or not the specific Container is potentially available for sharing th...</td>
 </tr>
 <tr>
 <td><a href="containerExternalId/">containerExternalId</a></td>
@@ -556,7 +556,7 @@
 </tr>
 <tr>
 <td><a href="dataCategory/">dataCategory</a></td>
-<td>General category of data in file (e</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="dataCollectionEndYear/">dataCollectionEndYear</a></td>
@@ -567,32 +567,8 @@
 <td>Year that data collection started</td>
 </tr>
 <tr>
-<td><a href="datasetDataCategory/">datasetDataCategory</a></td>
-<td>General category of data in dataset; pipe-separated if multiple</td>
-</tr>
-<tr>
-<td><a href="datasetDataType/">datasetDataType</a></td>
-<td>Specific type of data contained in dataset; pipe-separated if multiple (e</td>
-</tr>
-<tr>
-<td><a href="datasetDbgap/">datasetDbgap</a></td>
-<td>dbGaP "phs" accession code(s) required to access the files in this Dataset, i...</td>
-</tr>
-<tr>
 <td><a href="datasetDescription/">datasetDescription</a></td>
 <td>Brief additional notes about the dataset (1-3 sentences) that are not already...</td>
-</tr>
-<tr>
-<td><a href="datasetExpectedNumberOfParticipants/">datasetExpectedNumberOfParticipants</a></td>
-<td>Expected number of participants in this dataset</td>
-</tr>
-<tr>
-<td><a href="datasetExperimentalPlatform/">datasetExperimentalPlatform</a></td>
-<td>Specific platform used to perform experiment; pipe-separated if multiple (e</td>
-</tr>
-<tr>
-<td><a href="datasetExperimentalStrategy/">datasetExperimentalStrategy</a></td>
-<td>Experimental method used to obtain data in dataset; pipe-separated if multipl...</td>
 </tr>
 <tr>
 <td><a href="datasetExternalId/">datasetExternalId</a></td>
@@ -607,16 +583,20 @@
 <td>Full name of the dataset, provided by contributor</td>
 </tr>
 <tr>
-<td><a href="datasetPublication/">datasetPublication</a></td>
-<td>URL for publication(s) describing the dataset's rationale and methodology (Pu...</td>
+<td><a href="dataType/">dataType</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="dataType/">dataType</a></td>
-<td>Specific type of data contained in file (e</td>
+<td><a href="dbgap/">dbgap</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="downSyndromeStatus/">downSyndromeStatus</a></td>
 <td>Down Syndrome status of participant</td>
+</tr>
+<tr>
+<td><a href="drsUri/">drsUri</a></td>
+<td>Data Repository Services API Uniform Resource Identifier</td>
 </tr>
 <tr>
 <td><a href="ethnicity/">ethnicity</a></td>
@@ -631,20 +611,20 @@
 <td>Type of event for which Event ID is given (Visit, Survey completion, Sample c...</td>
 </tr>
 <tr>
-<td><a href="expectedDataCategory/">expectedDataCategory</a></td>
-<td>Categories of data expected to be collected in this study</td>
-</tr>
-<tr>
 <td><a href="expectedNumberOfFiles/">expectedNumberOfFiles</a></td>
 <td>Expected number of files associated with this dataset, including dictionaries</td>
 </tr>
 <tr>
+<td><a href="expectedNumberOfParticipants/">expectedNumberOfParticipants</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="experimentalPlatform/">experimentalPlatform</a></td>
-<td>Specific platform used to perform experiment (e</td>
+<td>Specific platform used to perform experiment; pipe-separated if multiple (e</td>
 </tr>
 <tr>
 <td><a href="experimentalStrategy/">experimentalStrategy</a></td>
-<td>Experimental method used to obtain data in file (e</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="familyId/">familyId</a></td>
@@ -663,10 +643,6 @@
 <td>Participant External ID for Participant's father (NA if Participant is not th...</td>
 </tr>
 <tr>
-<td><a href="fileExternalId/">fileExternalId</a></td>
-<td>Unique identifier for data file, assigned by data contributor</td>
-</tr>
-<tr>
 <td><a href="fileFormat/">fileFormat</a></td>
 <td>Format of file (e</td>
 </tr>
@@ -683,12 +659,20 @@
 <td>Name of file, assigned by data contributor</td>
 </tr>
 <tr>
+<td><a href="fileS3Location/">fileS3Location</a></td>
+<td>S3 bucket location of file; also serves as dewrangle descriptor</td>
+</tr>
+<tr>
 <td><a href="fileSize/">fileSize</a></td>
 <td>Size of file, if known (mainly important if large)</td>
 </tr>
 <tr>
 <td><a href="fileSizeUnit/">fileSizeUnit</a></td>
 <td>Unit of file size</td>
+</tr>
+<tr>
+<td><a href="fileUploadLocation/">fileUploadLocation</a></td>
+<td>Where source file was uploaded, if not directly to an S3 bucket (e</td>
 </tr>
 <tr>
 <td><a href="firstPatientEngagementEvent/">firstPatientEngagementEvent</a></td>
@@ -705,6 +689,10 @@
 <tr>
 <td><a href="hpoLabel/">hpoLabel</a></td>
 <td>Label for Condition in the Human Phenotype Ontology (HPO)</td>
+</tr>
+<tr>
+<td><a href="isHarmonized/">isHarmonized</a></td>
+<td>For omics datasets, is this Dataset already harmonized and available in the I...</td>
 </tr>
 <tr>
 <td><a href="laboratoryProcedure/">laboratoryProcedure</a></td>
@@ -795,8 +783,8 @@
 <td>Funding source(s) for the study (pipe-separated if multiple)</td>
 </tr>
 <tr>
-<td><a href="publicationDoi/">publicationDoi</a></td>
-<td>DOI of publication associated with this file, if published</td>
+<td><a href="publication/">publication</a></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="race/">race</a></td>
@@ -808,7 +796,7 @@
 </tr>
 <tr>
 <td><a href="sampleAvailability/">sampleAvailability</a></td>
-<td>Whether or not the sample is potentially available for sharing through the Vi...</td>
+<td>Whether or not the Sample (any Container thereof) is potentially available fo...</td>
 </tr>
 <tr>
 <td><a href="sampleExternalId/">sampleExternalId</a></td>
@@ -851,24 +839,12 @@
 <td>Name of contact person for this study; pipe-separated if multiple</td>
 </tr>
 <tr>
-<td><a href="studyDbgap/">studyDbgap</a></td>
-<td>dbGaP "phs" accession code(s) associated with this Study, either for access o...</td>
-</tr>
-<tr>
 <td><a href="studyDescription/">studyDescription</a></td>
 <td>Brief description of the study (2-4 sentences)</td>
 </tr>
 <tr>
 <td><a href="studyDesign/">studyDesign</a></td>
 <td>Overall design of study, including whether it is longitudinal and whether fam...</td>
-</tr>
-<tr>
-<td><a href="studyExpectedNumberOfParticipants/">studyExpectedNumberOfParticipants</a></td>
-<td>Expected number of participants in this study</td>
-</tr>
-<tr>
-<td><a href="studyPublication/">studyPublication</a></td>
-<td>URL for publication(s) describing the study's rationale and methodology (PubM...</td>
 </tr>
 <tr>
 <td><a href="studyTitle/">studyTitle</a></td>
@@ -910,6 +886,10 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="EnumAvailability/">EnumAvailability</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="EnumClinicalDataSourceType/">EnumClinicalDataSourceType</a></td>
 <td></td>
 </tr>
@@ -923,10 +903,6 @@
 </tr>
 <tr>
 <td><a href="EnumConditionStatus/">EnumConditionStatus</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="EnumContainerAvailability/">EnumContainerAvailability</a></td>
 <td></td>
 </tr>
 <tr>
@@ -971,10 +947,6 @@
 </tr>
 <tr>
 <td><a href="EnumResearchDomain/">EnumResearchDomain</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="EnumSampleAvailability/">EnumSampleAvailability</a></td>
 <td></td>
 </tr>
 <tr>

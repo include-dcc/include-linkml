@@ -345,7 +345,7 @@
 
 
 <h1 id="slot-container-availability-containeravailability">Slot: Container Availability (containerAvailability)</h1>
-<p><em>Whether or not the container is potentially available for sharing through the Virtual Biorepository</em></p>
+<p><em>Whether or not the specific Container is potentially available for sharing through the Virtual Biorepository</em></p>
 <p>URI: <a href="https://w3id.org/include/containerAvailability">include:containerAvailability</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -368,7 +368,7 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../EnumContainerAvailability/">EnumContainerAvailability</a></li>
+<li>Range: <a href="../EnumAvailability/">EnumAvailability</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -380,15 +380,15 @@
 
 <pre><code class="language-yaml">name: containerAvailability
 definition_uri: include:containerAvailability
-description: Whether or not the container is potentially available for sharing through
-  the Virtual Biorepository
+description: Whether or not the specific Container is potentially available for sharing
+  through the Virtual Biorepository
 title: Container Availability
 from_schema: https://w3id.org/include
 rank: 1000
 alias: containerAvailability
 domain_of:
 - Biospecimen
-range: enum_containerAvailability
+range: enum_Availability
 
 </code></pre>
 

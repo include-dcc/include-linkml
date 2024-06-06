@@ -345,7 +345,7 @@
 
 
 <h1 id="slot-experimental-platform-experimentalplatform">Slot: Experimental Platform (experimentalPlatform)</h1>
-<p><em>Specific platform used to perform experiment (e.g. SOMAscan, MSD, Luminex, Illumina)</em></p>
+<p><em>Specific platform used to perform experiment; pipe-separated if multiple (e.g. SOMAscan, MSD, Luminex, Illumina)</em></p>
 <p>URI: <a href="https://w3id.org/include/experimentalPlatform">include:experimentalPlatform</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -361,14 +361,24 @@
 <tbody>
 <tr>
 <td><a href="../DataFile/">DataFile</a></td>
-<td>A DataFile Associated with a Participant or Study or Biospecimen</td>
+<td>Metadata about Data Files</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Dataset/">Dataset</a></td>
+<td>Information about a specific grouping of data files</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>
+<p>Range: <a href="../String/">String</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -380,14 +390,16 @@
 
 <pre><code class="language-yaml">name: experimentalPlatform
 definition_uri: include:experimentalPlatform
-description: Specific platform used to perform experiment (e.g. SOMAscan, MSD, Luminex,
-  Illumina)
+description: Specific platform used to perform experiment; pipe-separated if multiple
+  (e.g. SOMAscan, MSD, Luminex, Illumina)
 title: Experimental Platform
 from_schema: https://w3id.org/include
 rank: 1000
+multivalued: true
 alias: experimentalPlatform
 domain_of:
 - DataFile
+- Dataset
 range: string
 
 </code></pre>

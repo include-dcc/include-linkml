@@ -243,8 +243,8 @@
 
 
 
-    Biospecimen --&gt; "0..1" EnumContainerAvailability : containerAvailability
-    click EnumContainerAvailability href "../EnumContainerAvailability"
+    Biospecimen --&gt; "0..1" EnumAvailability : containerAvailability
+    click EnumAvailability href "../EnumAvailability"
 
 
       Biospecimen : containerExternalId
@@ -268,8 +268,8 @@
 
 
 
-    Biospecimen --&gt; "1" EnumSampleAvailability : sampleAvailability
-    click EnumSampleAvailability href "../EnumSampleAvailability"
+    Biospecimen --&gt; "1" EnumAvailability : sampleAvailability
+    click EnumAvailability href "../EnumAvailability"
 
 
       Biospecimen : sampleExternalId
@@ -439,14 +439,14 @@
 </tr>
 <tr>
 <td><a href="../sampleAvailability/">sampleAvailability</a></td>
-<td>1 <br/> <a href="../EnumSampleAvailability/">EnumSampleAvailability</a></td>
-<td>Whether or not the sample is potentially available for sharing through the Vi...</td>
+<td>1 <br/> <a href="../EnumAvailability/">EnumAvailability</a></td>
+<td>Whether or not the Sample (any Container thereof) is potentially available fo...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../containerAvailability/">containerAvailability</a></td>
-<td>0..1 <br/> <a href="../EnumContainerAvailability/">EnumContainerAvailability</a></td>
-<td>Whether or not the container is potentially available for sharing through the...</td>
+<td>0..1 <br/> <a href="../EnumAvailability/">EnumAvailability</a></td>
+<td>Whether or not the specific Container is potentially available for sharing th...</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -562,10 +562,11 @@ attributes:
     domain_of:
     - Biospecimen
     - DataFile
-    - Study
-    - Dataset
     - Participant
     - Condition
+    - Study
+    - Dataset
+    - DatasetManifest
     range: enum_studyCode
     required: true
   participantGlobalId:
@@ -846,8 +847,8 @@ attributes:
   sampleAvailability:
     name: sampleAvailability
     definition_uri: include:sampleAvailability
-    description: Whether or not the sample is potentially available for sharing through
-      the Virtual Biorepository
+    description: Whether or not the Sample (any Container thereof) is potentially
+      available for sharing through the Virtual Biorepository
     title: Sample Availability
     from_schema: https://w3id.org/include
     rank: 1000
@@ -855,13 +856,13 @@ attributes:
     owner: Biospecimen
     domain_of:
     - Biospecimen
-    range: enum_sampleAvailability
+    range: enum_Availability
     required: true
   containerAvailability:
     name: containerAvailability
     definition_uri: include:containerAvailability
-    description: Whether or not the container is potentially available for sharing
-      through the Virtual Biorepository
+    description: Whether or not the specific Container is potentially available for
+      sharing through the Virtual Biorepository
     title: Container Availability
     from_schema: https://w3id.org/include
     rank: 1000
@@ -869,7 +870,7 @@ attributes:
     owner: Biospecimen
     domain_of:
     - Biospecimen
-    range: enum_containerAvailability
+    range: enum_Availability
 
 </code></pre>
 </details>

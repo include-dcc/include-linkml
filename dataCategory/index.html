@@ -345,7 +345,6 @@
 
 
 <h1 id="slot-data-category-datacategory">Slot: Data Category (dataCategory)</h1>
-<p><em>General category of data in file (e.g. Clinical, Genomics, Proteomics, Metabolomics, Immune profiling, Transcriptomics)</em></p>
 <p>URI: <a href="https://w3id.org/include/dataCategory">include:dataCategory</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -361,8 +360,18 @@
 <tbody>
 <tr>
 <td><a href="../DataFile/">DataFile</a></td>
-<td>A DataFile Associated with a Participant or Study or Biospecimen</td>
-<td>no</td>
+<td>Metadata about Data Files</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../Dataset/">Dataset</a></td>
+<td>Information about a specific grouping of data files</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../Study/">Study</a></td>
+<td>General information about the study</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
@@ -385,14 +394,14 @@
 
 <pre><code class="language-yaml">name: dataCategory
 definition_uri: include:dataCategory
-description: General category of data in file (e.g. Clinical, Genomics, Proteomics,
-  Metabolomics, Immune profiling, Transcriptomics)
 title: Data Category
 from_schema: https://w3id.org/include
 rank: 1000
 alias: dataCategory
 domain_of:
 - DataFile
+- Study
+- Dataset
 range: enum_dataCategory
 required: true
 

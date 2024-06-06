@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://include-dcc.github.io/include_linkml/DataFile/" rel="canonical"/>
+<link href="https://include-dcc.github.io/include_linkml/DatasetManifest/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.0, mkdocs-material-8.5.10" name="generator"/>
-<title>Class: Data File (DataFile) - INCLUDE V2 Data Model</title>
+<title>Class: Dataset Manifest (DatasetManifest) - INCLUDE V2 Data Model</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-data-file-datafile">
+<a class="md-skip" href="#class-dataset-manifest-datasetmanifest">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: Data File (DataFile)
+              Class: Dataset Manifest (DatasetManifest)
             
           </span>
 </div>
@@ -212,74 +212,34 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/include-dcc/include_linkml/edit/master/docs/DataFile.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/include-dcc/include_linkml/edit/master/docs/DatasetManifest.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="class-data-file-datafile">Class: Data File (DataFile)</h1>
-<p><em>Metadata about Data Files</em></p>
-<p>URI: <a href="https://w3id.org/include/DataFile">include:DataFile</a></p>
+<h1 id="class-dataset-manifest-datasetmanifest">Class: Dataset Manifest (DatasetManifest)</h1>
+<p><em>Mapping information for files in Dataset</em></p>
+<p>URI: <a href="https://w3id.org/include/DatasetManifest">include:DatasetManifest</a></p>
 <div class="mermaid"> classDiagram
-    class DataFile
-    click DataFile href "../DataFile"
-      Thing &lt;|-- DataFile
+    class DatasetManifest
+    click DatasetManifest href "../DatasetManifest"
+      Thing &lt;|-- DatasetManifest
         click Thing href "../Thing"
 
-      DataFile : dataAccess
+      DatasetManifest : datasetExternalId
+
+      DatasetManifest : datasetGlobalId
+
+      DatasetManifest : datasetName
+
+      DatasetManifest : fileGlobalId
+
+      DatasetManifest : fileName
+
+      DatasetManifest : studyCode
 
 
 
 
-    DataFile --&gt; "1" EnumDataAccess : dataAccess
-    click EnumDataAccess href "../EnumDataAccess"
-
-
-      DataFile : dataCategory
-
-
-
-
-    DataFile --&gt; "1" EnumDataCategory : dataCategory
-    click EnumDataCategory href "../EnumDataCategory"
-
-
-      DataFile : dataType
-
-      DataFile : drsUri
-
-      DataFile : experimentalPlatform
-
-      DataFile : experimentalStrategy
-
-      DataFile : fileFormat
-
-      DataFile : fileGlobalId
-
-      DataFile : fileHash
-
-      DataFile : fileName
-
-      DataFile : fileS3Location
-
-      DataFile : fileSize
-
-      DataFile : fileSizeUnit
-
-      DataFile : fileUploadLocation
-
-      DataFile : participantExternalId
-
-      DataFile : participantGlobalId
-
-      DataFile : sampleExternalId
-
-      DataFile : sampleGlobalId
-
-      DataFile : studyCode
-
-
-
-
-    DataFile --&gt; "1" EnumStudyCode : studyCode
+    DatasetManifest --&gt; "1" EnumStudyCode : studyCode
     click EnumStudyCode href "../EnumStudyCode"
 
 
@@ -288,7 +248,7 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../Thing/">Thing</a><ul>
-<li><strong>DataFile</strong></li>
+<li><strong>DatasetManifest</strong></li>
 </ul>
 </li>
 </ul>
@@ -310,27 +270,21 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../participantGlobalId/">participantGlobalId</a></td>
+<td><a href="../datasetName/">datasetName</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td>Unique INCLUDE global identifier for the participant, assigned by DCC</td>
+<td>Full name of the dataset, provided by contributor</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../participantExternalId/">participantExternalId</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Unique, de-identified identifier for the participant, assigned by data contri...</td>
+<td><a href="../datasetGlobalId/">datasetGlobalId</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Unique Global ID for dataset, generated by DCC</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../sampleGlobalId/">sampleGlobalId</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>INCLUDE global identifier for sample, assigned by DCC</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../sampleExternalId/">sampleExternalId</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Unique identifier for sample, assigned by data contributor</td>
+<td><a href="../datasetExternalId/">datasetExternalId</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Unique identifier or code for dataset, if provided by contributor</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -343,78 +297,6 @@
 <td><a href="../fileGlobalId/">fileGlobalId</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>INCLUDE global file identifier, assigned by DCC</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../fileS3Location/">fileS3Location</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>S3 bucket location of file; also serves as dewrangle descriptor</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../fileUploadLocation/">fileUploadLocation</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Where source file was uploaded, if not directly to an S3 bucket (e</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../drsUri/">drsUri</a></td>
-<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>Data Repository Services API Uniform Resource Identifier</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../fileHash/">fileHash</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>md5 hash of this file for validation (if known)</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../dataAccess/">dataAccess</a></td>
-<td>1 <br/> <a href="../EnumDataAccess/">EnumDataAccess</a></td>
-<td>Type of access control on this file, determined by DCC</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../dataCategory/">dataCategory</a></td>
-<td>1 <br/> <a href="../EnumDataCategory/">EnumDataCategory</a></td>
-<td>General category of data in file (e</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../dataType/">dataType</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Specific type of data contained in file (e</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../experimentalStrategy/">experimentalStrategy</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Experimental method used to obtain data in file (e</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../experimentalPlatform/">experimentalPlatform</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Specific platform used to perform experiment; pipe-separated if multiple (e</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../fileFormat/">fileFormat</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Format of file (e</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../fileSize/">fileSize</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>Size of file, if known (mainly important if large)</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../fileSizeUnit/">fileSizeUnit</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Unit of file size</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -431,7 +313,7 @@
 <tbody>
 <tr>
 <td>required</td>
-<td>True</td>
+<td>False</td>
 </tr>
 </tbody>
 </table>
@@ -450,11 +332,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>include:DataFile</td>
+<td>include:DatasetManifest</td>
 </tr>
 <tr>
 <td>native</td>
-<td>include:DataFile</td>
+<td>include:DatasetManifest</td>
 </tr>
 </tbody>
 </table>
@@ -462,107 +344,38 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: DataFile
-definition_uri: include:DataFile
+<pre><code class="language-yaml">name: DatasetManifest
+definition_uri: include:DatasetManifest
 annotations:
   required:
     tag: required
-    value: 'True'
-  requires_component:
-    tag: requires_component
-    value: Study,Participant,Biospecimen
-description: Metadata about Data Files
-title: Data File
+    value: 'False'
+description: Mapping information for files in Dataset
+title: Dataset Manifest
 from_schema: https://w3id.org/include
 is_a: Thing
 slots:
 - studyCode
-- participantGlobalId
-- participantExternalId
-- sampleGlobalId
-- sampleExternalId
+- datasetName
+- datasetGlobalId
+- datasetExternalId
 - fileName
 - fileGlobalId
-- fileS3Location
-- fileUploadLocation
-- drsUri
-- fileHash
-- dataAccess
-- dataCategory
-- dataType
-- experimentalStrategy
-- experimentalPlatform
-- fileFormat
-- fileSize
-- fileSizeUnit
-slot_usage:
-  dataCategory:
-    name: dataCategory
-    description: General category of data in file (e.g. Clinical, Genomics, Proteomics,
-      Metabolomics, Immune profiling, Transcriptomics)
-    domain_of:
-    - DataFile
-    - Study
-    - Dataset
-  dataType:
-    name: dataType
-    description: Specific type of data contained in file (e.g. Preprocessed metabolite
-      relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide
-      variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy
-      number variations, Somatic structural variations)
-    domain_of:
-    - DataFile
-    - Dataset
-  experimentalStrategy:
-    name: experimentalStrategy
-    description: Experimental method used to obtain data in file (e.g. Whole genome
-      sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
-    domain_of:
-    - DataFile
-    - Dataset
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: DataFile
-definition_uri: include:DataFile
+<pre><code class="language-yaml">name: DatasetManifest
+definition_uri: include:DatasetManifest
 annotations:
   required:
     tag: required
-    value: 'True'
-  requires_component:
-    tag: requires_component
-    value: Study,Participant,Biospecimen
-description: Metadata about Data Files
-title: Data File
+    value: 'False'
+description: Mapping information for files in Dataset
+title: Dataset Manifest
 from_schema: https://w3id.org/include
 is_a: Thing
-slot_usage:
-  dataCategory:
-    name: dataCategory
-    description: General category of data in file (e.g. Clinical, Genomics, Proteomics,
-      Metabolomics, Immune profiling, Transcriptomics)
-    domain_of:
-    - DataFile
-    - Study
-    - Dataset
-  dataType:
-    name: dataType
-    description: Specific type of data contained in file (e.g. Preprocessed metabolite
-      relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide
-      variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy
-      number variations, Somatic structural variations)
-    domain_of:
-    - DataFile
-    - Dataset
-  experimentalStrategy:
-    name: experimentalStrategy
-    description: Experimental method used to obtain data in file (e.g. Whole genome
-      sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
-    domain_of:
-    - DataFile
-    - Dataset
 attributes:
   studyCode:
     name: studyCode
@@ -572,7 +385,7 @@ attributes:
     from_schema: https://w3id.org/include
     rank: 1000
     alias: studyCode
-    owner: DataFile
+    owner: DatasetManifest
     domain_of:
     - Biospecimen
     - DataFile
@@ -583,71 +396,47 @@ attributes:
     - DatasetManifest
     range: enum_studyCode
     required: true
-  participantGlobalId:
-    name: participantGlobalId
-    definition_uri: include:participantGlobalId
-    description: Unique INCLUDE global identifier for the participant, assigned by
-      DCC
-    title: Participant Global ID
+  datasetName:
+    name: datasetName
+    definition_uri: include:datasetName
+    description: Full name of the dataset, provided by contributor
+    title: Dataset Name
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: participantGlobalId
-    owner: DataFile
+    alias: datasetName
+    owner: DatasetManifest
     domain_of:
-    - Biospecimen
-    - DataFile
-    - Participant
-    - Condition
+    - Dataset
+    - DatasetManifest
     range: string
     required: true
-  participantExternalId:
-    name: participantExternalId
-    definition_uri: include:participantExternalId
-    description: Unique, de-identified identifier for the participant, assigned by
-      data contributor. External IDs must be two steps removed from personal information
-      in the study records.
-    title: Participant External ID
+  datasetGlobalId:
+    name: datasetGlobalId
+    definition_uri: include:datasetGlobalId
+    description: Unique Global ID for dataset, generated by DCC
+    title: Dataset Global ID
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: participantExternalId
-    owner: DataFile
+    alias: datasetGlobalId
+    owner: DatasetManifest
     domain_of:
-    - Biospecimen
-    - DataFile
-    - Participant
-    - Condition
+    - Dataset
+    - DatasetManifest
     range: string
-    required: true
-  sampleGlobalId:
-    name: sampleGlobalId
-    definition_uri: include:sampleGlobalId
-    description: INCLUDE global identifier for sample, assigned by DCC
-    title: Sample Global ID
+    required: false
+  datasetExternalId:
+    name: datasetExternalId
+    definition_uri: include:datasetExternalId
+    description: Unique identifier or code for dataset, if provided by contributor
+    title: Dataset External ID
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: sampleGlobalId
-    owner: DataFile
+    alias: datasetExternalId
+    owner: DatasetManifest
     domain_of:
-    - Biospecimen
-    - DataFile
+    - Dataset
+    - DatasetManifest
     range: string
-    required: true
-  sampleExternalId:
-    name: sampleExternalId
-    definition_uri: include:sampleExternalId
-    description: Unique identifier for sample, assigned by data contributor. A sample
-      is a unique biological material; two samples with two different IDs are biologically
-      distinct.
-    title: Sample External ID
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: sampleExternalId
-    owner: DataFile
-    domain_of:
-    - Biospecimen
-    - DataFile
-    range: string
-    required: true
   fileName:
     name: fileName
     definition_uri: include:fileName
@@ -656,7 +445,7 @@ attributes:
     from_schema: https://w3id.org/include
     rank: 1000
     alias: fileName
-    owner: DataFile
+    owner: DatasetManifest
     domain_of:
     - DataFile
     - DatasetManifest
@@ -670,175 +459,12 @@ attributes:
     from_schema: https://w3id.org/include
     rank: 1000
     alias: fileGlobalId
-    owner: DataFile
+    owner: DatasetManifest
     domain_of:
     - DataFile
     - DatasetManifest
     range: string
     required: true
-  fileS3Location:
-    name: fileS3Location
-    definition_uri: include:fileS3Location
-    description: S3 bucket location of file; also serves as dewrangle descriptor
-    title: File S3 Location
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: fileS3Location
-    owner: DataFile
-    domain_of:
-    - DataFile
-    range: string
-    required: true
-  fileUploadLocation:
-    name: fileUploadLocation
-    definition_uri: include:fileUploadLocation
-    description: Where source file was uploaded, if not directly to an S3 bucket (e.g.
-      Synapse)
-    title: File Upload Location
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: fileUploadLocation
-    owner: DataFile
-    domain_of:
-    - DataFile
-    range: string
-  drsUri:
-    name: drsUri
-    definition_uri: include:drsUri
-    description: Data Repository Services API Uniform Resource Identifier
-    title: DRS URI
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: drsUri
-    owner: DataFile
-    domain_of:
-    - DataFile
-    range: uriorcurie
-    required: true
-  fileHash:
-    name: fileHash
-    definition_uri: include:fileHash
-    description: md5 hash of this file for validation (if known)
-    title: File Hash
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: fileHash
-    owner: DataFile
-    domain_of:
-    - DataFile
-    range: string
-  dataAccess:
-    name: dataAccess
-    definition_uri: include:dataAccess
-    description: Type of access control on this file, determined by DCC
-    title: Data Access
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: dataAccess
-    owner: DataFile
-    domain_of:
-    - DataFile
-    range: enum_dataAccess
-    required: true
-  dataCategory:
-    name: dataCategory
-    definition_uri: include:dataCategory
-    description: General category of data in file (e.g. Clinical, Genomics, Proteomics,
-      Metabolomics, Immune profiling, Transcriptomics)
-    title: Data Category
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: dataCategory
-    owner: DataFile
-    domain_of:
-    - DataFile
-    - Study
-    - Dataset
-    range: enum_dataCategory
-    required: true
-  dataType:
-    name: dataType
-    definition_uri: include:dataType
-    description: Specific type of data contained in file (e.g. Preprocessed metabolite
-      relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide
-      variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy
-      number variations, Somatic structural variations)
-    title: Data Type
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: dataType
-    owner: DataFile
-    domain_of:
-    - DataFile
-    - Dataset
-    range: string
-  experimentalStrategy:
-    name: experimentalStrategy
-    definition_uri: include:experimentalStrategy
-    description: Experimental method used to obtain data in file (e.g. Whole genome
-      sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
-    title: Experimental Strategy
-    from_schema: https://w3id.org/include
-    rank: 1000
-    multivalued: true
-    alias: experimentalStrategy
-    owner: DataFile
-    domain_of:
-    - DataFile
-    - Dataset
-    range: string
-  experimentalPlatform:
-    name: experimentalPlatform
-    definition_uri: include:experimentalPlatform
-    description: Specific platform used to perform experiment; pipe-separated if multiple
-      (e.g. SOMAscan, MSD, Luminex, Illumina)
-    title: Experimental Platform
-    from_schema: https://w3id.org/include
-    rank: 1000
-    multivalued: true
-    alias: experimentalPlatform
-    owner: DataFile
-    domain_of:
-    - DataFile
-    - Dataset
-    range: string
-  fileFormat:
-    name: fileFormat
-    definition_uri: include:fileFormat
-    description: Format of file (e.g. tsv, cram, gvcf, vcf, maf, txt, pdf, html, png)
-    title: File Format
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: fileFormat
-    owner: DataFile
-    domain_of:
-    - DataFile
-    range: string
-    required: true
-  fileSize:
-    name: fileSize
-    definition_uri: include:fileSize
-    description: Size of file, if known (mainly important if large)
-    title: File Size
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: fileSize
-    owner: DataFile
-    domain_of:
-    - DataFile
-    range: integer
-  fileSizeUnit:
-    name: fileSizeUnit
-    definition_uri: include:fileSizeUnit
-    description: Unit of file size
-    title: File Size Unit
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: fileSizeUnit
-    owner: DataFile
-    domain_of:
-    - DataFile
-    range: string
 
 </code></pre>
 </details>

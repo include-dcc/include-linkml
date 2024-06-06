@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://include-dcc.github.io/include_linkml/datasetDataCategory/">
+        <link rel="canonical" href="https://include-dcc.github.io/include_linkml/isHarmonized/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: Dataset Data Category (datasetDataCategory) - INCLUDE V2 Data Model</title>
+        <title>Slot: Is Harmonized? (isHarmonized) - INCLUDE V2 Data Model</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-dataset-data-category-datasetdatacategory" class="md-skip">
+        <a href="#slot-is-harmonized-isharmonized" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: Dataset Data Category (datasetDataCategory)
+              Slot: Is Harmonized? (isHarmonized)
             
           </span>
         </div>
@@ -338,15 +338,15 @@
                 
                   
 
-  <a href="https://github.com/include-dcc/include_linkml/edit/master/docs/datasetDataCategory.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/include-dcc/include_linkml/edit/master/docs/isHarmonized.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-dataset-data-category-datasetdatacategory">Slot: Dataset Data Category (datasetDataCategory)</h1>
-<p><em>General category of data in dataset; pipe-separated if multiple</em></p>
-<p>URI: <a href="https://w3id.org/include/datasetDataCategory">include:datasetDataCategory</a></p>
+<h1 id="slot-is-harmonized-isharmonized">Slot: Is Harmonized? (isHarmonized)</h1>
+<p><em>For omics datasets, is this Dataset already harmonized and available in the INCLUDE Data Hub?</em></p>
+<p>URI: <a href="https://w3id.org/include/isHarmonized">include:isHarmonized</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -368,12 +368,7 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>
-<p>Range: <a href="../EnumDataCategory/">EnumDataCategory</a></p>
-</li>
-<li>
-<p>Required: True</p>
-</li>
+<li>Range: <a href="../Boolean/">Boolean</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -383,17 +378,17 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: datasetDataCategory
-definition_uri: include:dataCategory
-description: General category of data in dataset; pipe-separated if multiple
-title: Dataset Data Category
+<pre><code class="language-yaml">name: isHarmonized
+definition_uri: include:isHarmonized
+description: For omics datasets, is this Dataset already harmonized and available
+  in the INCLUDE Data Hub?
+title: Is Harmonized?
 from_schema: https://w3id.org/include
 rank: 1000
-alias: datasetDataCategory
+alias: isHarmonized
 domain_of:
 - Dataset
-range: enum_dataCategory
-required: true
+range: boolean
 
 </code></pre>
 

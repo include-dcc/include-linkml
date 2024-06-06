@@ -237,14 +237,18 @@
     click EnumClinicalDataSourceType href "../EnumClinicalDataSourceType"
 
 
-      Study : expectedDataCategory
+      Study : dataCategory
 
 
 
 
-    Study --&gt; "1..*" EnumDataCategory : expectedDataCategory
+    Study --&gt; "1" EnumDataCategory : dataCategory
     click EnumDataCategory href "../EnumDataCategory"
 
+
+      Study : dbgap
+
+      Study : expectedNumberOfParticipants
 
       Study : guidType
 
@@ -275,6 +279,8 @@
     click EnumProgram href "../EnumProgram"
 
 
+      Study : publication
+
       Study : researchDomain
 
 
@@ -301,15 +307,9 @@
 
       Study : studyContactName
 
-      Study : studyDbgap
-
       Study : studyDescription
 
       Study : studyDesign
-
-      Study : studyExpectedNumberOfParticipants
-
-      Study : studyPublication
 
       Study : studyTitle
 
@@ -438,8 +438,8 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../expectedDataCategory/">expectedDataCategory</a></td>
-<td>1..* <br/> <a href="../EnumDataCategory/">EnumDataCategory</a></td>
+<td><a href="../dataCategory/">dataCategory</a></td>
+<td>1 <br/> <a href="../EnumDataCategory/">EnumDataCategory</a></td>
 <td>Categories of data expected to be collected in this study</td>
 <td>direct</td>
 </tr>
@@ -450,19 +450,19 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../studyDbgap/">studyDbgap</a></td>
+<td><a href="../dbgap/">dbgap</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>dbGaP "phs" accession code(s) associated with this Study, either for access o...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../studyPublication/">studyPublication</a></td>
+<td><a href="../publication/">publication</a></td>
 <td>* <br/> <a href="../Uri/">Uri</a></td>
 <td>URL for publication(s) describing the study's rationale and methodology (PubM...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../studyExpectedNumberOfParticipants/">studyExpectedNumberOfParticipants</a></td>
+<td><a href="../expectedNumberOfParticipants/">expectedNumberOfParticipants</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Expected number of participants in this study</td>
 <td>direct</td>
@@ -557,14 +557,43 @@ slots:
 - selectionCriteria
 - studyDesign
 - clinicalDataSourceType
-- expectedDataCategory
+- dataCategory
 - studyWebsite
-- studyDbgap
-- studyPublication
-- studyExpectedNumberOfParticipants
+- dbgap
+- publication
+- expectedNumberOfParticipants
 - guidType
 - acknowledgments
 - citationStatement
+slot_usage:
+  dataCategory:
+    name: dataCategory
+    description: Categories of data expected to be collected in this study
+    domain_of:
+    - DataFile
+    - Study
+    - Dataset
+  dbgap:
+    name: dbgap
+    description: dbGaP "phs" accession code(s) associated with this Study, either
+      for access or informational purposes (pipe-separated if multiple)
+    domain_of:
+    - Study
+    - Dataset
+  publication:
+    name: publication
+    description: URL for publication(s) describing the study's rationale and methodology
+      (PubMed Central preferred but not required; pipe-separated if multiple)
+    domain_of:
+    - Study
+    - Dataset
+  expectedNumberOfParticipants:
+    name: expectedNumberOfParticipants
+    description: Expected number of participants in this study. If additional explanation
+      is needed, please add to Study Description field.
+    domain_of:
+    - Study
+    - Dataset
 
 </code></pre>
 </details>
@@ -580,6 +609,35 @@ description: General information about the study
 title: Study
 from_schema: https://w3id.org/include
 is_a: Thing
+slot_usage:
+  dataCategory:
+    name: dataCategory
+    description: Categories of data expected to be collected in this study
+    domain_of:
+    - DataFile
+    - Study
+    - Dataset
+  dbgap:
+    name: dbgap
+    description: dbGaP "phs" accession code(s) associated with this Study, either
+      for access or informational purposes (pipe-separated if multiple)
+    domain_of:
+    - Study
+    - Dataset
+  publication:
+    name: publication
+    description: URL for publication(s) describing the study's rationale and methodology
+      (PubMed Central preferred but not required; pipe-separated if multiple)
+    domain_of:
+    - Study
+    - Dataset
+  expectedNumberOfParticipants:
+    name: expectedNumberOfParticipants
+    description: Expected number of participants in this study. If additional explanation
+      is needed, please add to Study Description field.
+    domain_of:
+    - Study
+    - Dataset
 attributes:
   studyCode:
     name: studyCode
@@ -593,10 +651,11 @@ attributes:
     domain_of:
     - Biospecimen
     - DataFile
-    - Study
-    - Dataset
     - Participant
     - Condition
+    - Study
+    - Dataset
+    - DatasetManifest
     range: enum_studyCode
     required: true
   studyTitle:
@@ -804,18 +863,19 @@ attributes:
     - Study
     range: enum_clinicalDataSourceType
     required: true
-  expectedDataCategory:
-    name: expectedDataCategory
-    definition_uri: include:expectedDataCategory
+  dataCategory:
+    name: dataCategory
+    definition_uri: include:dataCategory
     description: Categories of data expected to be collected in this study
-    title: Expected Data Category
+    title: Data Category
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
-    alias: expectedDataCategory
+    alias: dataCategory
     owner: Study
     domain_of:
+    - DataFile
     - Study
+    - Dataset
     range: enum_dataCategory
     required: true
   studyWebsite:
@@ -830,46 +890,49 @@ attributes:
     domain_of:
     - Study
     range: uri
-  studyDbgap:
-    name: studyDbgap
-    definition_uri: include:studyDbgap
+  dbgap:
+    name: dbgap
+    definition_uri: include:dbgap
     description: dbGaP "phs" accession code(s) associated with this Study, either
       for access or informational purposes (pipe-separated if multiple)
-    title: Study dbGaP
+    title: dbGaP
     from_schema: https://w3id.org/include
     rank: 1000
     multivalued: true
-    alias: studyDbgap
+    alias: dbgap
     owner: Study
     domain_of:
     - Study
+    - Dataset
     range: string
-  studyPublication:
-    name: studyPublication
-    definition_uri: include:studyPublication
+  publication:
+    name: publication
+    definition_uri: include:publication
     description: URL for publication(s) describing the study's rationale and methodology
       (PubMed Central preferred but not required; pipe-separated if multiple)
-    title: Study Publication
+    title: Publication
     from_schema: https://w3id.org/include
     rank: 1000
     multivalued: true
-    alias: studyPublication
+    alias: publication
     owner: Study
     domain_of:
     - Study
+    - Dataset
     range: uri
-  studyExpectedNumberOfParticipants:
-    name: studyExpectedNumberOfParticipants
-    definition_uri: include:studyExpectedNumberOfParticipants
+  expectedNumberOfParticipants:
+    name: expectedNumberOfParticipants
+    definition_uri: include:expectedNumberOfParticipants
     description: Expected number of participants in this study. If additional explanation
       is needed, please add to Study Description field.
-    title: Study Expected Number of Participants
+    title: Expected Number of Participants
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: studyExpectedNumberOfParticipants
+    alias: expectedNumberOfParticipants
     owner: Study
     domain_of:
     - Study
+    - Dataset
     range: integer
     required: true
   guidType:

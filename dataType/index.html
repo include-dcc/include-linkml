@@ -345,7 +345,6 @@
 
 
 <h1 id="slot-data-type-datatype">Slot: Data Type (dataType)</h1>
-<p><em>Specific type of data contained in file (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)</em></p>
 <p>URI: <a href="https://w3id.org/include/dataType">include:dataType</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -361,8 +360,13 @@
 <tbody>
 <tr>
 <td><a href="../DataFile/">DataFile</a></td>
-<td>A DataFile Associated with a Participant or Study or Biospecimen</td>
-<td>no</td>
+<td>Metadata about Data Files</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../Dataset/">Dataset</a></td>
+<td>Information about a specific grouping of data files</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
@@ -380,16 +384,13 @@
 
 <pre><code class="language-yaml">name: dataType
 definition_uri: include:dataType
-description: Specific type of data contained in file (e.g. Preprocessed metabolite
-  relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide
-  variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number
-  variations, Somatic structural variations)
 title: Data Type
 from_schema: https://w3id.org/include
 rank: 1000
 alias: dataType
 domain_of:
 - DataFile
+- Dataset
 range: string
 
 </code></pre>

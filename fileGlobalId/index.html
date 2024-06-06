@@ -361,7 +361,12 @@
 <tbody>
 <tr>
 <td><a href="../DataFile/">DataFile</a></td>
-<td>A DataFile Associated with a Participant or Study or Biospecimen</td>
+<td>Metadata about Data Files</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DatasetManifest/">DatasetManifest</a></td>
+<td>Mapping information for files in Dataset</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -392,6 +397,7 @@ rank: 1000
 alias: fileGlobalId
 domain_of:
 - DataFile
+- DatasetManifest
 range: string
 required: true
 
