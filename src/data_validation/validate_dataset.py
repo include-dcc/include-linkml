@@ -10,20 +10,21 @@ def validate_dataset_entry(row):
             datasetDescription=row['Dataset Description'],
             datasetGlobalId=row['Dataset Global ID'],
             datasetExternalId=row['Dataset External ID'],
-            datasetExpectedNumberOfParticipants=row['Dataset Expected Number of Participants'],
-            expectedNumberOfFiles=row['Expected Number of Files'],
+            expectedNumberOfParticipants=int(row['Expected Number of Participants']),
+            expectedNumberOfFiles=int(row['Expected Number of Files']),
             dataCollectionStartYear=row['Data Collection Start Year'],
             dataCollectionEndYear=row['Data Collection End Year'],
-            datasetDataCategory=row['Dataset Data Category'],
-            datasetDataType=row['Dataset Data Type'],
-            datasetExperimentalStrategy=row['Dataset Experimental Strategy'],
-            datasetExperimentalPlatform=row['Dataset Experimental Platform'],
-            datasetPublication=str(row['Dataset Publication']).split('|'),
+            dataCategory=row['Data Category'],
+            dataType=row['Data Type'],
+            experimentalStrategy=str(row['Experimental Strategy']).split('|'),
+            experimentalPlatform=str(row['Experimental Platform']).split('|'),
+            publication=str(row['Publication']).split('|'),
             accessLimitations=row['Access Limitations'],
             accessRequirements=row['Access Requirements'],
-            datasetDbgap=str(row['Dataset DbGaP']).split('|'),
+            dbgap=str(row['DbGaP']).split('|'),
             otherRepository=row['Other Repository'],
-            otherAccessAuthority=row['Other Access Authority']
+            otherAccessAuthority=row['Other Access Authority'],
+            isHarmonized=bool(row['Is Harmonized?'])
         )
         # Validation successful
         return True, None

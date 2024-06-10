@@ -6,6 +6,7 @@ from .validation import (
     validate_biospecimen,
     validate_datafile,
     validate_dataset,
+    validate_datasetmanifest
 )
 
 # Dictionary to map entity names to validation functions
@@ -16,6 +17,7 @@ entity_validators = {
     'biospecimen': validate_biospecimen,
     'datafile': validate_datafile,
     'dataset': validate_dataset,
+    'datasetmanifest': validate_datasetmanifest
 }
 
 

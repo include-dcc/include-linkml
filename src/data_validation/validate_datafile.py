@@ -10,24 +10,24 @@ def validate_datafile_entry(row):
             participantExternalId=row['Participant External ID'],
             sampleGlobalId=row['Sample Global ID'],
             sampleExternalId=row['Sample External ID'],
-            fileGlobalId=row['File Global ID'],
-            fileExternalId=row['File External ID'],
             fileName=row['File Name'],
+            fileGlobalId=row['File Global ID'],
+            fileS3Location=row['File S3 Location'],
+            fileUploadLocation=row['File Upload Location'],
+            drsUri=row['DRS URI'],
             fileHash=row['File Hash'],
             dataAccess=row['Data Access'],
             dataCategory=row['Data Category'],
             dataType=row['Data Type'],
-            experimentalStrategy=row['Experimental Strategy'],
-            experimentalPlatform=row['Experimental Platform'],
+            experimentalStrategy=str(row['Experimental Strategy']).split('|'),
+            experimentalPlatform=str(row['Experimental Platform']).split('|'),
             fileFormat=row['File Format'],
-            fileSize=row['File Size'],
-            fileSizeUnit=row['File Size Unit'],
-            accessUrl=row['Access URL'],
-            publicationDoi=row['Publication DOI']
+            fileSize=int(row['File Size']),
+            fileSizeUnit=row['File Size Unit']
         )
         # Validation successful
         return True, None
     except ValidationError as e:
         # Validation failed
-        error_details = (row['Sample External ID'] + "-" + row['File External ID'], e)
+        error_details = (row['Sample External ID'] + "-" + row['File Global ID'], e)
         return False, error_details

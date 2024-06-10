@@ -5,11 +5,12 @@ from src.data_validation.validate_condition import validate_condition_entry
 from src.data_validation.validate_biospecimen import validate_biospecimen_entry
 from src.data_validation.validate_datafile import validate_datafile_entry
 from src.data_validation.validate_dataset import validate_dataset_entry
+from src.data_validation.validate_datasetmanifest import validate_datasetmanifest_entry
 
 
 def validate_study(file_path, output_path='.'):
     string_columns = ['Study Code', 'Program', 'Research Domain', 'Participant Lifespan Stage',
-                      'Clinical Data Source Type', 'Expected Data Category', 'GUID Type']
+                      'Clinical Data Source Type', 'Data Category', 'GUID Type']
     return validate_data(file_path, string_columns, validate_study_entry, output_path)
 
 
@@ -35,5 +36,9 @@ def validate_datafile(file_path, output_path='.'):
 
 
 def validate_dataset(file_path, output_path='.'):
-    string_columns = ['Study Code', 'Dataset Data Category']
+    string_columns = ['Study Code', 'Data Category', 'Data Access']
     return validate_data(file_path, string_columns, validate_dataset_entry, output_path)
+
+def validate_datasetmanifest(file_path, output_path='.'):
+    string_columns = ['Study Code']
+    return validate_data(file_path, string_columns, validate_datasetmanifest_entry, output_path)
