@@ -1,5 +1,6 @@
 [tool.poetry]
-name = "linkml-project-template"
+#name = "linkml-project-template"
+name = "src"
 version = "0.1.0"
 description = "Enter description of your project here"
 authors = ["Mark A. Miller <mamillerpa@gmail.com>"]
@@ -24,3 +25,6 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.extras]
 docs = ["linkml", "mkdocs-material"]
+
+[tool.poetry.scripts]
+validate-data = "src.data_validation.cli:main"
