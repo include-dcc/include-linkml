@@ -1,4 +1,4 @@
-site_name: "INCLUDE V2 Data Model"
+site_name: "INCLUDE Data Model"
 theme:
   name: material
   analytics:
@@ -22,9 +22,12 @@ plugins:
   - search
   - mermaid2:
       version: 10.9.0
+
 nav:
-#  - Home: home.md
   - Index: index.md
   - About: about.md
-site_url: https://include-dcc.github.io/include_linkml/
-repo_url: https://github.com/include-dcc/include_linkml/
+  - Previous Releases:
+      - Version 2.2.0: https://include-dcc.github.io/include-linkml/v2.2.0/index.html
+      - Version 2.1.0: https://include-dcc.github.io/include-linkml/v2.1.0/index.html
+site_url: https://include-dcc.github.io/include-linkml/
+repo_url: https://github.com/include-dcc/include-linkml/
