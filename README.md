@@ -1,4 +1,4 @@
-<img src="src/docs/images/include-dcc_logo.png" width="75%">
+[![INCLUDE DCC Logo](src/docs/images/include-dcc_logo.png)](https://includedcc.org/)
 
 # INCLUDE LinkML Data Model
 
