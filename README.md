@@ -4,11 +4,11 @@
 
 ## Overview
 
-This repository hosts the Include LinkML Model, a specialized data model crafted to empower collaboration and streamline data integration within Down syndrome research. By harnessing advanced [LinkML](https://linkml.io/) features, it provides a versatile framework for harmonizing data representation, articulating metadata, and delineating intricate relationships between entities. This structured approach not only promotes seamless data exchange but also facilitates interoperability and scalability across diverse research initiatives.
+This repository hosts the INCLUDE LinkML Model, a specialized data model crafted to empower collaboration and streamline data integration within Down syndrome research. By harnessing advanced [LinkML](https://linkml.io/) features, it provides a versatile framework for harmonizing data representation, articulating metadata, and delineating intricate relationships between entities. This structured approach not only promotes seamless data exchange but also facilitates interoperability and scalability across diverse research initiatives.
 
 ## Getting Started
 
-To work with the Include Model, follow these steps:
+To work with the INCLUDE Model, follow these steps:
 
 1. **Clone the Repository**: Clone this repository to your local machine.
 
@@ -26,8 +26,8 @@ After running `poetry install`, you can proceed with further setup or usage inst
 
 The repository structure is organized as follows:
 
-- `src/linkml`: Contains the YAML files defining the Include Model.
-- `src/data/schematic`: Includes the JSON-LD schema for the Include Model.
+- `src/linkml`: Contains the YAML files defining the INCLUDE Model.
+- `src/data/schematic`: Includes the JSON-LD schema for the INCLUDE Model.
 
 ## Updates Since Previous Release (v2.2.0)
 
