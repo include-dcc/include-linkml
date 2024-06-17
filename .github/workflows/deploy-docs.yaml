@@ -27,6 +27,5 @@ jobs:
       run: |
         mkdir -p docs
         touch docs/.nojekyll
-#        poetry run gen-doc -d docs src/linkml/include_schema.yaml
         make gendoc
         poetry run mkdocs gh-deploy
