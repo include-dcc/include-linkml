@@ -85,7 +85,12 @@ $(DOCDIR):
 #	cp $(SRC)/docs/*md $(DOCDIR) ; \
 #	$(RUN) gen-doc -d $(DOCDIR) --template-directory $(SRC)/$(TEMPLATEDIR) $(SOURCE_SCHEMA_PATH)
 
-gendoc: $(DOCDIR)
+update-docs:
+	cp src/docs/about.md docs/about.md
+	echo "Updated docs/about.md from src/docs/about.md"
+
+# Include update-docs target in gendoc target
+gendoc: $(DOCDIR) update-docs
 	@initial_branch=$$(git branch --show-current); \
 	latest_version=$$(git tag | sort -V | tail -n 1); \
 	for version in $$(git tag | sort -V); do \
