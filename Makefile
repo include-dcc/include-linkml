@@ -90,7 +90,7 @@ update-docs:
 	@echo "Updated docs/about.md from src/docs/about.md"
 
 # Include update-docs target in gendoc target
-gendoc: $(DOCDIR) update-docs
+gendoc: $(DOCDIR)
 	@initial_branch=$$(git branch --show-current); \
 	latest_version=$$(git tag | sort -V | tail -n 1); \
 	for version in $$(git tag | sort -V); do \
@@ -109,6 +109,7 @@ gendoc: $(DOCDIR) update-docs
 		fi; \
 	done; \
 	git checkout $$initial_branch
+	update-docs
 
 testdoc: gendoc serve
 
