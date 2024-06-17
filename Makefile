@@ -16,7 +16,6 @@ PYMODEL = $(SRC)/$(SCHEMA_NAME)/datamodel
 DOCDIR = docs
 
 TEMPLATEDIR = doc_templates
-VERSION ?= v2.2.0  # Default version if not specified
 
 
 # basename of a YAML file in model/
@@ -86,13 +85,6 @@ $(DOCDIR):
 #	cp $(SRC)/docs/*md $(DOCDIR) ; \
 #	$(RUN) gen-doc -d $(DOCDIR) --template-directory $(SRC)/$(TEMPLATEDIR) $(SOURCE_SCHEMA_PATH)
 
-#gendoc: $(DOCDIR)
-#	@for version in $$(git tag | grep -v "rc"); do \
-#		git checkout $$version ; \
-#		$(RUN) gen-doc -d $(DOCDIR)/$$version --template-directory $(SRC)/$(TEMPLATEDIR) $(SOURCE_SCHEMA_PATH) ; \
-#		cp $(SRC)/docs/*md $(DOCDIR)/$$version ; \
-#	done
-
 gendoc: $(DOCDIR)
 	@initial_branch=$$(git branch --show-current); \
 	latest_version=$$(git tag | sort -V | tail -n 1); \
@@ -112,8 +104,6 @@ gendoc: $(DOCDIR)
 		fi; \
 	done; \
 	git checkout $$initial_branch
-
-
 
 testdoc: gendoc serve
 

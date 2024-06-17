@@ -1,31 +1,47 @@
-# INCLUDE v2 LinkML Data Model
+[![INCLUDE DCC Logo](src/docs/images/include-dcc_logo.png)](https://includedcc.org/)
 
-This repository includes the LinkML model and tooling for the v2 Data Model
+# INCLUDE LinkML Data Model
 
-# Where to find the data model:
+## Overview
 
-* The YAML files are in `src > linkml`
-* The JSON-LD schema is in `src > data > schematic`
+This repository hosts the INCLUDE LinkML Model, a specialized data model crafted to empower collaboration and streamline data integration within Down syndrome research. By harnessing advanced [LinkML](https://linkml.io/) features, it provides a versatile framework for harmonizing data representation, articulating metadata, and delineating intricate relationships between entities. This structured approach not only promotes seamless data exchange but also facilitates interoperability and scalability across diverse research initiatives.
 
+## Getting Started
 
+To work with the INCLUDE Model, follow these steps:
 
-# Poetry Environment
-This repo requires poetry as a system dependency
+1. **Clone the Repository**: Clone this repository to your local machine.
 
-https://python-poetry.org/docs/#installation
+2. **Install Poetry**: If not already installed, install Poetry as a system dependency. Refer to [Poetry Documentation](https://python-poetry.org/docs/#installation) for installation instructions.
 
-When poetry is installed run:
-`poetry install`
+3. **Install Dependencies**: Run the following command to install project dependencies using Poetry:
 
+```bash
+poetry install
+```
 
+After running `poetry install`, you can proceed with further setup or usage instructions specific to your project.
 
+## Repository Structure
 
-# Workflow to update the model from:
-## [INCLUDE Schemasheets Google Sheets Project](https://docs.google.com/spreadsheets/d/1w6zDfz3_yrCjjrqfpXBGNmd0LZL4B03gr1KfzJtk5Cs/edit?usp=sharing)
-1. Run the Schematic JSON-LD transformer to generate the JSON-LD that Schematic will use to generate Manifests
+The repository structure is organized as follows:
 
-` poetry run python src/main.py schematic_transform   `
+- `src/linkml`: Contains the YAML files defining the INCLUDE Model.
 
-4. Run Schematic configured to point at the generated json-ld at src/schematic/include_schematic_linkml.jsonld
+## Updates Since Previous Release (v2.2.0)
 
-`schematic manifest --config */schematic/config.yml get -s`
+### Model Enhancements:
+
+- Updated Assay component to include latest Virtual Biorepository model.
+- Updated Study component and added new Dataset and DatasetManifest components to support new Study/Dataset pages in Data Hub.
+- Inclusion of over 25 new slots.
+- 5 new enumerations: EnumClinicalDataSourceType, EnumDataCategory, EnumGuidType, EnumParticipantLifespanStage, EnumResearchDomain.
+
+### CLI Enhancements:
+
+- **Validation**: Streamlines data cleaning and validation via the command line (CLI), allowing users to specify the data type and file path. The CLI reads, cleans, and validates data using LinkML-defined models for robust validation. For more details, use:
+
+```bash
+validate-data --help
+```
+
