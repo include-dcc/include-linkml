@@ -86,8 +86,8 @@ $(DOCDIR):
 #	$(RUN) gen-doc -d $(DOCDIR) --template-directory $(SRC)/$(TEMPLATEDIR) $(SOURCE_SCHEMA_PATH)
 
 update-docs:
-	cp src/docs/about.md docs/about.md
-	echo "Updated docs/about.md from src/docs/about.md"
+	cp $(SRC)/docs/about.md $(DOCDIR)/about.md
+	@echo "Updated docs/about.md from src/docs/about.md"
 
 # Include update-docs target in gendoc target
 gendoc: $(DOCDIR) update-docs
