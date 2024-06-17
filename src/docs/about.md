@@ -38,6 +38,6 @@ LinkML is a flexible modeling language that allows you to author schemas (“mod
 - **Contribute:** Share expertise, insights, and data to enrich the model and shape the future of Down syndrome research.
 
 ### Start Exploring
-Visit [INCLUDE Data Coordinating Center (DCC)](https://includedcc.org/) to access the Include LinkML Model and join the collaborative effort toward transforming Down syndrome research and healthcare.
+Visit [INCLUDE Data Coordinating Center (DCC)](https://includedcc.org/) to access the INCLUDE LinkML Model and join the collaborative effort toward transforming Down syndrome research and healthcare.
 
 For more information about LinkML, visit [LinkML](https://linkml.io/).

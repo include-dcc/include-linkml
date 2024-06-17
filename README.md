@@ -27,7 +27,6 @@ After running `poetry install`, you can proceed with further setup or usage inst
 The repository structure is organized as follows:
 
 - `src/linkml`: Contains the YAML files defining the INCLUDE Model.
-- `src/data/schematic`: Includes the JSON-LD schema for the INCLUDE Model.
 
 ## Updates Since Previous Release (v2.2.0)
 
@@ -44,22 +43,5 @@ The repository structure is organized as follows:
 
 ```bash
 validate-data --help
-```
-
-## Setting Up INCLUDE Schemasheets with Schematic
-
-1. **Generate JSON-LD using Schematic Transformer:**
-
-```bash
-poetry run python src/main.py schematic_transform
-```
-This command triggers the Schematic JSON-LD transformer to generate the JSON-LD required for creating Manifests.
-
-2. **Run Schematic with Generated JSON-LD:**
-
-Configure Schematic to use the generated JSON-LD located at `src/schematic/include_schematic_linkml.jsonld`:
-
-```bash
-schematic manifest --config */schematic/config.yml get -s
 ```
 
