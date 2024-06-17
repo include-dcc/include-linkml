@@ -26,8 +26,6 @@ plugins:
 nav:
   - Index: index.md
   - About: about.md
-  - Previous Releases:
-      - Version 2.2.0: v2.2.0/index.md
-      - Version 2.1.0: v2.1.0/index.md
+
 site_url: https://include-dcc.github.io/include-linkml/
 repo_url: https://github.com/include-dcc/include-linkml/
