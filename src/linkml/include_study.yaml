@@ -127,7 +127,7 @@ classes:
 slots:
   studyCode:
     definition_uri: include:studyCode
-    description: Unique identifer for the study (generally a short acronym)
+    description: Unique identifier for the study (generally a short acronym)
     title: Study Code
     range: enum_studyCode
     required: true
@@ -180,17 +180,17 @@ slots:
     multivalued: true
   vbrEmail:
     definition_uri: include:vbrEmail
-    description: Email address for Virtual Biorepository requests/inquiries
+    description: Email address for Virtual Biorepository requests/inquiries, if participating
     title: VBR Email
     range: string
   vbrUrl:
     definition_uri: include:vbrUrl
-    description: Link to Virtual Biorepository request form
+    description: Link to Virtual Biorepository request form, if participating
     title: VBR URL
     range: uri
   vbrReadme:
     definition_uri: include:vbrReadme
-    description: Instructions for contacting or requesting samples from Virtual Biorepository
+    description: Instructions for contacting or requesting samples from Virtual Biorepository, if participating
     title: VBR Readme
     range: string     
   researchDomain:
@@ -500,7 +500,7 @@ enums:
       participant_or_caregiver_report:
         text: participant_or_caregiver_report
         title: Participant or Caregiver Report
-        description: Data obtained from survey, questionnaire, etc.
+        description: Data obtained from survey, questionnaire, etc. filled out by participant or caregiver
       other:
         text: other
         title: Other
