@@ -318,6 +318,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mappings" class="md-nav__link">
+    Mappings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     LinkML Source
   </a>
@@ -345,7 +352,7 @@
 
 
 <h1 id="slot-study-code-studycode">Slot: Study Code (studyCode)</h1>
-<p><em>Unique identifer for the study (generally a short acronym)</em></p>
+<p><em>Unique identifier for the study (generally a short acronym)</em></p>
 <p>URI: <a href="https://w3id.org/include/studyCode">include:studyCode</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -360,13 +367,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../DataFile/">DataFile</a></td>
-<td>Metadata about Data Files</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../DatasetManifest/">DatasetManifest</a></td>
-<td>Mapping information for files in Dataset</td>
+<td><a href="../Condition/">Condition</a></td>
+<td>Co-occurring conditions and other observations for the participant</td>
 <td>no</td>
 </tr>
 <tr>
@@ -375,8 +377,8 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Condition/">Condition</a></td>
-<td>Co-occurring conditions and other observations for the participant</td>
+<td><a href="../Participant/">Participant</a></td>
+<td>Demographic and clinical information about the participant</td>
 <td>no</td>
 </tr>
 <tr>
@@ -385,13 +387,18 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Participant/">Participant</a></td>
-<td>Demographic and clinical information about the participant</td>
+<td><a href="../DatasetManifest/">DatasetManifest</a></td>
+<td>Mapping information for files in Dataset</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Study/">Study</a></td>
 <td>General information about the study</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DataFile/">DataFile</a></td>
+<td>Metadata about Data Files</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -410,12 +417,31 @@
 <ul>
 <li>from schema: https://w3id.org/include</li>
 </ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>include:studyCode</td>
+</tr>
+<tr>
+<td>native</td>
+<td>include:studyCode</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: studyCode
 definition_uri: include:studyCode
-description: Unique identifer for the study (generally a short acronym)
+description: Unique identifier for the study (generally a short acronym)
 title: Study Code
 from_schema: https://w3id.org/include
 rank: 1000

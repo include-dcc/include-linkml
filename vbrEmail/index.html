@@ -318,6 +318,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mappings" class="md-nav__link">
+    Mappings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     LinkML Source
   </a>
@@ -345,7 +352,7 @@
 
 
 <h1 id="slot-vbr-email-vbremail">Slot: VBR Email (vbrEmail)</h1>
-<p><em>Email address for Virtual Biorepository requests/inquiries</em></p>
+<p><em>Email address for Virtual Biorepository requests/inquiries, if participating</em></p>
 <p>URI: <a href="https://w3id.org/include/vbrEmail">include:vbrEmail</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -375,12 +382,31 @@
 <ul>
 <li>from schema: https://w3id.org/include</li>
 </ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>include:vbrEmail</td>
+</tr>
+<tr>
+<td>native</td>
+<td>include:vbrEmail</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: vbrEmail
 definition_uri: include:vbrEmail
-description: Email address for Virtual Biorepository requests/inquiries
+description: Email address for Virtual Biorepository requests/inquiries, if participating
 title: VBR Email
 from_schema: https://w3id.org/include
 rank: 1000

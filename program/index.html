@@ -318,6 +318,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mappings" class="md-nav__link">
+    Mappings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     LinkML Source
   </a>
@@ -383,6 +390,25 @@
 <ul>
 <li>from schema: https://w3id.org/include</li>
 </ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>include:program</td>
+</tr>
+<tr>
+<td>native</td>
+<td>include:program</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
@@ -392,12 +418,12 @@ description: Funding source(s) for the study (pipe-separated if multiple)
 title: Program
 from_schema: https://w3id.org/include
 rank: 1000
-multivalued: true
 alias: program
 domain_of:
 - Study
 range: enum_program
 required: true
+multivalued: true
 
 </code></pre>
 

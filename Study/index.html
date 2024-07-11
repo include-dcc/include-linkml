@@ -344,7 +344,7 @@
 <tr>
 <td><a href="../studyCode/">studyCode</a></td>
 <td>1 <br/> <a href="../EnumStudyCode/">EnumStudyCode</a></td>
-<td>Unique identifer for the study (generally a short acronym)</td>
+<td>Unique identifier for the study (generally a short acronym)</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -392,19 +392,19 @@
 <tr>
 <td><a href="../vbrEmail/">vbrEmail</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Email address for Virtual Biorepository requests/inquiries</td>
+<td>Email address for Virtual Biorepository requests/inquiries, if participating</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../vbrUrl/">vbrUrl</a></td>
 <td>0..1 <br/> <a href="../Uri/">Uri</a></td>
-<td>Link to Virtual Biorepository request form</td>
+<td>Link to Virtual Biorepository request form, if participating</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../vbrReadme/">vbrReadme</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Instructions for contacting or requesting samples from Virtual Biorepository</td>
+<td>Instructions for contacting or requesting samples from Virtual Biorepository,...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -642,7 +642,7 @@ attributes:
   studyCode:
     name: studyCode
     definition_uri: include:studyCode
-    description: Unique identifer for the study (generally a short acronym)
+    description: Unique identifier for the study (generally a short acronym)
     title: Study Code
     from_schema: https://w3id.org/include
     rank: 1000
@@ -678,13 +678,13 @@ attributes:
     title: Program
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: program
     owner: Study
     domain_of:
     - Study
     range: enum_program
     required: true
+    multivalued: true
   studyDescription:
     name: studyDescription
     definition_uri: include:studyDescription
@@ -706,13 +706,13 @@ attributes:
     title: Principal Investigator Name
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: principalInvestigatorName
     owner: Study
     domain_of:
     - Study
     range: string
     required: true
+    multivalued: true
   studyContactName:
     name: studyContactName
     definition_uri: include:studyContactName
@@ -720,13 +720,13 @@ attributes:
     title: Study Contact Name
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: studyContactName
     owner: Study
     domain_of:
     - Study
     range: string
     required: true
+    multivalued: true
   studyContactInstitution:
     name: studyContactInstitution
     definition_uri: include:studyContactInstitution
@@ -734,13 +734,13 @@ attributes:
     title: Study Contact Institution
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: studyContactInstitution
     owner: Study
     domain_of:
     - Study
     range: string
     required: true
+    multivalued: true
   studyContactEmail:
     name: studyContactEmail
     definition_uri: include:studyContactEmail
@@ -749,17 +749,17 @@ attributes:
     title: Study Contact Email
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: studyContactEmail
     owner: Study
     domain_of:
     - Study
     range: string
     required: true
+    multivalued: true
   vbrEmail:
     name: vbrEmail
     definition_uri: include:vbrEmail
-    description: Email address for Virtual Biorepository requests/inquiries
+    description: Email address for Virtual Biorepository requests/inquiries, if participating
     title: VBR Email
     from_schema: https://w3id.org/include
     rank: 1000
@@ -771,7 +771,7 @@ attributes:
   vbrUrl:
     name: vbrUrl
     definition_uri: include:vbrUrl
-    description: Link to Virtual Biorepository request form
+    description: Link to Virtual Biorepository request form, if participating
     title: VBR URL
     from_schema: https://w3id.org/include
     rank: 1000
@@ -783,7 +783,8 @@ attributes:
   vbrReadme:
     name: vbrReadme
     definition_uri: include:vbrReadme
-    description: Instructions for contacting or requesting samples from Virtual Biorepository
+    description: Instructions for contacting or requesting samples from Virtual Biorepository,
+      if participating
     title: VBR Readme
     from_schema: https://w3id.org/include
     rank: 1000
@@ -800,13 +801,13 @@ attributes:
     title: Research Domain
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: researchDomain
     owner: Study
     domain_of:
     - Study
     range: enum_researchDomain
     required: true
+    multivalued: true
   participantLifespanStage:
     name: participantLifespanStage
     definition_uri: include:participantLifespanStage
@@ -814,13 +815,13 @@ attributes:
     title: Participant Lifespan Stage
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: participantLifespanStage
     owner: Study
     domain_of:
     - Study
     range: enum_participantLifespanStage
     required: true
+    multivalued: true
   selectionCriteria:
     name: selectionCriteria
     definition_uri: include:selectionCriteria
@@ -856,13 +857,13 @@ attributes:
     title: Clinical Data Source Type
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: clinicalDataSourceType
     owner: Study
     domain_of:
     - Study
     range: enum_clinicalDataSourceType
     required: true
+    multivalued: true
   dataCategory:
     name: dataCategory
     definition_uri: include:dataCategory
@@ -898,13 +899,13 @@ attributes:
     title: dbGaP
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: dbgap
     owner: Study
     domain_of:
     - Study
     - Dataset
     range: string
+    multivalued: true
   publication:
     name: publication
     definition_uri: include:publication
@@ -913,13 +914,13 @@ attributes:
     title: Publication
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: publication
     owner: Study
     domain_of:
     - Study
     - Dataset
     range: uri
+    multivalued: true
   expectedNumberOfParticipants:
     name: expectedNumberOfParticipants
     definition_uri: include:expectedNumberOfParticipants
@@ -955,12 +956,12 @@ attributes:
     title: Acknowledgments
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: acknowledgments
     owner: Study
     domain_of:
     - Study
     range: string
+    multivalued: true
   citationStatement:
     name: citationStatement
     definition_uri: include:citationStatement
@@ -973,12 +974,12 @@ attributes:
     title: Citation Statement
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: citationStatement
     owner: Study
     domain_of:
     - Study
     range: string
+    multivalued: true
 
 </code></pre>
 </details>

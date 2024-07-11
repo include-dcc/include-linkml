@@ -318,6 +318,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mappings" class="md-nav__link">
+    Mappings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     LinkML Source
   </a>
@@ -360,16 +367,6 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Participant/">Participant</a></td>
-<td>Demographic and clinical information about the participant</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../DataFile/">DataFile</a></td>
-<td>Metadata about Data Files</td>
-<td>no</td>
-</tr>
-<tr>
 <td><a href="../Condition/">Condition</a></td>
 <td>Co-occurring conditions and other observations for the participant</td>
 <td>no</td>
@@ -377,6 +374,16 @@
 <tr>
 <td><a href="../Biospecimen/">Biospecimen</a></td>
 <td>A Biospecimen Collected from A Participant</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Participant/">Participant</a></td>
+<td>Demographic and clinical information about the participant</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DataFile/">DataFile</a></td>
+<td>Metadata about Data Files</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -395,6 +402,25 @@
 <ul>
 <li>from schema: https://w3id.org/include</li>
 </ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>include:participantExternalId</td>
+</tr>
+<tr>
+<td>native</td>
+<td>include:participantExternalId</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 

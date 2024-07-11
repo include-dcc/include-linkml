@@ -301,7 +301,7 @@
 <tr>
 <td><a href="../studyCode/">studyCode</a></td>
 <td>1 <br/> <a href="../EnumStudyCode/">EnumStudyCode</a></td>
-<td>Unique identifer for the study (generally a short acronym)</td>
+<td>Unique identifier for the study (generally a short acronym)</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -605,7 +605,7 @@ attributes:
   studyCode:
     name: studyCode
     definition_uri: include:studyCode
-    description: Unique identifer for the study (generally a short acronym)
+    description: Unique identifier for the study (generally a short acronym)
     title: Study Code
     from_schema: https://w3id.org/include
     rank: 1000
@@ -771,13 +771,13 @@ attributes:
     title: Experimental Strategy
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: experimentalStrategy
     owner: Dataset
     domain_of:
     - DataFile
     - Dataset
     range: string
+    multivalued: true
   experimentalPlatform:
     name: experimentalPlatform
     definition_uri: include:experimentalPlatform
@@ -786,13 +786,13 @@ attributes:
     title: Experimental Platform
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: experimentalPlatform
     owner: Dataset
     domain_of:
     - DataFile
     - Dataset
     range: string
+    multivalued: true
   publication:
     name: publication
     definition_uri: include:publication
@@ -801,13 +801,13 @@ attributes:
     title: Publication
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: publication
     owner: Dataset
     domain_of:
     - Study
     - Dataset
     range: uri
+    multivalued: true
   accessLimitations:
     name: accessLimitations
     definition_uri: include:accessLimitations
@@ -844,13 +844,13 @@ attributes:
     title: dbGaP
     from_schema: https://w3id.org/include
     rank: 1000
-    multivalued: true
     alias: dbgap
     owner: Dataset
     domain_of:
     - Study
     - Dataset
     range: string
+    multivalued: true
   otherRepository:
     name: otherRepository
     definition_uri: include:otherRepository

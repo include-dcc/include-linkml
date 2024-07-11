@@ -318,6 +318,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mappings" class="md-nav__link">
+    Mappings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     LinkML Source
   </a>
@@ -383,6 +390,25 @@
 <ul>
 <li>from schema: https://w3id.org/include</li>
 </ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>include:principalInvestigatorName</td>
+</tr>
+<tr>
+<td>native</td>
+<td>include:principalInvestigatorName</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
@@ -393,12 +419,12 @@ description: Name(s) of Principal Investigator(s) of this study; pipe-separated 
 title: Principal Investigator Name
 from_schema: https://w3id.org/include
 rank: 1000
-multivalued: true
 alias: principalInvestigatorName
 domain_of:
 - Study
 range: string
 required: true
+multivalued: true
 
 </code></pre>
 
