@@ -9,36 +9,37 @@ from src.data_validation.validate_datasetmanifest import validate_datasetmanifes
 
 
 def validate_study(file_path, output_path='.'):
-    string_columns = ['Study Code', 'Program', 'Research Domain', 'Participant Lifespan Stage',
-                      'Clinical Data Source Type', 'Data Category', 'GUID Type']
+    string_columns = ['study code', 'program', 'research domain', 'participant lifespan stage',
+                      'clinical data source type', 'data category', 'guid type']
     return validate_data(file_path, string_columns, validate_study_entry, output_path)
 
 
 def validate_participant(file_path, output_path='.'):
-    string_columns = ['Study Code', 'Family Type', 'Family Relationship', 'Sex', 'Race', 'Ethnicity',
-                      'Down Syndrome Status', 'Outcomes Vital Status']
+    string_columns = ['study code', 'family type', 'family relationship', 'sex', 'race', 'ethnicity',
+                      'down syndrome status', 'outcomes vital status']
     return validate_data(file_path, string_columns, validate_participant_entry, output_path)
 
 
 def validate_condition(file_path, output_path='.'):
-    string_columns = ['Study Code', 'Condition Interpretation', 'Condition Status', 'Condition Data Source']
+    string_columns = ['study code', 'condition interpretation', 'condition status', 'condition data source']
     return validate_data(file_path, string_columns, validate_condition_entry, output_path)
 
 
 def validate_biospecimen(file_path, output_path='.'):
-    string_columns = ['Study Code', 'Sample Availability', 'Container Availability']
+    string_columns = ['study code', 'sample availability', 'container availability']
     return validate_data(file_path, string_columns, validate_biospecimen_entry, output_path)
 
 
 def validate_datafile(file_path, output_path='.'):
-    string_columns = ['Study Code', 'Data Access', 'Data Category']
+    string_columns = ['study code', 'data access', 'data category']
     return validate_data(file_path, string_columns, validate_datafile_entry, output_path)
 
 
 def validate_dataset(file_path, output_path='.'):
-    string_columns = ['Study Code', 'Data Category', 'Data Access']
+    string_columns = ['study code', 'data category', 'data access']
     return validate_data(file_path, string_columns, validate_dataset_entry, output_path)
 
+
 def validate_datasetmanifest(file_path, output_path='.'):
-    string_columns = ['Study Code']
+    string_columns = ['study code']
     return validate_data(file_path, string_columns, validate_datasetmanifest_entry, output_path)
