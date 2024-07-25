@@ -17,7 +17,13 @@ def clean_dataframe_strings(df, string_columns):
 
 
 def validate_dataframe(df, entry_validator, input_file_name=None, output_path=None):
-    validation_results = df.apply(entry_validator, axis=1)
+    # Check if required columns exist before validation
+    try:
+        validation_results = df.apply(entry_validator, axis=1)
+    except KeyError as e:
+        print(f"Error: Missing column - {e}")
+        return 0, df.shape[0]  # All records are invalid
+
     valid_count = validation_results[validation_results.apply(lambda x: x[0])].shape[0]
     invalid_count = validation_results.shape[0] - valid_count
     print("Number of errors by record type:")
@@ -45,7 +51,9 @@ def save_validation_results(validation_results, input_file_name, output_path):
 
 
 def read_csv_file(file_path):
-    return pd.read_csv(file_path)
+    df = pd.read_csv(file_path)
+    df.columns = df.columns.str.lower()  # Convert column names to lower case
+    return df
 
 
 def validate_data(file_path, string_columns, validation_function, output_path='.'):
@@ -55,3 +63,9 @@ def validate_data(file_path, string_columns, validation_function, output_path='.
     valid_count, invalid_count = validate_dataframe(df, validation_function, input_file_name=file_name,
                                                     output_path=output_path)
     return valid_count, invalid_count
+
+def handle_nan(value):
+    """Convert NaN values to None"""
+    if pd.isna(value):
+        return None
+    return value
