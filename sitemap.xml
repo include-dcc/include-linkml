@@ -2,762 +2,762 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://include-dcc.github.io/include-linkml/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Biospecimen/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Boolean/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Condition/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Curie/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/DataFile/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Dataset/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/DatasetManifest/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Date/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/DateOrDatetime/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Datetime/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Decimal/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Double/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumAvailability/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumClinicalDataSourceType/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumConditionDataSource/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumConditionInterpretation/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumConditionStatus/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumDataAccess/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumDataCategory/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumDownSyndromeStatus/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumEthnicity/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumFamilyRelationship/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumFamilyType/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumGuidType/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumParticipantLifespanStage/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumProgram/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumRace/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumResearchDomain/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumSex/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumStudyCode/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/EnumVitalStatus/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Float/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Integer/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Jsonpath/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Jsonpointer/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Ncname/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Nodeidentifier/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Objectidentifier/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Participant/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Sparqlpath/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/String/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Study/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Thing/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Time/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Uri/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/Uriorcurie/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/about/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/accessLimitations/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/accessRequirements/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/acknowledgments/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/ageAtBiospecimenCollection/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/ageAtConditionMeasureObservation/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/ageAtFirstPatientEngagement/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/ageAtLastVitalStatus/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/biospecimenStorage/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/citationStatement/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/clinicalDataSourceType/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/collectionExternalId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/collectionGlobalId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/collectionSampleType/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/concentration/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/concentrationUnit/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/conditionDataSource/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/conditionInterpretation/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/conditionMeasureSourceText/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/conditionStatus/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/containerAvailability/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/containerExternalId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/containerGlobalId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/dataAccess/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/dataCategory/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/dataCollectionEndYear/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/dataCollectionStartYear/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/dataType/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/datasetDescription/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/datasetExternalId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/datasetGlobalId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/datasetName/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/dbgap/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/downSyndromeStatus/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/drsUri/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/ethnicity/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/eventId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/eventType/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/expectedNumberOfFiles/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/expectedNumberOfParticipants/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/experimentalPlatform/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/experimentalStrategy/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/familyId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/familyRelationship/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/familyType/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/fatherId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/fileFormat/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/fileGlobalId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/fileHash/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/fileName/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/fileS3Location/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/fileSize/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/fileSizeUnit/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/fileUploadLocation/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/firstPatientEngagementEvent/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/guidType/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/hpoCode/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/hpoLabel/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/include-schema/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/isHarmonized/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/laboratoryProcedure/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/maxoCode/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/maxoLabel/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/measureUnit/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/measureValue/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/mondoCode/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/mondoLabel/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/motherId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/otherAccessAuthority/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/otherCode/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/otherFamilyMemberId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/otherLabel/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/otherRepository/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/outcomesVitalStatus/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/parentSampleExternalId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/parentSampleGlobalId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/parentSampleType/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/participantExternalId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/participantGlobalId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/participantLifespanStage/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/principalInvestigatorName/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/program/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/publication/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/race/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/researchDomain/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/sampleAvailability/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/sampleExternalId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/sampleGlobalId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/sampleType/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/selectionCriteria/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/sex/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/siblingId/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/studyCode/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/studyContactEmail/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/studyContactInstitution/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/studyContactName/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/studyDescription/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/studyDesign/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/studyTitle/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/studyWebsite/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/vbrEmail/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/vbrReadme/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/vbrUrl/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/volume/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://include-dcc.github.io/include-linkml/volumeUnit/</loc>
-         <lastmod>2024-08-16</lastmod>
+         <lastmod>2024-08-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
