@@ -55,6 +55,7 @@ classes:
     slot_usage:
       dataCategory:
         description: Categories of data expected to be collected in this study
+        multivalued: true
       dbgap:
         description: dbGaP "phs" accession code(s) associated with this Study, either for access or informational purposes (pipe-separated if multiple)
       publication:
@@ -95,6 +96,7 @@ classes:
     slot_usage:
       dataCategory:
         description: General category of data in Dataset; pipe-separated if multiple
+        multivalued: true
       dbgap:
         description: dbGaP "phs" accession code(s) required to access the files in this Dataset, if applicable (pipe-separated if multiple)
       publication:
@@ -103,7 +105,8 @@ classes:
         description: Expected number of participants in this Dataset. If additional explanation is needed, please add to Dataset Description field.
       dataType:
         description: Specific type of data contained in Dataset; pipe-separated if multiple (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
-      experimentalStrategy: 
+        multivalued: true
+      experimentalStrategy:
         description: Experimental method used to obtain data in Dataset; pipe-separated if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
 
   DatasetManifest:

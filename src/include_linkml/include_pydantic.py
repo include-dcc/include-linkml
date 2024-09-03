@@ -1,10 +1,10 @@
-from __future__ import annotations
+from __future__ import annotations 
 from datetime import (
     datetime,
     date
 )
-from decimal import Decimal
-from enum import Enum
+from decimal import Decimal 
+from enum import Enum 
 import re
 import sys
 from typing import (
@@ -15,7 +15,7 @@ from typing import (
     Optional,
     Union
 )
-from pydantic.version import VERSION  as PYDANTIC_VERSION
+from pydantic.version import VERSION  as PYDANTIC_VERSION 
 if int(PYDANTIC_VERSION[0])>=2:
     from pydantic import (
         BaseModel,
@@ -161,6 +161,7 @@ class EnumProgram(str, Enum):
 
 
 class EnumStudyCode(str, Enum):
+    AADSC = "aadsc"
     ABC_DS = "abc_ds"
     ADS = "ads"
     AECOM_DS = "aecom_ds"
@@ -183,6 +184,7 @@ class EnumStudyCode(str, Enum):
     ECODS = "ecods"
     EXcEEDS = "exceeds"
     HTP = "htp"
+    OPTimal = "optimal"
     TEAM_DS = "team_ds"
     TRC_DS = "trc_ds"
     X01_deSmith = "x01_desmith"
@@ -215,7 +217,7 @@ class EnumClinicalDataSourceType(str, Enum):
     Medical_Record = "medical_record"
     # Data obtained by examination, interview, etc. with investigator
     Investigator_Assessment = "investigator_assessment"
-    # Data obtained from survey, questionnaire, etc.
+    # Data obtained from survey, questionnaire, etc. filled out by participant or caregiver
     Participant_or_Caregiver_Report = "participant_or_caregiver_report"
     Other = "other"
     Unknown = "unknown"
@@ -257,7 +259,7 @@ class Biospecimen(Thing):
     """
     A Biospecimen Collected from A Participant
     """
-    studyCode: EnumStudyCode = Field(..., title="Study Code", description="""Unique identifer for the study (generally a short acronym)""")
+    studyCode: EnumStudyCode = Field(..., title="Study Code", description="""Unique identifier for the study (generally a short acronym)""")
     participantGlobalId: str = Field(..., title="Participant Global ID", description="""Unique INCLUDE global identifier for the participant, assigned by DCC""")
     participantExternalId: str = Field(..., title="Participant External ID", description="""Unique, de-identified identifier for the participant, assigned by data contributor. External IDs must be two steps removed from personal information in the study records.""")
     sampleGlobalId: str = Field(..., title="Sample Global ID", description="""INCLUDE global identifier for sample, assigned by DCC""")
@@ -286,7 +288,7 @@ class DataFile(Thing):
     """
     Metadata about Data Files
     """
-    studyCode: EnumStudyCode = Field(..., title="Study Code", description="""Unique identifer for the study (generally a short acronym)""")
+    studyCode: EnumStudyCode = Field(..., title="Study Code", description="""Unique identifier for the study (generally a short acronym)""")
     participantGlobalId: str = Field(..., title="Participant Global ID", description="""Unique INCLUDE global identifier for the participant, assigned by DCC""")
     participantExternalId: str = Field(..., title="Participant External ID", description="""Unique, de-identified identifier for the participant, assigned by data contributor. External IDs must be two steps removed from personal information in the study records.""")
     sampleGlobalId: str = Field(..., title="Sample Global ID", description="""INCLUDE global identifier for sample, assigned by DCC""")
@@ -311,7 +313,7 @@ class Participant(Thing):
     """
     Demographic and clinical information about the participant
     """
-    studyCode: EnumStudyCode = Field(..., title="Study Code", description="""Unique identifer for the study (generally a short acronym)""")
+    studyCode: EnumStudyCode = Field(..., title="Study Code", description="""Unique identifier for the study (generally a short acronym)""")
     participantGlobalId: str = Field(..., title="Participant Global ID", description="""Unique INCLUDE global identifier for the participant, assigned by DCC""")
     participantExternalId: str = Field(..., title="Participant External ID", description="""Unique, de-identified identifier for the participant, assigned by data contributor. External IDs must be two steps removed from personal information in the study records.""")
     familyId: Optional[str] = Field(None, title="Family ID", description="""Unique identifer for family to which Participant belongs, assigned by data contributor""")
@@ -335,7 +337,7 @@ class Condition(Thing):
     """
     Co-occurring conditions and other observations for the participant
     """
-    studyCode: EnumStudyCode = Field(..., title="Study Code", description="""Unique identifer for the study (generally a short acronym)""")
+    studyCode: EnumStudyCode = Field(..., title="Study Code", description="""Unique identifier for the study (generally a short acronym)""")
     participantGlobalId: str = Field(..., title="Participant Global ID", description="""Unique INCLUDE global identifier for the participant, assigned by DCC""")
     participantExternalId: str = Field(..., title="Participant External ID", description="""Unique, de-identified identifier for the participant, assigned by data contributor. External IDs must be two steps removed from personal information in the study records.""")
     eventId: Optional[str] = Field(None, title="Event ID", description="""Identifier for event (Visit, Survey completion, Sample collection, etc.) to which the Condition data are linked, if applicable. There may be multiple events linked to a Participant.""")
@@ -361,7 +363,7 @@ class Study(Thing):
     """
     General information about the study
     """
-    studyCode: EnumStudyCode = Field(..., title="Study Code", description="""Unique identifer for the study (generally a short acronym)""")
+    studyCode: EnumStudyCode = Field(..., title="Study Code", description="""Unique identifier for the study (generally a short acronym)""")
     studyTitle: str = Field(..., title="Study Title", description="""Full title of the study""")
     program: List[EnumProgram] = Field(default_factory=list, title="Program", description="""Funding source(s) for the study (pipe-separated if multiple)""")
     studyDescription: str = Field(..., title="Study Description", description="""Brief description of the study (2-4 sentences)""")
@@ -369,15 +371,15 @@ class Study(Thing):
     studyContactName: List[str] = Field(default_factory=list, title="Study Contact Name", description="""Name of contact person for this study; pipe-separated if multiple""")
     studyContactInstitution: List[str] = Field(default_factory=list, title="Study Contact Institution", description="""Institution of contact person for this study; pipe-separated if multiple""")
     studyContactEmail: List[str] = Field(default_factory=list, title="Study Contact Email", description="""Email address of contact person for this study; pipe-separated if multiple""")
-    vbrEmail: Optional[str] = Field(None, title="VBR Email", description="""Email address for Virtual Biorepository requests/inquiries""")
-    vbrUrl: Optional[str] = Field(None, title="VBR URL", description="""Link to Virtual Biorepository request form""")
-    vbrReadme: Optional[str] = Field(None, title="VBR Readme", description="""Instructions for contacting or requesting samples from Virtual Biorepository""")
+    vbrEmail: Optional[str] = Field(None, title="VBR Email", description="""Email address for Virtual Biorepository requests/inquiries, if participating""")
+    vbrUrl: Optional[str] = Field(None, title="VBR URL", description="""Link to Virtual Biorepository request form, if participating""")
+    vbrReadme: Optional[str] = Field(None, title="VBR Readme", description="""Instructions for contacting or requesting samples from Virtual Biorepository, if participating""")
     researchDomain: List[EnumResearchDomain] = Field(default_factory=list, title="Research Domain", description="""Main research domain(s) of the study, other than Down syndrome; pipe-separated if multiple""")
     participantLifespanStage: List[EnumParticipantLifespanStage] = Field(default_factory=list, title="Participant Lifespan Stage", description="""Focus age group(s) of the study population; pipe-separated if multiple""")
     selectionCriteria: Optional[str] = Field(None, title="Selection Criteria", description="""Brief description of inclusion and/or exclusion criteria for the study""")
     studyDesign: str = Field(..., title="Study Design", description="""Overall design of study, including whether it is longitudinal and whether family members/unrelated controls are also enrolled""")
     clinicalDataSourceType: List[EnumClinicalDataSourceType] = Field(default_factory=list, title="Clinical Data Source Type", description="""Source(s) of data collected from study participants; pipe-separated if multiple""")
-    dataCategory: EnumDataCategory = Field(..., title="Data Category", description="""Categories of data expected to be collected in this study""")
+    dataCategory: List[EnumDataCategory] = Field(default_factory=list, title="Data Category", description="""Categories of data expected to be collected in this study""")
     studyWebsite: Optional[str] = Field(None, title="Study Website", description="""Website for the study""")
     dbgap: Optional[List[str]] = Field(default_factory=list, title="dbGaP", description="""dbGaP \"phs\" accession code(s) associated with this Study, either for access or informational purposes (pipe-separated if multiple)""")
     publication: Optional[List[str]] = Field(default_factory=list, title="Publication", description="""URL for publication(s) describing the study's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)""")
@@ -391,7 +393,7 @@ class Dataset(Thing):
     """
     Information about a specific grouping of data files
     """
-    studyCode: EnumStudyCode = Field(..., title="Study Code", description="""Unique identifer for the study (generally a short acronym)""")
+    studyCode: EnumStudyCode = Field(..., title="Study Code", description="""Unique identifier for the study (generally a short acronym)""")
     datasetName: str = Field(..., title="Dataset Name", description="""Full name of the dataset, provided by contributor""")
     datasetDescription: Optional[str] = Field(None, title="Dataset Description", description="""Brief additional notes about the dataset (1-3 sentences) that are not already captured in the other fields""")
     datasetGlobalId: Optional[str] = Field(None, title="Dataset Global ID", description="""Unique Global ID for dataset, generated by DCC""")
@@ -400,8 +402,8 @@ class Dataset(Thing):
     expectedNumberOfFiles: Optional[int] = Field(None, title="Expected Number of Files", description="""Expected number of files associated with this dataset, including dictionaries. If additional explanation is needed, please add to Dataset Description field.""")
     dataCollectionStartYear: Optional[str] = Field(None, title="Data Collection Start Year", description="""Year that data collection started""")
     dataCollectionEndYear: Optional[str] = Field(None, title="Data Collection End Year", description="""Year that data collection ended""")
-    dataCategory: EnumDataCategory = Field(..., title="Data Category", description="""General category of data in Dataset; pipe-separated if multiple""")
-    dataType: Optional[str] = Field(None, title="Data Type", description="""Specific type of data contained in Dataset; pipe-separated if multiple (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)""")
+    dataCategory: List[EnumDataCategory] = Field(default_factory=list, title="Data Category", description="""General category of data in Dataset; pipe-separated if multiple""")
+    dataType: Optional[List[str]] = Field(default_factory=list, title="Data Type", description="""Specific type of data contained in Dataset; pipe-separated if multiple (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)""")
     experimentalStrategy: Optional[List[str]] = Field(default_factory=list, title="Experimental Strategy", description="""Experimental method used to obtain data in Dataset; pipe-separated if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)""")
     experimentalPlatform: Optional[List[str]] = Field(default_factory=list, title="Experimental Platform", description="""Specific platform used to perform experiment; pipe-separated if multiple (e.g. SOMAscan, MSD, Luminex, Illumina)""")
     publication: Optional[List[str]] = Field(default_factory=list, title="Publication", description="""URL for publication(s) describing the Dataset's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)""")
@@ -417,7 +419,7 @@ class DatasetManifest(Thing):
     """
     Mapping information for files in Dataset
     """
-    studyCode: EnumStudyCode = Field(..., title="Study Code", description="""Unique identifer for the study (generally a short acronym)""")
+    studyCode: EnumStudyCode = Field(..., title="Study Code", description="""Unique identifier for the study (generally a short acronym)""")
     datasetName: str = Field(..., title="Dataset Name", description="""Full name of the dataset, provided by contributor""")
     datasetGlobalId: Optional[str] = Field(None, title="Dataset Global ID", description="""Unique Global ID for dataset, generated by DCC""")
     datasetExternalId: Optional[str] = Field(None, title="Dataset External ID", description="""Unique identifier or code for dataset, if provided by contributor""")
