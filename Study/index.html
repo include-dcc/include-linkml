@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://include-dcc.github.io/include-linkml/Study/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.0, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Study (Study) - INCLUDE Data Model</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -242,7 +242,7 @@
 
 
 
-    Study --&gt; "1" EnumDataCategory : dataCategory
+    Study --&gt; "1..*" EnumDataCategory : dataCategory
     click EnumDataCategory href "../EnumDataCategory"
 
 
@@ -439,7 +439,7 @@
 </tr>
 <tr>
 <td><a href="../dataCategory/">dataCategory</a></td>
-<td>1 <br/> <a href="../EnumDataCategory/">EnumDataCategory</a></td>
+<td>1..* <br/> <a href="../EnumDataCategory/">EnumDataCategory</a></td>
 <td>Categories of data expected to be collected in this study</td>
 <td>direct</td>
 </tr>
@@ -569,6 +569,7 @@ slot_usage:
   dataCategory:
     name: dataCategory
     description: Categories of data expected to be collected in this study
+    multivalued: true
   dbgap:
     name: dbgap
     description: dbGaP "phs" accession code(s) associated with this Study, either
@@ -600,6 +601,7 @@ slot_usage:
   dataCategory:
     name: dataCategory
     description: Categories of data expected to be collected in this study
+    multivalued: true
   dbgap:
     name: dbgap
     description: dbGaP "phs" accession code(s) associated with this Study, either
@@ -853,6 +855,7 @@ attributes:
     - Dataset
     range: enum_dataCategory
     required: true
+    multivalued: true
   studyWebsite:
     name: studyWebsite
     definition_uri: include:studyWebsite

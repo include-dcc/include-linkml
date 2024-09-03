@@ -7,7 +7,7 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://include-dcc.github.io/include-linkml/Dataset/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.0, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
 <title>Class: Dataset (Dataset) - INCLUDE Data Model</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -233,7 +233,7 @@
 
 
 
-    Dataset --&gt; "1" EnumDataCategory : dataCategory
+    Dataset --&gt; "1..*" EnumDataCategory : dataCategory
     click EnumDataCategory href "../EnumDataCategory"
 
 
@@ -354,13 +354,13 @@
 </tr>
 <tr>
 <td><a href="../dataCategory/">dataCategory</a></td>
-<td>1 <br/> <a href="../EnumDataCategory/">EnumDataCategory</a></td>
+<td>1..* <br/> <a href="../EnumDataCategory/">EnumDataCategory</a></td>
 <td>General category of data in Dataset; pipe-separated if multiple</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../dataType/">dataType</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td>Specific type of data contained in Dataset; pipe-separated if multiple (e</td>
 <td>direct</td>
 </tr>
@@ -498,6 +498,7 @@ slot_usage:
   dataCategory:
     name: dataCategory
     description: General category of data in Dataset; pipe-separated if multiple
+    multivalued: true
   dbgap:
     name: dbgap
     description: dbGaP "phs" accession code(s) required to access the files in this
@@ -516,6 +517,7 @@ slot_usage:
       (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration,
       Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications,
       Gene fusions, Somatic copy number variations, Somatic structural variations)
+    multivalued: true
   experimentalStrategy:
     name: experimentalStrategy
     description: Experimental method used to obtain data in Dataset; pipe-separated
@@ -540,6 +542,7 @@ slot_usage:
   dataCategory:
     name: dataCategory
     description: General category of data in Dataset; pipe-separated if multiple
+    multivalued: true
   dbgap:
     name: dbgap
     description: dbGaP "phs" accession code(s) required to access the files in this
@@ -558,6 +561,7 @@ slot_usage:
       (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration,
       Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications,
       Gene fusions, Somatic copy number variations, Somatic structural variations)
+    multivalued: true
   experimentalStrategy:
     name: experimentalStrategy
     description: Experimental method used to obtain data in Dataset; pipe-separated
@@ -708,6 +712,7 @@ attributes:
     - Dataset
     range: enum_dataCategory
     required: true
+    multivalued: true
   dataType:
     name: dataType
     definition_uri: include:dataType
@@ -724,6 +729,7 @@ attributes:
     - DataFile
     - Dataset
     range: string
+    multivalued: true
   experimentalStrategy:
     name: experimentalStrategy
     definition_uri: include:experimentalStrategy
