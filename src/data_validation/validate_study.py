@@ -8,7 +8,7 @@ def validate_study_entry(row):
         instance = Study(
             studyCode = row['study code'],
             studyTitle = handle_nan(row['study title']),
-            program = row['program'].split('|'),
+            program = row['program'].split('|') if handle_nan(row['program']) else [],
             studyDescription = handle_nan(row['study description']),
             principalInvestigatorName = handle_nan(row['principal investigator name']).split('|') if handle_nan(row['principal investigator name']) else [],
             studyContactName = handle_nan(row['study contact name']).split('|') if handle_nan(row['study contact name']) else [],
@@ -17,12 +17,12 @@ def validate_study_entry(row):
             vbrEmail = handle_nan(row['vbr email']),
             vbrUrl = handle_nan(row['vbr url']),
             vbrReadme = handle_nan(row['vbr readme']),
-            researchDomain = row['research domain'].split('|'),
-            participantLifespanStage = row['participant lifespan stage'].split('|'),
+            researchDomain = row['research domain'].split('|') if handle_nan(row['research domain']) else [],
+            participantLifespanStage = row['participant lifespan stage'].split('|') if handle_nan(row['participant lifespan stage']) else [],
             selectionCriteria = handle_nan(row['selection criteria']),
             studyDesign = handle_nan(row['study design']),
-            clinicalDataSourceType = row['clinical data source type'].split('|'),
-            dataCategory = row['data category'].split('|'),
+            clinicalDataSourceType = row['clinical data source type'].split('|') if handle_nan(row['clinical data source type']) else [],
+            dataCategory = row['data category'].split('|') if handle_nan(row['data category']) else [],
             studyWebsite = handle_nan(row['study website']),
             dbgap = row['dbgap'].split('|') if handle_nan(row['dbgap']) else [],
             publication = str(row['publication']).split('|') if handle_nan(row['publication']) else [],
@@ -35,5 +35,5 @@ def validate_study_entry(row):
         return True, None
     except ValidationError as e:
         # Validation failed
-        error_details = (str(row['Study Code']), e)
+        error_details = (str(row['study code']), e)
         return False, error_details
