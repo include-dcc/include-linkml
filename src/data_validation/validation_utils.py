@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 from datetime import datetime
+import chardet
 
 
 def clean_string(value):
@@ -49,9 +50,14 @@ def save_validation_results(validation_results, input_file_name, output_path):
         file.write('\n'.join(validation_results_str))
     return output_file_path
 
+def detect_encoding(file_path):
+    with open(file_path, 'rb') as f:
+        result = chardet.detect(f.read())
+    return result['encoding']
 
 def read_csv_file(file_path):
-    df = pd.read_csv(file_path)
+    encoding = detect_encoding(file_path)
+    df = pd.read_csv(file_path, encoding=encoding)
     df.columns = df.columns.str.lower()  # Convert column names to lower case
     return df
 
