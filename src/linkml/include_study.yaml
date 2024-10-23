@@ -367,6 +367,9 @@ enums:
       aecom_ds:
         text: aecom_ds
         title: AECOM-DS
+      best21:
+        text: best21
+        title: BEST21
       brainpower:
         text: brainpower
         title: BrainPower
@@ -379,6 +382,9 @@ enums:
       charge_ds:
         text: charge_ds
         title: CHARGE-DS
+      decidas:
+        text: decidas
+        title: DECIDAS
       ds_brain:
         text: ds_brain
         title: DS-Brain
@@ -409,6 +415,9 @@ enums:
       ds_sleep:
         text: ds_sleep
         title: DS-Sleep
+      ds_vite:
+        text: ds_vite
+        title: DS-VitE
       ds360_chd:
         text: ds360_chd
         title: DS360-CHD
