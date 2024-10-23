@@ -60,8 +60,9 @@ classes:
         description: dbGaP "phs" accession code(s) associated with this Study, either for access or informational purposes (pipe-separated if multiple)
       publication:
         description: URL for publication(s) describing the study's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
+        multivalued: true
       expectedNumberOfParticipants:
-        description: Expected number of participants in this study. If additional explanation is needed, please add to Study Description field.
+        description: Expected number of participants in this study (or actual number, if data has been submitted to INCLUDE DCC). If additional explanation is needed, please add to Study Description field.
 
   Dataset:
     title: Dataset
@@ -101,13 +102,15 @@ classes:
         description: dbGaP "phs" accession code(s) required to access the files in this Dataset, if applicable (pipe-separated if multiple)
       publication:
         description: URL for publication(s) describing the Dataset's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
+        multivalued: true
       expectedNumberOfParticipants:
-        description: Expected number of participants in this Dataset. If additional explanation is needed, please add to Dataset Description field.
+        description: Expected number of participants in this Dataset (or actual number, if data has been submitted to INCLUDE DCC). If additional explanation is needed, please add to Dataset Description field.
       dataType:
         description: Specific type of data contained in Dataset; pipe-separated if multiple (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
         multivalued: true
       experimentalStrategy:
         description: Experimental method used to obtain data in Dataset; pipe-separated if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
+        multivalued: true
 
   DatasetManifest:
     title: Dataset Manifest
