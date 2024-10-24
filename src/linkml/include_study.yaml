@@ -222,7 +222,7 @@ slots:
     definition_uri: include:studyDesign
     description: Overall design of study, including whether it is longitudinal and whether family members/unrelated controls are also enrolled
     title: Study Design
-    range: string 
+    range: enum_studyDesign 
     required: true
   clinicalDataSourceType: 
     definition_uri: include:clinicalDataSourceType
@@ -510,6 +510,37 @@ enums:
         text: adult
         title: Adult
         description: 18+ years old
+  enum_studyDesign:
+    name: enum_studyDesign
+    definition_uri: include:enum_studyDesign
+    permissible_values:
+      case_control:
+        text: case_control
+        title: Case-Control
+      case_set:
+        text: case_set
+        title: Case Set
+      control_set:
+        text: control_set
+        title: Control Set
+      clinical_trial:
+        text: clinical_trial
+        title: Clinical Trial
+      cross_sectional:
+        text: cross_sectional
+        title: Cross-Sectional
+      family_twins_trios:
+        text: family_twins_trios
+        title: Family/Twins/Trios
+      interventional:
+        text: interventional
+        title: Interventional
+      fetal:
+        text: fetal
+        title: Fetal
+      fetal:
+        text: fetal
+        title: Fetal
   enum_clinicalDataSourceType:
     #TODO: replace enum_conditionDataSource with this - or consider deleting slot conditionDataSource
     name: enum_clinicalDataSourceType
