@@ -576,6 +576,9 @@ enums:
       other:
         text: other
         title: Other
+      sleep_study:
+        text: sleep_study
+        title: Sleep Study
   enum_guidType:
     name: enum_guidType
     definition_uri: include:enum_guidType
