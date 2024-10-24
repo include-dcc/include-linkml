@@ -253,6 +253,11 @@ slots:
     title: GUID Type
     range: enum_guidType 
     required: true
+  guidMapped: 
+    definition_uri: include:guidMapped
+    description: For studies using NDAR GUIDs, have the GUIDs been added to the INCLUDE GUID Mapping File?
+    title: GUIDs Mapped?
+    range: boolean
   dbgap: 
     definition_uri: include:dbgap
     title: dbGaP
