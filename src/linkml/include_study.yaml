@@ -535,12 +535,12 @@ enums:
       interventional:
         text: interventional
         title: Interventional
-      fetal:
-        text: fetal
-        title: Fetal
-      fetal:
-        text: fetal
-        title: Fetal
+      longitudinal:
+        text: longitudinal
+        title: Longitudinal
+      tumor_vs_matched_normal:
+        text: tumor_vs_matched_normal
+        title: Tumor vs Matched Normal
   enum_clinicalDataSourceType:
     #TODO: replace enum_conditionDataSource with this - or consider deleting slot conditionDataSource
     name: enum_clinicalDataSourceType
