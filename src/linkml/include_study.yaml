@@ -50,6 +50,7 @@ classes:
     - publication
     - expectedNumberOfParticipants
     - guidType
+    - guidMapped
     - acknowledgments
     - citationStatement
     slot_usage:
