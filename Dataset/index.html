@@ -331,7 +331,7 @@
 <tr>
 <td><a href="../expectedNumberOfParticipants/">expectedNumberOfParticipants</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>Expected number of participants in this Dataset</td>
+<td>Expected number of participants in this Dataset (or actual number, if data ha...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -509,8 +509,9 @@ slot_usage:
       (PubMed Central preferred but not required; pipe-separated if multiple)
   expectedNumberOfParticipants:
     name: expectedNumberOfParticipants
-    description: Expected number of participants in this Dataset. If additional explanation
-      is needed, please add to Dataset Description field.
+    description: Expected number of participants in this Dataset (or actual number,
+      if data has been submitted to INCLUDE DCC). If additional explanation is needed,
+      please add to Dataset Description field.
   dataType:
     name: dataType
     description: Specific type of data contained in Dataset; pipe-separated if multiple
@@ -523,6 +524,7 @@ slot_usage:
     description: Experimental method used to obtain data in Dataset; pipe-separated
       if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass
       spec metabolomics)
+    multivalued: true
 
 </code></pre>
 </details>
@@ -553,8 +555,9 @@ slot_usage:
       (PubMed Central preferred but not required; pipe-separated if multiple)
   expectedNumberOfParticipants:
     name: expectedNumberOfParticipants
-    description: Expected number of participants in this Dataset. If additional explanation
-      is needed, please add to Dataset Description field.
+    description: Expected number of participants in this Dataset (or actual number,
+      if data has been submitted to INCLUDE DCC). If additional explanation is needed,
+      please add to Dataset Description field.
   dataType:
     name: dataType
     description: Specific type of data contained in Dataset; pipe-separated if multiple
@@ -567,6 +570,7 @@ slot_usage:
     description: Experimental method used to obtain data in Dataset; pipe-separated
       if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass
       spec metabolomics)
+    multivalued: true
 attributes:
   studyCode:
     name: studyCode
@@ -644,8 +648,9 @@ attributes:
   expectedNumberOfParticipants:
     name: expectedNumberOfParticipants
     definition_uri: include:expectedNumberOfParticipants
-    description: Expected number of participants in this Dataset. If additional explanation
-      is needed, please add to Dataset Description field.
+    description: Expected number of participants in this Dataset (or actual number,
+      if data has been submitted to INCLUDE DCC). If additional explanation is needed,
+      please add to Dataset Description field.
     title: Expected Number of Participants
     from_schema: https://w3id.org/include
     rank: 1000
