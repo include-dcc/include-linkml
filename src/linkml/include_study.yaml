@@ -50,6 +50,7 @@ classes:
     - publication
     - expectedNumberOfParticipants
     - guidType
+    - guidMapped
     - acknowledgments
     - citationStatement
     slot_usage:
@@ -61,7 +62,7 @@ classes:
       publication:
         description: URL for publication(s) describing the study's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
       expectedNumberOfParticipants:
-        description: Expected number of participants in this study. If additional explanation is needed, please add to Study Description field.
+        description: Expected number of participants in this study (or actual number, if data has been submitted to INCLUDE DCC). If additional explanation is needed, please add to Study Description field.
 
   Dataset:
     title: Dataset
@@ -102,12 +103,13 @@ classes:
       publication:
         description: URL for publication(s) describing the Dataset's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
       expectedNumberOfParticipants:
-        description: Expected number of participants in this Dataset. If additional explanation is needed, please add to Dataset Description field.
+        description: Expected number of participants in this Dataset (or actual number, if data has been submitted to INCLUDE DCC). If additional explanation is needed, please add to Dataset Description field.
       dataType:
         description: Specific type of data contained in Dataset; pipe-separated if multiple (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
         multivalued: true
       experimentalStrategy:
         description: Experimental method used to obtain data in Dataset; pipe-separated if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
+        multivalued: true
 
   DatasetManifest:
     title: Dataset Manifest
@@ -219,7 +221,7 @@ slots:
     definition_uri: include:studyDesign
     description: Overall design of study, including whether it is longitudinal and whether family members/unrelated controls are also enrolled
     title: Study Design
-    range: string 
+    range: enum_studyDesign 
     required: true
   clinicalDataSourceType: 
     definition_uri: include:clinicalDataSourceType
@@ -250,6 +252,11 @@ slots:
     title: GUID Type
     range: enum_guidType 
     required: true
+  guidMapped: 
+    definition_uri: include:guidMapped
+    description: For studies using NDAR GUIDs, have the GUIDs been added to the INCLUDE GUID Mapping File?
+    title: GUIDs Mapped?
+    range: boolean
   dbgap: 
     definition_uri: include:dbgap
     title: dbGaP
@@ -367,6 +374,9 @@ enums:
       aecom_ds:
         text: aecom_ds
         title: AECOM-DS
+      best21:
+        text: best21
+        title: BEST21
       brainpower:
         text: brainpower
         title: BrainPower
@@ -379,6 +389,9 @@ enums:
       charge_ds:
         text: charge_ds
         title: CHARGE-DS
+      decidas:
+        text: decidas
+        title: DECIDAS
       ds_brain:
         text: ds_brain
         title: DS-Brain
@@ -409,6 +422,9 @@ enums:
       ds_sleep:
         text: ds_sleep
         title: DS-Sleep
+      ds_vite:
+        text: ds_vite
+        title: DS-VitE
       ds360_chd:
         text: ds360_chd
         title: DS360-CHD
@@ -493,6 +509,37 @@ enums:
         text: adult
         title: Adult
         description: 18+ years old
+  enum_studyDesign:
+    name: enum_studyDesign
+    definition_uri: include:enum_studyDesign
+    permissible_values:
+      case_control:
+        text: case_control
+        title: Case-Control
+      case_set:
+        text: case_set
+        title: Case Set
+      control_set:
+        text: control_set
+        title: Control Set
+      clinical_trial:
+        text: clinical_trial
+        title: Clinical Trial
+      cross_sectional:
+        text: cross_sectional
+        title: Cross-Sectional
+      family_twins_trios:
+        text: family_twins_trios
+        title: Family/Twins/Trios
+      interventional:
+        text: interventional
+        title: Interventional
+      longitudinal:
+        text: longitudinal
+        title: Longitudinal
+      tumor_vs_matched_normal:
+        text: tumor_vs_matched_normal
+        title: Tumor vs Matched Normal
   enum_clinicalDataSourceType:
     #TODO: replace enum_conditionDataSource with this - or consider deleting slot conditionDataSource
     name: enum_clinicalDataSourceType
@@ -559,6 +606,9 @@ enums:
       other:
         text: other
         title: Other
+      sleep_study:
+        text: sleep_study
+        title: Sleep Study
   enum_guidType:
     name: enum_guidType
     definition_uri: include:enum_guidType
