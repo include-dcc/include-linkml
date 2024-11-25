@@ -94,6 +94,7 @@ classes:
     - otherRepository
     - otherAccessAuthority
     - isHarmonized
+    - datasetManifestLocation
     slot_usage:
       dataCategory:
         description: General category of data in Dataset; pipe-separated if multiple
@@ -340,9 +341,14 @@ slots:
     range: string
   isHarmonized: 
     definition_uri: include:isHarmonized
-    description: For omics datasets, is this Dataset already harmonized and available in the INCLUDE Data Hub?
-    title: Is Harmonized?
+    description: All of the elements in this Dataset are harmonized and available in the INCLUDE Data Hub
+    title: Is Harmonized
     range: boolean
+  datasetManifestLocation: 
+    definition_uri: include:datasetManifestLocation
+    description: Location of associated Dataset Manifest
+    title: Dataset Manifest Location
+    range: string
 
 enums:
   enum_program:
