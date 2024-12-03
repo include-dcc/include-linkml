@@ -10,7 +10,7 @@ from src.data_validation.validate_datasetmanifest import validate_datasetmanifes
 
 def validate_study(file_path, output_path='.'):
     string_columns = ['study code', 'program', 'research domain', 'participant lifespan stage',
-                      'clinical data source type', 'data category', 'guid type']
+                      'study design', 'clinical data source type', 'data category', 'guid type']
     return validate_data(file_path, string_columns, validate_study_entry, output_path)
 
 
@@ -36,7 +36,7 @@ def validate_datafile(file_path, output_path='.'):
 
 
 def validate_dataset(file_path, output_path='.'):
-    string_columns = ['study code', 'data category', 'data access']
+    string_columns = ['study code', 'data category']
     return validate_data(file_path, string_columns, validate_dataset_entry, output_path)
 
 

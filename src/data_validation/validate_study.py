@@ -28,6 +28,7 @@ def validate_study_entry(row):
             publication = str(row['publication']).split('|') if handle_nan(row['publication']) else [],
             expectedNumberOfParticipants = handle_nan(row['expected number of participants']),
             guidType = row['guid type'],
+            guidMapped = bool(row['guids mapped?']),
             acknowledgments = row['acknowledgments'].split('|') if handle_nan(row['acknowledgments']) else [],
             citationStatement = row['citation statement'].split('|') if handle_nan(row['citation statement']) else []
         )
