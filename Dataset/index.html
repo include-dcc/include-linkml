@@ -247,6 +247,8 @@
 
       Dataset : datasetGlobalId
 
+      Dataset : datasetManifestLocation
+
       Dataset : datasetName
 
       Dataset : dataType
@@ -415,7 +417,13 @@
 <tr>
 <td><a href="../isHarmonized/">isHarmonized</a></td>
 <td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
-<td>For omics datasets, is this Dataset already harmonized and available in the I...</td>
+<td>All of the elements in this Dataset are harmonized and available in the INCLU...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../datasetManifestLocation/">datasetManifestLocation</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Location of associated Dataset Manifest</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -494,6 +502,7 @@ slots:
 - otherRepository
 - otherAccessAuthority
 - isHarmonized
+- datasetManifestLocation
 slot_usage:
   dataCategory:
     name: dataCategory
@@ -852,9 +861,9 @@ attributes:
   isHarmonized:
     name: isHarmonized
     definition_uri: include:isHarmonized
-    description: For omics datasets, is this Dataset already harmonized and available
-      in the INCLUDE Data Hub?
-    title: Is Harmonized?
+    description: All of the elements in this Dataset are harmonized and available
+      in the INCLUDE Data Hub
+    title: Is Harmonized
     from_schema: https://w3id.org/include
     rank: 1000
     alias: isHarmonized
@@ -862,6 +871,18 @@ attributes:
     domain_of:
     - Dataset
     range: boolean
+  datasetManifestLocation:
+    name: datasetManifestLocation
+    definition_uri: include:datasetManifestLocation
+    description: Location of associated Dataset Manifest
+    title: Dataset Manifest Location
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: datasetManifestLocation
+    owner: Dataset
+    domain_of:
+    - Dataset
+    range: string
 
 </code></pre>
 </details>
