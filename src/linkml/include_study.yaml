@@ -224,6 +224,7 @@ slots:
     title: Study Design
     range: enum_studyDesign 
     required: true
+    multivalued: true
   clinicalDataSourceType: 
     definition_uri: include:clinicalDataSourceType
     description: Source(s) of data collected from study participants; pipe-separated if multiple

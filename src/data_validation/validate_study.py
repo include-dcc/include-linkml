@@ -20,7 +20,7 @@ def validate_study_entry(row):
             researchDomain = row['research domain'].split('|') if handle_nan(row['research domain']) else [],
             participantLifespanStage = row['participant lifespan stage'].split('|') if handle_nan(row['participant lifespan stage']) else [],
             selectionCriteria = handle_nan(row['selection criteria']),
-            studyDesign = handle_nan(row['study design']),
+            studyDesign = row['study design'].split('|') if handle_nan(row['study design']) else [],
             clinicalDataSourceType = row['clinical data source type'].split('|') if handle_nan(row['clinical data source type']) else [],
             dataCategory = row['data category'].split('|') if handle_nan(row['data category']) else [],
             studyWebsite = handle_nan(row['study website']),
@@ -28,7 +28,7 @@ def validate_study_entry(row):
             publication = str(row['publication']).split('|') if handle_nan(row['publication']) else [],
             expectedNumberOfParticipants = handle_nan(row['expected number of participants']),
             guidType = row['guid type'],
-            guidMapped = bool(row['guids mapped?']),
+            guidMapped = bool(row['guid mapped']),
             acknowledgments = row['acknowledgments'].split('|') if handle_nan(row['acknowledgments']) else [],
             citationStatement = row['citation statement'].split('|') if handle_nan(row['citation statement']) else []
         )
