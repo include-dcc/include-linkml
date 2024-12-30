@@ -389,6 +389,9 @@ enums:
       bri_dsr:
         text: bri_dsr
         title: BRI-DSR
+      ccds:
+        text: ccds
+        title: CCDS
       child_ds:
         text: child_ds
         title: CHILD-DS
