@@ -604,7 +604,7 @@ enums:
       cognitive_behavioral:
         text: cognitive_behavioral
         title: Cognitive/Behavioral
-      immune_maps:
+      immune_profiling:
         text: immune_profiling
         title: Immune Profiling
       imaging:
