@@ -402,6 +402,9 @@ enums:
       decidas:
         text: decidas
         title: DECIDAS
+      ds_arc:
+        text: ds_arc
+        title: DS-ARC
       ds_brain:
         text: ds_brain
         title: DS-Brain
@@ -441,6 +444,9 @@ enums:
       dsc:
         text: dsc
         title: DSC
+      dsrrs:
+        text: dsrrs
+        title: DSRRS
       ecods:
         text: ecods
         title: ECODS
