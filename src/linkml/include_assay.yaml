@@ -88,8 +88,8 @@ classes:
     - sampleExternalId #usage of this field in multi-sample files is TBD
     - fileName
     - fileGlobalId
-    - fileS3Location
     - fileUploadLocation
+    - fileS3Location
     - drsUri
     - fileHash
     - dataAccess

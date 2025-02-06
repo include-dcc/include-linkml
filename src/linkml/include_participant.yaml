@@ -52,21 +52,12 @@ classes:
     - firstPatientEngagementEvent
     - outcomesVitalStatus
     - ageAtLastVitalStatus
-  # FamilyGroup:
-  #   name: FamilyGroup
-  #   definition_uri: include:FamilyGroup
-  #   annotations:
-  #     required:
-  #       tag: required
-  #       value: 'False'
-  #     requires_component:
-  #       tag: requires_component
-  #       value: Study,Participant
-  #   description: A group of Participants in the same Study
-  #   title: FamilyGroup
-  #   is_a: Thing
-  #   slots:
-  #   - has_member # add this slot later
+    slot_usage:
+      studyCode:
+        multivalued: true
+      participantExternalId:
+        multivalued: true
+
   Condition:
     title: Condition
     annotations:

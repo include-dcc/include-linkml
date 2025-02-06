@@ -224,6 +224,7 @@ slots:
     title: Study Design
     range: enum_studyDesign 
     required: true
+    multivalued: true
   clinicalDataSourceType: 
     definition_uri: include:clinicalDataSourceType
     description: Source(s) of data collected from study participants; pipe-separated if multiple
@@ -389,6 +390,9 @@ enums:
       bri_dsr:
         text: bri_dsr
         title: BRI-DSR
+      ccds:
+        text: ccds
+        title: CCDS
       child_ds:
         text: child_ds
         title: CHILD-DS
@@ -398,6 +402,9 @@ enums:
       decidas:
         text: decidas
         title: DECIDAS
+      ds_arc:
+        text: ds_arc
+        title: DS-ARC
       ds_brain:
         text: ds_brain
         title: DS-Brain
@@ -437,6 +444,9 @@ enums:
       dsc:
         text: dsc
         title: DSC
+      dsrrs:
+        text: dsrrs
+        title: DSRRS
       ecods:
         text: ecods
         title: ECODS
@@ -594,9 +604,9 @@ enums:
       cognitive_behavioral:
         text: cognitive_behavioral
         title: Cognitive/Behavioral
-      immune_maps:
-        text: immune_maps
-        title: Immune Maps
+      immune_profiling:
+        text: immune_profiling
+        title: Immune Profiling
       imaging:
         text: imaging
         title: Imaging
