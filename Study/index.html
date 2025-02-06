@@ -316,7 +316,7 @@
 
 
 
-    Study --&gt; "1" EnumStudyDesign : studyDesign
+    Study --&gt; "1..*" EnumStudyDesign : studyDesign
     click EnumStudyDesign href "../EnumStudyDesign"
 
 
@@ -436,7 +436,7 @@
 </tr>
 <tr>
 <td><a href="../studyDesign/">studyDesign</a></td>
-<td>1 <br/> <a href="../EnumStudyDesign/">EnumStudyDesign</a></td>
+<td>1..* <br/> <a href="../EnumStudyDesign/">EnumStudyDesign</a></td>
 <td>Overall design of study, including whether it is longitudinal and whether fam...</td>
 <td>direct</td>
 </tr>
@@ -843,6 +843,7 @@ attributes:
     - Study
     range: enum_studyDesign
     required: true
+    multivalued: true
   clinicalDataSourceType:
     name: clinicalDataSourceType
     definition_uri: include:clinicalDataSourceType

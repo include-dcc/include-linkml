@@ -312,7 +312,7 @@
 
 
 
-    Participant --&gt; "1" EnumStudyCode : studyCode
+    Participant --&gt; "1..*" EnumStudyCode : studyCode
     click EnumStudyCode href "../EnumStudyCode"
 
 
@@ -338,7 +338,7 @@
 <tbody>
 <tr>
 <td><a href="../studyCode/">studyCode</a></td>
-<td>1 <br/> <a href="../EnumStudyCode/">EnumStudyCode</a></td>
+<td>1..* <br/> <a href="../EnumStudyCode/">EnumStudyCode</a></td>
 <td>Unique identifier for the study (generally a short acronym)</td>
 <td>direct</td>
 </tr>
@@ -350,7 +350,7 @@
 </tr>
 <tr>
 <td><a href="../participantExternalId/">participantExternalId</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1..* <br/> <a href="../String/">String</a></td>
 <td>Unique, de-identified identifier for the participant, assigned by data contri...</td>
 <td>direct</td>
 </tr>
@@ -521,6 +521,13 @@ slots:
 - firstPatientEngagementEvent
 - outcomesVitalStatus
 - ageAtLastVitalStatus
+slot_usage:
+  studyCode:
+    name: studyCode
+    multivalued: true
+  participantExternalId:
+    name: participantExternalId
+    multivalued: true
 
 </code></pre>
 </details>
@@ -539,6 +546,13 @@ description: Demographic and clinical information about the participant
 title: Participant
 from_schema: https://w3id.org/include
 is_a: Thing
+slot_usage:
+  studyCode:
+    name: studyCode
+    multivalued: true
+  participantExternalId:
+    name: participantExternalId
+    multivalued: true
 attributes:
   studyCode:
     name: studyCode
@@ -559,6 +573,7 @@ attributes:
     - DatasetManifest
     range: enum_studyCode
     required: true
+    multivalued: true
   participantGlobalId:
     name: participantGlobalId
     definition_uri: include:participantGlobalId
@@ -594,6 +609,7 @@ attributes:
     - Condition
     range: string
     required: true
+    multivalued: true
   familyId:
     name: familyId
     definition_uri: include:familyId

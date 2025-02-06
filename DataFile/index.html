@@ -346,15 +346,15 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../fileS3Location/">fileS3Location</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>S3 bucket location of file; also serves as dewrangle descriptor</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../fileUploadLocation/">fileUploadLocation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Where source file was uploaded, if not directly to an S3 bucket (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../fileS3Location/">fileS3Location</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>S3 bucket location of file; also serves as dewrangle descriptor</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -483,8 +483,8 @@ slots:
 - sampleExternalId
 - fileName
 - fileGlobalId
-- fileS3Location
 - fileUploadLocation
+- fileS3Location
 - drsUri
 - fileHash
 - dataAccess
@@ -656,19 +656,6 @@ attributes:
     - DatasetManifest
     range: string
     required: true
-  fileS3Location:
-    name: fileS3Location
-    definition_uri: include:fileS3Location
-    description: S3 bucket location of file; also serves as dewrangle descriptor
-    title: File S3 Location
-    from_schema: https://w3id.org/include
-    rank: 1000
-    alias: fileS3Location
-    owner: DataFile
-    domain_of:
-    - DataFile
-    range: string
-    required: true
   fileUploadLocation:
     name: fileUploadLocation
     definition_uri: include:fileUploadLocation
@@ -682,6 +669,19 @@ attributes:
     domain_of:
     - DataFile
     range: string
+  fileS3Location:
+    name: fileS3Location
+    definition_uri: include:fileS3Location
+    description: S3 bucket location of file; also serves as dewrangle descriptor
+    title: File S3 Location
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: fileS3Location
+    owner: DataFile
+    domain_of:
+    - DataFile
+    range: string
+    required: true
   drsUri:
     name: drsUri
     definition_uri: include:drsUri
