@@ -22,6 +22,10 @@ jobs:
 
     - name: Install dependencies.
       run: poetry install -E docs
+
+    - name: Generate ER Diagram.
+      run: |
+        poetry run gen-erdiagram src/linkml/include_schema.yaml > src/docs/erdiagram.md
     
     - name: Build documentation.
       run: |
