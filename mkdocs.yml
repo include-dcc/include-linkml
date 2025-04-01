@@ -26,6 +26,7 @@ plugins:
 nav:
   - Index: index.md
   - About: about.md
+  - ER Diagram: erdiagram.md
 
 site_url: https://include-dcc.github.io/include-linkml/
 repo_url: https://github.com/include-dcc/include-linkml/
