@@ -264,6 +264,39 @@ classes:
         range: Participant
       sampleGlobalId:
         range: Biospecimen
+####################################################################################################
+# Slot Usage Overview
+# ====================
+# This section outlines the use of various slots (fields) across different entity classes,
+# including how slots can be customized or referenced within specific classes.
+# Slot usage enables fine-grained control over how each slot behaves within the context of each class.
+
+# Slot Usage: Directly Assigned to Entity Classes
+# -------------------------------------------------------
+# These slots are associated with specific classes, defining essential attributes for each entity.
+#
+# - dataCategory: Used in Study, Dataset, DataFile
+# - dbgap: Used in Study, Dataset
+# - publication: Used in Study, Dataset
+# - expectedNumberOfParticipant: Used in Study, Dataset
+# - dataType: Used in DataFile, Dataset
+# - experimentalStrategy: Used in DataFile, Dataset
+# - studyCode: Used in Participant
+# - participantExternalId: Used in Participant
+
+# Referential Slot Usage: Cross-Class References
+# ------------------------------------------------
+# These slots are used in multiple classes to establish relationships and link data across entities.
+# They do not define new slots but rather adapt existing slots for use in multiple contexts.
+#
+# - studyCode: Referenced in Participant, Condition, Biospecimen, DataFile, Dataset, DatasetManifest
+# - participantGlobalId: Referenced in Condition, Biospecimen, DataFile
+# - eventId: (Usage not fully defined, consider adding specific references)
+# - sampleGlobalId: Referenced in DataFile, DatasetManifest
+# - fileGlobalId: Referenced in DatasetManifest
+# - datasetGlobalId: (Usage not fully defined, consider adding specific references)
+
+####################################################################################################
 slots:
   studyCode:
     definition_uri: include:studyCode
@@ -867,41 +900,6 @@ slots:
     description: Unit of file size
     title: File Size Unit
     range: string # eventually want ontology terms here
-
-####################################################################################################
-# Slot Usage Overview
-# ====================
-# This section outlines the use of various slots (fields) across different entity classes,
-# including how slots can be customized or referenced within specific classes.
-# Slot usage enables fine-grained control over how each slot behaves within the context of each class.
-
-# Slot Usage: Directly Assigned to Entity Classes
-# -------------------------------------------------------
-# These slots are associated with specific classes, defining essential attributes for each entity.
-#
-# - dataCategory: Used in Study, Dataset, DataFile
-# - dbgap: Used in Study, Dataset
-# - publication: Used in Study, Dataset
-# - expectedNumberOfParticipant: Used in Study, Dataset
-# - dataType: Used in DataFile, Dataset
-# - experimentalStrategy: Used in DataFile, Dataset
-# - studyCode: Used in Participant
-# - participantExternalId: Used in Participant
-
-# Referential Slot Usage: Cross-Class References
-# ------------------------------------------------
-# These slots are used in multiple classes to establish relationships and link data across entities.
-# They do not define new slots but rather adapt existing slots for use in multiple contexts.
-#
-# - studyCode: Referenced in Participant, Condition, Biospecimen, DataFile, Dataset, DatasetManifest
-# - participantGlobalId: Referenced in Condition, Biospecimen, DataFile
-# - eventId: (Usage not fully defined, consider adding specific references)
-# - sampleGlobalId: Referenced in DataFile, DatasetManifest
-# - fileGlobalId: Referenced in DatasetManifest
-# - datasetGlobalId: (Usage not fully defined, consider adding specific references)
-
-####################################################################################################
-
 
 enums:
   enum_program:
