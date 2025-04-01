@@ -138,6 +138,11 @@
         About
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../erdiagram/">
+        ER Diagram
+      </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -153,11 +158,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#inheritance">
-    Inheritance
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -168,11 +168,6 @@
   </a>
 <nav aria-label="Identifier and Mapping Information" class="md-nav">
 <ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#annotations">
-    Annotations
-  </a>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#schema-source">
     Schema Source
@@ -221,9 +216,6 @@
 <div class="mermaid"> classDiagram
     class Condition
     click Condition href "../Condition"
-      Thing &lt;|-- Condition
-        click Thing href "../Thing"
-
       Condition : ageAtConditionMeasureObservation
 
       Condition : conditionDataSource
@@ -283,24 +275,25 @@
 
       Condition : participantGlobalId
 
+
+
+
+    Condition --&gt; "1" Participant : participantGlobalId
+    click Participant href "../Participant"
+
+
       Condition : studyCode
 
 
 
 
-    Condition --&gt; "1" EnumStudyCode : studyCode
-    click EnumStudyCode href "../EnumStudyCode"
+    Condition --&gt; "1" Study : studyCode
+    click Study href "../Study"
 
 
 
 </div>
-<h2 id="inheritance">Inheritance</h2>
-<ul>
-<li><a href="../Thing/">Thing</a><ul>
-<li><strong>Condition</strong></li>
-</ul>
-</li>
-</ul>
+<!-- no inheritance hierarchy -->
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -314,13 +307,13 @@
 <tbody>
 <tr>
 <td><a href="../studyCode/">studyCode</a></td>
-<td>1 <br/> <a href="../EnumStudyCode/">EnumStudyCode</a></td>
+<td>1 <br/> <a href="../Study/">Study</a></td>
 <td>Unique identifier for the study (generally a short acronym)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../participantGlobalId/">participantGlobalId</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../Participant/">Participant</a></td>
 <td>Unique INCLUDE global identifier for the participant, assigned by DCC</td>
 <td>direct</td>
 </tr>
@@ -435,21 +428,6 @@
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="annotations">Annotations</h3>
-<table>
-<thead>
-<tr>
-<th>property</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://w3id.org/include</li>
@@ -479,14 +457,9 @@
 <details>
 <pre><code class="language-yaml">name: Condition
 definition_uri: include:Condition
-annotations:
-  required:
-    tag: required
-    value: 'False'
 description: Co-occurring conditions and other observations for the participant
 title: Condition
 from_schema: https://w3id.org/include
-is_a: Thing
 slots:
 - studyCode
 - participantGlobalId
@@ -508,6 +481,13 @@ slots:
 - otherCode
 - measureValue
 - measureUnit
+slot_usage:
+  studyCode:
+    name: studyCode
+    range: Study
+  participantGlobalId:
+    name: participantGlobalId
+    range: Participant
 
 </code></pre>
 </details>
@@ -515,14 +495,16 @@ slots:
 <details>
 <pre><code class="language-yaml">name: Condition
 definition_uri: include:Condition
-annotations:
-  required:
-    tag: required
-    value: 'False'
 description: Co-occurring conditions and other observations for the participant
 title: Condition
 from_schema: https://w3id.org/include
-is_a: Thing
+slot_usage:
+  studyCode:
+    name: studyCode
+    range: Study
+  participantGlobalId:
+    name: participantGlobalId
+    range: Participant
 attributes:
   studyCode:
     name: studyCode
@@ -534,14 +516,14 @@ attributes:
     alias: studyCode
     owner: Condition
     domain_of:
-    - Biospecimen
-    - DataFile
-    - Participant
-    - Condition
     - Study
     - Dataset
     - DatasetManifest
-    range: enum_studyCode
+    - Participant
+    - Condition
+    - Biospecimen
+    - DataFile
+    range: Study
     required: true
   participantGlobalId:
     name: participantGlobalId
@@ -554,11 +536,11 @@ attributes:
     alias: participantGlobalId
     owner: Condition
     domain_of:
-    - Biospecimen
-    - DataFile
     - Participant
     - Condition
-    range: string
+    - Biospecimen
+    - DataFile
+    range: Participant
     required: true
   participantExternalId:
     name: participantExternalId
@@ -572,10 +554,10 @@ attributes:
     alias: participantExternalId
     owner: Condition
     domain_of:
-    - Biospecimen
-    - DataFile
     - Participant
     - Condition
+    - Biospecimen
+    - DataFile
     range: string
     required: true
   eventId:

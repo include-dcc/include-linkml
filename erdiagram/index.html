@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://include-dcc.github.io/include-linkml/Thing/" rel="canonical"/>
+<link href="https://include-dcc.github.io/include-linkml/erdiagram/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
-<title>Class: Thing (Thing) - INCLUDE Data Model</title>
+<title>ER Diagram - INCLUDE Data Model</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,9 +22,6 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-thing-thing">
-          Skip to content
-        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -46,7 +43,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: Thing (Thing)
+              ER Diagram
             
           </span>
 </div>
@@ -138,6 +135,12 @@
         About
       </a>
 </li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
+        ER Diagram
+      </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -147,203 +150,186 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#inheritance">
-    Inheritance
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#slots">
-    Slots
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#identifier-and-mapping-information">
-    Identifier and Mapping Information
-  </a>
-<nav aria-label="Identifier and Mapping Information" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#annotations">
-    Annotations
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#schema-source">
-    Schema Source
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mappings">
-    Mappings
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#linkml-source">
-    LinkML Source
-  </a>
-<nav aria-label="LinkML Source" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#direct">
-    Direct
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#induced">
-    Induced
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/include-dcc/include-linkml/edit/master/docs/Thing.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/include-dcc/include-linkml/edit/master/docs/erdiagram.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="class-thing-thing">Class: Thing (Thing)</h1>
-<p><em>Highest Level Class</em></p>
-<p>URI: <a href="https://w3id.org/include/Thing">include:Thing</a></p>
-<div class="mermaid"> classDiagram
-    class Thing
-    click Thing href "../Thing"
-      Thing &lt;|-- Biospecimen
-        click Biospecimen href "../Biospecimen"
-      Thing &lt;|-- DataFile
-        click DataFile href "../DataFile"
-      Thing &lt;|-- Participant
-        click Participant href "../Participant"
-      Thing &lt;|-- Condition
-        click Condition href "../Condition"
-      Thing &lt;|-- Study
-        click Study href "../Study"
-      Thing &lt;|-- Dataset
-        click Dataset href "../Dataset"
-      Thing &lt;|-- DatasetManifest
-        click DatasetManifest href "../DatasetManifest"
+<h1>ER Diagram</h1>
+<div class="mermaid">erDiagram
+Study {
+    enum_studyCode studyCode  
+    string studyTitle  
+    enum_programList program  
+    string studyDescription  
+    stringList principalInvestigatorName  
+    stringList studyContactName  
+    stringList studyContactInstitution  
+    stringList studyContactEmail  
+    string vbrEmail  
+    uri vbrUrl  
+    string vbrReadme  
+    enum_researchDomainList researchDomain  
+    enum_participantLifespanStageList participantLifespanStage  
+    string selectionCriteria  
+    enum_studyDesignList studyDesign  
+    enum_clinicalDataSourceTypeList clinicalDataSourceType  
+    enum_dataCategoryList dataCategory  
+    uri studyWebsite  
+    stringList dbgap  
+    uriList publication  
+    integer expectedNumberOfParticipants  
+    enum_guidType guidType  
+    boolean guidMapped  
+    stringList acknowledgments  
+    stringList citationStatement  
+}
+Dataset {
+    string datasetName  
+    string datasetDescription  
+    string datasetGlobalId  
+    string datasetExternalId  
+    integer expectedNumberOfParticipants  
+    integer expectedNumberOfFiles  
+    string dataCollectionStartYear  
+    string dataCollectionEndYear  
+    enum_dataCategoryList dataCategory  
+    stringList dataType  
+    stringList experimentalStrategy  
+    stringList experimentalPlatform  
+    uriList publication  
+    string accessLimitations  
+    string accessRequirements  
+    stringList dbgap  
+    uri otherRepository  
+    string otherAccessAuthority  
+    boolean isHarmonized  
+    string datasetManifestLocation  
+}
+DatasetManifest {
+    string datasetName  
+    string datasetExternalId  
+    string fileName  
+}
+Participant {
+    string participantGlobalId  
+    stringList participantExternalId  
+    string familyId  
+    enum_familyType familyType  
+    string fatherId  
+    string motherId  
+    string siblingId  
+    string otherFamilyMemberId  
+    enum_familyRelationship familyRelationship  
+    enum_sex sex  
+    enum_race race  
+    enum_ethnicity ethnicity  
+    enum_downSyndromeStatus downSyndromeStatus  
+    integer ageAtFirstPatientEngagement  
+    string firstPatientEngagementEvent  
+    enum_vital_status outcomesVitalStatus  
+    integer ageAtLastVitalStatus  
+}
+Condition {
+    string participantExternalId  
+    string eventId  
+    string eventType  
+    string conditionMeasureSourceText  
+    integer ageAtConditionMeasureObservation  
+    enum_conditionInterpretation conditionInterpretation  
+    enum_conditionStatus conditionStatus  
+    enum_conditionDataSource conditionDataSource  
+    string hpoLabel  
+    string hpoCode  
+    string mondoLabel  
+    string mondoCode  
+    string maxoLabel  
+    string maxoCode  
+    string otherLabel  
+    string otherCode  
+    float measureValue  
+    string measureUnit  
+}
+Biospecimen {
+    string participantExternalId  
+    string sampleGlobalId  
+    string sampleExternalId  
+    string sampleType  
+    integer ageAtBiospecimenCollection  
+    string parentSampleGlobalId  
+    string parentSampleExternalId  
+    string parentSampleType  
+    string collectionGlobalId  
+    string collectionExternalId  
+    string collectionSampleType  
+    string containerGlobalId  
+    string containerExternalId  
+    float volume  
+    string volumeUnit  
+    float concentration  
+    string concentrationUnit  
+    string laboratoryProcedure  
+    string biospecimenStorage  
+    enum_Availability sampleAvailability  
+    enum_Availability containerAvailability  
+}
+DataFile {
+    string participantExternalId  
+    string sampleExternalId  
+    string fileName  
+    string fileGlobalId  
+    string fileUploadLocation  
+    string fileS3Location  
+    uriorcurie drsUri  
+    string fileHash  
+    enum_dataAccess dataAccess  
+    enum_dataCategory dataCategory  
+    string dataType  
+    stringList experimentalStrategy  
+    stringList experimentalPlatform  
+    string fileFormat  
+    integer fileSize  
+    string fileSizeUnit  
+}
 
+Dataset ||--|| Study : "studyCode"
+DatasetManifest ||--|| Study : "studyCode"
+DatasetManifest ||--|o Dataset : "datasetGlobalId"
+DatasetManifest ||--|| DataFile : "fileGlobalId"
+Participant ||--}| Study : "studyCode"
+Condition ||--|| Study : "studyCode"
+Condition ||--|| Participant : "participantGlobalId"
+Biospecimen ||--|| Study : "studyCode"
+Biospecimen ||--|| Participant : "participantGlobalId"
+DataFile ||--|| Study : "studyCode"
+DataFile ||--|| Participant : "participantGlobalId"
+DataFile ||--|| Biospecimen : "sampleGlobalId"
 
 </div>
-<h2 id="inheritance">Inheritance</h2>
-<ul>
-<li><strong>Thing</strong><ul>
-<li><a href="../Biospecimen/">Biospecimen</a></li>
-<li><a href="../DataFile/">DataFile</a></li>
-<li><a href="../Participant/">Participant</a></li>
-<li><a href="../Condition/">Condition</a></li>
-<li><a href="../Study/">Study</a></li>
-<li><a href="../Dataset/">Dataset</a></li>
-<li><a href="../DatasetManifest/">DatasetManifest</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="slots">Slots</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Cardinality and Range</th>
-<th>Description</th>
-<th>Inheritance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="annotations">Annotations</h3>
-<table>
-<thead>
-<tr>
-<th>property</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>required</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-<h3 id="schema-source">Schema Source</h3>
-<ul>
-<li>from schema: https://w3id.org/include</li>
-</ul>
-<h2 id="mappings">Mappings</h2>
-<table>
-<thead>
-<tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>self</td>
-<td>include:Thing</td>
-</tr>
-<tr>
-<td>native</td>
-<td>include:Thing</td>
-</tr>
-</tbody>
-</table>
-<h2 id="linkml-source">LinkML Source</h2>
-<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
-<h3 id="direct">Direct</h3>
-<details>
-<pre><code class="language-yaml">name: Thing
-definition_uri: schema:Thing
-annotations:
-  required:
-    tag: required
-    value: 'False'
-description: Highest Level Class
-title: Thing
-from_schema: https://w3id.org/include
-
-</code></pre>
-</details>
-<h3 id="induced">Induced</h3>
-<details>
-<pre><code class="language-yaml">name: Thing
-definition_uri: schema:Thing
-annotations:
-  required:
-    tag: required
-    value: 'False'
-description: Highest Level Class
-title: Thing
-from_schema: https://w3id.org/include
-
-</code></pre>
-</details>
 </article>
 </div>
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: About" class="md-footer__link md-footer__link--prev" href="../about/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              About
+            </div>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">

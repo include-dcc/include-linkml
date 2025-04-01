@@ -257,6 +257,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../erdiagram/" class="md-nav__link">
+        ER Diagram
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -366,6 +381,11 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../DataFile/">DataFile</a></td>
+<td>Metadata about Data Files</td>
+<td>yes</td>
+</tr>
+<tr>
 <td><a href="../Study/">Study</a></td>
 <td>General information about the study</td>
 <td>yes</td>
@@ -373,11 +393,6 @@
 <tr>
 <td><a href="../Dataset/">Dataset</a></td>
 <td>Information about a specific grouping of data files</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../DataFile/">DataFile</a></td>
-<td>Metadata about Data Files</td>
 <td>yes</td>
 </tr>
 </tbody>
@@ -425,9 +440,9 @@ from_schema: https://w3id.org/include
 rank: 1000
 alias: dataCategory
 domain_of:
-- DataFile
 - Study
 - Dataset
+- DataFile
 range: enum_dataCategory
 required: true
 
