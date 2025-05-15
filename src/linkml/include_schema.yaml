@@ -155,8 +155,8 @@ classes:
     - race
     - ethnicity
     - downSyndromeStatus
-    - ageAtFirstPatientEngagement
-    - firstPatientEngagementEvent
+    - ageAtFirstParticipantEngagement
+    - firstParticipantEngagementEvent
     - outcomesVitalStatus
     - ageAtLastVitalStatus
     slot_usage:
@@ -613,18 +613,18 @@ slots:
     title: Down Syndrome Status
     range: enum_downSyndromeStatus
     required: true
-  ageAtFirstPatientEngagement:
-    definition_uri: include:ageAtFirstPatientEngagement
+  ageAtFirstParticipantEngagement:
+    definition_uri: include:ageAtFirstParticipantEngagement
     description: Age in days of Participant at first recorded study event (enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.
-    title: Age at First Patient Engagement
+    title: Age at First Participant Engagement
     range: integer
     minimum_value: 0
     maximum_value: 33000
     required: true
-  firstPatientEngagementEvent:
-    definition_uri: include:firstPatientEngagementEvent
-    description: Event for which Age at First Patient Engagement is given (e.g. enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.
-    title: First Patient Engagement Event
+  firstParticipantEngagementEvent:
+    definition_uri: include:firstParticipantEngagementEvent
+    description: Event for which Age at First Participant Engagement is given (e.g. enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.
+    title: First Participant Engagement Event
     required: true
     range: string
   outcomesVitalStatus:
