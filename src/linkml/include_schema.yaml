@@ -1083,6 +1083,7 @@ enums:
         description: Data obtained from survey, questionnaire, etc. filled out by participant or caregiver
       other:
         title: Other
+        description: Data obtained from other source, such as tissue bank
       unknown:
         title: Unknown
   enum_dataCategory:
