@@ -946,6 +946,8 @@ enums:
         title: DS-COG-AML
       ds_determined:
         title: DS-DETERMINED
+      ds_home:
+        title: DS-HOME
       ds_hsat:
         title: DS-HSAT
       ds_isp:
@@ -972,10 +974,16 @@ enums:
         title: EXcEEDS
       htp:
         title: HTP
+      ibis-ds:
+        title: IBIS-DS
+      jaki_ds:
+        title: JAKi-DS
       optimal:
         title: OPTimal
       team_ds:
         title: TEAM-DS
+      tomi:
+        title: TOMI
       trc_ds:
         title: TRC-DS
       x01_desmith:
