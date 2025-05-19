@@ -1008,6 +1008,7 @@ enums:
       x01_hakonarson:
         title: X01-Hakonarson
   enum_researchDomain:
+    #TODO: replace/add NIH internal categories from Huiqing
     definition_uri: include:enum_researchDomain
     permissible_values:
       behavior_and_behavior_mechanisms:
@@ -1022,6 +1023,9 @@ enums:
       hematologic_diseases:
         title: Hematologic Diseases
         meaning: mesh:D006402
+      neurodevelopment:
+        title: Neurodevelopment
+        meaning: 
       sleep_wake_disorders:
         title: Sleep Wake Disorders
         meaning: mesh:D012893
