@@ -240,8 +240,10 @@
 
 
 
-    Biospecimen --&gt; "0..1" EnumAvailability : containerAvailability
-    click EnumAvailability href "../EnumAvailability"
+
+        Biospecimen --&gt; "0..1" EnumAvailability : containerAvailability
+        click EnumAvailability href "../EnumAvailability"
+
 
 
       Biospecimen : containerExternalId
@@ -263,8 +265,10 @@
 
 
 
-    Biospecimen --&gt; "1" Participant : participantGlobalId
-    click Participant href "../Participant"
+
+        Biospecimen --&gt; "1" Participant : participantGlobalId
+        click Participant href "../Participant"
+
 
 
       Biospecimen : sampleAvailability
@@ -272,8 +276,10 @@
 
 
 
-    Biospecimen --&gt; "1" EnumAvailability : sampleAvailability
-    click EnumAvailability href "../EnumAvailability"
+
+        Biospecimen --&gt; "1" EnumAvailability : sampleAvailability
+        click EnumAvailability href "../EnumAvailability"
+
 
 
       Biospecimen : sampleExternalId
@@ -287,8 +293,10 @@
 
 
 
-    Biospecimen --&gt; "1" Study : studyCode
-    click Study href "../Study"
+
+        Biospecimen --&gt; "1" Study : studyCode
+        click Study href "../Study"
+
 
 
       Biospecimen : volume

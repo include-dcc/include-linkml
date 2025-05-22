@@ -221,7 +221,7 @@
 <div class="mermaid"> classDiagram
     class Participant
     click Participant href "../Participant"
-      Participant : ageAtFirstPatientEngagement
+      Participant : ageAtFirstParticipantEngagement
 
       Participant : ageAtLastVitalStatus
 
@@ -230,8 +230,10 @@
 
 
 
-    Participant --&gt; "1" EnumDownSyndromeStatus : downSyndromeStatus
-    click EnumDownSyndromeStatus href "../EnumDownSyndromeStatus"
+
+        Participant --&gt; "1" EnumDownSyndromeStatus : downSyndromeStatus
+        click EnumDownSyndromeStatus href "../EnumDownSyndromeStatus"
+
 
 
       Participant : ethnicity
@@ -239,8 +241,10 @@
 
 
 
-    Participant --&gt; "1" EnumEthnicity : ethnicity
-    click EnumEthnicity href "../EnumEthnicity"
+
+        Participant --&gt; "1" EnumEthnicity : ethnicity
+        click EnumEthnicity href "../EnumEthnicity"
+
 
 
       Participant : familyId
@@ -250,8 +254,10 @@
 
 
 
-    Participant --&gt; "1" EnumFamilyRelationship : familyRelationship
-    click EnumFamilyRelationship href "../EnumFamilyRelationship"
+
+        Participant --&gt; "1" EnumFamilyRelationship : familyRelationship
+        click EnumFamilyRelationship href "../EnumFamilyRelationship"
+
 
 
       Participant : familyType
@@ -259,13 +265,15 @@
 
 
 
-    Participant --&gt; "1" EnumFamilyType : familyType
-    click EnumFamilyType href "../EnumFamilyType"
+
+        Participant --&gt; "1" EnumFamilyType : familyType
+        click EnumFamilyType href "../EnumFamilyType"
+
 
 
       Participant : fatherId
 
-      Participant : firstPatientEngagementEvent
+      Participant : firstParticipantEngagementEvent
 
       Participant : motherId
 
@@ -276,8 +284,10 @@
 
 
 
-    Participant --&gt; "0..1" EnumVitalStatus : outcomesVitalStatus
-    click EnumVitalStatus href "../EnumVitalStatus"
+
+        Participant --&gt; "0..1" EnumVitalStatus : outcomesVitalStatus
+        click EnumVitalStatus href "../EnumVitalStatus"
+
 
 
       Participant : participantExternalId
@@ -289,8 +299,10 @@
 
 
 
-    Participant --&gt; "1" EnumRace : race
-    click EnumRace href "../EnumRace"
+
+        Participant --&gt; "1" EnumRace : race
+        click EnumRace href "../EnumRace"
+
 
 
       Participant : sex
@@ -298,8 +310,10 @@
 
 
 
-    Participant --&gt; "1" EnumSex : sex
-    click EnumSex href "../EnumSex"
+
+        Participant --&gt; "1" EnumSex : sex
+        click EnumSex href "../EnumSex"
+
 
 
       Participant : siblingId
@@ -309,8 +323,10 @@
 
 
 
-    Participant --&gt; "1..*" Study : studyCode
-    click Study href "../Study"
+
+        Participant --&gt; "1..*" Study : studyCode
+        click Study href "../Study"
+
 
 
 
@@ -412,15 +428,15 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../ageAtFirstPatientEngagement/">ageAtFirstPatientEngagement</a></td>
+<td><a href="../ageAtFirstParticipantEngagement/">ageAtFirstParticipantEngagement</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Age in days of Participant at first recorded study event (enrollment, visit, ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../firstPatientEngagementEvent/">firstPatientEngagementEvent</a></td>
+<td><a href="../firstParticipantEngagementEvent/">firstParticipantEngagementEvent</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td>Event for which Age at First Patient Engagement is given (e</td>
+<td>Event for which Age at First Participant Engagement is given (e</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -516,8 +532,8 @@ slots:
 - race
 - ethnicity
 - downSyndromeStatus
-- ageAtFirstPatientEngagement
-- firstPatientEngagementEvent
+- ageAtFirstParticipantEngagement
+- firstParticipantEngagementEvent
 - outcomesVitalStatus
 - ageAtLastVitalStatus
 slot_usage:
@@ -746,16 +762,16 @@ attributes:
     - Participant
     range: enum_downSyndromeStatus
     required: true
-  ageAtFirstPatientEngagement:
-    name: ageAtFirstPatientEngagement
-    definition_uri: include:ageAtFirstPatientEngagement
+  ageAtFirstParticipantEngagement:
+    name: ageAtFirstParticipantEngagement
+    definition_uri: include:ageAtFirstParticipantEngagement
     description: Age in days of Participant at first recorded study event (enrollment,
       visit, observation, sample collection, survey completion, etc.). Age at enrollment
       is preferred, if available.
-    title: Age at First Patient Engagement
+    title: Age at First Participant Engagement
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: ageAtFirstPatientEngagement
+    alias: ageAtFirstParticipantEngagement
     owner: Participant
     domain_of:
     - Participant
@@ -763,16 +779,16 @@ attributes:
     required: true
     minimum_value: 0
     maximum_value: 33000
-  firstPatientEngagementEvent:
-    name: firstPatientEngagementEvent
-    definition_uri: include:firstPatientEngagementEvent
-    description: Event for which Age at First Patient Engagement is given (e.g. enrollment,
-      visit, observation, sample collection, survey completion, etc.). Age at enrollment
-      is preferred, if available.
-    title: First Patient Engagement Event
+  firstParticipantEngagementEvent:
+    name: firstParticipantEngagementEvent
+    definition_uri: include:firstParticipantEngagementEvent
+    description: Event for which Age at First Participant Engagement is given (e.g.
+      enrollment, visit, observation, sample collection, survey completion, etc.).
+      Age at enrollment is preferred, if available.
+    title: First Participant Engagement Event
     from_schema: https://w3id.org/include
     rank: 1000
-    alias: firstPatientEngagementEvent
+    alias: firstParticipantEngagementEvent
     owner: Participant
     domain_of:
     - Participant

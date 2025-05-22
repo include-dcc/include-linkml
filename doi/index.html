@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://include-dcc.github.io/include-linkml/firstPatientEngagementEvent/">
+        <link rel="canonical" href="https://include-dcc.github.io/include-linkml/doi/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: First Patient Engagement Event (firstPatientEngagementEvent) - INCLUDE Data Model</title>
+        <title>Slot: DOI (doi) - INCLUDE Data Model</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-first-patient-engagement-event-firstpatientengagementevent" class="md-skip">
+        <a href="#slot-doi-doi" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: First Patient Engagement Event (firstPatientEngagementEvent)
+              Slot: DOI (doi)
             
           </span>
         </div>
@@ -360,15 +360,16 @@
                 
                   
 
-  <a href="https://github.com/include-dcc/include-linkml/edit/master/docs/firstPatientEngagementEvent.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/include-dcc/include-linkml/edit/master/docs/doi.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-first-patient-engagement-event-firstpatientengagementevent">Slot: First Patient Engagement Event (firstPatientEngagementEvent)</h1>
-<p><em>Event for which Age at First Patient Engagement is given (e.g. enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.</em></p>
-<p>URI: <a href="https://w3id.org/include/firstPatientEngagementEvent">include:firstPatientEngagementEvent</a></p>
+<h1 id="slot-doi-doi">Slot: DOI (doi)</h1>
+<p><em>Unique Digital Object Identifier for each Study and Dataset, minted by the DCC using DataCite</em></p>
+<p>URI: <a href="https://w3id.org/include/doi">include:doi</a>
+Alias: doi</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -382,20 +383,20 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Participant/">Participant</a></td>
-<td>Demographic and clinical information about the participant</td>
+<td><a href="../Study/">Study</a></td>
+<td>General information about the study</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Dataset/">Dataset</a></td>
+<td>Information about a specific grouping of data files</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>
-<p>Range: <a href="../String/">String</a></p>
-</li>
-<li>
-<p>Required: True</p>
-</li>
+<li>Range: <a href="../Uri/">Uri</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -413,30 +414,30 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>include:firstPatientEngagementEvent</td>
+<td>include:doi</td>
 </tr>
 <tr>
 <td>native</td>
-<td>include:firstPatientEngagementEvent</td>
+<td>include:doi</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: firstPatientEngagementEvent
-definition_uri: include:firstPatientEngagementEvent
-description: Event for which Age at First Patient Engagement is given (e.g. enrollment,
-  visit, observation, sample collection, survey completion, etc.). Age at enrollment
-  is preferred, if available.
-title: First Patient Engagement Event
+<pre><code class="language-yaml">name: doi
+definition_uri: include:doi
+description: Unique Digital Object Identifier for each Study and Dataset, minted by
+  the DCC using DataCite
+title: DOI
 from_schema: https://w3id.org/include
 rank: 1000
-alias: firstPatientEngagementEvent
+alias: doi
 domain_of:
-- Participant
-range: string
-required: true
+- Study
+- Dataset
+range: uri
+required: false
 
 </code></pre>
 

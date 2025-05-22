@@ -223,8 +223,10 @@
 
 
 
-    DatasetManifest --&gt; "0..1" Dataset : datasetGlobalId
-    click Dataset href "../Dataset"
+
+        DatasetManifest --&gt; "0..1" Dataset : datasetGlobalId
+        click Dataset href "../Dataset"
+
 
 
       DatasetManifest : datasetName
@@ -234,8 +236,10 @@
 
 
 
-    DatasetManifest --&gt; "1" DataFile : fileGlobalId
-    click DataFile href "../DataFile"
+
+        DatasetManifest --&gt; "1" DataFile : fileGlobalId
+        click DataFile href "../DataFile"
+
 
 
       DatasetManifest : fileName
@@ -245,8 +249,10 @@
 
 
 
-    DatasetManifest --&gt; "1" Study : studyCode
-    click Study href "../Study"
+
+        DatasetManifest --&gt; "1" Study : studyCode
+        click Study href "../Study"
+
 
 
 

@@ -187,6 +187,8 @@ Study {
     boolean guidMapped  
     stringList acknowledgments  
     stringList citationStatement  
+    uri doi  
+    string doiCitation  
 }
 Dataset {
     string datasetName  
@@ -209,6 +211,8 @@ Dataset {
     string otherAccessAuthority  
     boolean isHarmonized  
     string datasetManifestLocation  
+    uri doi  
+    string doiCitation  
 }
 DatasetManifest {
     string datasetName  
@@ -229,8 +233,8 @@ Participant {
     enum_race race  
     enum_ethnicity ethnicity  
     enum_downSyndromeStatus downSyndromeStatus  
-    integer ageAtFirstPatientEngagement  
-    string firstPatientEngagementEvent  
+    integer ageAtFirstParticipantEngagement  
+    string firstParticipantEngagementEvent  
     enum_vital_status outcomesVitalStatus  
     integer ageAtLastVitalStatus  
 }
