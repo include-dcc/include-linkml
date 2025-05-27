@@ -983,6 +983,8 @@ enums:
         title: DS360-CHD
       dsc:
         title: DSC
+      dspostbfmulti:
+        title: DSpostBFmulti
       dsrrs:
         title: DSRRS
       ecods:
