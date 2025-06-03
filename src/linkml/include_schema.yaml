@@ -1103,6 +1103,8 @@ enums:
         title: Genomics
       transcriptomics:
         title: Transcriptomics
+      epigenomics:
+        title: Epigenomics
       proteomics:
         title: Proteomics
       metabolomics:
