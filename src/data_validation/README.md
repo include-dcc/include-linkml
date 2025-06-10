@@ -22,26 +22,35 @@ We use `linkml-validate` to check whether data files conform to their schema def
 
 ### 1. Validate `study.csv` against `Study` class
 ```bash
-linkml-validate -s src/linkml/include_schema.yaml -C study toy_data/initial/raw_data/study.csv
+linkml-validate -s src/linkml/include_schema.yaml -C Study src/data/input/study.csv
 ```
 ### 2. Validate `participant.csv` against `Participant` class
 ```bash
-linkml-validate -s src/linkml/include_schema.yaml -C subject toy_data/initial/raw_data/subject.csv
+linkml-validate -s src/linkml/include_schema.yaml -C Participant src/data/input/participant.csv
 ```
 ### 3. Validate `condition.csv` against `Condition` class
 ```bash
-linkml-validate -s src/linkml/include_schema.yaml -C demographics toy_data/initial/raw_data/demographics.csv
+linkml-validate -s src/linkml/include_schema.yaml -C Condition src/data/input/condition.csv
 ```
 ### 4. Validate `biospecimen.csv` against `Biospecimen` class
 ```bash
-linkml-validate -s src/linkml/include_schema.yaml -C sample toy_data/initial/raw_data/sample.csv
+linkml-validate -s src/linkml/include_schema.yaml -C Biospecimen src/data/input/biospecimen.csv
 ```
 ### 5. Validate `datafile.csv` against `DataFile` class
 ```bash
-linkml-validate -s src/linkml/include_schema.yaml -C lab_results toy_data/initial/raw_data/lab_results.csv
+linkml-validate -s src/linkml/include_schema.yaml -C DataFile src/data/input/datafile.csv
 ```
 
 - **More Info**: [linkml-validate CLI](https://linkml.io/linkml/cli/validate.html) 
+
+### 📤 Saving Validation Logs
+
+To save validation output to a file (e.g., for documentation or reporting), redirect the output of `linkml-validate`:
+
+```bash
+linkml-validate -s src/linkml/include_schema.yaml -C Study src/data/input/study.csv > src/data/output/validation-report.md
+```
+You can change the extension to .csv, .txt, or .json based on your preferred format.
 
 📌 Notes
     
