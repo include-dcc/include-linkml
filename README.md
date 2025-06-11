@@ -37,11 +37,5 @@ The repository structure is organized as follows:
 - Inclusion of over 25 new slots.
 - 5 new enumerations: EnumClinicalDataSourceType, EnumDataCategory, EnumGuidType, EnumParticipantLifespanStage, EnumResearchDomain.
 
-### CLI Enhancements:
 
-- **Validation**: Streamlines data cleaning and validation via the command line (CLI), allowing users to specify the data type and file path. The CLI reads, cleans, and validates data using LinkML-defined models for robust validation. For more details, use:
-
-```bash
-validate-data --help
-```
 
