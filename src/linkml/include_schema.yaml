@@ -135,7 +135,23 @@ classes:
         range: DataFile
       datasetGlobalId:
         range: Dataset
-
+  ParticipantDataFileManifest:
+    definition_uri: include:ParticipantDataFileManifest
+    description: List of Participants in DataFiles with multiple Participants
+    title: Participant-DataFile Manifest
+    slots:
+    - studyCode
+    - participantExternalId
+    - fileName
+    #TODO: add Dictonary File Name & Global ID
+    slot_usage:
+      # Reference Slots
+      studyCode:
+        range: Study
+      fileGlobalId:
+        range: DataFile
+      datasetGlobalId:
+        range: Dataset
   Participant:
     definition_uri: include:Participant
     description: Demographic and clinical information about the participant
