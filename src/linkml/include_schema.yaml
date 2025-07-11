@@ -1093,6 +1093,8 @@ enums:
         title: Interventional
       longitudinal:
         title: Longitudinal
+      trial_readiness_study:
+        title: Trial Readiness Study
       tumor_vs_matched_normal:
         title: Tumor vs Matched Normal
   enum_clinicalDataSourceType:
