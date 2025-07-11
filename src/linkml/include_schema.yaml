@@ -252,8 +252,9 @@ classes:
     title: Data File
     slots:
     - studyCode
-    - participantGlobalId #usage of this field in multi-participant files is TBD
-    - participantExternalId #usage of this field in multi-participant files is TBD
+    - participantGlobalId 
+    - participantExternalId 
+    - participantDataFileManifestLocation
     - sampleGlobalId #usage of this field in multi-sample files is TBD
     - sampleExternalId #usage of this field in multi-sample files is TBD
     - fileName
@@ -853,6 +854,11 @@ slots:
     description: Whether or not the specific Container is potentially available for sharing through the Virtual Biorepository
     title: Container Availability
     range: enum_Availability
+  participantDataFileManifestLocation:
+    definition_uri: include:participantDataFileManifestLocation
+    description: Location of Participant-DataFile Manifest, if file contains multiple Participants
+    title: Participant-DataFile Manifest Location
+    range: string
   fileName:
     definition_uri: include:fileName
     description: Name of file, assigned by data contributor
