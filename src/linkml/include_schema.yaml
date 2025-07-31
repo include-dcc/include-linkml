@@ -108,7 +108,6 @@ classes:
         description: Expected number of participants in this Dataset (or actual number, if data has been submitted to INCLUDE DCC). If additional explanation is needed, please add to Dataset Description field.
       dataType:
         description: Specific type of data contained in Dataset; pipe-separated if multiple (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
-        multivalued: true
       experimentalStrategy:
         description: Experimental method used to obtain data in Dataset; pipe-separated if multiple (e.g. Whole genome sequencing, RNAseq, Multiplex immunoassay, Mass spec metabolomics)
         multivalued: true
@@ -910,6 +909,7 @@ slots:
     definition_uri: include:dataType
     title: Data Type
     range: string
+    multivalued: true
     #slot_usage
   experimentalStrategy:
     definition_uri: include:experimentalStrategy
