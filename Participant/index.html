@@ -220,7 +220,7 @@
 <p>URI: <a href="https://w3id.org/include/Participant">include:Participant</a></p>
 <div class="mermaid"> classDiagram
     class Participant
-    click Participant href "../Participant"
+    click Participant href "../Participant/"
       Participant : ageAtFirstParticipantEngagement
 
       Participant : ageAtLastVitalStatus
@@ -232,7 +232,7 @@
 
 
         Participant --&gt; "1" EnumDownSyndromeStatus : downSyndromeStatus
-        click EnumDownSyndromeStatus href "../EnumDownSyndromeStatus"
+        click EnumDownSyndromeStatus href "../EnumDownSyndromeStatus/"
 
 
 
@@ -243,7 +243,7 @@
 
 
         Participant --&gt; "1" EnumEthnicity : ethnicity
-        click EnumEthnicity href "../EnumEthnicity"
+        click EnumEthnicity href "../EnumEthnicity/"
 
 
 
@@ -256,7 +256,7 @@
 
 
         Participant --&gt; "1" EnumFamilyRelationship : familyRelationship
-        click EnumFamilyRelationship href "../EnumFamilyRelationship"
+        click EnumFamilyRelationship href "../EnumFamilyRelationship/"
 
 
 
@@ -267,7 +267,7 @@
 
 
         Participant --&gt; "1" EnumFamilyType : familyType
-        click EnumFamilyType href "../EnumFamilyType"
+        click EnumFamilyType href "../EnumFamilyType/"
 
 
 
@@ -286,7 +286,7 @@
 
 
         Participant --&gt; "0..1" EnumVitalStatus : outcomesVitalStatus
-        click EnumVitalStatus href "../EnumVitalStatus"
+        click EnumVitalStatus href "../EnumVitalStatus/"
 
 
 
@@ -301,7 +301,7 @@
 
 
         Participant --&gt; "1" EnumRace : race
-        click EnumRace href "../EnumRace"
+        click EnumRace href "../EnumRace/"
 
 
 
@@ -312,7 +312,7 @@
 
 
         Participant --&gt; "1" EnumSex : sex
-        click EnumSex href "../EnumSex"
+        click EnumSex href "../EnumSex/"
 
 
 
@@ -325,7 +325,7 @@
 
 
         Participant --&gt; "1..*" Study : studyCode
-        click Study href "../Study"
+        click Study href "../Study/"
 
 
 
@@ -576,6 +576,7 @@ attributes:
     - Study
     - Dataset
     - DatasetManifest
+    - ParticipantDataFileManifest
     - Participant
     - Condition
     - Biospecimen
@@ -612,6 +613,7 @@ attributes:
     alias: participantExternalId
     owner: Participant
     domain_of:
+    - ParticipantDataFileManifest
     - Participant
     - Condition
     - Biospecimen

@@ -220,7 +220,7 @@
 <p>URI: <a href="https://w3id.org/include/Biospecimen">include:Biospecimen</a></p>
 <div class="mermaid"> classDiagram
     class Biospecimen
-    click Biospecimen href "../Biospecimen"
+    click Biospecimen href "../Biospecimen/"
       Biospecimen : ageAtBiospecimenCollection
 
       Biospecimen : biospecimenStorage
@@ -242,7 +242,7 @@
 
 
         Biospecimen --&gt; "0..1" EnumAvailability : containerAvailability
-        click EnumAvailability href "../EnumAvailability"
+        click EnumAvailability href "../EnumAvailability/"
 
 
 
@@ -267,7 +267,7 @@
 
 
         Biospecimen --&gt; "1" Participant : participantGlobalId
-        click Participant href "../Participant"
+        click Participant href "../Participant/"
 
 
 
@@ -278,7 +278,7 @@
 
 
         Biospecimen --&gt; "1" EnumAvailability : sampleAvailability
-        click EnumAvailability href "../EnumAvailability"
+        click EnumAvailability href "../EnumAvailability/"
 
 
 
@@ -295,7 +295,7 @@
 
 
         Biospecimen --&gt; "1" Study : studyCode
-        click Study href "../Study"
+        click Study href "../Study/"
 
 
 
@@ -571,6 +571,7 @@ attributes:
     - Study
     - Dataset
     - DatasetManifest
+    - ParticipantDataFileManifest
     - Participant
     - Condition
     - Biospecimen
@@ -606,6 +607,7 @@ attributes:
     alias: participantExternalId
     owner: Biospecimen
     domain_of:
+    - ParticipantDataFileManifest
     - Participant
     - Condition
     - Biospecimen

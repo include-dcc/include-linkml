@@ -215,7 +215,7 @@
 <p>URI: <a href="https://w3id.org/include/Condition">include:Condition</a></p>
 <div class="mermaid"> classDiagram
     class Condition
-    click Condition href "../Condition"
+    click Condition href "../Condition/"
       Condition : ageAtConditionMeasureObservation
 
       Condition : conditionDataSource
@@ -225,7 +225,7 @@
 
 
         Condition --&gt; "0..1" EnumConditionDataSource : conditionDataSource
-        click EnumConditionDataSource href "../EnumConditionDataSource"
+        click EnumConditionDataSource href "../EnumConditionDataSource/"
 
 
 
@@ -236,7 +236,7 @@
 
 
         Condition --&gt; "0..1" EnumConditionInterpretation : conditionInterpretation
-        click EnumConditionInterpretation href "../EnumConditionInterpretation"
+        click EnumConditionInterpretation href "../EnumConditionInterpretation/"
 
 
 
@@ -249,7 +249,7 @@
 
 
         Condition --&gt; "0..1" EnumConditionStatus : conditionStatus
-        click EnumConditionStatus href "../EnumConditionStatus"
+        click EnumConditionStatus href "../EnumConditionStatus/"
 
 
 
@@ -286,7 +286,7 @@
 
 
         Condition --&gt; "1" Participant : participantGlobalId
-        click Participant href "../Participant"
+        click Participant href "../Participant/"
 
 
 
@@ -297,7 +297,7 @@
 
 
         Condition --&gt; "1" Study : studyCode
-        click Study href "../Study"
+        click Study href "../Study/"
 
 
 
@@ -529,6 +529,7 @@ attributes:
     - Study
     - Dataset
     - DatasetManifest
+    - ParticipantDataFileManifest
     - Participant
     - Condition
     - Biospecimen
@@ -564,6 +565,7 @@ attributes:
     alias: participantExternalId
     owner: Condition
     domain_of:
+    - ParticipantDataFileManifest
     - Participant
     - Condition
     - Biospecimen

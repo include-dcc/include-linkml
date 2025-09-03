@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://include-dcc.github.io/include-linkml/dataCategory/">
+        <link rel="canonical" href="https://include-dcc.github.io/include-linkml/participantDataFileManifestLocation/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: Data Category (dataCategory) - INCLUDE Data Model</title>
+        <title>Slot: Participant-DataFile Manifest Location (participantDataFileManifestLocation) - INCLUDE Data Model</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-data-category-datacategory" class="md-skip">
+        <a href="#slot-participant-datafile-manifest-location-participantdatafilemanifestlocation" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: Data Category (dataCategory)
+              Slot: Participant-DataFile Manifest Location (participantDataFileManifestLocation)
             
           </span>
         </div>
@@ -360,15 +360,16 @@
                 
                   
 
-  <a href="https://github.com/include-dcc/include-linkml/edit/master/docs/dataCategory.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/include-dcc/include-linkml/edit/master/docs/participantDataFileManifestLocation.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-data-category-datacategory">Slot: Data Category (dataCategory)</h1>
-<p>URI: <a href="https://w3id.org/include/dataCategory">include:dataCategory</a>
-Alias: dataCategory</p>
+<h1 id="slot-participant-datafile-manifest-location-participantdatafilemanifestlocation">Slot: Participant-DataFile Manifest Location (participantDataFileManifestLocation)</h1>
+<p><em>Location of Participant-DataFile Manifest, if file contains multiple Participants</em></p>
+<p>URI: <a href="https://w3id.org/include/participantDataFileManifestLocation">include:participantDataFileManifestLocation</a>
+Alias: participantDataFileManifestLocation</p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -382,30 +383,15 @@ Alias: dataCategory</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../Study/">Study</a></td>
-<td>General information about the study</td>
-<td>yes</td>
-</tr>
-<tr>
 <td><a href="../DataFile/">DataFile</a></td>
 <td>Metadata about Data Files</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../Dataset/">Dataset</a></td>
-<td>Information about a specific grouping of data files</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>
-<p>Range: <a href="../EnumDataCategory/">EnumDataCategory</a></p>
-</li>
-<li>
-<p>Required: True</p>
-</li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -423,29 +409,28 @@ Alias: dataCategory</p>
 <tbody>
 <tr>
 <td>self</td>
-<td>include:dataCategory</td>
+<td>include:participantDataFileManifestLocation</td>
 </tr>
 <tr>
 <td>native</td>
-<td>include:dataCategory</td>
+<td>include:participantDataFileManifestLocation</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: dataCategory
-definition_uri: include:dataCategory
-title: Data Category
+<pre><code class="language-yaml">name: participantDataFileManifestLocation
+definition_uri: include:participantDataFileManifestLocation
+description: Location of Participant-DataFile Manifest, if file contains multiple
+  Participants
+title: Participant-DataFile Manifest Location
 from_schema: https://w3id.org/include
 rank: 1000
-alias: dataCategory
+alias: participantDataFileManifestLocation
 domain_of:
-- Study
-- Dataset
 - DataFile
-range: enum_dataCategory
-required: true
+range: string
 
 </code></pre>
 

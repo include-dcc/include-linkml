@@ -383,8 +383,8 @@ Alias: participantExternalId</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../Condition/">Condition</a></td>
-<td>Co-occurring conditions and other observations for the participant</td>
+<td><a href="../Biospecimen/">Biospecimen</a></td>
+<td>A Biospecimen Collected from A Participant</td>
 <td>no</td>
 </tr>
 <tr>
@@ -393,13 +393,18 @@ Alias: participantExternalId</p>
 <td>yes</td>
 </tr>
 <tr>
+<td><a href="../Condition/">Condition</a></td>
+<td>Co-occurring conditions and other observations for the participant</td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../DataFile/">DataFile</a></td>
 <td>Metadata about Data Files</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Biospecimen/">Biospecimen</a></td>
-<td>A Biospecimen Collected from A Participant</td>
+<td><a href="../ParticipantDataFileManifest/">ParticipantDataFileManifest</a></td>
+<td>List of Participants in DataFiles with multiple Participants</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -450,6 +455,7 @@ from_schema: https://w3id.org/include
 rank: 1000
 alias: participantExternalId
 domain_of:
+- ParticipantDataFileManifest
 - Participant
 - Condition
 - Biospecimen

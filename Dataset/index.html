@@ -220,7 +220,7 @@
 <p>URI: <a href="https://w3id.org/include/Dataset">include:Dataset</a></p>
 <div class="mermaid"> classDiagram
     class Dataset
-    click Dataset href "../Dataset"
+    click Dataset href "../Dataset/"
       Dataset : accessLimitations
 
       Dataset : accessRequirements
@@ -232,7 +232,7 @@
 
 
         Dataset --&gt; "1..*" EnumDataCategory : dataCategory
-        click EnumDataCategory href "../EnumDataCategory"
+        click EnumDataCategory href "../EnumDataCategory/"
 
 
 
@@ -281,7 +281,7 @@
 
 
         Dataset --&gt; "1" Study : studyCode
-        click Study href "../Study"
+        click Study href "../Study/"
 
 
 
@@ -539,7 +539,6 @@ slot_usage:
       (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration,
       Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications,
       Gene fusions, Somatic copy number variations, Somatic structural variations)
-    multivalued: true
   experimentalStrategy:
     name: experimentalStrategy
     description: Experimental method used to obtain data in Dataset; pipe-separated
@@ -583,7 +582,6 @@ slot_usage:
       (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration,
       Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications,
       Gene fusions, Somatic copy number variations, Somatic structural variations)
-    multivalued: true
   experimentalStrategy:
     name: experimentalStrategy
     description: Experimental method used to obtain data in Dataset; pipe-separated
@@ -607,6 +605,7 @@ attributes:
     - Study
     - Dataset
     - DatasetManifest
+    - ParticipantDataFileManifest
     - Participant
     - Condition
     - Biospecimen

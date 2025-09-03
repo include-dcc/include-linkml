@@ -220,7 +220,7 @@
 <p>URI: <a href="https://w3id.org/include/Study">include:Study</a></p>
 <div class="mermaid"> classDiagram
     class Study
-    click Study href "../Study"
+    click Study href "../Study/"
       Study : acknowledgments
 
       Study : citationStatement
@@ -232,7 +232,7 @@
 
 
         Study --&gt; "1..*" EnumClinicalDataSourceType : clinicalDataSourceType
-        click EnumClinicalDataSourceType href "../EnumClinicalDataSourceType"
+        click EnumClinicalDataSourceType href "../EnumClinicalDataSourceType/"
 
 
 
@@ -243,7 +243,7 @@
 
 
         Study --&gt; "1..*" EnumDataCategory : dataCategory
-        click EnumDataCategory href "../EnumDataCategory"
+        click EnumDataCategory href "../EnumDataCategory/"
 
 
 
@@ -264,7 +264,7 @@
 
 
         Study --&gt; "1" EnumGuidType : guidType
-        click EnumGuidType href "../EnumGuidType"
+        click EnumGuidType href "../EnumGuidType/"
 
 
 
@@ -275,7 +275,7 @@
 
 
         Study --&gt; "1..*" EnumParticipantLifespanStage : participantLifespanStage
-        click EnumParticipantLifespanStage href "../EnumParticipantLifespanStage"
+        click EnumParticipantLifespanStage href "../EnumParticipantLifespanStage/"
 
 
 
@@ -288,7 +288,7 @@
 
 
         Study --&gt; "1..*" EnumProgram : program
-        click EnumProgram href "../EnumProgram"
+        click EnumProgram href "../EnumProgram/"
 
 
 
@@ -301,7 +301,7 @@
 
 
         Study --&gt; "1..*" EnumResearchDomain : researchDomain
-        click EnumResearchDomain href "../EnumResearchDomain"
+        click EnumResearchDomain href "../EnumResearchDomain/"
 
 
 
@@ -314,7 +314,7 @@
 
 
         Study --&gt; "1" EnumStudyCode : studyCode
-        click EnumStudyCode href "../EnumStudyCode"
+        click EnumStudyCode href "../EnumStudyCode/"
 
 
 
@@ -333,7 +333,7 @@
 
 
         Study --&gt; "1..*" EnumStudyDesign : studyDesign
-        click EnumStudyDesign href "../EnumStudyDesign"
+        click EnumStudyDesign href "../EnumStudyDesign/"
 
 
 
@@ -549,6 +549,12 @@
 <td><a href="./">Study</a></td>
 </tr>
 <tr>
+<td><a href="../ParticipantDataFileManifest/">ParticipantDataFileManifest</a></td>
+<td><a href="../studyCode/">studyCode</a></td>
+<td>range</td>
+<td><a href="./">Study</a></td>
+</tr>
+<tr>
 <td><a href="../Participant/">Participant</a></td>
 <td><a href="../studyCode/">studyCode</a></td>
 <td>range</td>
@@ -695,6 +701,7 @@ attributes:
     - Study
     - Dataset
     - DatasetManifest
+    - ParticipantDataFileManifest
     - Participant
     - Condition
     - Biospecimen

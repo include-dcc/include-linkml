@@ -220,7 +220,7 @@
 <p>URI: <a href="https://w3id.org/include/DataFile">include:DataFile</a></p>
 <div class="mermaid"> classDiagram
     class DataFile
-    click DataFile href "../DataFile"
+    click DataFile href "../DataFile/"
       DataFile : dataAccess
 
 
@@ -228,7 +228,7 @@
 
 
         DataFile --&gt; "1" EnumDataAccess : dataAccess
-        click EnumDataAccess href "../EnumDataAccess"
+        click EnumDataAccess href "../EnumDataAccess/"
 
 
 
@@ -239,7 +239,7 @@
 
 
         DataFile --&gt; "1" EnumDataCategory : dataCategory
-        click EnumDataCategory href "../EnumDataCategory"
+        click EnumDataCategory href "../EnumDataCategory/"
 
 
 
@@ -267,6 +267,8 @@
 
       DataFile : fileUploadLocation
 
+      DataFile : participantDataFileManifestLocation
+
       DataFile : participantExternalId
 
       DataFile : participantGlobalId
@@ -276,7 +278,7 @@
 
 
         DataFile --&gt; "1" Participant : participantGlobalId
-        click Participant href "../Participant"
+        click Participant href "../Participant/"
 
 
 
@@ -289,7 +291,7 @@
 
 
         DataFile --&gt; "1" Biospecimen : sampleGlobalId
-        click Biospecimen href "../Biospecimen"
+        click Biospecimen href "../Biospecimen/"
 
 
 
@@ -300,7 +302,7 @@
 
 
         DataFile --&gt; "1" Study : studyCode
-        click Study href "../Study"
+        click Study href "../Study/"
 
 
 
@@ -334,6 +336,12 @@
 <td><a href="../participantExternalId/">participantExternalId</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Unique, de-identified identifier for the participant, assigned by data contri...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../participantDataFileManifestLocation/">participantDataFileManifestLocation</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Location of Participant-DataFile Manifest, if file contains multiple Particip...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -398,7 +406,7 @@
 </tr>
 <tr>
 <td><a href="../dataType/">dataType</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td>Specific type of data contained in file (e</td>
 <td>direct</td>
 </tr>
@@ -490,6 +498,7 @@ slots:
 - studyCode
 - participantGlobalId
 - participantExternalId
+- participantDataFileManifestLocation
 - sampleGlobalId
 - sampleExternalId
 - fileName
@@ -578,6 +587,7 @@ attributes:
     - Study
     - Dataset
     - DatasetManifest
+    - ParticipantDataFileManifest
     - Participant
     - Condition
     - Biospecimen
@@ -613,12 +623,26 @@ attributes:
     alias: participantExternalId
     owner: DataFile
     domain_of:
+    - ParticipantDataFileManifest
     - Participant
     - Condition
     - Biospecimen
     - DataFile
     range: string
     required: true
+  participantDataFileManifestLocation:
+    name: participantDataFileManifestLocation
+    definition_uri: include:participantDataFileManifestLocation
+    description: Location of Participant-DataFile Manifest, if file contains multiple
+      Participants
+    title: Participant-DataFile Manifest Location
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: participantDataFileManifestLocation
+    owner: DataFile
+    domain_of:
+    - DataFile
+    range: string
   sampleGlobalId:
     name: sampleGlobalId
     definition_uri: include:sampleGlobalId
@@ -660,6 +684,7 @@ attributes:
     owner: DataFile
     domain_of:
     - DatasetManifest
+    - ParticipantDataFileManifest
     - DataFile
     range: string
     required: true
@@ -773,6 +798,7 @@ attributes:
     - Dataset
     - DataFile
     range: string
+    multivalued: true
   experimentalStrategy:
     name: experimentalStrategy
     definition_uri: include:experimentalStrategy

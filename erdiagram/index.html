@@ -161,34 +161,67 @@
 </a>
 <h1>ER Diagram</h1>
 <div class="mermaid">erDiagram
-Study {
-    enum_studyCode studyCode  
-    string studyTitle  
-    enum_programList program  
-    string studyDescription  
-    stringList principalInvestigatorName  
-    stringList studyContactName  
-    stringList studyContactInstitution  
-    stringList studyContactEmail  
-    string vbrEmail  
-    uri vbrUrl  
-    string vbrReadme  
-    enum_researchDomainList researchDomain  
-    enum_participantLifespanStageList participantLifespanStage  
-    string selectionCriteria  
-    enum_studyDesignList studyDesign  
-    enum_clinicalDataSourceTypeList clinicalDataSourceType  
-    enum_dataCategoryList dataCategory  
-    uri studyWebsite  
-    stringList dbgap  
-    uriList publication  
-    integer expectedNumberOfParticipants  
-    enum_guidType guidType  
-    boolean guidMapped  
-    stringList acknowledgments  
-    stringList citationStatement  
-    uri doi  
-    string doiCitation  
+Biospecimen {
+    string participantExternalId  
+    string sampleGlobalId  
+    string sampleExternalId  
+    string sampleType  
+    integer ageAtBiospecimenCollection  
+    string parentSampleGlobalId  
+    string parentSampleExternalId  
+    string parentSampleType  
+    string collectionGlobalId  
+    string collectionExternalId  
+    string collectionSampleType  
+    string containerGlobalId  
+    string containerExternalId  
+    float volume  
+    string volumeUnit  
+    float concentration  
+    string concentrationUnit  
+    string laboratoryProcedure  
+    string biospecimenStorage  
+    enum_Availability sampleAvailability  
+    enum_Availability containerAvailability  
+}
+Condition {
+    string participantExternalId  
+    string eventId  
+    string eventType  
+    string conditionMeasureSourceText  
+    integer ageAtConditionMeasureObservation  
+    enum_conditionInterpretation conditionInterpretation  
+    enum_conditionStatus conditionStatus  
+    enum_conditionDataSource conditionDataSource  
+    string hpoLabel  
+    string hpoCode  
+    string mondoLabel  
+    string mondoCode  
+    string maxoLabel  
+    string maxoCode  
+    string otherLabel  
+    string otherCode  
+    float measureValue  
+    string measureUnit  
+}
+DataFile {
+    string participantExternalId  
+    string participantDataFileManifestLocation  
+    string sampleExternalId  
+    string fileName  
+    string fileGlobalId  
+    string fileUploadLocation  
+    string fileS3Location  
+    uriorcurie drsUri  
+    string fileHash  
+    enum_dataAccess dataAccess  
+    enum_dataCategory dataCategory  
+    stringList dataType  
+    stringList experimentalStrategy  
+    stringList experimentalPlatform  
+    string fileFormat  
+    integer fileSize  
+    string fileSizeUnit  
 }
 Dataset {
     string datasetName  
@@ -238,80 +271,53 @@ Participant {
     enum_vital_status outcomesVitalStatus  
     integer ageAtLastVitalStatus  
 }
-Condition {
+ParticipantDataFileManifest {
     string participantExternalId  
-    string eventId  
-    string eventType  
-    string conditionMeasureSourceText  
-    integer ageAtConditionMeasureObservation  
-    enum_conditionInterpretation conditionInterpretation  
-    enum_conditionStatus conditionStatus  
-    enum_conditionDataSource conditionDataSource  
-    string hpoLabel  
-    string hpoCode  
-    string mondoLabel  
-    string mondoCode  
-    string maxoLabel  
-    string maxoCode  
-    string otherLabel  
-    string otherCode  
-    float measureValue  
-    string measureUnit  
-}
-Biospecimen {
-    string participantExternalId  
-    string sampleGlobalId  
-    string sampleExternalId  
-    string sampleType  
-    integer ageAtBiospecimenCollection  
-    string parentSampleGlobalId  
-    string parentSampleExternalId  
-    string parentSampleType  
-    string collectionGlobalId  
-    string collectionExternalId  
-    string collectionSampleType  
-    string containerGlobalId  
-    string containerExternalId  
-    float volume  
-    string volumeUnit  
-    float concentration  
-    string concentrationUnit  
-    string laboratoryProcedure  
-    string biospecimenStorage  
-    enum_Availability sampleAvailability  
-    enum_Availability containerAvailability  
-}
-DataFile {
-    string participantExternalId  
-    string sampleExternalId  
     string fileName  
-    string fileGlobalId  
-    string fileUploadLocation  
-    string fileS3Location  
-    uriorcurie drsUri  
-    string fileHash  
-    enum_dataAccess dataAccess  
-    enum_dataCategory dataCategory  
-    string dataType  
-    stringList experimentalStrategy  
-    stringList experimentalPlatform  
-    string fileFormat  
-    integer fileSize  
-    string fileSizeUnit  
+}
+Study {
+    enum_studyCode studyCode  
+    string studyTitle  
+    enum_programList program  
+    string studyDescription  
+    stringList principalInvestigatorName  
+    stringList studyContactName  
+    stringList studyContactInstitution  
+    stringList studyContactEmail  
+    string vbrEmail  
+    uri vbrUrl  
+    string vbrReadme  
+    enum_researchDomainList researchDomain  
+    enum_participantLifespanStageList participantLifespanStage  
+    string selectionCriteria  
+    enum_studyDesignList studyDesign  
+    enum_clinicalDataSourceTypeList clinicalDataSourceType  
+    enum_dataCategoryList dataCategory  
+    uri studyWebsite  
+    stringList dbgap  
+    uriList publication  
+    integer expectedNumberOfParticipants  
+    enum_guidType guidType  
+    boolean guidMapped  
+    stringList acknowledgments  
+    stringList citationStatement  
+    uri doi  
+    string doiCitation  
 }
 
+Biospecimen ||--|| Participant : "participantGlobalId"
+Biospecimen ||--|| Study : "studyCode"
+Condition ||--|| Participant : "participantGlobalId"
+Condition ||--|| Study : "studyCode"
+DataFile ||--|| Biospecimen : "sampleGlobalId"
+DataFile ||--|| Participant : "participantGlobalId"
+DataFile ||--|| Study : "studyCode"
 Dataset ||--|| Study : "studyCode"
-DatasetManifest ||--|| Study : "studyCode"
 DatasetManifest ||--|o Dataset : "datasetGlobalId"
 DatasetManifest ||--|| DataFile : "fileGlobalId"
+DatasetManifest ||--|| Study : "studyCode"
 Participant ||--}| Study : "studyCode"
-Condition ||--|| Study : "studyCode"
-Condition ||--|| Participant : "participantGlobalId"
-Biospecimen ||--|| Study : "studyCode"
-Biospecimen ||--|| Participant : "participantGlobalId"
-DataFile ||--|| Study : "studyCode"
-DataFile ||--|| Participant : "participantGlobalId"
-DataFile ||--|| Biospecimen : "sampleGlobalId"
+ParticipantDataFileManifest ||--|| Study : "studyCode"
 
 </div>
 </article>
