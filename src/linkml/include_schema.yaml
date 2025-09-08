@@ -70,7 +70,7 @@ classes:
         description: Expected number of participants in this study (or actual number, if data has been submitted to INCLUDE DCC). If additional explanation is needed, please add to Study Description field.
   ClinicalTrial:
     definition_uri: include:ClinicalTrial
-    description: Information specific to clinical trials
+    description: Study-level metadata specific to a clinical trial, copied from the study's clinicaltrials.gov page
     title: Clinical Trial
     slots:
     - studyCode
@@ -301,6 +301,38 @@ classes:
         range: Participant
       sampleGlobalId:
         range: Biospecimen
+  Encounter:
+    definition_uri: include:Encounter
+    description: Encounters can describe generic planned visits (e.g. for a Clinical Trial study schedule) or actual participant events
+    title: Encounter
+    slots:
+    - studyCode
+    - encounterGlobalId 
+    - encounterExternalId
+    - encounterDescription
+    - encounterGroup
+    - encounterType
+    - seriesOrder
+    - timepoint
+    - timepointUnit
+    - participantExternalId
+    - participantAgeAtEncounter
+    - activitiesPerformed
+    - samplesCollected
+    - filesGenerated
+  Activity:
+    definition_uri: include:Activity
+    description: Activities describe sample collection/processing, assays, data generation, etc. and may be planned (e.g. for a Clinical Trial study schedule) or actual
+    title: Activity
+    slots:
+    - studyCode
+    - activityGlobalId 
+    - activityExternalId
+    - activityDescription
+    - inputClass
+    - inputType
+    - outputClass
+    - outputType 
 
 ####################################################################################################
 # Slot Usage Overview
@@ -1045,6 +1077,139 @@ slots:
     description: Unit of file size
     title: File Size Unit
     range: string # eventually want ontology terms here
+  encounterGlobalId: 
+    definition_uri: include:encounterGlobalId
+    title: Encounter Global ID
+    description: Unique identifier for Encounter (assigned by DCC)
+    range: string
+    required: true
+    multivalued: false
+  encounterExternalId:
+    definition_uri: include:encounterExternalId
+    title: Encounter External ID
+    description: Unique ID or Name of Encounter. For actual visits, this might be a visit ID; for planned encounters, use a consistent format, such as <studyCode-planned-visitName>
+    range: string
+    required: true
+    multivalued: false
+  encounterDescription:
+    definition_uri: include:encounterDescription
+    title: Encounter Description
+    description: Name and/or description of of Encounter
+    range: string
+    required: true
+    multivalued: false
+  encounterGroup:
+    definition_uri: include:encounterGroup
+    title: Encounter Group
+    description: Optional grouping for Encounters, e.g. treatment arms. This is a flexible field that different studies might use in different ways.
+    range: string
+    required: false
+    multivalued: true
+  encounterType:
+    definition_uri: include:encounterType
+    title: Encounter Type
+    description: Optional type of Encounter, e.g. pre/on/post-intervention, virtual vs. in-person, etc. This is a flexible field that different studies might use in different ways.
+    range: string
+    required: false
+    multivalued: true
+  seriesOrder:
+    definition_uri: include:seriesOrder
+    title: Series Order
+    description: Ordering of Encounter relative to others in group, if not already indicated by Timepoint (Study Schedule only)
+    range: float
+    required: false
+    multivalued: false
+  timepoint:
+    definition_uri: include:timepoint
+    title: Timepoint
+    description: Timepoint of Encounter relative to anchor (Study Schedule only -- timepoint will be provided by Participant Age at Encounter in actual data)
+    range: float
+    required: false
+    multivalued: false
+  timepointUnit:
+    definition_uri: include:timepointUnit
+    title: Timepoint Unit
+    description: Unit of timepoint (Study Schedule only)
+    range: string
+    required: false
+    multivalued: false
+  participantAgeAtEncounter:
+    definition_uri: include:participantAgeAtEncounter
+    title: Participant Age at Encounter
+    description: Age in days of Participant at Encounter
+    range: integer
+    required: false
+    multivalued: false
+  activitiesPerformed:
+    definition_uri: include:activitiesPerformed
+    title: Activities Performed
+    description: External IDs of Activities performed at Encounter; separate with pipes if multiple
+    range: string
+    required: false
+    multivalued: true
+  samplesCollected:
+    definition_uri: include:samplesCollected
+    title: Samples Collected
+    description: External IDs of Samples collected at Encounter; separate with pipes if multiple
+    range: string
+    required: false
+    multivalued: true
+  filesGenerated:
+    definition_uri: include:filesGenerated
+    title: Files Generated
+    description: Names of Files generated during Encounter; separate with pipes if multiple
+    range: string
+    required: false
+    multivalued: true
+  activityGlobalId: 
+    definition_uri: include:activityGlobalId
+    title: Activity Global ID
+    description: Unique identifier for Activity (assigned by DCC)
+    range: string
+    required: true
+    multivalued: false
+  activityExternalId: 
+    definition_uri: include:activityExternalId
+    title: Activity External ID
+    description: Unique ID of Activity. Could be a "fake" activity for study schedule, but must formatted like an ID (e.g. no spaces). Must match Activity ID provided in DataFile metadata. E.g. Study Schedule activities, <studyCode-SS (for study schedule)-activityName-number>
+    range: string
+    required: true
+    multivalued: false
+  activityDescription:
+    definition_uri: include:activityDescription
+    title: Activity Description
+    description: Name and/or description of Activity
+    range: string
+    required: true
+    multivalued: false
+  inputClass:
+    definition_uri: include:inputClass
+    title: Input Class
+    description: Class of input for Activity (NA for study schedule)
+    range: enum_inputOutputClass
+    required: false
+    multivalued: true
+  inputType:
+    definition_uri: include:inputType
+    title: Input Type
+    description: Type of input for Activity (NA for study schedule). Must match Type of Input Class (dataType, sampleType, etc.)
+    range: string #change to enum when we have enums for dataType, sampleType, etc
+    required: false
+    multivalued: true
+  outputClass:
+    definition_uri: include:outputClass
+    title: Output Class
+    description: Class of output generated by Activity (NA for study schedule)
+    range: enum_inputOutputClass
+    required: false
+    multivalued: true
+  outputType:
+    definition_uri: include:outputType
+    title: Output Type
+    description: Type of output generated by Activity. Must match Type of Output Class. For generic/planned Study Schedule activities, use Output Type = Study Schedule
+    range: string #change to enum when we have enums for dataType, sampleType, etc
+    required: false
+    multivalued: true
 
 enums:
   enum_studyCode:
@@ -1554,5 +1719,13 @@ enums:
       unavailable:
         title: Unavailable
         description: Sample or Container either was available through Virtual Biorepository but has been used up, or is part of a study that is not participating in the VBR
-
+  enum_inputOutputClass:
+    definition_uri: include:enum_inputOutputClass
+    permissible_values:
+      participant:
+        title: Participant
+      biospecimen:
+        title: Biospecimen
+      datafile:
+        title: DataFile
 
