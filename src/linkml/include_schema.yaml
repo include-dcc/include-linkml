@@ -85,6 +85,10 @@ classes:
     - interventionAssignmentStrategy
     - primaryOutcomeMeasure
     - secondaryOutcomeMeasure
+    slot_usage:
+      # Reference Slots
+      studyCode:
+        range: Study
   Dataset:
     definition_uri: include:Dataset
     description: Information about a specific grouping of data files
@@ -191,12 +195,6 @@ classes:
     - firstParticipantEngagementEvent
     - outcomesVitalStatus
     - ageAtLastVitalStatus
-    slot_usage:
-      studyCode:
-        multivalued: true
-        range: Study # Reference Slots
-      participantExternalId:
-        multivalued: true
   Condition:
     definition_uri: include:Condition
     description: Co-occurring conditions and other observations for the participant
@@ -317,9 +315,29 @@ classes:
     - timepointUnit
     - participantExternalId
     - participantAgeAtEncounter
-    - activitiesPerformed
-    - samplesCollected
-    - filesGenerated
+    - activityExternalId
+    - sampleExternalId
+    - fileName
+    slot_usage:
+      participantExternalId:
+        description: External ID of associated participant (for actual encounters)
+        required: false
+        multivalued: true
+      activityExternalId:
+        description: External IDs of Activities performed at Encounter; separate with pipes if multiple
+        required: false
+        multivalued: true
+      sampleExternalId:
+        description: External IDs of Samples collected at Encounter; separate with pipes if multiple
+        required: false
+        multivalued: true
+      fileName:
+        description: Names of Files generated during Encounter; separate with pipes if multiple
+        required: false
+        multivalued: true
+      # Reference Slots
+      studyCode:
+        range: Study
   Activity:
     definition_uri: include:Activity
     description: Activities describe sample collection/processing, assays, data generation, etc. and may be planned (e.g. for a Clinical Trial study schedule) or actual
@@ -333,6 +351,10 @@ classes:
     - inputType
     - outputClass
     - outputType 
+    slot_usage:
+      # Reference Slots
+      studyCode:
+        range: Study
 
 ####################################################################################################
 # Slot Usage Overview
