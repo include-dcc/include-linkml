@@ -1297,7 +1297,8 @@ enums:
         title: ECODS
       exceeds:
         title: EXcEEDS
-      HTP:
+      htp:
+        title: HTP
       ibis-ds:
         title: IBIS-DS
       jaki_ds:
