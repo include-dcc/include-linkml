@@ -6,6 +6,10 @@
 
 This repository hosts the INCLUDE LinkML Model, a specialized data model crafted to empower collaboration and streamline data integration within Down syndrome research. By harnessing advanced [LinkML](https://linkml.io/) features, it provides a versatile framework for harmonizing data representation, articulating metadata, and delineating intricate relationships between entities. This structured approach not only promotes seamless data exchange but also facilitates interoperability and scalability across diverse research initiatives.
 
+## Spreadsheet Version
+
+The latest iteration of the model in spreadsheet format is captured in [this Google Sheet](https://docs.google.com/spreadsheets/d/12GN9b1W_00diInhjS-dIC1dDGj3UMBJqnpqHhCWeVZs/).
+
 ## Getting Started
 
 To work with the INCLUDE Model, follow these steps:
@@ -27,15 +31,6 @@ After running `poetry install`, you can proceed with further setup or usage inst
 The repository structure is organized as follows:
 
 - `src/linkml`: Contains the YAML files defining the INCLUDE Model.
-
-## Updates Since Previous Release (v2.2.0)
-
-### Model Enhancements:
-
-- Updated Assay component to include latest Virtual Biorepository model.
-- Updated Study component and added new Dataset and DatasetManifest components to support new Study/Dataset pages in Data Hub.
-- Inclusion of over 25 new slots.
-- 5 new enumerations: EnumClinicalDataSourceType, EnumDataCategory, EnumGuidType, EnumParticipantLifespanStage, EnumResearchDomain.
 
 
 
