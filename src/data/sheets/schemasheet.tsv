@@ -157,10 +157,11 @@ DatasetManifest		Dataset Manifest	Mapping information for files in Dataset
 DatasetManifest	studyCode			Study					
 DatasetManifest	fileGlobalId			DataFile					
 DatasetManifest	datasetGlobalId			Dataset					
-ParticipantDataFileManifest		Participant-DataFile Manifest	List of Participants in DataFiles with multiple Participants						
-ParticipantDataFileManifest	studyCode			Study					
-ParticipantDataFileManifest	fileGlobalId			DataFile					
-ParticipantDataFileManifest	datasetGlobalId			Dataset					
+ParticipantSampleDataFileManifest		Participant-Sample-DataFile Manifest	List of Participants and/or Samples in DataFiles with multiple Participants and/or Samples						
+ParticipantSampleDataFileManifest	studyCode			Study					
+ParticipantSampleDataFileManifest	fileName			DataFile					
+ParticipantSampleDataFileManifest	participantExternalId			Participant					
+ParticipantSampleDataFileManifest	sampleExternalId			Biospecimen					
 Participant		Participant	Demographic and clinical information about the participant						
 Condition		Condition	Co-occurring conditions and other observations for the participant						
 Condition	studyCode			Study					
