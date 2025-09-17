@@ -502,6 +502,7 @@ slots:
     description: Website for the study
     title: Study Website
     range: uri
+    multivalued: true
   publication:
     definition_uri: include:publication
     title: Publication
