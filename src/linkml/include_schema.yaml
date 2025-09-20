@@ -478,7 +478,7 @@ slots:
     multivalued: true
   selectionCriteria:
     definition_uri: include:selectionCriteria
-    alias: clinicaltrials.gov Eligibility Criteria
+    aliases: clinicaltrials.gov Eligibility Criteria
     description: A limited list of criteria for selection of participants in the study, provided in terms of inclusion and exclusion criteria. For Observational studies, a description of the population from which the groups or cohorts were selected (for example, primary care clinic, community sample, residents of a certain town).
     title: Selection Criteria
     range: string
@@ -559,7 +559,7 @@ slots:
   nctId:
     definition_uri: include:nctId
     title: NCT ID
-    alias: clinicaltrials.gov NCT Number
+    aliases: clinicaltrials.gov NCT Number
     description: The unique identification code given to each clinical study upon registration at ClinicalTrials.gov. The format is "NCT" followed by an 8-digit number. Also known as ClinicalTrials.gov Identifier
     range: string
     required: true
@@ -567,7 +567,7 @@ slots:
   clinicalStudyDesign:
     definition_uri: include:clinicalStudyDesign
     title: Clinical Study Design
-    alias: clinicaltrials.gov Study Type
+    aliases: clinicaltrials.gov Study Type
     description: The nature of the investigation or investigational use for which clinical study information is being submitted. Select one.
     range: enum_clinicalStudyDesign
     required: true
@@ -575,7 +575,7 @@ slots:
   trialPhase:
     definition_uri: include:trialPhase
     title: Trial Phase
-    alias: clinicaltrials.gov Study Phase
+    aliases: clinicaltrials.gov Study Phase
     description: For a clinical trial of a drug product (including a biological product), the numerical phase of such clinical trial. Select only one.
     range: enum_trialPhase
     required: true
@@ -583,7 +583,7 @@ slots:
   primaryPurpose:
     definition_uri: include:primaryPurpose
     title: Primary Purpose
-    alias: clinicaltrials.gov Primary Purpose
+    aliases: clinicaltrials.gov Primary Purpose
     description: The main objective of the intervention(s) being evaluated by the clinical trial. Select one.
     range: enum_primaryPurpose
     required: true
@@ -591,7 +591,7 @@ slots:
   interventionType:
     definition_uri: include:interventionType
     title: Intervention Type
-    alias: clinicaltrials.gov Intervention Type
+    aliases: clinicaltrials.gov Intervention Type
     description: For each intervention studied in the clinical study, the general type of intervention. Select one.
     range: enum_interventionType
     required: true
@@ -599,7 +599,7 @@ slots:
   intervention:
     definition_uri: include:intervention
     title: Intervention
-    alias: clinicaltrials.gov Intervention
+    aliases: clinicaltrials.gov Intervention
     description: For interventional studies, specify the intervention(s) associated with each arm or group; at least one intervention must be specified for interventional studies. Use non-proprietary names where available. Multiple values should be pipe-separated. For observational studies, specify the intervention(s)/exposure(s) of interest, if any.
     range: string
     required: true
@@ -607,7 +607,7 @@ slots:
   armInformation:
     definition_uri: include:armInformation
     title: Arm Information
-    alias: clinicaltrials.gov Study Arms
+    aliases: clinicaltrials.gov Study Arms
     description: For interventional studies, a description of each arm of the clinical trial that indicates its role in the clinical trial (e.g. Experimental, Active Comparator, Placebo Comparator, Sham Comparator; No Intervention; Other); provides an informative title; and, if necessary, additional descriptive information (including which interventions are administered in each arm) to differentiate each arm from other arms in the clinical trial. Multiple values should be pipe-separated. For observational studies, specify the predefined participant groups (cohorts) to be studied, e.g. those with or without a condition/exposure.
     range: string
     required: true
@@ -615,7 +615,7 @@ slots:
   armAllocation:
     definition_uri: include:armAllocation
     title: Arm Allocation
-    alias: clinicaltrials.gov Allocation
+    aliases: clinicaltrials.gov Allocation
     description: The method by which participants are assigned to arms in a clinical trial.
     range: enum_armAllocation
     required: true
@@ -623,7 +623,7 @@ slots:
   interventionAssignmentStrategy:
     definition_uri: include:interventionAssignmentStrategy
     title: Intervention Assignment Strategy
-    alias: clinicaltrials.gov Interventional Study Model
+    aliases: clinicaltrials.gov Interventional Study Model
     description: In an interventional study, the strategy for assigning interventions to participants.
     range: enum_interventionAssignmentStrategy
     required: true
@@ -631,7 +631,7 @@ slots:
   primaryOutcomeMeasure:
     definition_uri: include:primaryOutcomeMeasure
     title: Primary Outcome Measure
-    alias: clinicaltrials.gov Primary Outcome Measures
+    aliases: clinicaltrials.gov Primary Outcome Measures
     description: A description of each primary outcome measure (title, description, and time point/duration of assessment). Multiple values should be pipe-separated.
     range: string
     required: true
@@ -639,7 +639,7 @@ slots:
   secondaryOutcomeMeasure:
     definition_uri: include:secondaryOutcomeMeasure
     title: Secondary Outcome Measure
-    alias: clinicaltrials.gov Secondary Outcome Measure
+    aliases: clinicaltrials.gov Secondary Outcome Measure
     description: A description of each secondary outcome measure (title, description, and time point/duration of assessment). Multiple values should be pipe-separated.
     range: string
     required: true
