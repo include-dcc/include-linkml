@@ -1283,6 +1283,8 @@ enums:
         title: DS-DETERMINED
       ds_home:
         title: DS-HOME
+      ds_hpbm:
+        title: DS-HPBM
       ds_hsat:
         title: DS-HSAT
       ds_isp:
@@ -1301,8 +1303,6 @@ enums:
         title: DS360-CHD
       dsc:
         title: DSC
-      dspostbfmulti:
-        title: DSpostBFmulti
       dsrrs:
         title: DSRRS
       ecods:
