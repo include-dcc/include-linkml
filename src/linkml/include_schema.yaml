@@ -1355,6 +1355,9 @@ enums:
       neurodevelopment:
         title: Neurodevelopment
         meaning: mesh:D065886
+      nutritional_and_metabolic_diseases:
+        title: Nutritional and Metabolic Diseases
+        meaning: mesh:D009750
       sleep_wake_disorders:
         title: Sleep Wake Disorders
         meaning: mesh:D012893
