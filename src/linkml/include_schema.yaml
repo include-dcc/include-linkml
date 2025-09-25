@@ -1149,7 +1149,7 @@ slots:
   timepoint:
     definition_uri: include:timepoint
     title: Timepoint
-    description: Timepoint of Encounter relative to anchor (Study Schedule only -- timepoint will be provided by Participant Age at Encounter in actual data)
+    description: Timepoint of Encounter relative to chosen anchor (usually Baseline = 0). This field applies to Study Schedule only; timepoint will be indicated by Participant Age at Encounter in "actual" data
     range: float
     required: false
     multivalued: false
