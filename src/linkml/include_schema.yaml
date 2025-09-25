@@ -1417,7 +1417,10 @@ enums:
         description: Data obtained by examination, interview, etc. with investigator
       participant_or_caregiver_report:
         title: Participant or Caregiver Report
-        description: Data obtained from survey, questionnaire, etc. filled out by participant or caregiver
+        description: Data obtained from survey, questionnaire, app, etc. filled out by participant or caregiver
+      wearable:
+        title: Wearable
+        description: Data collected by wearable or other device
       other:
         title: Other
         description: Data obtained from other source, such as tissue bank
