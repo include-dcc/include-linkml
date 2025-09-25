@@ -1399,6 +1399,8 @@ enums:
         title: Interventional
       longitudinal:
         title: Longitudinal
+      technology_development:
+        title: Technology Development
       trial_readiness_study:
         title: Trial Readiness Study
       tumor_vs_matched_normal:
