@@ -85,6 +85,7 @@ classes:
     - interventionAssignmentStrategy
     - primaryOutcomeMeasure
     - secondaryOutcomeMeasure
+    - otherOutcomeMeasure
     slot_usage:
       # Reference Slots
       studyCode:
@@ -640,8 +641,16 @@ slots:
   secondaryOutcomeMeasure:
     definition_uri: include:secondaryOutcomeMeasure
     title: Secondary Outcome Measure
-    aliases: clinicaltrials.gov Secondary Outcome Measure
+    aliases: clinicaltrials.gov Secondary Outcome Measures
     description: A description of each secondary outcome measure (title, description, and time point/duration of assessment). Multiple values should be pipe-separated.
+    range: string
+    required: true
+    multivalued: true
+  otherOutcomeMeasure:
+    definition_uri: include:otherOutcomeMeasure
+    title: Other Outcome Measure
+    aliases: clinicaltrials.gov Other Outcome Measures
+    description: A description of other outcome measures (title, description, and time point/duration of assessment). Multiple values should be pipe-separated.
     range: string
     required: true
     multivalued: true
@@ -1563,7 +1572,7 @@ enums:
     definition_uri: include:enum_interventionAssignmentStrategy
     permissible_values:
       single_arm:
-        title: Single Arm
+        title: Single Group
       parallel:
         title: Parallel
       crossover:
