@@ -1266,6 +1266,10 @@ enums:
         title: ADS
       aecom_ds:
         title: AECOM-DS
+      apap21:
+        title: APAP21
+      arc_ds:
+        title: ARC-DS
       best21:
         title: BEST21
       brainpower:
@@ -1314,6 +1318,8 @@ enums:
         title: DSC
       dsrrs:
         title: DSRRS
+      each_ds:
+        title: EACH-DS
       ecods:
         title: ECODS
       exceeds:
@@ -1324,6 +1330,8 @@ enums:
         title: IBIS-DS
       jaki_ds:
         title: JAKi-DS
+      mosaic_ds:
+        title: MOSAIC-DS
       optimal:
         title: OPTimal
       team_ds:
