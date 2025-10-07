@@ -1384,6 +1384,9 @@ enums:
       physical_fitness:
         title: Physical Fitness
         meaning: mesh:D010809
+      respiratory_tract_diseases:
+        title: Respiratory Tract Diseases
+        meaning: mesh:D012140
       other:
         title: Other
   enum_participantLifespanStage:
@@ -1463,6 +1466,8 @@ enums:
         title: Proteomics
       metabolomics:
         title: Metabolomics
+      adherence:
+        title: Adherence
       cognitive_behavioral:
         title: Cognitive/Behavioral
       immune_profiling:
@@ -1478,7 +1483,7 @@ enums:
       other:
         title: Other
       sleep_study:
-        title: Sleep Study
+        title: Sleep
   enum_guidType:
     definition_uri: include:enum_guidType
     permissible_values:
