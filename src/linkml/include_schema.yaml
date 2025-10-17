@@ -713,6 +713,7 @@ slots:
     description: URL if dataset is already deposited in a public repository other than dbGaP (e.g. LONI, Metabolomics Workbench, etc.)
     title: Other Repository
     range: uri
+    multivalued: true
   otherAccessAuthority:
     definition_uri: include:otherAccessAuthority
     description: Email or URL for dataset's Access Authority, if not dbGaP
