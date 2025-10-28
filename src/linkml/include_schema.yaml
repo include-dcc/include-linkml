@@ -1285,8 +1285,6 @@ enums:
         title: CHARGE-DS
       decidas:
         title: DECIDAS
-      ds_arc:
-        title: DS-ARC
       ds_brain:
         title: DS-Brain
       ds_cog_all:
