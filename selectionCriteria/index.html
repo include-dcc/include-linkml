@@ -313,6 +313,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    Aliases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
@@ -367,7 +374,7 @@
 
 
 <h1 id="slot-selection-criteria-selectioncriteria">Slot: Selection Criteria (selectionCriteria)</h1>
-<p><em>Brief description of inclusion and/or exclusion criteria for the study</em></p>
+<p><em>A limited list of criteria for selection of participants in the study, provided in terms of inclusion and exclusion criteria. For Observational studies, a description of the population from which the groups or cohorts were selected (for example, primary care clinic, community sample, residents of a certain town).</em></p>
 <p>URI: <a href="https://w3id.org/include/selectionCriteria">include:selectionCriteria</a>
 Alias: selectionCriteria</p>
 <!-- no inheritance hierarchy -->
@@ -392,6 +399,10 @@ Alias: selectionCriteria</p>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>Range: <a href="../String/">String</a></li>
+</ul>
+<h2 id="aliases">Aliases</h2>
+<ul>
+<li>clinicaltrials.gov Eligibility Criteria</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -422,9 +433,14 @@ Alias: selectionCriteria</p>
 
 <pre><code class="language-yaml">name: selectionCriteria
 definition_uri: include:selectionCriteria
-description: Brief description of inclusion and/or exclusion criteria for the study
+description: A limited list of criteria for selection of participants in the study,
+  provided in terms of inclusion and exclusion criteria. For Observational studies,
+  a description of the population from which the groups or cohorts were selected (for
+  example, primary care clinic, community sample, residents of a certain town).
 title: Selection Criteria
 from_schema: https://w3id.org/include
+aliases:
+- clinicaltrials.gov Eligibility Criteria
 rank: 1000
 alias: selectionCriteria
 domain_of:

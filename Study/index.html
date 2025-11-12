@@ -442,7 +442,7 @@
 <tr>
 <td><a href="../selectionCriteria/">selectionCriteria</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Brief description of inclusion and/or exclusion criteria for the study</td>
+<td>A limited list of criteria for selection of participants in the study, provid...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -465,7 +465,7 @@
 </tr>
 <tr>
 <td><a href="../studyWebsite/">studyWebsite</a></td>
-<td>0..1 <br/> <a href="../Uri/">Uri</a></td>
+<td>* <br/> <a href="../Uri/">Uri</a></td>
 <td>Website for the study</td>
 <td>direct</td>
 </tr>
@@ -537,6 +537,12 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../ClinicalTrial/">ClinicalTrial</a></td>
+<td><a href="../studyCode/">studyCode</a></td>
+<td>range</td>
+<td><a href="./">Study</a></td>
+</tr>
+<tr>
 <td><a href="../Dataset/">Dataset</a></td>
 <td><a href="../studyCode/">studyCode</a></td>
 <td>range</td>
@@ -549,13 +555,7 @@
 <td><a href="./">Study</a></td>
 </tr>
 <tr>
-<td><a href="../ParticipantDataFileManifest/">ParticipantDataFileManifest</a></td>
-<td><a href="../studyCode/">studyCode</a></td>
-<td>range</td>
-<td><a href="./">Study</a></td>
-</tr>
-<tr>
-<td><a href="../Participant/">Participant</a></td>
+<td><a href="../ParticipantSampleDataFileManifest/">ParticipantSampleDataFileManifest</a></td>
 <td><a href="../studyCode/">studyCode</a></td>
 <td>range</td>
 <td><a href="./">Study</a></td>
@@ -699,9 +699,10 @@ attributes:
     owner: Study
     domain_of:
     - Study
+    - ClinicalTrial
     - Dataset
     - DatasetManifest
-    - ParticipantDataFileManifest
+    - ParticipantSampleDataFileManifest
     - Participant
     - Condition
     - Biospecimen
@@ -875,10 +876,15 @@ attributes:
   selectionCriteria:
     name: selectionCriteria
     definition_uri: include:selectionCriteria
-    description: Brief description of inclusion and/or exclusion criteria for the
-      study
+    description: A limited list of criteria for selection of participants in the study,
+      provided in terms of inclusion and exclusion criteria. For Observational studies,
+      a description of the population from which the groups or cohorts were selected
+      (for example, primary care clinic, community sample, residents of a certain
+      town).
     title: Selection Criteria
     from_schema: https://w3id.org/include
+    aliases:
+    - clinicaltrials.gov Eligibility Criteria
     rank: 1000
     alias: selectionCriteria
     owner: Study
@@ -943,6 +949,7 @@ attributes:
     domain_of:
     - Study
     range: uri
+    multivalued: true
   dbgap:
     name: dbgap
     definition_uri: include:dbgap

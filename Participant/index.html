@@ -324,8 +324,8 @@
 
 
 
-        Participant --&gt; "1..*" Study : studyCode
-        click Study href "../Study/"
+        Participant --&gt; "1" EnumStudyCode : studyCode
+        click EnumStudyCode href "../EnumStudyCode/"
 
 
 
@@ -345,7 +345,7 @@
 <tbody>
 <tr>
 <td><a href="../studyCode/">studyCode</a></td>
-<td>1..* <br/> <a href="../Study/">Study</a></td>
+<td>1 <br/> <a href="../EnumStudyCode/">EnumStudyCode</a></td>
 <td>Unique identifier for the study (generally a short acronym)</td>
 <td>direct</td>
 </tr>
@@ -357,7 +357,7 @@
 </tr>
 <tr>
 <td><a href="../participantExternalId/">participantExternalId</a></td>
-<td>1..* <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>Unique, de-identified identifier for the participant, assigned by data contri...</td>
 <td>direct</td>
 </tr>
@@ -465,6 +465,12 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../ParticipantSampleDataFileManifest/">ParticipantSampleDataFileManifest</a></td>
+<td><a href="../participantExternalId/">participantExternalId</a></td>
+<td>range</td>
+<td><a href="./">Participant</a></td>
+</tr>
+<tr>
 <td><a href="../Condition/">Condition</a></td>
 <td><a href="../participantGlobalId/">participantGlobalId</a></td>
 <td>range</td>
@@ -536,14 +542,6 @@ slots:
 - firstParticipantEngagementEvent
 - outcomesVitalStatus
 - ageAtLastVitalStatus
-slot_usage:
-  studyCode:
-    name: studyCode
-    range: Study
-    multivalued: true
-  participantExternalId:
-    name: participantExternalId
-    multivalued: true
 
 </code></pre>
 </details>
@@ -554,14 +552,6 @@ definition_uri: include:Participant
 description: Demographic and clinical information about the participant
 title: Participant
 from_schema: https://w3id.org/include
-slot_usage:
-  studyCode:
-    name: studyCode
-    range: Study
-    multivalued: true
-  participantExternalId:
-    name: participantExternalId
-    multivalued: true
 attributes:
   studyCode:
     name: studyCode
@@ -574,16 +564,16 @@ attributes:
     owner: Participant
     domain_of:
     - Study
+    - ClinicalTrial
     - Dataset
     - DatasetManifest
-    - ParticipantDataFileManifest
+    - ParticipantSampleDataFileManifest
     - Participant
     - Condition
     - Biospecimen
     - DataFile
-    range: Study
+    range: enum_studyCode
     required: true
-    multivalued: true
   participantGlobalId:
     name: participantGlobalId
     definition_uri: include:participantGlobalId
@@ -613,14 +603,13 @@ attributes:
     alias: participantExternalId
     owner: Participant
     domain_of:
-    - ParticipantDataFileManifest
+    - ParticipantSampleDataFileManifest
     - Participant
     - Condition
     - Biospecimen
     - DataFile
     range: string
     required: true
-    multivalued: true
   familyId:
     name: familyId
     definition_uri: include:familyId

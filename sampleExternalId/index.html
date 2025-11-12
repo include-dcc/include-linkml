@@ -383,13 +383,18 @@ Alias: sampleExternalId</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../Biospecimen/">Biospecimen</a></td>
-<td>A Biospecimen Collected from A Participant</td>
+<td><a href="../DataFile/">DataFile</a></td>
+<td>Metadata about Data Files</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../DataFile/">DataFile</a></td>
-<td>Metadata about Data Files</td>
+<td><a href="../ParticipantSampleDataFileManifest/">ParticipantSampleDataFileManifest</a></td>
+<td>List of Participants and/or Samples in DataFiles with multiple Participants a...</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../Biospecimen/">Biospecimen</a></td>
+<td>A Biospecimen Collected from A Participant</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -440,6 +445,7 @@ from_schema: https://w3id.org/include
 rank: 1000
 alias: sampleExternalId
 domain_of:
+- ParticipantSampleDataFileManifest
 - Biospecimen
 - DataFile
 range: string

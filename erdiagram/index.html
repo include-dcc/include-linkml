@@ -184,6 +184,20 @@ Biospecimen {
     enum_Availability sampleAvailability  
     enum_Availability containerAvailability  
 }
+ClinicalTrial {
+    string nctId  
+    enum_clinicalStudyDesign clinicalStudyDesign  
+    enum_trialPhase trialPhase  
+    enum_primaryPurpose primaryPurpose  
+    enum_interventionType interventionType  
+    stringList intervention  
+    stringList armInformation  
+    enum_armAllocation armAllocation  
+    enum_interventionAssignmentStrategy interventionAssignmentStrategy  
+    stringList primaryOutcomeMeasure  
+    stringList secondaryOutcomeMeasure  
+    stringList otherOutcomeMeasure  
+}
 Condition {
     string participantExternalId  
     string eventId  
@@ -240,7 +254,7 @@ Dataset {
     string accessLimitations  
     string accessRequirements  
     stringList dbgap  
-    uri otherRepository  
+    uriList otherRepository  
     string otherAccessAuthority  
     boolean isHarmonized  
     string datasetManifestLocation  
@@ -253,8 +267,9 @@ DatasetManifest {
     string fileName  
 }
 Participant {
+    enum_studyCode studyCode  
     string participantGlobalId  
-    stringList participantExternalId  
+    string participantExternalId  
     string familyId  
     enum_familyType familyType  
     string fatherId  
@@ -271,9 +286,8 @@ Participant {
     enum_vital_status outcomesVitalStatus  
     integer ageAtLastVitalStatus  
 }
-ParticipantDataFileManifest {
-    string participantExternalId  
-    string fileName  
+ParticipantSampleDataFileManifest {
+
 }
 Study {
     enum_studyCode studyCode  
@@ -293,7 +307,7 @@ Study {
     enum_studyDesignList studyDesign  
     enum_clinicalDataSourceTypeList clinicalDataSourceType  
     enum_dataCategoryList dataCategory  
-    uri studyWebsite  
+    uriList studyWebsite  
     stringList dbgap  
     uriList publication  
     integer expectedNumberOfParticipants  
@@ -307,6 +321,7 @@ Study {
 
 Biospecimen ||--|| Participant : "participantGlobalId"
 Biospecimen ||--|| Study : "studyCode"
+ClinicalTrial ||--|| Study : "studyCode"
 Condition ||--|| Participant : "participantGlobalId"
 Condition ||--|| Study : "studyCode"
 DataFile ||--|| Biospecimen : "sampleGlobalId"
@@ -316,8 +331,10 @@ Dataset ||--|| Study : "studyCode"
 DatasetManifest ||--|o Dataset : "datasetGlobalId"
 DatasetManifest ||--|| DataFile : "fileGlobalId"
 DatasetManifest ||--|| Study : "studyCode"
-Participant ||--}| Study : "studyCode"
-ParticipantDataFileManifest ||--|| Study : "studyCode"
+ParticipantSampleDataFileManifest ||--|| Biospecimen : "sampleExternalId"
+ParticipantSampleDataFileManifest ||--|| DataFile : "fileName"
+ParticipantSampleDataFileManifest ||--|| Participant : "participantExternalId"
+ParticipantSampleDataFileManifest ||--|| Study : "studyCode"
 
 </div>
 </article>

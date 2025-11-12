@@ -469,6 +469,12 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../ParticipantSampleDataFileManifest/">ParticipantSampleDataFileManifest</a></td>
+<td><a href="../sampleExternalId/">sampleExternalId</a></td>
+<td>range</td>
+<td><a href="./">Biospecimen</a></td>
+</tr>
+<tr>
 <td><a href="../DataFile/">DataFile</a></td>
 <td><a href="../sampleGlobalId/">sampleGlobalId</a></td>
 <td>range</td>
@@ -569,9 +575,10 @@ attributes:
     owner: Biospecimen
     domain_of:
     - Study
+    - ClinicalTrial
     - Dataset
     - DatasetManifest
-    - ParticipantDataFileManifest
+    - ParticipantSampleDataFileManifest
     - Participant
     - Condition
     - Biospecimen
@@ -607,7 +614,7 @@ attributes:
     alias: participantExternalId
     owner: Biospecimen
     domain_of:
-    - ParticipantDataFileManifest
+    - ParticipantSampleDataFileManifest
     - Participant
     - Condition
     - Biospecimen
@@ -640,6 +647,7 @@ attributes:
     alias: sampleExternalId
     owner: Biospecimen
     domain_of:
+    - ParticipantSampleDataFileManifest
     - Biospecimen
     - DataFile
     range: string

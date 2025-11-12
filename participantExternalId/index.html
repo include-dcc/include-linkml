@@ -383,9 +383,14 @@ Alias: participantExternalId</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../ParticipantDataFileManifest/">ParticipantDataFileManifest</a></td>
-<td>List of Participants in DataFiles with multiple Participants</td>
+<td><a href="../Biospecimen/">Biospecimen</a></td>
+<td>A Biospecimen Collected from A Participant</td>
 <td>no</td>
+</tr>
+<tr>
+<td><a href="../ParticipantSampleDataFileManifest/">ParticipantSampleDataFileManifest</a></td>
+<td>List of Participants and/or Samples in DataFiles with multiple Participants a...</td>
+<td>yes</td>
 </tr>
 <tr>
 <td><a href="../Condition/">Condition</a></td>
@@ -393,19 +398,14 @@ Alias: participantExternalId</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Biospecimen/">Biospecimen</a></td>
-<td>A Biospecimen Collected from A Participant</td>
+<td><a href="../Participant/">Participant</a></td>
+<td>Demographic and clinical information about the participant</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../DataFile/">DataFile</a></td>
 <td>Metadata about Data Files</td>
 <td>no</td>
-</tr>
-<tr>
-<td><a href="../Participant/">Participant</a></td>
-<td>Demographic and clinical information about the participant</td>
-<td>yes</td>
 </tr>
 </tbody>
 </table>
@@ -455,7 +455,7 @@ from_schema: https://w3id.org/include
 rank: 1000
 alias: participantExternalId
 domain_of:
-- ParticipantDataFileManifest
+- ParticipantSampleDataFileManifest
 - Participant
 - Condition
 - Biospecimen

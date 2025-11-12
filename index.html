@@ -439,6 +439,10 @@
 <td>A Biospecimen Collected from A Participant</td>
 </tr>
 <tr>
+<td><a href="ClinicalTrial/">ClinicalTrial</a></td>
+<td>Information specific to clinical trials</td>
+</tr>
+<tr>
 <td><a href="Condition/">Condition</a></td>
 <td>Co-occurring conditions and other observations for the participant</td>
 </tr>
@@ -459,8 +463,8 @@
 <td>Demographic and clinical information about the participant</td>
 </tr>
 <tr>
-<td><a href="ParticipantDataFileManifest/">ParticipantDataFileManifest</a></td>
-<td>List of Participants in DataFiles with multiple Participants</td>
+<td><a href="ParticipantSampleDataFileManifest/">ParticipantSampleDataFileManifest</a></td>
+<td>List of Participants and/or Samples in DataFiles with multiple Participants a...</td>
 </tr>
 <tr>
 <td><a href="Study/">Study</a></td>
@@ -506,6 +510,14 @@
 <td>Age in days when participant's vital status was last recorded</td>
 </tr>
 <tr>
+<td><a href="armAllocation/">armAllocation</a></td>
+<td>The method by which participants are assigned to arms in a clinical trial</td>
+</tr>
+<tr>
+<td><a href="armInformation/">armInformation</a></td>
+<td>For interventional studies, a description of each arm of the clinical trial t...</td>
+</tr>
+<tr>
 <td><a href="biospecimenStorage/">biospecimenStorage</a></td>
 <td>Method by which Container is stored (e</td>
 </tr>
@@ -516,6 +528,10 @@
 <tr>
 <td><a href="clinicalDataSourceType/">clinicalDataSourceType</a></td>
 <td>Source(s) of data collected from study participants; pipe-separated if multip...</td>
+</tr>
+<tr>
+<td><a href="clinicalStudyDesign/">clinicalStudyDesign</a></td>
+<td>The nature of the investigation or investigational use for which clinical stu...</td>
 </tr>
 <tr>
 <td><a href="collectionExternalId/">collectionExternalId</a></td>
@@ -722,6 +738,18 @@
 <td>Label for Condition in the Human Phenotype Ontology (HPO)</td>
 </tr>
 <tr>
+<td><a href="intervention/">intervention</a></td>
+<td>For interventional studies, specify the intervention(s) associated with each ...</td>
+</tr>
+<tr>
+<td><a href="interventionAssignmentStrategy/">interventionAssignmentStrategy</a></td>
+<td>In an interventional study, the strategy for assigning interventions to parti...</td>
+</tr>
+<tr>
+<td><a href="interventionType/">interventionType</a></td>
+<td>For each intervention studied in the clinical study, the general type of inte...</td>
+</tr>
+<tr>
 <td><a href="isHarmonized/">isHarmonized</a></td>
 <td>All of the elements in this Dataset are harmonized and available in the INCLU...</td>
 </tr>
@@ -758,6 +786,10 @@
 <td>Participant External ID for Participant's mother (NA if Participant is not th...</td>
 </tr>
 <tr>
+<td><a href="nctId/">nctId</a></td>
+<td>The unique identification code given to each clinical study upon registration...</td>
+</tr>
+<tr>
 <td><a href="otherAccessAuthority/">otherAccessAuthority</a></td>
 <td>Email or URL for dataset's Access Authority, if not dbGaP</td>
 </tr>
@@ -772,6 +804,10 @@
 <tr>
 <td><a href="otherLabel/">otherLabel</a></td>
 <td>Label for Condition in another ontology (if no match in HPO, MONDO, or MAXO)</td>
+</tr>
+<tr>
+<td><a href="otherOutcomeMeasure/">otherOutcomeMeasure</a></td>
+<td>A description of other outcome measures (title, description, and time point/d...</td>
 </tr>
 <tr>
 <td><a href="otherRepository/">otherRepository</a></td>
@@ -810,6 +846,14 @@
 <td>Focus age group(s) of the study population; pipe-separated if multiple</td>
 </tr>
 <tr>
+<td><a href="primaryOutcomeMeasure/">primaryOutcomeMeasure</a></td>
+<td>A description of each primary outcome measure (title, description, and time p...</td>
+</tr>
+<tr>
+<td><a href="primaryPurpose/">primaryPurpose</a></td>
+<td>The main objective of the intervention(s) being evaluated by the clinical tri...</td>
+</tr>
+<tr>
 <td><a href="principalInvestigatorName/">principalInvestigatorName</a></td>
 <td>Name(s) of Principal Investigator(s) of this study; pipe-separated if multipl...</td>
 </tr>
@@ -846,8 +890,12 @@
 <td>Type of biological material comprising the Sample (e</td>
 </tr>
 <tr>
+<td><a href="secondaryOutcomeMeasure/">secondaryOutcomeMeasure</a></td>
+<td>A description of each secondary outcome measure (title, description, and time...</td>
+</tr>
+<tr>
 <td><a href="selectionCriteria/">selectionCriteria</a></td>
-<td>Brief description of inclusion and/or exclusion criteria for the study</td>
+<td>A limited list of criteria for selection of participants in the study, provid...</td>
 </tr>
 <tr>
 <td><a href="sex/">sex</a></td>
@@ -890,6 +938,10 @@
 <td>Website for the study</td>
 </tr>
 <tr>
+<td><a href="trialPhase/">trialPhase</a></td>
+<td>For a clinical trial of a drug product (including a biological product), the ...</td>
+</tr>
+<tr>
 <td><a href="vbrEmail/">vbrEmail</a></td>
 <td>Email address for Virtual Biorepository requests/inquiries, if participating</td>
 </tr>
@@ -921,11 +973,19 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="EnumArmAllocation/">EnumArmAllocation</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="EnumAvailability/">EnumAvailability</a></td>
 <td></td>
 </tr>
 <tr>
 <td><a href="EnumClinicalDataSourceType/">EnumClinicalDataSourceType</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="EnumClinicalStudyDesign/">EnumClinicalStudyDesign</a></td>
 <td></td>
 </tr>
 <tr>
@@ -969,7 +1029,19 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="EnumInterventionAssignmentStrategy/">EnumInterventionAssignmentStrategy</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="EnumInterventionType/">EnumInterventionType</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="EnumParticipantLifespanStage/">EnumParticipantLifespanStage</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="EnumPrimaryPurpose/">EnumPrimaryPurpose</a></td>
 <td></td>
 </tr>
 <tr>
@@ -994,6 +1066,10 @@
 </tr>
 <tr>
 <td><a href="EnumStudyDesign/">EnumStudyDesign</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="EnumTrialPhase/">EnumTrialPhase</a></td>
 <td></td>
 </tr>
 <tr>

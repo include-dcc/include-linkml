@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://include-dcc.github.io/include-linkml/ParticipantDataFileManifest/" rel="canonical"/>
+<link href="https://include-dcc.github.io/include-linkml/ParticipantSampleDataFileManifest/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-8.5.10" name="generator"/>
-<title>Class: Participant-DataFile Manifest (ParticipantDataFileManifest) - INCLUDE Data Model</title>
+<title>Class: Participant-Sample-DataFile Manifest (ParticipantSampleDataFileManifest) - INCLUDE Data Model</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-participant-datafile-manifest-participantdatafilemanifest">
+<a class="md-skip" href="#class-participant-sample-datafile-manifest-participantsampledatafilemanifest">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: Participant-DataFile Manifest (ParticipantDataFileManifest)
+              Class: Participant-Sample-DataFile Manifest (ParticipantSampleDataFileManifest)
             
           </span>
 </div>
@@ -207,26 +207,55 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/include-dcc/include-linkml/edit/master/docs/ParticipantDataFileManifest.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/include-dcc/include-linkml/edit/master/docs/ParticipantSampleDataFileManifest.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="class-participant-datafile-manifest-participantdatafilemanifest">Class: Participant-DataFile Manifest (ParticipantDataFileManifest)</h1>
-<p><em>List of Participants in DataFiles with multiple Participants</em></p>
-<p>URI: <a href="https://w3id.org/include/ParticipantDataFileManifest">include:ParticipantDataFileManifest</a></p>
+<h1 id="class-participant-sample-datafile-manifest-participantsampledatafilemanifest">Class: Participant-Sample-DataFile Manifest (ParticipantSampleDataFileManifest)</h1>
+<p><em>List of Participants and/or Samples in DataFiles with multiple Participants and/or Samples</em></p>
+<p>URI: <a href="https://w3id.org/include/ParticipantSampleDataFileManifest">include:ParticipantSampleDataFileManifest</a></p>
 <div class="mermaid"> classDiagram
-    class ParticipantDataFileManifest
-    click ParticipantDataFileManifest href "../ParticipantDataFileManifest/"
-      ParticipantDataFileManifest : fileName
-
-      ParticipantDataFileManifest : participantExternalId
-
-      ParticipantDataFileManifest : studyCode
+    class ParticipantSampleDataFileManifest
+    click ParticipantSampleDataFileManifest href "../ParticipantSampleDataFileManifest/"
+      ParticipantSampleDataFileManifest : fileName
 
 
 
 
 
-        ParticipantDataFileManifest --&gt; "1" Study : studyCode
+        ParticipantSampleDataFileManifest --&gt; "1" DataFile : fileName
+        click DataFile href "../DataFile/"
+
+
+
+      ParticipantSampleDataFileManifest : participantExternalId
+
+
+
+
+
+        ParticipantSampleDataFileManifest --&gt; "1" Participant : participantExternalId
+        click Participant href "../Participant/"
+
+
+
+      ParticipantSampleDataFileManifest : sampleExternalId
+
+
+
+
+
+        ParticipantSampleDataFileManifest --&gt; "1" Biospecimen : sampleExternalId
+        click Biospecimen href "../Biospecimen/"
+
+
+
+      ParticipantSampleDataFileManifest : studyCode
+
+
+
+
+
+        ParticipantSampleDataFileManifest --&gt; "1" Study : studyCode
         click Study href "../Study/"
 
 
@@ -253,13 +282,19 @@
 </tr>
 <tr>
 <td><a href="../participantExternalId/">participantExternalId</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../Participant/">Participant</a></td>
 <td>Unique, de-identified identifier for the participant, assigned by data contri...</td>
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../sampleExternalId/">sampleExternalId</a></td>
+<td>1 <br/> <a href="../Biospecimen/">Biospecimen</a></td>
+<td>Unique identifier for sample, assigned by data contributor</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../fileName/">fileName</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../DataFile/">DataFile</a></td>
 <td>Name of file, assigned by data contributor</td>
 <td>direct</td>
 </tr>
@@ -281,11 +316,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>include:ParticipantDataFileManifest</td>
+<td>include:ParticipantSampleDataFileManifest</td>
 </tr>
 <tr>
 <td>native</td>
-<td>include:ParticipantDataFileManifest</td>
+<td>include:ParticipantSampleDataFileManifest</td>
 </tr>
 </tbody>
 </table>
@@ -293,45 +328,54 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: ParticipantDataFileManifest
-definition_uri: include:ParticipantDataFileManifest
-description: List of Participants in DataFiles with multiple Participants
-title: Participant-DataFile Manifest
+<pre><code class="language-yaml">name: ParticipantSampleDataFileManifest
+definition_uri: include:ParticipantSampleDataFileManifest
+description: List of Participants and/or Samples in DataFiles with multiple Participants
+  and/or Samples
+title: Participant-Sample-DataFile Manifest
 from_schema: https://w3id.org/include
 slots:
 - studyCode
 - participantExternalId
+- sampleExternalId
 - fileName
 slot_usage:
   studyCode:
     name: studyCode
     range: Study
-  fileGlobalId:
-    name: fileGlobalId
+  fileName:
+    name: fileName
     range: DataFile
-  datasetGlobalId:
-    name: datasetGlobalId
-    range: Dataset
+  participantExternalId:
+    name: participantExternalId
+    range: Participant
+  sampleExternalId:
+    name: sampleExternalId
+    range: Biospecimen
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: ParticipantDataFileManifest
-definition_uri: include:ParticipantDataFileManifest
-description: List of Participants in DataFiles with multiple Participants
-title: Participant-DataFile Manifest
+<pre><code class="language-yaml">name: ParticipantSampleDataFileManifest
+definition_uri: include:ParticipantSampleDataFileManifest
+description: List of Participants and/or Samples in DataFiles with multiple Participants
+  and/or Samples
+title: Participant-Sample-DataFile Manifest
 from_schema: https://w3id.org/include
 slot_usage:
   studyCode:
     name: studyCode
     range: Study
-  fileGlobalId:
-    name: fileGlobalId
+  fileName:
+    name: fileName
     range: DataFile
-  datasetGlobalId:
-    name: datasetGlobalId
-    range: Dataset
+  participantExternalId:
+    name: participantExternalId
+    range: Participant
+  sampleExternalId:
+    name: sampleExternalId
+    range: Biospecimen
 attributes:
   studyCode:
     name: studyCode
@@ -341,12 +385,13 @@ attributes:
     from_schema: https://w3id.org/include
     rank: 1000
     alias: studyCode
-    owner: ParticipantDataFileManifest
+    owner: ParticipantSampleDataFileManifest
     domain_of:
     - Study
+    - ClinicalTrial
     - Dataset
     - DatasetManifest
-    - ParticipantDataFileManifest
+    - ParticipantSampleDataFileManifest
     - Participant
     - Condition
     - Biospecimen
@@ -363,14 +408,31 @@ attributes:
     from_schema: https://w3id.org/include
     rank: 1000
     alias: participantExternalId
-    owner: ParticipantDataFileManifest
+    owner: ParticipantSampleDataFileManifest
     domain_of:
-    - ParticipantDataFileManifest
+    - ParticipantSampleDataFileManifest
     - Participant
     - Condition
     - Biospecimen
     - DataFile
-    range: string
+    range: Participant
+    required: true
+  sampleExternalId:
+    name: sampleExternalId
+    definition_uri: include:sampleExternalId
+    description: Unique identifier for sample, assigned by data contributor. A sample
+      is a unique biological material; two samples with two different IDs are biologically
+      distinct.
+    title: Sample External ID
+    from_schema: https://w3id.org/include
+    rank: 1000
+    alias: sampleExternalId
+    owner: ParticipantSampleDataFileManifest
+    domain_of:
+    - ParticipantSampleDataFileManifest
+    - Biospecimen
+    - DataFile
+    range: Biospecimen
     required: true
   fileName:
     name: fileName
@@ -380,12 +442,12 @@ attributes:
     from_schema: https://w3id.org/include
     rank: 1000
     alias: fileName
-    owner: ParticipantDataFileManifest
+    owner: ParticipantSampleDataFileManifest
     domain_of:
     - DatasetManifest
-    - ParticipantDataFileManifest
+    - ParticipantSampleDataFileManifest
     - DataFile
-    range: string
+    range: DataFile
     required: true
 
 </code></pre>

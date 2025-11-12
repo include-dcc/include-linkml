@@ -403,7 +403,7 @@
 </tr>
 <tr>
 <td><a href="../otherRepository/">otherRepository</a></td>
-<td>0..1 <br/> <a href="../Uri/">Uri</a></td>
+<td>* <br/> <a href="../Uri/">Uri</a></td>
 <td>URL if dataset is already deposited in a public repository other than dbGaP (...</td>
 <td>direct</td>
 </tr>
@@ -603,9 +603,10 @@ attributes:
     owner: Dataset
     domain_of:
     - Study
+    - ClinicalTrial
     - Dataset
     - DatasetManifest
-    - ParticipantDataFileManifest
+    - ParticipantSampleDataFileManifest
     - Participant
     - Condition
     - Biospecimen
@@ -858,6 +859,7 @@ attributes:
     domain_of:
     - Dataset
     range: uri
+    multivalued: true
   otherAccessAuthority:
     name: otherAccessAuthority
     definition_uri: include:otherAccessAuthority

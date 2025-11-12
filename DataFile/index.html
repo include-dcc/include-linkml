@@ -459,6 +459,12 @@
 <td>range</td>
 <td><a href="./">DataFile</a></td>
 </tr>
+<tr>
+<td><a href="../ParticipantSampleDataFileManifest/">ParticipantSampleDataFileManifest</a></td>
+<td><a href="../fileName/">fileName</a></td>
+<td>range</td>
+<td><a href="./">DataFile</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -585,9 +591,10 @@ attributes:
     owner: DataFile
     domain_of:
     - Study
+    - ClinicalTrial
     - Dataset
     - DatasetManifest
-    - ParticipantDataFileManifest
+    - ParticipantSampleDataFileManifest
     - Participant
     - Condition
     - Biospecimen
@@ -623,7 +630,7 @@ attributes:
     alias: participantExternalId
     owner: DataFile
     domain_of:
-    - ParticipantDataFileManifest
+    - ParticipantSampleDataFileManifest
     - Participant
     - Condition
     - Biospecimen
@@ -669,6 +676,7 @@ attributes:
     alias: sampleExternalId
     owner: DataFile
     domain_of:
+    - ParticipantSampleDataFileManifest
     - Biospecimen
     - DataFile
     range: string
@@ -684,7 +692,7 @@ attributes:
     owner: DataFile
     domain_of:
     - DatasetManifest
-    - ParticipantDataFileManifest
+    - ParticipantSampleDataFileManifest
     - DataFile
     range: string
     required: true
