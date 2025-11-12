@@ -68,6 +68,28 @@ classes:
         description: URL for publication(s) describing the study's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
       expectedNumberOfParticipants:
         description: Expected number of participants in this study (or actual number, if data has been submitted to INCLUDE DCC). If additional explanation is needed, please add to Study Description field.
+  ClinicalTrial:
+    definition_uri: include:ClinicalTrial
+    description: Information specific to clinical trials
+    title: Clinical Trial
+    slots:
+    - studyCode
+    - nctId
+    - clinicalStudyDesign
+    - trialPhase
+    - primaryPurpose
+    - interventionType
+    - intervention
+    - armInformation
+    - armAllocation
+    - interventionAssignmentStrategy
+    - primaryOutcomeMeasure
+    - secondaryOutcomeMeasure
+    - otherOutcomeMeasure
+    slot_usage:
+      # Reference Slots
+      studyCode:
+        range: Study
   Dataset:
     definition_uri: include:Dataset
     description: Information about a specific grouping of data files
@@ -134,23 +156,26 @@ classes:
         range: DataFile
       datasetGlobalId:
         range: Dataset
-  ParticipantDataFileManifest:
-    definition_uri: include:ParticipantDataFileManifest
-    description: List of Participants in DataFiles with multiple Participants
-    title: Participant-DataFile Manifest
+  ParticipantSampleDataFileManifest:
+    definition_uri: include:ParticipantSampleDataFileManifest
+    description: List of Participants and/or Samples in DataFiles with multiple Participants and/or Samples
+    title: Participant-Sample-DataFile Manifest
     slots:
     - studyCode
     - participantExternalId
+    - sampleExternalId
     - fileName
     #TODO: add Dictonary File Name & Global ID
     slot_usage:
       # Reference Slots
       studyCode:
         range: Study
-      fileGlobalId:
+      fileName:
         range: DataFile
-      datasetGlobalId:
-        range: Dataset
+      participantExternalId:
+        range: Participant
+      sampleExternalId:
+        range: Biospecimen
   Participant:
     definition_uri: include:Participant
     description: Demographic and clinical information about the participant
@@ -174,12 +199,6 @@ classes:
     - firstParticipantEngagementEvent
     - outcomesVitalStatus
     - ageAtLastVitalStatus
-    slot_usage:
-      studyCode:
-        multivalued: true
-        range: Study # Reference Slots
-      participantExternalId:
-        multivalued: true
   Condition:
     definition_uri: include:Condition
     description: Co-occurring conditions and other observations for the participant
@@ -404,7 +423,8 @@ slots:
     multivalued: true
   selectionCriteria:
     definition_uri: include:selectionCriteria
-    description: Brief description of inclusion and/or exclusion criteria for the study
+    aliases: clinicaltrials.gov Eligibility Criteria
+    description: A limited list of criteria for selection of participants in the study, provided in terms of inclusion and exclusion criteria. For Observational studies, a description of the population from which the groups or cohorts were selected (for example, primary care clinic, community sample, residents of a certain town).
     title: Selection Criteria
     range: string
   studyDesign:
@@ -427,6 +447,7 @@ slots:
     description: Website for the study
     title: Study Website
     range: uri
+    multivalued: true
   publication:
     definition_uri: include:publication
     title: Publication
@@ -480,6 +501,102 @@ slots:
     title: DOI Citation
     range: string
     required: false #change to true after pilot
+  nctId:
+    definition_uri: include:nctId
+    title: NCT ID
+    aliases: clinicaltrials.gov NCT Number
+    description: The unique identification code given to each clinical study upon registration at ClinicalTrials.gov. The format is "NCT" followed by an 8-digit number. Also known as ClinicalTrials.gov Identifier
+    range: string
+    required: true
+    multivalued: false
+  clinicalStudyDesign:
+    definition_uri: include:clinicalStudyDesign
+    title: Clinical Study Design
+    aliases: clinicaltrials.gov Study Type
+    description: The nature of the investigation or investigational use for which clinical study information is being submitted. Select one.
+    range: enum_clinicalStudyDesign
+    required: true
+    multivalued: false
+  trialPhase:
+    definition_uri: include:trialPhase
+    title: Trial Phase
+    aliases: clinicaltrials.gov Study Phase
+    description: For a clinical trial of a drug product (including a biological product), the numerical phase of such clinical trial. Select only one.
+    range: enum_trialPhase
+    required: true
+    multivalued: false
+  primaryPurpose:
+    definition_uri: include:primaryPurpose
+    title: Primary Purpose
+    aliases: clinicaltrials.gov Primary Purpose
+    description: The main objective of the intervention(s) being evaluated by the clinical trial. Select one.
+    range: enum_primaryPurpose
+    required: true
+    multivalued: false
+  interventionType:
+    definition_uri: include:interventionType
+    title: Intervention Type
+    aliases: clinicaltrials.gov Intervention Type
+    description: For each intervention studied in the clinical study, the general type of intervention. Select one.
+    range: enum_interventionType
+    required: true
+    multivalued: false
+  intervention:
+    definition_uri: include:intervention
+    title: Intervention
+    aliases: clinicaltrials.gov Intervention
+    description: For interventional studies, specify the intervention(s) associated with each arm or group; at least one intervention must be specified for interventional studies. Use non-proprietary names where available. Multiple values should be pipe-separated. For observational studies, specify the intervention(s)/exposure(s) of interest, if any.
+    range: string
+    required: true
+    multivalued: true
+  armInformation:
+    definition_uri: include:armInformation
+    title: Arm Information
+    aliases: clinicaltrials.gov Study Arms
+    description: For interventional studies, a description of each arm of the clinical trial that indicates its role in the clinical trial (e.g. Experimental, Active Comparator, Placebo Comparator, Sham Comparator; No Intervention; Other); provides an informative title; and, if necessary, additional descriptive information (including which interventions are administered in each arm) to differentiate each arm from other arms in the clinical trial. Multiple values should be pipe-separated. For observational studies, specify the predefined participant groups (cohorts) to be studied, e.g. those with or without a condition/exposure.
+    range: string
+    required: true
+    multivalued: true
+  armAllocation:
+    definition_uri: include:armAllocation
+    title: Arm Allocation
+    aliases: clinicaltrials.gov Allocation
+    description: The method by which participants are assigned to arms in a clinical trial.
+    range: enum_armAllocation
+    required: true
+    multivalued: false
+  interventionAssignmentStrategy:
+    definition_uri: include:interventionAssignmentStrategy
+    title: Intervention Assignment Strategy
+    aliases: clinicaltrials.gov Interventional Study Model
+    description: In an interventional study, the strategy for assigning interventions to participants.
+    range: enum_interventionAssignmentStrategy
+    required: true
+    multivalued: false
+  primaryOutcomeMeasure:
+    definition_uri: include:primaryOutcomeMeasure
+    title: Primary Outcome Measure
+    aliases: clinicaltrials.gov Primary Outcome Measures
+    description: A description of each primary outcome measure (title, description, and time point/duration of assessment). Multiple values should be pipe-separated.
+    range: string
+    required: true
+    multivalued: true
+  secondaryOutcomeMeasure:
+    definition_uri: include:secondaryOutcomeMeasure
+    title: Secondary Outcome Measure
+    aliases: clinicaltrials.gov Secondary Outcome Measures
+    description: A description of each secondary outcome measure (title, description, and time point/duration of assessment). Multiple values should be pipe-separated.
+    range: string
+    required: true
+    multivalued: true
+  otherOutcomeMeasure:
+    definition_uri: include:otherOutcomeMeasure
+    title: Other Outcome Measure
+    aliases: clinicaltrials.gov Other Outcome Measures
+    description: A description of other outcome measures (title, description, and time point/duration of assessment). Multiple values should be pipe-separated.
+    range: string
+    required: true
+    multivalued: true
   datasetName:
     definition_uri: include:datasetName
     description: Full name of the dataset, provided by contributor
@@ -539,6 +656,7 @@ slots:
     description: URL if dataset is already deposited in a public repository other than dbGaP (e.g. LONI, Metabolomics Workbench, etc.)
     title: Other Repository
     range: uri
+    multivalued: true
   otherAccessAuthority:
     definition_uri: include:otherAccessAuthority
     description: Email or URL for dataset's Access Authority, if not dbGaP
@@ -941,15 +1059,6 @@ slots:
     range: string # eventually want ontology terms here
 
 enums:
-  enum_program:
-    definition_uri: include:enum_program
-    permissible_values:
-      include:
-        title: INCLUDE
-      kf:
-        title: KF
-      other:
-        title: Other
   enum_studyCode:
     definition_uri: include:enum_studyCode
     permissible_values:
@@ -961,6 +1070,10 @@ enums:
         title: ADS
       aecom_ds:
         title: AECOM-DS
+      apap21:
+        title: APAP21
+      arc_ds:
+        title: ARC-DS
       best21:
         title: BEST21
       brainpower:
@@ -975,8 +1088,6 @@ enums:
         title: CHARGE-DS
       decidas:
         title: DECIDAS
-      ds_arc:
-        title: DS-ARC
       ds_brain:
         title: DS-Brain
       ds_cog_all:
@@ -987,6 +1098,8 @@ enums:
         title: DS-DETERMINED
       ds_home:
         title: DS-HOME
+      ds_hpbm:
+        title: DS-HPBM
       ds_hsat:
         title: DS-HSAT
       ds_isp:
@@ -1005,19 +1118,22 @@ enums:
         title: DS360-CHD
       dsc:
         title: DSC
-      dspostbfmulti:
-        title: DSpostBFmulti
       dsrrs:
         title: DSRRS
+      each_ds:
+        title: EACH-DS
       ecods:
         title: ECODS
       exceeds:
         title: EXcEEDS
-      HTP:
+      htp:
+        title: HTP
       ibis-ds:
         title: IBIS-DS
       jaki_ds:
         title: JAKi-DS
+      mosaic_ds:
+        title: MOSAIC-DS
       optimal:
         title: OPTimal
       team_ds:
@@ -1030,6 +1146,15 @@ enums:
         title: X01-deSmith
       x01_hakonarson:
         title: X01-Hakonarson
+  enum_program:
+    definition_uri: include:enum_program
+    permissible_values:
+      include:
+        title: INCLUDE
+      kf:
+        title: KF
+      other:
+        title: Other
   enum_researchDomain:
     #TODO: replace/add NIH internal categories from Huiqing
     definition_uri: include:enum_researchDomain
@@ -1049,6 +1174,9 @@ enums:
       neurodevelopment:
         title: Neurodevelopment
         meaning: mesh:D065886
+      nutritional_and_metabolic_diseases:
+        title: Nutritional and Metabolic Diseases
+        meaning: mesh:D009750
       sleep_wake_disorders:
         title: Sleep Wake Disorders
         meaning: mesh:D012893
@@ -1058,6 +1186,9 @@ enums:
       physical_fitness:
         title: Physical Fitness
         meaning: mesh:D010809
+      respiratory_tract_diseases:
+        title: Respiratory Tract Diseases
+        meaning: mesh:D012140
       other:
         title: Other
   enum_participantLifespanStage:
@@ -1093,6 +1224,8 @@ enums:
         title: Interventional
       longitudinal:
         title: Longitudinal
+      technology_development:
+        title: Technology Development
       trial_readiness_study:
         title: Trial Readiness Study
       tumor_vs_matched_normal:
@@ -1109,7 +1242,10 @@ enums:
         description: Data obtained by examination, interview, etc. with investigator
       participant_or_caregiver_report:
         title: Participant or Caregiver Report
-        description: Data obtained from survey, questionnaire, etc. filled out by participant or caregiver
+        description: Data obtained from survey, questionnaire, app, etc. filled out by participant or caregiver
+      wearable:
+        title: Wearable
+        description: Data collected by wearable or other device
       other:
         title: Other
         description: Data obtained from other source, such as tissue bank
@@ -1132,6 +1268,8 @@ enums:
         title: Proteomics
       metabolomics:
         title: Metabolomics
+      adherence:
+        title: Adherence
       cognitive_behavioral:
         title: Cognitive/Behavioral
       immune_profiling:
@@ -1147,7 +1285,7 @@ enums:
       other:
         title: Other
       sleep_study:
-        title: Sleep Study
+        title: Sleep
   enum_guidType:
     definition_uri: include:enum_guidType
     permissible_values:
@@ -1157,64 +1295,128 @@ enums:
       other:
         title: Other
         description: GUID generated by other system
-      No GUID:
+      no_guid:
+        title: No GUID
         description: No GUIDs used in this study
-  enum_conditionInterpretation:
+  enum_clinicalStudyDesign:
+    definition_uri: include:enum_clinicalStudyDesign
     permissible_values:
-      observed:
-        title: Observed
-        description: Condition was observed or reported (this will be the case for most conditions)
-      not_observed:
-        title: Not Observed
-        description: Participant was specifically examined or medical record queried for condition and found to be negative
-  enum_conditionDataSource: #replace with enum_clinicalDataSourceType & re-harmonize data
-    name: enum_conditionDataSource
+      interventional:
+        title: Interventional
+      observational:
+        title: Observational
+      patient_registry:
+        title: Patient Registry
+      expanded_access:
+        title: Expanded Access
+  enum_trialPhase:
+    definition_uri: include:enum_trialPhase
     permissible_values:
-      clinical:
-        title: Clinical
-        description: Information about condition was obtained from medical records or reported by investigator
-      self_reported:
-        title: Self-reported
-        description: Information about condition was reported by participant or family member
-  enum_conditionStatus:
+      not_applicable:
+        title: Not Applicable
+      early_phase_1:
+        title: Early Phase 1
+      phase_1:
+        title: Phase 1
+      phase_1_2:
+        title: Phase 1/2
+      phase_2:
+        title: Phase 2
+      phase_2_3:
+        title: Phase 2/3
+      phase_3:
+        title: Phase 3
+      phase_4:
+        title: Phase 4
+  enum_primaryPurpose:
+    definition_uri: include:enum_clinicalStudyDesign
     permissible_values:
-      current:
-        title: Current
-        description: Condition is ongoing
-      resolved:
-        title: Resolved
-        description: Condition has been resolved
-      history_of:
-        title: History Of
-        description: This is a general history of the condition, without known dates
-  enum_downSyndromeStatus:
-    definition_uri: include:enum_downSyndromeStatus
+      treatment:
+        title: Treatment
+      prevention:
+        title: Prevention
+      diagnostic:
+        title: Diagnostic
+      supportive_care:
+        title: Supportive Care
+      screening:
+        title: Screening
+      health_services_research:
+        title: Health Services Research
+      basic_science:
+        title: Basic Science
+      device_feasibility:
+        title: Device Feasibility
+      other:
+        title: Other
+  enum_interventionType:
+    definition_uri: include:enum_interventionType
     permissible_values:
-      d21:
-        title: D21
-        description: Disomy 21 (euploid)
-      t21:
-        title: T21
-        description: Trisomy 21 (Down syndrome)
-        meaning: MONDO:0008608
-  enum_ethnicity:
-    definition_uri: include:enum_ethnicity
+      drug:
+        title: Drug
+      device:
+        title: Device
+      biological_vaccine:
+        title: Biological/Vaccine
+      procedure_surgery:
+        title: Procedure/Surgery
+      radiation:
+        title: Radiation
+      behavioral:
+        title: Behavioral
+      genetic:
+        title: Genetic
+      dietary_supplement:
+        title: Dietary Supplement
+      combination_product:
+        title: Combination Product
+      diagnostic_test:
+        title: Diagnostic Test
+      other:
+        title: Other
+  enum_armAllocation:
+    definition_uri: include:enum_armAllocation
     permissible_values:
-      # asked_but_unknown:
-      #   text: asked_but_unknown
-      #   title: Asked but unknown
-      hispanic_or_latino:
-        title: Hispanic or Latino
-        meaning: NCIT:C17459
-      not_hispanic_or_latino:
-        title: Not Hispanic or Latino
-        meaning: NCIT:C41222
-      prefer_not_to_answer:
-        title: Prefer not to answer
-        meaning: NCIT:C132222
-      unknown:
-        title: Unknown
-        meaning: NCIT:C17998
+      not_applicable:
+        title: Not Applicable
+      randomized:
+        title: Randomized
+      nonrandomized:
+        title: Nonrandomized
+  enum_interventionAssignmentStrategy:
+    definition_uri: include:enum_interventionAssignmentStrategy
+    permissible_values:
+      single_arm:
+        title: Single Group
+      parallel:
+        title: Parallel
+      crossover:
+        title: Crossover
+      factorial:
+        title: Factorial
+      sequential:
+        title: Sequential
+  enum_familyType:
+    definition_uri: include:enum_familyType
+    permissible_values:
+      control_only:
+        title: Control-only
+        description: Unrelated control, no Down syndrome family members
+      duo:
+        title: Duo
+        description: Proband + one parent
+      other:
+        title: Other
+        description: Other family structure, eg one parent + twins
+      proband_only:
+        title: Proband-only
+        description: Proband only, no family members participating in study
+      trio:
+        title: Trio
+        description: Proband + two parents
+      trio_plus:
+        title: Trio Plus #need to reharmonize data
+        description: Proband + two parents + other relatives
   enum_familyRelationship:
     definition_uri: include:enum_familyRelationship
     permissible_values:
@@ -1237,27 +1439,21 @@ enums:
       unrelated_control:
         title: Unrelated control
         meaning: NCIT:C25328
-  enum_familyType:
-    definition_uri: include:enum_familyType
+  enum_sex:
+    definition_uri: include:enum_sex
     permissible_values:
-      control_only:
-        title: Control-only
-        description: Unrelated control, no Down syndrome family members
-      duo:
-        title: Duo
-        description: Proband + one parent
+      female:
+        title: Female
+        meaning: NCIT:C16576
+      male:
+        title: Male
+        meaning: NCIT:C20197
       other:
         title: Other
-        description: Other family structure, eg one parent + twins
-      proband_only:
-        title: Proband-only
-        description: Proband only, no family members participating in study
-      trio:
-        title: Trio
-        description: Proband + two parents
-      trio_plus:
-        title: Trio Plus #need to reharmonize data
-        description: Proband + two parents + other relatives
+        meaning: NCIT:C17649
+      unknown:
+        title: Unknown
+        meaning: NCIT:C17998
   enum_race:
     definition_uri: include:enum_race
     permissible_values:
@@ -1304,21 +1500,34 @@ enums:
         title: South Asian
         description: UK only; do not use for US data
         meaning: NCIT:C41263
-  enum_sex:
-    definition_uri: include:enum_sex
+  enum_ethnicity:
+    definition_uri: include:enum_ethnicity
     permissible_values:
-      female:
-        title: Female
-        meaning: NCIT:C16576
-      male:
-        title: Male
-        meaning: NCIT:C20197
-      other:
-        title: Other
-        meaning: NCIT:C17649
+      # asked_but_unknown:
+      #   text: asked_but_unknown
+      #   title: Asked but unknown
+      hispanic_or_latino:
+        title: Hispanic or Latino
+        meaning: NCIT:C17459
+      not_hispanic_or_latino:
+        title: Not Hispanic or Latino
+        meaning: NCIT:C41222
+      prefer_not_to_answer:
+        title: Prefer not to answer
+        meaning: NCIT:C132222
       unknown:
         title: Unknown
         meaning: NCIT:C17998
+  enum_downSyndromeStatus:
+    definition_uri: include:enum_downSyndromeStatus
+    permissible_values:
+      d21:
+        title: D21
+        description: Disomy 21 (euploid)
+      t21:
+        title: T21
+        description: Trisomy 21 (Down syndrome)
+        meaning: MONDO:0008608
   enum_vital_status:
     definition_uri: include:vital_status
     permissible_values:
@@ -1331,6 +1540,34 @@ enums:
       unknown_or_not_available:
         title: Unknown or not available
         meaning: NCIT:C17998
+  enum_conditionInterpretation:
+    permissible_values:
+      observed:
+        title: Observed
+        description: Condition was observed or reported (this will be the case for most conditions)
+      not_observed:
+        title: Not Observed
+        description: Participant was specifically examined or medical record queried for condition and found to be negative
+  enum_conditionStatus:
+    permissible_values:
+      current:
+        title: Current
+        description: Condition is ongoing
+      resolved:
+        title: Resolved
+        description: Condition has been resolved
+      history_of:
+        title: History Of
+        description: This is a general history of the condition, without known dates
+  enum_conditionDataSource: #replace with enum_clinicalDataSourceType & re-harmonize data
+    name: enum_conditionDataSource
+    permissible_values:
+      clinical:
+        title: Clinical
+        description: Information about condition was obtained from medical records or reported by investigator
+      self_reported:
+        title: Self-reported
+        description: Information about condition was reported by participant or family member
   enum_dataAccess:
     definition_uri: include:enum_dataAccess
     permissible_values:
