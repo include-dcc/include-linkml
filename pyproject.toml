@@ -1,31 +1,72 @@
-[tool.poetry]
-#name = "linkml-project-template"
-name = "src"
-version = "0.1.0"
-description = "Enter description of your project here"
-authors = ["Mark A. Miller <mamillerpa@gmail.com>"]
-license = "MIT"
-include = ["README.md", "src/linkml", "project"]
-
-[tool.poetry.dependencies]
-python = "^3.9"
-linkml-runtime = "^1.1.24"
-ontodev-cogs = "^0.3.3"
-schemasheets = "^0.1.13"
-typer = "^0.7.0"
-chardet = "^5.2.0"
-
-[tool.poetry.dev-dependencies]
-linkml = "^1.2.6"
-mkdocs-material = "^8.2.8"
-mkdocs-mermaid2-plugin = "^0.6.0"
-
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling", "uv-dynamic-versioning"]
+build-backend = "hatchling.build"
 
-[tool.poetry.extras]
-docs = ["linkml", "mkdocs-material"]
+[project]
+name = "include_linkml_data_model"
+description = "TBD"
+authors = [
+  {name = "Eric S Torstenson", email = "eric.s.torstenson@vumc.org"},
+]
+license = "MIT"
+license-files = ["LICENSE"]
+readme = "README.md"
+requires-python = ">=3.9,<4.0"
+dynamic = ["version"]
 
-[tool.poetry.scripts]
-validate-data = "src.data_validation.cli:main"
+dependencies = [
+  "linkml-runtime >=1.9.4",
+]
+
+[dependency-groups]
+dev = [
+    "linkml>=1.9.3",
+    "mkdocs-material>=8.2.8",
+    "mkdocs-mermaid2-plugin>=1.1.1",
+    "jupyter>=1.0.0",
+    "mknotebooks>= 0.8.0",
+]
+
+# See https://hatch.pypa.io/latest/config/build/#file-selection for how to
+# explicitly include files other than default into the build distributions.
+
+[tool.hatch.version]
+source = "uv-dynamic-versioning"
+
+# Ref.: https://github.com/ninoseki/uv-dynamic-versioning/
+[tool.uv-dynamic-versioning]
+vcs = "git"
+style = "pep440"
+fallback-version = "0.0.0"
+
+# Ref.: https://docs.pytest.org/en/stable/reference/reference.html#configuration-options
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+# Ref.: https://github.com/codespell-project/codespell
+[tool.codespell]
+skip = [
+  "LICENSE",
+  "pyproject.toml",
+  "uv.lock",
+  "project/*",
+  "src/include_linkml_data_model/datamodel/include_linkml_data_model_pydantic.py",
+  "src/include_linkml_data_model/datamodel/include_linkml_data_model.py",
+]
+
+# Reminder: words have to be lowercased for the ignore-words-list
+ignore-words-list = "linke"
+quiet-level = 3
+
+# Ref.: https://github.com/crate-ci/typos (spell checker)
+[tool.typos.default.extend-words]
+linke = "linke"
+[tool.typos.files]
+extend-exclude = [
+  "LICENSE",
+  "uv.lock",
+  "pyproject.toml",
+  "project/*",
+  "src/include_linkml_data_model/datamodel/include_linkml_data_model_pydantic.py",
+  "src/include_linkml_data_model/datamodel/include_linkml_data_model.py",
+]

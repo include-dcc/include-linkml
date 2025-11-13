@@ -1,32 +1,43 @@
-site_name: "INCLUDE Data Model"
+---
+site_name: "INCLUDE LinkML Data Model"
 theme:
   name: material
-  analytics:
-    gtag: G-2SYBSJVZ23
-  palette:
-  - media: '(prefers-color-scheme: light)'
-    scheme: default
-    primary: teal
-    accent: amber
-    toggle:
-      icon: material/lightbulb
-      name: Switch to light mode
-  - media: '(prefers-color-scheme: light)'
-    scheme: slate
-    primary: teal
-    accent: amber
-    toggle:
-      icon: material/lightbulb-outline
-      name: Switch to dark mode
+  # palette:
+  #  scheme: slate
+  #  primary: cyan
+  features:
+    - content.tabs.link
+
+# for adding extra css/js see https://www.mkdocs.org/user-guide/customizing-your-theme/
+
 plugins:
   - search
+  - mknotebooks:
+      execute: false
   - mermaid2:
-      version: 10.9.0
+      version: 11.4.1
+  # TODO rebuild docs on schema change (https://github.com/dalito/linkml-project-copier/issues/39)
+  # - gen-files:
+  #     scripts:
+  #       - gen_pages.py  # or any other name or path
+
+watch:
+  - src/include_linkml_data_model/schema
 
 nav:
-  - Index: index.md
+  - Home: index.md
+  - Schema: elements/index.md
   - About: about.md
-  - ER Diagram: erdiagram.md
 
-site_url: https://include-dcc.github.io/include-linkml/
-repo_url: https://github.com/include-dcc/include-linkml/
+exclude_docs: |
+  /templates-linkml/
+
+site_url: https://include-dcc.github.io/INCLUDE LinkML Data Model
+repo_url: https://github.com/include-dcc/INCLUDE LinkML Data Model
+
+# Uncomment this block to enable use of Google Analytics.
+# Replace the property value with your own ID.
+# extra:
+#   analytics:
+#     provider: google
+#     property: G-XXXXXXXXXX

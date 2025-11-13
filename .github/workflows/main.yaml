@@ -1,10 +1,17 @@
 # Built from:
 # https://docs.github.com/en/actions/guides/building-and-testing-python
-# https://github.com/snok/install-poetry#workflows-and-tips
+---
+name: Build and test
 
-name: Build and test linkml-runtime
+on:  # yamllint disable-line rule:truthy
+  push:
+    branches: [main]
+  pull_request:
 
-on: [pull_request]
+env:
+  FORCE_COLOR: "1" # Make tools pretty.
+
+permissions: {}
 
 jobs:
   test:
@@ -12,42 +19,37 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.9", "3.10"]
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+      fail-fast: false
 
     steps:
 
-      #----------------------------------------------
-      #       check-out repo and set-up python
-      #----------------------------------------------
+      # https://github.com/actions/checkout
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.2.2
+        with:
+          persist-credentials: false
 
+      # https://github.com/astral-sh/setup-uv
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6.4.3
+        with:
+          python-version: ${{ matrix.python-version }}
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      # https://github.com/actions/setup-python
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5.6.0
         with:
           python-version: ${{ matrix.python-version }}
 
-      #----------------------------------------------
-      #          install & configure poetry
-      #----------------------------------------------
-      - name: Install Poetry
-        uses: snok/install-poetry@v1.3
+      - name: Install just
+        run: |
+          uv tool install rust-just
 
-      #----------------------------------------------
-      # install dependencies if cache does not exist 
-      #----------------------------------------------
-      - name: Install dependencies
-        run: poetry install --no-interaction --no-root
+      - name: Install project
+        run: uv sync --dev
 
-      #----------------------------------------------
-      #    install your root project, if required 
-      #----------------------------------------------      
-      - name: Install library
-        run: poetry install --no-interaction
-
-      #----------------------------------------------
-      #              run test suite   
-      #----------------------------------------------
-      - name: Run tests
-        run: make test
-
+      - name: Run test suite
+        run: just test
