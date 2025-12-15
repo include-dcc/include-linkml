@@ -5,8 +5,8 @@ import yaml
 import re
 
 SCHEMA_PATH = Path("src/linkml/include_schema.yaml").resolve()
-INPUT_CSV = Path("src/data/input/study_test_data_utf8.csv").resolve()
-OUTPUT_JSON = Path("src/data/input/study_data.json").resolve()
+INPUT_CSV = Path("../validation_logs/hakon_participants_v7_2025-12-12.csv").resolve()
+OUTPUT_JSON = Path("../validation_logs/hakon_participants_js.json").resolve()
 
 
 def get_multivalued_slots(schema_path):

@@ -751,7 +751,10 @@ slots:
     definition_uri: include:ageAtFirstParticipantEngagement
     description: Age in days of Participant at first recorded study event (enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.
     title: Age at First Participant Engagement
-    range: integer
+    range: Any
+    any_of:
+      - range: integer
+      - range: enum_Unknown 
     minimum_value: 0
     maximum_value: 33000
     required: true
@@ -1586,5 +1589,12 @@ enums:
       unavailable:
         title: Unavailable
         description: Sample or Container either was available through Virtual Biorepository but has been used up, or is part of a study that is not participating in the VBR
+  enum_Unknown:
+    definition_uri: include:enum_Unknown
+    permissible_values:
+      unknown:
+        title: Unknown
+        meaning: NCIT:C17998
+   
 
 
