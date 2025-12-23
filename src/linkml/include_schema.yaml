@@ -887,7 +887,12 @@ slots:
     definition_uri: include:ageAtBiospecimenCollection
     description: Age in days of participant at time of biospecimen collection
     title: Age At Biospecimen Collection
-    range: integer
+    range: Any
+    any_of:
+      - range: integer
+      - range: enum_Unknown 
+    minimum_value: 0
+    maximum_value: 33000
   parentSampleGlobalId:
     definition_uri: include:parentSampleGlobalId
     description: INCLUDE global identifier for the direct parent from which Sample was derived, assigned by DCC
