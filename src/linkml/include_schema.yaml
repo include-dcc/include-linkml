@@ -688,7 +688,7 @@ slots:
     #slot_usage
   familyId:
     definition_uri: include:familyId
-    description: Unique identifer for family to which Participant belongs, assigned by data contributor
+    description: Unique identifer for family to which Participant belongs, assigned by data contributor. Required for families with >1 member; not required for "Proband-only" individuals.
     title: Family ID
     range: string
   familyType:
