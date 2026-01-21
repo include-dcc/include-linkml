@@ -688,7 +688,7 @@ slots:
     #slot_usage
   familyId:
     definition_uri: include:familyId
-    description: Unique identifer for family to which Participant belongs, assigned by data contributor
+    description: Unique identifer for family to which Participant belongs, assigned by data contributor. Required for families with >1 member; not required for "Proband-only" individuals.
     title: Family ID
     range: string
   familyType:
@@ -751,7 +751,10 @@ slots:
     definition_uri: include:ageAtFirstParticipantEngagement
     description: Age in days of Participant at first recorded study event (enrollment, visit, observation, sample collection, survey completion, etc.). Age at enrollment is preferred, if available.
     title: Age at First Participant Engagement
-    range: integer
+    range: Any
+    any_of:
+      - range: integer
+      - range: enum_Unknown 
     minimum_value: 0
     maximum_value: 33000
     required: true
@@ -870,7 +873,7 @@ slots:
   sampleExternalId:
     definition_uri: include:sampleExternalId
     description: Unique identifier for sample, assigned by data contributor. A sample is a unique biological material;
-      two samples with two different IDs are biologically distinct.
+      two samples with two different IDs are biologically distinct. Every Sample must also have a Parent Sample and a Collection Sample. 
     title: Sample External ID
     required: true
     range: string
@@ -884,39 +887,47 @@ slots:
     definition_uri: include:ageAtBiospecimenCollection
     description: Age in days of participant at time of biospecimen collection
     title: Age At Biospecimen Collection
-    range: integer
+    range: Any
+    any_of:
+      - range: integer
+      - range: enum_Unknown 
+    minimum_value: 0
+    maximum_value: 33000
   parentSampleGlobalId:
     definition_uri: include:parentSampleGlobalId
     description: INCLUDE global identifier for the direct parent from which Sample was derived, assigned by DCC
     title: Parent Sample Global ID
+    required: true
     range: string
   parentSampleExternalId:
     definition_uri: include:parentSampleExternalId
-    description: Identifier for the direct parent from which Sample was derived, processed,
-      pooled, etc. (if applicable); assigned by data contributor
+    description: Identifier for the direct parent from which Sample was derived, processed, pooled, etc. May be the same as Collection Sample. Every Parent Sample must also be listed as a Sample.
     title: Parent Sample External ID
+    required: true
     range: string
   parentSampleType:
     definition_uri: include:parentSampleType
     description: Type of biological material comprising the Parent Sample (e.g. Peripheral Whole Blood, Derived Cell Line, Saliva, Whole blood, WBCs)
     title: Parent Sample Type
+    required: true
     range: string
   collectionGlobalId:
     definition_uri: include:collectionGlobalId
     description: INCLUDE global identifier for the eldest sample in a lineage, assigned by DCC
     title: Collection Global ID
+    required: true
     range: string
   collectionExternalId:
     definition_uri: include:collectionExternalId
-    description: Identifier for the eldest sample in a lineage of processed, pooled,
-      or aliquoted samples - typically the material actually collected from the Participant. This may be the same as Parent Sample ID or Sample ID
-      (if no processing was performed). Assigned by data contributor.
+    description: Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples - typically the material actually collected from the Participant. This may be the same as Parent Sample (if no processing was performed). Every Collection Sample must also be listed as a Sample.
     title: Collection External ID
+    required: true
     range: string
   collectionSampleType:
     definition_uri: include:collectionSampleType
     description: Type of biological material comprising the Collected Sample (e.g. Whole blood, Not reported, Saliva, Derived cell line)
     title: Collection Sample Type
+    required: true
     range: string
   containerGlobalId:
     definition_uri: include:containerGlobalId
@@ -1586,5 +1597,12 @@ enums:
       unavailable:
         title: Unavailable
         description: Sample or Container either was available through Virtual Biorepository but has been used up, or is part of a study that is not participating in the VBR
+  enum_Unknown:
+    definition_uri: include:enum_Unknown
+    permissible_values:
+      unknown:
+        title: Unknown
+        meaning: NCIT:C17998
+   
 
 
