@@ -100,8 +100,8 @@ classes:
     - datasetDescription
     - datasetGlobalId
     - datasetExternalId
-    - expectedNumberOfParticipants
-    - expectedNumberOfFiles
+#    - expectedNumberOfParticipants
+#    - expectedNumberOfFiles
     - dataCollectionStartYear
     - dataCollectionEndYear
     - dataCategory
@@ -126,8 +126,8 @@ classes:
         description: dbGaP "phs" accession code(s) required to access the files in this Dataset, if applicable (pipe-separated if multiple)
       publication:
         description: URL for publication(s) describing the Dataset's rationale and methodology (PubMed Central preferred but not required; pipe-separated if multiple)
-      expectedNumberOfParticipants:
-        description: Expected number of participants in this Dataset (or actual number, if data has been submitted to INCLUDE DCC). If additional explanation is needed, please add to Dataset Description field.
+#      expectedNumberOfParticipants:
+#        description: Expected number of participants in this Dataset (or actual number, if data has been submitted to INCLUDE DCC). If additional explanation is needed, please add to Dataset Description field.
       dataType:
         description: Specific type of data contained in Dataset; pipe-separated if multiple (e.g. Preprocessed metabolite relative abundance, Absolute protein concentration, Aligned reads, Simple nucleotide variations, GVCF, Gene expression quantifications, Gene fusions, Somatic copy number variations, Somatic structural variations)
       experimentalStrategy:
@@ -619,12 +619,12 @@ slots:
     description: Unique identifier or code for dataset, if provided by contributor
     title: Dataset External ID
     range: string
-  expectedNumberOfFiles:
-    definition_uri: include:expectedNumberOfFiles
-    description: Expected number of files associated with this dataset, including dictionaries. If additional explanation is needed, please add to Dataset Description field.
-    title: Expected Number of Files
-    range: integer
-    required: false #update to true when this is figured out
+  # expectedNumberOfFiles:
+  #   definition_uri: include:expectedNumberOfFiles
+  #   description: Expected number of files associated with this dataset, including dictionaries. If additional explanation is needed, please add to Dataset Description field.
+  #   title: Expected Number of Files
+  #   range: integer
+  #   required: false #update to true when this is figured out
   dataCollectionStartYear:
     definition_uri: include:dataCollectionStartYear
     description: Year that data collection started
