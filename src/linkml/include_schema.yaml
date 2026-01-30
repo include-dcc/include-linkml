@@ -587,7 +587,6 @@ slots:
     aliases: clinicaltrials.gov Secondary Outcome Measures
     description: A description of each secondary outcome measure (title, description, and time point/duration of assessment). Multiple values should be pipe-separated.
     range: string
-    required: true
     multivalued: true
   otherOutcomeMeasure:
     definition_uri: include:otherOutcomeMeasure
@@ -595,7 +594,6 @@ slots:
     aliases: clinicaltrials.gov Other Outcome Measures
     description: A description of other outcome measures (title, description, and time point/duration of assessment). Multiple values should be pipe-separated.
     range: string
-    required: true
     multivalued: true
   datasetName:
     definition_uri: include:datasetName
