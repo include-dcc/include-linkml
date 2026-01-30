@@ -1340,7 +1340,7 @@ enums:
       phase_4:
         title: Phase 4
   enum_primaryPurpose:
-    definition_uri: include:enum_clinicalStudyDesign
+    definition_uri: include:enum_primaryPurpose
     permissible_values:
       treatment:
         title: Treatment
