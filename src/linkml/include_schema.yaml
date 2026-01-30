@@ -75,7 +75,7 @@ classes:
     slots:
     - studyCode
     - nctId
-    - clinicalStudyDesign
+#    - clinicalStudyDesign
     - trialPhase
     - primaryPurpose
     - interventionType
@@ -509,14 +509,14 @@ slots:
     range: string
     required: true
     multivalued: false
-  clinicalStudyDesign:
-    definition_uri: include:clinicalStudyDesign
-    title: Clinical Study Design
-    aliases: clinicaltrials.gov Study Type
-    description: The nature of the investigation or investigational use for which clinical study information is being submitted. Select one.
-    range: enum_clinicalStudyDesign
-    required: true
-    multivalued: false
+  # clinicalStudyDesign:
+  #   definition_uri: include:clinicalStudyDesign
+  #   title: Clinical Study Design
+  #   aliases: clinicaltrials.gov Study Type
+  #   description: The nature of the investigation or investigational use for which clinical study information is being submitted. Select one.
+  #   range: enum_clinicalStudyDesign
+  #   required: true
+  #   multivalued: false
   trialPhase:
     definition_uri: include:trialPhase
     title: Trial Phase
@@ -1231,10 +1231,16 @@ enums:
         title: Cross-Sectional
       family_twins_trios:
         title: Family/Twins/Trios
-      interventional:
-        title: Interventional
       longitudinal:
         title: Longitudinal
+      interventional:
+        title: Interventional
+      observational:
+        title: Observational
+      registry:
+        title: Registry
+      expanded_access:
+        title: Expanded Access
       technology_development:
         title: Technology Development
       trial_readiness_study:
@@ -1309,17 +1315,17 @@ enums:
       no_guid:
         title: No GUID
         description: No GUIDs used in this study
-  enum_clinicalStudyDesign:
-    definition_uri: include:enum_clinicalStudyDesign
-    permissible_values:
-      interventional:
-        title: Interventional
-      observational:
-        title: Observational
-      patient_registry:
-        title: Patient Registry
-      expanded_access:
-        title: Expanded Access
+  # enum_clinicalStudyDesign:
+  #   definition_uri: include:enum_clinicalStudyDesign
+  #   permissible_values:
+  #     interventional:
+  #       title: Interventional
+  #     observational:
+  #       title: Observational
+  #     patient_registry:
+  #       title: Patient Registry
+  #     expanded_access:
+  #       title: Expanded Access
   enum_trialPhase:
     definition_uri: include:enum_trialPhase
     permissible_values:
