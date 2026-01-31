@@ -1168,18 +1168,27 @@ enums:
     #TODO: replace/add NIH internal categories from Huiqing
     definition_uri: include:enum_researchDomain
     permissible_values:
+      auditory_perception:
+        title: Auditory Perception
+        meaning: mesh:D001307
       behavior_and_behavior_mechanisms:
         title: Behavior and Behavior Mechanisms
         meaning: mesh:D001520
       congenital_heart_defects:
         title: Congenital Heart Defects
         meaning: mesh:D006330
+      embryonic_and_fetal_development:
+        title: Embryonic and Fetal Development
+        meaning: mesh:D005314
       immune_system_diseases:
         title: Immune System Diseases
         meaning: mesh:D007154
       hematologic_diseases:
         title: Hematologic Diseases
         meaning: mesh:D006402
+      mental_disorders:
+        title: Mental Disorders
+        meaning: mesh:D001523
       neurodevelopment:
         title: Neurodevelopment
         meaning: mesh:D065886
@@ -1198,6 +1207,9 @@ enums:
       respiratory_tract_diseases:
         title: Respiratory Tract Diseases
         meaning: mesh:D012140
+      social_determinants_of_health:
+        title: Social Determinants of Health
+        meaning: mesh:D064890
       other:
         title: Other
   enum_participantLifespanStage:
