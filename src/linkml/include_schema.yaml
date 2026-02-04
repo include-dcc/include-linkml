@@ -1192,9 +1192,6 @@ enums:
       hematologic_diseases:
         title: Hematologic Diseases
         meaning: mesh:D006402
-      mental_disorders:
-        title: Mental Disorders
-        meaning: mesh:D001523
       neurodevelopment:
         title: Neurodevelopment
         meaning: mesh:D065886
@@ -1210,6 +1207,9 @@ enums:
       physical_fitness:
         title: Physical Fitness
         meaning: mesh:D010809
+      psychiatric_disorders:
+        title: Psychiatric Disorders
+        meaning: mesh:D001523
       respiratory_tract_diseases:
         title: Respiratory Tract Diseases
         meaning: mesh:D012140
