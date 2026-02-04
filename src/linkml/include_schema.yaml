@@ -1083,6 +1083,8 @@ enums:
         title: APAP21
       arc_ds:
         title: ARC-DS
+      aspire:
+        title: ASPIRE
       best21:
         title: BEST21
       brainpower:
@@ -1135,6 +1137,8 @@ enums:
         title: ECODS
       exceeds:
         title: EXcEEDS
+      homegrown:
+        title: HomeGrown
       htp:
         title: HTP
       ibis-ds:
@@ -1149,6 +1153,8 @@ enums:
         title: TEAM-DS
       tomi:
         title: TOMI
+      tops_ds:
+        title: TOPS-DS
       trc_ds:
         title: TRC-DS
       x01_desmith:
