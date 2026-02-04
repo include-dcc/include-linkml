@@ -1287,10 +1287,8 @@ enums:
   enum_dataCategory:
     definition_uri: include:enum_dataCategory
     permissible_values:
-      unharmonized_demographic_clinical_data:
-        title: Unharmonized Demographic/Clinical Data
-      harmonized_demographic_clinical_data:
-        title: Harmonized Demographic/Clinical Data
+      demographic_clinical_data:
+        title: Demographic/Clinical Data
       genomics:
         title: Genomics
       transcriptomics:
