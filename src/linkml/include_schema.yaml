@@ -469,7 +469,7 @@ slots:
   guidMapped:
     definition_uri: include:guidMapped
     description: For studies using NDAR GUIDs, have the GUIDs been added to the INCLUDE GUID Mapping File?
-    title: GUIDs Mapped?
+    title: GUID Mapped
     range: boolean
   dbgap:
     definition_uri: include:dbgap
