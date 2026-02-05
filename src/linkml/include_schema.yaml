@@ -469,7 +469,7 @@ slots:
   guidMapped:
     definition_uri: include:guidMapped
     description: For studies using NDAR GUIDs, have the GUIDs been added to the INCLUDE GUID Mapping File?
-    title: GUIDs Mapped?
+    title: GUID Mapped
     range: boolean
   dbgap:
     definition_uri: include:dbgap
@@ -1083,6 +1083,8 @@ enums:
         title: APAP21
       arc_ds:
         title: ARC-DS
+      aspire:
+        title: ASPIRE
       best21:
         title: BEST21
       brainpower:
@@ -1135,6 +1137,8 @@ enums:
         title: ECODS
       exceeds:
         title: EXcEEDS
+      homegrown:
+        title: HomeGrown
       htp:
         title: HTP
       ibis-ds:
@@ -1149,6 +1153,8 @@ enums:
         title: TEAM-DS
       tomi:
         title: TOMI
+      tops_ds:
+        title: TOPS-DS
       trc_ds:
         title: TRC-DS
       x01_desmith:
@@ -1168,12 +1174,18 @@ enums:
     #TODO: replace/add NIH internal categories from Huiqing
     definition_uri: include:enum_researchDomain
     permissible_values:
+      auditory_perception:
+        title: Auditory Perception
+        meaning: mesh:D001307
       behavior_and_behavior_mechanisms:
         title: Behavior and Behavior Mechanisms
         meaning: mesh:D001520
       congenital_heart_defects:
         title: Congenital Heart Defects
         meaning: mesh:D006330
+      embryonic_and_fetal_development:
+        title: Embryonic and Fetal Development
+        meaning: mesh:D005314
       immune_system_diseases:
         title: Immune System Diseases
         meaning: mesh:D007154
@@ -1195,9 +1207,15 @@ enums:
       physical_fitness:
         title: Physical Fitness
         meaning: mesh:D010809
+      psychiatric_disorders:
+        title: Psychiatric Disorders
+        meaning: mesh:D001523
       respiratory_tract_diseases:
         title: Respiratory Tract Diseases
         meaning: mesh:D012140
+      social_determinants_of_health:
+        title: Social Determinants of Health
+        meaning: mesh:D064890
       other:
         title: Other
   enum_participantLifespanStage:
@@ -1269,10 +1287,8 @@ enums:
   enum_dataCategory:
     definition_uri: include:enum_dataCategory
     permissible_values:
-      unharmonized_demographic_clinical_data:
-        title: Unharmonized Demographic/Clinical Data
-      harmonized_demographic_clinical_data:
-        title: Harmonized Demographic/Clinical Data
+      demographic_clinical_data:
+        title: Demographic/Clinical Data
       genomics:
         title: Genomics
       transcriptomics:
