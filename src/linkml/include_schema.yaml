@@ -1289,6 +1289,8 @@ enums:
     permissible_values:
       demographic_clinical_data:
         title: Demographic/Clinical Data
+      unharmonized_demographic_clinical_data:
+        title: Unharmonized Demographic/Clinical Data
       genomics:
         title: Genomics
       transcriptomics:
