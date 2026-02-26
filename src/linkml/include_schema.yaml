@@ -393,6 +393,7 @@ slots:
     description: Email address for Virtual Biorepository requests/inquiries, if participating
     title: VBR Email
     range: string
+    multivalued: true
   vbrUrl:
     definition_uri: include:vbrUrl
     description: Link to Virtual Biorepository request form, if participating
