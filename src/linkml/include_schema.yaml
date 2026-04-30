@@ -1328,6 +1328,8 @@ enums:
         title: Other
       sleep_study:
         title: Sleep
+      speech_language_hearing:
+        title: Speech/Language/Hearing
   enum_guidType:
     definition_uri: include:enum_guidType
     permissible_values:
