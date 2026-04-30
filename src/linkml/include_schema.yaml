@@ -1190,6 +1190,9 @@ enums:
       embryonic_and_fetal_development:
         title: Embryonic and Fetal Development
         meaning: mesh:D005314
+      hearing_disorders:
+        title: Hearing Disorders
+        meaning: D006311
       immune_system_diseases:
         title: Immune System Diseases
         meaning: mesh:D007154
@@ -1293,8 +1296,10 @@ enums:
     permissible_values:
       demographic_clinical_data:
         title: Demographic/Clinical Data
+        #use for Study Expected Data Category
       unharmonized_demographic_clinical_data:
         title: Unharmonized Demographic/Clinical Data
+        #use for Dataset Data Category
       genomics:
         title: Genomics
       transcriptomics:
