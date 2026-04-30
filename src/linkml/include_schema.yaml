@@ -1125,6 +1125,8 @@ enums:
         title: DS-PALS
       ds_pcgc:
         title: DS-PCGC
+      ds_sah:
+        title: DS-SAH
       ds_sleep:
         title: DS-Sleep
       ds_vite:

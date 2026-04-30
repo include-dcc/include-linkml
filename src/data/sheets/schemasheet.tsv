@@ -177,6 +177,7 @@ DataFile	sampleGlobalId				Biospecimen
 		DS-Nexus								enum_studyCode	ds_nexus	
 		DS-PALS								enum_studyCode	ds_pals	
 		DS-PCGC								enum_studyCode	ds_pcgc	
+		DS-SAH								enum_studyCode	ds_sah	
 		DS-Sleep								enum_studyCode	ds_sleep	
 		DS-VitE								enum_studyCode	ds_vite	
 		DS360-CHD								enum_studyCode	ds360_chd	
