@@ -31,7 +31,7 @@ classes:
     description: General information about the study
     title: Study
     slots:
-    - studyGlobalId
+    # - studyGlobalId
     - studyCode
     - studyTitle
     - program
@@ -335,11 +335,11 @@ classes:
 ####################################################################################################
 
 slots:
-  studyGlobalId:
-    definition_uri: include:studyGlobalId
-    description: Unique identifier for the study, assigned by DCC
-    title: Study Global ID
-    required: true
+  # studyGlobalId:
+  #   definition_uri: include:studyGlobalId
+  #   description: Unique identifier for the study, assigned by DCC
+  #   title: Study Global ID
+  #   required: true
   studyCode:
     definition_uri: include:studyCode
     description: Unique short acronym for the study

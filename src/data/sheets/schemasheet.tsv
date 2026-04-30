@@ -1,6 +1,5 @@
 class	slot	title	description	required	range	any_of	minimum_value	maximum_value	multivalued	enum	permissible_value	meaning
 >class	slot	title	description	required	range	any_of	minimum_value	maximum_value	multivalued	enum	permissible_value	meaning
-	studyGlobalId	Study Global ID	Unique identifier for the study, assigned by DCC	true								
 	studyCode	Study Code	Unique short acronym for the study	true	enum_studyCode							
 	studyTitle	Study Title	Full title of the study	true	string							
 	program	Program	Funding source(s) for the study (pipe-separated if multiple)	true	enum_program				true			
