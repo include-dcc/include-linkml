@@ -249,6 +249,7 @@ DataFile	sampleGlobalId				Biospecimen
 										enum_dataCategory		
 		Demographic/Clinical Data								enum_dataCategory	demographic_clinical_data	
 		Unharmonized Demographic/Clinical Data								enum_dataCategory	unharmonized_demographic_clinical_data	
+		dictionary								enum_dataCategory	dictionary	
 		Genomics								enum_dataCategory	genomics	
 		Transcriptomics								enum_dataCategory	transcriptomics	
 		Epigenomics								enum_dataCategory	epigenomics	

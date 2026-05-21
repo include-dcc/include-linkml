@@ -1302,6 +1302,9 @@ enums:
       unharmonized_demographic_clinical_data:
         title: Unharmonized Demographic/Clinical Data
         #use for Dataset Data Category
+      dictionary:
+        title: dictionary
+        #use for dictionary, mapping, etc. unharmonized files
       genomics:
         title: Genomics
       transcriptomics:
