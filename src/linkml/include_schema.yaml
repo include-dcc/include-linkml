@@ -887,7 +887,7 @@ slots:
     range: string
   ageAtBiospecimenCollection:
     definition_uri: include:ageAtBiospecimenCollection
-    description: Age in days of participant at time of biospecimen collection
+    description: Age in days of participant at time of biospecimen collection. A Sample and a Collection Sample should have ages; a Parent Sample might not
     title: Age At Biospecimen Collection
     range: Any
     any_of:
@@ -903,7 +903,7 @@ slots:
     range: string
   parentSampleExternalId:
     definition_uri: include:parentSampleExternalId
-    description: Identifier for the direct parent from which Sample was derived, processed, pooled, etc. May be the same as Collection Sample. Every Parent Sample must also be listed as a Sample.
+    description: Identifier for the direct parent from which Sample was derived, processed, pooled, etc. May be the same as Collection Sample. Every Parent Sample must also be listed as a Sample. A Sample that is a Collection will have itself as a Parent (every Sample must have a Parent and a Collection). 
     title: Parent Sample External ID
     required: true
     range: string
@@ -921,7 +921,7 @@ slots:
     range: string
   collectionExternalId:
     definition_uri: include:collectionExternalId
-    description: Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples - typically the material actually collected from the Participant. This may be the same as Parent Sample (if no processing was performed). Every Collection Sample must also be listed as a Sample.
+    description: Identifier for the eldest sample in a lineage of processed, pooled, or aliquoted samples - typically the material actually collected from the Participant. This may be the same as Parent Sample (if no processing was performed). Every Collection Sample must also be listed as a Sample. A Sample that is a Collection will have itself as a Parent (every Sample must have a Parent and a Collection)
     title: Collection External ID
     required: true
     range: string
